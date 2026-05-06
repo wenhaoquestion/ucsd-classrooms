@@ -87,7 +87,7 @@ function BuildingPanelContent({
         </Link>
       </header>
       {room ? (
-        <RoomSchedule meetings={rooms[room] ?? []} />
+        <RoomSchedule building={code} room={room} meetings={rooms[room] ?? []} />
       ) : (
         <>
           <div className="gradient gradient-sticky gradient-top" />

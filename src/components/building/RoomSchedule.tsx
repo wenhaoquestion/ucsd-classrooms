@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RoomMeeting } from "../../lib/coursesToClassrooms";
 import { Day } from "../../lib/Day";
+import { getClassroomSeatMapSearchUrl } from "../../lib/classroomSeatMap";
 import { meetingTypes } from "../../lib/meeting-types";
 import {
   doesMeetingHappen,
@@ -14,9 +15,11 @@ const WEEKDAYS = [1, 2, 3, 4, 5];
 const SCALE = 1; // px per min
 
 export type RoomScheduleProps = {
+  building: string;
+  room: string;
   meetings: RoomMeeting[];
 };
-export function RoomSchedule({ meetings }: RoomScheduleProps) {
+export function RoomSchedule({ building, room, meetings }: RoomScheduleProps) {
   const moment = useMoment();
   const [day, setDay] = useState<number | null>(null);
 
@@ -59,6 +62,16 @@ export function RoomSchedule({ meetings }: RoomScheduleProps) {
 
   return (
     <div className="schedule">
+      <div className="room-actions">
+        <a
+          href={getClassroomSeatMapSearchUrl(building, room)}
+          target="_blank"
+          rel="noreferrer"
+          className="seat-map-link"
+        >
+          Search seat map for {building} {room}
+        </a>
+      </div>
       <div className="day-names-wrapper">
         <div className="gradient gradient-bg gradient-top" />
         <div className="day-names">
