@@ -872,6 +872,13 @@ input[type="checkbox"]:checked:hover {
   display: flex;
   flex-direction: column;
 }
+.room-actions {
+  padding: 10px;
+}
+.seat-map-link {
+  color: var(--link);
+  font-family: var(--normal);
+}
 .day-names,
 .meetings-wrapper {
   display: flex;
