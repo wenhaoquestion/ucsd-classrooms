@@ -1,0 +1,106 @@
+# UCSD Classroom Explorer
+
+[English](README.md) | **简体中文**
+
+浏览加州大学圣地亚哥分校（UC San Diego）的教室、查询课程安排，并通过 3D 地图探索校园楼宇。
+
+**[打开网站](https://wenhaoquestion.github.io/ucsd-classrooms/)** · **[探索 YORK 的 3D 室内图](https://wenhaoquestion.github.io/ucsd-classrooms/?building=YORK)** · **[室内地图技术文档（英文）](docs/indoor-geometry.md)**
+
+![York Hall 的 3D 室内地图：楼层分离展示，并标注教室使用状态](static/open-graph.png)
+
+*York Hall（YORK）：切换楼层，查看指定日期和时间的教室课程安排。*
+
+## 功能
+
+- **校园地图：** 按名称或楼宇代码定位建筑，并查看楼宇照片。
+- **教室课表：** 查看已列出的课程，以及指定日期和时间的空档。
+- **课程与教师搜索：** 查询课程地点、上课时间和教师的授课安排。
+- **学期日历：** 浏览学期、教学周和具体日期。无论浏览器处于哪个时区，时间均按太平洋时间显示。
+- **可分享链接：** 直接分享楼宇、教室、课程、教师或日期的链接。
+- **3D 楼宇浏览：** 查看建筑外观、周边楼宇、楼层和教室数量。有房间几何数据的楼宇还支持点选教室和查看课程状态配色。
+- **室内布局：** 已发布的 Facilities 数据覆盖 77 个楼宇代码、9,697 个房间记录。只有楼层信息的教室会保留在对应楼层的列表中，不会被放到虚构的位置。
+- **教室列表模式：** 关闭 3D 或浏览器不支持 WebGL 时，仍可访问教室列表与课表。浏览器会记住 3D 开关设置。
+
+## 快速体验
+
+1. 打开[在线网站](https://wenhaoquestion.github.io/ucsd-classrooms/)。
+2. 选择日期和时间，再从地图或搜索中选择楼宇。
+3. 选择教室，查看课程安排。
+4. 打开 [YORK](https://wenhaoquestion.github.io/ucsd-classrooms/?building=YORK) 体验室内地图，也可以直接查看 [2622 教室](https://wenhaoquestion.github.io/ucsd-classrooms/?building=YORK&room=2622)。
+
+## 本地运行
+
+需要 **Node.js 22** 和 npm。以下命令适用于 Windows、macOS 和 Linux。
+
+```sh
+git clone https://github.com/wenhaoquestion/ucsd-classrooms.git
+cd ucsd-classrooms
+npm ci
+npm run dev
+```
+
+打开 **http://localhost:8000/**。楼宇照片托管在 Imgur；如果使用 `127.0.0.1` 无法加载照片，请改用 `localhost`。
+
+```sh
+# 构建生产版本，输出至 dist/
+npm run build
+
+# 运行部署前使用的各项检查
+npm run typecheck
+npm run lint -- src scripts tests
+npm test
+npm run validate:indoor
+
+# 根据源数据重新生成 EBU3B 室内布局
+npm run indoor:build -- EBU3B
+
+# 将下载的公共校园地图图层转换为楼宇外观数据
+npm run campus:build -- footprints.json attributes.json
+```
+
+## 部署到 GitHub Pages
+
+本项目是静态前端，无需应用服务器或 API 密钥。课程安排和楼宇照片从外部公共数据源加载。
+
+[部署工作流](.github/workflows/gh-pages.yml) 会在推送到 `main` 时运行，也可以在仓库的 Actions 页面手动启动。工作流会按锁文件安装依赖、执行检查、构建 `dist/`，并将该目录发布到 GitHub Pages。
+
+在 **Settings → Pages → Build and deployment** 中，将发布来源设为 **GitHub Actions**。部署成功后可通过以下地址访问：
+
+**https://wenhaoquestion.github.io/ucsd-classrooms/**
+
+如果部署到其他 fork，请更新 `scripts/build.mjs` 中的站点地址、`static/index.html` 中的预览图片地址，以及两份 README、`package.json` 和 `src/components/App.tsx` 中的仓库链接。
+
+## 项目结构
+
+| 路径 | 用途 |
+| --- | --- |
+| `src/components/` | React 界面、课表、搜索和楼宇浏览组件 |
+| `src/explorer3d/` | Three.js 渲染器、室内场景和粒子效果 |
+| `src/lib/indoor/` | 布局结构、加载、几何校验和课程映射 |
+| `data/indoor/EBU3B/` | 来源元数据、房间标签和描摹的楼层几何数据 |
+| `static/indoor/` | 打开相应楼宇时按需加载的室内布局 |
+| `static/indoor/facilities/` | 已发布的 Facilities 布局及楼宇索引 |
+| `static/campus/` | 公共校园地图中的建筑轮廓及地面、屋顶高程 |
+| `scripts/` | 跨平台构建与室内数据处理脚本 |
+| `tools/indoor-trace/` | 描摹公共楼层平面图的 Python 辅助工具 |
+| `tests/` | 室内几何、房间状态和导航测试 |
+| `docs/indoor-geometry.md` | 数据来源、精度限制、格式和建图流程 |
+
+前端使用 **React 19、TypeScript、Three.js 和 esbuild**。3D 场景按需加载，首次打开页面时不必下载 Three.js。
+
+## 数据与覆盖范围
+
+- **课程安排：** 按学期从 [SheepTester 的公共教室数据](https://sheeptester.github.io/uxdy/data/)加载。本仓库不运行课程抓取程序。界面会显示数据更新时间；可用状态依据已列出的课程，不代表实时占用或场地预约情况。
+- **校园楼宇外观：** 公共校园地图数据包含 585 个建筑轮廓部分，对应 93 个教务楼宇代码。只有外观数据的视图会估算楼层数，并按房间编号分组教室，不会虚构房间位置。目前 TASB 尚无匹配的建筑轮廓。
+- **室内覆盖范围：** 仓库和生产构建均包含 77 份 Facilities 布局，共 9,697 个房间记录，打开楼宇时才加载对应数据。Facilities 布局优先于原始 EBU3B 描摹版本，与已完成的预览一致；原始的 300 房间 CSE 描摹数据仍保留在源数据中。
+- **几何数据：** Facilities 房间轮廓由楼层平面图转换，依据标注的房间面积缩放，并与校园建筑轮廓拟合。部分房间只有楼层信息。楼层分离间距和估算高度用于展示，这些模型并非实地测绘结果。每份布局均保留来源引用与转换说明。
+
+数据来源、已知缺口和新增楼宇流程见[室内地图与 3D 楼宇浏览技术文档（英文）](docs/indoor-geometry.md)。可选的描摹工具需要 Python 3、Pillow、NumPy 和 SciPy；运行网站本身不需要这些依赖。
+
+## 致谢与许可
+
+本项目基于 Sean（SheepTester）创建的 [SheepTester/ucsd-classrooms](https://github.com/SheepTester/ucsd-classrooms) 扩展。更早的提交历史见 [SheepTester/uxdy/classrooms](https://github.com/SheepTester/uxdy/tree/main/classrooms)。本 fork 新增了楼宇浏览、校园外观、Facilities 布局、EBU3B 描摹数据、辅助工具、测试和部署更新。
+
+校园地图使用 [SheepTester 的 UCSD 地图工具](https://sheeptester.github.io/words-go-here/misc/ucsd-map.html)制作。室内平面图来源见[几何数据文档](docs/indoor-geometry.md)。
+
+代码采用 [MIT 许可证](LICENSE)，保留原始版权声明。外部地图、照片和数据集归其各自来源所有，并保留相应署名。
