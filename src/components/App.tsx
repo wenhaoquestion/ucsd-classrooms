@@ -27,6 +27,10 @@ import {
   ViewWithTerm,
 } from "../lib/View";
 import { BuildingPanel } from "./building/BuildingPanel";
+import { ExplorerIntro } from "./explorer/BuildingExplorer";
+import { useExplorerPreference } from "../lib/explorerPreference";
+import { hasIndoorLayout } from "../lib/indoor/manifest";
+import { ScheduleAvailability } from "../lib/indoor/roomStatus";
 import { BuildingButton } from "./BuildingButton";
 import { DateTimeButton } from "./date-time/DateTimeButton";
 import { DateTimePanel } from "./date-time/DateTimePanel";
@@ -137,6 +141,14 @@ export function App({ title }: AppProps) {
   const lastBuilding = useLast("CENTR", buildingCode);
   const [scrollTo, setScrollTo] = useState({ building: "CENTR", init: true });
   const [room, setRoom] = useState<string | null>(null);
+  const [explorerEnabled, setExplorerEnabled_s] = useExplorerPreference();
+  const [explorerIntro, setExplorerIntro] = useState<ExplorerIntro>("fade");
+  /**
+   * How the next building view was reached: clicking in the app stacks the
+   * floors up, while page loads and back/forward use a quick fade so a direct
+   * link opens its schedule promptly.
+   */
+  const navigationSource = useRef<ExplorerIntro>("rise");
 
   const [showResults, setShowResults] = useState(false);
   const [searchState, setSearchState] = useState<State>({ type: "unloaded" });
@@ -262,6 +274,9 @@ export function App({ title }: AppProps) {
     }
     if (view.type === "building") {
       setScrollTo({ building: view.building, init: false });
+      if (view.building !== buildingCode) {
+        setExplorerIntro(navigationSource.current);
+      }
       setBuildingCode(view.building);
       setModal(null);
       setRoom(view.room ?? null);
@@ -323,9 +338,13 @@ export function App({ title }: AppProps) {
   }, []);
 
   useEffect(() => {
+    navigationSource.current = "fade";
     handleView_s(viewFromUrl(window.location.href));
+    navigationSource.current = "rise";
     const handlePopstate = () => {
+      navigationSource.current = "fade";
       handleView_s(viewFromUrl(window.location.href));
+      navigationSource.current = "rise";
     };
     window.addEventListener("popstate", handlePopstate);
     return () => {
@@ -334,6 +353,17 @@ export function App({ title }: AppProps) {
     // Unintuitively, searchState is a dependency in handleView. Otherwise,
     // going back/forth will use courses from the wrong term
   }, [handleView_s, searchState]);
+
+  const availability: ScheduleAvailability = !state?.buildings
+    ? "unavailable"
+    : state.errors.length > 0
+    ? "partial"
+    : "complete";
+  const explorerVisible =
+    buildingPanelVisible &&
+    explorerEnabled &&
+    buildingCode !== null &&
+    hasIndoorLayout(buildingCode);
 
   const currentTermId = getTermId(
     moment.currentTerm.year,
@@ -438,7 +468,7 @@ export function App({ title }: AppProps) {
             </a>
             .{" "}
             <a
-              href="https://github.com/SheepTester/ucsd-classrooms"
+              href="https://github.com/wenhaoquestion/ucsd-classrooms"
               className="link"
             >
               GitHub
@@ -483,7 +513,11 @@ export function App({ title }: AppProps) {
           } ${noticeVisible ? "date-time-panel-notice-visible" : ""}`}
           onClose={() => setShowDatePanel(false)}
         />
-        <div className="buildings-wrapper">
+        <div
+          className={`buildings-wrapper ${
+            explorerVisible ? "buildings-explorer-open" : ""
+          }`}
+        >
           <p
             className={`notice ${noticeVisible ? "notice-visible" : ""} ${
               datePanelVisible ? "notice-date-open" : ""
@@ -515,6 +549,7 @@ export function App({ title }: AppProps) {
                   building.code === scrollTo.building ? scrollTo : null
                 }
                 visible={!!state?.buildings && building.code in state.buildings}
+                explorer={explorerEnabled && hasIndoorLayout(building.code)}
               />
             ))}
           </div>
@@ -531,8 +566,12 @@ export function App({ title }: AppProps) {
           }
           room={room}
           rooms={state?.buildings?.[lastBuilding] ?? {}}
+          availability={availability}
           visible={buildingPanelVisible}
           rightPanelOpen={datePanelVisible}
+          explorerIntro={explorerIntro}
+          explorerEnabled={explorerEnabled}
+          onExplorerEnabled_s={setExplorerEnabled_s}
         />
       </MomentContext.Provider>
     </OnView.Provider>

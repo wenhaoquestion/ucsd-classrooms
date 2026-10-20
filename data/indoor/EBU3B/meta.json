@@ -1,0 +1,629 @@
+{
+  "$comment": "Hand-authored metadata for the EBU3B (CSE Building) indoor layout. Combined with trace.json by scripts/build-indoor.ts. Pixel coordinates refer to the 1000x773 CSE FloorMaps images listed in sources.",
+  "building": "EBU3B",
+  "name": "Computer Science and Engineering Building",
+  "geometryStatus": "source-traced",
+  "provenance": "Traced from the UC San Diego CSE department's public floor maps (all five levels). Room positions and shapes follow those diagrams; they are not surveyed, and the plans give no scale or floor heights.",
+  "transform": {
+    "originPx": [
+      480,
+      380
+    ],
+    "rotationDeg": 0,
+    "scale": 0.1,
+    "note": "Same transform for every floor: the five images share one pixel frame (compass rose, sculpture, and street labels sit on identical pixels, within about 1 px, on every level)."
+  },
+  "coordinateSystem": {
+    "units": "relative",
+    "description": "1 unit = 10 pixels of the 1000x773 CSE floor-map images. The maps have no scale bar, so units are not meters.",
+    "northDeg": 29.5,
+    "northNote": "Approximate, measured from the compass rose printed on each map: the S-to-N letters give 28.0 degrees and W-to-E give 31.0 degrees clockwise from page-up."
+  },
+  "storyHeight": 2.4,
+  "storyHeightNote": "Placeholder chosen for legibility. The sources contain no elevations or floor heights.",
+  "sources": [
+    {
+      "id": "CSE-FLOORMAPS",
+      "title": "FloorMaps | Computer Science",
+      "url": "https://cse.ucsd.edu/node/1529",
+      "publisher": "UC San Diego Computer Science and Engineering Department",
+      "building": "EBU3B",
+      "floors": [
+        "B",
+        "L1",
+        "L2",
+        "L3",
+        "L4"
+      ],
+      "accessed": "2026-10-19",
+      "revision": "The page shows no publication or update date.",
+      "notes": [
+        "Index page listing the five floor-map images (alt text Basement, Level 1-4)."
+      ]
+    },
+    {
+      "id": "CSE-MAP-B",
+      "title": "Building EBU3B, Computer Science and Engineering Department (CSE): Basement",
+      "url": "https://cse.ucsd.edu/sites/default/files/maps/260909_CSE_EBU3_ALLLEVELS_MVH_Part%2011.jpg",
+      "publisher": "UC San Diego Computer Science and Engineering Department",
+      "building": "EBU3B",
+      "floors": [
+        "B"
+      ],
+      "imageRef": "260909_CSE_EBU3_ALLLEVELS_MVH_Part 11.jpg (1000x773 JPEG, 46309 bytes, SHA-256 184af88c0a321ba1fb6c7e5862aaeea51328ffc71dd5a6ccb477e2d3bbb570d4)",
+      "accessed": "2026-10-19",
+      "orientation": "Compass rose; north is about 29.5 degrees clockwise from page-up.",
+      "scale": "None shown.",
+      "revision": "No date on the image. The meaning of the filename prefix '260909' is unknown.",
+      "notes": [
+        "Room colors follow the legend: offices, conference/seminar rooms, labs/other.",
+        "B210 is labeled 'CSE Data Center', consistent with the CSE 2026 Renovation page describing a new basement server room completed in October 2025.",
+        "There is no room B220 on this map.",
+        "A large shaded region labeled 'Warren College' adjoins the building to the southwest; no rooms are drawn in it."
+      ]
+    },
+    {
+      "id": "CSE-MAP-L1",
+      "title": "Building EBU3B, Computer Science and Engineering Department (CSE): Level 1",
+      "url": "https://cse.ucsd.edu/sites/default/files/maps/260909_CSE_EBU3_ALLLEVELS_MVH_Part%2012_0.jpg",
+      "publisher": "UC San Diego Computer Science and Engineering Department",
+      "building": "EBU3B",
+      "floors": [
+        "L1"
+      ],
+      "imageRef": "260909_CSE_EBU3_ALLLEVELS_MVH_Part 12_0.jpg (1000x773 JPEG, 67309 bytes, SHA-256 3839c68483cd514c69c222b467d48a597d44fdb9e5980a01cb39c3df786fc4d4)",
+      "accessed": "2026-10-19",
+      "orientation": "Compass rose; north is about 29.5 degrees clockwise from page-up.",
+      "scale": "None shown.",
+      "revision": "No date on the image. The '_0' suffix suggests the file was replaced at least once.",
+      "notes": [
+        "Only the east (12xx) wing is detailed. The west wing is a shaded region labeled 'Warren College' with no rooms.",
+        "Several offices have pale fills and small labels; their outlines are convex hulls of the traced fill and are approximate.",
+        "Doors 1-4 are marked by text labels only; the exact door positions are not drawn.",
+        "The CSE 2026 Renovation page says the first-floor east wing is being repositioned ('Coming in Spring 2026'), so this level may change."
+      ]
+    },
+    {
+      "id": "CSE-MAP-L2",
+      "title": "Building EBU3B, Computer Science and Engineering Department (CSE): Level 2",
+      "url": "https://cse.ucsd.edu/sites/default/files/maps/260909_CSE_EBU3_ALLLEVELS_MVH_Part%2013.jpg",
+      "publisher": "UC San Diego Computer Science and Engineering Department",
+      "building": "EBU3B",
+      "floors": [
+        "L2"
+      ],
+      "imageRef": "260909_CSE_EBU3_ALLLEVELS_MVH_Part 13.jpg (1000x773 JPEG, 82578 bytes, SHA-256 dfc38d2ee7faf37cd91fe7e35373639d443271aa5c4d6dec23e4bd9eb9e9b211)",
+      "accessed": "2026-10-19",
+      "orientation": "Compass rose; north is about 29.5 degrees clockwise from page-up.",
+      "scale": "None shown.",
+      "revision": "No date on the image."
+    },
+    {
+      "id": "CSE-MAP-L3",
+      "title": "Building EBU3B, Computer Science and Engineering Department (CSE): Level 3",
+      "url": "https://cse.ucsd.edu/sites/default/files/maps/260909_CSE_EBU3_ALLLEVELS_MVH_Part%2014.jpg",
+      "publisher": "UC San Diego Computer Science and Engineering Department",
+      "building": "EBU3B",
+      "floors": [
+        "L3"
+      ],
+      "imageRef": "260909_CSE_EBU3_ALLLEVELS_MVH_Part 14.jpg (1000x773 JPEG, 78669 bytes, SHA-256 0a776378dd7cc133619b9f7a3cdd91fd6e7385f71fd5f709ea0a1ca4e9720f1e)",
+      "accessed": "2026-10-19",
+      "orientation": "Compass rose; north is about 29.5 degrees clockwise from page-up.",
+      "scale": "None shown.",
+      "revision": "No date on the image."
+    },
+    {
+      "id": "CSE-MAP-L4",
+      "title": "Building EBU3B, Computer Science and Engineering Department (CSE): Level 4",
+      "url": "https://cse.ucsd.edu/sites/default/files/maps/260909_CSE_EBU3_ALLLEVELS_MVH_Part%2015.jpg",
+      "publisher": "UC San Diego Computer Science and Engineering Department",
+      "building": "EBU3B",
+      "floors": [
+        "L4"
+      ],
+      "imageRef": "260909_CSE_EBU3_ALLLEVELS_MVH_Part 15.jpg (1000x773 JPEG, 78146 bytes, SHA-256 0ba87fcd00fbaee9c04f23fefcbf5cb6e1e6eb9a787a6a4cebc4a05ef8b8549a)",
+      "accessed": "2026-10-19",
+      "orientation": "Compass rose; north is about 29.5 degrees clockwise from page-up.",
+      "scale": "None shown.",
+      "revision": "No date on the image.",
+      "notes": [
+        "A grey 'Balcony' area east of 4262 is not modeled as a room."
+      ]
+    },
+    {
+      "id": "CSE-RENOVATION",
+      "title": "2026 Renovation | Computer Science",
+      "url": "https://cse.ucsd.edu/2026renovation",
+      "publisher": "UC San Diego Computer Science and Engineering Department",
+      "building": "EBU3B",
+      "floors": [
+        "B",
+        "L1"
+      ],
+      "accessed": "2026-10-19",
+      "revision": "No page date. It says the basement work was 'Complete in October 2025' and the overall project is 'Coming in Spring 2026'.",
+      "notes": [
+        "Context for how current the maps are. It contains no geometry."
+      ]
+    },
+    {
+      "id": "REGISTRAR-SCHEDULES",
+      "title": "Classroom schedule data used by this app (classrooms-FA25/WI26/SP26/FA26.txt)",
+      "url": "https://sheeptester.github.io/uxdy/data/classrooms-FA26.txt",
+      "publisher": "SheepTester/uxdy scrape of the UC San Diego Schedule of Classes",
+      "building": "EBU3B",
+      "floors": [],
+      "accessed": "2026-10-19",
+      "notes": [
+        "Evidence for which room keys the registrar schedules in EBU3B. It establishes room identity, not location.",
+        "Keys found, FA25-FA26: 1113, 1117, 1124, 1202, 2109, 2154, 3109, 3219, 4140, 4217, 4258, B240, B250, B260, B270."
+      ]
+    }
+  ],
+  "floors": [
+    {
+      "id": "B",
+      "label": "Basement",
+      "shortLabel": "B",
+      "trace": "B",
+      "source": "CSE-MAP-B",
+      "story": -1
+    },
+    {
+      "id": "L1",
+      "label": "Level 1",
+      "shortLabel": "1",
+      "trace": "L1",
+      "source": "CSE-MAP-L1",
+      "story": 0
+    },
+    {
+      "id": "L2",
+      "label": "Level 2",
+      "shortLabel": "2",
+      "trace": "L2",
+      "source": "CSE-MAP-L2",
+      "story": 1
+    },
+    {
+      "id": "L3",
+      "label": "Level 3",
+      "shortLabel": "3",
+      "trace": "L3",
+      "source": "CSE-MAP-L3",
+      "story": 2
+    },
+    {
+      "id": "L4",
+      "label": "Level 4",
+      "shortLabel": "4",
+      "trace": "L4",
+      "source": "CSE-MAP-L4",
+      "story": 3
+    }
+  ],
+  "legendTypes": {
+    "office": "office",
+    "conference": "conference",
+    "lab": "lab",
+    "mixed": "unknown"
+  },
+  "rooms": {
+    "B210": {
+      "name": "CSE Data Center",
+      "type": "service"
+    },
+    "B225": {
+      "name": "Student Org Room"
+    },
+    "B240": {
+      "scheduleKey": "B240"
+    },
+    "B250": {
+      "scheduleKey": "B250"
+    },
+    "B260": {
+      "scheduleKey": "B260"
+    },
+    "B270": {
+      "scheduleKey": "B270"
+    },
+    "1202": {
+      "name": "Conference Room",
+      "scheduleKey": "1202"
+    },
+    "1204": {
+      "name": "Kitchen",
+      "type": "service"
+    },
+    "1223": {
+      "name": "Conference Room"
+    },
+    "1241": {
+      "name": "Conference Room"
+    },
+    "1242": {
+      "name": "Multipurpose Room"
+    },
+    "1244": {
+      "name": "Conference Room"
+    },
+    "2109": {
+      "name": "Conference Room",
+      "scheduleKey": "2109"
+    },
+    "2115": {
+      "name": "Lab"
+    },
+    "2123": {
+      "name": "Lab"
+    },
+    "2127": {
+      "name": "Lab"
+    },
+    "2154": {
+      "name": "Seminar Room",
+      "scheduleKey": "2154"
+    },
+    "2209": {
+      "name": "Lab"
+    },
+    "2217": {
+      "name": "Conference Room"
+    },
+    "2231": {
+      "name": "Conference Room"
+    },
+    "2266": {
+      "name": "CSE Chair's Office"
+    },
+    "3109": {
+      "name": "Conference Room",
+      "scheduleKey": "3109"
+    },
+    "3113": {
+      "name": "Lactation Room",
+      "type": "other"
+    },
+    "3123": {
+      "name": "Lab"
+    },
+    "3127": {
+      "name": "Lab"
+    },
+    "3154": {
+      "name": "Chez Bob",
+      "type": "other"
+    },
+    "3205": {
+      "name": "Lab"
+    },
+    "3217": {
+      "name": "Conference Room"
+    },
+    "3219": {
+      "name": "Lab",
+      "scheduleKey": "3219"
+    },
+    "4109": {
+      "name": "Conference Room"
+    },
+    "4111": {
+      "name": "Lab"
+    },
+    "4113": {
+      "name": "Lab"
+    },
+    "4123": {
+      "name": "Lab"
+    },
+    "4127": {
+      "name": "Lab"
+    },
+    "4140": {
+      "name": "Conference Room",
+      "scheduleKey": "4140"
+    },
+    "4209": {
+      "name": "Lab"
+    },
+    "4217": {
+      "name": "Conference Room",
+      "scheduleKey": "4217"
+    },
+    "4219": {
+      "name": "Lab"
+    },
+    "4221": {
+      "name": "Lab"
+    },
+    "4223": {
+      "name": "Lab"
+    },
+    "4258": {
+      "name": "Seminar Room",
+      "scheduleKey": "4258"
+    },
+    "4262": {
+      "name": "Conference Room"
+    }
+  },
+  "scheduleKeyNote": "Schedule keys are set only for room numbers that appear in EBU3B registrar data (FA25-FA26) and are printed identically on the floor map.",
+  "notDetailed": {
+    "B": "Shown shaded and labeled 'Warren College', with no rooms. Its shape resembles the west wing drawn in detail on Levels 2-4, so it is drawn as part of the floor, but its contents are unknown.",
+    "L1": "Shown shaded and labeled 'Warren College', with no rooms. Its shape resembles the west wing drawn in detail on Levels 2-4, so it is drawn as part of the floor, but its contents are unknown."
+  },
+  "features": {
+    "B": [
+      {
+        "kind": "stairs",
+        "at": [
+          697,
+          55
+        ],
+        "label": "Stairs"
+      },
+      {
+        "kind": "stairs",
+        "at": [
+          690,
+          610
+        ],
+        "label": "Stairs"
+      },
+      {
+        "kind": "elevator",
+        "at": [
+          710,
+          520
+        ],
+        "label": "Elevators"
+      },
+      {
+        "kind": "restroom",
+        "at": [
+          605,
+          510
+        ],
+        "label": "Restrooms"
+      }
+    ],
+    "L1": [
+      {
+        "kind": "stairs",
+        "at": [
+          685,
+          75
+        ],
+        "label": "Stairs"
+      },
+      {
+        "kind": "stairs",
+        "at": [
+          642,
+          385
+        ],
+        "label": "Stairs"
+      },
+      {
+        "kind": "stairs",
+        "at": [
+          598,
+          532
+        ],
+        "label": "Stairs"
+      },
+      {
+        "kind": "elevator",
+        "at": [
+          695,
+          537
+        ],
+        "label": "Elevators"
+      },
+      {
+        "kind": "restroom",
+        "at": [
+          560,
+          537
+        ],
+        "label": "Restrooms"
+      },
+      {
+        "kind": "entrance",
+        "at": [
+          681,
+          135
+        ],
+        "label": "Door 4",
+        "note": "Placed at the 'Door 4' text label; the door itself is not drawn."
+      },
+      {
+        "kind": "entrance",
+        "at": [
+          681,
+          232
+        ],
+        "label": "Door 3",
+        "note": "Placed at the 'Door 3' text label; the door itself is not drawn."
+      },
+      {
+        "kind": "entrance",
+        "at": [
+          681,
+          392
+        ],
+        "label": "Door 2",
+        "note": "Placed at the 'Door 2' text label; the door itself is not drawn."
+      },
+      {
+        "kind": "entrance",
+        "at": [
+          778,
+          494
+        ],
+        "label": "Door 1",
+        "note": "Placed at the 'Door 1' text label; the door itself is not drawn."
+      }
+    ],
+    "L2": [
+      {
+        "kind": "stairs",
+        "at": [
+          697,
+          55
+        ],
+        "label": "Stairs"
+      },
+      {
+        "kind": "stairs",
+        "at": [
+          213,
+          660
+        ],
+        "label": "Stairs"
+      },
+      {
+        "kind": "stairs",
+        "at": [
+          625,
+          545
+        ],
+        "label": "Stairs"
+      },
+      {
+        "kind": "elevator",
+        "at": [
+          715,
+          555
+        ],
+        "label": "Elevators"
+      },
+      {
+        "kind": "restroom",
+        "at": [
+          555,
+          545
+        ],
+        "label": "Restrooms"
+      }
+    ],
+    "L3": [
+      {
+        "kind": "stairs",
+        "at": [
+          697,
+          55
+        ],
+        "label": "Stairs"
+      },
+      {
+        "kind": "stairs",
+        "at": [
+          213,
+          660
+        ],
+        "label": "Stairs"
+      },
+      {
+        "kind": "stairs",
+        "at": [
+          640,
+          615
+        ],
+        "label": "Stairs"
+      },
+      {
+        "kind": "elevator",
+        "at": [
+          715,
+          555
+        ],
+        "label": "Elevators"
+      },
+      {
+        "kind": "restroom",
+        "at": [
+          555,
+          545
+        ],
+        "label": "Restrooms"
+      }
+    ],
+    "L4": [
+      {
+        "kind": "stairs",
+        "at": [
+          697,
+          55
+        ],
+        "label": "Stairs"
+      },
+      {
+        "kind": "stairs",
+        "at": [
+          213,
+          660
+        ],
+        "label": "Stairs"
+      },
+      {
+        "kind": "stairs",
+        "at": [
+          640,
+          615
+        ],
+        "label": "Stairs"
+      },
+      {
+        "kind": "elevator",
+        "at": [
+          715,
+          555
+        ],
+        "label": "Elevators"
+      },
+      {
+        "kind": "restroom",
+        "at": [
+          555,
+          545
+        ],
+        "label": "Restrooms"
+      }
+    ]
+  },
+  "geo": {
+    "origin": [
+      10.75,
+      -190.11
+    ],
+    "rotationDeg": 50.0,
+    "unitsPerMeter": 0.8931,
+    "groundElevation": 107.8,
+    "caans": [
+      "6548"
+    ],
+    "note": "Fitted to the campus-map footprint (Level 2 outline, overlap 0.83): about 1.12 m per unit. The fit puts north about 50 degrees from page-up, not the 29.5 degrees of the maps' compass rose, so the rose looks inaccurate."
+  },
+  "knownUnmapped": [
+    {
+      "scheduleKey": "1113",
+      "reason": "Listed in registrar schedules, but the CSE Level 1 map details only the east (12xx) wing. The west wing is shaded with no rooms, so this room's position is not established."
+    },
+    {
+      "scheduleKey": "1117",
+      "reason": "Listed in registrar schedules, but the CSE Level 1 map details only the east (12xx) wing. The west wing is shaded with no rooms, so this room's position is not established."
+    },
+    {
+      "scheduleKey": "1124",
+      "reason": "Listed in registrar schedules, but the CSE Level 1 map details only the east (12xx) wing. The west wing is shaded with no rooms, so this room's position is not established."
+    }
+  ],
+  "notes": [
+    "Room numbers were read from the maps by a person; segmentation only suggested room outlines (see docs/indoor-geometry.md).",
+    "Floor heights, slab thicknesses, and exterior appearance are not established by any source.",
+    "The registrar code is EBU3B; the department calls the building 'CSE Building'. Schedules use EBU3B, which matches the map title 'BUILDING EBU3B'."
+  ]
+}

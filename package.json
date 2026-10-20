@@ -5,25 +5,34 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SheepTester/ucsd-classrooms.git"
+    "url": "git+https://github.com/wenhaoquestion/ucsd-classrooms.git"
   },
   "type": "module",
   "scripts": {
-    "build": "cp -a static/. dist/ && esbuild --bundle src/index.tsx --loader:.webp=file --loader:.svg=file --outdir=dist --minify && find dist/ -type f | sed 's/dist\\//https:\\/\\/sheeptester.github.io\\/ucsd-classrooms\\//' > dist/sitemap.txt",
-    "clean": "rm -rf dist/",
-    "dev": "esbuild --bundle src/index.tsx --loader:.webp=file --loader:.svg=file --outdir=static --servedir=static --sourcemap",
-    "lint": "eslint --flag unstable_native_nodejs_ts_config "
+    "build": "node scripts/build.mjs",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "dev": "node scripts/build.mjs --serve",
+    "lint": "eslint --flag unstable_native_nodejs_ts_config ",
+    "typecheck": "tsc --noEmit -p .",
+    "test": "esbuild --bundle tests/*.test.ts --platform=node --format=esm --outdir=.test-build --out-extension:.js=.mjs --log-level=warning --define:__LOCAL_INDOOR__=false && node --test \".test-build/*.test.mjs\"",
+    "validate:indoor": "esbuild --bundle scripts/validate-indoor.ts --platform=node --format=esm --outfile=.test-build/validate-indoor.mjs --log-level=warning --define:__LOCAL_INDOOR__=false && node .test-build/validate-indoor.mjs",
+    "indoor:build": "esbuild --bundle scripts/build-indoor.ts --platform=node --format=esm --outfile=.test-build/build-indoor.mjs --log-level=warning --define:__LOCAL_INDOOR__=false && node .test-build/build-indoor.mjs",
+    "campus:build": "esbuild --bundle scripts/build-campus.ts --platform=node --format=esm --outfile=.test-build/build-campus.mjs --log-level=warning --define:__LOCAL_INDOOR__=false && node .test-build/build-campus.mjs"
   },
   "dependencies": {
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "three": "0.186.1"
   },
   "devDependencies": {
+    "@types/node": "22.18.8",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
+    "@types/three": "0.186.0",
     "@typescript-eslint/parser": "^8.44.1",
     "esbuild": "^0.25.10",
     "eslint": "^9.36.0",
-    "eslint-plugin-react-hooks": "^5.2.0"
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "typescript": "5.9.2"
   }
 }

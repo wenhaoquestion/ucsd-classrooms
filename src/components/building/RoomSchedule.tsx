@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { RoomMeeting } from "../../lib/coursesToClassrooms";
 import { Day } from "../../lib/Day";
 import { getClassroomSeatMapSearchUrl } from "../../lib/classroomSeatMap";
@@ -18,19 +18,32 @@ export type RoomScheduleProps = {
   building: string;
   room: string;
   meetings: RoomMeeting[];
+  /** Extra context shown above the schedule, e.g. about the room's location. */
+  notice?: ReactNode;
+  /** Replaces the default message when no meetings are listed. */
+  emptyMessage?: ReactNode;
 };
-export function RoomSchedule({ building, room, meetings }: RoomScheduleProps) {
+export function RoomSchedule({
+  building,
+  room,
+  meetings,
+  notice,
+  emptyMessage,
+}: RoomScheduleProps) {
   const moment = useMoment();
   const [day, setDay] = useState<number | null>(null);
 
   if (meetings.length === 0) {
     return (
-      <div className="empty">
-        <p>
-          This room isn't used for any classes this week, as far as WebReg is
-          concerned.
-        </p>
-      </div>
+      <>
+        {notice && <div className="room-notice">{notice}</div>}
+        <div className="empty">
+          <p>
+            {emptyMessage ??
+              "This room isn't used for any classes this week, as far as WebReg is concerned."}
+          </p>
+        </div>
+      </>
     );
   }
 
@@ -62,6 +75,7 @@ export function RoomSchedule({ building, room, meetings }: RoomScheduleProps) {
 
   return (
     <div className="schedule">
+      {notice && <div className="room-notice">{notice}</div>}
       <div className="room-actions">
         <a
           href={getClassroomSeatMapSearchUrl(building, room)}

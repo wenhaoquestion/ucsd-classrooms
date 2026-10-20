@@ -1,0 +1,552 @@
+/* ---- Indoor 3D explorer ------------------------------------------------ */
+
+:root {
+  --explorer-bg: #0f1a26;
+  --explorer-bg-glow: #1d2f44;
+  --label-bg: rgba(12, 22, 34, 0.84);
+  --label-text: #fff;
+  --st-in-use: #35c95c;
+  --st-soon: #f2c230;
+  --st-no-class-now: #4aa8ff;
+  --st-listed: #8fb6e6;
+  --st-none-listed: #9eabba;
+  --st-unknown: #a5a5a5;
+  --focus: #ffcd00;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --explorer-bg: #e4ebf1;
+    --explorer-bg-glow: #f7fafc;
+    --label-bg: rgba(255, 255, 255, 0.92);
+    --label-text: #0b1a2a;
+    --st-in-use: #14a03a;
+    --st-soon: #d9a400;
+    --st-no-class-now: #1f7fe0;
+    --st-listed: #5f8fc8;
+    --st-none-listed: #8d9aaa;
+    --st-unknown: #8a8a8a;
+    --focus: #1866ba;
+  }
+}
+
+/* The shared WebGL canvas is moved into whichever stage is showing. It's
+transparent, so the stage background shows through. */
+.explorer-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+/* Map recedes while the explorer is open; the selected marker stays bright */
+.scroll-area {
+  transition: filter 0.4s;
+}
+.buildings-explorer-open .scroll-area {
+  filter: saturate(0.45) brightness(0.7);
+}
+@media (prefers-color-scheme: light) {
+  .buildings-explorer-open .scroll-area {
+    filter: saturate(0.45) brightness(0.9) contrast(0.85);
+  }
+}
+.buildings-explorer-open .building-btn:not(.selected) {
+  opacity: 0.45;
+}
+.buildings-explorer-open .building-btn.selected {
+  z-index: 1;
+  box-shadow: 0 0 0 3px #ffcd00, 0 0 16px rgba(255, 205, 0, 0.5);
+}
+
+.building-panel-content {
+  display: contents;
+}
+.building-panel.explorer-mode {
+  max-width: 1240px;
+  height: min(76vh, 800px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  background-color: transparent;
+  overflow: hidden;
+}
+.explorer-mode .building-panel-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: var(--modal);
+  border-radius: 0 15px 15px 0;
+  border-left: 1px solid var(--card-line);
+}
+/* The explorer toolbar has the close button */
+.explorer-mode .building-name .close {
+  visibility: hidden;
+}
+.explorer {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  border-radius: 15px 0 0 15px;
+  overflow: hidden;
+}
+.explorer-toolbar,
+.explorer-footer {
+  background-color: var(--modal);
+  flex: none;
+}
+.explorer-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 4px 4px 16px;
+  border-bottom: 1px solid var(--card-line);
+}
+.explorer-title {
+  flex: auto;
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.explorer-code {
+  font-family: var(--narrow);
+  font-size: 22px;
+}
+.explorer-name {
+  color: var(--secondary);
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.explorer-text-btn {
+  color: var(--link);
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  min-height: 36px;
+}
+.explorer-text-btn:hover {
+  background-color: var(--icon-button-hover);
+}
+.explorer-close {
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+}
+.explorer-close:hover {
+  background-color: var(--icon-button-hover);
+}
+.explorer-enable {
+  padding: 0 20px 10px;
+}
+
+.explorer-viewport {
+  position: relative;
+  flex: auto;
+  min-height: 0;
+  background: radial-gradient(
+      ellipse 70% 60% at 50% 45%,
+      var(--explorer-bg-glow),
+      var(--explorer-bg)
+    )
+    var(--explorer-bg);
+}
+.explorer-stage {
+  position: absolute;
+  inset: 0;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.explorer-labels {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.explorer-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 3px 5px;
+  border-radius: 5px;
+  background-color: var(--label-bg);
+  color: var(--label-text);
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+.explorer-labels:not(.explorer-labels-shown) .explorer-label,
+.explorer-label-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.explorer-room-label {
+  font-weight: normal;
+  opacity: 0.85;
+}
+.explorer-room-label.selectable {
+  pointer-events: auto;
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 1;
+  border: 1px solid var(--st-none-listed);
+}
+.explorer-room-label[data-glyph]:not([data-glyph=""])::before {
+  content: attr(data-glyph) " ";
+}
+.explorer-room-label[data-status="in-use"] {
+  border-color: var(--st-in-use);
+}
+.explorer-room-label[data-status="soon"] {
+  border-color: var(--st-soon);
+}
+.explorer-room-label[data-status="no-class-now"] {
+  border-color: var(--st-no-class-now);
+}
+.explorer-room-label[data-status="listed"] {
+  border-color: var(--st-listed);
+}
+.explorer-room-label[data-status="unknown"] {
+  border-style: dashed;
+}
+.explorer-label.hovered {
+  outline: 2px solid var(--label-text);
+}
+.explorer-label.selected {
+  background-color: var(--label-text);
+  color: var(--explorer-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.explorer-floor-tag {
+  pointer-events: auto;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--text);
+  font-family: var(--narrow);
+  font-weight: normal;
+  font-size: 13px;
+  text-shadow: 0 0 4px var(--explorer-bg), 0 0 2px var(--explorer-bg);
+}
+.explorer-feature-label {
+  font-size: 10px;
+  font-weight: normal;
+  opacity: 0.8;
+}
+.explorer-area-label {
+  background-color: transparent;
+  color: var(--secondary);
+  font-style: italic;
+  font-weight: normal;
+}
+
+.explorer-floors {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  /* Tall buildings scroll instead of running off the stage */
+  max-height: calc(100% - 20px);
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding: 2px;
+}
+.explorer-floor-btn {
+  flex: none;
+}
+.explorer-floor-btn,
+.explorer-view-btn {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 8px;
+  border-radius: 8px;
+  background-color: var(--modal);
+  box-shadow: var(--card-shadow-hover);
+  font-family: var(--narrow);
+  font-size: 15px;
+  transition: background-color 0.15s, color 0.15s;
+}
+.explorer-floor-btn:hover,
+.explorer-view-btn:hover {
+  background-color: var(--button-hover);
+  color: white;
+}
+.explorer-floor-btn[aria-pressed="true"],
+.explorer-view-btn[aria-pressed="true"] {
+  background-color: var(--button);
+  color: white;
+}
+.explorer-view-controls {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 4px;
+}
+.explorer-explode-btn {
+  font-family: var(--normal);
+  font-size: 13px;
+}
+.explorer-floors,
+.explorer-view-controls {
+  transition: opacity 0.3s;
+}
+.explorer:not(.explorer-intro-done) .explorer-floors,
+.explorer:not(.explorer-intro-done) .explorer-view-controls {
+  opacity: 0.4;
+}
+.explorer-selection {
+  position: absolute;
+  top: 10px;
+  left: 56px;
+  right: 10px;
+  pointer-events: none;
+  font-size: 13px;
+  color: var(--text);
+  text-shadow: 0 0 6px var(--explorer-bg), 0 0 3px var(--explorer-bg);
+}
+.explorer-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  color: var(--secondary);
+  background-color: var(--explorer-bg);
+}
+.explorer-loading::after {
+  content: "…";
+  animation: explorer-dots 1s steps(3, end) infinite;
+  display: inline-block;
+  width: 1ch;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+@keyframes explorer-dots {
+  from {
+    width: 0;
+  }
+  to {
+    width: 1.2ch;
+  }
+}
+
+.explorer-footer {
+  padding: 8px 12px 8px 16px;
+  border-top: 1px solid var(--card-line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 16px;
+  font-size: 12px;
+}
+.explorer-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: auto;
+}
+.explorer-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.explorer-swatch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 10px;
+  color: #0b1a2a;
+}
+[data-status="in-use"] > .explorer-swatch {
+  background-color: var(--st-in-use);
+}
+[data-status="soon"] > .explorer-swatch {
+  background-color: var(--st-soon);
+}
+[data-status="no-class-now"] > .explorer-swatch {
+  background-color: var(--st-no-class-now);
+}
+[data-status="listed"] > .explorer-swatch {
+  background-color: var(--st-listed);
+}
+[data-status="none-listed"] > .explorer-swatch {
+  background-color: var(--st-none-listed);
+}
+[data-status="unknown"] > .explorer-swatch {
+  border: 1px dashed var(--st-unknown);
+  color: var(--text);
+}
+.explorer-legend-note {
+  color: var(--secondary);
+}
+.explorer-provenance .explorer-text-btn {
+  font-size: 12px;
+  min-height: 0;
+  padding: 4px 6px;
+}
+.explorer-sources {
+  max-height: 30vh;
+  overflow: auto;
+  padding: 6px 0;
+  color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.explorer-sources ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.room-section-title {
+  font-family: var(--narrow);
+  font-weight: normal;
+  font-size: 15px;
+  color: var(--secondary);
+  margin: 14px 20px 8px;
+}
+.room-section:first-child .room-section-title {
+  margin-top: 0;
+}
+.room-section-note {
+  margin: -4px 20px 8px;
+  color: var(--secondary);
+  font-size: 12px;
+}
+.room.unlisted .current-meeting {
+  font-family: var(--normal);
+}
+.room-highlighted {
+  box-shadow: 0 0 0 2px var(--link);
+}
+.room-notice {
+  margin: 10px 10px 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: var(--field);
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.explorer button:focus-visible,
+.explorer a:focus-visible,
+.room:focus-visible,
+.building-name .icon-btn:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 950px) {
+  .building-panel.explorer-mode {
+    grid-template-columns: minmax(0, 1fr) 320px;
+  }
+}
+@media (max-width: 690px) {
+  .building-panel.explorer-mode {
+    height: 86vh;
+    height: 86dvh;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 60fr) minmax(0, 40fr);
+  }
+  .explorer {
+    border-radius: 15px 15px 0 0;
+  }
+  .explorer-mode .building-panel-content {
+    border-radius: 0;
+    border-left: none;
+    border-top: 1px solid var(--card-line);
+  }
+  .explorer-name {
+    display: none;
+  }
+  .explorer-footer {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+  /* One scrollable line so the stage keeps its height */
+  .explorer-legend {
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    white-space: nowrap;
+  }
+  .explorer-legend > li {
+    flex: none;
+  }
+  .explorer-floor-btn,
+  .explorer-view-btn {
+    min-width: 34px;
+    height: 34px;
+  }
+  /* Six floor buttons don't fit vertically in a short stage */
+  .explorer-floors {
+    top: 8px;
+    left: 8px;
+    transform: none;
+    flex-direction: row;
+    gap: 3px;
+    max-height: none;
+    max-width: calc(100% - 16px);
+    overflow-x: auto;
+  }
+  .explorer-view-controls {
+    right: 8px;
+    bottom: 8px;
+    gap: 3px;
+  }
+  .explorer-selection {
+    top: 48px;
+    left: 10px;
+    font-size: 12px;
+  }
+  .room-section-title,
+  .room-section-note {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+@media (pointer: coarse) {
+  .explorer-floor-btn,
+  .explorer-view-btn {
+    min-width: 40px;
+    height: 40px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-area,
+  .explorer-label,
+  .explorer-floors,
+  .explorer-view-controls {
+    transition: none;
+  }
+  .explorer-loading::after {
+    animation: none;
+    width: auto;
+  }
+}

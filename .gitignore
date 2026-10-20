@@ -1,2 +1,17 @@
 /node_modules/
 /dist/
+/.test-build/
+/static/index.js
+/static/index.css
+/static/chunks/
+/static/index.js.map
+/static/index.css.map
+/static/map-*.webp
+/static/material-*.svg
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+/static/indoor/local/
+/local/

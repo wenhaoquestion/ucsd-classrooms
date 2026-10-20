@@ -1,4 +1,11 @@
-import { CSSProperties, ReactNode, Ref, useContext } from "react";
+import {
+  CSSProperties,
+  FocusEventHandler,
+  MouseEventHandler,
+  ReactNode,
+  Ref,
+  useContext,
+} from "react";
 import {
   BackHandler,
   OnView,
@@ -62,6 +69,13 @@ export type LinkProps = {
   style?: CSSProperties;
   elemRef?: Ref<HTMLAnchorElement>;
   children?: ReactNode;
+  title?: string;
+  "aria-label"?: string;
+  "aria-current"?: "page" | "true";
+  onMouseEnter?: MouseEventHandler<HTMLAnchorElement>;
+  onMouseLeave?: MouseEventHandler<HTMLAnchorElement>;
+  onFocus?: FocusEventHandler<HTMLAnchorElement>;
+  onBlur?: FocusEventHandler<HTMLAnchorElement>;
 };
 export function Link({
   view,
@@ -71,6 +85,7 @@ export function Link({
   style,
   children,
   elemRef,
+  ...rest
 }: LinkProps) {
   const moment = useMoment();
   const onView = useContext(OnView);
@@ -79,6 +94,7 @@ export function Link({
     : null;
   return (
     <a
+      {...rest}
       href={viewWithTerm ? viewToUrl(viewWithTerm).toString() : undefined}
       className={`internal-link ${className}`}
       style={style}

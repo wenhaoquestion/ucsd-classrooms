@@ -16,6 +16,8 @@ type BuildingButtonProps = {
   selected: boolean;
   scrollTarget: { init: boolean } | null;
   visible: boolean;
+  /** Whether selecting opens the taller 3D explorer panel. */
+  explorer: boolean;
 };
 
 export function BuildingButton({
@@ -24,6 +26,7 @@ export function BuildingButton({
   selected,
   scrollTarget,
   visible,
+  explorer,
 }: BuildingButtonProps) {
   const moment = useMoment();
 
@@ -37,7 +40,14 @@ export function BuildingButton({
           const windowHeight = window.innerHeight;
           const panelHeight = scrollTarget.init
             ? 0
-            : windowHeight * (windowWidth <= 690 ? 0.7 : 0.6);
+            : windowHeight *
+              (explorer
+                ? windowWidth <= 690
+                  ? 0.82
+                  : 0.74
+                : windowWidth <= 690
+                ? 0.7
+                : 0.6);
           const { left, top, width, height } = button.getBoundingClientRect();
           button.closest(".buildings")?.scrollBy({
             left: left + (-windowWidth + width) / 2,
@@ -47,7 +57,7 @@ export function BuildingButton({
         });
       }
     },
-    [scrollTarget]
+    [scrollTarget, explorer]
   );
 
   const { x, y } = latLongToPixel(building.location);
