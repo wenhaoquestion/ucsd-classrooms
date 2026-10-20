@@ -16,28 +16,8 @@ export class IndoorLoadError extends Error {
 
 const cache = new Map<string, Promise<IndoorIndex | null>>();
 
-let localIndex: Promise<Set<string>> | null = null;
-
-/**
- * Codes with local-only Facilities layouts in `static/indoor/local/` (git
- * ignored, excluded from production builds). Always empty in production.
- */
-function getLocalIndex(): Promise<Set<string>> {
-  if (!__LOCAL_INDOOR__) {
-    return Promise.resolve(new Set());
-  }
-  localIndex ??= fetch(new URL("indoor/local/index.json", document.baseURI))
-    .then((response) => (response.ok ? response.json() : { buildings: [] }))
-    .then((data: { buildings?: string[] }) => new Set(data.buildings ?? []))
-    .catch(() => new Set<string>());
-  return localIndex;
-}
-
 async function load(building: string): Promise<IndoorIndex | null> {
-  const local = (await getLocalIndex()).has(building);
-  const entry = local
-    ? { file: `indoor/local/${building}.json`, status: "facilities-local" as const }
-    : INDOOR_MANIFEST[building];
+  const entry = INDOOR_MANIFEST[building];
   if (!entry) {
     return null;
   }

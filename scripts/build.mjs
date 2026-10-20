@@ -33,8 +33,6 @@ const options = {
   loader: { ".webp": "file", ".svg": "file" },
   outdir: serve ? "static" : "dist",
   metafile: !serve,
-  // Local-only indoor layouts (static/indoor/local/) load in dev builds only
-  define: { __LOCAL_INDOOR__: String(serve) },
 };
 
 if (serve) {
@@ -44,12 +42,9 @@ if (serve) {
   console.log(`Serving on http://localhost:${port}/`);
 } else {
   rmSync("dist", { recursive: true, force: true });
-  // static/indoor/local/ holds local-testing data that must never be published
-  const localData = join("static", "indoor", "local");
   cpSync("static", "dist", {
     recursive: true,
     filter: (source) =>
-      !source.startsWith(localData) &&
       !/(^|[\\/])(index\.(js|css)(\.map)?|chunks|map-[A-Z0-9]+\.webp|material-.*-[A-Z0-9]+\.svg)$/.test(source),
   });
   const result = await esbuild.build({ ...options, minify: true });

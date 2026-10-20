@@ -4,7 +4,7 @@ Explore UC San Diego classrooms, check scheduled availability, and browse campus
 
 **[Open the website](https://wenhaoquestion.github.io/ucsd-classrooms/)** · **[Explore EBU3B in 3D](https://wenhaoquestion.github.io/ucsd-classrooms/?building=EBU3B)** · **[Indoor geometry documentation](docs/indoor-geometry.md)**
 
-基于 UCSD 课程表的教室查询工具，支持校园地图、课程与教师搜索、3D 楼宇外观，以及 EBU3B（CSE）的室内浏览。
+基于 UCSD 课程表的教室查询工具，支持校园地图、课程与教师搜索、3D 楼宇外观，以及 77 栋楼宇的室内布局与楼层信息。
 
 ![UCSD classroom schedules and campus map](static/open-graph.png)
 
@@ -15,8 +15,8 @@ Explore UC San Diego classrooms, check scheduled availability, and browse campus
 - **Course and instructor search:** look up meeting locations, course times, and instructor schedules.
 - **Quarter calendar:** browse academic terms, week numbers, and dates. Times use Pacific Time regardless of your browser's time zone.
 - **Shareable links:** link directly to buildings, rooms, courses, instructors, and dates.
-- **3D building explorer:** inspect campus building exteriors, nearby buildings, floor controls, and classroom counts. Buildings with public room geometry, currently EBU3B, also support room selection and schedule activity colors.
-- **EBU3B indoor map:** browse five levels with 300 traced rooms and open schedules for mapped classrooms.
+- **3D building explorer:** inspect campus building exteriors, nearby buildings, floor controls, and classroom counts. Buildings with room geometry support room selection and schedule activity colors.
+- **Indoor layouts:** published Facilities data covers 77 building codes and 9,697 room records. Where plans provide only a floor listing, classrooms stay in the floor's room list instead of receiving an invented position.
 - **Room-list fallback:** schedules remain accessible when 3D is disabled or WebGL is unavailable. The browser remembers your 3D preference.
 
 ## Try it
@@ -77,6 +77,7 @@ When deploying a different fork, update the site URL in `scripts/build.mjs`, the
 | `src/lib/indoor/` | Layout schema, loading, geometry validation, and schedule mapping |
 | `data/indoor/EBU3B/` | Source metadata, room labels, and traced floor geometry |
 | `static/indoor/` | Runtime layouts fetched when a mapped building opens |
+| `static/indoor/facilities/` | Published Facilities layouts and their building index |
 | `static/campus/` | Public campus-map footprints and ground/roof elevations |
 | `scripts/` | Cross-platform build and indoor-data tooling |
 | `tools/indoor-trace/` | Python helpers for tracing public floor maps |
@@ -89,9 +90,8 @@ The frontend uses **React 19, TypeScript, Three.js, and esbuild**. The 3D scene 
 
 - **Schedules:** fetched from [SheepTester's public classroom data](https://sheeptester.github.io/uxdy/data/) by academic term. This repository does not run the schedule scraper. The interface displays data refresh information; availability reflects listed classes, not live occupancy or room reservations.
 - **Campus exteriors:** public campus-map data supplies 585 footprint parts and matches 93 registrar building codes. Exterior-only views estimate floor counts and group classrooms by their room numbers; they do not invent room positions. TASB currently has no matching footprint.
-- **Published indoor coverage:** EBU3B is the only building with published room-level geometry: levels B, 1, 2, 3, and 4, with 300 traced rooms. Twelve of the fifteen room keys found in the sampled FA25–FA26 schedules are placed. Rooms 1113, 1117, and 1124 remain searchable in the room list because their locations are not detailed on the source plans.
-- **Geometry:** traced from the CSE department's public floor maps. Relative positions follow those maps; dimensions, vertical spacing, and floor heights are illustrative. This is not a surveyed building model.
-- **Local preview differences:** optional Facilities layouts under `static/indoor/local/` are for local testing only. They and the `local/` tools/cache are git-ignored, excluded from production builds, and disabled in the production bundle. A fresh clone or the live website uses public room layouts and exterior shells, so it may show less indoor detail than a local preview containing those files.
+- **Published indoor coverage:** 77 Facilities layouts are included in the repository and production build, with 9,697 room records. Data loads only when a building opens. Facilities layouts take priority over the original EBU3B trace, matching the completed preview; the original 300-room CSE trace remains available in the source data.
+- **Geometry:** Facilities room outlines are converted from floor plans, scaled from listed room areas, and fitted to campus footprints. Some rooms have only a floor assignment. Vertical spacing and estimated heights are illustrative; these are not surveyed building models. Source references and conversion notes remain attached to each layout.
 
 See [Indoor geometry and the 3D building explorer](docs/indoor-geometry.md) for source links, known gaps, and instructions for adding another building. The optional tracing helpers require Python 3, Pillow, NumPy, and SciPy; running the website does not.
 

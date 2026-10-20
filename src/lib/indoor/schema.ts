@@ -43,9 +43,8 @@ export type Confidence = "direct" | "traced" | "approximate" | "unknown";
 
 /**
  * - `source-traced`: geometry was traced from cited public sources.
- * - `facilities-local`: converted from UCSD Facilities floor plans for local
- *   testing only. These files live in the git-ignored `static/indoor/local/`,
- *   load only in development builds, and are never published.
+ * - `facilities-plan`: converted from UCSD Facilities floor plans. Published
+ *   layouts live in `static/indoor/facilities/` and load on demand.
  * - `exterior-shell`: generated in the browser from the campus map's
  *   footprint and height. Floors are estimated and there are no rooms;
  *   classrooms are assigned to floors by room number only.
@@ -54,13 +53,13 @@ export type Confidence = "direct" | "traced" | "approximate" | "unknown";
  */
 export type GeometryStatus =
   | "source-traced"
-  | "facilities-local"
+  | "facilities-plan"
   | "exterior-shell"
   | "schematic-demo";
 
 export const GEOMETRY_STATUSES: readonly GeometryStatus[] = [
   "source-traced",
-  "facilities-local",
+  "facilities-plan",
   "exterior-shell",
   "schematic-demo",
 ];

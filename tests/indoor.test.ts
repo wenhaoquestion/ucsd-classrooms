@@ -9,7 +9,7 @@ import {
   pointInPolygon,
   selfIntersections,
 } from "../src/lib/indoor/geometry";
-import { INDOOR_MANIFEST } from "../src/lib/indoor/manifest";
+import { SOURCE_LAYOUTS } from "../src/lib/indoor/manifest";
 import {
   computeCoverage,
   indexIndoorBuilding,
@@ -313,8 +313,8 @@ describe("geometry helpers", () => {
   });
 });
 
-describe("EBU3B layout", () => {
-  const file = INDOOR_MANIFEST.EBU3B.file;
+describe("EBU3B source-traced layout", () => {
+  const file = SOURCE_LAYOUTS.EBU3B.file;
   const data = JSON.parse(readFileSync(`static/${file}`, "utf8")) as IndoorBuilding;
 
   it("validates without errors", () => {

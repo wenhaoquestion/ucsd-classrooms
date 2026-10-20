@@ -1,4 +1,5 @@
 import campusCodes from "./campusCodes.json";
+import facilitiesIndex from "../../../static/indoor/facilities/index.json";
 import { GeometryStatus } from "./schema";
 
 export type IndoorManifestEntry = {
@@ -15,8 +16,22 @@ export type IndoorManifestEntry = {
  *
  * `npm run validate:indoor` checks that this list matches `static/indoor/`.
  */
-export const INDOOR_MANIFEST: Record<string, IndoorManifestEntry> = {
+export const SOURCE_LAYOUTS: Record<string, IndoorManifestEntry> = {
   EBU3B: { file: "indoor/EBU3B.json", status: "source-traced" },
+};
+
+export const FACILITIES_LAYOUTS: Record<string, IndoorManifestEntry> =
+  Object.fromEntries(
+    facilitiesIndex.buildings.map((code) => [
+      code,
+      { file: `indoor/facilities/${code}.json`, status: "facilities-plan" },
+    ])
+  );
+
+/** Facilities layouts take precedence, matching the completed local preview. */
+export const INDOOR_MANIFEST: Record<string, IndoorManifestEntry> = {
+  ...SOURCE_LAYOUTS,
+  ...FACILITIES_LAYOUTS,
 };
 
 /** Campus-map building numbers for each registrar code (`npm run campus:build`). */

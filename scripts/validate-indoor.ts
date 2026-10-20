@@ -2,10 +2,9 @@
 // manifest in src/lib/indoor/manifest.ts lists exactly those files.
 //
 //   npm run validate:indoor
-//   npm run validate:indoor -- --local   (also the local-only static/indoor/local/)
 
 import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { INDOOR_MANIFEST } from "../src/lib/indoor/manifest";
+import { FACILITIES_LAYOUTS, SOURCE_LAYOUTS } from "../src/lib/indoor/manifest";
 import { indexIndoorBuilding } from "../src/lib/indoor/roomMapping";
 import { IndoorBuilding } from "../src/lib/indoor/schema";
 import { validateIndoorBuilding } from "../src/lib/indoor/validate";
@@ -22,16 +21,19 @@ const fail = (message: string) => {
 };
 
 const files = new Set(
-  ["static/indoor", "static/indoor/schematic"]
+  ["static/indoor", "static/indoor/facilities", "static/indoor/schematic"]
     .filter((dir) => existsSync(dir))
     .flatMap((dir) =>
       readdirSync(dir)
-        .filter((name) => name.endsWith(".json"))
+        .filter((name) => name.endsWith(".json") && name !== "index.json")
         .map((name) => `${dir.replace(/^static\//, "")}/${name}`)
     )
 );
 
-for (const [code, entry] of Object.entries(INDOOR_MANIFEST)) {
+for (const [code, entry] of [
+  ...Object.entries(SOURCE_LAYOUTS),
+  ...Object.entries(FACILITIES_LAYOUTS),
+]) {
   if (!knownBuildings.has(code)) {
     fail(`${code}: not a building code in buildings.json`);
   }
@@ -69,29 +71,6 @@ for (const file of files) {
   fail(`static/${file} is not listed in the manifest`);
 }
 
-// Local-only layouts aren't in the manifest; they just have to be valid
-const localDir = "static/indoor/local";
-if (process.argv.includes("--local") && existsSync(localDir)) {
-  for (const name of readdirSync(localDir).filter((name) => /^[A-Z0-9]+\.json$/.test(name))) {
-    const code = name.slice(0, -5);
-    const data: unknown = JSON.parse(readFileSync(`${localDir}/${name}`, "utf8"));
-    const { ok, issues } = validateIndoorBuilding(data, code);
-    const errors = issues.filter((issue) => issue.level === "error");
-    for (const issue of errors.slice(0, 5)) {
-      console.log(`ERROR ${code} ${issue.path}: ${issue.message}`);
-    }
-    if (!ok) {
-      fail(`local ${code}: validation failed (${errors.length} errors)`);
-      continue;
-    }
-    const index = indexIndoorBuilding(data as IndoorBuilding);
-    console.log(
-      `local ${code}: ok (${index.roomsById.size} rooms, ${index.roomsByScheduleKey.size} placed and ${
-        index.unplacedByKey.size
-      } unplaced schedule rooms, ${issues.length - errors.length} warnings)`
-    );
-  }
-}
 if (failed) {
   process.exit(1);
 }

@@ -13,8 +13,8 @@ the best data available:
 
 | Level | `geometryStatus` | Where it comes from | Published? |
 | --- | --- | --- | --- |
-| Rooms traced from public plans | `source-traced` | `static/indoor/<CODE>.json`, listed in `INDOOR_MANIFEST` | yes |
-| Rooms from UCSD Facilities plans | `facilities-local` | `static/indoor/local/<CODE>.json` | **no**: local testing only |
+| Rooms traced from public plans | `source-traced` | `static/indoor/<CODE>.json`, listed in `SOURCE_LAYOUTS` | yes |
+| Rooms from UCSD Facilities plans | `facilities-plan` | `static/indoor/facilities/<CODE>.json` | yes |
 | Exterior shell | `exterior-shell` | generated in the browser from `static/campus/buildings.json` | yes |
 
 - **Exterior shells** extrude the building's campus-map footprint parts. Floors
@@ -45,17 +45,15 @@ building numbers, matched by the building's map point). The query URLs are at
 the top of `scripts/build-campus.ts`. 93 registrar codes match; of the
 buildings with classes, only TASB (new) has no footprint yet.
 
-### Local-only Facilities layouts
+### Facilities layouts
 
 UCSD Facilities' building viewer (`facilities.ucsd.edu/Buildings/Viewer/`)
 shows every floor with room outlines, room numbers, areas and room-use codes.
-Its `robots.txt` disallows automated access and it states no license, so its
-data is used **only for local testing** until UCSD gives permission:
-
-- Converted layouts go in `static/indoor/local/`, which is git-ignored and
-  skipped by `npm run build`. They load only in dev builds
-  (`__LOCAL_INDOOR__`), and the explorer labels them "UCSD Facilities floor
-  plans (local testing only)".
+- Converted layouts are committed in `static/indoor/facilities/` and included
+  in production builds. `index.json` registers 77 building codes in
+  `FACILITIES_LAYOUTS`. The combined `INDOOR_MANIFEST` prefers these layouts
+  over source-traced alternatives, matching the completed preview. The
+  explorer labels them "UCSD Facilities floor plans".
 - The fetch and conversion scripts, the cached pages and the code-to-building
   key table live in the git-ignored `local/fis-tools/` and `local/fis-cache/`.
   The fetcher is sequential with 4 s between requests and stops on any error.
@@ -105,7 +103,10 @@ data is used **only for local testing** until UCSD gives permission:
   east wing. The west wing is a shaded area labeled "Warren College" with no
   rooms. These rooms stay in the room list under "Location not mapped yet", and
   their schedules work as usual.
-- Every other building with a campus-map footprint gets an exterior shell.
+- This table describes the original CSE trace retained in `SOURCE_LAYOUTS`.
+  The active explorer uses Facilities layouts for the 77 codes listed in
+  `static/indoor/facilities/index.json` (9,697 room records). Buildings without
+  detailed layouts use an exterior shell when a campus footprint is available.
 
 ### Sources (accessed 2026-10-19)
 
@@ -247,7 +248,7 @@ number.
      printed identically on the map
    - features, `knownUnmapped` with reasons, and notes on anything uncertain
 7. **Convert and validate:** `npm run indoor:build -- <CODE>` writes
-   `static/indoor/<CODE>.json`. Add the building to `INDOOR_MANIFEST` in
+   `static/indoor/<CODE>.json`. Add the building to `SOURCE_LAYOUTS` in
    `src/lib/indoor/manifest.ts`, then run `npm run validate:indoor` and
    `npm test`.
 8. **Preview:** run `npm run dev`, open the building, and check each floor,
@@ -308,8 +309,9 @@ Notes:
 
 ## Known limitations
 
-- EBU3B is the only building with published room-level geometry. The best
-  public sources for tracing more are UCSD EH&S emergency pre-plan sheets
+- Facilities layouts include both positioned rooms and floor-only listings;
+  room-level coverage varies by building. Additional sources for tracing or
+  cross-checking are UCSD EH&S emergency pre-plan sheets
   (vector PDFs with every room number and a north arrow) that departments
   re-host. Found so far (accessed 2026-10-19):
   - CSB: https://cogsci.ucsd.edu/_files/resources/Cognitive%20Science%20Building_11-8-18.pdf (all classrooms)

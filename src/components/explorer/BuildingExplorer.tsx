@@ -44,7 +44,7 @@ export type ExplorerIntro = "rise" | "fade";
 
 const PROVENANCE_LABELS: Record<GeometryStatus, string> = {
   "source-traced": "Traced from public floor maps",
-  "facilities-local": "UCSD Facilities floor plans (local testing only)",
+  "facilities-plan": "UCSD Facilities floor plans",
   "exterior-shell": "Exterior only, from the campus map",
   "schematic-demo": "Schematic demo, not the real layout",
 };
