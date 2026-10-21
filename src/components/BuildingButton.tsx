@@ -1,13 +1,8 @@
-import { useCallback } from "react";
+import { memo, useCallback } from "react";
 import { BuildingDatum } from "../lib/buildings";
 import { RoomMeeting } from "../lib/coursesToClassrooms";
-import {
-  PADDING,
-  latLongToPixel,
-  northeast,
-  southwest,
-} from "../lib/locations";
 import { isMeetingOngoing, useMoment } from "../lib/moment-context";
+import { mapPoint } from "../lib/locations";
 import { Link } from "./Link";
 
 type BuildingButtonProps = {
@@ -20,7 +15,7 @@ type BuildingButtonProps = {
   explorer: boolean;
 };
 
-export function BuildingButton({
+export const BuildingButton = memo(function BuildingButton({
   building,
   rooms,
   selected,
@@ -38,16 +33,12 @@ export function BuildingButton({
         window.requestAnimationFrame(() => {
           const windowWidth = window.innerWidth;
           const windowHeight = window.innerHeight;
-          const panelHeight = scrollTarget.init
-            ? 0
-            : windowHeight *
-              (explorer
-                ? windowWidth <= 690
-                  ? 0.82
-                  : 0.74
-                : windowWidth <= 690
-                ? 0.7
-                : 0.6);
+          // Center the building in the space the open panel leaves free
+          const panel = document.querySelector(".building-panel");
+          const panelHeight =
+            scrollTarget.init || !panel
+              ? 0
+              : windowHeight - panel.getBoundingClientRect().top;
           const { left, top, width, height } = button.getBoundingClientRect();
           button.closest(".buildings")?.scrollBy({
             left: left + (-windowWidth + width) / 2,
@@ -57,10 +48,12 @@ export function BuildingButton({
         });
       }
     },
+    // `explorer` changes the panel's height
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [scrollTarget, explorer]
   );
 
-  const { x, y } = latLongToPixel(building.location);
+  const { x, y } = mapPoint(building.location);
 
   return (
     <Link
@@ -69,8 +62,8 @@ export function BuildingButton({
         selected ? "selected" : ""
       } ${visible ? "" : "building-btn-hidden"}`}
       style={{
-        left: `${x - southwest.x + PADDING.horizontal}px`,
-        top: `${y - northeast.y + PADDING.top}px`,
+        left: `calc(${x}px * var(--map-zoom))`,
+        top: `calc(${y}px * var(--map-zoom))`,
       }}
       elemRef={ref}
     >
@@ -93,4 +86,4 @@ export function BuildingButton({
       </span>
     </Link>
   );
-}
+});

@@ -48,6 +48,15 @@ export const PADDING = {
   bottom: 168,
 };
 
+/** Position on the map, in unzoomed px from the scroll area's top left. */
+export function mapPoint(location: Location): { x: number; y: number } {
+  const { x, y } = latLongToPixel(location);
+  return {
+    x: x - southwest.x + PADDING.horizontal,
+    y: y - northeast.y + PADDING.top,
+  };
+}
+
 const MAP_TILE_SIZE = TILE_SIZE * MAP_ZOOM;
 /** Center of map. */
 const center = latLongToPixel([32.877341347399, -117.23531663418]);

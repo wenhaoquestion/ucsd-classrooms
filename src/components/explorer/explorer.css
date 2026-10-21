@@ -468,8 +468,8 @@ transparent, so the stage background shows through. */
 }
 @media (max-width: 690px) {
   .building-panel.explorer-mode {
-    height: 86vh;
-    height: 86dvh;
+    height: 80vh;
+    height: 80dvh;
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: minmax(0, 60fr) minmax(0, 40fr);
   }
@@ -520,8 +520,12 @@ transparent, so the stage background shows through. */
     bottom: 8px;
     gap: 3px;
   }
+  /* Room for the sheet handle */
+  .explorer-toolbar {
+    padding-top: 10px;
+  }
   .explorer-selection {
-    top: 48px;
+    top: 56px;
     left: 10px;
     font-size: 12px;
   }

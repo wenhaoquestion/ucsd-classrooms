@@ -1,9 +1,8 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { buildings } from "../lib/buildings";
 import { coursesToClassrooms, TermBuildings } from "../lib/coursesToClassrooms";
 import { Day } from "../lib/Day";
 import { getHolidays } from "../lib/holidays";
-import { mapPosition, northeast, PADDING, southwest } from "../lib/locations";
 import { fromViewTerm, MomentContext } from "../lib/moment-context";
 import { Course } from "../lib/section-types";
 import { Term, TermCache, TermError } from "../lib/TermCache";
@@ -31,10 +30,11 @@ import { ExplorerIntro } from "./explorer/BuildingExplorer";
 import { useExplorerPreference } from "../lib/explorerPreference";
 import { hasIndoorLayout } from "../lib/indoor/manifest";
 import { ScheduleAvailability } from "../lib/indoor/roomStatus";
-import { BuildingButton } from "./BuildingButton";
 import { DateTimeButton } from "./date-time/DateTimeButton";
 import { DateTimePanel } from "./date-time/DateTimePanel";
 import { Link, navigate } from "./Link";
+import { CampusMap } from "./map/CampusMap";
+import { FreeRoomsPanel } from "./map/FreeRoomsPanel";
 import { ModalView, ResultModal } from "./search/ResultModal";
 import { SearchBar, State } from "./search/SearchBar";
 import { TermStatus } from "./TermStatus";
@@ -149,6 +149,8 @@ export function App({ title }: AppProps) {
    * link opens its schedule promptly.
    */
   const navigationSource = useRef<ExplorerIntro>("rise");
+
+  const [showFreeRooms, setShowFreeRooms] = useState(false);
 
   const [showResults, setShowResults] = useState(false);
   const [searchState, setSearchState] = useState<State>({ type: "unloaded" });
@@ -274,6 +276,10 @@ export function App({ title }: AppProps) {
     }
     if (view.type === "building") {
       setScrollTo({ building: view.building, init: false });
+      // On phones, the building sheet takes the free room list's place
+      if (window.matchMedia("(max-width: 690px)").matches) {
+        setShowFreeRooms(false);
+      }
       if (view.building !== buildingCode) {
         setExplorerIntro(navigationSource.current);
       }
@@ -463,8 +469,12 @@ export function App({ title }: AppProps) {
           <TermStatus statuses={state?.status} />
           <p className="credit">
             Made by{" "}
-            <a href="https://www.instagram.com/sheeptester/" className="link">
-              @sheeptester
+            <a href="https://github.com/wenhaoquestion" className="link">
+              @wenhaoquestion
+            </a>
+            , based on{" "}
+            <a href="https://github.com/SheepTester/ucsd-classrooms" className="link">
+              SheepTester's
             </a>
             .{" "}
             <a
@@ -525,35 +535,20 @@ export function App({ title }: AppProps) {
           >
             <span className="notice-text">{notice}</span>
           </p>
-          <div className="buildings">
-            <div
-              className="scroll-area"
-              style={{
-                width: `${
-                  northeast.x - southwest.x + PADDING.horizontal * 2
-                }px`,
-                height: `${
-                  southwest.y - northeast.y + PADDING.top + PADDING.bottom
-                }px`,
-                backgroundSize: `${mapPosition.width}px`,
-                backgroundPosition: `${mapPosition.x}px ${mapPosition.y}px`,
-              }}
-            />
-            {Object.values(buildings).map((building) => (
-              <BuildingButton
-                key={building.code}
-                building={building}
-                rooms={Object.values(state?.buildings?.[building.code] ?? {})}
-                selected={building.code === buildingCode}
-                scrollTarget={
-                  building.code === scrollTo.building ? scrollTo : null
-                }
-                visible={!!state?.buildings && building.code in state.buildings}
-                explorer={explorerEnabled && hasIndoorLayout(building.code)}
-              />
-            ))}
-          </div>
+          <CampusMap
+            termBuildings={state?.buildings}
+            selected={buildingCode}
+            scrollTo={scrollTo}
+            explorerEnabled={explorerEnabled}
+            freeRoomsOpen={showFreeRooms && !!state?.buildings}
+            onToggleFreeRooms={() => setShowFreeRooms((show) => !show)}
+          />
         </div>
+        <FreeRoomsPanel
+          termBuildings={state?.buildings}
+          open={showFreeRooms && !!state?.buildings}
+          onClose={() => setShowFreeRooms(false)}
+        />
         <BuildingPanel
           building={
             buildings[lastBuilding] ?? {

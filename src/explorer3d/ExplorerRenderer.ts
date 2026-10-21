@@ -1,9 +1,15 @@
 import { WebGLRenderer } from "three";
 
-/** Device pixel ratio cap. */
+/** Device pixel ratio cap. Phones get a lower one: their GPUs are slower and
+ * their pixels too small for the difference to show. */
 const MAX_PIXEL_RATIO = 2;
+const MAX_TOUCH_PIXEL_RATIO = 1.5;
 /** Cap on drawing-buffer pixels so large/high-DPI screens stay cheap. */
 const MAX_BUFFER_PIXELS = 3_000_000;
+
+function coarsePointer(): boolean {
+  return !!window.matchMedia?.("(pointer: coarse)").matches;
+}
 
 export type RendererOwner = {
   /** Called after the WebGL context is lost or restored. */
@@ -34,7 +40,8 @@ export class ExplorerRenderer {
       canvas,
       antialias: true,
       alpha: true,
-      powerPreference: "high-performance",
+      // Phones keep battery; desktops get the discrete GPU if there is one
+      powerPreference: coarsePointer() ? "default" : "high-performance",
     });
     this.canvas = canvas;
     this.renderer.autoClear = false;
@@ -47,7 +54,7 @@ export class ExplorerRenderer {
   setSize(width: number, height: number): boolean {
     const ratio = Math.min(
       window.devicePixelRatio || 1,
-      MAX_PIXEL_RATIO,
+      coarsePointer() ? MAX_TOUCH_PIXEL_RATIO : MAX_PIXEL_RATIO,
       Math.sqrt(MAX_BUFFER_PIXELS / Math.max(width * height, 1))
     );
     if (

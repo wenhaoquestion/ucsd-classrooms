@@ -12,10 +12,12 @@ Explore UC San Diego classrooms, check scheduled availability, and browse campus
 
 ## Features
 
-- **Campus map:** locate buildings by name or code and view building photos.
+- **Campus map:** locate buildings by name or code and view building photos. Zoom with the buttons, a pinch, or a trackpad pinch; markers simplify as you zoom out.
+- **Wayfinding:** show your location on the map, see walking distance and time to a building, and open walking directions in your maps app.
+- **Free rooms:** list classrooms with no class listed for the next 20+ minutes, nearest first once you share your location.
 - **Classroom schedules:** see listed classes and find gaps at a selected date and time.
 - **Course and instructor search:** look up meeting locations, course times, and instructor schedules.
-- **Quarter calendar:** browse academic terms, week numbers, and dates. Times use Pacific Time regardless of your browser's time zone.
+- **Quarter calendar:** browse academic terms, week numbers, and dates, and pick a time on a scroll wheel. Times use Pacific Time regardless of your browser's time zone.
 - **Shareable links:** link directly to buildings, rooms, courses, instructors, and dates.
 - **3D building explorer:** inspect campus building exteriors, nearby buildings, floor controls, and classroom counts. Buildings with room geometry support room selection and schedule activity colors.
 - **Indoor layouts:** published Facilities data covers 77 building codes and 9,697 room records. Where plans provide only a floor listing, classrooms stay in the floor's room list instead of receiving an invented position.

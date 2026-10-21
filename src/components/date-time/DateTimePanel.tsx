@@ -3,6 +3,7 @@ import { Day } from "../../lib/Day";
 import { Time } from "../../lib/Time";
 import { inPT } from "../../lib/now";
 import { Calendar, ScrollMode } from "./Calendar";
+import { TimeWheel } from "./TimeWheel";
 import { useStableCallback } from "../../lib/useStable";
 
 export type DateTimePanelProps = {
@@ -47,10 +48,18 @@ export function DateTimePanel({
         e.preventDefault();
       }}
     >
+      <div className="date-time-header">
+        <h2 className="panel-label">Schedule time</h2>
+        {closeable && (
+          <button className="filled-icon-btn close-date-btn">Close</button>
+        )}
+      </div>
       <div className="date-time-flex">
-        <label className="checkbox-label">
+        <label className="switch-label">
           <input
             type="checkbox"
+            role="switch"
+            className="switch"
             checked={useNow}
             onChange={(e) => {
               onUseNow(e.currentTarget.checked);
@@ -60,8 +69,10 @@ export function DateTimePanel({
             }}
           />
           <span>
-            Use current time
-            {inPT() ? null : <span className="tz-note">(in San Diego)</span>}
+            Live
+            <span className="tz-note">
+              Follow the current time{inPT() ? "" : " in San Diego"}
+            </span>
           </span>
         </label>
         {date.id !== Day.today().id && (
@@ -76,41 +87,40 @@ export function DateTimePanel({
             Today
           </button>
         )}
-        {closeable && (
-          <button className="filled-icon-btn close-date-btn">Close</button>
-        )}
       </div>
-      <div className="date-time-flex">
-        <input
-          type="date"
-          name="date"
-          value={date.toString()}
-          onChange={(e) => {
-            const date = Day.parse(e.currentTarget.value);
-            if (date) {
-              if (useNow) {
-                onUseNow(false);
+      <div className="date-time-fields">
+        <label className="date-time-field">
+          <span className="field-label">Date</span>
+          <input
+            type="date"
+            name="date"
+            value={date.toString()}
+            onChange={(e) => {
+              const date = Day.parse(e.currentTarget.value);
+              if (date) {
+                if (useNow) {
+                  onUseNow(false);
+                }
+                onDate(date);
+                setScrollMode("date-edited");
               }
-              onDate(date);
-              setScrollMode("date-edited");
-            }
-          }}
-          className="date-input"
-        />
-        <input
-          type="time"
-          value={time.toString(true)}
-          onChange={(e) => {
-            const time = Time.parse24(e.currentTarget.value);
-            if (time) {
+            }}
+            className="date-input"
+          />
+        </label>
+        <div className="date-time-field">
+          <span className="field-label">Time</span>
+          <TimeWheel
+            time={time}
+            live={useNow}
+            onTime={(time) => {
               if (useNow) {
                 onUseNow(false);
               }
               onTime(time);
-            }
-          }}
-          className="time-input"
-        />
+            }}
+          />
+        </div>
       </div>
       <Calendar
         date={date}

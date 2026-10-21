@@ -1,18 +1,28 @@
-import { useMemo, useState } from "react";
+import { PointerEvent, useContext, useMemo, useRef, useState } from "react";
 import { BuildingDatum } from "../../lib/buildings";
+import {
+  directionsUrl,
+  distanceMeters,
+  formatDistance,
+  startLocating,
+  useUserLocation,
+  walkingMinutes,
+} from "../../lib/geolocation";
 import { RoomMeeting } from "../../lib/coursesToClassrooms";
 import { hasIndoorLayout } from "../../lib/indoor/manifest";
 import { computeCoverage, IndoorIndex, roomForKey } from "../../lib/indoor/roomMapping";
 import { ScheduleAvailability } from "../../lib/indoor/roomStatus";
 import { IndoorLayoutState, useIndoorLayout } from "../../lib/indoor/useIndoorLayout";
+import { toViewTerm, useMoment } from "../../lib/moment-context";
 import { useLast } from "../../lib/useLast";
 import { useStableCallback } from "../../lib/useStable";
+import { OnView } from "../../lib/View";
 import { AbbrevHeading } from "../AbbrevHeading";
 import { BuildingExplorer, ExplorerIntro } from "../explorer/BuildingExplorer";
 import { BackIcon } from "../icons/BackIcon";
 import { CloseIcon } from "../icons/CloseIcon";
 import { Image } from "../Image";
-import { Link } from "../Link";
+import { Link, navigate } from "../Link";
 import { closeBuildingBack } from "./backHandlers";
 import { RoomList, RoomListSection } from "./RoomList";
 import { RoomSchedule } from "./RoomSchedule";
@@ -77,6 +87,49 @@ function indoorSections(
   return sections;
 }
 
+/** Walking directions, plus distance once the user shares their location. */
+function BuildingActions({ building }: { building: BuildingDatum }) {
+  const userLocation = useUserLocation();
+  const [latitude, longitude] = building.location;
+  if (latitude === 0 && longitude === 0) {
+    return null;
+  }
+  const distance =
+    userLocation.type === "located"
+      ? distanceMeters(userLocation.location, building.location)
+      : null;
+  return (
+    <div className="building-actions">
+      <a
+        className="action-btn action-btn-primary"
+        href={directionsUrl(building.location)}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Directions
+        <svg viewBox="0 0 24 24" className="icon action-icon" aria-hidden="true">
+          <path d="M7 7h10v10h-2V10.41l-8.29 8.3-1.42-1.42L13.59 9H7z" />
+        </svg>
+      </a>
+      {distance !== null ? (
+        <span className="building-distance">
+          <strong>{formatDistance(distance)}</strong> · about{" "}
+          {walkingMinutes(distance)} min walk
+        </span>
+      ) : (
+        <button
+          className="action-btn"
+          onClick={startLocating}
+          disabled={userLocation.type === "locating"}
+          title={userLocation.type === "error" ? userLocation.message : undefined}
+        >
+          {userLocation.type === "locating" ? "Locating…" : "How far is it?"}
+        </button>
+      )}
+    </div>
+  );
+}
+
 type BuildingPanelContentProps = {
   building: BuildingDatum;
   room: string | null;
@@ -89,7 +142,7 @@ type BuildingPanelContentProps = {
   onEnableExplorer_s: () => void;
 };
 function BuildingPanelContent({
-  building: { code, images, college, name },
+  building,
   room,
   rooms,
   availability,
@@ -99,6 +152,7 @@ function BuildingPanelContent({
   onHoverRoom_s,
   onEnableExplorer_s,
 }: BuildingPanelContentProps) {
+  const { code, images, college, name } = building;
   const lastRoom = useLast("", room);
 
   const imageUrl = images[0]?.url; // TODO: Compress
@@ -203,6 +257,7 @@ function BuildingPanelContent({
         />
       ) : (
         <>
+          <BuildingActions building={building} />
           <div className="gradient gradient-sticky gradient-top" />
           {hasIndoorLayout(code) && !explorerOpen && (
             <div className="explorer-enable">
@@ -283,12 +338,95 @@ export function BuildingPanel({
   const onDisableExplorer_s = useStableCallback(() => onExplorerEnabled_s(false));
   const onEnableExplorer_s = useStableCallback(() => onExplorerEnabled_s(true));
 
+  // On phones the panel is a bottom sheet: drag its handle up to expand it,
+  // down to shrink or close it
+  const moment = useMoment();
+  const onView = useContext(OnView);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const drag = useRef<{ y: number; height: number; moved: boolean } | null>(null);
+  const [expanded, setExpanded] = useState(false);
+  if (!visible && expanded) {
+    setExpanded(false);
+  }
+  const close = () =>
+    navigate(onView, {
+      view: { type: "default", term: toViewTerm(moment) },
+      back: closeBuildingBack(props.room),
+    });
+  const endDrag = (e: PointerEvent<HTMLButtonElement>) => {
+    const panel = panelRef.current;
+    const start = drag.current;
+    drag.current = null;
+    if (!panel || !start) {
+      return;
+    }
+    panel.classList.remove("building-panel-dragging");
+    panel.style.removeProperty("height");
+    panel.style.removeProperty("transform");
+    const dy = e.clientY - start.y;
+    if (!start.moved) {
+      setExpanded((expanded) => !expanded);
+    } else if (dy < -40) {
+      setExpanded(true);
+    } else if (dy > start.height * 0.45) {
+      close();
+    } else if (dy > 60) {
+      setExpanded(false);
+    }
+  };
+
   return (
     <div
+      ref={panelRef}
       className={`building-panel ${visible ? "" : "building-panel-invisible"} ${
         rightPanelOpen ? "right-panel-open" : ""
-      } ${explorerOpen ? "explorer-mode" : ""}`}
+      } ${explorerOpen ? "explorer-mode" : ""} ${
+        expanded ? "building-panel-expanded" : ""
+      }`}
     >
+      <button
+        className="sheet-handle"
+        aria-label={expanded ? "Shrink panel" : "Expand panel"}
+        aria-expanded={expanded}
+        onPointerDown={(e) => {
+          const panel = panelRef.current;
+          if (!panel) {
+            return;
+          }
+          e.currentTarget.setPointerCapture(e.pointerId);
+          drag.current = { y: e.clientY, height: panel.offsetHeight, moved: false };
+          panel.classList.add("building-panel-dragging");
+        }}
+        onPointerMove={(e) => {
+          const panel = panelRef.current;
+          const start = drag.current;
+          if (!panel || !start) {
+            return;
+          }
+          const dy = e.clientY - start.y;
+          if (Math.abs(dy) > 6) {
+            start.moved = true;
+          }
+          if (dy < 0) {
+            // Grow upwards, but not past the top of the screen
+            panel.style.height = `${Math.min(start.height - dy, window.innerHeight - 24)}px`;
+            panel.style.removeProperty("transform");
+          } else {
+            panel.style.removeProperty("height");
+            panel.style.transform = `translateY(${dy}px)`;
+          }
+        }}
+        onPointerUp={endDrag}
+        onPointerCancel={endDrag}
+        // Pointer events handle taps; this keeps keyboard activation working
+        onClick={(e) => {
+          if (e.detail === 0) {
+            setExpanded((expanded) => !expanded);
+          }
+        }}
+      >
+        <span className="sheet-handle-bar" />
+      </button>
       {explorerOpen && (
         <BuildingExplorer
           // A new building gets a new scene; rooms in the same building reuse it

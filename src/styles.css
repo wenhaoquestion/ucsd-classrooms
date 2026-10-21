@@ -32,8 +32,17 @@
   --normal: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
-  --narrow: "Oswald", Impact, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  --narrow: "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
+
+  --on-button: white;
+  --tertiary: rgba(255, 255, 255, 0.3);
+  --gutter: 20px;
+  --control: 44px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --spring: cubic-bezier(0.34, 1.4, 0.64, 1);
 }
 @media (prefers-color-scheme: light) {
   :root {
@@ -58,11 +67,19 @@
     --soon: #966f01;
     --dropdown: url("./assets/material-arrow-drop-down-black.svg");
     --link: #2597ff;
+    --tertiary: rgba(0, 0, 0, 0.3);
+  }
+}
+@media (max-width: 690px) {
+  :root {
+    --gutter: 10px;
   }
 }
 
 html {
   height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 body {
   margin: 0;
@@ -72,6 +89,9 @@ body {
   background-color: var(--background);
   color: var(--text);
   overflow: hidden;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 button,
 input,
@@ -192,16 +212,24 @@ input[type="checkbox"]:checked:hover {
   transform: none;
 }
 .buildings {
+  --map-zoom: 1;
   flex: auto;
   position: relative;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  /* One-finger panning stays native; pinches are handled by CampusMap */
+  touch-action: pan-x pan-y;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+.buildings::-webkit-scrollbar {
+  display: none;
 }
 .scroll-area {
   background-image: url("./assets/map.webp");
   background-repeat: no-repeat;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
+  /* Smooth scaling holds up better than pixelated at arbitrary zoom levels */
+  image-rendering: auto;
 }
 .building-btn {
   font-family: var(--narrow);
@@ -212,14 +240,40 @@ input[type="checkbox"]:checked:hover {
   background-image: linear-gradient(120deg, #00629b, #182b49);
   color: #ffcd00;
   box-shadow: var(--card-shadow-hover);
+  font-weight: 600;
+  letter-spacing: 0.01em;
   white-space: nowrap;
-  transition: box-shadow 0.2s, visibility 0.2s, opacity 0.2s;
+  transition: box-shadow 0.2s, visibility 0.2s, opacity 0.2s,
+    transform 0.25s var(--spring), padding 0.2s, font-size 0.2s;
+}
+.building-btn:hover {
+  z-index: 2;
+  transform: translate(-50%, -50%) translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 }
 .building-btn:active {
+  transform: translate(-50%, -50%) scale(0.95);
   box-shadow: var(--card-shadow-active);
+  transition-duration: 0.08s;
 }
 .building-btn.selected {
+  z-index: 1;
   box-shadow: 0 0 0 3px var(--highlight);
+}
+/* Zoomed out, markers shrink so the campus stays readable */
+.buildings[data-zoom="mid"] .building-btn {
+  font-size: 13px;
+  padding: 3px 7px;
+  border-radius: 8px;
+}
+.buildings[data-zoom="far"] .building-btn {
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 6px;
+}
+.buildings[data-zoom="far"] .room-count {
+  opacity: 0;
+  visibility: hidden;
 }
 .building-btn-hidden {
   visibility: hidden;
@@ -241,6 +295,8 @@ input[type="checkbox"]:checked:hover {
   height: 16px;
   min-width: 16px;
   text-align: center;
+  font-variant-numeric: tabular-nums;
+  transition: opacity 0.2s, visibility 0.2s;
 }
 .in-use {
   color: var(--text);
@@ -328,7 +384,7 @@ input[type="checkbox"]:checked:hover {
 @media (max-width: 690px) {
   .corner {
     top: unset;
-    right: unset;
+    right: 0;
     bottom: 0;
     left: 0;
     margin: 10px;
@@ -351,7 +407,15 @@ input[type="checkbox"]:checked:hover {
   display: flex;
   gap: 15px;
   align-items: center;
+  justify-content: space-between;
   padding: 10px 15px;
+  text-align: left;
+}
+.date-time-button .filled-icon-btn {
+  transition: background-color 0.2s, transform 0.25s var(--spring);
+}
+.date-time-button:not(:disabled):hover .filled-icon-btn {
+  transform: rotate(-8deg) scale(1.06);
 }
 .showing-schedule-wrapper {
   display: flex;
@@ -360,13 +424,37 @@ input[type="checkbox"]:checked:hover {
   gap: 4px;
 }
 .showing-schedule-text {
-  font-size: 0.8em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   font-family: var(--normal);
   color: var(--secondary);
 }
+.live-dot {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--active);
+}
+.live-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: var(--active);
+  animation: live 1.6s ease-out infinite;
+}
 .date-time {
-  font-family: var(--normal);
-  font-weight: bold;
+  font-family: var(--narrow);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
 }
 .quarter-week {
   font-size: 0.8em;
@@ -435,10 +523,13 @@ input[type="checkbox"]:checked:hover {
     transform: translateY(20px);
   }
   .calendar-open {
-    height: 70vh;
+    height: 78vh;
+    height: 78dvh;
   }
 }
 .calendar-scroll-area {
+  overscroll-behavior: contain;
+  padding-bottom: var(--safe-bottom);
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   height: 0;
@@ -526,6 +617,14 @@ input[type="checkbox"]:checked:hover {
 .calendar-selected {
   background-color: var(--button);
   color: white;
+  font-weight: 700;
+}
+.calendar-day {
+  transition: background-color 0.15s;
+}
+.calendar-day:not(.calendar-selected):hover {
+  background-color: var(--field);
+  border-radius: 30px;
 }
 .calendar-day.calendar-selected {
   border-radius: 30px;
@@ -550,9 +649,15 @@ input[type="checkbox"]:checked:hover {
   text-align: center;
 }
 .calendar-quarter-heading {
+  font-family: var(--narrow);
+  font-weight: 700;
+  letter-spacing: -0.03em;
   font-size: 64px;
   white-space: nowrap;
   padding-top: 30px;
+}
+.calendar-quarter-heading .long {
+  letter-spacing: 0;
 }
 .calendar-month-heading {
   font-size: 1em;
@@ -576,10 +681,156 @@ input[type="checkbox"]:checked:hover {
   margin-bottom: -30px;
 }
 
+.date-time-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 15px;
+}
+.panel-label,
+.field-label {
+  font-family: var(--normal);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
 .date-time-flex {
   display: flex;
-  padding: 0 10px;
+  align-items: center;
+  padding: 0 15px;
   gap: 10px;
+}
+.switch-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--normal);
+  font-weight: 600;
+  flex: auto;
+}
+input[type="checkbox"].switch {
+  flex: none;
+  width: 42px;
+  height: 26px;
+  border: none;
+  border-radius: 13px;
+  background-color: var(--field);
+  box-shadow: inset 0 0 0 1px var(--card-line);
+  position: relative;
+  transition: background-color 0.2s;
+}
+input[type="checkbox"].switch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s var(--spring);
+}
+input[type="checkbox"].switch:checked {
+  background-color: var(--button);
+  background-image: none;
+  box-shadow: none;
+}
+input[type="checkbox"].switch:checked::after {
+  transform: translateX(16px);
+}
+.date-time-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 10px;
+  padding: 0 15px;
+}
+.date-time-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+/* Vertical scroll wheel time picker */
+.time-wheel {
+  --wheel-item: 40px;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  height: calc(var(--wheel-item) * 3);
+  padding: 0 4px;
+  border-radius: 10px;
+  background-color: var(--field);
+}
+/* The selection band */
+.time-wheel::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  top: var(--wheel-item);
+  height: var(--wheel-item);
+  border-radius: 8px;
+  background-color: var(--modal);
+  box-shadow: var(--card-shadow-hover);
+  pointer-events: none;
+}
+.wheel {
+  position: relative;
+  width: 42px;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(transparent, #000 30%, #000 70%, transparent);
+  mask-image: linear-gradient(transparent, #000 30%, #000 70%, transparent);
+  touch-action: pan-y;
+  border-radius: 8px;
+}
+.wheel::-webkit-scrollbar {
+  display: none;
+}
+.wheel:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: -2px;
+}
+.wheel-spacer {
+  height: var(--wheel-item);
+}
+.wheel-item {
+  height: var(--wheel-item);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: center;
+  font-family: var(--narrow);
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  color: var(--secondary);
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s, font-size 0.15s, transform 0.2s var(--ease);
+}
+.wheel-item-centered {
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 700;
+}
+.time-wheel-live .wheel-item-centered {
+  color: var(--link);
+}
+.time-wheel-colon {
+  position: relative;
+  align-self: center;
+  top: -1px;
+  margin: 0 -4px;
+  font-family: var(--narrow);
+  font-size: 18px;
+  font-weight: 700;
 }
 .checkbox-label {
   display: flex;
@@ -589,6 +840,7 @@ input[type="checkbox"]:checked:hover {
 }
 .tz-note {
   display: block;
+  font-weight: 400;
   font-size: 0.8em;
   color: var(--secondary);
 }
@@ -602,10 +854,23 @@ input[type="checkbox"]:checked:hover {
 .date-input,
 .time-input {
   font-family: var(--narrow);
+  font-size: 16px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
   background-color: var(--field);
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 .today-btn {
   font-family: var(--normal);
+  font-weight: 600;
+  flex: none;
+  transition: background-color 0.2s, transform 0.2s var(--spring);
+}
+.today-btn:active,
+.filled-icon-btn:active {
+  transform: scale(0.94);
 }
 .today-btn,
 .filled-icon-btn {
@@ -649,9 +914,17 @@ input[type="checkbox"]:checked:hover {
   background-color: var(--modal);
   box-shadow: var(--modal-shadow);
   border-radius: 15px;
-  transition: transform 0.2s, opacity 0.2s, visibility 0.2s, right 0.2s;
+  transition: transform 0.3s var(--ease), opacity 0.2s, visibility 0.2s,
+    right 0.2s, height 0.35s var(--ease);
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+.building-panel-dragging {
+  transition: none;
+}
+.sheet-handle {
+  display: none;
 }
 .building-panel-invisible {
   opacity: 0;
@@ -671,9 +944,61 @@ input[type="checkbox"]:checked:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 70vh;
+    height: 60vh;
+    height: 60dvh;
+    padding-bottom: var(--safe-bottom);
+    box-sizing: border-box;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+  }
+  /* Expanded sheets stop below the search bar */
+  .building-panel-expanded,
+  .building-panel.explorer-mode.building-panel-expanded {
+    height: calc(100vh - var(--control) - var(--gutter) * 2);
+    height: calc(100dvh - var(--control) - var(--gutter) * 2);
+  }
+  .sheet-handle {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 6;
+    top: 0;
+    left: 50%;
+    width: 96px;
+    height: 22px;
+    margin-left: -48px;
+    padding-top: 7px;
+    box-sizing: border-box;
+    touch-action: none;
+    color: white;
+  }
+  .explorer-mode .sheet-handle {
+    color: var(--text);
+  }
+  .sheet-handle-bar {
+    width: 36px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: currentColor;
+    opacity: 0.5;
+    transition: width 0.2s var(--ease), opacity 0.2s;
+  }
+  .sheet-handle:active .sheet-handle-bar {
+    width: 48px;
+    opacity: 0.8;
+  }
+  /* Beside the 3D view, the header gives the room list more space */
+  .explorer-mode .building-name {
+    height: 88px;
+  }
+  .explorer-mode .building-name.schedule-view {
+    height: 48px;
+  }
+  .explorer-mode .building-name .abbrev-heading {
+    font-size: 70px;
+  }
+  .explorer-mode .schedule-view .abbrev-heading {
+    transform: translate(28px, -9px) scale(0.4);
   }
   .room-list .gradient-top {
     margin-top: -10px;
@@ -702,7 +1027,8 @@ input[type="checkbox"]:checked:hover {
   height: 48px;
 }
 .building-name .abbrev-heading {
-  font-weight: normal;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -715,6 +1041,9 @@ input[type="checkbox"]:checked:hover {
 }
 .schedule-view .abbrev-heading {
   transform: translate(28px, -9px) scale(0.2);
+}
+.building-name .long {
+  letter-spacing: 0;
 }
 .building-name .abbrev,
 .building-name .long {
@@ -840,7 +1169,13 @@ input[type="checkbox"]:checked:hover {
   padding: 10px 15px;
   border-radius: 10px;
   border: 1px solid var(--card-line);
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s var(--ease), border-color 0.2s;
+}
+.room:hover {
+  transform: translateY(-1px);
+}
+.room:active {
+  transform: scale(0.98);
 }
 .room:hover,
 .meeting:hover {
@@ -852,6 +1187,7 @@ input[type="checkbox"]:checked:hover {
 }
 .room-name {
   font-family: var(--narrow);
+  font-weight: 600;
 }
 .current-meeting {
   font-family: var(--narrow);
@@ -947,17 +1283,21 @@ input[type="checkbox"]:checked:hover {
 }
 .meeting-name {
   font-family: var(--narrow);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.15;
 }
 .meeting-time {
-  font-size: 0.5em;
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
   font-family: var(--normal);
 }
 @media (max-width: 690px) {
   .full-week .meeting-name {
-    font-size: 0.55em;
+    font-size: 10px;
   }
   .full-week .meeting-time {
-    font-size: 0.4em;
+    font-size: 8px;
   }
 }
 .gradient {
@@ -1042,6 +1382,8 @@ input[type="checkbox"]:checked:hover {
   background-image: linear-gradient(to right, transparent, var(--modal));
 }
 .term-button {
+  font-family: var(--narrow);
+  font-weight: 600;
   position: absolute;
   top: 10px;
   left: 50%;
@@ -1103,11 +1445,41 @@ input[type="checkbox"]:checked:hover {
   color: var(--secondary);
 }
 @media (max-width: 690px) {
-  .term-buttons,
+  .corner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "status credit" "terms terms" "time time";
+    margin-bottom: calc(10px + var(--safe-bottom));
+  }
+  .date-time-button {
+    grid-area: time;
+  }
+  .term-buttons {
+    grid-area: terms;
+    border-top: none;
+    border-bottom: 1px solid var(--line);
+  }
   .term-statuses,
   .credit {
     border-top: none;
     border-bottom: 1px solid var(--line);
+    padding: 6px 15px;
+    font-size: 11px;
+  }
+  .term-statuses {
+    white-space: nowrap;
+  }
+  .term-statuses {
+    grid-area: status;
+    padding-right: 0;
+  }
+  .credit {
+    grid-area: credit;
+    text-align: right;
+  }
+  .corner > .credit:nth-child(3) {
+    grid-column: 1 / -1;
+    text-align: left;
   }
 }
 
@@ -1140,6 +1512,16 @@ input[type="checkbox"]:checked:hover {
 .search-input {
   padding: 0 8px;
   flex: auto;
+  font-size: 16px;
+}
+.search-input:focus {
+  outline: none;
+}
+.search-wrapper {
+  transition: opacity 0.4s, visibility 0.4s, box-shadow 0.2s;
+}
+.search-wrapper:focus-within {
+  box-shadow: 0 0 0 2px var(--button), var(--modal-shadow);
 }
 .clear-btn {
   width: 40px;
@@ -1183,6 +1565,7 @@ input[type="checkbox"]:checked:hover {
   font-weight: normal;
 }
 .result {
+  transition: background-color 0.12s;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -1540,4 +1923,333 @@ input[type="checkbox"]:checked:hover {
 .college-health {
   background-image: linear-gradient(120deg, #f0f5f6, #d6e8f0);
   color: #ff004e;
+}
+
+/* ---- Map controls ------------------------------------------------------ */
+
+.user-location {
+  position: absolute;
+  z-index: 1;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  background-color: #1a73e8;
+  box-shadow: 0 0 0 3px white, 0 1px 6px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+.user-location::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: #1a73e8;
+  animation: live 2s ease-out infinite;
+}
+.user-location-accuracy {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  min-width: 14px;
+  min-height: 14px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: rgba(26, 115, 232, 0.14);
+  border: 1px solid rgba(26, 115, 232, 0.35);
+}
+
+.map-controls {
+  position: absolute;
+  z-index: 2;
+  left: var(--gutter);
+  top: calc(var(--gutter) * 2 + 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.map-control-group {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: var(--modal);
+  box-shadow: var(--modal-shadow);
+  overflow: hidden;
+}
+.map-control-group .map-control {
+  border-radius: 0;
+  box-shadow: none;
+}
+.map-control-group .map-control + .map-control {
+  border-top: 1px solid var(--line);
+}
+.map-control {
+  position: relative;
+  min-width: var(--control);
+  height: var(--control);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: var(--modal);
+  box-shadow: var(--modal-shadow);
+  transition: background-color 0.2s, color 0.2s, transform 0.2s var(--spring),
+    opacity 0.2s;
+}
+.map-control:not(:disabled):hover {
+  background-color: var(--card-header);
+}
+.map-control-group .map-control:not(:disabled):hover {
+  background-color: var(--icon-button-hover);
+}
+.map-control:not(:disabled):active {
+  transform: scale(0.92);
+}
+.map-control:disabled {
+  color: var(--tertiary);
+}
+.map-control-text {
+  padding: 0 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.map-control-on,
+.map-control-on:not(:disabled):hover {
+  background-color: var(--button);
+  color: white;
+}
+.map-control-busy {
+  position: absolute;
+  inset: 7px;
+  border: 2px solid transparent;
+  border-top-color: var(--link);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+.map-control-note {
+  max-width: 200px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background-color: var(--modal);
+  box-shadow: var(--modal-shadow);
+  color: var(--secondary);
+  font-size: 13px;
+  animation: pop-in 0.3s var(--spring);
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+@media (max-width: 690px) {
+  .map-controls {
+    left: auto;
+    right: var(--gutter);
+    align-items: flex-end;
+  }
+}
+
+/* ---- Free rooms ---------------------------------------------------------- */
+
+.free-rooms {
+  position: fixed;
+  z-index: 4;
+  left: var(--gutter);
+  top: calc(var(--gutter) * 2 + 40px);
+  width: 360px;
+  max-height: min(600px, calc(100% - var(--gutter) * 3 - 40px));
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: var(--modal);
+  box-shadow: var(--modal-shadow);
+  overflow: hidden;
+  transform-origin: top left;
+  transition: transform 0.3s var(--ease), opacity 0.2s, visibility 0.2s;
+}
+.free-rooms-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px) scale(0.97);
+}
+.free-rooms-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 4px 10px 15px;
+  border-bottom: 1px solid var(--line);
+}
+.free-rooms-subtitle {
+  font-size: 13px;
+  color: var(--secondary);
+}
+.free-rooms-close {
+  margin: -8px 0;
+  border-radius: 50%;
+}
+.free-rooms-locate {
+  margin: 10px 15px 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: var(--button);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.2s, transform 0.2s var(--spring);
+}
+.free-rooms-locate:not(:disabled):hover {
+  background-color: var(--button-hover);
+}
+.free-rooms-locate:not(:disabled):active {
+  transform: scale(0.97);
+}
+.free-rooms-locate:disabled {
+  opacity: 0.6;
+}
+.free-rooms-empty {
+  padding: 15px;
+  color: var(--secondary);
+}
+.free-rooms-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  flex: auto;
+}
+.free-room {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0 12px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--card-line);
+  transition: box-shadow 0.2s, transform 0.2s var(--ease);
+}
+.free-room:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-1px);
+}
+.free-room:active {
+  transform: scale(0.98);
+}
+.free-room-name {
+  font-family: var(--narrow);
+  font-weight: 600;
+}
+.free-room-distance {
+  grid-row: 1;
+  grid-column: 2;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--secondary);
+}
+.free-room-until {
+  grid-column: 1 / -1;
+  font-size: 13px;
+  color: var(--active);
+}
+.free-rooms-disclaimer {
+  padding: 8px 15px 10px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--secondary);
+}
+@media (max-width: 690px) {
+  .free-rooms {
+    z-index: 6;
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    width: auto;
+    max-height: none;
+    height: 62vh;
+    height: 62dvh;
+    padding-bottom: var(--safe-bottom);
+    box-sizing: border-box;
+    border-radius: 15px 15px 0 0;
+    transform-origin: bottom center;
+  }
+  .free-rooms-hidden {
+    transform: translateY(24px);
+  }
+}
+
+/* ---- Building actions ------------------------------------------------- */
+
+.building-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  padding: 15px 20px 0;
+}
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 18px;
+  border: 1px solid var(--card-line);
+  font-size: 14px;
+  font-weight: 600;
+  box-sizing: border-box;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s var(--spring);
+}
+.action-btn:not(:disabled):hover {
+  box-shadow: var(--card-shadow-hover);
+}
+.action-btn:not(:disabled):active {
+  transform: scale(0.95);
+}
+.action-btn-primary {
+  border-color: transparent;
+  background-color: var(--button);
+  color: white;
+}
+.action-btn-primary:hover {
+  background-color: var(--button-hover);
+}
+.action-icon {
+  width: 18px;
+  height: 18px;
+}
+.building-distance {
+  font-size: 14px;
+  color: var(--secondary);
+  font-variant-numeric: tabular-nums;
+}
+.building-distance strong {
+  color: var(--text);
+}
+@media (max-width: 690px) {
+  .building-actions {
+    padding: 12px 10px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
