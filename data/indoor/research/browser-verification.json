@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "testedDate": "2026-10-22",
+  "baseUrl": "http://localhost:8000/",
+  "browser": "Visible Firefox via Playwright MCP",
+  "viewports": [
+    {
+      "width": 1365,
+      "height": 900
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "checks": [
+    {
+      "building": "COA",
+      "room": "125",
+      "viewport": "desktop",
+      "result": "Rendered selected 3D room and schedule; rotation button works; Basement shows exactly6 visible classroom labels and Level1 shows8."
+    },
+    {
+      "building": "MALK",
+      "room": "B91",
+      "viewport": "mobile",
+      "result": "Selected MALK B91 from room list; URL/title/schedule and EB91 geometric alias agree; actual WebGL rendered."
+    },
+    {
+      "building": "MYR-A",
+      "room": "5623",
+      "viewport": "desktop",
+      "result": "Fifth-floor traced room selected and PHYS251 schedule displayed."
+    },
+    {
+      "building": "BRF2",
+      "room": "4103",
+      "viewport": "desktop",
+      "result": "Fourth-floor native vector room selected; MED264/277 schedules shown; List only removes canvas and preserves selected room/title."
+    },
+    {
+      "building": "CENTR",
+      "room": "205",
+      "viewport": "desktop",
+      "result": "Runtime loads after manifest status repair; visible canvas and second-floor schedule selection."
+    }
+  ],
+  "pageErrorsInRecordedChecks": 0,
+  "consoleWarnings": [
+    "Firefox emitted drawArraysInstanced destination rectangle smaller than viewport warning during viewport changes; rendering and interactions remained functional."
+  ],
+  "screenshots": [
+    {
+      "file": "/tmp/ucsd-coa-desktop-verified.png",
+      "sha256": "087baab2af8f274a130c921b179d037fb2a6a3c43f8f53c0b2a5d9c1a3af9023"
+    },
+    {
+      "file": "/tmp/ucsd-malk-mobile-selection.png",
+      "sha256": "467dacbd9a5b40e551f0d62be611fe28e7b781b084da4ea77d6fa1e984635121"
+    },
+    {
+      "file": "/tmp/ucsd-myra-5623.png",
+      "sha256": "00a47aec125607cffca388b98add1ce49e53d2c87395821c194a15031fa49c80"
+    },
+    {
+      "file": "/tmp/ucsd-brf2-4103.png",
+      "sha256": "0c19606c5f7cc68539da8739805d813d48fa00987d958212c763ce7de61f63c5"
+    },
+    {
+      "file": "/tmp/ucsd-calit-1511-desktop.png",
+      "sha256": "760a1a0910504f942617635377425a9f62be05ca151ea0a9c101180995919f24"
+    },
+    {
+      "file": "/tmp/ucsd-calit-1511-mobile.png",
+      "sha256": "12ec83349f697a32b120ea60f67a36ecbf8dd16128c91e04b505b30649bfe9e5"
+    },
+    {
+      "file": "/tmp/ucsd-brf2-5a03-settled-mobile.png",
+      "sha256": "4bcf07029c7235e89c3fb6c0181ec301be91d10ffecdd28ea062a6640b38fc67"
+    },
+    {
+      "file": "/tmp/ucsd-brf2-empty-replay.png",
+      "sha256": "2a336a01434af4ecef5bfd225530093adcd31e6fa284fa2963d68f24e68b9145"
+    },
+    {
+      "file": "/tmp/ucsd-brf2-return-l4-replay.png",
+      "sha256": "15e22dd9b93459f4e73f24dd27a0754ad35b53aba3fbaffc969f3375f7a46019"
+    }
+  ],
+  "limitations": [
+    "Sampled flows only; not an exhaustive visual review of every building or room.",
+    "Source-overlaid geometry reviews are recorded separately; a successful render does not establish survey accuracy."
+  ],
+  "browserRouting": "Browser plugin not available; used connected Playwright MCP visible Firefox.",
+  "resumedChecks": {
+    "date": "2026-10-22",
+    "flows": [
+      "CALIT 1511 direct URL -> selected source-traced auditorium, CSE 290 schedule, rotation, desktop and mobile render",
+      "BRF2 1104/5A03 -> exact L1/L5 floor-only message and respective MED 252 / MED 278,271,262 schedules",
+      "BRF2 4103 -> select geometry-free L5 (no visible room labels) -> return to L4 (room labels and 4103 geometry visible)",
+      "SDSC E129 direct URL -> selected actual E129 outline on East E1, no FA26 classes listed as expected; source panel shows public September 2025 EAP and exact Fall 2025 Registrar links"
+    ],
+    "pageErrors": 0,
+    "replayRunConsoleWarnings": [],
+    "scheduleFixture": {
+      "usedFor": "Final empty-floor to L4 return interaction in a fresh QA tab",
+      "reason": "The earlier QA tab remained at Loading after a later navigation; a fresh tab replayed the exact retained production schedule snapshot to make the interaction check deterministic. This does not verify current external feed availability.",
+      "file": "local/indoor-sources/classrooms-FA26.txt",
+      "sha256": "b485329436badb02834df241fd81ea48d9ec9e0f2edef106cb11d7f56d43453b",
+      "routedUrl": "https://sheeptester.github.io/uxdy/data/classrooms-FA26.txt",
+      "indoorAndAppAssets": "Served normally from localhost:8000",
+      "routeRemovedAfterChecks": true
+    },
+    "interactionEvidence": {
+      "emptyFloor": "L5 aria-pressed=true; zero visible .explorer-label elements; screenshot shows empty scene",
+      "returnToL4": "L4 aria-pressed=true; 21 visible labels including 4103; screenshot shows native room boundaries"
+    },
+    "limitations": [
+      "Immediate screenshots during a 450 ms animation and one stale-tab screenshot were excluded; retained interaction images were taken after settling.",
+      "These checks do not prove present-day building accuracy; original diagram limitations remain."
+    ],
+    "replayViewport": {
+      "width": 500,
+      "height": 842,
+      "devicePixelRatio": 1.2
+    },
+    "sdscSourcePanel": {
+      "route": "http://localhost:8000/?building=SDSC&room=E129",
+      "viewport": {
+        "width": 500,
+        "height": 842,
+        "devicePixelRatio": 1.2
+      },
+      "scheduleFixtureUsed": false,
+      "normalScheduleFetchCompleted": true,
+      "webglCanvasCount": 1,
+      "pageErrors": 0,
+      "consoleWarnings": [],
+      "sourceLink": "https://business.sdsc.edu/assets/documents/sdsc_emergency_plan.pdf",
+      "provenanceLabel": "Traced from floor maps",
+      "screenshot": "/tmp/ucsd-sdsc-e129-public-source.png",
+      "sha256": "8c5f69a6640c9d906f0963c62c34de2adc1a5b4bff6fe9f5c2fb05ec3ec3260c",
+      "visuallyReviewed": true
+    }
+  }
+}

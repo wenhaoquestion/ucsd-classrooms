@@ -1,0 +1,379 @@
+{
+  "accessed": "2026-10-21",
+  "scope": [
+    "COA",
+    "MALK",
+    "TASB",
+    "FAH",
+    "PODEM",
+    "MOS",
+    "CTL",
+    "RWAC",
+    "MCTF"
+  ],
+  "verificationNote": "PDF page numbers are one-based. Public design documents have now been downloaded through Playwright MCP; acquisition-index.json records actual bytes and hashes. Planning layouts without verified classroom labels have not been converted into room locations.",
+  "sources": [
+    {
+      "id": "COA-MALK-REGENTS-2023",
+      "buildings": [
+        "COA",
+        "MALK"
+      ],
+      "title": "Ridge Walk North Living and Learning Neighborhood: design graphics",
+      "url": "https://regents.universityofcalifornia.edu/regmeet/mar23/f9attach6.pdf",
+      "format": "pdf",
+      "verification": "Public PDF opened; 8 pages; extracted headings confirm ground and upper-level plans.",
+      "pages": [
+        {
+          "page": 2,
+          "content": "Site plan; scale 1 inch = 100 feet; Building C mixed academic/residential use."
+        },
+        {
+          "page": 4,
+          "content": "Ground Level Plan, with Building C and Economics building; Building C lobby on second floor."
+        },
+        {
+          "page": 5,
+          "content": "Typical Upper Level Plan."
+        },
+        {
+          "page": 6,
+          "content": "Typical residential units; not classroom plans."
+        }
+      ],
+      "limitations": [
+        "Design approval graphics from March 2023, before occupancy.",
+        "No classroom room numbers verified; not sufficient alone to map 20 Coalition schedule rooms.",
+        "Confirm as-built differences and room numbers before tracing."
+      ],
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/COA-MALK-REGENTS-2023.pdf",
+        "sha256": "e07962a55f7dc886c9217158489b93361dab41f6b513bfb1d09c42c9eee134c7",
+        "acquiredAt": "2026-10-21T23:06:15.783Z"
+      }
+    },
+    {
+      "id": "COA-MALK-HDH-2025",
+      "buildings": [
+        "COA",
+        "MALK"
+      ],
+      "title": "Ridge Walk North Living Learning Neighborhood: RRSS Supervisor and Manager Meeting",
+      "url": "https://hdh.ucsd.edu/_files/Ridge-Walk-LLN.pdf",
+      "format": "pdf",
+      "verification": "Public PDF opened; 18 pages; dated February 4, 2025.",
+      "pages": [
+        {
+          "page": 5,
+          "content": "Site plan key identifies Coalition as C and Brian C. Malk Hall as E."
+        }
+      ],
+      "limitations": [
+        "Useful identity crosswalk for architectural building letters; room geometry and classroom numbering not verified."
+      ],
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/COA-MALK-HDH-2025.pdf",
+        "sha256": "de696c7fd8283b302cc48871f1c302187de935416a4c1352dd551ca0fb541320",
+        "acquiredAt": "2026-10-21T23:06:32.590Z"
+      }
+    },
+    {
+      "id": "TASB-REGENTS-2023",
+      "buildings": [
+        "TASB"
+      ],
+      "title": "Triton Center: design graphics",
+      "url": "https://regents.universityofcalifornia.edu/regmeet/mar23/f8attach6.pdf",
+      "format": "pdf",
+      "verification": "Public PDF opened; 10 pages; extracted headings identify two floor plans and building sections.",
+      "pages": [
+        {
+          "page": 3,
+          "content": "Site plan; Building A is Student Academic Resources, including Teaching and Learning Commons, Transfer Center and Global Initiatives."
+        },
+        {
+          "page": 4,
+          "content": "Level 1 Floor Plan; caption says levels 2 and 3 similar."
+        },
+        {
+          "page": 5,
+          "content": "Level 4 Floor Plan; caption says levels 5 and 6 similar."
+        },
+        {
+          "page": 6,
+          "content": "Building sections, including Building A."
+        }
+      ],
+      "limitations": [
+        "Unnumbered design plans dated March 2023; floor similarity cannot establish identical layouts.",
+        "Building A is now Triton Administrative Services Building; a current numbered plan is still needed.",
+        "May support an explicitly approximate shell or alignment after visual inspection; not yet traced."
+      ],
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/TASB-REGENTS-2023.pdf",
+        "sha256": "9d75034fa17ce301b410f889d332392db16b8c43718fb42524750c7fd4123c84",
+        "acquiredAt": "2026-10-21T23:06:20.504Z"
+      }
+    },
+    {
+      "id": "TASB-CURRENT-IDENTITY",
+      "buildings": [
+        "TASB"
+      ],
+      "title": "Triton Transfer Hub location and amenities",
+      "url": "https://transferstudents.ucsd.edu/about/location-and-amenities/index.html",
+      "format": "html",
+      "verification": "Official public page identifies the Transfer Hub on floor 3 of Triton Center Building A, Triton Administrative Services Building.",
+      "pages": [],
+      "limitations": [
+        "Identity/floor cross-check only, no room geometry."
+      ]
+    },
+    {
+      "id": "PODEM-REGENTS-2020",
+      "buildings": [
+        "PODEM"
+      ],
+      "title": "Theatre District Living Learning Neighborhood: design graphics",
+      "url": "https://regents.universityofcalifornia.edu/regmeet/sept20/f2attach7.pdf",
+      "format": "pdf",
+      "verification": "Public PDF opened; 11 pages; contains ground and upper-level plan headings.",
+      "pages": [
+        {
+          "page": 2,
+          "content": "Site plan identifies Building 5 as 16 stories."
+        },
+        {
+          "page": 5,
+          "content": "Ground Level Plan with academic and lecture hall uses, including Building 5."
+        },
+        {
+          "page": 6,
+          "content": "Typical Upper Level Plan, primarily residential."
+        }
+      ],
+      "limitations": [
+        "2020 design document; room numbers not verified.",
+        "Podemos = Building 5 is independently supported by UCSD Police 2025 annual report Appendix A, printed page 167.",
+        "Do not use apartment plans to locate classrooms."
+      ],
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/PODEM-REGENTS-2020.pdf",
+        "sha256": "271c381a4c6a29c12c937f3637a37571809962285de45b6f5c46d4ed05d320a5",
+        "acquiredAt": "2026-10-21T23:06:26.412Z"
+      }
+    },
+    {
+      "id": "PODEM-BUILDING-IDENTITY",
+      "buildings": [
+        "PODEM"
+      ],
+      "title": "UCSD Annual Security and Fire Safety Report",
+      "url": "https://www.police.ucsd.edu/docs/annualclery.pdf",
+      "format": "pdf",
+      "verification": "Search extraction of 2025 report Appendix A identifies Building 5 as Podemos, 9185 Scholars Drive South.",
+      "pages": [
+        {
+          "printedPage": 167,
+          "content": "Eighth College buildings: Building 5 - Podemos."
+        }
+      ],
+      "limitations": [
+        "Rolling URL may be replaced with later report; record year when downloading.",
+        "Identity only, not floor geometry."
+      ]
+    },
+    {
+      "id": "NTPLLN-REGENTS-2018",
+      "buildings": [
+        "RWAC",
+        "CTL",
+        "MOS"
+      ],
+      "title": "North Torrey Pines Living and Learning Neighborhood / Ridge Walk Academic Complex: design graphics",
+      "url": "https://regents.universityofcalifornia.edu/regmeet/mar18/f3attach3.pdf",
+      "format": "pdf",
+      "verification": "Public PDF opened; 7 pages; floor-plan headings extracted.",
+      "pages": [
+        {
+          "page": 2,
+          "content": "Site plan with building numbers and RWAC Building 1."
+        },
+        {
+          "page": 4,
+          "content": "Typical residential tower and podium plans; not classroom evidence."
+        },
+        {
+          "page": 5,
+          "content": "Academic Building Level 02, community terrace level, lecture hall section and classroom use."
+        }
+      ],
+      "limitations": [
+        "Design diagrams without verified classroom numbers.",
+        "RWAC already has Facilities outlines on all 9 floors in repository; prioritize MOS and remaining CTL gaps.",
+        "Cross-check numbered buildings against current Catalyst and Mosaic identity before any geometry import."
+      ],
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/NTPLLN-REGENTS-2018.pdf",
+        "sha256": "ac5681dbd766b31b4b8c5498fe3fd145a84a95aa694ed2dc4b7862c8a50087d0",
+        "acquiredAt": "2026-10-21T23:07:55.597Z"
+      }
+    },
+    {
+      "id": "FAH-REGENTS-2019",
+      "buildings": [
+        "FAH"
+      ],
+      "title": "Franklin Antonio Hall: design graphics",
+      "url": "https://regents.universityofcalifornia.edu/regmeet/may19/f5attach1.pdf",
+      "format": "pdf",
+      "verification": "Original public design PDF downloaded and verified: 10 pages, 14,611,897 bytes; see acquisition-index.json. No numbered classroom geometry from this design document was integrated.",
+      "pages": [],
+      "supportingUrl": "https://regents.universityofcalifornia.edu/regmeet/may19/f5.pdf",
+      "limitations": [
+        "This is an older design document; no exact current classroom-number mapping is established from it.",
+        "FAH 1101/1450 geometry and four floor silhouettes were instead traced from FAH-EHS-2025; 1301 is separately traced from the public FIS first-floor raster; see data/indoor/FAH/fis-1301-review.json."
+      ],
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/FAH-REGENTS-2019.pdf",
+        "sha256": "ffe3b514c751a504d61f03ada754b795ed532ad3b00f5246ee44c37a6bd6138d",
+        "acquiredAt": "2026-10-21T23:08:03.351Z"
+      },
+      "relatedGeometrySource": "FAH-EHS-2025"
+    },
+    {
+      "id": "FAH-JSOE-BUILDING-SHEET",
+      "buildings": [
+        "FAH"
+      ],
+      "title": "Franklin Antonio Hall building information sheet",
+      "url": "https://docs.google.com/document/d/1RkAEOMWbcc2WzwaGJDKPGnFY360grmgasDdsVlB342o/export?format=pdf",
+      "format": "pdf",
+      "verification": "Official Jacobs School building-information sheet read through the connected Docs tool; its Campus-provided evacuation maps hyperlink resolves to FAH-EHS-2025.",
+      "pages": [],
+      "supportingUrl": "https://jacobsschool.ucsd.edu/facilities/emergency",
+      "limitations": [
+        "The information sheet itself is not the numbered floor-plan source. See FAH-EHS-2025 in emergency-sources.json for the downloaded PDF and partial geometry review."
+      ],
+      "resolvedFloorPlanSource": "FAH-EHS-2025"
+    },
+    {
+      "id": "MCTF-COASTAL-2019-EXHIBITS",
+      "buildings": [
+        "MCTF"
+      ],
+      "title": "Marine Conservation Facility: coastal permit 6-18-0977 exhibits",
+      "url": "https://documents.coastal.ca.gov/reports/2019/2/Th27b/Th27b-2-2019-exhibits.pdf",
+      "format": "pdf",
+      "verification": "Public 22-page PDF opened; indexed project plans and elevation pages inspected via text extraction.",
+      "pages": [
+        {
+          "page": 9,
+          "content": "Exhibit 5 project site plan, architectural sheet SK-537 dated September 21, 2018."
+        },
+        {
+          "page": 10,
+          "content": "Landscape and circulation site plan."
+        },
+        {
+          "page": 11,
+          "content": "Building elevations, architectural sheet SK-547 dated September 24, 2018."
+        },
+        {
+          "page": 12,
+          "content": "Northwest and northeast elevations."
+        }
+      ],
+      "limitations": [
+        "Site plans and elevations; these pages do not establish numbered classroom floor plans.",
+        "MCTF 130, 140, 202 and 210 remain unmapped by this source.",
+        "Original documentation's SCH 2017061003 lead could not be independently retrieved in this session; retain as unverified lead, not a found plan."
+      ],
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/MCTF-COASTAL-2019-EXHIBITS.pdf",
+        "sha256": "1bcb9819faff807c5a719e134ddb5112906fd6cade5d57b841f857480b598d59",
+        "acquiredAt": "2026-10-21T23:08:10.717Z"
+      }
+    }
+  ],
+  "officialAcquisitionRoutes": [
+    {
+      "id": "UCSD-FIM-TRIRIGA",
+      "url": "https://facilityservices.ucsd.edu/information/tools.html",
+      "title": "Space Management Tools and Services",
+      "verification": "Official page opened; describes Tririga floor plans, PDF creation, account requests, and floor-plan corrections.",
+      "accessRequestUrl": "https://support.ucsd.edu/its?id=sc_cat_item&sys_id=e3908c91db157f0006037a131f96193d",
+      "correctionsUrl": "https://ucsd.tririga.com/p/web/serviceRequest?homeApp=workLocation",
+      "contact": "omcp@ucsd.edu",
+      "request": "Current numbered architectural floor plans or public wayfinding exports for missing classroom floors; a room ID / building code crosswalk; permission for public classroom map derivatives.",
+      "limitations": [
+        "Campus SSO succeeded, but Portfolio/Floors is still absent. An Open account-setup request was observed in the official MyStuff portal at approximately 2026-10-22T00:42Z; the submission actor is not established. No floor-plan permission or export has been obtained.",
+        "Page still describes OnBase repository as expected spring 2026; availability was not confirmed."
+      ]
+    },
+    {
+      "id": "UCSD-FIS-CAD",
+      "url": "https://facilities.ucsd.edu/Drawings/Default.htm",
+      "title": "Facilities Information System: project drawings and CAD backgrounds",
+      "verification": "Public endpoint displays login requirement and recommends FIM/Tririga or its API for accurate highlighted floor plans.",
+      "accessRequestUrl": "https://facilities.ucsd.edu/Apply.htm",
+      "cadUrl": "https://facilities.ucsd.edu/Masters/Default.htm",
+      "contact": "kbelles@ucsd.edu",
+      "supportContact": "sblee@ucsd.edu",
+      "request": "Authorized room-outline export (DWG, vector PDF, SVG or equivalent); request classroom-only geometry if full construction drawings cannot be released.",
+      "limitations": [
+        "Intended primarily for UCSD employees and construction professionals with a contractual relationship; student eligibility not assumed.",
+        "Legacy FIS authentication is separate; no authorized CAD or construction-drawing export has been acquired."
+      ]
+    },
+    {
+      "id": "UCSD-BIM",
+      "url": "https://plandesignbuild.ucsd.edu/design/bim.html",
+      "title": "Transition to Operations and Building Information Modeling",
+      "verification": "Official page confirms CAD/BIM delivery practices. Facility Services maps page identifies this route for facility management professionals and contractors.",
+      "supportingUrl": "https://facilityservices.ucsd.edu/resources/maps.html",
+      "contact": "kbelles@ucsd.edu",
+      "alternateContact": "omcp@ucsd.edu",
+      "request": "Shareable architectural IFC/Revit or a simplified classroom/level export for FAH, COA, PODEM and TASB; request source dates, coordinates and redistribution conditions.",
+      "limitations": [
+        "Guidelines are public; a downloadable public campus BIM model was not found."
+      ]
+    },
+    {
+      "id": "UCSD-GIS",
+      "url": "https://facilityservices.ucsd.edu/resources/maps.html",
+      "title": "Maps and Construction Drawings: campus GIS",
+      "verification": "Official page lists 2D/3D campus maps, while indoor maps and floor-to-floor navigation are future enhancements.",
+      "contact": "dhenderson@ucsd.edu",
+      "request": "Updated TASB footprint and building identifiers; shareable building/level/room feature layers if available.",
+      "limitations": [
+        "Existing public 3D exterior features do not establish interior room locations; no public indoor ArcGIS layer confirmed."
+      ]
+    },
+    {
+      "id": "JSOE-SPACE",
+      "url": "https://jacobsschool.ucsd.edu/facilities/emergency",
+      "title": "Jacobs School Emergency Action Plan",
+      "verification": "Official page lists school space manager contact for building information sheet questions and amendments.",
+      "contact": "jsoe-space@ucsd.edu",
+      "request": "Current metric/campus registration for FAH; 1101 and 1450 are already traced from the public EH&S PDF and 1301 from the public FIS raster.",
+      "limitations": [
+        "Request draft only; no message sent."
+      ]
+    }
+  ],
+  "findings": [
+    "The repository's generated layouts do not include the legacy fetch/conversion source or cache, so missing outline causes could not be reproduced from original pages.",
+    "The strongest newly verified public design documents cover Coalition/Malk, Triton Center/TASB, and Podemos; each still needs current room-number crosschecks before classroom placement.",
+    "No new interior 3D/BIM model was obtained. Exterior models, renders, site plans and floor-only location evidence are labeled separately from room geometry.",
+    "On 2026-10-21 America/Los_Angeles, the user completed Tririga SSO, but the authenticated sidebar lacked Portfolio/Floors. At approximately 00:42 UTC on 2026-10-22, the official MyStuff portal showed an Open Tririga/Facilities Activity Hub account-setup request. Its submission actor is not established and no ticket identifier or personal information is retained. No floor-plan permissions or internal exports have been obtained. See tririga-access-check.json."
+  ],
+  "acquisitionIndex": "data/indoor/research/acquisition-index.json"
+}

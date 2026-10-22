@@ -1,0 +1,27 @@
+{
+  "validation": {
+    "ok": true,
+    "issues": []
+  },
+  "mapped": [
+    {
+      "key": "4103",
+      "id": "L4-FIS-73656"
+    }
+  ],
+  "scheduleOnly": [
+    "1102"
+  ],
+  "unplaced": [
+    {
+      "key": "1104",
+      "floor": "L1",
+      "basis": "floor-listing"
+    },
+    {
+      "key": "5A03",
+      "floor": "L5",
+      "basis": "floor-listing"
+    }
+  ]
+}

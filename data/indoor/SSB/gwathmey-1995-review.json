@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "building": "SSB",
+  "decision": "historical-reference-only",
+  "runtimeChanges": false,
+  "newlyPlacedScheduleKeys": [],
+  "source": {
+    "title": "University of California at San Diego: Social Sciences Building and Super Computer Office Building",
+    "publisher": "Gwathmey Siegel & Associates Architects LLC",
+    "url": "https://www.gwathmey-siegel.com/pdf/199304.pdf",
+    "statedProjectCompletionYear": 1995,
+    "documentPublicationDate": null,
+    "path": "local/indoor-sources/SSB-GWATHMEY-1995.pdf",
+    "bytes": 661560,
+    "sha256": "3fa522c687bb496fb0e916dc18f905d8e8195c65cbf57e9bc3d65871496182d8"
+  },
+  "reviewedPages": [
+    {
+      "pdfPage": 4,
+      "plans": [
+        "Ground level",
+        "Second level"
+      ],
+      "containsInteriorWalls": true,
+      "roomNumbersVisible": false,
+      "scaleBarVisible": false,
+      "includesAdjacentBuilding": "Super Computer Office Building addition"
+    }
+  ],
+  "targetScheduleKeys": {
+    "L1": [
+      "103",
+      "106",
+      "139"
+    ],
+    "L3": [
+      "333",
+      "353"
+    ]
+  },
+  "limitations": [
+    "Ground and second level diagrams have no room identifiers or room areas. They cannot establish a reliable join to the missing schedule rooms.",
+    "The page contains two different building components; adjacent Super Computer Office addition geometry must not be assigned to SSB.",
+    "Project completion in 1995 does not establish current interior partition configuration.",
+    "No third-level plan is provided. The second-level plan must not be relabeled as the missing third level."
+  ],
+  "nextEvidenceNeeded": "Numbered ground/third-floor plan, or independent authoritative room-number map sufficient to identify and validate individual boundaries."
+}

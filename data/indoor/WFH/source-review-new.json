@@ -1,0 +1,583 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-22T01:59:06.143304+00:00",
+  "scope": "Additional public-source search after the prior integration report. Public pages and actually retained images only; no shared browser tabs, account registration, authentication bypass or external messages. No shared manifest/catalog/docs modified.",
+  "searchRounds": [
+    {
+      "round": 1,
+      "focus": "Exact building names, current numbered rooms, departmental emergency/floor-plan pages and official handbooks."
+    },
+    {
+      "round": 2,
+      "focus": "Original architects/designers, physical wayfinding installer photographs, public construction planroom and project bid identities."
+    }
+  ],
+  "runtimeModified": true,
+  "addedRoomGeometry": 0,
+  "exhaustiveness": "These targeted searches do not establish that all public or authorized sources are exhausted.",
+  "building": "WFH",
+  "targetKeys": [
+    "1N108",
+    "1W102",
+    "3N129",
+    "3W113",
+    "4N128",
+    "4W114"
+  ],
+  "priorEvidence": "data/indoor/WFH/seating-review.json",
+  "newSources": [
+    {
+      "id": "WFH-CLEAR-SIGN-PROJECT",
+      "url": "https://clearsigns-2.com/content/page/a-rady-school",
+      "publisher": "Clear Sign & Design, original sign contractor",
+      "reviewStatus": "all-30-actually-downloaded-listed-photographs-visually-reviewed",
+      "sourceDate": null,
+      "dateLimitation": "Project installation photographs; the webpage does not establish an individual capture date or current renovation status.",
+      "sources": [
+        {
+          "id": "WFH-CLEAR-RS-1",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-1.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-1.jpg",
+          "sha256": "fe2057b0ae8301ee8d52cb99cd7b8dbae4f70513fb667eaf714ace4179f09b2f",
+          "bytes": 130204,
+          "imageSize": [
+            595,
+            334
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-2",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-2.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-2.jpg",
+          "sha256": "6b47f893b5063525cc0df4e9616e7e11bccb2344dbdfb775a495db4a291e1e86",
+          "bytes": 131779,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-3",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-3.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-3.jpg",
+          "sha256": "d50b69e3b12b6afdafa55178a4df50537bb7463617a18b0864494b36777d1692",
+          "bytes": 107184,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-4",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-4.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-4.jpg",
+          "sha256": "dd04a3bd892ee3eb8df161c64434a6473222aba020d8b42df5b55749a31ad3e9",
+          "bytes": 137937,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-5",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-5.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-5.jpg",
+          "sha256": "a1c683a1a6e4326da3ab0a88c39384fb703fb9cc6c24daa5bcf368380fd465d0",
+          "bytes": 127201,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-6",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-6.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-6.jpg",
+          "sha256": "bea841efc7dbad810e98334eb3d0e8dcaa7c95a1eb1ff8b57de833787cb9e65f",
+          "bytes": 84840,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-7",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-7.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-7.jpg",
+          "sha256": "b6b90e1bddf96c11a002fe77a31abfde17c99fd57bb26ae9fdeb0e4005ffa3b4",
+          "bytes": 152009,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-8",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-8.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-8.jpg",
+          "sha256": "335b0762e8c13117efeeba6b82bb5dacb97b7583e8755d446e2720d00255495c",
+          "bytes": 156290,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-9",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-9.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-9.jpg",
+          "sha256": "d0fead2b2fbb41ca38ef22558952b10ec69577ca8525e07545efc1147c9499fe",
+          "bytes": 105662,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-10",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-10.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-10.jpg",
+          "sha256": "7a9a81e66a6204a1e96cb4e500c94a8369621b9f06b43945d1a17e06cc6bfebb",
+          "bytes": 192552,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-11",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-11.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-11.jpg",
+          "sha256": "510733f48b0acbb93dd81f2155eface19fb43c5ab3051eab34e49cd92a1b9e96",
+          "bytes": 164673,
+          "imageSize": [
+            595,
+            334
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-12",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-12.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-12.jpg",
+          "sha256": "0fcee997922a45026c1423c1715a0fc5af11ec5499d1fce1f7420fdb053f20b9",
+          "bytes": 205263,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-13",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-13.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-13.jpg",
+          "sha256": "79b2ecfb64226e9dad6abdaf0bc07d79c4c61fdc86812e6a38ff1b8130a50e7c",
+          "bytes": 112047,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-14",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-14.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-14.jpg",
+          "sha256": "cf79477f8272d010d39f07025ad490e18e79765308a637a3724cde1a87ce9f2c",
+          "bytes": 122519,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-15",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-15.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-15.jpg",
+          "sha256": "26bf89a07dcfe6b20801392cd15ad3a153027449f3470177ec37005583c5e540",
+          "bytes": 143075,
+          "imageSize": [
+            595,
+            334
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-16",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-16.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-16.jpg",
+          "sha256": "622e5b8ffb3a5926513ef3dffa95550c3e7bdb419af05a4ebf7fdc30d4fd7fea",
+          "bytes": 82985,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-17",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-17.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-17.jpg",
+          "sha256": "a46d84030af17a0b74183d0997783f45f1961170a8924b82ebf030b12c5b6da9",
+          "bytes": 92625,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-18",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-18.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-18.jpg",
+          "sha256": "5d9215adaf045addcfe66cfa053204baac824c9a17b24b3bad362e101264fb77",
+          "bytes": 129597,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-19",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-19.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-19.jpg",
+          "sha256": "f619022563a75204753961cbcf5f0bd5a3c2a363d55659411d5956c49fa22772",
+          "bytes": 103621,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-20",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-20.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-20.jpg",
+          "sha256": "6d8a8221a8417c823d4d73f7ac2524cb56d13687c7a11bcf427d84d0e82cb84b",
+          "bytes": 93212,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-21",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-21.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-21.jpg",
+          "sha256": "e34fe870a661cd6cc4c7b2204646740c8c224213c67ff12ea52cea2768e499fb",
+          "bytes": 114021,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-22",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-22.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-22.jpg",
+          "sha256": "6a79dcc10a34be4bb9ac1205dc133dcdfaea481187e47266644a99240461a965",
+          "bytes": 128093,
+          "imageSize": [
+            595,
+            334
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-23",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-23.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-23.jpg",
+          "sha256": "ed7b302a33621e15cdac134b436a2b0ab379274a4665e79846aaeda47a301547",
+          "bytes": 103017,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-24",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-24.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-24.jpg",
+          "sha256": "5e28818e81da971db488b5bfd39abea38a2911e9e76067aac7d2ccd1b1d6c983",
+          "bytes": 119799,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-25",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-25.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-25.jpg",
+          "sha256": "f9921b201a3cfe455e1c5bea5ef72146242ead2afad765a2f6a34a60518074a7",
+          "bytes": 102710,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-26",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-26.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-26.jpg",
+          "sha256": "c606d613f5f48f9149a4f3b826f636405f2e79c4a3c2a54db66d05913816a4dc",
+          "bytes": 127375,
+          "imageSize": [
+            595,
+            334
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-27",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-27.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-27.jpg",
+          "sha256": "b15db8904e2c07f5eb6bbe0825c0345b0b3c1c403dfa1eba2379bb95e26a2711",
+          "bytes": 99158,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-28",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-28.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-28.jpg",
+          "sha256": "a962ac1eeb56d3d9e5982585326f39223374817ecbf40e00831b31653e919231",
+          "bytes": 86398,
+          "imageSize": [
+            595,
+            334
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-29",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-29.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-29.jpg",
+          "sha256": "1a3c132aca708b2bf973890c8ac84b0cda8645860b170cd3c654a7d4f471badb",
+          "bytes": 135585,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        },
+        {
+          "id": "WFH-CLEAR-RS-30",
+          "file": "local/indoor-sources/WFH-CLEAR-RS-30.jpg",
+          "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-30.jpg",
+          "sha256": "c6f80529dbfa1a4d2b23c991edcf0067b02a1e858fb476fd1799fdc5b6031e4e",
+          "bytes": 82347,
+          "imageSize": [
+            595,
+            335
+          ],
+          "artifactType": "auxiliary-project-photograph",
+          "acquiredAtApproximate": "2026-10-22T01:58:00Z",
+          "acquiredAtPrecision": "minute; supplied by downloading root agent",
+          "geometryImported": false
+        }
+      ],
+      "reviewImages": [
+        "local/indoor-sources/WFH-review/clear-sign-contact-1.jpg",
+        "local/indoor-sources/WFH-review/clear-sign-contact-2.jpg",
+        "local/indoor-sources/WFH-review/clear-sign-contact-3.jpg"
+      ],
+      "findings": [
+        {
+          "image": "WFH-CLEAR-RS-22",
+          "finding": "The physical sign clearly says THIRD FLOOR and lists 3N129 among classroom identifiers.",
+          "candidateImprovement": {
+            "scheduleKey": "3N129",
+            "floor": "L3",
+            "kind": "source-listed-floor-only-integrated",
+            "geometryRecovered": false,
+            "basis": "floor-listing"
+          }
+        },
+        {
+          "image": "WFH-CLEAR-RS-19",
+          "finding": "The directory's third-floor panel lists CONFERENCE ROOM 3W113. The original and enlarged reading crop were reviewed independently by two agents; enlargement was used only for inspection.",
+          "reviewImage": "local/indoor-sources/WFH-review/clear-rs19-thirdfloor-review.png",
+          "candidateImprovement": {
+            "scheduleKey": "3W113",
+            "floor": "L3",
+            "kind": "source-listed-floor-only-integrated",
+            "geometryRecovered": false,
+            "basis": "floor-listing"
+          }
+        },
+        {
+          "images": [
+            "WFH-CLEAR-RS-15",
+            "WFH-CLEAR-RS-16",
+            "WFH-CLEAR-RS-17",
+            "WFH-CLEAR-RS-18"
+          ],
+          "finding": "Photos contain installed first/second-floor wayfinding plans, but original photographs are only 595 pixels wide and the actual plan occupies a small portion; target labels and wall boundaries cannot be reliably resolved together."
+        },
+        {
+          "image": "WFH-CLEAR-RS-28",
+          "finding": "Close photograph of fifth-floor emergency-exit sign is cropped; complete room boundaries are absent and this is not a target floor."
+        }
+      ],
+      "decision": "Preserve as auxiliary photos and floor-identity evidence, not as 30 newly acquired floor plans. No tracing or metric/campus transform is justified."
+    },
+    {
+      "id": "WFH-RSM-HANDBOOK-2024",
+      "url": "https://rady.ucsd.edu/_files/info/RSM-Student-Handbook-2024-2025.pdf",
+      "pages": 37,
+      "printedUpdated": "2024-09-12",
+      "reviewStatus": "extracted-text-and-contents-reviewed-not-all-pages-visually-reviewed",
+      "finding": "Facilities section describes access, lounge and study rooms. No indexed floor-plan or map section; full text has no floor plan/map match. This is not proof that every embedded image lacks geometry.",
+      "localFile": null
+    },
+    {
+      "id": "WFH-LANDLAB",
+      "url": "https://land-lab.com/project/ucsd-rady-school-of-management-phase-ii/",
+      "publisher": "landLAB, original landscape designer",
+      "finding": "Public project page lists a site-plan image for the 2012 Phase II project.",
+      "imageUrl": "https://land-lab.com/wp-content/uploads/2015/09/UCSD_RSOM_008.jpg",
+      "reviewStatus": "page-reviewed-image-fetch-cache-miss",
+      "geometryClaim": null
+    },
+    {
+      "id": "WFH-HMC-2023",
+      "url": "https://hmcarchitects.com/wp-content/uploads/Q12023_HiEd_Brochure_2023-1.pdf",
+      "publisher": "HMC Architects",
+      "pages": 17,
+      "relevantPdfPage": 15,
+      "finding": "Rady project description and imagery at page 15; available text does not expose a numbered wall plan. Screenshot fetch failed, so image geometry is not ruled out by a visual review.",
+      "reviewStatus": "text-reviewed-visual-unresolved",
+      "localFile": null
+    },
+    {
+      "id": "WFH-GDN-DESIGNER",
+      "url": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "publisher": "GDN Architects; author credits work completed while at HMC",
+      "finding": "22-image designer portfolio. Web extractor exposes only first four image links; first image fetch cache-missed. Not all gallery images inspected.",
+      "reviewStatus": "page-reviewed-gallery-still-open-lead"
+    }
+  ],
+  "decision": "Installed signs corroborate 3N129 and 3W113 on Level 3. These two entries now use floor-listing evidence; they remain unplaced. No room polygon, other floor assignment or campus transform was changed.",
+  "runtimeOutput": "static/indoor/facilities/WFH.json",
+  "reproducibleUpdate": "scripts/enrich-indoor-metadata.mjs, final WFH block",
+  "floorListingsAdded": [
+    "3N129",
+    "3W113"
+  ],
+  "validation": {
+    "schema": {
+      "ok": true,
+      "issues": []
+    },
+    "preservation": "Verified all floor outlines, rooms, areas, vertical values, campus geo and every other unplaced record unchanged."
+  }
+}

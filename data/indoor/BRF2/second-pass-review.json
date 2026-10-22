@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "building": "BRF2",
+  "reviewedAt": "2026-10-22T02:02:28.272687+00:00",
+  "scope": "Missing 1102/1104 positions and upper-floor 5A03 position",
+  "method": "Second pass through public department pages, original event pages, architect documentation and explicit document links. Known failed FIS endpoints were not retried. No email or access request was sent.",
+  "sources": [
+    {
+      "url": "https://ratgenes.org/ctc2019/",
+      "status": "explicit-floor-listed",
+      "finding": "Original 2019 event organizer states 1104 is on the first floor. Bounded evidence is recorded in floor-listing-evidence.json."
+    },
+    {
+      "url": "https://ratgenes.org/meetings/nida-center-for-gwas-in-outbred-rats-9th-annual-retreat/",
+      "status": "explicit-floor-listed",
+      "finding": "Original 2023 organizer states 5A03 is on Floor 5 and 4103 is on Floor 4; the page contains campus/district maps, not indoor perimeter drawings."
+    },
+    {
+      "url": "https://www.zgf.com/work/1031-university-of-california-san-diego-health-sciences-biomedical-research-facility",
+      "status": "architect-project-description-no-target-plan-verified",
+      "finding": "Architect confirms separate five-story laboratory and seven-story office components, completed in 2014. No new target-room drawing verified."
+    },
+    {
+      "url": "https://today.ucsd.edu/story/marching_for_science",
+      "status": "room-existence-only",
+      "finding": "2017 campus article identifies BRFII Conference Room 1102, without an explicit floor or boundary."
+    }
+  ],
+  "decision": "Added source-listed L1/L5 records with empty outlines; no new geometry. The 4103 vector is preserved; 1102 remains knownUnmapped.",
+  "geometryAdded": 0,
+  "floorListingsAdded": [
+    "1104",
+    "5A03"
+  ],
+  "evidence": "data/indoor/BRF2/floor-listing-evidence.json",
+  "output": "static/indoor/BRF2-combined.json"
+}

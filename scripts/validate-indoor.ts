@@ -4,7 +4,7 @@
 //   npm run validate:indoor
 
 import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { FACILITIES_LAYOUTS, SOURCE_LAYOUTS } from "../src/lib/indoor/manifest";
+import { FACILITIES_LAYOUTS, SOURCE_LAYOUTS, SUPPLEMENTAL_LAYOUTS } from "../src/lib/indoor/manifest";
 import { indexIndoorBuilding } from "../src/lib/indoor/roomMapping";
 import { IndoorBuilding } from "../src/lib/indoor/schema";
 import { validateIndoorBuilding } from "../src/lib/indoor/validate";
@@ -33,6 +33,7 @@ const files = new Set(
 for (const [code, entry] of [
   ...Object.entries(SOURCE_LAYOUTS),
   ...Object.entries(FACILITIES_LAYOUTS),
+  ...Object.entries(SUPPLEMENTAL_LAYOUTS),
 ]) {
   if (!knownBuildings.has(code)) {
     fail(`${code}: not a building code in buildings.json`);

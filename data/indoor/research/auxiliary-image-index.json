@@ -1,0 +1,1241 @@
+{
+  "schemaVersion": 1,
+  "scope": "Auxiliary installation/design photographs and one outdoor direction map, kept separate from source-document totals; these are not 90 usable indoor floor plans.",
+  "timestampPrecision": "WFH-CLEAR acquiredAt is approximate to the minute; GH batch exact interval recorded in its review. Other absent acquisition timestamps are not reconstructed from modification times.",
+  "sources": [
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-1.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-1.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 130204,
+      "sha256": "fe2057b0ae8301ee8d52cb99cd7b8dbae4f70513fb667eaf714ace4179f09b2f",
+      "imageSize": [
+        595,
+        334
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-2.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-2.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 131779,
+      "sha256": "6b47f893b5063525cc0df4e9616e7e11bccb2344dbdfb775a495db4a291e1e86",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-3.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-3.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 107184,
+      "sha256": "d50b69e3b12b6afdafa55178a4df50537bb7463617a18b0864494b36777d1692",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-4.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-4.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 137937,
+      "sha256": "dd04a3bd892ee3eb8df161c64434a6473222aba020d8b42df5b55749a31ad3e9",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-5.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-5.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 127201,
+      "sha256": "a1c683a1a6e4326da3ab0a88c39384fb703fb9cc6c24daa5bcf368380fd465d0",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-6.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-6.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 84840,
+      "sha256": "bea841efc7dbad810e98334eb3d0e8dcaa7c95a1eb1ff8b57de833787cb9e65f",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-7.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-7.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 152009,
+      "sha256": "b6b90e1bddf96c11a002fe77a31abfde17c99fd57bb26ae9fdeb0e4005ffa3b4",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-8.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-8.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 156290,
+      "sha256": "335b0762e8c13117efeeba6b82bb5dacb97b7583e8755d446e2720d00255495c",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-9.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-9.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 105662,
+      "sha256": "d0fead2b2fbb41ca38ef22558952b10ec69577ca8525e07545efc1147c9499fe",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-10.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-10.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 192552,
+      "sha256": "7a9a81e66a6204a1e96cb4e500c94a8369621b9f06b43945d1a17e06cc6bfebb",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-11.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-11.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 164673,
+      "sha256": "510733f48b0acbb93dd81f2155eface19fb43c5ab3051eab34e49cd92a1b9e96",
+      "imageSize": [
+        595,
+        334
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-12.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-12.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 205263,
+      "sha256": "0fcee997922a45026c1423c1715a0fc5af11ec5499d1fce1f7420fdb053f20b9",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-13.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-13.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 112047,
+      "sha256": "79b2ecfb64226e9dad6abdaf0bc07d79c4c61fdc86812e6a38ff1b8130a50e7c",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-14.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-14.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 122519,
+      "sha256": "cf79477f8272d010d39f07025ad490e18e79765308a637a3724cde1a87ce9f2c",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-15.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-15.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 143075,
+      "sha256": "26bf89a07dcfe6b20801392cd15ad3a153027449f3470177ec37005583c5e540",
+      "imageSize": [
+        595,
+        334
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-16.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-16.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 82985,
+      "sha256": "622e5b8ffb3a5926513ef3dffa95550c3e7bdb419af05a4ebf7fdc30d4fd7fea",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-17.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-17.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 92625,
+      "sha256": "a46d84030af17a0b74183d0997783f45f1961170a8924b82ebf030b12c5b6da9",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-18.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-18.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 129597,
+      "sha256": "5d9215adaf045addcfe66cfa053204baac824c9a17b24b3bad362e101264fb77",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-19.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-19.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 103621,
+      "sha256": "f619022563a75204753961cbcf5f0bd5a3c2a363d55659411d5956c49fa22772",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-20.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-20.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 93212,
+      "sha256": "6d8a8221a8417c823d4d73f7ac2524cb56d13687c7a11bcf427d84d0e82cb84b",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-21.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-21.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 114021,
+      "sha256": "e34fe870a661cd6cc4c7b2204646740c8c224213c67ff12ea52cea2768e499fb",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-22.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-22.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 128093,
+      "sha256": "6a79dcc10a34be4bb9ac1205dc133dcdfaea481187e47266644a99240461a965",
+      "imageSize": [
+        595,
+        334
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-23.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-23.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 103017,
+      "sha256": "ed7b302a33621e15cdac134b436a2b0ab379274a4665e79846aaeda47a301547",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-24.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-24.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 119799,
+      "sha256": "5e28818e81da971db488b5bfd39abea38a2911e9e76067aac7d2ccd1b1d6c983",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-25.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-25.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 102710,
+      "sha256": "f9921b201a3cfe455e1c5bea5ef72146242ead2afad765a2f6a34a60518074a7",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-26.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-26.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 127375,
+      "sha256": "c606d613f5f48f9149a4f3b826f636405f2e79c4a3c2a54db66d05913816a4dc",
+      "imageSize": [
+        595,
+        334
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-27.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-27.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 99158,
+      "sha256": "b15db8904e2c07f5eb6bbe0825c0345b0b3c1c403dfa1eba2379bb95e26a2711",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-28.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-28.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 86398,
+      "sha256": "a962ac1eeb56d3d9e5982585326f39223374817ecbf40e00831b31653e919231",
+      "imageSize": [
+        595,
+        334
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-29.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-29.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 135585,
+      "sha256": "1a3c132aca708b2bf973890c8ac84b0cda8645860b170cd3c654a7d4f471badb",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-30.jpg",
+      "url": "https://clearsigns-2.com/media/website/images/showcases/rady/RS-30.jpg",
+      "discoveryUrl": "https://clearsigns-2.com/content/page/a-rady-school",
+      "group": "WFH-CLEAR",
+      "review": "data/indoor/WFH/source-review-new.json",
+      "bytes": 82347,
+      "sha256": "c6f80529dbfa1a4d2b23c991edcf0067b02a1e858fb476fd1799fdc5b6031e4e",
+      "imageSize": [
+        595,
+        335
+      ],
+      "acquiredAt": "2026-10-22T01:58:00Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-01.jpg",
+      "url": "https://static.wixstatic.com/media/b9be85_19ada67c0f32497a9e484f1fdb3b6ff7~mv2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 244768,
+      "sha256": "f82bef89925da1e2f6c7e47c2f4ec2fc47e90cab759b5ba6043c0c0d63651d53",
+      "imageSize": [
+        1200,
+        798
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-02.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_5817da7664a94e15b3091831eb126728~mv2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 69384,
+      "sha256": "0d79d049b7fb766b772bdb13557dbfdef13abbff3df74503f5de4b05c6b081bc",
+      "imageSize": [
+        620,
+        240
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-03.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_294b3bbcf2ab45f4b7ea1ffd44cc3629~mv2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 43997,
+      "sha256": "4081183054a3e70153f84ab545b9c5df45ced1f8346be9aae437f1c05d60fb44",
+      "imageSize": [
+        564,
+        532
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-04.jpg",
+      "url": "https://static.wixstatic.com/media/b9be85_b1b14c487dc1490ba144f755385df33f~mv2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 162257,
+      "sha256": "eca41058d8b636cc66f15d21012aea0da2cadc879081f6368c93857acad5d6c2",
+      "imageSize": [
+        800,
+        423
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-05.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_ad0805d602774b3ab57d7e9dc03062c8~mv2_d_1936_2592_s_2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 1667004,
+      "sha256": "17a5776d693b2d04808ca8112d2a1e7900a54f44825ec5bf41d9c2e3c18de90a",
+      "imageSize": [
+        2592,
+        1936
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-06.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_68dd5ebff05f4f7e8bac5cdb8fb27f14~mv2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 387604,
+      "sha256": "f1b91bc3a96a0bfd7d73d6fd52d8467f8f1a7cd21c5e46b4d02eefbc21a6cbb0",
+      "imageSize": [
+        800,
+        423
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-07.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_822e085b0bff412a80cb68bdbc4d5437~mv2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 401294,
+      "sha256": "4340b8aa5be8709be119c29eeb51c9da59ce759b58210a68c8d44a19e80307a7",
+      "imageSize": [
+        800,
+        534
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-08.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_54a2508e41bd461d921ac59b8dbc36c4~mv2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 226361,
+      "sha256": "0f024161f45ef0e543fd14eb7d80ad46b8d7435f860d6629445deea6247a15c5",
+      "imageSize": [
+        750,
+        1125
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-09.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_fa0c77bd8ca04ff693f51b7e0573e587~mv2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 289547,
+      "sha256": "a2936755f9196b9bc421fed105cff1a86fe7ac8943f2bd0cad0a228544a2dadd",
+      "imageSize": [
+        1500,
+        1000
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-10.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_56099afcd63a44c4b2876ad32ae57a6c~mv2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 311204,
+      "sha256": "44319c73de9da8fe653ef5e1d9e39fa6fa82c2486dd5bde3315ff8c733e00ac0",
+      "imageSize": [
+        1500,
+        1000
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-11.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_519ece1f73124c2d921f30efc7b18579~mv2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 340229,
+      "sha256": "7f1d7e0d27c298bc6d297dec1d8c825738261ae35eccb16a974e4e8bd3126c1e",
+      "imageSize": [
+        1500,
+        1000
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-12.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_f86368dbb64149ac8f1be37dadb196e2~mv2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 328331,
+      "sha256": "6615e831bfd8d72295a280e99ab2793524741f4ac7f24cdaeae188a701ce6e13",
+      "imageSize": [
+        1500,
+        1000
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-13.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_0d1d8b48ac4b426888391d127e6d9a8c~mv2_d_3008_2000_s_2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 2960203,
+      "sha256": "7158f61f108b045912d4ed0e8711d1f938127ea2e0e286ca072d4940f137b580",
+      "imageSize": [
+        3008,
+        2000
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-14.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_7c2ebe5e49ff4f5e891fb9e633ec0d7a~mv2_d_2048_1364_s_2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 1558299,
+      "sha256": "9c840c98bb4180a98e52d8dd3a3a23167fb0988fc320cd1706498ac226358328",
+      "imageSize": [
+        2048,
+        1364
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-15.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_55c20d84bf424f7987b2925f7863e076~mv2_d_2000_3008_s_2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 1324881,
+      "sha256": "c46989f892be5a10d1eeb89cd8167c4d484b06f5c17d9c91aac83e7905962a40",
+      "imageSize": [
+        2000,
+        3008
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-16.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_d49f6fc9a60a405a8cacf4229d828454~mv2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 331899,
+      "sha256": "6806a0d1810a942b43888241fd3018df372c7769d47b84fe870e71eba6599995",
+      "imageSize": [
+        1500,
+        989
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-17.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_0c74e16e78674c8e8d39d6ee481b60b7~mv2_d_2448_3264_s_4_2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 1329002,
+      "sha256": "ac2636010b5ed59fbf5de7b562794fe9120c414f2483041b56326298b9f75433",
+      "imageSize": [
+        2448,
+        3264
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-18.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_734a54d35fa048e3b2024ba82b5dcc4a~mv2_d_2592_1936_s_2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 1902551,
+      "sha256": "21b1e3eb2c3924801c614834c3e76db91bb991bf3434f77a9c1bd4136526deb9",
+      "imageSize": [
+        2592,
+        1936
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-19.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_d78a9b3fc7bd4989945b6194ff27a3ab~mv2_d_2448_3264_s_4_2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 959597,
+      "sha256": "d865118071f2ec6e0920d1c19120703c1bd340b34e6e029fdc5d18b5541fa8e1",
+      "imageSize": [
+        2448,
+        3264
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-20.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_dbfcdebf6a954f0fb2add357d416e47a~mv2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 122415,
+      "sha256": "da1ed075d5ac04e515e9ba6828e0d8be22e334aeac9b4c60496695d61dd058df",
+      "imageSize": [
+        300,
+        450
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-21.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_9af96eb916c0496c920de720b7157637~mv2_d_2592_1936_s_2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 2057114,
+      "sha256": "5b5e0d9bc0252eb4c3ab46da7d73a1f2c7e1829bb093d9433dd7754c0a319db2",
+      "imageSize": [
+        2592,
+        1936
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/WFH-GDN-22.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_53b6f5fa83a84c5693a502401abad625~mv2.jpg",
+      "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+      "group": "WFH-GDN",
+      "review": "data/indoor/WFH/gdn-gallery-download.json",
+      "bytes": 566048,
+      "sha256": "826144a14f0de3c18c4bc7a1cec70c949dfb7362ed6696589b018be25eb70632",
+      "imageSize": [
+        781,
+        1177
+      ],
+      "acquiredAt": "2026-10-22T02:03:57.314Z"
+    },
+    {
+      "file": "local/indoor-sources/DANCE-HISTORY-DS01.jpeg",
+      "url": "https://architecture-history.org/architects/architects/PREDOC/PIC/DS01.jpeg",
+      "discoveryUrl": "https://architecture-history.org/architects/architects/PREDOC/OBJ/1997%2C%20Dance%20Studio%2C%20University%20of%20California%2C%20San%20Diego%20%20La%20Jolla%2C%20California%2C%20USA.html",
+      "group": "DANCE-HISTORY",
+      "review": "data/indoor/DANCE/new-source-review.json",
+      "bytes": 608796,
+      "sha256": "0e5b05272261706f59a26f7fd9c43be9e2f7ca35febcef00a097f46167beeaa7",
+      "imageSize": [
+        1045,
+        650
+      ]
+    },
+    {
+      "file": "local/indoor-sources/DANCE-HISTORY-DS02.jpeg",
+      "url": "https://architecture-history.org/architects/architects/PREDOC/PIC/DS02.jpeg",
+      "discoveryUrl": "https://architecture-history.org/architects/architects/PREDOC/OBJ/1997%2C%20Dance%20Studio%2C%20University%20of%20California%2C%20San%20Diego%20%20La%20Jolla%2C%20California%2C%20USA.html",
+      "group": "DANCE-HISTORY",
+      "review": "data/indoor/DANCE/new-source-review.json",
+      "bytes": 211052,
+      "sha256": "ead85425715239a01e1cdb6300dc6be2f599f5fc93c0d51bfa80a7125cdba9c5",
+      "imageSize": [
+        576,
+        448
+      ]
+    },
+    {
+      "file": "local/indoor-sources/DANCE-HISTORY-DS03.jpeg",
+      "url": "https://architecture-history.org/architects/architects/PREDOC/PIC/DS03.jpeg",
+      "discoveryUrl": "https://architecture-history.org/architects/architects/PREDOC/OBJ/1997%2C%20Dance%20Studio%2C%20University%20of%20California%2C%20San%20Diego%20%20La%20Jolla%2C%20California%2C%20USA.html",
+      "group": "DANCE-HISTORY",
+      "review": "data/indoor/DANCE/new-source-review.json",
+      "bytes": 217242,
+      "sha256": "d8bd5aa1825ac8beb827bbb8f28a6fa92486c59baff328d7a142088baa4bb590",
+      "imageSize": [
+        576,
+        450
+      ]
+    },
+    {
+      "file": "local/indoor-sources/DANCE-HISTORY-DS04.jpeg",
+      "url": "https://architecture-history.org/architects/architects/PREDOC/PIC/DS04.jpeg",
+      "discoveryUrl": "https://architecture-history.org/architects/architects/PREDOC/OBJ/1997%2C%20Dance%20Studio%2C%20University%20of%20California%2C%20San%20Diego%20%20La%20Jolla%2C%20California%2C%20USA.html",
+      "group": "DANCE-HISTORY",
+      "review": "data/indoor/DANCE/new-source-review.json",
+      "bytes": 258747,
+      "sha256": "a4b631d389e874e8d04c84bf61c1b9592664d1a074ef7ebf82e0a39c7f8a31ac",
+      "imageSize": [
+        576,
+        449
+      ]
+    },
+    {
+      "file": "local/indoor-sources/DANCE-HISTORY-DS05.jpeg",
+      "url": "https://architecture-history.org/architects/architects/PREDOC/PIC/DS05.jpeg",
+      "discoveryUrl": "https://architecture-history.org/architects/architects/PREDOC/OBJ/1997%2C%20Dance%20Studio%2C%20University%20of%20California%2C%20San%20Diego%20%20La%20Jolla%2C%20California%2C%20USA.html",
+      "group": "DANCE-HISTORY",
+      "review": "data/indoor/DANCE/new-source-review.json",
+      "bytes": 335929,
+      "sha256": "1e7c4d159717c14fa9f67fe5444df1f84a925f6f842ffd28cce1f41f7b2204bc",
+      "imageSize": [
+        576,
+        432
+      ]
+    },
+    {
+      "file": "local/indoor-sources/DANCE-HISTORY-DS06.jpeg",
+      "url": "https://architecture-history.org/architects/architects/PREDOC/PIC/DS06.jpeg",
+      "discoveryUrl": "https://architecture-history.org/architects/architects/PREDOC/OBJ/1997%2C%20Dance%20Studio%2C%20University%20of%20California%2C%20San%20Diego%20%20La%20Jolla%2C%20California%2C%20USA.html",
+      "group": "DANCE-HISTORY",
+      "review": "data/indoor/DANCE/new-source-review.json",
+      "bytes": 335929,
+      "sha256": "1e7c4d159717c14fa9f67fe5444df1f84a925f6f842ffd28cce1f41f7b2204bc",
+      "imageSize": [
+        576,
+        432
+      ]
+    },
+    {
+      "file": "local/indoor-sources/DANCE-HISTORY-DS300.jpeg",
+      "url": "https://architecture-history.org/architects/architects/PREDOC/PIC/DS300.jpeg",
+      "discoveryUrl": "https://architecture-history.org/architects/architects/PREDOC/OBJ/1997%2C%20Dance%20Studio%2C%20University%20of%20California%2C%20San%20Diego%20%20La%20Jolla%2C%20California%2C%20USA.html",
+      "group": "DANCE-HISTORY",
+      "review": "data/indoor/DANCE/new-source-review.json",
+      "bytes": 296383,
+      "sha256": "856a706752695f24e6b1e61b00af9fa2cec70d330f41e8d80fd0b05d499aabbf",
+      "imageSize": [
+        576,
+        777
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1567.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1567.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 147978,
+      "sha256": "8e1ff937e7f65612b594482be1ef93f672c1e1d5c1e99126ff4c7ed09fe32f34",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1569.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1569.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 284715,
+      "sha256": "0aa2dc8e8848e0631bc5d6433b97f3ec8b99fe7616c80dbafda20ad8eb354493",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1571.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1571.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 175912,
+      "sha256": "71b7b076bc55294b2f7bdc339861496a4997320716b43642e8ff38ec6283c9e2",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1572.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1572.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 323749,
+      "sha256": "f5e88f0a43411c1fb235c077b15fb4d088886d4f21fb63e1a9e2854817478161",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1573.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1573.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 355283,
+      "sha256": "9913f95fcfc9e2b1a72625f98b6f3b0b9fb35cefb537476de0899f37caec40cc",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1576.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1576.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 194621,
+      "sha256": "429c7757d6d8d7671b0dd370c30c02b1014702a100c0b0db5342cfe173e6523c",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1578.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1578.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 188282,
+      "sha256": "a5e346c58370db49dead9f37e43c73c3a826a27f59685d12bad12068892449ea",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1580.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1580.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 169266,
+      "sha256": "fac07bc5a2925e47b9a23f3439b9dc18b759998c8da30eb33e37ed17a4ea8958",
+      "imageSize": [
+        1125,
+        1500
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1581.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1581.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 170168,
+      "sha256": "e3060cd143fa8daeec365dc32c3ac16517bbdf9cfccb5832007b430472541439",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1582.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1582.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 186875,
+      "sha256": "3c9f6b1fc434f6938a910f95bb3492b7c566e646281f7a832f31cbeb75c61f2f",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1584.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1584.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 199206,
+      "sha256": "99d484c3d6491cf962585307592b68bb9236226aec2719e83f07b352db1c5404",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1587.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1587.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 165746,
+      "sha256": "1f670a5b8bd0eb9938542b3ba79ffdf7e2adec67a5fcd308458c27116d531fba",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1588.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1588.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 165228,
+      "sha256": "9da9d4a15d32c18f19c993c7d6281d31ed011f79fd2c1601b0cd28263b1ca2fa",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1589.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1589.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 151518,
+      "sha256": "0bbdfdbfb1fa2b138e8ef372af813f4572a8fecc10e56feb878e81371fed124b",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1590.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1590.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 126106,
+      "sha256": "5ba3cba45cad4b5d03c121ead9e93d2ce14bf2fb912ecaccb88a4c028716387f",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1591.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1591.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 206956,
+      "sha256": "59cd0bcbe94bbbd6fdbad3170aca640d232a80028e5d006770560da265d8ef13",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1592.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1592.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 179399,
+      "sha256": "17fcb0cef5d8d3b6c2c825e4698b0ffce10ca12acd4ef827d12f16bfd508ea08",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1593.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1593.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 202244,
+      "sha256": "76431f57562fdb415d9ea31318ad4ed572264ae45ae49fdf7dc57eca72ddde28",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1594.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1594.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 242613,
+      "sha256": "40819a6d54a70615e8ca89346a24b51db45f9651d8185c80ebecb0d097f02500",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1595.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1595.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 252110,
+      "sha256": "6b50a2682c55117de45d1d31908a172aa5f6290b3d07dcd80ce259c669f08ef5",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1597.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1597.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 215608,
+      "sha256": "3815290512d61d8a92f532b533e709a5f6efea3f59f5209555a578fb0f489d9b",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1600.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1600.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 180685,
+      "sha256": "1db6207ff1763f07ce46241e7ca43bb08e9e59263deaf06dd766debe724cdeac",
+      "imageSize": [
+        1125,
+        1500
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1603.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1603.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 218890,
+      "sha256": "d7929e83277386138f10551d553d9146daa6d5f55a4a77ce14414ffa825b094c",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1605.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1605.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 150692,
+      "sha256": "33c30a673730966b70a9426f864dd1515026e5f9c38b36604dd0118ac9318f8e",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1608.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1608.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 131416,
+      "sha256": "823d501343b6ad459406206095b872f2cf02168dd0b62d6f64c5a2ca48ef263d",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1612.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1612.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 135787,
+      "sha256": "6b110bef11e64aed88a7afaa4f85ec239868fe22a5a963448a30b2a14a4892ee",
+      "imageSize": [
+        1125,
+        1500
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1616.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1616.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 167580,
+      "sha256": "e234d948225da7f31e4c560124a84e5bd10accdeba8d22db1a1ad80c84b5956e",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1618.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1618.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 181863,
+      "sha256": "79bc81d83f4bcb879fd25cb28e29e34c3313a1668a50f1e26babf8faefe90ca3",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1619.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1619.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 171656,
+      "sha256": "2e9c993112430ebfe01ac3932effef86113fa4a945eff26dd3427c9109fccecd",
+      "imageSize": [
+        1125,
+        1500
+      ]
+    },
+    {
+      "file": "local/indoor-sources/GH-MSI-DSCN1620.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1620.jpg",
+      "discoveryUrl": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "group": "GH-MSI",
+      "review": "data/indoor/GH/msi-sign-review.json",
+      "bytes": 146228,
+      "sha256": "08142d69a70c89eb6623614c1bff37c93fa25df7e41ae09a3b5ead4bd0f31cf8",
+      "imageSize": [
+        1500,
+        1125
+      ]
+    },
+    {
+      "file": "local/indoor-sources/SDSC-DIRECTIONS.jpg",
+      "url": "https://www.sdsc.edu/_files/images/MAP_directions.jpg",
+      "discoveryUrl": "https://www.sdsc.edu/contact.html",
+      "group": "SDSC-outdoor-directions",
+      "review": "data/indoor/SDSC/new-source-review.json",
+      "bytes": 112333,
+      "sha256": "191270428297adc326361611c386889112daecf86760f71307fd9d79ce4dff5f",
+      "imageSize": [
+        800,
+        613
+      ]
+    }
+  ],
+  "totals": {
+    "files": 90,
+    "uniqueContents": 89,
+    "photographsAndPerspectiveSketches": 89,
+    "outdoorDirectionMaps": 1,
+    "bytes": 29422558
+  },
+  "geometryAdded": 0,
+  "floorEvidenceIntegrated": [
+    "WFH 3N129 via RS-22",
+    "WFH 3W113 via RS-19"
+  ]
+}

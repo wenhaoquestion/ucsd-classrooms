@@ -1,0 +1,380 @@
+{
+  "schemaVersion": 1,
+  "building": "COA",
+  "output": "static/indoor/COA-combined.json",
+  "trace": "data/indoor/COA/trace.json",
+  "sources": {
+    "L1": {
+      "id": "COA-L1-FIS",
+      "localPath": "local/indoor-sources/COA-L1-FIS.png",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001856&fcode=1&zoom=1",
+      "sha256": "40c025d9d8271a0e4905d76f3ae277bc803323c9db654c83baf83c5da2d3da19",
+      "accessed": "2026-10-21",
+      "acquiredAt": "2026-10-22T01:15:21.980Z",
+      "printedDate": "2025-03-14",
+      "tileCount": 532
+    },
+    "B": {
+      "id": "COA-B-FIS",
+      "localPath": "local/indoor-sources/COA-B-FIS.png",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001856&fcode=B&zoom=1",
+      "sha256": "bdb2cac73eb16433d9ef31c47c6c820772090b295895bba0ae2cedbd259f3753",
+      "accessed": "2026-10-21",
+      "acquiredAt": "2026-10-22T01:15:43.772Z",
+      "printedDate": "2025-03-18",
+      "tileCount": 532
+    }
+  },
+  "transform": {
+    "formula": "x=a*u-b*v+tx; z=b*u+a*v+tz",
+    "a": 0.04977415302022181,
+    "b": -5.649703239200842e-05,
+    "tx": -117.94391245652261,
+    "tz": -89.94391165792752,
+    "unitsPerPixel": 0.049774185084189224,
+    "freeRoofFitUnitsPerPixelNotUsed": 0.05123304155610575,
+    "scaleAnchor": {
+      "floor": "L1",
+      "scheduleKey": "130",
+      "printedAreaSqft": 2398,
+      "note": "Area-derived isotropic scale from the unambiguous C130 rectangle; this room is calibration, not an independent area check."
+    }
+  },
+  "registrationChecks": {
+    "controlPoints": [
+      {
+        "sourcePoint": [
+          2391,
+          1385
+        ],
+        "targetPart": 0,
+        "targetVertex": 6,
+        "targetPoint": [
+          0.05,
+          -21.65
+        ],
+        "transformedPoint": [
+          1.1443358046906695,
+          -21.141794129369586
+        ],
+        "residualMeters": 1.2065836317351528
+      },
+      {
+        "sourcePoint": [
+          3557,
+          2056
+        ],
+        "targetPart": 1,
+        "targetVertex": 7,
+        "targetPoint": [
+          60.45,
+          12.25
+        ],
+        "transformedPoint": [
+          59.218907735004336,
+          12.19078700743016
+        ],
+        "residualMeters": 1.2325154536237006
+      },
+      {
+        "sourcePoint": [
+          3169,
+          2524
+        ],
+        "targetPart": 1,
+        "targetVertex": 12,
+        "targetPoint": [
+          40.55,
+          36.55
+        ],
+        "transformedPoint": [
+          39.93297697431774,
+          35.50701146946207
+        ],
+        "residualMeters": 1.211834348851257
+      },
+      {
+        "sourcePoint": [
+          2054,
+          1975
+        ],
+        "targetPart": 0,
+        "targetVertex": 15,
+        "targetPoint": [
+          -16.35,
+          7.65
+        ],
+        "transformedPoint": [
+          -15.5962205140128,
+          8.24399565247738
+        ],
+        "residualMeters": 0.9596949247845168
+      }
+    ],
+    "holdoutPoints": [
+      {
+        "sourcePoint": [
+          2820,
+          1636
+        ],
+        "targetPart": 1,
+        "targetVertex": 26,
+        "targetPoint": [
+          22.25,
+          -9.35
+        ],
+        "transformedPoint": [
+          22.511628205496237,
+          -8.672718948190095
+        ],
+        "residualMeters": 0.7260571196895681
+      },
+      {
+        "sourcePoint": [
+          2527,
+          2144
+        ],
+        "targetPart": 1,
+        "targetVertex": 21,
+        "targetPoint": [
+          6.95,
+          17.75
+        ],
+        "transformedPoint": [
+          7.956501863026375,
+          16.629104416573455
+        ],
+        "residualMeters": 1.506470347939414
+      },
+      {
+        "sourcePoint": [
+          2335,
+          2137
+        ],
+        "targetPart": 0,
+        "targetVertex": 14,
+        "targetPoint": [
+          -1.35,
+          16.05
+        ],
+        "transformedPoint": [
+          -1.6005309960829521,
+          16.29153277565115
+        ],
+        "residualMeters": 0.34799980131038
+      }
+    ]
+  },
+  "areaChecks": [
+    {
+      "floor": "L1",
+      "scheduleKey": "117",
+      "tracedSqft": 1565.768157201161,
+      "printedSqft": 1529,
+      "printedComponentAreasSqft": [
+        1529
+      ],
+      "listedPrimaryRoomSqft": 1522,
+      "relativeDifference": 0.02404719241410147,
+      "isCalibrationAnchor": false
+    },
+    {
+      "floor": "L1",
+      "scheduleKey": "121",
+      "tracedSqft": 1135.238581897846,
+      "printedSqft": 1144,
+      "printedComponentAreasSqft": [
+        1144
+      ],
+      "listedPrimaryRoomSqft": 1138,
+      "relativeDifference": -0.007658582257127677,
+      "isCalibrationAnchor": false
+    },
+    {
+      "floor": "L1",
+      "scheduleKey": "122",
+      "tracedSqft": 1119.8915739021163,
+      "printedSqft": 1087,
+      "printedComponentAreasSqft": [
+        1087
+      ],
+      "listedPrimaryRoomSqft": 1080,
+      "relativeDifference": 0.030259037628441954,
+      "isCalibrationAnchor": false
+    },
+    {
+      "floor": "L1",
+      "scheduleKey": "123",
+      "tracedSqft": 1488.593107436362,
+      "printedSqft": 1462,
+      "printedComponentAreasSqft": [
+        1462
+      ],
+      "listedPrimaryRoomSqft": 1451,
+      "relativeDifference": 0.018189539970151936,
+      "isCalibrationAnchor": false
+    },
+    {
+      "floor": "L1",
+      "scheduleKey": "124",
+      "tracedSqft": 997.3688489040625,
+      "printedSqft": 1071,
+      "printedComponentAreasSqft": [
+        1071
+      ],
+      "listedPrimaryRoomSqft": 1062,
+      "relativeDifference": -0.0687499076526027,
+      "isCalibrationAnchor": false
+    },
+    {
+      "floor": "L1",
+      "scheduleKey": "125",
+      "tracedSqft": 2344.1588025310543,
+      "printedSqft": 2454,
+      "printedComponentAreasSqft": [
+        1384,
+        1070
+      ],
+      "listedPrimaryRoomSqft": 1379,
+      "relativeDifference": -0.044760064168274494,
+      "isCalibrationAnchor": false
+    },
+    {
+      "floor": "L1",
+      "scheduleKey": "127",
+      "tracedSqft": 2498.1888949434515,
+      "printedSqft": 2608,
+      "printedComponentAreasSqft": [
+        1354,
+        1254
+      ],
+      "listedPrimaryRoomSqft": 1343,
+      "relativeDifference": -0.04210548506769496,
+      "isCalibrationAnchor": false
+    },
+    {
+      "floor": "L1",
+      "scheduleKey": "130",
+      "tracedSqft": 2398.0000000000005,
+      "printedSqft": 2398,
+      "printedComponentAreasSqft": [
+        2398
+      ],
+      "listedPrimaryRoomSqft": 2398,
+      "relativeDifference": 2.220446049250313e-16,
+      "isCalibrationAnchor": true
+    },
+    {
+      "floor": "B",
+      "scheduleKey": "B17",
+      "tracedSqft": 1565.768157201161,
+      "printedSqft": 1541,
+      "printedComponentAreasSqft": [
+        1541
+      ],
+      "listedPrimaryRoomSqft": 1531,
+      "relativeDifference": 0.016072782090305715,
+      "isCalibrationAnchor": false
+    },
+    {
+      "floor": "B",
+      "scheduleKey": "B21",
+      "tracedSqft": 1404.8312445091913,
+      "printedSqft": 1355,
+      "printedComponentAreasSqft": [
+        1355
+      ],
+      "listedPrimaryRoomSqft": 1350,
+      "relativeDifference": 0.03677582620604514,
+      "isCalibrationAnchor": false
+    },
+    {
+      "floor": "B",
+      "scheduleKey": "B23",
+      "tracedSqft": 1488.593107436362,
+      "printedSqft": 1458,
+      "printedComponentAreasSqft": [
+        1458
+      ],
+      "listedPrimaryRoomSqft": 1458,
+      "relativeDifference": 0.020982926911085054,
+      "isCalibrationAnchor": false
+    },
+    {
+      "floor": "B",
+      "scheduleKey": "B26",
+      "tracedSqft": 1473.419436629116,
+      "printedSqft": 1512,
+      "printedComponentAreasSqft": [
+        1512
+      ],
+      "listedPrimaryRoomSqft": 1512,
+      "relativeDifference": -0.025516245615664013,
+      "isCalibrationAnchor": false
+    },
+    {
+      "floor": "B",
+      "scheduleKey": "B27",
+      "tracedSqft": 2498.1888949434515,
+      "printedSqft": 2497,
+      "printedComponentAreasSqft": [
+        1305,
+        1192
+      ],
+      "listedPrimaryRoomSqft": 1297,
+      "relativeDifference": 0.0004761293325796778,
+      "isCalibrationAnchor": false
+    },
+    {
+      "floor": "B",
+      "scheduleKey": "B30",
+      "tracedSqft": 1378.430657340169,
+      "printedSqft": 1458,
+      "printedComponentAreasSqft": [
+        1458
+      ],
+      "listedPrimaryRoomSqft": 1454,
+      "relativeDifference": -0.0545743090945342,
+      "isCalibrationAnchor": false
+    }
+  ],
+  "recoveredScheduleKeys": [
+    "117",
+    "121",
+    "122",
+    "123",
+    "124",
+    "125",
+    "127",
+    "130",
+    "B17",
+    "B21",
+    "B23",
+    "B26",
+    "B27",
+    "B30"
+  ],
+  "remainingUnplacedKeys": [
+    "201",
+    "217",
+    "269",
+    "270",
+    "271",
+    "272"
+  ],
+  "retainedFloorCount": 10,
+  "slabTreatment": "All existing approximate campus roof footprint slabs are retained unchanged; no fabricated whole-floor outline or open lobby geometry.",
+  "reviewOverlays": [
+    "local/indoor-sources/COA-review/B-review.png",
+    "local/indoor-sources/COA-review/L1-review.png",
+    "local/indoor-sources/COA-review/campus-registration.png"
+  ],
+  "limitations": [
+    "Fourteen scheduled classrooms on B and L1 are manually traced; small columns, door recesses and wall thickness are simplified. Source labels use the C building prefix, omitted by the current official room listing and schedule keys.",
+    "C125/C126, C127/C128 and CB27/CB28 are modeled as combined footprints under schedule keys 125, 127 and B27, supported by UCSD split-room references. Movable partitions can divide the rooms; a booking does not establish that both halves are available.",
+    "Pixel scale is estimated from the printed C130 area. Rotation and translation fit the campus roof footprint; neither room sizes nor campus positions are surveyed.",
+    "Existing campus-footprint floor slabs and all ten floor levels are retained unchanged as approximate context. These roof-derived slabs are not independently verified whole-floor outlines; open lobbies and the remaining non-classroom interior are not modeled.",
+    "The public FIS drawings are dated March 2025 and warn that the displayed plan may be out of date. Minor printed/current room-area differences remain documented.",
+    "L2 tile responses require a login; no L2 geometry is inferred. Its six floor-listed classrooms remain unplaced."
+  ]
+}

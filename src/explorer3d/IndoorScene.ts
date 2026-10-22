@@ -312,7 +312,9 @@ export class IndoorScene implements RendererOwner {
     this.#renderer = getExplorerRenderer();
     this.#palette =
       window.matchMedia?.("(prefers-color-scheme: light)").matches ? LIGHT : DARK;
-    const floors = options.layout.floors;
+    // Sourced floor listings stay in the layout/index, but cannot produce a
+    // slab, floor tag or other geometry without a real outline.
+    const floors = options.layout.floors.filter((floor) => floor.outline.length > 0);
     this.#storyHeight = Math.max(
       ...floors.map((floor) => floor.vertical.height)
     );
@@ -341,7 +343,9 @@ export class IndoorScene implements RendererOwner {
     sun.position.set(0.6, 1, 0.35);
     this.#scene.add(hemisphere, sun, this.#model);
 
-    const minElevation = Math.min(...floors.map((f) => f.vertical.baseElevation));
+    const minElevation = Math.min(
+      ...options.layout.floors.map((f) => f.vertical.baseElevation)
+    );
     floors.forEach((floor, index) => {
       this.#floors.push(
         this.#buildFloor(floor, index, floor.vertical.baseElevation - minElevation)
@@ -1331,6 +1335,11 @@ export class IndoorScene implements RendererOwner {
   /** Center and size of what should be in view for the current display mode. */
   #viewTarget(): { target: Vector3; radius: number } {
     const shown = this.#floors.filter((floor) => this.#targetFor(floor).presence === 1);
+    if (shown.length === 0) {
+      // Selecting a floor known only from listings leaves an empty scene. Keep
+      // a finite camera frame so switching back to a mapped floor still works.
+      return { target: this.#center.clone(), radius: this.#radius };
+    }
     const ys = shown.map((floor) => this.#targetFor(floor).y);
     const minY = Math.min(...ys);
     const maxY = Math.max(...ys) + this.#storyHeight * 0.6;

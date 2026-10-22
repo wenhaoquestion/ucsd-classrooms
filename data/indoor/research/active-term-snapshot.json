@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "term": "FA26",
+  "file": "local/indoor-sources/classrooms-FA26.txt",
+  "sourceUrl": "https://sheeptester.github.io/uxdy/data/classrooms-FA26.txt",
+  "downloadedAt": "2026-10-22T01:39:35.656Z",
+  "bytes": 200605,
+  "sha256": "b485329436badb02834df241fd81ea48d9ec9e0f2edef106cb11d7f56d43453b",
+  "sourceDescription": "The same public uxdy classroom schedule snapshot consumed by src/lib/TermCache.ts. Upstream scrape time is decoded by coursesFromFile from the snapshot header; downloadedAt is the separate local acquisition time.",
+  "includeDateRange": false
+}

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "building": "MAYER",
+  "source": {
+    "id": "PHYSICS-EAP-2026",
+    "url": "https://drive.google.com/file/d/11bk6sN9ozv6P2MEeEkzzbackp0Ggg-_X/view",
+    "discoveryUrl": "https://physics.ucsd.edu/resources/safety",
+    "localPath": "local/indoor-sources/PHYSICS-EAP.pdf",
+    "sha256": "af741cc9572bb131053093ccf0c57039880763c74e8eec14bb0ece27e7bd4550",
+    "bytes": 5899399,
+    "pages": 51,
+    "accessed": "2026-10-21",
+    "revision": "Physics EAP cover: Updated March 2026; plan checklist completed April 2026. Embedded legacy floor diagrams are not independently dated by this supplement."
+  },
+  "render": {
+    "command": "pdftoppm -f PAGE -l PAGE -scale-to 2400 -png local/indoor-sources/PHYSICS-EAP.pdf local/indoor-sources/physics-review/detail",
+    "sizePx": [1553, 2400]
+  },
+  "targetLayout": "static/indoor/facilities/MAYER.json",
+  "method": "Manually trace the six explicit room labels and principal walls on actual rendered source pages. Register each scanned drawing with an orientation-preserving similarity fit to matching expansion-wing walls in the existing Facilities geometry; separately check withheld wall corners. The fifth floor uses repeated exterior corners on Level 4. Retain all original geometry. Append only the old-wing floor-plate portion outside the existing expansion-wing join edge. Other old-wing rooms, bridges and external stairs remain unmodeled.",
+  "floors": [
+    {
+      "id": "L2", "page": 25, "targetFloor": "L2",
+      "controls": [
+        {"sourcePoint": [854, 716], "targetRoomId": "L2-804-41318", "targetVertex": 22, "feature": "2722 main room, lower-right corner on printed page"},
+        {"sourcePoint": [854, 618], "targetRoomId": "L2-804-41318", "targetVertex": 21, "feature": "2722 main room, upper-right corner on printed page"},
+        {"sourcePoint": [1285, 585], "targetRoomId": "L2-804-41295", "targetVertex": 14, "feature": "2544 main room, lower-right corner on printed page"},
+        {"sourcePoint": [1205, 585], "targetRoomId": "L2-804-41295", "targetVertex": 15, "feature": "2544 main room, lower-left corner on printed page"}
+      ],
+      "holdouts": [
+        {"sourcePoint": [1102, 585], "targetRoomId": "L2-804-41300", "targetVertex": 19, "feature": "2574 main room, lower-left corner on printed page"},
+        {"sourcePoint": [1102, 442], "targetRoomId": "L2-804-41300", "targetVertex": 4, "feature": "2574 main room, upper-left corner on printed page"}
+      ],
+      "oldWingOutlinePx": [[1010, 674], [1343, 674], [1343, 1347], [1010, 1347]],
+      "existingJoinEdge": [[12.81, 1.63], [13.06, 25.88]],
+      "rooms": [
+        {"key": "2110", "outer": [[1220, 675], [1314, 675], [1314, 814], [1220, 814]], "labelAt": [1267, 747]},
+        {"key": "2130", "outer": [[1220, 861], [1314, 861], [1314, 958], [1220, 958]], "labelAt": [1267, 904]},
+        {"key": "2326", "outer": [[1220, 1031], [1314, 1031], [1314, 1131], [1220, 1131]], "labelAt": [1267, 1078]},
+        {"key": "2306", "outer": [[1220, 1174], [1314, 1174], [1314, 1312], [1220, 1312]], "labelAt": [1267, 1240]}
+      ]
+    },
+    {
+      "id": "L4", "page": 33, "targetFloor": "L4",
+      "controls": [
+        {"sourcePoint": [665, 767], "targetRoomId": "L4-804-41391", "targetVertex": 16, "feature": "4722 exterior wall, lower-left principal corner on printed page"},
+        {"sourcePoint": [665, 659], "targetRoomId": "L4-804-41391", "targetVertex": 4, "feature": "4722 exterior wall, upper-left principal corner on printed page"},
+        {"sourcePoint": [1413, 457], "targetRoomId": "L4-804-41354", "targetVertex": 5, "feature": "4512 left wall, lower corner on printed page"},
+        {"sourcePoint": [1413, 425], "targetRoomId": "L4-804-41354", "targetVertex": 0, "feature": "4512 left wall, upper corner on printed page"}
+      ],
+      "holdouts": [
+        {"sourcePoint": [1038, 471], "targetRoomId": "L4-804-41375", "targetVertex": 0, "feature": "4573 upper-left principal corner on printed page"},
+        {"sourcePoint": [1150, 472], "targetRoomId": "L4-804-41370", "targetVertex": 2, "feature": "4543 upper-left principal corner on printed page"}
+      ],
+      "oldWingOutlinePx": [[968, 653], [1296, 653], [1296, 1446], [968, 1446]],
+      "existingJoinEdge": [[22.27, -6.63], [22.52, 30.62]],
+      "rooms": [
+        {"key": "4322", "outer": [[1161, 1164], [1261, 1164], [1261, 1265], [1161, 1265]], "labelAt": [1210, 1202], "listedAreaSqft": 911}
+      ]
+    },
+    {
+      "id": "L5", "page": 37, "targetFloor": "L4",
+      "controls": [
+        {"sourcePoint": [730, 746], "targetRoomId": "L4-804-41391", "targetVertex": 16, "feature": "5722/4722 repeated exterior west wall, lower-left corner on printed page"},
+        {"sourcePoint": [730, 645], "targetRoomId": "L4-804-41391", "targetVertex": 4, "feature": "5722/4722 repeated exterior west wall, upper-left corner on printed page"},
+        {"sourcePoint": [1444, 439], "targetRoomId": "L4-804-41354", "targetVertex": 5, "feature": "5512/4512 repeated exterior end bay, lower-left corner on printed page"},
+        {"sourcePoint": [1444, 404], "targetRoomId": "L4-804-41354", "targetVertex": 0, "feature": "5512/4512 repeated exterior end bay, upper-left corner on printed page"}
+      ],
+      "holdouts": [
+        {"sourcePoint": [1444, 605], "targetRoomId": "L4-804-41359", "targetVertex": 5, "feature": "5517/4517 repeated exterior end bay, lower-left corner on printed page"},
+        {"sourcePoint": [1492, 605], "targetRoomId": "L4-804-41359", "targetVertex": 2, "feature": "5517/4517 repeated exterior end bay, lower-right corner on printed page"}
+      ],
+      "oldWingOutlinePx": [[1034, 630], [1358, 630], [1358, 1418], [1034, 1418]],
+      "existingJoinEdge": [[22.27, -6.63], [22.52, 30.62]],
+      "rooms": [
+        {"key": "5301", "outer": [[1219, 1312], [1321, 1312], [1321, 1386], [1219, 1386]], "labelAt": [1270, 1352], "listedAreaSqft": 698}
+      ]
+    }
+  ],
+  "limitations": [
+    "The 2026 emergency-action-plan packet embeds older scanned diagrams. Inclusion in the packet does not establish that every room boundary was resurveyed in 2026.",
+    "Registration inherits the existing approximate Facilities-to-campus fit. Scan distortion, simplified walls and old/new-wing correspondence limit positional accuracy; control and holdout residuals are drawing consistency checks, not survey accuracy.",
+    "Only the six previously unresolved schedule rooms are traced. Small door and column recesses are simplified; room use is left unknown.",
+    "The added old-wing floor plates are simplified main-body envelopes following the visible room/corridor bounds. Bridges, external stairs, balconies and other old-wing rooms are not reconstructed.",
+    "Existing room geometry, all five floors, estimated elevations and campus transform are preserved. Level 5 retains the pre-existing Level 4-derived expansion-wing outline; that part is not newly verified."
+  ]
+}

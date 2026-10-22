@@ -1,0 +1,952 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-22T01:52:53.134876+00:00",
+  "status": "review-completed-identified-issues-fixed",
+  "scope": {
+    "supplementalBuildings": [
+      "ASANT",
+      "CENTR",
+      "COA",
+      "CSB",
+      "EBU1",
+      "EBU2",
+      "EBU3B",
+      "FAH",
+      "GH",
+      "HSS",
+      "JEANN",
+      "LEDDN",
+      "MALK",
+      "MANDE",
+      "MAYER",
+      "MCC",
+      "MCGIL",
+      "MOS",
+      "MYR-A",
+      "PRICE",
+      "SME",
+      "SOLIS",
+      "SSB",
+      "SSRB",
+      "UNEXG",
+      "UNEXN",
+      "YORK"
+    ],
+    "count": 27,
+    "excludedInProgress": [
+      "BRF2"
+    ],
+    "reasonForExclusion": "BRF2 implementation was being written by another agent during this independent review.",
+    "reviewType": "Implementation, exact room-key inventory, provenance, reproducibility and selected orientation consistency review; not a survey or a complete retrace of every wall."
+  },
+  "checks": {
+    "manifest": "All 27 reviewed supplemental files exist, building identities and geometryStatus match their manifest entries, and supplemental entries override earlier layouts.",
+    "exactKeys": "All 27 reviewed layouts retain their input exact schedule-key inventory without duplication. MYR-A is compared with its separately parsed seven-key FA26 source inventory.",
+    "sourceReferences": {
+      "checkedReferenceOccurrences": 3366,
+      "missingSourceIds": [],
+      "missingLocalFileReferences": []
+    },
+    "sourceHashBindings": {
+      "bindings": 137,
+      "distinctFiles": 79,
+      "mismatches": [],
+      "initialMismatchesResolved": [
+        {
+          "evidence": "data/indoor/MCC/fis-vector-review.json",
+          "field": ".inputHashes",
+          "path": "data/indoor/MCC/fis-vector-import.json",
+          "expected": "c231c4d21923a1df7d4b697d7c4569f568ae042fe9446be7bfe0cb9a95f2c290",
+          "actual": "4f6f8610249798d65dd5feb249000e5fffc0c8a22a41d2b553b1afaaa6caff70",
+          "updatedExpected": "4f6f8610249798d65dd5feb249000e5fffc0c8a22a41d2b553b1afaaa6caff70",
+          "status": "resolved-and-rechecked"
+        },
+        {
+          "evidence": "data/indoor/PRICE/fis-inventory-review.json",
+          "field": ".oldAreaCrosscheck",
+          "path": "local/indoor-sources/PRICE-L2-FIS.html",
+          "expected": "3609cd605bedd9c4128612bfb6bec25a0689f8c85bac96280f16cabe8a0eb4c4",
+          "actual": "7166ae26c89675f9d14158255f630a05628cd439261a86e1514bc0d4fa4cf7c0",
+          "updatedExpected": "7166ae26c89675f9d14158255f630a05628cd439261a86e1514bc0d4fa4cf7c0",
+          "status": "resolved-and-rechecked"
+        }
+      ]
+    },
+    "acquisitionCatalogs": [
+      {
+        "catalog": "data/indoor/research/acquisition-index.json",
+        "fileSha256": "e3b15a9896ff466d77f68480fc17070a3c5b17bd3e9af163cf6ae2be01bf68cb",
+        "checkedBindings": 59,
+        "distinctFiles": 59,
+        "errors": []
+      },
+      {
+        "catalog": "data/indoor/research/public-fis-raster-sources.json",
+        "fileSha256": "16459ee71f3154dd6a8e66480af587c2a81199b0ff3100345c35b760e8800cd2",
+        "checkedBindings": 97,
+        "distinctFiles": 97,
+        "errors": []
+      }
+    ],
+    "coordinateClaims": "Relative-unit models do not claim metric scale or campus geo. Approximate metric models retain explicit calibration, controls, area comparisons or legacy-frame limitations. HSS, YORK and FAH orientation conflicts were identified and resolved by withholding unsupported north/geo rather than rotating old rooms.",
+    "builderReview": "Reviewed original-input use, multi-stage dependencies and exact-key preservation. MOS stages into a separate data/indoor partial file. FAH entry points chain the supplement and restore the previous output on failure. GH final entry point now restores its shared output and both review reports on later failure. The old standalone GH242 script remains a documented intermediate-stage builder.",
+    "ghFailureInjection": {
+      "intermediateKeys": [
+        "242"
+      ],
+      "expectedFailure": true,
+      "restoredHashesMatch": {
+        "static/indoor/GH-combined.json": true,
+        "data/indoor/GH/242-review.json": true,
+        "data/indoor/GH/public-fis-review.json": true
+      },
+      "finalKeys": [
+        "242",
+        "320",
+        "321"
+      ]
+    },
+    "globalSuite": "The root agent reported test, typecheck, lint, indoor validation and production build success. This review did not repeat those global suites."
+  },
+  "resolvedFindings": [
+    {
+      "id": "HSS-NORTH",
+      "originalLocation": "scripts/build-hss-fis.py:210",
+      "issue": "The inherited northDeg=0 contradicted the source north arrow after registration to the upper-floor frame. Independent L1/L2 transforms imply approximately 176.8977 and 177.0989 degrees.",
+      "evidence": [
+        "local/indoor-sources/HSS-L1-FIS.png",
+        "local/indoor-sources/HSS-L2-FIS.png",
+        "data/indoor/HSS/public-fis-review.json"
+      ],
+      "resolution": "Builder and runtime layout now set northDeg=null and explain the retained frame. Room geometry and unknown campus placement are retained.",
+      "verified": true
+    },
+    {
+      "id": "YORK-NORTH-GEO",
+      "originalLocation": "scripts/supplement-york-fis.py:28",
+      "issue": "Source north points page-left. The reflected mapping places that direction near local +z, contradicting inherited northDeg=0 and geo rotation zero.",
+      "evidence": [
+        "local/indoor-sources/YORK-L3-FIS.png",
+        "data/indoor/YORK/public-fis-review.json"
+      ],
+      "resolution": "The supplemental builder and runtime output remove geo and set northDeg=null, preserving the original rooms and the registered 3010 shape.",
+      "verified": true
+    },
+    {
+      "id": "FAH-NORTH",
+      "originalLocation": "scripts/supplement-fah-1301.py:101",
+      "issue": "Both EHS and FIS source north arrows point page-up, but matching the same room walls requires a 90.0927-degree rotation. The sources therefore disagree about absolute orientation.",
+      "evidence": [
+        "local/indoor-sources/FAH-render/floor-2.png",
+        "local/indoor-sources/FAH-L1-FIS.png",
+        "data/indoor/FAH/fis-1301-review.json"
+      ],
+      "resolution": "The combined layout sets northDeg=null and records the source conflict while retaining relative room alignment.",
+      "verified": true
+    },
+    {
+      "id": "FAH-STALE-NOTES",
+      "originalLocation": "scripts/supplement-fah-1301.py:101",
+      "issue": "Building notes still claimed that only two rooms were placed and that 1301 lacked a position after its polygon had been added.",
+      "resolution": "Supplement now rewrites the stale building notes to describe three placed classroom keys.",
+      "verified": true
+    },
+    {
+      "id": "GH-PARTIAL-REBUILD",
+      "originalLocation": "scripts/build-gh-fis.py:24",
+      "issue": "The first stage overwrote the final combined layout with only room242 before later checks; a second-stage error could lose 320/321.",
+      "resolution": "The rebuild wrapper restores the combined output and both stage review files on failure. An injected residual failure after the first-stage write restored all three files byte-for-byte; final keys remain242/320/321.",
+      "verified": true
+    },
+    {
+      "id": "MCC-REVIEW-HASH",
+      "originalLocation": "data/indoor/MCC/fis-vector-review.json:inputHashes",
+      "issue": "Review still pinned the configuration hash preceding its corrected-base path migration.",
+      "resolution": "Root rebuilt the review; its configuration and base hashes now match actual files.",
+      "verified": true
+    },
+    {
+      "id": "PRICE-HTML-HASH",
+      "originalLocation": "data/indoor/PRICE/fis-inventory-review.json:oldAreaCrosscheck",
+      "issue": "The retained HTML hash differed from the audit record.",
+      "resolution": "The exact Room13512 /2106 /3250-sqft evidence row was rechecked unchanged, and the audit now pins the retained file bytes. This does not create a Theater alias or room polygon.",
+      "verified": true
+    }
+  ],
+  "remainingActionableFindings": [],
+  "orientationSpotChecks": [
+    {
+      "buildings": [
+        "SSB",
+        "CENTR"
+      ],
+      "finding": "The actual source arrows point page-left; their positive approximately90-degree transforms map north approximately toward local-z, consistent with the retained approximate compass."
+    },
+    {
+      "buildings": [
+        "MOS",
+        "COA",
+        "SOLIS",
+        "MALK",
+        "GH"
+      ],
+      "finding": "Source arrows point page-up; retained transforms are near zero rotation, with the stated approximate registration limits."
+    },
+    {
+      "buildings": [
+        "MANDE"
+      ],
+      "finding": "Source north points page-up; the retained x reflection keeps that north direction approximately local-z. The reflection and absence of campus geo are disclosed."
+    },
+    {
+      "buildings": [
+        "MAYER",
+        "MYR-A"
+      ],
+      "finding": "The Physics source north is page-left; stored approximately88\u201390-degree transformations map it near local-z. Campus fitting remains explicitly approximate."
+    }
+  ],
+  "limitations": [
+    "No claim that historical source plans reflect every current renovation.",
+    "Original room shapes and partial floor slabs retain their documented limitations.",
+    "This report excludes the concurrently developed BRF2 supplement and does not change the active-term coverage denominator.",
+    "No new public search, browser interaction, external message or authenticated export was performed for this review."
+  ],
+  "layouts": [
+    {
+      "building": "ASANT",
+      "path": "static/indoor/ASANT-meeting.json",
+      "sha256": "9a478e77e9b2d6dfc7df7a14c428b742862a2f768f5a354ad4f95fbd8e448e7c",
+      "statusMatches": true,
+      "units": "relative",
+      "northDeg": null,
+      "northNote": "Source drawing orientation is preserved; no unambiguous north angle was established.",
+      "geoPresent": false,
+      "sourceCount": 2,
+      "referencedSourceCount": 13,
+      "floors": 1,
+      "placedScheduleKeys": [
+        "123A",
+        "123B",
+        "123C",
+        "123D"
+      ],
+      "remainingFloorOnlyKeys": []
+    },
+    {
+      "building": "CENTR",
+      "path": "static/indoor/CENTR-combined.json",
+      "sha256": "2a383a6642d7d01b23c30d470139d532a346491746290485cd62fb5f4e0532c6",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": 0,
+      "northNote": "Scaled from official room areas (1.33 ft per drawing pixel); rotated 93.0 deg and fitted to the campus-map footprint on Level 1 (overlap 0.78).",
+      "geoPresent": true,
+      "sourceCount": 3,
+      "referencedSourceCount": 245,
+      "floors": 4,
+      "placedScheduleKeys": [
+        "101",
+        "105",
+        "109",
+        "113",
+        "115",
+        "119",
+        "201",
+        "202",
+        "203",
+        "204",
+        "206",
+        "207",
+        "208",
+        "212",
+        "214",
+        "216",
+        "217A",
+        "217B",
+        "220",
+        "222",
+        "223",
+        "224A",
+        "224B",
+        "224C",
+        "205",
+        "218"
+      ],
+      "remainingFloorOnlyKeys": []
+    },
+    {
+      "building": "COA",
+      "path": "static/indoor/COA-combined.json",
+      "sha256": "bc870990220b2da738869f29bf8f13d5080895e5552735b7268c898f0ebf8ed5",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": 0,
+      "northNote": null,
+      "geoPresent": true,
+      "sourceCount": 6,
+      "referencedSourceCount": 72,
+      "floors": 10,
+      "placedScheduleKeys": [
+        "B17",
+        "B21",
+        "B23",
+        "B26",
+        "B27",
+        "B30",
+        "117",
+        "121",
+        "122",
+        "123",
+        "124",
+        "125",
+        "127",
+        "130"
+      ],
+      "remainingFloorOnlyKeys": [
+        "201",
+        "217",
+        "269",
+        "270",
+        "271",
+        "272"
+      ]
+    },
+    {
+      "building": "CSB",
+      "path": "static/indoor/CSB-combined.json",
+      "sha256": "225ef2ef64f7cb109aa0d0263eca74e126af4b01b6627d590f222ef74be4ef6e",
+      "statusMatches": true,
+      "units": "relative",
+      "northDeg": 0,
+      "northNote": "The north arrow printed on every source page points toward page-up; floor registration uses scale and translation only.",
+      "geoPresent": false,
+      "sourceCount": 2,
+      "referencedSourceCount": 25,
+      "floors": 3,
+      "placedScheduleKeys": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "115",
+        "180",
+        "272",
+        "280"
+      ],
+      "remainingFloorOnlyKeys": []
+    },
+    {
+      "building": "EBU1",
+      "path": "static/indoor/EBU1-combined.json",
+      "sha256": "cfef6c925e94c1802fdeb12d75e11772609a5d2742ecfa3820800b64531045cf",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": 0,
+      "northNote": "Scaled from official room areas (1.33 ft per drawing pixel); rotated -0.5 deg and fitted to the campus-map footprint on Level 1 (overlap 0.74).",
+      "geoPresent": true,
+      "sourceCount": 3,
+      "referencedSourceCount": 660,
+      "floors": 8,
+      "placedScheduleKeys": [
+        "B538",
+        "1704",
+        "1720",
+        "2315",
+        "4307",
+        "4309"
+      ],
+      "remainingFloorOnlyKeys": []
+    },
+    {
+      "building": "EBU2",
+      "path": "static/indoor/EBU2-combined.json",
+      "sha256": "2001482a8a76dd3d9b2e044854ea6d7586119198e3bb736a7b939c1c78397143",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": 0,
+      "northNote": "Scaled from official room areas (1.33 ft per drawing pixel); rotated 359.5 deg and fitted to the campus-map footprint on Level 2 (overlap 0.56).",
+      "geoPresent": true,
+      "sourceCount": 3,
+      "referencedSourceCount": 280,
+      "floors": 6,
+      "placedScheduleKeys": [
+        "B30",
+        "B35",
+        "105",
+        "107",
+        "121",
+        "126",
+        "135",
+        "174",
+        "203",
+        "239",
+        "584"
+      ],
+      "remainingFloorOnlyKeys": [
+        "313",
+        "L330",
+        "333A",
+        "335",
+        "339",
+        "305",
+        "330A"
+      ]
+    },
+    {
+      "building": "EBU3B",
+      "path": "static/indoor/EBU3B-combined.json",
+      "sha256": "c01368dc6d93f0c995d380e7af9d3e7de482712ddcceaad7cf708a6a7eca8b7e",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": 0,
+      "northNote": "Scaled from official room areas (1.33 ft per drawing pixel); rotated 312.0 deg and fitted to the campus-map footprint on Level 2 (overlap 0.61).",
+      "geoPresent": true,
+      "sourceCount": 10,
+      "referencedSourceCount": 426,
+      "floors": 5,
+      "placedScheduleKeys": [
+        "B240",
+        "B250",
+        "B260",
+        "B270",
+        "1202",
+        "2109",
+        "2154",
+        "3109",
+        "3219",
+        "4140",
+        "4217",
+        "4258"
+      ],
+      "remainingFloorOnlyKeys": [
+        "1113",
+        "1117",
+        "1124"
+      ]
+    },
+    {
+      "building": "FAH",
+      "path": "static/indoor/FAH.json",
+      "sha256": "6c72e28acb6b1e319ddd05d9ab7a57f2dfa41cf1aabda16ebfd3646c767e95d5",
+      "statusMatches": true,
+      "units": "relative",
+      "northDeg": null,
+      "northNote": "The emergency-plan and FIS raster north arrows both point page-up, but matching room walls requires about 90 degrees of rotation between them. True north is unresolved; only relative room alignment is retained.",
+      "geoPresent": false,
+      "sourceCount": 3,
+      "referencedSourceCount": 20,
+      "floors": 4,
+      "placedScheduleKeys": [
+        "1101",
+        "1450",
+        "1301"
+      ],
+      "remainingFloorOnlyKeys": []
+    },
+    {
+      "building": "GH",
+      "path": "static/indoor/GH-combined.json",
+      "sha256": "1a88ae71a5375fc5632508d170da53123ef6ddaabebfc19de0c5c75810359466",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": 0,
+      "northNote": "North is inherited from the old local floor frame. The 2012 scheme points north to page left; matching the auditorium front makes north point down in the 2016 room diagram. This orientation crosswalk is approximate.",
+      "geoPresent": false,
+      "sourceCount": 6,
+      "referencedSourceCount": 16,
+      "floors": 4,
+      "placedScheduleKeys": [
+        "242",
+        "320",
+        "321"
+      ],
+      "remainingFloorOnlyKeys": [
+        "15",
+        "18A",
+        "18B",
+        "23",
+        "103",
+        "111",
+        "144",
+        "145",
+        "155",
+        "157",
+        "170",
+        "174",
+        "102",
+        "203",
+        "247",
+        "253",
+        "254"
+      ]
+    },
+    {
+      "building": "HSS",
+      "path": "static/indoor/HSS-combined.json",
+      "sha256": "c58b14dad69f462bef0bc18acbb01c78508b71ff50d2675a4fc66ecd03e97ed2",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": null,
+      "northNote": "True north is not established for the shared inherited upper-floor frame. L1/L2 use verified raster scales and service-core registration, whose rotation differs from page north. No campus orientation is asserted.",
+      "geoPresent": false,
+      "sourceCount": 4,
+      "referencedSourceCount": 197,
+      "floors": 8,
+      "placedScheduleKeys": [
+        "1106A",
+        "1128B",
+        "1138",
+        "1305",
+        "1315",
+        "1346",
+        "1106B",
+        "1128A",
+        "1330",
+        "2150",
+        "2154",
+        "2305B",
+        "2321",
+        "2333A",
+        "2346A",
+        "2025",
+        "2152",
+        "2305A",
+        "2333B",
+        "4025",
+        "6008",
+        "7002",
+        "7076",
+        "7077",
+        "8025"
+      ],
+      "remainingFloorOnlyKeys": [
+        "3027"
+      ]
+    },
+    {
+      "building": "JEANN",
+      "path": "static/indoor/JEANN-combined.json",
+      "sha256": "db5aae0c0d547d326bea970620aeed8166d7e05b6432ebd623f2edaa824722b5",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": null,
+      "northNote": "No north arrow is available in this source. True north is unknown.",
+      "geoPresent": false,
+      "sourceCount": 2,
+      "referencedSourceCount": 4,
+      "floors": 1,
+      "placedScheduleKeys": [
+        "AUD"
+      ],
+      "remainingFloorOnlyKeys": []
+    },
+    {
+      "building": "LEDDN",
+      "path": "static/indoor/LEDDN-combined.json",
+      "sha256": "3a4fe5705b428166b3b936e00fa7d0311dc8451c66a5e9916531e6017d848d08",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": 0,
+      "northNote": "North follows the arrow on the 2024 public FIS floor plan; physical height and stepped seating are not reconstructed.",
+      "geoPresent": false,
+      "sourceCount": 4,
+      "referencedSourceCount": 7,
+      "floors": 1,
+      "placedScheduleKeys": [
+        "AUD"
+      ],
+      "remainingFloorOnlyKeys": []
+    },
+    {
+      "building": "MALK",
+      "path": "static/indoor/MALK-combined.json",
+      "sha256": "14ac8baffde5df296fff005fa569e166329f85b0961239eef561af8265ea94f5",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": 0,
+      "northNote": null,
+      "geoPresent": true,
+      "sourceCount": 6,
+      "referencedSourceCount": 20,
+      "floors": 6,
+      "placedScheduleKeys": [
+        "B90",
+        "B91",
+        "B92"
+      ],
+      "remainingFloorOnlyKeys": [
+        "192",
+        "287",
+        "387",
+        "487",
+        "520",
+        "530"
+      ]
+    },
+    {
+      "building": "MANDE",
+      "path": "static/indoor/MANDE-combined.json",
+      "sha256": "4e8a18ae0be66e73ed1e5d914dab7a05e1c4418ab1d792347eaa1c8b76b2782a",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": 0,
+      "northNote": "Scaled from official room areas (1.33 ft per drawing pixel); rotated 360.0 deg (mirrored) and fitted to the campus-map footprint on Level 1 (overlap 0.42). The match is weak, so the building is not placed among its neighbors.",
+      "geoPresent": false,
+      "sourceCount": 5,
+      "referencedSourceCount": 145,
+      "floors": 4,
+      "placedScheduleKeys": [
+        "B202",
+        "B206",
+        "B104",
+        "B111E",
+        "B113",
+        "B114",
+        "B115B",
+        "B146",
+        "B150",
+        "B152",
+        "B153",
+        "103",
+        "106",
+        "127",
+        "201A",
+        "201B",
+        "203",
+        "219",
+        "220A",
+        "220B"
+      ],
+      "remainingFloorOnlyKeys": [
+        "212"
+      ]
+    },
+    {
+      "building": "MAYER",
+      "path": "static/indoor/MAYER-combined.json",
+      "sha256": "2300c5d79367dbc902ad4dffc372ef45df9385ec4e86c57a45b27c5bd1fce54a",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": 0,
+      "northNote": "Scaled from official room areas (1.33 ft per drawing pixel); rotated -0.5 deg and fitted to the campus-map footprint on Level 4 (overlap 0.46).",
+      "geoPresent": true,
+      "sourceCount": 3,
+      "referencedSourceCount": 238,
+      "floors": 5,
+      "placedScheduleKeys": [
+        "2110",
+        "2130",
+        "2326",
+        "2306",
+        "4322",
+        "5301"
+      ],
+      "remainingFloorOnlyKeys": []
+    },
+    {
+      "building": "MCC",
+      "path": "static/indoor/MCC-combined.json",
+      "sha256": "248a6460057ded7b6c35fd8bd82e50865e6ccf0400a6b6cd948ffdfa95f26e79",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": null,
+      "northNote": "True north and alignment between floors have not been independently established.",
+      "geoPresent": false,
+      "sourceCount": 6,
+      "referencedSourceCount": 59,
+      "floors": 2,
+      "placedScheduleKeys": [
+        "127",
+        "133",
+        "139",
+        "140"
+      ],
+      "remainingFloorOnlyKeys": [
+        "201",
+        "221",
+        "222",
+        "250"
+      ]
+    },
+    {
+      "building": "MCGIL",
+      "path": "static/indoor/MCGIL-combined.json",
+      "sha256": "4052b4c71a712f3e4a59a4f02633d18a685e44bdf1a8effa422b37968022b441",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": null,
+      "northNote": "The inherited local frame is reflected relative to the north-up 2022 L2 plan. Existing floor geometry is retained and the new rooms are registered to that same frame, but campus placement and a reliable north angle are withheld until the original lower-floor orientation can be independently checked.",
+      "geoPresent": false,
+      "sourceCount": 3,
+      "referencedSourceCount": 157,
+      "floors": 6,
+      "placedScheduleKeys": [
+        "1350",
+        "2342",
+        "2334",
+        "2330",
+        "2322",
+        "2315"
+      ],
+      "remainingFloorOnlyKeys": [
+        "2331",
+        "5326"
+      ]
+    },
+    {
+      "building": "MOS",
+      "path": "static/indoor/MOS-combined.json",
+      "sha256": "7eb5aecb51c3c8ae30d39e527b92d0425dee9a5bc5626a6c1efa2d1b41942780",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": 0,
+      "northNote": null,
+      "geoPresent": true,
+      "sourceCount": 4,
+      "referencedSourceCount": 24,
+      "floors": 7,
+      "placedScheduleKeys": [
+        "0113",
+        "0114",
+        "0204"
+      ],
+      "remainingFloorOnlyKeys": []
+    },
+    {
+      "building": "MYR-A",
+      "path": "static/indoor/MYR-A.json",
+      "sha256": "a6fb748af8914bff60f93fbcba497f6d65477fbab0e5fa69db2596545cf95ad2",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": 0,
+      "northNote": "Scaled from official room areas (1.33 ft per drawing pixel); rotated -0.5 deg and fitted to the campus-map footprint on Level 4 (overlap 0.46).",
+      "geoPresent": true,
+      "sourceCount": 7,
+      "referencedSourceCount": 238,
+      "floors": 5,
+      "placedScheduleKeys": [
+        "2544",
+        "2574",
+        "2702",
+        "2722",
+        "3544",
+        "4623",
+        "5623"
+      ],
+      "remainingFloorOnlyKeys": []
+    },
+    {
+      "building": "PRICE",
+      "path": "static/indoor/PRICE-combined.json",
+      "sha256": "68ee56b544a59ed9768a6879fdb49c136b964bad2d1f70b6227143561b4e0d03",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": 0,
+      "northNote": null,
+      "geoPresent": true,
+      "sourceCount": 4,
+      "referencedSourceCount": 8,
+      "floors": 3,
+      "placedScheduleKeys": [],
+      "remainingFloorOnlyKeys": [
+        "THTRE"
+      ]
+    },
+    {
+      "building": "SME",
+      "path": "static/indoor/SME.json",
+      "sha256": "753adb9a02bfe46c19f526c97c37430456110cc9e6bd6c3826c40dae7435bd9e",
+      "statusMatches": true,
+      "units": "relative",
+      "northDeg": 0,
+      "northNote": "The north arrow printed on each plan points up.",
+      "geoPresent": false,
+      "sourceCount": 2,
+      "referencedSourceCount": 36,
+      "floors": 5,
+      "placedScheduleKeys": [
+        "102",
+        "118",
+        "141",
+        "143",
+        "145",
+        "149",
+        "248",
+        "302",
+        "304",
+        "306",
+        "313",
+        "411",
+        "420"
+      ],
+      "remainingFloorOnlyKeys": []
+    },
+    {
+      "building": "SOLIS",
+      "path": "static/indoor/SOLIS-combined.json",
+      "sha256": "f02a4a3cbadb4711daa681ad221841d9255ec4c8ad9bb44a98d8fadadb19da76",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": 0,
+      "northNote": null,
+      "geoPresent": true,
+      "sourceCount": 3,
+      "referencedSourceCount": 9,
+      "floors": 1,
+      "placedScheduleKeys": [
+        "104",
+        "105",
+        "107",
+        "109",
+        "110",
+        "111"
+      ],
+      "remainingFloorOnlyKeys": []
+    },
+    {
+      "building": "SSB",
+      "path": "static/indoor/SSB-combined.json",
+      "sha256": "df7c09a7fad96f211eb97ed2a470deaabe6270007c669d6f58201d1ce892286a",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": 0,
+      "northNote": "Scaled from official room areas (1.33 ft per drawing pixel); rotated 89.5 deg and fitted to the campus-map footprint on Level 2 (overlap 0.77).",
+      "geoPresent": true,
+      "sourceCount": 3,
+      "referencedSourceCount": 248,
+      "floors": 5,
+      "placedScheduleKeys": [
+        "101",
+        "102",
+        "104",
+        "107",
+        "103",
+        "106",
+        "139",
+        "253",
+        "269",
+        "414",
+        "506"
+      ],
+      "remainingFloorOnlyKeys": [
+        "333",
+        "353"
+      ]
+    },
+    {
+      "building": "SSRB",
+      "path": "static/indoor/SSRB-combined.json",
+      "sha256": "9739566852b011128f046dbe77c1cb3a31c4ceed6c89b3598be2ef2fb07dd1e6",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": 0,
+      "northNote": null,
+      "geoPresent": true,
+      "sourceCount": 3,
+      "referencedSourceCount": 13,
+      "floors": 3,
+      "placedScheduleKeys": [
+        "343A",
+        "340",
+        "339"
+      ],
+      "remainingFloorOnlyKeys": [
+        "310"
+      ]
+    },
+    {
+      "building": "UNEXG",
+      "path": "static/indoor/UNEXG-combined.json",
+      "sha256": "7b5d7cac91b8de1b95e6cd3e4f900a2ef2165126579fca994b7268ecd161d28a",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": null,
+      "northNote": "The raster and its north arrow were unavailable. No campus registration is asserted.",
+      "geoPresent": false,
+      "sourceCount": 3,
+      "referencedSourceCount": 5,
+      "floors": 1,
+      "placedScheduleKeys": [
+        "123",
+        "124",
+        "125"
+      ],
+      "remainingFloorOnlyKeys": []
+    },
+    {
+      "building": "UNEXN",
+      "path": "static/indoor/UNEXN-combined.json",
+      "sha256": "6826269734739477272fb2374c38d370a88fc8777d842cc26e2e72ae5f873282",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": null,
+      "northNote": "The raster and its north arrow were unavailable. No campus registration is asserted.",
+      "geoPresent": false,
+      "sourceCount": 3,
+      "referencedSourceCount": 4,
+      "floors": 1,
+      "placedScheduleKeys": [
+        "126",
+        "127"
+      ],
+      "remainingFloorOnlyKeys": []
+    },
+    {
+      "building": "YORK",
+      "path": "static/indoor/YORK-combined.json",
+      "sha256": "f64fc78e92d4a666aebd8e251ffa80af9e67d80ed6050d926849003492fa4e9f",
+      "statusMatches": true,
+      "units": "meters",
+      "northDeg": null,
+      "northNote": "The public L3 north arrow conflicts with the inherited frame orientation. True north across the combined floors has not been established; the former campus fit is not used.",
+      "geoPresent": false,
+      "sourceCount": 3,
+      "referencedSourceCount": 197,
+      "floors": 4,
+      "placedScheduleKeys": [
+        "1146",
+        "1246",
+        "1310",
+        "1322",
+        "2108",
+        "2124",
+        "2142",
+        "2208",
+        "2224",
+        "2310",
+        "2332",
+        "2410",
+        "2432",
+        "2622",
+        "2722",
+        "3000A",
+        "3030",
+        "3050",
+        "3060",
+        "3070",
+        "3108",
+        "3208",
+        "3224",
+        "3306",
+        "3406",
+        "3010",
+        "4050A",
+        "4050B",
+        "4060A",
+        "4060B",
+        "4080A",
+        "4208",
+        "4224",
+        "4248",
+        "4318",
+        "4332",
+        "4406"
+      ],
+      "remainingFloorOnlyKeys": [
+        "4124"
+      ]
+    }
+  ]
+}

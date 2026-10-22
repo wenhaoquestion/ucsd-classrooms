@@ -1,0 +1,1073 @@
+{
+  "reviewedAt": "2026-10-21",
+  "scope": "Public UC San Diego ArcGIS metadata and geometry availability; no authenticated service access or data writes.",
+  "status": "public-catalog-review-complete-for-this-pass",
+  "usableNewRoomPolygons": 0,
+  "summary": "All 133 returned AGO service names and 243 public item metadata records were inspected. A public Enterprise Indoors directory exists, but verified Indoor_Viewer_Data exposes Facilities and Events only. Public Classrooms contains points. No new classroom-boundary dataset was verified in this GIS pass; some Enterprise folders timed out or required authentication.",
+  "catalogs": [
+    {
+      "id": "ucsd-ago-services",
+      "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/arcgis/rest/services?f=pjson",
+      "httpStatus": 200,
+      "serviceCount": 133,
+      "verification": "Full returned service-name list inspected. No explicitly named Rooms, Units or Levels service. Names alone do not establish absence of indoor content in every service.",
+      "services": [
+        {
+          "name": "a063fb",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/a063fb/FeatureServer"
+        },
+        {
+          "name": "a2f567",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/a2f567/FeatureServer"
+        },
+        {
+          "name": "a9f995",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/a9f995/FeatureServer"
+        },
+        {
+          "name": "aa002e",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/aa002e/FeatureServer"
+        },
+        {
+          "name": "Bicycle_Racks_NotInARack",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Bicycle_Racks_NotInARack/FeatureServer"
+        },
+        {
+          "name": "Bicycle_Racks_RackType_Capacity_",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Bicycle_Racks_RackType_Capacity_/FeatureServer"
+        },
+        {
+          "name": "Bicycle_Racks_SPIN_Overflow_in_Racks",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Bicycle_Racks_SPIN_Overflow_in_Racks/FeatureServer"
+        },
+        {
+          "name": "Bicycle_Racks_SPINinRacks",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Bicycle_Racks_SPINinRacks/FeatureServer"
+        },
+        {
+          "name": "Bicycle_Racks_view",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Bicycle_Racks_view/FeatureServer"
+        },
+        {
+          "name": "Campus_Hazards_map_view",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Campus_Hazards_map_view/FeatureServer"
+        },
+        {
+          "name": "Campus_Neighborhoods_and_Districts",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Campus_Neighborhoods_and_Districts/FeatureServer"
+        },
+        {
+          "name": "Concept3DCampusMapBikeRackPins",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Concept3DCampusMapBikeRackPins/FeatureServer"
+        },
+        {
+          "name": "InspectionMap_WFL1",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/InspectionMap_WFL1/FeatureServer"
+        },
+        {
+          "name": "mostUniBuildings",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/mostUniBuildings/FeatureServer"
+        },
+        {
+          "name": "RHawkins_Final_WFL1",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/RHawkins_Final_WFL1/FeatureServer"
+        },
+        {
+          "name": "Road_Debris_mobileview_29a1380b9e914cc0a5f1633cce009ece",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Road_Debris_mobileview_29a1380b9e914cc0a5f1633cce009ece/FeatureServer"
+        },
+        {
+          "name": "roads_renamed_2",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/roads_renamed_2/FeatureServer"
+        },
+        {
+          "name": "Sign_Edit_AllTritonTransitSigns",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Sign_Edit_AllTritonTransitSigns/FeatureServer"
+        },
+        {
+          "name": "simple_variant_hotspot_BA.1.1.X_(Omicron)",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/simple_variant_hotspot_BA.1.1.X_(Omicron)/FeatureServer"
+        },
+        {
+          "name": "StephBikeRackData",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/StephBikeRackData/FeatureServer"
+        },
+        {
+          "name": "survey123_5187111fa5bf41488f060cd53217f6c7_fieldworker",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/survey123_5187111fa5bf41488f060cd53217f6c7_fieldworker/FeatureServer"
+        },
+        {
+          "name": "survey123_81488b5ad002403f8521533175000834_fieldworker",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/survey123_81488b5ad002403f8521533175000834_fieldworker/FeatureServer"
+        },
+        {
+          "name": "survey123_afe7a7ef655e420f9c7532f17c4aa46f_fieldworker",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/survey123_afe7a7ef655e420f9c7532f17c4aa46f_fieldworker/FeatureServer"
+        },
+        {
+          "name": "survey123_ce9edefb80b74e7c9dc866cad86f32a7_fieldworker",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/survey123_ce9edefb80b74e7c9dc866cad86f32a7_fieldworker/FeatureServer"
+        },
+        {
+          "name": "TestNetwork_WFL1",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/TestNetwork_WFL1/FeatureServer"
+        },
+        {
+          "name": "Wastewater_Sample_Collection_Survey_nbtest",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Wastewater_Sample_Collection_Survey_nbtest/FeatureServer"
+        },
+        {
+          "name": "Request_Types",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Request_Types/FeatureServer"
+        },
+        {
+          "name": "SatisfactionSurveys_submit_26fa1cde122c4202b56a37990f784343",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/SatisfactionSurveys_submit_26fa1cde122c4202b56a37990f784343/FeatureServer"
+        },
+        {
+          "name": "Requests_public_26fa1cde122c4202b56a37990f784343",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Requests_public_26fa1cde122c4202b56a37990f784343/FeatureServer"
+        },
+        {
+          "name": "Requests_reporter_26fa1cde122c4202b56a37990f784343",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Requests_reporter_26fa1cde122c4202b56a37990f784343/FeatureServer"
+        },
+        {
+          "name": "Requests_survey_26fa1cde122c4202b56a37990f784343",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Requests_survey_26fa1cde122c4202b56a37990f784343/FeatureServer"
+        },
+        {
+          "name": "Report_It_Now_Request_Restroom_View",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Report_It_Now_Request_Restroom_View/FeatureServer"
+        },
+        {
+          "name": "survey123_6dbeb259b0d34358b868924a6dc72a48_form",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/survey123_6dbeb259b0d34358b868924a6dc72a48_form/FeatureServer"
+        },
+        {
+          "name": "TableauTest2",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/TableauTest2/FeatureServer"
+        },
+        {
+          "name": "RestroomLocationPublicView",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/RestroomLocationPublicView/FeatureServer"
+        },
+        {
+          "name": "service_e44cd5c9cdad43699cd8a85793ec69a2_form",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/service_e44cd5c9cdad43699cd8a85793ec69a2_form/FeatureServer"
+        },
+        {
+          "name": "Requests_NS_Public_View",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Requests_NS_Public_View/FeatureServer"
+        },
+        {
+          "name": "Stuart_Collection",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Stuart_Collection/FeatureServer"
+        },
+        {
+          "name": "POIs",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/POIs/FeatureServer"
+        },
+        {
+          "name": "Points_Of_Interest",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Points_Of_Interest/FeatureServer"
+        },
+        {
+          "name": "Geisel_Extrusion",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Geisel_Extrusion/FeatureServer"
+        },
+        {
+          "name": "Triton_Center_3D_Object",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Triton_Center_3D_Object/FeatureServer"
+        },
+        {
+          "name": "Triton_Center_3D_Object",
+          "type": "SceneServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Triton_Center_3D_Object/SceneServer"
+        },
+        {
+          "name": "Geisel_3D_Object",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Geisel_3D_Object/FeatureServer"
+        },
+        {
+          "name": "Geisel_3D_Object",
+          "type": "SceneServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Geisel_3D_Object/SceneServer"
+        },
+        {
+          "name": "Campus_Buildings_3D_Object",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Campus_Buildings_3D_Object/FeatureServer"
+        },
+        {
+          "name": "Campus_Buildings_3D_Object",
+          "type": "SceneServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Campus_Buildings_3D_Object/SceneServer"
+        },
+        {
+          "name": "LRT_3D_Object",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/LRT_3D_Object/FeatureServer"
+        },
+        {
+          "name": "LRT_3D_Object",
+          "type": "SceneServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/LRT_3D_Object/SceneServer"
+        },
+        {
+          "name": "Triton_Transit_Shuttle_Positions",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Triton_Transit_Shuttle_Positions/FeatureServer"
+        },
+        {
+          "name": "Triton_Transit_Route_Lines",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Triton_Transit_Route_Lines/FeatureServer"
+        },
+        {
+          "name": "VisitUCSD_tours_test",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/VisitUCSD_tours_test/FeatureServer"
+        },
+        {
+          "name": "VisitUCSD_tours_family",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/VisitUCSD_tours_family/FeatureServer"
+        },
+        {
+          "name": "Triton_Transit_Stops_-_Public_View",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Triton_Transit_Stops_-_Public_View/FeatureServer"
+        },
+        {
+          "name": "Triton_Transit_Bus_Stops",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Triton_Transit_Bus_Stops/FeatureServer"
+        },
+        {
+          "name": "TritonTransitStops",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/TritonTransitStops/FeatureServer"
+        },
+        {
+          "name": "Enterprise_Carshare",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Enterprise_Carshare/FeatureServer"
+        },
+        {
+          "name": "Passenger_Loading_Zones",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Passenger_Loading_Zones/FeatureServer"
+        },
+        {
+          "name": "Fleet_Share",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Fleet_Share/FeatureServer"
+        },
+        {
+          "name": "Bicycle_Rack_POIs",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Bicycle_Rack_POIs/FeatureServer"
+        },
+        {
+          "name": "Bicycle_Enclosures",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Bicycle_Enclosures/FeatureServer"
+        },
+        {
+          "name": "Triton_Mobility_Services",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Triton_Mobility_Services/FeatureServer"
+        },
+        {
+          "name": "Electrical_Vehicle_Charging",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Electrical_Vehicle_Charging/FeatureServer"
+        },
+        {
+          "name": "Kiosks",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Kiosks/FeatureServer"
+        },
+        {
+          "name": "Dining_Halls",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Dining_Halls/FeatureServer"
+        },
+        {
+          "name": "Cafes_and_Restaurants",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Cafes_and_Restaurants/FeatureServer"
+        },
+        {
+          "name": "Hospitals",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Hospitals/FeatureServer"
+        },
+        {
+          "name": "AED_Trauma_Kits",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/AED_Trauma_Kits/FeatureServer"
+        },
+        {
+          "name": "Emergency_Evacuation_Chairs",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Emergency_Evacuation_Chairs/FeatureServer"
+        },
+        {
+          "name": "Hospitality_Information_Desk",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Hospitality_Information_Desk/FeatureServer"
+        },
+        {
+          "name": "Coffee",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Coffee/FeatureServer"
+        },
+        {
+          "name": "Athletic_Facilities",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Athletic_Facilities/FeatureServer"
+        },
+        {
+          "name": "Recreation_Facilities",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Recreation_Facilities/FeatureServer"
+        },
+        {
+          "name": "Campus_Points_Of_Interest_-_Public",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Campus_Points_Of_Interest_-_Public/FeatureServer"
+        },
+        {
+          "name": "Emergency_Care",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Emergency_Care/FeatureServer"
+        },
+        {
+          "name": "Department_Offices",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Department_Offices/FeatureServer"
+        },
+        {
+          "name": "Information",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Information/FeatureServer"
+        },
+        {
+          "name": "Classrooms",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Classrooms/FeatureServer"
+        },
+        {
+          "name": "Student_Services",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Student_Services/FeatureServer"
+        },
+        {
+          "name": "Medical_Clinics",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Medical_Clinics/FeatureServer"
+        },
+        {
+          "name": "Conference_Meeting_Room",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Conference_Meeting_Room/FeatureServer"
+        },
+        {
+          "name": "Career_Services",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Career_Services/FeatureServer"
+        },
+        {
+          "name": "Markets",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Markets/FeatureServer"
+        },
+        {
+          "name": "Retail",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Retail/FeatureServer"
+        },
+        {
+          "name": "Police_Department",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Police_Department/FeatureServer"
+        },
+        {
+          "name": "Hydration",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Hydration/FeatureServer"
+        },
+        {
+          "name": "Printers_and_Print_Services",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Printers_and_Print_Services/FeatureServer"
+        },
+        {
+          "name": "Vending_Machines",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Vending_Machines/FeatureServer"
+        },
+        {
+          "name": "Parking_Offices",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Parking_Offices/FeatureServer"
+        },
+        {
+          "name": "Parking_Pay_Stations",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Parking_Pay_Stations/FeatureServer"
+        },
+        {
+          "name": "Student_Organizations",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Student_Organizations/FeatureServer"
+        },
+        {
+          "name": "Public_Restrooms",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Public_Restrooms/FeatureServer"
+        },
+        {
+          "name": "Period_Product_Dispensers",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Period_Product_Dispensers/FeatureServer"
+        },
+        {
+          "name": "Baby_Changing_Stations",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Baby_Changing_Stations/FeatureServer"
+        },
+        {
+          "name": "Gender_Inclusive_Restrooms",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Gender_Inclusive_Restrooms/FeatureServer"
+        },
+        {
+          "name": "Lactation_Rooms",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Lactation_Rooms/FeatureServer"
+        },
+        {
+          "name": "Lounges",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Lounges/FeatureServer"
+        },
+        {
+          "name": "Research_Labs",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Research_Labs/FeatureServer"
+        },
+        {
+          "name": "Catering",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Catering/FeatureServer"
+        },
+        {
+          "name": "Hospitality_Service_Venues",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Hospitality_Service_Venues/FeatureServer"
+        },
+        {
+          "name": "Libraries",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Libraries/FeatureServer"
+        },
+        {
+          "name": "Computer_Labs",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Computer_Labs/FeatureServer"
+        },
+        {
+          "name": "Global_Initiatives",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Global_Initiatives/FeatureServer"
+        },
+        {
+          "name": "Laundry",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Laundry/FeatureServer"
+        },
+        {
+          "name": "Showers",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Showers/FeatureServer"
+        },
+        {
+          "name": "ATMs",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/ATMs/FeatureServer"
+        },
+        {
+          "name": "Health_Sciences_Information_Services",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Health_Sciences_Information_Services/FeatureServer"
+        },
+        {
+          "name": "Pay_Phones",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Pay_Phones/FeatureServer"
+        },
+        {
+          "name": "Call_Boxes",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Call_Boxes/FeatureServer"
+        },
+        {
+          "name": "Event_Spaces",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Event_Spaces/FeatureServer"
+        },
+        {
+          "name": "Mail_Boxes_and_Services",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Mail_Boxes_and_Services/FeatureServer"
+        },
+        {
+          "name": "Collections",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Collections/FeatureServer"
+        },
+        {
+          "name": "Book_Return",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Book_Return/FeatureServer"
+        },
+        {
+          "name": "Level_2_Chargers",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Level_2_Chargers/FeatureServer"
+        },
+        {
+          "name": "DC_Fast_Chargers",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/DC_Fast_Chargers/FeatureServer"
+        },
+        {
+          "name": "Parking_Entrances",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Parking_Entrances/FeatureServer"
+        },
+        {
+          "name": "Stuart_Collection_View",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Stuart_Collection_View/FeatureServer"
+        },
+        {
+          "name": "Clean_Energy",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Clean_Energy/FeatureServer"
+        },
+        {
+          "name": "Compost_Locations",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Compost_Locations/FeatureServer"
+        },
+        {
+          "name": "Donation_Sites",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Donation_Sites/FeatureServer"
+        },
+        {
+          "name": "Gardens",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Gardens/FeatureServer"
+        },
+        {
+          "name": "Specialty_Recycling_Locations",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Specialty_Recycling_Locations/FeatureServer"
+        },
+        {
+          "name": "Sustainability",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Sustainability/FeatureServer"
+        },
+        {
+          "name": "Trolley_Stations",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Trolley_Stations/FeatureServer"
+        },
+        {
+          "name": "Metropolitan_Transit_System_(MTS)",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Metropolitan_Transit_System_(MTS)/FeatureServer"
+        },
+        {
+          "name": "North_CountyTransit_District_(NCTD)",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/North_CountyTransit_District_(NCTD)/FeatureServer"
+        },
+        {
+          "name": "Theaters",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Theaters/FeatureServer"
+        },
+        {
+          "name": "Memorial",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Memorial/FeatureServer"
+        },
+        {
+          "name": "Student_Health_and_Well-Being",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Student_Health_and_Well-Being/FeatureServer"
+        },
+        {
+          "name": "PLZs",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/PLZs/FeatureServer"
+        },
+        {
+          "name": "Triton_Transit_Stops_SL",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Triton_Transit_Stops_SL/FeatureServer"
+        },
+        {
+          "name": "Fleet_Services",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/Fleet_Services/FeatureServer"
+        },
+        {
+          "name": "POIs_Parking",
+          "type": "FeatureServer",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/ArcGIS/rest/services/POIs_Parking/FeatureServer"
+        }
+      ]
+    },
+    {
+      "id": "ucsd-ago-items",
+      "url": "https://www.arcgis.com/sharing/rest/search?q=orgid%3AmXNwDpiENQiMIzRv&num=100&f=json",
+      "total": 243,
+      "inspectedItems": 243,
+      "nextStart": -1,
+      "limitation": "All 243 returned public organization item metadata records were inspected; item metadata is not equivalent to inspecting every nested layer or every application payload. No explicit room/level geometry service was identified.",
+      "pages": [
+        {
+          "start": 1,
+          "count": 100,
+          "nextStart": 101
+        },
+        {
+          "start": 101,
+          "count": 100,
+          "nextStart": 201
+        },
+        {
+          "start": 201,
+          "count": 43,
+          "nextStart": -1
+        }
+      ],
+      "relevantItems": [
+        {
+          "id": "2dc930e81f704ec193a4aa373b9fa741",
+          "title": "Classrooms",
+          "type": "Feature Service",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/arcgis/rest/services/Classrooms/FeatureServer",
+          "access": "public"
+        },
+        {
+          "id": "18701efb80af4f398363453655b40062",
+          "title": "UCSD Interactive Campus Map",
+          "type": "Web Map",
+          "url": "",
+          "access": "public"
+        },
+        {
+          "id": "28765e971059433b84472c7df7055138",
+          "title": "UC San Diego's Campus Map User Guide",
+          "type": "StoryMap",
+          "url": "https://storymaps.arcgis.com/stories/28765e971059433b84472c7df7055138",
+          "access": "public"
+        },
+        {
+          "id": "29fd3934986b466cac4cf88268800c8e",
+          "title": "Campus Buildings 3D Object",
+          "type": "Feature Service",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/arcgis/rest/services/Campus_Buildings_3D_Object/FeatureServer",
+          "access": "public"
+        },
+        {
+          "id": "abd1fdef7fb64eaa91cc67611f15f11d",
+          "title": "Campus Buildings 3D Object",
+          "type": "Scene Service",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/arcgis/rest/services/Campus_Buildings_3D_Object/SceneServer",
+          "access": "public"
+        },
+        {
+          "id": "87ada15d7026493780f1fb69713c24a9",
+          "title": "UCSD Interactive Campus Map Accessible",
+          "type": "Web Map",
+          "url": "",
+          "access": "public"
+        },
+        {
+          "id": "cce7944b5dad43f7bf61a95908f9dc6d",
+          "title": "UCSD Buildings - Public",
+          "type": "Map Service",
+          "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/AdministrationServices/Buildings_Public/MapServer",
+          "access": "public"
+        },
+        {
+          "id": "f09ad505a2f4461f9896b8451b2ab2e3",
+          "title": "Campus Map Vector AGO",
+          "type": "Vector Tile Service",
+          "url": "https://tiles.arcgis.com/tiles/mXNwDpiENQiMIzRv/arcgis/rest/services/CampusMapVectorApril2/VectorTileServer",
+          "access": "public"
+        },
+        {
+          "id": "1b42e1ee7eb544ec9b6dd7481bc59862",
+          "title": "3D Interactive Campus Map (AGO) Accessible",
+          "type": "Web Scene",
+          "url": "",
+          "access": "public"
+        },
+        {
+          "id": "e14afd12941c4e2497805952416ba2df",
+          "title": "mostUniBuildings",
+          "type": "Feature Service",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/arcgis/rest/services/mostUniBuildings/FeatureServer",
+          "access": "public"
+        },
+        {
+          "id": "a0a255ad97534836aa9e159d4a546bfc",
+          "title": "3D Interactive Campus Map (AGO)",
+          "type": "Web Scene",
+          "url": "",
+          "access": "public"
+        },
+        {
+          "id": "13b20d11becb48c3ba50c7bf80664dc0",
+          "title": "Campus Map Vector - App Style",
+          "type": "Web Map",
+          "url": "",
+          "access": "public"
+        },
+        {
+          "id": "6dbeb259b0d34358b868924a6dc72a48",
+          "title": "GIS Campus Map Feedback",
+          "type": "Form",
+          "url": null,
+          "access": "public"
+        },
+        {
+          "id": "6264bb9501db4a01a37cb0e0c5761a80",
+          "title": "UCSD Campus Map - Network Test",
+          "type": "Web Experience",
+          "url": "https://experience.arcgis.com/experience/6264bb9501db4a01a37cb0e0c5761a80",
+          "access": "public"
+        },
+        {
+          "id": "e19f33d2c1f44967aef673306c483913",
+          "title": "Campus Map Vector - App Style",
+          "type": "Vector Tile Service",
+          "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/Hosted/CampusMapVector/VectorTileServer",
+          "access": "public"
+        },
+        {
+          "id": "cc4d436a2195401793231b3553e8d61c",
+          "title": "UCSD Public Building Points",
+          "type": "Feature Service",
+          "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/AdministrationServices/Buildings_Public/MapServer/0",
+          "access": "public"
+        },
+        {
+          "id": "1c5eacd80807499a83537f04aedb2424",
+          "title": "Accessible Campus Map",
+          "type": "Web Experience",
+          "url": "https://experience.arcgis.com/experience/1c5eacd80807499a83537f04aedb2424",
+          "access": "public"
+        },
+        {
+          "id": "d0bd711c3f6d41728bfc6dbe9f97bb28",
+          "title": "Campus Map Vector (No Labels)",
+          "type": "Vector Tile Service",
+          "url": "https://tiles.arcgis.com/tiles/mXNwDpiENQiMIzRv/arcgis/rest/services/CampusMapVectorApril2/VectorTileServer",
+          "access": "public"
+        },
+        {
+          "id": "f89c8a8a568a4fa79632554e338091d1",
+          "title": "GIS Campus Map Feedback_form",
+          "type": "Feature Service",
+          "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/arcgis/rest/services/survey123_6dbeb259b0d34358b868924a6dc72a48_form/FeatureServer",
+          "access": "public"
+        },
+        {
+          "id": "c97d6e2efd7947d38738d5184b2debc7",
+          "title": "UC San Diego Campus Map",
+          "type": "Web Experience",
+          "url": "https://experience.arcgis.com/experience/c97d6e2efd7947d38738d5184b2debc7",
+          "access": "public"
+        },
+        {
+          "id": "039341e4c801400b9d8e1113b93b77f8",
+          "title": "UCSD Public Building Footprints",
+          "type": "Feature Service",
+          "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/AdministrationServices/Buildings_Public/MapServer/1",
+          "access": "public"
+        },
+        {
+          "id": "09d7b3934b6c4c2cad8380c04e08c1b1",
+          "title": "Campus Map Vector - Dark Gray",
+          "type": "Vector Tile Service",
+          "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/Hosted/CampusMapVector/VectorTileServer",
+          "access": "public"
+        },
+        {
+          "id": "7e5470127b314ce9b01379f14fe19fc4",
+          "title": "Campus Map Vector AGO",
+          "type": "Vector Tile Service",
+          "url": "https://tiles.arcgis.com/tiles/mXNwDpiENQiMIzRv/arcgis/rest/services/CampusMapVectorApril2/VectorTileServer",
+          "access": "public"
+        },
+        {
+          "id": "6643ee62af494f5bafe7dfdb8eb3f857",
+          "title": "Campus Map Vector - Light Gray",
+          "type": "Vector Tile Service",
+          "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/Hosted/CampusMapVector/VectorTileServer",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "id": "ucsd-enterprise",
+      "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services",
+      "version": "11.5",
+      "verification": "Public REST directory and several child service metadata pages opened through web browsing. Directory includes Indoors, Hosted, Buildings and Wayfinding. Authentication boundaries were respected."
+    }
+  ],
+  "services": [
+    {
+      "id": "ago-classrooms",
+      "url": "https://services9.arcgis.com/mXNwDpiENQiMIzRv/arcgis/rest/services/Classrooms/FeatureServer",
+      "itemId": "2dc930e81f704ec193a4aa373b9fa741",
+      "access": "public-http-200-json",
+      "layers": [
+        {
+          "id": 1,
+          "name": "Points Of Interest (POI)",
+          "parentLayerId": -1,
+          "defaultVisibility": true,
+          "subLayerIds": null,
+          "minScale": 0,
+          "maxScale": 0,
+          "type": "Feature Layer",
+          "geometryType": "esriGeometryPoint"
+        }
+      ],
+      "spatialReference": {
+        "wkid": 102646,
+        "latestWkid": 2230
+      },
+      "verdict": "Points of interest only; not room boundaries or floor plans.",
+      "usableFor": "Possible position or labeling cross-check after record-level validation; no indoor geometry imported."
+    },
+    {
+      "id": "enterprise-indoor-viewer",
+      "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/Indoors/Indoor_Viewer_Data/FeatureServer",
+      "itemId": "501c39dffb1a4a3f85636b45f802e4aa",
+      "access": "public-metadata-read",
+      "layers": [
+        {
+          "id": 0,
+          "name": "Events",
+          "recordGeometryNotQueried": true
+        },
+        {
+          "id": 1,
+          "name": "Facilities",
+          "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/Indoors/Indoor_Viewer_Data/FeatureServer/1",
+          "geometryType": "esriGeometryPolygon",
+          "hasZ": true,
+          "spatialReference": {
+            "wkid": 102100,
+            "latestWkid": 3857,
+            "verticalWkid": 115700
+          },
+          "fields": [
+            "OBJECTID",
+            "GlobalID",
+            "FACILITY_ID",
+            "NAME",
+            "NAME_LONG",
+            "SITE_ID",
+            "ADDRESS",
+            "NAME_SUBTITLE",
+            "IMAGE_URL",
+            "HEIGHT_RELATIVE",
+            "LEVELS_ABOVE_GROUND",
+            "CREATED_USER",
+            "CREATED_DATE",
+            "LAST_EDITED_USER",
+            "LAST_EDITED_DATE",
+            "VALIDATIONSTATUS",
+            "Shape__Area",
+            "Shape__Length"
+          ]
+        }
+      ],
+      "verdict": "Verified schema is facility-level, without Units, Levels or classroom-number layers. No room polygons established.",
+      "limitations": [
+        "Actual records not downloaded or visually audited.",
+        "IMAGE_URL values were not retrieved, so no inference that they contain floor plans."
+      ]
+    },
+    {
+      "id": "enterprise-indoor-wayfinding",
+      "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/Indoors/jhuIndoorsNTPLLN_Wayfinding_Campus/MapServer",
+      "access": "listed-publicly-metadata-request-timed-out",
+      "routeMetadataUrl": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/Indoors/jhuIndoorsNTPLLN_Wayfinding_Campus/NAServer/Route",
+      "routeMetadataVerification": "Public indexed service description shows Network_ND with Transitions, Pathways and Network_ND_Junctions; walking/wheelchair modes and stairs/elevators restrictions; HasZ and HasM.",
+      "verdict": "Indoor-aware routing is a useful lead, but network edges are not classroom polygons. MapServer layers and records remain unverified."
+    },
+    {
+      "id": "enterprise-campus-buildings",
+      "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/Buildings/Buildings_Campus_Map/MapServer",
+      "access": "public-metadata-read",
+      "layers": [
+        "Building Points",
+        "Parking Lotcations",
+        "Building Footprints",
+        "Parking Lots"
+      ],
+      "verdict": "Exterior locations/footprints, not full-floor classroom geometry."
+    },
+    {
+      "id": "enterprise-community-basemap",
+      "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/BaseData/Campus_Community_Maps_Cached/MapServer",
+      "access": "public-metadata-read",
+      "layers": [
+        "Roads",
+        "UCSD boundary",
+        "UCSD buildings",
+        "Athletic",
+        "Hardscape",
+        "Landscape",
+        "Other structures",
+        "Background"
+      ],
+      "tables": [
+        "BuildingInfo"
+      ],
+      "verdict": "Campus basemap; no room/level schema verified."
+    },
+    {
+      "id": "enterprise-hosted",
+      "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/Hosted?f=pjson",
+      "access": "timed-out",
+      "verdict": "Not fully inspected; timeout does not establish that no indoor layers exist.",
+      "publicIndexedLeads": [
+        {
+          "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/Hosted/Building_Extrusions/FeatureServer",
+          "layers": [
+            "TritonCenter",
+            "NTPLLN",
+            "BuildingExtrusions"
+          ],
+          "verdict": "Building extrusions by metadata; no room or level identity established."
+        },
+        {
+          "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/Hosted/bldgsExistingModel/FeatureServer",
+          "layers": [
+            "bldgsExistingModel"
+          ],
+          "verdict": "Building model by metadata; contents not verified as indoor geometry."
+        }
+      ]
+    },
+    {
+      "id": "enterprise-proof-of-concepts",
+      "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/ProofOfConcepts?f=pjson",
+      "httpStatus": 200,
+      "arcgisError": {
+        "code": 499,
+        "message": "Token Required"
+      },
+      "access": "authentication-required",
+      "verdict": "Stopped at authentication requirement; no contents inspected."
+    },
+    {
+      "id": "enterprise-tririga-integration",
+      "url": "https://admin-enterprise-gis.ucsd.edu/server/rest/services/TririgaIntegration",
+      "access": "redirected-to-sign-in",
+      "verdict": "Stopped at sign-in; no restricted contents inspected."
+    }
+  ],
+  "relatedPlanningPdfVisualReview": [
+    {
+      "file": "local/indoor-sources/COA-MALK-HDH-2025.pdf",
+      "url": "https://hdh.ucsd.edu/_files/Ridge-Walk-LLN.pdf",
+      "pagesReviewed": [
+        6,
+        7
+      ],
+      "findings": "Page 6 is a Building C guardrail/counter rendering; page 7 is a material board. Neither contains a floor plan."
+    },
+    {
+      "file": "local/indoor-sources/COA-MALK-REGENTS-2023.pdf",
+      "url": "https://regents.universityofcalifornia.edu/regmeet/mar23/f9attach6.pdf",
+      "pagesReviewed": [
+        4,
+        5
+      ],
+      "findings": "Page 4 shows unnumbered academic room partitions in Building C (Coalition) and Economics (Malk). Page 5 shows residential upper levels in C and a typical office level in Economics.",
+      "limitations": "2023 design drawings lack final room identifiers. The ground-level composite also labels a Building C second-floor lobby; do not assume one uniform floor designation across the site."
+    },
+    {
+      "file": "local/indoor-sources/PODEM-REGENTS-2020.pdf",
+      "url": "https://regents.universityofcalifornia.edu/regmeet/sept20/f2attach7.pdf",
+      "pagesReviewed": [
+        5
+      ],
+      "findings": "Building 5 (Podemos) has a visible northern fan-shaped lecture hall, central circulation core and southern academic rooms.",
+      "limitations": "2020 unnumbered design plan. Shape similarity alone cannot establish final classroom numbers or current room boundaries."
+    }
+  ],
+  "runtimeChanges": false,
+  "outreachSent": false
+}

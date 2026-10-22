@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "building": "MYR-A",
+  "term": "FA26",
+  "source": {
+    "url": "https://sheeptester.github.io/uxdy/data/classrooms-FA26.txt",
+    "localPath": "local/indoor-sources/classrooms-FA26.txt",
+    "sha256": "b485329436badb02834df241fd81ea48d9ec9e0f2edef106cb11d7f56d43453b",
+    "acquiredAt": "2026-10-22T01:39:35.656Z",
+    "scrapedAt": "2026-10-15T00:29:00.000Z",
+    "note": "The website schedule feed is a third-party scrape, not an official geometry source. Only exact building and room keys are taken from it."
+  },
+  "parser": "src/lib/coursesFromFile.ts",
+  "reproduce": "node scripts/extract-myr-a-schedule.mjs",
+  "keys": [
+    "2544",
+    "2574",
+    "2702",
+    "2722",
+    "3544",
+    "4623",
+    "5623"
+  ],
+  "meetingRecordCount": 48,
+  "meetings": [
+    {
+      "scheduleKey": "2722",
+      "course": "PHYS 2A",
+      "meetingType": "DI",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2722",
+      "course": "PHYS 2A",
+      "meetingType": "DI",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2722",
+      "course": "PHYS 2A",
+      "meetingType": "DI",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2722",
+      "course": "PHYS 2A",
+      "meetingType": "DI",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2722",
+      "course": "PHYS 2C",
+      "meetingType": "DI",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "4623",
+      "course": "PHYS 2C",
+      "meetingType": "DI",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2544",
+      "course": "PHYS 2CL",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2544",
+      "course": "PHYS 2CL",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2544",
+      "course": "PHYS 2CL",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2544",
+      "course": "PHYS 2CL",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2544",
+      "course": "PHYS 2CL",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2544",
+      "course": "PHYS 2CL",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2544",
+      "course": "PHYS 2CL",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2544",
+      "course": "PHYS 2CL",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2544",
+      "course": "PHYS 2CL",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2544",
+      "course": "PHYS 2CL",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2574",
+      "course": "PHYS 2DL",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2574",
+      "course": "PHYS 2DL",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2574",
+      "course": "PHYS 2DL",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2574",
+      "course": "PHYS 2DL",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2574",
+      "course": "PHYS 2DL",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2702",
+      "course": "PHYS 4C",
+      "meetingType": "DI",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2722",
+      "course": "PHYS 4C",
+      "meetingType": "DI",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2702",
+      "course": "PHYS 4C",
+      "meetingType": "DI",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2722",
+      "course": "PHYS 4C",
+      "meetingType": "DI",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2702",
+      "course": "PHYS 4C",
+      "meetingType": "DI",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2722",
+      "course": "PHYS 4C",
+      "meetingType": "DI",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "3544",
+      "course": "PHYS 122",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2722",
+      "course": "PHYS 133",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2722",
+      "course": "PHYS 133",
+      "meetingType": "MI",
+      "kind": "exam"
+    },
+    {
+      "scheduleKey": "2722",
+      "course": "PHYS 133",
+      "meetingType": "FI",
+      "kind": "exam"
+    },
+    {
+      "scheduleKey": "2702",
+      "course": "PHYS 191",
+      "meetingType": "SE",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2702",
+      "course": "PHYS 200A",
+      "meetingType": "LE",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2702",
+      "course": "PHYS 200A",
+      "meetingType": "FI",
+      "kind": "exam"
+    },
+    {
+      "scheduleKey": "2702",
+      "course": "PHYS 201",
+      "meetingType": "LE",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2702",
+      "course": "PHYS 201",
+      "meetingType": "DI",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2702",
+      "course": "PHYS 201",
+      "meetingType": "FI",
+      "kind": "exam"
+    },
+    {
+      "scheduleKey": "2702",
+      "course": "PHYS 212A",
+      "meetingType": "LE",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2702",
+      "course": "PHYS 212A",
+      "meetingType": "DI",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2702",
+      "course": "PHYS 212A",
+      "meetingType": "FI",
+      "kind": "exam"
+    },
+    {
+      "scheduleKey": "2702",
+      "course": "PHYS 215D",
+      "meetingType": "LE",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2702",
+      "course": "PHYS 215D",
+      "meetingType": "FI",
+      "kind": "exam"
+    },
+    {
+      "scheduleKey": "2722",
+      "course": "PHYS 219",
+      "meetingType": "LA",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2722",
+      "course": "PHYS 219",
+      "meetingType": "MI",
+      "kind": "exam"
+    },
+    {
+      "scheduleKey": "2722",
+      "course": "PHYS 219",
+      "meetingType": "FI",
+      "kind": "exam"
+    },
+    {
+      "scheduleKey": "2702",
+      "course": "PHYS 225A",
+      "meetingType": "LE",
+      "kind": "section"
+    },
+    {
+      "scheduleKey": "2702",
+      "course": "PHYS 225A",
+      "meetingType": "FI",
+      "kind": "exam"
+    },
+    {
+      "scheduleKey": "5623",
+      "course": "PHYS 251",
+      "meetingType": "SE",
+      "kind": "section"
+    }
+  ]
+}

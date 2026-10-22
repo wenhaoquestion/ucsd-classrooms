@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "building": "SOLIS",
+  "output": "static/indoor/SOLIS-combined.json",
+  "inputHashes": {
+    "data/indoor/SOLIS/public-fis-trace.json": "ec9067736307a82018c31fd0bb69e5baf28f11fd137a6626d40e2cf57e9c2384",
+    "static/indoor/facilities/SOLIS.json": "03742a67fbb8961be1fcdf6904ae6d7991fe20ee5ade37901294accc89e5ac84",
+    "local/indoor-sources/SOLIS-L1-FIS.png": "9858a7264b0dff02607fc372f0571e1036ac55bebf7f9b113256c7cd1c5cd1c7"
+  },
+  "addedScheduleKeys": [
+    "104",
+    "105",
+    "107",
+    "109",
+    "110",
+    "111"
+  ],
+  "metersPerReferencePixel": 0.0254,
+  "transform": {
+    "formula": "x = s*u + tx; z = s*v + tz",
+    "s": 0.0254,
+    "tx": -30.338733333333334,
+    "tz": -21.9482
+  },
+  "registrationChecks": {
+    "controls": [
+      {
+        "source": [
+          1787,
+          309
+        ],
+        "target": [
+          14.9,
+          -14.35
+        ],
+        "description": "NE roof corner of 104",
+        "residualMeters": 0.29244041869926146
+      },
+      {
+        "source": [
+          1787,
+          420
+        ],
+        "target": [
+          15,
+          -11.35
+        ],
+        "description": "104/105 roof step",
+        "residualMeters": 0.08648629075755204
+      },
+      {
+        "source": [
+          2036,
+          420
+        ],
+        "target": [
+          21.3,
+          -11.35
+        ],
+        "description": "NE corner 105",
+        "residualMeters": 0.10294432907644668
+      },
+      {
+        "source": [
+          2036,
+          893
+        ],
+        "target": [
+          21.4,
+          0.75
+        ],
+        "description": "SE corner 105/123",
+        "residualMeters": 0.029122068762365297
+      },
+      {
+        "source": [
+          701,
+          1528
+        ],
+        "target": [
+          -12.4,
+          17.05
+        ],
+        "description": "109 southeast corner at diagonal cut",
+        "residualMeters": 0.22966647314965355
+      },
+      {
+        "source": [
+          359,
+          1528
+        ],
+        "target": [
+          -21.1,
+          17.05
+        ],
+        "description": "109 southwest roof corner",
+        "residualMeters": 0.2222632171300511
+      }
+    ],
+    "holdouts": [
+      {
+        "source": [
+          1974,
+          1016
+        ],
+        "target": [
+          19.8,
+          3.75
+        ],
+        "description": "SE roofline corner east of entrance steps",
+        "residualMeters": 0.1082034735533015
+      },
+      {
+        "source": [
+          1635,
+          1326
+        ],
+        "target": [
+          11.2,
+          11.65
+        ],
+        "description": "SE outer corner 107 at diagonal side",
+        "residualMeters": 0.08277421874593575
+      }
+    ]
+  },
+  "areaChecks": [
+    {
+      "room": "104",
+      "tracedAreaSqft": 1542.4479166666663,
+      "listedAreaSqft": 1533,
+      "relativeDifference": 0.006163024570558617,
+      "usedToSetScale": false
+    },
+    {
+      "room": "105",
+      "tracedAreaSqft": 699.9999999999998,
+      "listedAreaSqft": 700,
+      "relativeDifference": 3.3306690738754696e-16,
+      "usedToSetScale": true
+    },
+    {
+      "room": "107",
+      "tracedAreaSqft": 3232.444444444444,
+      "listedAreaSqft": 3173,
+      "relativeDifference": 0.018734460902755767,
+      "usedToSetScale": false
+    },
+    {
+      "room": "109",
+      "tracedAreaSqft": 549.2708333333333,
+      "listedAreaSqft": 549,
+      "relativeDifference": 0.0004933211900424173,
+      "usedToSetScale": false
+    },
+    {
+      "room": "110",
+      "tracedAreaSqft": 547.7083333333333,
+      "listedAreaSqft": 548,
+      "relativeDifference": 0.0005322384428225746,
+      "usedToSetScale": false
+    },
+    {
+      "room": "111",
+      "tracedAreaSqft": 554.5833333333333,
+      "listedAreaSqft": 555,
+      "relativeDifference": 0.0007507507507509281,
+      "usedToSetScale": false
+    }
+  ],
+  "independentAreaCheck": {
+    "label": "123",
+    "tracedAreaSqft": 33.58333333333332,
+    "printedAreaSqft": 34
+  },
+  "campusGeometryRetained": true,
+  "campusRegistrationConfidence": "approximate",
+  "limitations": [
+    "These are traced room perimeters, not survey geometry; door openings are closed for visualization.",
+    "Interior furniture and social-distancing circles are excluded.",
+    "104/107 clipped mechanical corners and projecting booths are retained at the raster precision.",
+    "Source 2024 floor plan carries the publisher warning that newer CAD / Tririga information may exist.",
+    "Campus translation follows six explicit exterior roof correspondences; retained campus map placement and floor height remain approximate."
+  ]
+}

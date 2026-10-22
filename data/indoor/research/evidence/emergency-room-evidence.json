@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "accessed": "2026-10-21",
+  "catalog": "../emergency-sources.json",
+  "method": "Initial extracted-text review, subsequently supplemented by visual checks of the downloaded PDFs. Observations establish room labels and floors; geometry is stored separately in per-building trace files.",
+  "observations": [
+    {
+      "source": "CSB-EHS-2018",
+      "building": "CSB",
+      "page": 2,
+      "floor": "LL",
+      "roomLabels": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005"
+      ],
+      "floorHeading": "COGNITIVE SCIENCE BUILDING - BASEMENT"
+    },
+    {
+      "source": "CSB-EHS-2018",
+      "building": "CSB",
+      "page": 3,
+      "floor": "L1",
+      "roomLabels": [
+        "115",
+        "180"
+      ],
+      "floorHeading": "FIRST FLOOR"
+    },
+    {
+      "source": "CSB-EHS-2018",
+      "building": "CSB",
+      "page": 4,
+      "floor": "L2",
+      "roomLabels": [
+        "272",
+        "280"
+      ],
+      "floorHeading": "SECOND FLOOR",
+      "metadataUpgradeKeys": [
+        "272",
+        "280"
+      ]
+    },
+    {
+      "source": "SME-EHS-2021",
+      "building": "SME",
+      "page": 3,
+      "floor": "L1",
+      "roomLabels": [
+        "102",
+        "118",
+        "141",
+        "143",
+        "145",
+        "149"
+      ],
+      "visualConfirmation": {
+        "date": "2026-10-21",
+        "keys": [
+          "102"
+        ],
+        "evidence": "data/indoor/SME/trace.json"
+      }
+    },
+    {
+      "source": "SME-EHS-2021",
+      "building": "SME",
+      "page": 4,
+      "floor": "L2",
+      "roomLabels": [
+        "248"
+      ],
+      "floorHeading": "2ND FLOOR",
+      "metadataUpgradeKeys": [
+        "248"
+      ]
+    },
+    {
+      "source": "SME-EHS-2021",
+      "building": "SME",
+      "page": 5,
+      "floor": "L3",
+      "roomLabels": [
+        "302",
+        "304",
+        "306",
+        "313"
+      ],
+      "visualConfirmation": {
+        "date": "2026-10-21",
+        "keys": [
+          "304"
+        ],
+        "evidence": "data/indoor/SME/trace.json"
+      }
+    },
+    {
+      "source": "SME-EHS-2021",
+      "building": "SME",
+      "page": 6,
+      "floor": "L4",
+      "roomLabels": [
+        "411",
+        "420"
+      ]
+    },
+    {
+      "source": "EBU1-EHS-2021",
+      "building": "EBU1",
+      "page": 4,
+      "floor": "L2",
+      "roomLabels": [
+        "2315"
+      ],
+      "floorHeading": "JACOBS HALL- SECOND FLOOR"
+    },
+    {
+      "source": "EBU2-EHS-2021",
+      "building": "EBU2",
+      "page": 5,
+      "floor": "L3",
+      "roomLabels": [
+        "305",
+        "313",
+        "330A",
+        "333A",
+        "335",
+        "339"
+      ],
+      "floorHeading": "ENGINEERING BUILDING UNIT II – THIRD FLOOR",
+      "metadataUpgradeKeys": [
+        "305",
+        "330A"
+      ],
+      "notFoundAsExactLabel": [
+        "L330"
+      ]
+    },
+    {
+      "source": "EBU2-EHS-2021",
+      "building": "EBU2",
+      "page": 7,
+      "floor": "L5",
+      "roomLabels": [
+        "584"
+      ],
+      "floorHeading": "FIFTH FLOOR"
+    },
+    {
+      "source": "PFBH-EHS-2021",
+      "building": "PFBH",
+      "page": 2,
+      "floor": "B",
+      "roomLabels": [
+        "003",
+        "005"
+      ],
+      "floorHeading": "POWELL-FOCHT BIOENGINEERING BUILDING - BASEMENT"
+    },
+    {
+      "source": "FAH-EHS-2025",
+      "building": "FAH",
+      "page": 2,
+      "floor": "L1",
+      "roomLabels": [
+        "1101",
+        "1450"
+      ],
+      "floorHeading": "Franklin Antonio Hall – 1st Floor",
+      "notFoundAsExactLabel": [
+        "1301"
+      ],
+      "note": "Physical page 2 and labels 1101/1450 visually verified in the original downloaded PDF; 1301 remains unconfirmed."
+    }
+  ],
+  "originalPdfHashes": "Per-source SHA-256 values are recorded in ../acquisition-index.json; these observations span multiple PDFs."
+}

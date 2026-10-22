@@ -1,0 +1,452 @@
+{
+  "building": "MAYER",
+  "source": {
+    "id": "PHYSICS-EAP-2026",
+    "url": "https://drive.google.com/file/d/11bk6sN9ozv6P2MEeEkzzbackp0Ggg-_X/view",
+    "discoveryUrl": "https://physics.ucsd.edu/resources/safety",
+    "localPath": "local/indoor-sources/PHYSICS-EAP.pdf",
+    "sha256": "af741cc9572bb131053093ccf0c57039880763c74e8eec14bb0ece27e7bd4550",
+    "bytes": 5899399,
+    "pages": 51,
+    "accessed": "2026-10-21",
+    "revision": "Physics EAP cover: Updated March 2026; plan checklist completed April 2026. Embedded legacy floor diagrams are not independently dated by this supplement."
+  },
+  "recoveredKeys": [
+    "2110",
+    "2130",
+    "2326",
+    "2306",
+    "4322",
+    "5301"
+  ],
+  "inputHashes": {
+    "data/indoor/MAYER/physics-trace.json": "9153ece196f07d735a0773b55c1c006583515ff907a4c4c371674e78b6e74f8d",
+    "static/indoor/facilities/MAYER.json": "a73d5600dd86f5a45930c021f7589221b6f7866cee84922fd98380f146659896",
+    "local/indoor-sources/PHYSICS-EAP.pdf": "af741cc9572bb131053093ccf0c57039880763c74e8eec14bb0ece27e7bd4550"
+  },
+  "originalRoomsPreserved": 176,
+  "floors": [
+    {
+      "floor": "L2",
+      "page": 25,
+      "targetFloor": "L2",
+      "checks": {
+        "controls": [
+          {
+            "sourcePoint": [
+              854,
+              716
+            ],
+            "targetRoomId": "L2-804-41318",
+            "targetVertex": 22,
+            "feature": "2722 main room, lower-right corner on printed page",
+            "targetPoint": [
+              8.64,
+              -19.08
+            ],
+            "transformedPoint": [
+              8.764473500510135,
+              -18.950454754276365
+            ],
+            "residualMeters": 0.17965417617980145
+          },
+          {
+            "sourcePoint": [
+              854,
+              618
+            ],
+            "targetRoomId": "L2-804-41318",
+            "targetVertex": 21,
+            "feature": "2722 main room, upper-right corner on printed page",
+            "targetPoint": [
+              18.39,
+              -19.16
+            ],
+            "transformedPoint": [
+              18.319141682626622,
+              -19.30176657299515
+            ],
+            "residualMeters": 0.158488682118867
+          },
+          {
+            "sourcePoint": [
+              1285,
+              585
+            ],
+            "targetRoomId": "L2-804-41295",
+            "targetVertex": 14,
+            "feature": "2544 main room, lower-right corner on printed page",
+            "targetPoint": [
+              23.0,
+              22.48
+            ],
+            "transformedPoint": [
+              23.081584987500527,
+              22.60097522776495
+            ],
+            "residualMeters": 0.14591475565631515
+          },
+          {
+            "sourcePoint": [
+              1205,
+              585
+            ],
+            "targetRoomId": "L2-804-41295",
+            "targetVertex": 15,
+            "feature": "2544 main room, lower-left corner on printed page",
+            "targetPoint": [
+              22.93,
+              14.91
+            ],
+            "transformedPoint": [
+              22.794799829362738,
+              14.801246099506585
+            ],
+            "residualMeters": 0.17351223879852495
+          }
+        ],
+        "holdouts": [
+          {
+            "sourcePoint": [
+              1102,
+              585
+            ],
+            "targetRoomId": "L2-804-41300",
+            "targetVertex": 19,
+            "feature": "2574 main room, lower-left corner on printed page",
+            "targetPoint": [
+              22.87,
+              4.94
+            ],
+            "transformedPoint": [
+              22.42556393826034,
+              4.759094846873936
+            ],
+            "residualMeters": 0.47984381563403056
+          },
+          {
+            "sourcePoint": [
+              1102,
+              442
+            ],
+            "targetRoomId": "L2-804-41300",
+            "targetVertex": 4,
+            "feature": "2574 main room, upper-left corner on printed page",
+            "targetPoint": [
+              36.4,
+              4.82
+            ],
+            "transformedPoint": [
+              36.36757975502217,
+              4.246466376702642
+            ],
+            "residualMeters": 0.5744492051844254
+          }
+        ]
+      },
+      "transform": {
+        "a": 0.0035848144767223313,
+        "b": 0.09749661410322957,
+        "tx": 75.51061763530163,
+        "tz": -104.77929036376761,
+        "metersPerRenderPixel": 0.09756249615721495,
+        "rotationDeg": 87.89426271917958
+      },
+      "rooms": [
+        {
+          "key": "2110",
+          "tracedAreaSqft": 1338.6854253302126
+        },
+        {
+          "key": "2130",
+          "tracedAreaSqft": 934.1905486117307
+        },
+        {
+          "key": "2326",
+          "tracedAreaSqft": 963.0830398059077
+        },
+        {
+          "key": "2306",
+          "tracedAreaSqft": 1329.0545949321543
+        }
+      ]
+    },
+    {
+      "floor": "L4",
+      "page": 33,
+      "targetFloor": "L4",
+      "checks": {
+        "controls": [
+          {
+            "sourcePoint": [
+              665,
+              767
+            ],
+            "targetRoomId": "L4-804-41391",
+            "targetVertex": 16,
+            "feature": "4722 exterior wall, lower-left principal corner on printed page",
+            "targetPoint": [
+              11.02,
+              -26.53
+            ],
+            "transformedPoint": [
+              10.936779873466776,
+              -26.473111160429617
+            ],
+            "residualMeters": 0.10080639626467473
+          },
+          {
+            "sourcePoint": [
+              665,
+              659
+            ],
+            "targetRoomId": "L4-804-41391",
+            "targetVertex": 4,
+            "feature": "4722 exterior wall, upper-left principal corner on printed page",
+            "targetPoint": [
+              20.75,
+              -26.61
+            ],
+            "transformedPoint": [
+              20.843581158804177,
+              -26.66141471511272
+            ],
+            "residualMeters": 0.10677502616836415
+          },
+          {
+            "sourcePoint": [
+              1413,
+              457
+            ],
+            "targetRoomId": "L4-804-41354",
+            "targetVertex": 5,
+            "feature": "4512 left wall, lower corner on printed page",
+            "targetPoint": [
+              40.6,
+              41.59
+            ],
+            "transformedPoint": [
+              40.677145219370075,
+              41.60015976068719
+            ],
+            "residualMeters": 0.07781134627339223
+          },
+          {
+            "sourcePoint": [
+              1413,
+              425
+            ],
+            "targetRoomId": "L4-804-41354",
+            "targetVertex": 0,
+            "feature": "4512 left wall, upper corner on printed page",
+            "targetPoint": [
+              43.7,
+              41.56
+            ],
+            "transformedPoint": [
+              43.612493748358936,
+              41.54436611485515
+            ],
+            "residualMeters": 0.08889185812543265
+          }
+        ],
+        "holdouts": [
+          {
+            "sourcePoint": [
+              1038,
+              471
+            ],
+            "targetRoomId": "L4-804-41375",
+            "targetVertex": 0,
+            "feature": "4573 upper-left principal corner on printed page",
+            "targetPoint": [
+              38.56,
+              6.84
+            ],
+            "transformedPoint": [
+              38.739098450843336,
+              7.225953906650503
+            ],
+            "residualMeters": 0.4254840457094334
+          },
+          {
+            "sourcePoint": [
+              1150,
+              472
+            ],
+            "targetRoomId": "L4-804-41370",
+            "targetVertex": 2,
+            "feature": "4543 upper-left principal corner on printed page",
+            "targetPoint": [
+              38.95,
+              17.01
+            ],
+            "transformedPoint": [
+              38.84264656972455,
+              17.501417309543754
+            ],
+            "residualMeters": 0.5030066909208334
+          }
+        ]
+      },
+      "transform": {
+        "a": 0.0017435514322509643,
+        "b": 0.09172964153090186,
+        "tx": 80.13395322522162,
+        "tz": -88.81062672701584,
+        "metersPerRenderPixel": 0.09174621031402147,
+        "rotationDeg": 88.91108142580495
+      },
+      "rooms": [
+        {
+          "key": "4322",
+          "tracedAreaSqft": 915.0982333898336,
+          "listedAreaSqft": 911,
+          "relativeDifference": 0.004498609648554863
+        }
+      ]
+    },
+    {
+      "floor": "L5",
+      "page": 37,
+      "targetFloor": "L4",
+      "checks": {
+        "controls": [
+          {
+            "sourcePoint": [
+              730,
+              746
+            ],
+            "targetRoomId": "L4-804-41391",
+            "targetVertex": 16,
+            "feature": "5722/4722 repeated exterior west wall, lower-left corner on printed page",
+            "targetPoint": [
+              11.02,
+              -26.53
+            ],
+            "transformedPoint": [
+              11.060225217369222,
+              -26.561800816139936
+            ],
+            "residualMeters": 0.05127728561036693
+          },
+          {
+            "sourcePoint": [
+              730,
+              645
+            ],
+            "targetRoomId": "L4-804-41391",
+            "targetVertex": 4,
+            "feature": "5722/4722 repeated exterior west wall, upper-left corner on printed page",
+            "targetPoint": [
+              20.75,
+              -26.61
+            ],
+            "transformedPoint": [
+              20.705192927351696,
+              -26.576515962985866
+            ],
+            "residualMeters": 0.05593616445622857
+          },
+          {
+            "sourcePoint": [
+              1444,
+              439
+            ],
+            "targetRoomId": "L4-804-41354",
+            "targetVertex": 5,
+            "feature": "5512/4512 repeated exterior end bay, lower-left corner on printed page",
+            "targetPoint": [
+              40.6,
+              41.59
+            ],
+            "transformedPoint": [
+              40.48113315610793,
+              41.576708043719364
+            ],
+            "residualMeters": 0.11960770325789437
+          },
+          {
+            "sourcePoint": [
+              1444,
+              404
+            ],
+            "targetRoomId": "L4-804-41354",
+            "targetVertex": 0,
+            "feature": "5512/4512 repeated exterior end bay, upper-left corner on printed page",
+            "targetPoint": [
+              43.7,
+              41.56
+            ],
+            "transformedPoint": [
+              43.823448699171166,
+              41.57160873540643
+            ],
+            "residualMeters": 0.12399332266210474
+          }
+        ],
+        "holdouts": [
+          {
+            "sourcePoint": [
+              1444,
+              605
+            ],
+            "targetRoomId": "L4-804-41359",
+            "targetVertex": 5,
+            "feature": "5517/4517 repeated exterior end bay, lower-left corner on printed page",
+            "targetPoint": [
+              25.18,
+              41.72
+            ],
+            "transformedPoint": [
+              24.629008009008018,
+              41.60089333457505
+            ],
+            "residualMeters": 0.5637185218581692
+          },
+          {
+            "sourcePoint": [
+              1492,
+              605
+            ],
+            "targetRoomId": "L4-804-41359",
+            "targetVertex": 2,
+            "feature": "5517/4517 repeated exterior end bay, lower-right corner on printed page",
+            "targetPoint": [
+              25.65,
+              46.15
+            ],
+            "transformedPoint": [
+              24.63600134612291,
+              46.18464036506175
+            ],
+            "residualMeters": 1.014590175862234
+          }
+        ]
+      },
+      "transform": {
+        "a": 0.00014569452322697,
+        "b": 0.09549472980180669,
+        "tx": 82.19293664756133,
+        "tz": -96.38164168578614,
+        "metersPerRenderPixel": 0.0954948409434466,
+        "rotationDeg": 89.91258496862147
+      },
+      "rooms": [
+        {
+          "key": "5301",
+          "tracedAreaSqft": 740.9037374250987,
+          "listedAreaSqft": 698,
+          "relativeDifference": 0.061466672528794675
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "The 2026 emergency-action-plan packet embeds older scanned diagrams. Inclusion in the packet does not establish that every room boundary was resurveyed in 2026.",
+    "Registration inherits the existing approximate Facilities-to-campus fit. Scan distortion, simplified walls and old/new-wing correspondence limit positional accuracy; control and holdout residuals are drawing consistency checks, not survey accuracy.",
+    "Only the six previously unresolved schedule rooms are traced. Small door and column recesses are simplified; room use is left unknown.",
+    "The added old-wing floor plates are simplified main-body envelopes following the visible room/corridor bounds. Bridges, external stairs, balconies and other old-wing rooms are not reconstructed.",
+    "Existing room geometry, all five floors, estimated elevations and campus transform are preserved. Level 5 retains the pre-existing Level 4-derived expansion-wing outline; that part is not newly verified."
+  ]
+}

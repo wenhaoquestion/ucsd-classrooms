@@ -1,0 +1,567 @@
+{
+  "schemaVersion": 1,
+  "building": "HSS",
+  "fisBkey": 257,
+  "status": "awaiting-public-raster",
+  "runtimeChanges": false,
+  "baseLayout": "static/indoor/facilities/HSS.json",
+  "baseLayoutSha256": "5678e573a04f2028e4f889afac8663b121726bdaf6941399b598824da9dc34f5",
+  "campusRegistrationPresent": false,
+  "coordinateSystem": {
+    "units": "meters",
+    "description": "Meters from the center of the building's campus-map footprint.",
+    "northDeg": 0,
+    "northNote": "Scaled from official room areas (0.33 ft per drawing pixel); rotated 177.0 deg and fitted to the campus-map footprint on Level 4 (overlap 0.16). The match is weak, so the building is not placed among its neighbors."
+  },
+  "preserveTotalRooms": 145,
+  "missingTotalScheduleRooms": 8,
+  "floors": [
+    {
+      "floor": "L1",
+      "floorLabel": "Level 1",
+      "missingScheduleRooms": [
+        {
+          "label": "1106B",
+          "scheduleKey": "1106B",
+          "basis": "floor-listing",
+          "areaSqft": 406
+        },
+        {
+          "label": "1128A",
+          "scheduleKey": "1128A",
+          "basis": "floor-listing",
+          "areaSqft": 488
+        },
+        {
+          "label": "1330",
+          "scheduleKey": "1330",
+          "basis": "floor-listing",
+          "areaSqft": 1529
+        }
+      ],
+      "preserveRoomCount": 6,
+      "preserveRoomsSha256": "ee83033d918993642844a7b10b30d5ea60c74353ca762b5854d9e2f1eeb8aeec",
+      "existingScheduledAnchors": [
+        {
+          "id": "L1-257-18676",
+          "label": "1106A",
+          "scheduleKey": "1106A",
+          "centroidMeters": [
+            16.915451,
+            -2.470887
+          ],
+          "polygonAreaSqft": 23.681,
+          "listedAreaSqft": null,
+          "confidence": {
+            "location": "approximate",
+            "shape": "approximate",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L1-257-18679",
+          "label": "1128B",
+          "scheduleKey": "1128B",
+          "centroidMeters": [
+            17.148489,
+            2.483058
+          ],
+          "polygonAreaSqft": 23.081,
+          "listedAreaSqft": null,
+          "confidence": {
+            "location": "approximate",
+            "shape": "approximate",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L1-257-7378",
+          "label": "1138",
+          "scheduleKey": "1138",
+          "centroidMeters": [
+            17.237264,
+            3.810828
+          ],
+          "polygonAreaSqft": 16.161,
+          "listedAreaSqft": null,
+          "confidence": {
+            "location": "approximate",
+            "shape": "approximate",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L1-257-7382",
+          "label": "1305",
+          "scheduleKey": "1305",
+          "centroidMeters": [
+            1.596587,
+            -1.686298
+          ],
+          "polygonAreaSqft": 22.831,
+          "listedAreaSqft": null,
+          "confidence": {
+            "location": "approximate",
+            "shape": "approximate",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L1-257-7386",
+          "label": "1315",
+          "scheduleKey": "1315",
+          "centroidMeters": [
+            1.705177,
+            0.283948
+          ],
+          "polygonAreaSqft": 33.639,
+          "listedAreaSqft": null,
+          "confidence": {
+            "location": "approximate",
+            "shape": "approximate",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L1-257-7393",
+          "label": "1346",
+          "scheduleKey": "1346",
+          "centroidMeters": [
+            2.739784,
+            6.367652
+          ],
+          "polygonAreaSqft": 69.582,
+          "listedAreaSqft": null,
+          "confidence": {
+            "location": "approximate",
+            "shape": "approximate",
+            "label": "direct"
+          }
+        }
+      ],
+      "existingOutlineBoundsMeters": [
+        [
+          0.82,
+          -1.71,
+          2.82,
+          3.79
+        ],
+        [
+          11.82,
+          3.54,
+          16.07,
+          6.29
+        ]
+      ],
+      "existingOutlineConfidence": "approximate",
+      "existingFloorNotes": [
+        "No room outlines for this floor; its outline is copied from Level 2."
+      ]
+    },
+    {
+      "floor": "L2",
+      "floorLabel": "Level 2",
+      "missingScheduleRooms": [
+        {
+          "label": "2025",
+          "scheduleKey": "2025",
+          "basis": "floor-listing",
+          "areaSqft": 153
+        },
+        {
+          "label": "2152",
+          "scheduleKey": "2152",
+          "basis": "floor-listing",
+          "areaSqft": 410
+        },
+        {
+          "label": "2305A",
+          "scheduleKey": "2305A",
+          "basis": "floor-listing",
+          "areaSqft": 423
+        },
+        {
+          "label": "2333B",
+          "scheduleKey": "2333B",
+          "basis": "floor-listing",
+          "areaSqft": 325
+        }
+      ],
+      "preserveRoomCount": 6,
+      "preserveRoomsSha256": "4ea72c4cd5a50617f6388305bd720ae1ef9923e5c9bae4690d5181faf968d298",
+      "existingScheduledAnchors": [
+        {
+          "id": "L2-257-7422",
+          "label": "2150",
+          "scheduleKey": "2150",
+          "centroidMeters": [
+            15.143857,
+            4.798234
+          ],
+          "polygonAreaSqft": 26.136,
+          "listedAreaSqft": null,
+          "confidence": {
+            "location": "approximate",
+            "shape": "approximate",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L2-257-7424",
+          "label": "2154",
+          "scheduleKey": "2154",
+          "centroidMeters": [
+            12.550158,
+            4.981401
+          ],
+          "polygonAreaSqft": 27.2,
+          "listedAreaSqft": null,
+          "confidence": {
+            "location": "approximate",
+            "shape": "approximate",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L2-257-18691",
+          "label": "2305B",
+          "scheduleKey": "2305B",
+          "centroidMeters": [
+            1.612136,
+            -0.989655
+          ],
+          "polygonAreaSqft": 22.52,
+          "listedAreaSqft": null,
+          "confidence": {
+            "location": "approximate",
+            "shape": "approximate",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L2-257-7431",
+          "label": "2321",
+          "scheduleKey": "2321",
+          "centroidMeters": [
+            1.693437,
+            0.535311
+          ],
+          "polygonAreaSqft": 22.464,
+          "listedAreaSqft": null,
+          "confidence": {
+            "location": "approximate",
+            "shape": "approximate",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L2-257-18692",
+          "label": "2333A",
+          "scheduleKey": "2333A",
+          "centroidMeters": [
+            1.846209,
+            2.999982
+          ],
+          "polygonAreaSqft": 18.394,
+          "listedAreaSqft": null,
+          "confidence": {
+            "location": "approximate",
+            "shape": "approximate",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L2-257-18694",
+          "label": "2346A",
+          "scheduleKey": "2346A",
+          "centroidMeters": [
+            6.710665,
+            5.267935
+          ],
+          "polygonAreaSqft": 27.38,
+          "listedAreaSqft": null,
+          "confidence": {
+            "location": "approximate",
+            "shape": "approximate",
+            "label": "direct"
+          }
+        }
+      ],
+      "existingOutlineBoundsMeters": [
+        [
+          0.82,
+          -1.71,
+          2.82,
+          3.79
+        ],
+        [
+          11.82,
+          3.54,
+          16.07,
+          6.29
+        ]
+      ],
+      "existingOutlineConfidence": "approximate",
+      "existingFloorNotes": []
+    },
+    {
+      "floor": "L3",
+      "floorLabel": "Level 3",
+      "missingScheduleRooms": [
+        {
+          "label": "3027",
+          "scheduleKey": "3027",
+          "basis": "floor-listing",
+          "areaSqft": 413
+        }
+      ],
+      "preserveRoomCount": 0,
+      "preserveRoomsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "existingScheduledAnchors": [],
+      "existingOutlineBoundsMeters": [
+        [
+          0.82,
+          -1.71,
+          2.82,
+          3.79
+        ],
+        [
+          11.82,
+          3.54,
+          16.07,
+          6.29
+        ]
+      ],
+      "existingOutlineConfidence": "approximate",
+      "existingFloorNotes": [
+        "No room outlines for this floor; its outline is copied from Level 2."
+      ]
+    },
+    {
+      "floor": "L4",
+      "floorLabel": "Level 4",
+      "missingScheduleRooms": [],
+      "preserveRoomCount": 32,
+      "preserveRoomsSha256": "c8acdcbf83298428876bef41ffe96055daf47a256c71480ca18df33211a728ff",
+      "existingScheduledAnchors": [
+        {
+          "id": "L4-257-7469",
+          "label": "4025",
+          "scheduleKey": "4025",
+          "centroidMeters": [
+            -6.102431,
+            8.559333
+          ],
+          "polygonAreaSqft": 590.276,
+          "listedAreaSqft": 590.0,
+          "confidence": {
+            "location": "approximate",
+            "shape": "direct",
+            "label": "direct"
+          }
+        }
+      ],
+      "existingOutlineBoundsMeters": [
+        [
+          -9.86,
+          -18.12,
+          11.14,
+          14.63
+        ]
+      ],
+      "existingOutlineConfidence": "approximate",
+      "existingFloorNotes": []
+    },
+    {
+      "floor": "L5",
+      "floorLabel": "Level 5",
+      "missingScheduleRooms": [],
+      "preserveRoomCount": 0,
+      "preserveRoomsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "existingScheduledAnchors": [],
+      "existingOutlineBoundsMeters": [
+        [
+          -9.86,
+          -18.12,
+          11.14,
+          14.63
+        ]
+      ],
+      "existingOutlineConfidence": "approximate",
+      "existingFloorNotes": [
+        "No room outlines for this floor; its outline is copied from Level 4."
+      ]
+    },
+    {
+      "floor": "L6",
+      "floorLabel": "Level 6",
+      "missingScheduleRooms": [],
+      "preserveRoomCount": 34,
+      "preserveRoomsSha256": "81ca353e51f3ceb577a7e02bc447cc7439b0b12da8c782849640495c6fbfbb42",
+      "existingScheduledAnchors": [
+        {
+          "id": "L6-257-7511",
+          "label": "6008",
+          "scheduleKey": "6008",
+          "centroidMeters": [
+            1.655,
+            11.91
+          ],
+          "polygonAreaSqft": 398.653,
+          "listedAreaSqft": 398.0,
+          "confidence": {
+            "location": "approximate",
+            "shape": "direct",
+            "label": "direct"
+          }
+        }
+      ],
+      "existingOutlineBoundsMeters": [
+        [
+          -9.86,
+          -18.12,
+          11.14,
+          14.63
+        ]
+      ],
+      "existingOutlineConfidence": "approximate",
+      "existingFloorNotes": []
+    },
+    {
+      "floor": "L7",
+      "floorLabel": "Level 7",
+      "missingScheduleRooms": [],
+      "preserveRoomCount": 34,
+      "preserveRoomsSha256": "e25accdfde863fbefbb0b153cc40b0a3aa19b0cf2d4e19d091143919ed0328b5",
+      "existingScheduledAnchors": [
+        {
+          "id": "L7-257-7537",
+          "label": "7002",
+          "scheduleKey": "7002",
+          "centroidMeters": [
+            4.345,
+            11.755
+          ],
+          "polygonAreaSqft": 157.477,
+          "listedAreaSqft": 369.0,
+          "confidence": {
+            "location": "approximate",
+            "shape": "direct",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L7-257-7554",
+          "label": "7076",
+          "scheduleKey": "7076",
+          "centroidMeters": [
+            7.055823,
+            -14.478554
+          ],
+          "polygonAreaSqft": 386.185,
+          "listedAreaSqft": 386.0,
+          "confidence": {
+            "location": "approximate",
+            "shape": "direct",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L7-257-7555",
+          "label": "7077",
+          "scheduleKey": "7077",
+          "centroidMeters": [
+            -7.111853,
+            -12.561546
+          ],
+          "polygonAreaSqft": 511.044,
+          "listedAreaSqft": 511.0,
+          "confidence": {
+            "location": "approximate",
+            "shape": "direct",
+            "label": "direct"
+          }
+        }
+      ],
+      "existingOutlineBoundsMeters": [
+        [
+          -9.86,
+          -18.12,
+          11.14,
+          14.63
+        ]
+      ],
+      "existingOutlineConfidence": "approximate",
+      "existingFloorNotes": []
+    },
+    {
+      "floor": "L8",
+      "floorLabel": "Level 8",
+      "missingScheduleRooms": [],
+      "preserveRoomCount": 33,
+      "preserveRoomsSha256": "c4da3699f534a9257693ccbb4fbba789fbe32605b6dac2e6e5074eba7d5ad8f8",
+      "existingScheduledAnchors": [
+        {
+          "id": "L8-257-7565",
+          "label": "8025",
+          "scheduleKey": "8025",
+          "centroidMeters": [
+            -5.978986,
+            10.39853
+          ],
+          "polygonAreaSqft": 405.604,
+          "listedAreaSqft": 406.0,
+          "confidence": {
+            "location": "approximate",
+            "shape": "direct",
+            "label": "direct"
+          }
+        }
+      ],
+      "existingOutlineBoundsMeters": [
+        [
+          -9.86,
+          -18.12,
+          11.14,
+          14.63
+        ]
+      ],
+      "existingOutlineConfidence": "approximate",
+      "existingFloorNotes": []
+    }
+  ],
+  "captureNeeds": {
+    "targetFloors": [
+      "L1",
+      "L2",
+      "L3"
+    ],
+    "additionalCalibrationFloors": [
+      "L4"
+    ],
+    "record": [
+      "Uncropped native-size raster",
+      "Image width and height",
+      "Source URL and exact FIS fcode",
+      "Capture SHA-256",
+      "Visible drawing title/date and scale annotation",
+      "Screenshot-to-drawing pixel mapping, if viewer transforms were applied"
+    ]
+  },
+  "acceptanceChecks": [
+    "Require explicit readable room label and closed wall perimeter.",
+    "Record traced pixel vertices and per-floor transform; retain uncertainty for any unreadable boundary.",
+    "Compare polygon area to the independently listed room area; do not tune each room scale to force agreement.",
+    "Check independent preserved-room alignment where available.",
+    "Reject overlapping additions or duplicate schedule keys.",
+    "Hash existing floor rooms before/after to show unchanged preserved geometry.",
+    "Do not add campus geo from a floorplan-only trace."
+  ],
+  "cautions": [
+    "Keep all 145 existing room polygons, including the 12 traced L1/L2 classrooms.",
+    "L1/L2/L3 inherited outline consists of only two small parts and is not a reliable outer envelope.",
+    "Fit each new raster to multiple preserved room corners on the same floor; keep validation correspondences separate from fitting correspondences.",
+    "L3 has no room anchor; acquire L4 as well and verify matching vertical core before carrying a transform between floors.",
+    "Source used approximate 0.33 ft per drawing pixel and rotation 177 degrees; a new screenshot pixel is not necessarily the same scale."
+  ]
+}

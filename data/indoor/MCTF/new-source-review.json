@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "building": "MCTF",
+  "reviewedAt": "2026-10-22T02:01:13.961534+00:00",
+  "requestSnapshot": {
+    "file": "data/indoor/research/remaining-floorplan-requests.csv",
+    "sha256": "3b1869bfb19092a6bbd1da29bfb2f68ddc9994f48294a923f0fee1ab37aa3427"
+  },
+  "requestedFloors": [
+    {
+      "floor": "L1",
+      "keys": [
+        "130",
+        "140"
+      ],
+      "activeFA26Keys": [
+        "130",
+        "140"
+      ]
+    },
+    {
+      "floor": "L2",
+      "keys": [
+        "202",
+        "210"
+      ],
+      "activeFA26Keys": [
+        "210"
+      ]
+    }
+  ],
+  "status": "public-project-metadata-and-bid-lead-no-room-plan",
+  "searchRounds": [
+    [
+      "Marine Conservation and Technology Facility floor plan PDF",
+      "MCTF evacuation EAP"
+    ],
+    [
+      "MCTF 207 drawings",
+      "374345 UCSD",
+      "Marine Conservation COTE floor plan"
+    ]
+  ],
+  "existingEvidence": [
+    "data/indoor/research/new-building-sources.json",
+    "data/indoor/research/public-fis-raster-sources.json"
+  ],
+  "sources": [
+    {
+      "url": "https://www.safdierabines.com/portfolio/marine-conservation-facility/",
+      "finding": "Architect portfolio confirms adaptive reuse of the former Southwest Fisheries building and new construction. Visible gallery links were examined but image fetches returned cache misses; no numbered floor plan was obtained.",
+      "retrievalStatus": "web-page-read-images-unavailable"
+    },
+    {
+      "url": "https://cmbc.ucsd.edu/2025-cmbc-annual-report/",
+      "finding": "Official annual report locates the new Visualization Lab on the second floor. Its 20 by 7 foot measurement is the screen size, not a classroom boundary or room size. No 202/210 room identity crosswalk.",
+      "retrievalStatus": "web-page-read"
+    },
+    {
+      "url": "https://cmbc.ucsd.edu/2025/09/30/sustainable-seafood-kitchen-constructed/",
+      "finding": "Official report says the Kwok Innovation Kitchen was completed in July 2025. No target-room floor plan is shown by the retrieved page content.",
+      "retrievalStatus": "web-page-read"
+    },
+    {
+      "url": "https://projects.constructconnect.com/details/6868408-marine-conservation-and-technology-facility-mctf-sustainable-seafood-innovation-kitchen-room-207%26find_loc%3Dcalifornia-92037",
+      "finding": "Secondary bid listing identifies a second-floor room 207 kitchen build-out and lists 75 plans behind subscription. Documents were not accessed. Room 207 is not any of the four requested keys.",
+      "retrievalStatus": "public-description-read-documents-subscription",
+      "targetKeysMatched": []
+    },
+    {
+      "url": "https://www.ucsdplanroom.com/projects/278/details/fm-various-lab-renovations-2024-270103-374345-286084-330587",
+      "finding": "Normal browser navigation redirects to the owner planroom login page. No drawings downloaded; login/planroom membership unresolved. Potential neighboring-room drawing coverage remains unverified.",
+      "discoveryUrl": "https://www.californiabids.com/government-agencies/san-diego/university-of-california-san-diego-1000670/13488614-hubbs-hall-2220-spec-lab-renovation-prequalification.html",
+      "retrievalStatus": "normal-browser-redirect-to-login",
+      "localFile": null,
+      "browserCheckedAt": "2026-10-22T02:05:00Z",
+      "resolvedUrl": "https://www.ucsdplanroom.com/auth/login"
+    }
+  ],
+  "limitations": [
+    "The existing 2019 Coastal Commission exhibits are site and elevation sheets, not current numbered room plans.",
+    "A 2025 kitchen fit-out and a display in another room do not establish the dimensions of 202 or 210."
+  ],
+  "runtimeDecision": {
+    "runtimeModified": false,
+    "addedGeometry": 0,
+    "preservedUnplaced": true
+  }
+}

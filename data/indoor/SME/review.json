@@ -1,0 +1,135 @@
+{
+  "building": "SME",
+  "reviewed": "2026-10-21",
+  "sourcePdf": "local/indoor-sources/SME-EHS-2021.pdf",
+  "sourceSha256": "50210ce5adb840d70b94fce58c26df824354db92e3266a3132c65205a0922fd2",
+  "sourceBytes": 793979,
+  "sourcePages": 6,
+  "sourceRevision": "2021-07-28",
+  "validation": {
+    "ok": true,
+    "issues": []
+  },
+  "visualReview": {
+    "method": "Compared all 13 green room polygons and orange approximate floor silhouettes with the actual PDF rendered using Poppler. Checked exact labels, wall position, curved boundaries, and label anchors.",
+    "rooms": [
+      {
+        "scheduleKey": "102",
+        "floor": "L1",
+        "sourcePage": 3,
+        "labelVerified": true,
+        "positionVerified": true,
+        "shape": "simplified-trace"
+      },
+      {
+        "scheduleKey": "118",
+        "floor": "L1",
+        "sourcePage": 3,
+        "labelVerified": true,
+        "positionVerified": true,
+        "shape": "simplified-trace"
+      },
+      {
+        "scheduleKey": "141",
+        "floor": "L1",
+        "sourcePage": 3,
+        "labelVerified": true,
+        "positionVerified": true,
+        "shape": "simplified-trace"
+      },
+      {
+        "scheduleKey": "143",
+        "floor": "L1",
+        "sourcePage": 3,
+        "labelVerified": true,
+        "positionVerified": true,
+        "shape": "simplified-trace"
+      },
+      {
+        "scheduleKey": "145",
+        "floor": "L1",
+        "sourcePage": 3,
+        "labelVerified": true,
+        "positionVerified": true,
+        "shape": "simplified-trace"
+      },
+      {
+        "scheduleKey": "149",
+        "floor": "L1",
+        "sourcePage": 3,
+        "labelVerified": true,
+        "positionVerified": true,
+        "shape": "simplified-trace"
+      },
+      {
+        "scheduleKey": "248",
+        "floor": "L2",
+        "sourcePage": 4,
+        "labelVerified": true,
+        "positionVerified": true,
+        "shape": "simplified-trace"
+      },
+      {
+        "scheduleKey": "302",
+        "floor": "L3",
+        "sourcePage": 5,
+        "labelVerified": true,
+        "positionVerified": true,
+        "shape": "simplified-trace"
+      },
+      {
+        "scheduleKey": "304",
+        "floor": "L3",
+        "sourcePage": 5,
+        "labelVerified": true,
+        "positionVerified": true,
+        "shape": "simplified-trace"
+      },
+      {
+        "scheduleKey": "306",
+        "floor": "L3",
+        "sourcePage": 5,
+        "labelVerified": true,
+        "positionVerified": true,
+        "shape": "simplified-trace"
+      },
+      {
+        "scheduleKey": "313",
+        "floor": "L3",
+        "sourcePage": 5,
+        "labelVerified": true,
+        "positionVerified": true,
+        "shape": "simplified-trace"
+      },
+      {
+        "scheduleKey": "411",
+        "floor": "L4",
+        "sourcePage": 6,
+        "labelVerified": true,
+        "positionVerified": true,
+        "shape": "simplified-trace"
+      },
+      {
+        "scheduleKey": "420",
+        "floor": "L4",
+        "sourcePage": 6,
+        "labelVerified": true,
+        "positionVerified": true,
+        "shape": "simplified-trace"
+      }
+    ],
+    "overlayCommand": "python scripts/review-sme-indoor.py",
+    "overlayDirectory": "local/indoor-sources/SME-render"
+  },
+  "buildCommand": "node scripts/build-sme-indoor.mjs",
+  "integration": {
+    "file": "indoor/SME.json",
+    "status": "source-traced"
+  },
+  "limitations": [
+    "Source is a 2021 plan; later renovations are not verified.",
+    "Only scheduled classrooms have detailed polygons; other rooms are not drawn.",
+    "Small columns, doorway recesses and curved walls are simplified.",
+    "Cross-floor registration and floor heights are approximate; no surveyed metric scale or campus placement is claimed."
+  ]
+}

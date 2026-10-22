@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 1,
+  "building": "MCC",
+  "name": "Media Center and Communication Building",
+  "geometryStatus": "exterior-shell",
+  "provenance": "Exterior footprint and height from the official campus map for the Communication Building (CAAN 6614). No classroom geometry is available; room floors are inferred from their numbers and floor heights are estimated.",
+  "coordinateSystem": {
+    "units": "meters",
+    "description": "Meters from the center of the building's footprint.",
+    "northDeg": 0
+  },
+  "sources": [
+    {
+      "id": "CAMPUS-MAP",
+      "title": "UC San Diego Campus Map, building footprints and heights",
+      "url": "https://campusmap.ucsd.edu/",
+      "publisher": "UC San Diego",
+      "building": "MCC",
+      "floors": [
+        "L1",
+        "L2"
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "id": "MCC-DEPARTMENT-CONTACT",
+      "title": "Department of Communication: Contact Us",
+      "url": "https://communication.ucsd.edu/about/contact.html",
+      "publisher": "UC San Diego Department of Communication",
+      "building": "MCC",
+      "floors": [
+        "L1",
+        "L2"
+      ],
+      "accessed": "2026-10-21",
+      "notes": [
+        "Identifies MCC as Media Center and Communication Building and places the department on the west campus. Establishes building identity, not room geometry."
+      ]
+    },
+    {
+      "id": "MCC-FACILITY-ADDRESS",
+      "title": "Space Planning Live Density Program",
+      "url": "https://facilityservices.ucsd.edu/information/density.html",
+      "publisher": "UC San Diego Facility Services",
+      "building": "MCC",
+      "floors": [
+        "L1",
+        "L2"
+      ],
+      "accessed": "2026-10-21",
+      "notes": [
+        "Lists Communication Building in Marshall at 3010 Exploration Drive, with the first and second floors. Does not provide classroom boundaries or measured floor heights."
+      ]
+    },
+    {
+      "id": "MCC-DEMOCRACY-LAB",
+      "title": "Democracy Lab facilities",
+      "url": "https://democracylab.ucsd.edu/facilities/democracy-lab",
+      "publisher": "UC San Diego Department of Communication",
+      "building": "MCC",
+      "floors": [
+        "L2"
+      ],
+      "accessed": "2026-10-21",
+      "notes": [
+        "Identifies Democracy Lab as MCC 250 and links access to the Communication building. Corroborates the schedule room and building; the second-floor assignment remains inferred from its number."
+      ]
+    }
+  ],
+  "floors": [
+    {
+      "id": "L1",
+      "label": "Level 1",
+      "shortLabel": "1",
+      "vertical": {
+        "baseElevation": 0,
+        "height": 4.25,
+        "estimated": true
+      },
+      "outline": [
+        {
+          "outer": [
+            [
+              6,
+              -16.5
+            ],
+            [
+              4.6,
+              -15.2
+            ],
+            [
+              16.4,
+              -10.4
+            ],
+            [
+              27.4,
+              0.5
+            ],
+            [
+              14.8,
+              13.1
+            ],
+            [
+              1,
+              13.8
+            ],
+            [
+              1.8,
+              14.5
+            ],
+            [
+              0.4,
+              16
+            ],
+            [
+              -2.7,
+              17.7
+            ],
+            [
+              2,
+              22.5
+            ],
+            [
+              -3.5,
+              28.1
+            ],
+            [
+              -27.4,
+              1.8
+            ],
+            [
+              -25,
+              -9
+            ],
+            [
+              -25.9,
+              -9.8
+            ],
+            [
+              -13.7,
+              -22.3
+            ],
+            [
+              -12.6,
+              -21.4
+            ],
+            [
+              -6,
+              -28.1
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "outlineConfidence": "approximate",
+      "rooms": [],
+      "unplaced": [
+        {
+          "label": "127",
+          "scheduleKey": "127",
+          "basis": "room-number"
+        },
+        {
+          "label": "133",
+          "scheduleKey": "133",
+          "basis": "room-number"
+        },
+        {
+          "label": "139",
+          "scheduleKey": "139",
+          "basis": "room-number"
+        },
+        {
+          "label": "140",
+          "scheduleKey": "140",
+          "basis": "room-number"
+        }
+      ],
+      "sources": [
+        {
+          "source": "CAMPUS-MAP"
+        },
+        {
+          "source": "MCC-FACILITY-ADDRESS",
+          "note": "Building identity and existence of this floor only; no room geometry."
+        }
+      ],
+      "notes": [
+        "Exterior outline repeated for orientation. Classroom positions are unknown; floor assignment is by room number only."
+      ]
+    },
+    {
+      "id": "L2",
+      "label": "Level 2",
+      "shortLabel": "2",
+      "vertical": {
+        "baseElevation": 4.25,
+        "height": 4.25,
+        "estimated": true
+      },
+      "outline": [
+        {
+          "outer": [
+            [
+              6,
+              -16.5
+            ],
+            [
+              4.6,
+              -15.2
+            ],
+            [
+              16.4,
+              -10.4
+            ],
+            [
+              27.4,
+              0.5
+            ],
+            [
+              14.8,
+              13.1
+            ],
+            [
+              1,
+              13.8
+            ],
+            [
+              1.8,
+              14.5
+            ],
+            [
+              0.4,
+              16
+            ],
+            [
+              -2.7,
+              17.7
+            ],
+            [
+              2,
+              22.5
+            ],
+            [
+              -3.5,
+              28.1
+            ],
+            [
+              -27.4,
+              1.8
+            ],
+            [
+              -25,
+              -9
+            ],
+            [
+              -25.9,
+              -9.8
+            ],
+            [
+              -13.7,
+              -22.3
+            ],
+            [
+              -12.6,
+              -21.4
+            ],
+            [
+              -6,
+              -28.1
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "outlineConfidence": "approximate",
+      "rooms": [],
+      "unplaced": [
+        {
+          "label": "201",
+          "scheduleKey": "201",
+          "basis": "room-number"
+        },
+        {
+          "label": "221",
+          "scheduleKey": "221",
+          "basis": "room-number"
+        },
+        {
+          "label": "222",
+          "scheduleKey": "222",
+          "basis": "room-number"
+        },
+        {
+          "label": "250",
+          "scheduleKey": "250",
+          "basis": "room-number"
+        }
+      ],
+      "sources": [
+        {
+          "source": "CAMPUS-MAP"
+        },
+        {
+          "source": "MCC-FACILITY-ADDRESS",
+          "note": "Building identity and existence of this floor only; no room geometry."
+        }
+      ],
+      "notes": [
+        "Exterior outline repeated for orientation. Classroom positions are unknown; floor assignment is by room number only."
+      ]
+    }
+  ],
+  "geo": {
+    "origin": [
+      -581.75,
+      -152.8
+    ],
+    "rotationDeg": 0,
+    "unitsPerMeter": 1,
+    "groundElevation": 127.5,
+    "caans": [
+      "6614"
+    ],
+    "note": "Official campus-map Communication footprint (CAAN 6614); no indoor plan or room registration is claimed."
+  },
+  "notes": [
+    "MCC in these course schedules refers to Media Center and Communication Building, not Moores Cancer Center.",
+    "The retained Facilities input for CAAN 6551 / bkey 629 belongs to Cancer Center. Its B221 and 2250 polygons, all other room polygons, room areas and floor assignments are rejected for this schedule code.",
+    "Only the eight exact schedule keys are retained from that input. All remain unplaced; no room areas are transferred.",
+    "Both displayed floor outlines reuse the campus exterior footprint. They are not surveyed floor boundaries or an indoor floor plan."
+  ]
+}

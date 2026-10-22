@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "building": "SSRB",
+  "output": "static/indoor/SSRB-combined.json",
+  "source": {
+    "id": "SSRB-EHS-2018",
+    "localPath": "local/indoor-sources/SSRB-EHS-2018.pdf",
+    "url": "https://cogsci.ucsd.edu/_files/resources/Social%20Science%20Research%20Building_11-8-18.pdf",
+    "sha256": "f30cd7717d04e611d9b47b4609d86cfd7e3936ce4894155dc5de72bebc5d4940",
+    "page": 4,
+    "printedDate": "2018-04-11",
+    "accessed": "2026-10-21"
+  },
+  "transform": {
+    "formula": "x=a*u-b*v+tx; z=b*u+a*v+tz",
+    "a": 0.04153189976897104,
+    "b": -0.00012956383331662314,
+    "tx": -37.52045034512346,
+    "tz": -51.135806779058605
+  },
+  "registrationChecks": {
+    "controlPoints": [
+      {
+        "sourcePoint": [
+          800,
+          215
+        ],
+        "targetVertex": 0,
+        "description": "North corner by room 301",
+        "targetPoint": [
+          -4.3,
+          -42.2
+        ],
+        "residualMeters": 0.11491726677643327
+      },
+      {
+        "sourcePoint": [
+          1174,
+          592
+        ],
+        "targetVertex": 1,
+        "description": "East corner by room 306",
+        "targetPoint": [
+          11.5,
+          -26.7
+        ],
+        "residualMeters": 0.18530109000051748
+      },
+      {
+        "sourcePoint": [
+          1458,
+          1997
+        ],
+        "targetVertex": 11,
+        "description": "Southeast outer corner by room 336",
+        "targetPoint": [
+          23.5,
+          31.3
+        ],
+        "residualMeters": 0.3771653597343725
+      },
+      {
+        "sourcePoint": [
+          824,
+          1997
+        ],
+        "targetVertex": 22,
+        "description": "Southwest outer corner by room 352",
+        "targetPoint": [
+          -3.4,
+          31.9
+        ],
+        "residualMeters": 0.4139690412209413
+      }
+    ],
+    "holdoutPoints": [
+      {
+        "sourcePoint": [
+          1458,
+          1466
+        ],
+        "targetVertex": 10,
+        "description": "East outer corner by room 331",
+        "targetPoint": [
+          23.3,
+          9.4
+        ],
+        "residualMeters": 0.1785145500285369
+      },
+      {
+        "sourcePoint": [
+          824,
+          1466
+        ],
+        "targetVertex": 24,
+        "description": "West outer corner by room 347; campus footprint differs from the plan here",
+        "targetPoint": [
+          -4.7,
+          9.6
+        ],
+        "residualMeters": 1.5923616866717982
+      }
+    ]
+  },
+  "areaChecks": [
+    {
+      "room": "343A",
+      "tracedSqft": 230.99000367972167,
+      "listedSqft": 219,
+      "relativeDifference": 0.0547488752498706
+    },
+    {
+      "room": "340",
+      "tracedSqft": 569.2034838685979,
+      "listedSqft": 578,
+      "relativeDifference": 0.015218886040488044
+    }
+  ],
+  "recoveredScheduleKeys": [
+    "339",
+    "340",
+    "343A"
+  ],
+  "remainingUnplacedKeys": [
+    "310"
+  ],
+  "limitations": [
+    "Only three numbered third-floor rooms are traced. Doorway alcoves and small column/jamb recesses are simplified.",
+    "Campus placement is an approximate similarity registration to an exterior footprint, not a survey. Held-out west facade differs by about 1.59 m; retain this discrepancy rather than hiding it.",
+    "The 2018 source cannot establish later changes. Existing other-floor geometry, outline assumptions and vertical spacing are retained.",
+    "Room 310 remains unplaced because the source partitions it into 310A and 310B."
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "building": "SDSC",
+  "output": "static/indoor/SDSC-combined.json",
+  "addedScheduleKeys": [
+    "E129"
+  ],
+  "floor": "EAST-L1",
+  "printedRoomLabel": "E129",
+  "sourceDocumentSha256": "ad45146e2af19436a2bb9bc3dd4c76fc1ed8b1361d73fcb4762b78caf0c719ca",
+  "sourcePage": 24,
+  "nativeImageSha256": "09e2189113845033ff426a2a2d4033e7b100804f732c31896329185f0d575b2d",
+  "nativeImageSizePx": [
+    989,
+    811
+  ],
+  "roomSourcePolygonPx": [
+    [
+      255,
+      262
+    ],
+    [
+      346,
+      262
+    ],
+    [
+      346,
+      309
+    ],
+    [
+      255,
+      309
+    ]
+  ],
+  "traceTolerancePx": 1.5,
+  "coordinateSystem": {
+    "units": "relative",
+    "description": "One arbitrary relative unit equals ten native source pixels. This is not a conversion to meters, a physical area estimate, or campus registration.",
+    "northDeg": null,
+    "northNote": "The source image has no north arrow; true north and campus orientation are unknown."
+  },
+  "physicalScaleVerified": false,
+  "campusRegistration": false,
+  "entireFloorMapped": false,
+  "historicalFloorConflict": {
+    "url": "https://inc.ucsd.edu/events/seminar/",
+    "dates": [
+      "2010-06-18",
+      "2010-07-12"
+    ],
+    "earlierAssignment": "East Annex B1 South Wing, E129",
+    "resolution": "Superseded for current mapping by the September 2025 numbered plan, corroborated independently by the May 2024 plan. Both distinguish E129/E1 from EB129/EB1. No alias between E129 and EB129 is created."
+  },
+  "overlay": "local/indoor-sources/SDSC-EAP-PUBLIC-E129-trace-review.png",
+  "limitations": [
+    "Only room E129 is traced. The floor outline is exactly the acquired room extent, not the full East building exterior or a complete floor plan.",
+    "All geometry uses relative source-image units. No reliable dimension or area is available for metric calibration.",
+    "True north, campus placement, floor height and vertical registration are unknown. No geo record is supplied.",
+    "The original Central building shells are archived separately and are not merged with this independent East Annex drawing frame.",
+    "The source cover is updated September 2025, but the embedded drawing has no independently readable revision date; later alterations remain possible.",
+    "The builder and runtime provenance use the official public PDF only. The private 2024 document is independent research corroboration and is not distributed or needed to rebuild."
+  ],
+  "inputHashes": {
+    "data/indoor/SDSC/east-e129-trace.json": "4b0fa68a668966aae5479fc8d54bb5d43bef2c064c592143ff97720a3fb5d036",
+    "data/indoor/SDSC/original-facilities-base.json": "ec0a0ed3443c691c6c7cf96c3d34d2bc34d9a61f6530d833b325c0035742c7a2"
+  }
+}

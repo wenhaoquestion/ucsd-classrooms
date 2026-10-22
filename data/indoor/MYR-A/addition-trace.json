@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "building": "MYR-A",
+  "name": "Mayer Hall Addition",
+  "baseLayout": "static/indoor/facilities/MAYER.json",
+  "baseSha256": "a73d5600dd86f5a45930c021f7589221b6f7866cee84922fd98380f146659896",
+  "output": "static/indoor/MYR-A.json",
+  "scheduleInventory": "data/indoor/MYR-A/fa26-schedule.json",
+  "source": {
+    "id": "PHYSICS-EAP-2026",
+    "url": "https://drive.google.com/file/d/11bk6sN9ozv6P2MEeEkzzbackp0Ggg-_X/view",
+    "discoveryUrl": "https://physics.ucsd.edu/resources/safety",
+    "localPath": "local/indoor-sources/PHYSICS-EAP.pdf",
+    "sha256": "af741cc9572bb131053093ccf0c57039880763c74e8eec14bb0ece27e7bd4550",
+    "bytes": 5899399,
+    "pages": 51,
+    "accessed": "2026-10-21",
+    "revision": "Physics EAP cover: Updated March 2026; plan checklist completed April 2026. Embedded legacy floor diagrams are not independently dated by this supplement."
+  },
+  "reviewedExistingRooms": [
+    {
+      "scheduleKey": "2544",
+      "roomId": "L2-804-41295",
+      "floor": "L2",
+      "crossCheckPdfPage": 25
+    },
+    {
+      "scheduleKey": "2574",
+      "roomId": "L2-804-41300",
+      "floor": "L2",
+      "crossCheckPdfPage": 25
+    },
+    {
+      "scheduleKey": "2702",
+      "roomId": "L2-804-41316",
+      "floor": "L2",
+      "crossCheckPdfPage": 25
+    },
+    {
+      "scheduleKey": "2722",
+      "roomId": "L2-804-41318",
+      "floor": "L2",
+      "crossCheckPdfPage": 25
+    },
+    {
+      "scheduleKey": "3544",
+      "roomId": "L3-804-41327",
+      "floor": "L3",
+      "crossCheckPdfPage": 29
+    },
+    {
+      "scheduleKey": "4623",
+      "roomId": "L4-804-41382",
+      "floor": "L4",
+      "crossCheckPdfPage": 33
+    }
+  ],
+  "newTrace": {
+    "scheduleKey": "5623",
+    "floor": "L5",
+    "page": 37,
+    "renderSizePx": [
+      1553,
+      2400
+    ],
+    "renderCommand": "pdftoppm -f 37 -l 37 -scale-to 2400 -png local/indoor-sources/PHYSICS-EAP.pdf local/indoor-sources/physics-review/detail",
+    "labelAt": [
+      997,
+      566
+    ],
+    "outer": [
+      [
+        955,
+        549
+      ],
+      [
+        1001,
+        518
+      ],
+      [
+        1035,
+        518
+      ],
+      [
+        1035,
+        560
+      ],
+      [
+        1030,
+        560
+      ],
+      [
+        1030,
+        567
+      ],
+      [
+        1035,
+        567
+      ],
+      [
+        1035,
+        608
+      ],
+      [
+        955,
+        608
+      ]
+    ],
+    "traceNotes": "Principal inside walls, with the east column projection retained. Door swings and the slight upper doorway/column recesses are simplified. The small adjoining room5653 and eastern restroom/shaft are excluded.",
+    "registration": {
+      "targetFloor": "L4",
+      "controls": [
+        {
+          "sourcePoint": [
+            730,
+            746
+          ],
+          "targetRoomId": "L4-804-41391",
+          "targetVertex": 16,
+          "feature": "5722/4722 repeated exterior west wall, lower-left corner on printed page"
+        },
+        {
+          "sourcePoint": [
+            730,
+            645
+          ],
+          "targetRoomId": "L4-804-41391",
+          "targetVertex": 4,
+          "feature": "5722/4722 repeated exterior west wall, upper-left corner on printed page"
+        },
+        {
+          "sourcePoint": [
+            1444,
+            439
+          ],
+          "targetRoomId": "L4-804-41354",
+          "targetVertex": 5,
+          "feature": "5512/4512 repeated exterior end bay, lower-left corner on printed page"
+        },
+        {
+          "sourcePoint": [
+            1444,
+            404
+          ],
+          "targetRoomId": "L4-804-41354",
+          "targetVertex": 0,
+          "feature": "5512/4512 repeated exterior end bay, upper-left corner on printed page"
+        }
+      ],
+      "holdouts": [
+        {
+          "sourcePoint": [
+            1444,
+            605
+          ],
+          "targetRoomId": "L4-804-41359",
+          "targetVertex": 5,
+          "feature": "5517/4517 repeated exterior end bay, lower-left corner on printed page"
+        },
+        {
+          "sourcePoint": [
+            1492,
+            605
+          ],
+          "targetRoomId": "L4-804-41359",
+          "targetVertex": 2,
+          "feature": "5517/4517 repeated exterior end bay, lower-right corner on printed page"
+        }
+      ]
+    }
+  },
+  "identitySources": [
+    {
+      "id": "MYRA-PHYSICS-ROOMS",
+      "url": "https://physweb.ucsd.edu/administration/physics-conference-rooms",
+      "title": "Physics Meeting Rooms",
+      "publisher": "UC San Diego Department of Physics",
+      "accessed": "2026-10-22",
+      "notes": [
+        "Explicitly identifies Addition2702,2722 and4623 as classrooms; also lists5623 as a conference room in the connected Mayer complex.",
+        "Room2702 classroom is the numbered large teaching space shown on EAP25, not the tiny service polygon with the same stripped numeric label."
+      ]
+    },
+    {
+      "id": "MYRA-PHYSICS-EVENT",
+      "url": "https://physics.ucsd.edu/",
+      "title": "Department of Physics events",
+      "publisher": "UC San Diego Department of Physics",
+      "accessed": "2026-10-22",
+      "notes": [
+        "The public upcoming seminar on2026-10-27 explicitly lists location MYR-A5623, corroborating the Addition schedule code for the fifth-floor room."
+      ]
+    },
+    {
+      "id": "MYRA-OFFICIAL-SCHEDULE",
+      "url": "https://courses.ucsd.edu/coursemain.aspx?section=831071",
+      "title": "PHYS2BL A00 Spring2025 course schedule",
+      "publisher": "UC San Diego",
+      "accessed": "2026-10-22",
+      "notes": [
+        "Official class schedule directly lists laboratory MYR-A2574 and problem sessions MYR-A5623."
+      ]
+    }
+  ],
+  "limitations": [
+    "This is a distinct schedule-code view of the connected Mayer complex: the original176 bkey804 room polygons are reused unchanged. Existing MAYER layouts are not edited.",
+    "Only the seven keys found in the captured FA26 application feed are mapped; no new schedule keys are invented from room labels.",
+    "The six reviewed old-wing MAYER keys are removed from this separate Addition view because they belong to the MAYER schedule code.",
+    "The original bkey804 first-through-fourth-floor geometry is retained, including unscheduled spaces. No campus footprint is used to invent classroom geometry.",
+    "Level5 only models the room5623 region traced from the actual PDF. Its outline is partial, not a copy of the Level4 slab.",
+    "The fifth-floor approximate registration reuses independently checked repeated exterior walls from Level4; maximum held-out error is about1.02m.",
+    "Campus alignment is the existing approximate Facilities fit with low footprint overlap; it is not a surveyed registration. Geo CAAN is restricted to the official Addition6264.",
+    "EAP cover update date is2026, but the embedded legacy diagram revision is unknown. Recent renovations may not appear in these legacy boundaries."
+  ]
+}

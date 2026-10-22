@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "building": "MOS",
+  "input": "data/indoor/MOS/partial-L1.json",
+  "output": "static/indoor/MOS-combined.json",
+  "source": {
+    "id": "MOS-L2-FIS",
+    "localPath": "local/indoor-sources/MOS-L2-FIS.png",
+    "sha256": "0800da29684d184fae4a7241f2954e80d7bdd7e4620481c5217d1af08acd4be2",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001811&fcode=2&zoom=1",
+    "accessed": "2026-10-21",
+    "acquiredAt": "2026-10-22T01:21:28.797Z",
+    "printedDate": "2023-09-01",
+    "title": "UCSD Facilities Information System - NTPLL - Mosaic - Second Floor - Master Plan",
+    "size": [
+      2305,
+      1729
+    ],
+    "htmlPath": "local/indoor-sources/MOS-L2-FIS.html",
+    "htmlSha256": "df6b53b67256047e8829ee636f5ef881e6434a20eef1429c54bed2af908623ae"
+  },
+  "floor": "L2",
+  "registration": {
+    "mirrorSourceY": false,
+    "referenceRaster": "MOS-L1-FIS",
+    "controls": [
+      {
+        "sourcePoint": [
+          300,
+          393
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 25,
+        "sourceImage": "MOS-L1-FIS"
+      },
+      {
+        "sourcePoint": [
+          705,
+          514
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 1,
+        "sourceImage": "MOS-L1-FIS"
+      },
+      {
+        "sourcePoint": [
+          1605,
+          681
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 4,
+        "sourceImage": "MOS-L1-FIS"
+      },
+      {
+        "sourcePoint": [
+          1605,
+          1246
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 9,
+        "sourceImage": "MOS-L1-FIS"
+      }
+    ],
+    "holdouts": [
+      {
+        "sourcePoint": [
+          1605,
+          1017
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 5,
+        "sourceImage": "MOS-L1-FIS"
+      },
+      {
+        "sourcePoint": [
+          1513,
+          1473
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 13,
+        "sourceImage": "MOS-L1-FIS"
+      },
+      {
+        "sourcePoint": [
+          780,
+          504
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 3,
+        "sourceImage": "MOS-L1-FIS"
+      }
+    ],
+    "maxControlResidualMeters": 0.25,
+    "maxHoldoutResidualMeters": 0.4
+  },
+  "rooms": [
+    {
+      "scheduleKey": "0204",
+      "sourceLabel": "MO0204",
+      "printedAreaSqft": 1998,
+      "listedAreaSqft": 1998,
+      "outer": [
+        [
+          485,
+          536
+        ],
+        [
+          511,
+          536
+        ],
+        [
+          511,
+          523
+        ],
+        [
+          693,
+          562
+        ],
+        [
+          693,
+          870
+        ],
+        [
+          511,
+          907
+        ],
+        [
+          511,
+          892
+        ],
+        [
+          485,
+          892
+        ]
+      ],
+      "labelAt": [
+        590,
+        720
+      ],
+      "officialRoomKey": "113141",
+      "areaBasis": "Official FIS HTML room tree corroborating the raster label; room identifier 113141"
+    }
+  ],
+  "limitations": [
+    "Only the three scheduled rooms MO0113, MO0114 and MO0204 are traced. Official FIS room-tree labels and areas establish the MO building prefix and the leading-zero schedule keys. L1 raster text is overprinted, so the retained HTML listing corroborates its labels.",
+    "Doorway jambs, thin wall widths and small column details are simplified; adjacent projection/support rooms are excluded. Metric scale and campus position remain approximate.",
+    "L1 uses four campus-footprint controls with three independent facade holdouts. L2 uses the same pixel frame, checked against the common southwest and southeast stair cores and northwestern exterior corner; it is not a separate survey fit.",
+    "All seven original floor levels and approximate campus-footprint slabs are retained. The partial classroom geometry does not describe all floor areas or an as-built interior.",
+    "The public FIS plans dated 2023-09-01 warn that displayed drawings may be out of date."
+  ]
+}

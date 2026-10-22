@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "building": "EBU1",
+  "source": {
+    "id": "EBU1-EHS-2021",
+    "url": "https://drive.google.com/file/d/1HK5Ir1XdlH6yOvpq3E42cQnKvXAGm4Vn/view",
+    "localPath": "local/indoor-sources/EBU1-EHS-2021.pdf",
+    "sha256": "3e5955af4fa3ed659bd9533df47253f822100a762ddb58a794cdbc9af1527c93",
+    "page": 4,
+    "registrationReferencePage": 5,
+    "printedDate": "2021-06-21",
+    "pageSizePoints": [612, 792],
+    "accessed": "2026-10-21"
+  },
+  "coordinateSystem": {
+    "units": "PDF points",
+    "origin": "top-left of unrotated PDF page 4",
+    "xDirection": "right",
+    "yDirection": "down"
+  },
+  "method": "Manually trace room 2315 from the actual PDF rendered at 600 dpi, including the four visible column intrusions. Register the repeated north and west mechanical-tower exterior corners against existing Level 3 Facilities geometry; compare PDF pages 4 and 5 to establish the structural correspondence. Check the central mechanical tower using two points not used in the fit, then compare the traced room area with the Facilities listing.",
+  "registration": {
+    "targetLayout": "static/indoor/facilities/EBU1.json",
+    "targetFloor": "L3",
+    "controlPoints": [
+      {"sourcePoint": [274.2, 177.12], "sourceRoom": "2327", "targetRoom": "3331", "targetVertex": 0, "feature": "North mechanical tower, northwest interior exterior-wall corner"},
+      {"sourcePoint": [306.12, 177.12], "sourceRoom": "2327", "targetRoom": "3331", "targetVertex": 5, "feature": "North mechanical tower, northeast interior exterior-wall corner"},
+      {"sourcePoint": [109.32, 335.16], "sourceRoom": "2115", "targetRoom": "3117", "targetVertex": 23, "feature": "West mechanical tower, northwest interior exterior-wall corner"},
+      {"sourcePoint": [141.24, 335.16], "sourceRoom": "2115", "targetRoom": "3117", "targetVertex": 4, "feature": "West mechanical tower, northeast interior exterior-wall corner"}
+    ],
+    "holdoutPoints": [
+      {"sourcePoint": [393.72, 353.28], "sourceRoom": "2517", "targetRoom": "3517", "targetVertex": 26, "feature": "Central mechanical tower, northwest interior exterior-wall corner"},
+      {"sourcePoint": [425.64, 353.28], "sourceRoom": "2517", "targetRoom": "3517", "targetVertex": 5, "feature": "Central mechanical tower, northeast interior exterior-wall corner"}
+    ]
+  },
+  "room": {
+    "label": "2315",
+    "scheduleKey": "2315",
+    "floor": "L2",
+    "outer": [[243.96, 349.2], [282.6, 349.2], [282.6, 350.4], [285.96, 350.4], [285.96, 384.12], [282.6, 384.12], [282.6, 387.6], [285.96, 387.6], [285.96, 408.48], [240.6, 408.48], [240.6, 387.6], [243.96, 387.6], [243.96, 384.12], [240.6, 384.12], [240.6, 350.4], [243.96, 350.4]],
+    "labelBounds": [258.066261, 378.969281, 268.535187, 384.227538],
+    "listedAreaSqft": 936,
+    "method": "Follow the interior wall and column faces; close door openings along their surrounding wall line. Door arcs and emergency-equipment graphics are excluded. The separately outlined unlabeled recess east of the room is not assigned to classroom 2315."
+  },
+  "limitations": [
+    "The source is a 2021 emergency plan; later alterations cannot be excluded. Its room number and traced area agree with the current supplied Facilities listing.",
+    "Registration uses repeated structural tower corners between Levels 2 and 3. The resulting position inherits the approximate existing Facilities-to-campus fit and does not represent independent survey accuracy.",
+    "Existing floor heights remain estimated. The rest of the Level 2 floor plate is still copied from another floor and is not newly verified by this one-room supplement."
+  ]
+}

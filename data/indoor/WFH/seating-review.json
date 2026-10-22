@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "building": "WFH",
+  "reviewedAt": "2026-10-22T01:42:28.053934+00:00",
+  "status": "sources-verified-no-room-geometry-recovered",
+  "discoveryUrl": "https://mathweb.ucsd.edu/~gptesler/assigningseats.html",
+  "sources": [
+    {
+      "id": "WFH-1W102-SEATING",
+      "url": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Beyster_Auditorium_WFH_1W102.pdf",
+      "publisher": "UC San Diego Department of Mathematics / Glenn Tesler",
+      "file": "local/indoor-sources/WFH-1W102-SEATING.pdf",
+      "sha256": "723d61542d90212f8fe8d9ecb88fdb573825eda477c5008754d2ee270bed4fde",
+      "bytes": 25628,
+      "pages": 1,
+      "pageReviewed": 1,
+      "printedDate": "2025-11-19",
+      "scheduleKeyConfirmedByTitle": "1W102",
+      "renderedEvidence": "local/indoor-sources/WFH-review/WFH-1W102-SEATING.png",
+      "artifactType": "seating-assignment-schematic",
+      "reviewStatus": "reviewed-not-suitable-for-room-geometry",
+      "actualBoundaryEstablished": false,
+      "dimensionsOrScaleAvailable": false,
+      "explicitSourceWarnings": [
+        "Not to scale",
+        "Rows are curved"
+      ],
+      "scope": "Visual inspection of the complete page, title and scale notes. The diagram uses a simplified rectangular frame and straight seat rows; no usable dimensional room perimeter, wall recesses or door locations are supplied.",
+      "usefulFacts": {
+        "seatingCount": 300,
+        "roomName": "Beyster Auditorium"
+      }
+    },
+    {
+      "id": "WFH-1N108-SEATING",
+      "url": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Rady_1N108.pdf",
+      "publisher": "UC San Diego Department of Mathematics / Glenn Tesler",
+      "file": "local/indoor-sources/WFH-1N108-SEATING.pdf",
+      "sha256": "dfadad42bb8b3bb09b7fb1fef26680ad7d320c3dccd76eb08643d9dd5264954f",
+      "bytes": 31178,
+      "pages": 1,
+      "pageReviewed": 1,
+      "printedDate": "2025-03-21",
+      "scheduleKeyConfirmedByTitle": "1N108",
+      "renderedEvidence": "local/indoor-sources/WFH-review/WFH-1N108-SEATING.png",
+      "artifactType": "seating-assignment-schematic",
+      "reviewStatus": "reviewed-not-suitable-for-room-geometry",
+      "actualBoundaryEstablished": false,
+      "dimensionsOrScaleAvailable": false,
+      "explicitSourceWarnings": [
+        "Not to scale",
+        "Rows are curved"
+      ],
+      "scope": "Visual inspection of the complete page, title and scale notes. The diagram uses a simplified rectangular frame and straight seat rows; no usable dimensional room perimeter, wall recesses or door locations are supplied.",
+      "usefulFacts": {
+        "seatingCountRange": [
+          166,
+          192
+        ],
+        "furniture": "Fixed tables; movable chairs; seat numbers and counts require on-site arrangement."
+      }
+    }
+  ],
+  "publicViewerReview": [
+    {
+      "floor": "L1",
+      "file": "local/indoor-sources/WFH-L1-FIS.html",
+      "sha256": "9099e87b794f3f23bb2582af99cd8e09d7ff90a52ccd82a59534f4c3395932c3",
+      "publicPolygonCount": 0,
+      "publishedPolygons": [],
+      "targetClassroomPolygonCount": 0,
+      "rasterStatus": "previously-checked-login-response",
+      "finding": "Public polygons are empty."
+    },
+    {
+      "floor": "L3",
+      "file": "local/indoor-sources/WFH-L3-FIS.html",
+      "sha256": "eb1ea2d672235a99fbaf7a3bafa33b4e7984bd301ca39973627ab8951d4e6055",
+      "publicPolygonCount": 1,
+      "publishedPolygons": [
+        {
+          "facilityRoomId": "114295",
+          "publishedLabelAndArea": "(C)3W010 (372 sqft)"
+        }
+      ],
+      "targetClassroomPolygonCount": 0,
+      "rasterStatus": "previously-checked-login-response",
+      "finding": "The only polygon is corridor (C)3W010, 372 sq ft. It does not identify any target classroom wall or place the auditorium."
+    },
+    {
+      "floor": "L4",
+      "file": "local/indoor-sources/WFH-L4-FIS.html",
+      "sha256": "2217a0e47404a5a131f39a176cdbd91bc0e6d95c51f05719017f4462a8907a87",
+      "publicPolygonCount": 0,
+      "publishedPolygons": [],
+      "targetClassroomPolygonCount": 0,
+      "rasterStatus": "previously-checked-login-response",
+      "finding": "Public polygons are empty."
+    }
+  ],
+  "runtimeDecision": {
+    "addedRoomGeometry": 0,
+    "baseLayout": "static/indoor/facilities/WFH.json",
+    "baseSha256": "fc7f8475b246ac7d03c53890ccd402eb0aa88dd83d2dda584952a3039f9429de",
+    "runtimeModified": false,
+    "preservedFloorIds": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L5"
+    ],
+    "preservedUnplacedScheduleKeys": [
+      "1N108",
+      "1W102",
+      "3N129",
+      "3W113",
+      "4N128",
+      "4W114"
+    ],
+    "reason": "The seating diagrams confirm room identities but provide neither a reliable complete wall outline nor scale. Neither a rectangle fitted to listed area nor a guessed campus position is warranted."
+  },
+  "additionalSourcesChecked": [
+    {
+      "url": "https://rady.ucsd.edu/connect/venue-rental.html",
+      "finding": "Official venue page corroborates the 300-seat J.R. Beyster Auditorium in Wells Fargo Hall. Its visible linked content is venue photography and rental information; no dimensioned floor drawing was obtained."
+    }
+  ],
+  "limitations": [
+    "Seating capacity and seat-number layout do not establish an architectural wall footprint.",
+    "The not-to-scale warnings apply even when a rectangular black frame appears around a diagram.",
+    "The FIS inventory area 3570 sq ft for 1W102 and 5478 sq ft for 1N108 is preserved as listing evidence; it is not used to turn schematic rectangles into floor plans.",
+    "All five original floor levels and six unplaced classroom records remain intact; no shared manifest, coverage, docs or tests are changed."
+  ]
+}

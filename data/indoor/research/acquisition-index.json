@@ -1,0 +1,2021 @@
+{
+  "schemaVersion": 1,
+  "acquiredDate": "2026-10-21",
+  "method": "Public HTTPS downloads through Playwright MCP; originals verified locally by signature and SHA-256. Account-only research copies have a separate account-source-acquisition.json catalog.",
+  "localFilesIgnoredByGit": true,
+  "note": "Downloaded source files do not imply current room geometry or completed tracing; see per-building trace evidence and coverage-current.json.",
+  "downloaded": 66,
+  "failed": 1,
+  "sources": [
+    {
+      "id": "CSB-EHS-2018",
+      "file": "local/indoor-sources/CSB-emergency-2018.pdf",
+      "sourceUrl": "https://cogsci.ucsd.edu/_files/resources/Cognitive%20Science%20Building_11-8-18.pdf",
+      "downloadUrl": "https://cogsci.ucsd.edu/_files/resources/Cognitive%20Science%20Building_11-8-18.pdf",
+      "bytes": 120589,
+      "acquiredAt": "2026-10-21T23:04:49.840Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/emergency-sources.json",
+      "sha256": "b3169e5e2b721fbee95f3746f7485a60105bd7c355f0bb8178315d692fd57b5e",
+      "geometryReviewed": true,
+      "pages": 4,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "floor": "LL",
+            "page": 2,
+            "roomLabels": [
+              "001",
+              "002",
+              "003",
+              "004",
+              "005"
+            ],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [
+              "001",
+              "002",
+              "003",
+              "004",
+              "005"
+            ],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L1",
+            "page": 3,
+            "roomLabels": [
+              "115",
+              "180"
+            ],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [
+              "115",
+              "180"
+            ],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L2",
+            "page": 4,
+            "roomLabels": [
+              "272",
+              "280"
+            ],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [
+              "272",
+              "280"
+            ],
+            "floorSilhouetteIntegrated": true
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/CSB/trace.json",
+          "data/indoor/CSB/registration.json"
+        ],
+        "runtimeLayout": "static/indoor/CSB-combined.json",
+        "fullDocumentModeled": false,
+        "limitations": [
+          "Relative coordinates, approximate floor registration and illustrative heights; no surveyed metric scale or campus placement is claimed.",
+          "Only the listed room polygons are integrated; other rooms in the PDF have not been modeled."
+        ]
+      }
+    },
+    {
+      "id": "SME-EHS-2021",
+      "file": "local/indoor-sources/SME-EHS-2021.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/15_SRb9XB9o_4e6YpUPHiNpwfiwZLjYmF/view",
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=15_SRb9XB9o_4e6YpUPHiNpwfiwZLjYmF",
+      "resolvedUrl": "https://drive.usercontent.google.com/download?id=15_SRb9XB9o_4e6YpUPHiNpwfiwZLjYmF&export=download",
+      "bytes": 793979,
+      "acquiredAt": "2026-10-21T23:05:17.471Z",
+      "contentType": "application/octet-stream",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/emergency-sources.json",
+      "sha256": "50210ce5adb840d70b94fce58c26df824354db92e3266a3132c65205a0922fd2",
+      "geometryReviewed": true,
+      "pages": 6,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "floor": "B",
+            "page": 2,
+            "roomLabels": [],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L1",
+            "page": 3,
+            "roomLabels": [
+              "102",
+              "118",
+              "141",
+              "143",
+              "145",
+              "149"
+            ],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [
+              "102",
+              "118",
+              "141",
+              "143",
+              "145",
+              "149"
+            ],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L2",
+            "page": 4,
+            "roomLabels": [
+              "248"
+            ],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [
+              "248"
+            ],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L3",
+            "page": 5,
+            "roomLabels": [
+              "302",
+              "304",
+              "306",
+              "313"
+            ],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [
+              "302",
+              "304",
+              "306",
+              "313"
+            ],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L4",
+            "page": 6,
+            "roomLabels": [
+              "411",
+              "420"
+            ],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [
+              "411",
+              "420"
+            ],
+            "floorSilhouetteIntegrated": true
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/SME/trace.json",
+          "data/indoor/SME/review.json"
+        ],
+        "runtimeLayout": "static/indoor/SME.json",
+        "fullDocumentModeled": false,
+        "limitations": [
+          "Relative coordinates, approximate floor registration and illustrative heights; no surveyed metric scale or campus placement is claimed.",
+          "Only the listed room polygons are integrated; other rooms in the PDF have not been modeled."
+        ]
+      }
+    },
+    {
+      "id": "EBU2-EHS-2021",
+      "file": "local/indoor-sources/EBU2-EHS-2021.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1BDYqGwk89tMSmBlxhWRuy414a6AdPYau/view",
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=1BDYqGwk89tMSmBlxhWRuy414a6AdPYau",
+      "resolvedUrl": "https://drive.usercontent.google.com/download?id=1BDYqGwk89tMSmBlxhWRuy414a6AdPYau&export=download",
+      "bytes": 687952,
+      "acquiredAt": "2026-10-21T23:05:23.514Z",
+      "contentType": "application/octet-stream",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/emergency-sources.json",
+      "sha256": "5cf6be0d0a50acc1b5f28744fd1393b85e7ffae556ba88c9aa32b75fd086a4c1",
+      "geometryReviewed": true,
+      "pages": 7,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "floor": "L5",
+            "page": 7,
+            "roomLabels": [
+              "584"
+            ],
+            "reviewedGeometry": "Only this room polygon is newly traced and integrated; the surrounding copied floor plate is not newly verified.",
+            "integratedRoomLabels": [
+              "584"
+            ],
+            "floorSilhouetteIntegrated": false
+          },
+          {
+            "floor": "L2",
+            "page": 4,
+            "roomLabels": [],
+            "reviewedGeometry": "Corresponding structural/exterior wall corners reviewed as registration references only.",
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": false
+          },
+          {
+            "floor": "L3",
+            "page": 5,
+            "roomLabels": [
+              "305",
+              "313",
+              "330A",
+              "333A",
+              "335",
+              "339"
+            ],
+            "reviewedGeometry": "Room labels and selected geometry conflicts inspected; no third-floor polygons integrated. L330 remains without a verified alias, and 333A area conflicts with the Facilities listing.",
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": false
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/EBU2/supplement-584.json",
+          "data/indoor/EBU2/ehs-584-trace.json"
+        ],
+        "runtimeLayout": "static/indoor/EBU2-combined.json",
+        "fullDocumentModeled": false,
+        "remainingUnplacedScheduleKeys": [
+          "313",
+          "L330",
+          "333A",
+          "335",
+          "339",
+          "305",
+          "330A"
+        ],
+        "limitations": [
+          "The PDF is a 2021 emergency plan; later changes cannot be excluded. The existing room number and listed area agree with this traced room.",
+          "Registration uses the repeated exterior office-wing facade across Levels 2 and 5. It inherits the existing approximate Facilities-to-campus fit and is not independent geodetic validation.",
+          "The floor plate remains the existing copied Level 2 outline; this supplement verifies room 584 only, not the rest of the fifth-floor floor plate or roofs.",
+          "The third-floor source shows separate 330A and 330B rooms; the schedule key L330 has no verified alias and remains unplaced.",
+          "The source shows 333A with an area visually comparable to 335, while the existing listing assigns 162 versus 1106 ft2; this unresolved conflict is not used to place 333A."
+        ]
+      }
+    },
+    {
+      "id": "PFBH-EHS-2021",
+      "file": "local/indoor-sources/PFBH-EHS-2021.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1YzNE37aPieBW4tzsEDbtIOsPQhF5in55/view",
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=1YzNE37aPieBW4tzsEDbtIOsPQhF5in55",
+      "resolvedUrl": "https://drive.usercontent.google.com/download?id=1YzNE37aPieBW4tzsEDbtIOsPQhF5in55&export=download",
+      "bytes": 881686,
+      "acquiredAt": "2026-10-21T23:05:30.075Z",
+      "contentType": "application/octet-stream",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/emergency-sources.json",
+      "sha256": "8ba2d7710840d11906f1c7a5c9fbe1d90410dbca4e23781dcfbd94e79f3c3612",
+      "geometryReviewed": true,
+      "pages": 6,
+      "geometryReview": {
+        "status": "reviewed-conflict-not-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "floor": "B",
+            "page": 2,
+            "roomLabels": [
+              "003",
+              "005"
+            ],
+            "reviewedGeometry": "Historical room polygons inspected and retained as research traces, but not assigned to current schedule rooms.",
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": false
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/PFBH/plan-conflict.json",
+          "data/indoor/PFBH/ehs-basement-trace.json"
+        ],
+        "runtimeLayout": null,
+        "fullDocumentModeled": false,
+        "remainingUnplacedScheduleKeys": [
+          "003",
+          "005"
+        ],
+        "limitations": [
+          "No metric scale or campus registration is assigned to this trace.",
+          "The 2021 drawing makes 003 substantially larger than 005, while the supplied Facilities listing assigns 858 ft2 to 003 and 1327 ft2 to 005. A uniform scale cannot reconcile both rooms.",
+          "The area conflict may reflect changed partitions, renumbering, source age or an error in the existing listing; the available evidence does not establish which.",
+          "Obtain a current basement plan or a Facilities room-ID crosswalk before assigning these historical polygons to current schedule rooms.",
+          "The existing basement outline was copied from Level 1 and is not a verified basement registration reference."
+        ],
+        "nextEvidenceNeeded": "A current numbered PFBH basement plan, or an authoritative crosswalk explaining changes to rooms 003 and 005."
+      }
+    },
+    {
+      "id": "EBU1-EHS-2021",
+      "file": "local/indoor-sources/EBU1-EHS-2021.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1HK5Ir1XdlH6yOvpq3E42cQnKvXAGm4Vn/view",
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=1HK5Ir1XdlH6yOvpq3E42cQnKvXAGm4Vn",
+      "resolvedUrl": "https://drive.usercontent.google.com/download?id=1HK5Ir1XdlH6yOvpq3E42cQnKvXAGm4Vn&export=download",
+      "bytes": 925556,
+      "acquiredAt": "2026-10-21T23:05:47.876Z",
+      "contentType": "application/octet-stream",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/emergency-sources.json",
+      "sha256": "3e5955af4fa3ed659bd9533df47253f822100a762ddb58a794cdbc9af1527c93",
+      "geometryReviewed": true,
+      "pages": 9,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "floor": "L2",
+            "page": 4,
+            "roomLabels": [
+              "2315"
+            ],
+            "reviewedGeometry": "Only this room polygon is newly traced and integrated; the surrounding copied floor plate is not newly verified.",
+            "integratedRoomLabels": [
+              "2315"
+            ],
+            "floorSilhouetteIntegrated": false
+          },
+          {
+            "floor": "L3",
+            "page": 5,
+            "roomLabels": [],
+            "reviewedGeometry": "Corresponding structural/exterior wall corners reviewed as registration references only.",
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": false
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/EBU1/supplement-2315.json",
+          "data/indoor/EBU1/ehs-2315-trace.json"
+        ],
+        "runtimeLayout": "static/indoor/EBU1-combined.json",
+        "fullDocumentModeled": false,
+        "remainingUnplacedScheduleKeys": [],
+        "limitations": [
+          "The source is a 2021 emergency plan; later alterations cannot be excluded. Its room number and traced area agree with the current supplied Facilities listing.",
+          "Registration uses repeated structural tower corners between Levels 2 and 3. The resulting position inherits the approximate existing Facilities-to-campus fit and does not represent independent survey accuracy.",
+          "Existing floor heights remain estimated. The rest of the Level 2 floor plate is still copied from another floor and is not newly verified by this one-room supplement."
+        ]
+      }
+    },
+    {
+      "id": "FAH-EHS-2025",
+      "file": "local/indoor-sources/FAH-EHS-2025.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1CQ-lugGHgOvGZ-YGxk_BCSeTTtrMMHqj/view",
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=1CQ-lugGHgOvGZ-YGxk_BCSeTTtrMMHqj",
+      "resolvedUrl": "https://drive.usercontent.google.com/download?id=1CQ-lugGHgOvGZ-YGxk_BCSeTTtrMMHqj&export=download",
+      "bytes": 1543720,
+      "acquiredAt": "2026-10-21T23:05:56.344Z",
+      "contentType": "application/octet-stream",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/emergency-sources.json",
+      "sha256": "b73a73b00757e67e33bc4e8eaf5aaf1810b968c9dd97e1e728a72088bf78d946",
+      "geometryReviewed": true,
+      "pages": 5,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "floor": "L1",
+            "page": 2,
+            "roomLabels": [
+              "1101",
+              "1450"
+            ],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [
+              "1101",
+              "1450"
+            ],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L2",
+            "page": 3,
+            "roomLabels": [],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L3",
+            "page": 4,
+            "roomLabels": [],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L4",
+            "page": 5,
+            "roomLabels": [],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": true
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/FAH/trace.json",
+          "data/indoor/FAH/review.json"
+        ],
+        "runtimeLayout": "static/indoor/FAH.json",
+        "fullDocumentModeled": false,
+        "limitations": [
+          "Relative coordinates, approximate floor registration and illustrative heights; no surveyed metric scale or campus placement is claimed.",
+          "Only the listed room polygons are integrated; other rooms in the PDF have not been modeled.",
+          "Physical page 1 (Lower Floor) is not imported; the four previous L1–L4 floors are retained."
+        ],
+        "remainingUnplaced": [
+          {
+            "floor": "L1",
+            "scheduleKeys": [
+              "1301"
+            ],
+            "reason": "The northern auditorium is unnumbered in the source; its identity is not inferred."
+          }
+        ]
+      }
+    },
+    {
+      "id": "CSE-EHS-2017",
+      "file": "local/indoor-sources/CSE-EHS-2017.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1b6A2X2FXoBSGWWh-o9nE6k473BxE87wk/view",
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=1b6A2X2FXoBSGWWh-o9nE6k473BxE87wk",
+      "resolvedUrl": "https://drive.usercontent.google.com/download?id=1b6A2X2FXoBSGWWh-o9nE6k473BxE87wk&export=download",
+      "bytes": 1354098,
+      "acquiredAt": "2026-10-21T23:06:02.771Z",
+      "contentType": "application/octet-stream",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/emergency-sources.json",
+      "sha256": "e5be7b4edff5ed3ddc547d9557d521ccb1cca1ee20e746a16c527e300cdb20e4",
+      "geometryReviewed": false,
+      "pages": 6
+    },
+    {
+      "id": "COA-MALK-REGENTS-2023",
+      "file": "local/indoor-sources/COA-MALK-REGENTS-2023.pdf",
+      "sourceUrl": "https://regents.universityofcalifornia.edu/regmeet/mar23/f9attach6.pdf",
+      "downloadUrl": "https://regents.universityofcalifornia.edu/regmeet/mar23/f9attach6.pdf",
+      "resolvedUrl": "https://regents.universityofcalifornia.edu/regmeet/mar23/f9attach6.pdf",
+      "bytes": 2773583,
+      "acquiredAt": "2026-10-21T23:06:15.783Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/new-building-sources.json",
+      "sha256": "e07962a55f7dc886c9217158489b93361dab41f6b513bfb1d09c42c9eee134c7",
+      "geometryReviewed": false,
+      "pages": 8
+    },
+    {
+      "id": "TASB-REGENTS-2023",
+      "file": "local/indoor-sources/TASB-REGENTS-2023.pdf",
+      "sourceUrl": "https://regents.universityofcalifornia.edu/regmeet/mar23/f8attach6.pdf",
+      "downloadUrl": "https://regents.universityofcalifornia.edu/regmeet/mar23/f8attach6.pdf",
+      "resolvedUrl": "https://regents.universityofcalifornia.edu/regmeet/mar23/f8attach6.pdf",
+      "bytes": 2652265,
+      "acquiredAt": "2026-10-21T23:06:20.504Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/new-building-sources.json",
+      "sha256": "9d75034fa17ce301b410f889d332392db16b8c43718fb42524750c7fd4123c84",
+      "geometryReviewed": false,
+      "pages": 10
+    },
+    {
+      "id": "PODEM-REGENTS-2020",
+      "file": "local/indoor-sources/PODEM-REGENTS-2020.pdf",
+      "sourceUrl": "https://regents.universityofcalifornia.edu/regmeet/sept20/f2attach7.pdf",
+      "downloadUrl": "https://regents.universityofcalifornia.edu/regmeet/sept20/f2attach7.pdf",
+      "resolvedUrl": "https://regents.universityofcalifornia.edu/regmeet/sept20/f2attach7.pdf",
+      "bytes": 5043788,
+      "acquiredAt": "2026-10-21T23:06:26.412Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/new-building-sources.json",
+      "sha256": "271c381a4c6a29c12c937f3637a37571809962285de45b6f5c46d4ed05d320a5",
+      "geometryReviewed": false,
+      "pages": 11
+    },
+    {
+      "id": "COA-MALK-HDH-2025",
+      "file": "local/indoor-sources/COA-MALK-HDH-2025.pdf",
+      "sourceUrl": "https://hdh.ucsd.edu/_files/Ridge-Walk-LLN.pdf",
+      "downloadUrl": "https://hdh.ucsd.edu/_files/Ridge-Walk-LLN.pdf",
+      "resolvedUrl": "https://hdh.ucsd.edu/_files/Ridge-Walk-LLN.pdf",
+      "bytes": 3456397,
+      "acquiredAt": "2026-10-21T23:06:32.590Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/new-building-sources.json",
+      "sha256": "de696c7fd8283b302cc48871f1c302187de935416a4c1352dd551ca0fb541320",
+      "geometryReviewed": false,
+      "pages": 18
+    },
+    {
+      "id": "CPMC-SECOND-2021",
+      "status": "failed",
+      "error": "Error: Expected PDF, HTTP 404, type text/html; charset=UTF-8"
+    },
+    {
+      "id": "MANDE-AUDITORIUM-OVERVIEW",
+      "file": "local/indoor-sources/MANDE-AUDITORIUM-OVERVIEW.pdf",
+      "sourceUrl": "https://mandeville.ucsd.edu/_files/overview/DIAGRAM-Auditorium%20Overview.pdf",
+      "downloadUrl": "https://mandeville.ucsd.edu/_files/overview/DIAGRAM-Auditorium%20Overview.pdf",
+      "resolvedUrl": "https://mandeville.ucsd.edu/_files/overview/DIAGRAM-Auditorium%20Overview.pdf",
+      "bytes": 189023,
+      "acquiredAt": "2026-10-21T23:07:00.384Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/department-sources.json",
+      "sha256": "f823bb9d8dc3a2d84da4720bf811d80358b9d122dcc065a9a31fe979dc101d5c",
+      "geometryReviewed": false,
+      "pages": 1
+    },
+    {
+      "id": "MANDE-AUDITORIUM-BASEMENT",
+      "file": "local/indoor-sources/MANDE-AUDITORIUM-BASEMENT.pdf",
+      "sourceUrl": "https://mandeville.ucsd.edu/_files/overview/DIAGRAM-Basement.pdf",
+      "downloadUrl": "https://mandeville.ucsd.edu/_files/overview/DIAGRAM-Basement.pdf",
+      "resolvedUrl": "https://mandeville.ucsd.edu/_files/overview/DIAGRAM-Basement.pdf",
+      "bytes": 127518,
+      "acquiredAt": "2026-10-21T23:07:04.942Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/department-sources.json",
+      "sha256": "cb354e399909d7040e6a74ca4d275f3acceaecfa5a0dcabbebc2112858649da0",
+      "geometryReviewed": false,
+      "pages": 1
+    },
+    {
+      "id": "MANDE-EASTROOM-2019",
+      "file": "local/indoor-sources/MANDE-EASTROOM-2019.pdf",
+      "sourceUrl": "https://mandeville.ucsd.edu/_files/overview/Mandeville-Auditoriu_-East-Room_Lobby_with-dims.pdf",
+      "downloadUrl": "https://mandeville.ucsd.edu/_files/overview/Mandeville-Auditoriu_-East-Room_Lobby_with-dims.pdf",
+      "resolvedUrl": "https://mandeville.ucsd.edu/_files/overview/Mandeville-Auditoriu_-East-Room_Lobby_with-dims.pdf",
+      "bytes": 136574,
+      "acquiredAt": "2026-10-21T23:07:09.237Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/department-sources.json",
+      "sha256": "81265d4d2545c756a0e00c07289dffdee925dd0005d30da9b0fd221f2f894252",
+      "geometryReviewed": false,
+      "pages": 1
+    },
+    {
+      "id": "PSB-EAP-2024",
+      "file": "local/indoor-sources/PSB-EAP-2024.pdf",
+      "sourceUrl": "https://pharmacy.ucsd.edu/sites/default/files/docs/administration/EAP%20SSPPS2024%20%281%29.pdf",
+      "downloadUrl": "https://pharmacy.ucsd.edu/sites/default/files/docs/administration/EAP%20SSPPS2024%20%281%29.pdf",
+      "resolvedUrl": "https://pharmacy.ucsd.edu/sites/default/files/docs/administration/EAP%20SSPPS2024%20%281%29.pdf",
+      "bytes": 832442,
+      "acquiredAt": "2026-10-21T23:07:14.196Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/emergency-sources.json",
+      "sha256": "a27d6f64d71a0d113ef5cd7c02d81b5219e115e314b3006994115cc6626357fc",
+      "geometryReviewed": false,
+      "pages": 17
+    },
+    {
+      "id": "IGPP-MUNK-2013",
+      "file": "local/indoor-sources/IGPP-MUNK-2013.pdf",
+      "sourceUrl": "https://igpp.ucsd.edu/system/files/2024-11/IGPP_Munk_Lab.pdf",
+      "downloadUrl": "https://igpp.ucsd.edu/system/files/2024-11/IGPP_Munk_Lab.pdf",
+      "resolvedUrl": "https://igpp.ucsd.edu/system/files/2024-11/IGPP_Munk_Lab.pdf",
+      "bytes": 113348,
+      "acquiredAt": "2026-10-21T23:07:27.956Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/emergency-sources.json",
+      "sha256": "e790fa77da4053e1e09ef76f36e682d6d9fdd778afd1e0b66b5a537e3bf5cd0b",
+      "geometryReviewed": false,
+      "pages": 5
+    },
+    {
+      "id": "IGPP-4000",
+      "file": "local/indoor-sources/IGPP-4000.pdf",
+      "sourceUrl": "https://igpp.ucsd.edu/system/files/2024-11/IGPP_4000.pdf",
+      "downloadUrl": "https://igpp.ucsd.edu/system/files/2024-11/IGPP_4000.pdf",
+      "resolvedUrl": "https://igpp.ucsd.edu/system/files/2024-11/IGPP_4000.pdf",
+      "bytes": 90585,
+      "acquiredAt": "2026-10-21T23:07:32.466Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/emergency-sources.json",
+      "sha256": "fbf30f6916324890434f0ab8fd2c725a0d9084c096573e313aeafdfa65911c97",
+      "geometryReviewed": false,
+      "pages": 4
+    },
+    {
+      "id": "CER-EAP-SERF-EBU2",
+      "file": "local/indoor-sources/CER-EAP-SERF-EBU2.pdf",
+      "sourceUrl": "https://cer.ucsd.edu/_files/resources/eap",
+      "downloadUrl": "https://cer.ucsd.edu/_files/resources/eap",
+      "resolvedUrl": "https://cer.ucsd.edu/_files/resources/eap",
+      "bytes": 1600276,
+      "acquiredAt": "2026-10-21T23:07:37.640Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/emergency-sources.json",
+      "sha256": "a60c172b412b45f416f4083640cc90dcd7b73cc1a26608a3b5b1d54365c99f80",
+      "geometryReviewed": false,
+      "pages": 12
+    },
+    {
+      "id": "SERF-SECOND-EXIT",
+      "file": "local/indoor-sources/SERF-SECOND-EXIT.pdf",
+      "sourceUrl": "https://be.ucsd.edu/sites/default/files/uploads/EmergencyRoutesSER.pdf",
+      "downloadUrl": "https://be.ucsd.edu/sites/default/files/uploads/EmergencyRoutesSER.pdf",
+      "resolvedUrl": "https://be.ucsd.edu/sites/default/files/uploads/EmergencyRoutesSER.pdf",
+      "bytes": 71686,
+      "acquiredAt": "2026-10-21T23:07:42.035Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/emergency-sources.json",
+      "sha256": "dbb3226acfc3dbf00a0c972485d281a539800020abfd5e5e791f9356b8c79cef",
+      "geometryReviewed": false,
+      "pages": 1
+    },
+    {
+      "id": "NTPLLN-REGENTS-2018",
+      "file": "local/indoor-sources/NTPLLN-REGENTS-2018.pdf",
+      "sourceUrl": "https://regents.universityofcalifornia.edu/regmeet/mar18/f3attach3.pdf",
+      "downloadUrl": "https://regents.universityofcalifornia.edu/regmeet/mar18/f3attach3.pdf",
+      "resolvedUrl": "https://regents.universityofcalifornia.edu/regmeet/mar18/f3attach3.pdf",
+      "bytes": 5820746,
+      "acquiredAt": "2026-10-21T23:07:55.597Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/new-building-sources.json",
+      "sha256": "ac5681dbd766b31b4b8c5498fe3fd145a84a95aa694ed2dc4b7862c8a50087d0",
+      "geometryReviewed": false,
+      "pages": 7
+    },
+    {
+      "id": "FAH-REGENTS-2019",
+      "file": "local/indoor-sources/FAH-REGENTS-2019.pdf",
+      "sourceUrl": "https://regents.universityofcalifornia.edu/regmeet/may19/f5attach1.pdf",
+      "downloadUrl": "https://regents.universityofcalifornia.edu/regmeet/may19/f5attach1.pdf",
+      "resolvedUrl": "https://regents.universityofcalifornia.edu/regmeet/may19/f5attach1.pdf",
+      "bytes": 14611897,
+      "acquiredAt": "2026-10-21T23:08:03.351Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/new-building-sources.json",
+      "sha256": "ffe3b514c751a504d61f03ada754b795ed532ad3b00f5246ee44c37a6bd6138d",
+      "geometryReviewed": false,
+      "pages": 10
+    },
+    {
+      "id": "MCTF-COASTAL-2019-EXHIBITS",
+      "file": "local/indoor-sources/MCTF-COASTAL-2019-EXHIBITS.pdf",
+      "sourceUrl": "https://documents.coastal.ca.gov/reports/2019/2/Th27b/Th27b-2-2019-exhibits.pdf",
+      "downloadUrl": "https://documents.coastal.ca.gov/reports/2019/2/Th27b/Th27b-2-2019-exhibits.pdf",
+      "resolvedUrl": "https://documents.coastal.ca.gov/reports/2019/2/Th27b/Th27b-2-2019-exhibits.pdf",
+      "bytes": 7654830,
+      "acquiredAt": "2026-10-21T23:08:10.717Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/new-building-sources.json",
+      "sha256": "1bcb9819faff807c5a719e134ddb5112906fd6cade5d57b841f857480b598d59",
+      "geometryReviewed": false,
+      "pages": 22
+    },
+    {
+      "id": "EBU1-FIFTH-EXIT-2003",
+      "file": "local/indoor-sources/EBU1-FIFTH-EXIT-2003.pdf",
+      "sourceUrl": "https://bioengineering.ucsd.edu/sites/default/files/uploads/EmergencyRoutesEBU.pdf",
+      "downloadUrl": "https://bioengineering.ucsd.edu/sites/default/files/uploads/EmergencyRoutesEBU.pdf",
+      "resolvedUrl": "https://bioengineering.ucsd.edu/sites/default/files/uploads/EmergencyRoutesEBU.pdf",
+      "bytes": 52593,
+      "acquiredAt": "2026-10-21T23:08:15.073Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/emergency-sources.json",
+      "sha256": "b70565db454967ee5d89680e129f98d554fe2525a7d3e4e594df484d4dbda5a8",
+      "geometryReviewed": false,
+      "pages": 1
+    },
+    {
+      "id": "CPMC-FIRST-2026",
+      "file": "local/indoor-sources/CPMC-FIRST-2026.jpg",
+      "sourceUrl": "https://music-cms.ucsd.edu/_files/maps/CPMC_Floor_Plan_1_20260903.jpg",
+      "downloadUrl": "https://music-cms.ucsd.edu/_files/maps/CPMC_Floor_Plan_1_20260903.jpg",
+      "resolvedUrl": "https://music-cms.ucsd.edu/_files/maps/CPMC_Floor_Plan_1_20260903.jpg",
+      "bytes": 2856717,
+      "acquiredAt": "2026-10-21T23:08:41.181Z",
+      "contentType": "image/jpeg",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/department-sources.json",
+      "sha256": "8c66b8f75467c0cac07c06e99bc2e400ebc18eb3e0a2963ca0ead141bc18b505",
+      "geometryReviewed": false,
+      "imageSize": [
+        5416,
+        7500
+      ]
+    },
+    {
+      "id": "CPMC-SECOND-2026",
+      "file": "local/indoor-sources/CPMC-SECOND-2026.jpg",
+      "sourceUrl": "https://music-cms.ucsd.edu/_files/maps/CPMC_Floor_Plan_2_20260902.jpg",
+      "downloadUrl": "https://music-cms.ucsd.edu/_files/maps/CPMC_Floor_Plan_2_20260902.jpg",
+      "resolvedUrl": "https://music-cms.ucsd.edu/_files/maps/CPMC_Floor_Plan_2_20260902.jpg",
+      "bytes": 892475,
+      "acquiredAt": "2026-10-21T23:08:45.827Z",
+      "contentType": "image/jpeg",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/department-sources.json",
+      "sha256": "689e043df2e63594e66f3c2561e2601ff80a7a1294c9048c4b5f69e1f6b7005e",
+      "geometryReviewed": false,
+      "imageSize": [
+        1800,
+        2759
+      ]
+    },
+    {
+      "id": "CPMC-THIRD-2026",
+      "file": "local/indoor-sources/CPMC-THIRD-2026.jpg",
+      "sourceUrl": "https://music-cms.ucsd.edu/_files/maps/CPMC_Floor_Plan_3_20260902.jpg",
+      "downloadUrl": "https://music-cms.ucsd.edu/_files/maps/CPMC_Floor_Plan_3_20260902.jpg",
+      "resolvedUrl": "https://music-cms.ucsd.edu/_files/maps/CPMC_Floor_Plan_3_20260902.jpg",
+      "bytes": 862296,
+      "acquiredAt": "2026-10-21T23:08:50.315Z",
+      "contentType": "image/jpeg",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/department-sources.json",
+      "sha256": "d6a52094f870b3b4e0d369cb9c7dd20cd51a2875620fdfe31887e0b4cfe5552c",
+      "geometryReviewed": false,
+      "imageSize": [
+        1800,
+        2933
+      ]
+    },
+    {
+      "id": "WLH-MUSIC-2026",
+      "file": "local/indoor-sources/WLH-MUSIC-2026.jpg",
+      "sourceUrl": "https://music-cms.ucsd.edu/_files/maps/Warren_2026.jpg",
+      "downloadUrl": "https://music-cms.ucsd.edu/_files/maps/Warren_2026.jpg",
+      "resolvedUrl": "https://music-cms.ucsd.edu/_files/maps/Warren_2026.jpg",
+      "bytes": 640751,
+      "acquiredAt": "2026-10-21T23:08:54.751Z",
+      "contentType": "image/jpeg",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/department-sources.json",
+      "sha256": "a4367d5943d1e7c5d85a22b3cc9767f5cf04ffb0123f7c2cda6fc3ffbaa45b18",
+      "geometryReviewed": false,
+      "imageSize": [
+        2550,
+        3300
+      ]
+    },
+    {
+      "id": "UCSD-GENSLER-2018",
+      "sourceUrl": "https://plandesignbuild.ucsd.edu/_files/planning/GenslerUCSanDiegoBenchmarkingStudyJune2019.pdf",
+      "resolvedUrl": "https://plandesignbuild.ucsd.edu/_files/planning/GenslerUCSanDiegoBenchmarkingStudyJune2019.pdf",
+      "bytes": 7406133,
+      "contentType": "application/pdf",
+      "acquiredAt": "2026-10-22T00:36:31.713Z",
+      "file": "local/indoor-sources/UCSD-GENSLER-2018.pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "9bc20d172da73bbf357e6c0b201ddcb281c77057d92ef9c5c4b0e9822e634524",
+      "geometryReviewed": false,
+      "pages": 104,
+      "downloadUrl": "https://plandesignbuild.ucsd.edu/_files/planning/GenslerUCSanDiegoBenchmarkingStudyJune2019.pdf"
+    },
+    {
+      "id": "MUIR-HISTORIC-2008",
+      "sourceUrl": "https://plandesignbuild.ucsd.edu/_files/plans/MuirHistResInv.pdf",
+      "resolvedUrl": "https://plandesignbuild.ucsd.edu/_files/plans/MuirHistResInv.pdf",
+      "bytes": 7729743,
+      "contentType": "application/pdf",
+      "acquiredAt": "2026-10-22T00:36:38.547Z",
+      "file": "local/indoor-sources/MUIR-HISTORIC-2008.pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "298b097e2414417c56aa40157f50ef1e626e2ce50a24bfc2de1112b25f63982f",
+      "geometryReviewed": false,
+      "pages": 164,
+      "downloadUrl": "https://plandesignbuild.ucsd.edu/_files/plans/MuirHistResInv.pdf"
+    },
+    {
+      "id": "GPS-MAPS-2026",
+      "sourceUrl": "https://gps.ucsd.edu/_files/misc/gps-maps.pdf",
+      "resolvedUrl": "https://gps.ucsd.edu/_files/misc/gps-maps.pdf",
+      "bytes": 2002761,
+      "contentType": "application/pdf",
+      "acquiredAt": "2026-10-22T00:36:43.467Z",
+      "file": "local/indoor-sources/GPS-MAPS-2026.pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "576f8c233e6c6656566c87018aca46363b81413760bd887d59a2a9eb017c0b41",
+      "geometryReviewed": false,
+      "pages": 4,
+      "downloadUrl": "https://gps.ucsd.edu/_files/misc/gps-maps.pdf"
+    },
+    {
+      "id": "PACIFIC-EVAC",
+      "sourceUrl": "https://biology.ucsd.edu/_files/administration/safety/evac-pac.pdf",
+      "resolvedUrl": "https://biology.ucsd.edu/_files/administration/safety/evac-pac.pdf",
+      "bytes": 238615,
+      "contentType": "application/pdf",
+      "acquiredAt": "2026-10-22T00:36:47.783Z",
+      "file": "local/indoor-sources/PACIFIC-EVAC.pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "d68113bad951594e07180c73355e31449d0ccfd3274c7523d69f89ec932b8fca",
+      "geometryReviewed": false,
+      "pages": 1,
+      "downloadUrl": "https://biology.ucsd.edu/_files/administration/safety/evac-pac.pdf"
+    },
+    {
+      "id": "CNCB-EVAC",
+      "sourceUrl": "https://biology.ucsd.edu/_files/administration/safety/evac-cncb.pdf",
+      "resolvedUrl": "https://biology.ucsd.edu/_files/administration/safety/evac-cncb.pdf",
+      "bytes": 180118,
+      "contentType": "application/pdf",
+      "acquiredAt": "2026-10-22T00:36:52.103Z",
+      "file": "local/indoor-sources/CNCB-EVAC.pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "ae138da547eee7ae572aed7e8ce688c83f6a22d7e48e20b92da786678952c982",
+      "geometryReviewed": false,
+      "pages": 1,
+      "downloadUrl": "https://biology.ucsd.edu/_files/administration/safety/evac-cncb.pdf"
+    },
+    {
+      "id": "PHYSICS-EAP",
+      "sourceUrl": "https://drive.google.com/file/d/11bk6sN9ozv6P2MEeEkzzbackp0Ggg-_X/view?usp=drive_link",
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=11bk6sN9ozv6P2MEeEkzzbackp0Ggg-_X",
+      "resolvedUrl": "https://drive.usercontent.google.com/download?id=11bk6sN9ozv6P2MEeEkzzbackp0Ggg-_X&export=download",
+      "bytes": 5899399,
+      "contentType": "application/octet-stream",
+      "acquiredAt": "2026-10-22T00:38:09.864Z",
+      "file": "local/indoor-sources/PHYSICS-EAP.pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "af741cc9572bb131053093ccf0c57039880763c74e8eec14bb0ece27e7bd4550",
+      "geometryReviewed": true,
+      "pages": 51,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "building": "MAYER",
+            "floor": "L2",
+            "page": 25,
+            "roomLabels": [
+              "2110",
+              "2130",
+              "2326",
+              "2306"
+            ],
+            "integratedRoomLabels": [
+              "2110",
+              "2130",
+              "2326",
+              "2306"
+            ],
+            "floorSilhouetteIntegrated": "old-wing main-body addition only",
+            "reviewedGeometry": "Only listed old-wing rooms, approximate main-body slab addition, and matching expansion-wing registration corners. Other rooms and other Physics buildings are not newly modeled."
+          },
+          {
+            "building": "MAYER",
+            "floor": "L4",
+            "page": 33,
+            "roomLabels": [
+              "4322"
+            ],
+            "integratedRoomLabels": [
+              "4322"
+            ],
+            "floorSilhouetteIntegrated": "old-wing main-body addition only",
+            "reviewedGeometry": "Only listed old-wing rooms, approximate main-body slab addition, and matching expansion-wing registration corners. Other rooms and other Physics buildings are not newly modeled."
+          },
+          {
+            "building": "MAYER",
+            "floor": "L5",
+            "page": 37,
+            "roomLabels": [
+              "5301"
+            ],
+            "integratedRoomLabels": [
+              "5301"
+            ],
+            "floorSilhouetteIntegrated": "old-wing main-body addition only",
+            "reviewedGeometry": "Only listed old-wing rooms, approximate main-body slab addition, and matching expansion-wing registration corners. Other rooms and other Physics buildings are not newly modeled."
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/MAYER/physics-trace.json",
+          "data/indoor/MAYER/physics-supplement.json"
+        ],
+        "fullDocumentModeled": false,
+        "limitations": [
+          "The 2026 emergency-action-plan packet embeds older scanned diagrams. Inclusion in the packet does not establish that every room boundary was resurveyed in 2026.",
+          "Registration inherits the existing approximate Facilities-to-campus fit. Scan distortion, simplified walls and old/new-wing correspondence limit positional accuracy; control and holdout residuals are drawing consistency checks, not survey accuracy.",
+          "Only the six previously unresolved schedule rooms are traced. Small door and column recesses are simplified; room use is left unknown.",
+          "The added old-wing floor plates are simplified main-body envelopes following the visible room/corridor bounds. Bridges, external stairs, balconies and other old-wing rooms are not reconstructed.",
+          "Existing room geometry, all five floors, estimated elevations and campus transform are preserved. Level 5 retains the pre-existing Level 4-derived expansion-wing outline; that part is not newly verified.",
+          "UREY second-floor room 2265 is not shown by the acquired B/6/7 plans; NSB plans do not resolve a current stored-key position gap."
+        ],
+        "runtimeLayout": "static/indoor/MAYER-combined.json"
+      }
+    },
+    {
+      "id": "SSRB-EHS-2018",
+      "sourceUrl": "https://cogsci.ucsd.edu/_files/resources/Social%20Science%20Research%20Building_11-8-18.pdf",
+      "resolvedUrl": "https://cogsci.ucsd.edu/_files/resources/Social%20Science%20Research%20Building_11-8-18.pdf",
+      "bytes": 126993,
+      "contentType": "application/pdf",
+      "acquiredAt": "2026-10-22T00:39:07.231Z",
+      "file": "local/indoor-sources/SSRB-EHS-2018.pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "f30cd7717d04e611d9b47b4609d86cfd7e3936ce4894155dc5de72bebc5d4940",
+      "geometryReviewed": true,
+      "downloadUrl": "https://cogsci.ucsd.edu/_files/resources/Social%20Science%20Research%20Building_11-8-18.pdf",
+      "pages": 4,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "building": "SSRB",
+            "floor": "L3",
+            "page": 4,
+            "roomLabels": [
+              "339",
+              "340",
+              "343A",
+              "310A",
+              "310B"
+            ],
+            "integratedRoomLabels": [
+              "339",
+              "340",
+              "343A"
+            ],
+            "floorSilhouetteIntegrated": false,
+            "reviewedGeometry": "Only 339/340/343A room boundaries and exterior registration corners. Schedule key 310 remains unplaced because the plan shows separate 310A/310B."
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/SSRB/trace.json",
+          "data/indoor/SSRB/registration.json"
+        ],
+        "fullDocumentModeled": false,
+        "limitations": [
+          "Only three numbered third-floor rooms are traced. Doorway alcoves and small column/jamb recesses are simplified.",
+          "Campus placement is an approximate similarity registration to an exterior footprint, not a survey. Held-out west facade differs by about 1.59 m; retain this discrepancy rather than hiding it.",
+          "The 2018 source cannot establish later changes. Existing other-floor geometry, outline assumptions and vertical spacing are retained.",
+          "Room 310 remains unplaced because the source partitions it into 310A and 310B."
+        ],
+        "runtimeLayout": "static/indoor/SSRB-combined.json"
+      }
+    },
+    {
+      "id": "GH-ARCHITECT-2017",
+      "sourceUrl": "https://images.adsttc.com/media/images/5876/534e/e58e/ce26/2e00/025a/large_jpg/Galbraith_Floor_Black_6_invert.jpg?1484149481",
+      "resolvedUrl": "https://images.adsttc.com/media/images/5876/534e/e58e/ce26/2e00/025a/large_jpg/Galbraith_Floor_Black_6_invert.jpg?1484149481",
+      "bytes": 849356,
+      "contentType": "image/jpeg",
+      "acquiredAt": "2026-10-22T00:39:53.667Z",
+      "file": "local/indoor-sources/GH-ARCHITECT-2017.jpg",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "ccde78b28a27afc54d1a46bb3236589ee1c72e0773731533189b3019021d07fc",
+      "geometryReviewed": true,
+      "downloadUrl": "https://images.adsttc.com/media/images/5876/534e/e58e/ce26/2e00/025a/large_jpg/Galbraith_Floor_Black_6_invert.jpg?1484149481",
+      "dimensions": [
+        2000,
+        2584
+      ],
+      "geometryReview": {
+        "status": "reviewed-supporting-context",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "building": "GH",
+            "floor": "partial lower level",
+            "roomLabels": [],
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": false,
+            "reviewedGeometry": "Partial lower-level auditorium and section used to understand the split-level arrangement. This smaller outline is not substituted for the full numbered 242 footprint."
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/GH/242-trace.json",
+          "data/indoor/GH/242-review.json"
+        ],
+        "fullDocumentModeled": false,
+        "limitations": [
+          "Room 242 spans L2 and L3. Its complete projected footprint is displayed once on L3; slope, tier heights, and routes between entrances are not modeled.",
+          "The 2012 source is explicitly a schematic design proposal, not for construction. It is used only for approximate central location and orientation, never to identify unlabeled final room numbers.",
+          "2017 lower-level plan depicts only part of the auditorium. Its small lower-level boundary must not substitute for the complete numbered 2016 room diagram.",
+          "No campus geo is supplied. All four inherited approximate floor plates stay in their original local meter frame; the room is explicitly transformed into that same frame with a coarse scheme-derived offset.",
+          "The original approximate floor plates are not verified interior envelopes and the remaining 19 classrooms remain unplaced.",
+          "Room area agrees approximately with the listed Facilities area; this does not establish survey accuracy or verify post-2016 alterations."
+        ],
+        "runtimeLayout": "static/indoor/GH-combined.json"
+      }
+    },
+    {
+      "id": "GH-242-SEATING",
+      "sourceUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Galbraith_242.pdf",
+      "resolvedUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Galbraith_242.pdf",
+      "bytes": 221570,
+      "contentType": "application/pdf",
+      "acquiredAt": "2026-10-22T00:41:29.217Z",
+      "file": "local/indoor-sources/GH-242-SEATING.pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "1c2011190620f885e2d767bdc12bc9f56a5db421b56b667114e33ecfb6ebf07d",
+      "geometryReviewed": true,
+      "downloadUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Galbraith_242.pdf",
+      "pages": 1,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "building": "GH",
+            "floor": "L3 display; physically spans L2/L3",
+            "page": 1,
+            "roomLabels": [
+              "242"
+            ],
+            "integratedRoomLabels": [
+              "242"
+            ],
+            "floorSilhouetteIntegrated": false,
+            "reviewedGeometry": "Complete projected boundary of the numbered 242 auditorium, with two independent printed dimension checks. Its coarse local position is supported separately by historical plans; seating, slope and level transitions are not modeled."
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/GH/242-trace.json",
+          "data/indoor/GH/242-review.json"
+        ],
+        "fullDocumentModeled": false,
+        "limitations": [
+          "Room 242 spans L2 and L3. Its complete projected footprint is displayed once on L3; slope, tier heights, and routes between entrances are not modeled.",
+          "The 2012 source is explicitly a schematic design proposal, not for construction. It is used only for approximate central location and orientation, never to identify unlabeled final room numbers.",
+          "2017 lower-level plan depicts only part of the auditorium. Its small lower-level boundary must not substitute for the complete numbered 2016 room diagram.",
+          "No campus geo is supplied. All four inherited approximate floor plates stay in their original local meter frame; the room is explicitly transformed into that same frame with a coarse scheme-derived offset.",
+          "The original approximate floor plates are not verified interior envelopes and the remaining 19 classrooms remain unplaced.",
+          "Room area agrees approximately with the listed Facilities area; this does not establish survey accuracy or verify post-2016 alterations."
+        ],
+        "runtimeLayout": "static/indoor/GH-combined.json"
+      }
+    },
+    {
+      "id": "GH-CLICS-L2-2012",
+      "sourceUrl": "https://reclaimucsd.wordpress.com/wp-content/uploads/2012/02/4613_l2-optc.jpg",
+      "bytes": 5673237,
+      "acquiredAt": "2026-10-22T00:40:27.040Z",
+      "contentType": "image/jpeg",
+      "file": "local/indoor-sources/GH-CLICS-L2-2012.jpg",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "eb11b8fe23a119494ad5530cb02c69b8062067b8a1570fe04fa4f0fb852f55f3",
+      "geometryReviewed": false,
+      "resolvedUrl": "https://reclaimucsd.wordpress.com/wp-content/uploads/2012/02/4613_l2-optc.jpg",
+      "downloadUrl": "https://reclaimucsd.wordpress.com/wp-content/uploads/2012/02/4613_l2-optc.jpg",
+      "dimensions": [
+        6300,
+        4500
+      ]
+    },
+    {
+      "id": "GH-CLICS-L3-2012",
+      "sourceUrl": "https://reclaimucsd.wordpress.com/wp-content/uploads/2012/02/4613_l3-optc.jpg",
+      "bytes": 6939705,
+      "acquiredAt": "2026-10-22T00:40:32.406Z",
+      "contentType": "image/jpeg",
+      "file": "local/indoor-sources/GH-CLICS-L3-2012.jpg",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "dd492f75b514130684469ae634b994177a11fcb7b538463486715a05ba453fb1",
+      "geometryReviewed": true,
+      "resolvedUrl": "https://reclaimucsd.wordpress.com/wp-content/uploads/2012/02/4613_l3-optc.jpg",
+      "downloadUrl": "https://reclaimucsd.wordpress.com/wp-content/uploads/2012/02/4613_l3-optc.jpg",
+      "dimensions": [
+        6300,
+        4500
+      ],
+      "geometryReview": {
+        "status": "reviewed-supporting-context",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "building": "GH",
+            "floor": "L3",
+            "roomLabels": [],
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": false,
+            "reviewedGeometry": "Historical schematic supplies approximate central location and orientation for independently numbered room 242; no unlabeled room boundary or room number is imported from this proposal."
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/GH/242-trace.json",
+          "data/indoor/GH/242-review.json"
+        ],
+        "fullDocumentModeled": false,
+        "limitations": [
+          "Room 242 spans L2 and L3. Its complete projected footprint is displayed once on L3; slope, tier heights, and routes between entrances are not modeled.",
+          "The 2012 source is explicitly a schematic design proposal, not for construction. It is used only for approximate central location and orientation, never to identify unlabeled final room numbers.",
+          "2017 lower-level plan depicts only part of the auditorium. Its small lower-level boundary must not substitute for the complete numbered 2016 room diagram.",
+          "No campus geo is supplied. All four inherited approximate floor plates stay in their original local meter frame; the room is explicitly transformed into that same frame with a coarse scheme-derived offset.",
+          "The original approximate floor plates are not verified interior envelopes and the remaining 19 classrooms remain unplaced.",
+          "Room area agrees approximately with the listed Facilities area; this does not establish survey accuracy or verify post-2016 alterations."
+        ],
+        "runtimeLayout": "static/indoor/GH-combined.json"
+      }
+    },
+    {
+      "id": "ASANT-IHOUSE-LAYOUT",
+      "file": "local/indoor-sources/ASANT-IHOUSE-LAYOUT.jpg",
+      "sourceUrl": "https://ihouse.ucsd.edu/_images/event-space/asante-layout.jpg",
+      "downloadUrl": "https://ihouse.ucsd.edu/_images/event-space/asante-layout.jpg",
+      "bytes": 163912,
+      "acquiredAt": "2026-10-22T00:42:55.438Z",
+      "contentType": "image/jpeg",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "1eefb03546f31cd574cc3677c58066ac8dba8518172455ad45a8e4f3d470325f",
+      "imageSizePx": [
+        700,
+        546
+      ],
+      "geometryReviewed": true,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "building": "ASANT",
+            "floor": "L1",
+            "image": "ASANT-IHOUSE-LAYOUT.jpg",
+            "roomLabels": [
+              "AH123A",
+              "AH123B",
+              "AH123C",
+              "AH123D"
+            ],
+            "integratedRoomLabels": [
+              "123A",
+              "123B",
+              "123C",
+              "123D"
+            ],
+            "floorSilhouetteIntegrated": true,
+            "reviewedGeometry": "One meeting-room level: four principal room boundaries, movable partition, exterior doors and stair location; furniture and detailed stair/door geometry are omitted."
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/ASANT/meeting-trace.json",
+          "data/indoor/ASANT/meeting-review.json"
+        ],
+        "fullDocumentModeled": false,
+        "limitations": [
+          "The source image is undated and depicts one meeting-room level. The L1 identifier is retained from the prior schedule inventory; elevations and floor-to-floor height are not supplied by the plan.",
+          "Room boundaries follow visible walls and the movable partition. Wall thickness, small columns, door recesses and stair geometry are simplified; chairs and tables are omitted.",
+          "Relative drawing units are used. The published approximate rental areas and small furniture dimensions are not used to assert an architectural metric scale.",
+          "No reliable north angle or campus registration is established. The corrected campus map point and CAAN identify the venue but do not place this local indoor model on campus.",
+          "The original three-floor Asante W apartment layout remains preserved separately. Its 15 unscheduled shapes and service room 123D are not mixed into this meeting-room coordinate system."
+        ],
+        "runtimeLayout": "static/indoor/ASANT-meeting.json"
+      }
+    },
+    {
+      "id": "HDSI-LITERATURE-2010",
+      "file": "local/indoor-sources/HDSI-LITERATURE-2010.pdf",
+      "sourceUrl": "https://blink.ucsd.edu/_files/safety-tab/public-health/lit-building/FMS_Literature_Bldg_Report_2-15-2010.pdf",
+      "downloadUrl": "https://blink.ucsd.edu/_files/safety-tab/public-health/lit-building/FMS_Literature_Bldg_Report_2-15-2010.pdf",
+      "bytes": 1209807,
+      "acquiredAt": "2026-10-22T00:43:16.205Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "9200106ebc0fd0e1eef64dd05fa7652aed076fe47a8266db0688b2fd3bd1f3fb",
+      "pages": 21,
+      "geometryReviewed": true,
+      "geometryReview": {
+        "status": "reviewed-conflict-not-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "building": "HDSI",
+            "floor": "L1",
+            "page": 12,
+            "roomLabels": [
+              "123"
+            ],
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": false,
+            "reviewedGeometry": "Historical room 123 identity/area compared with current listing; 96 versus 2285 square feet rejects direct geometry transfer."
+          },
+          {
+            "building": "HDSI",
+            "floor": "L3",
+            "page": 18,
+            "roomLabels": [
+              "336P",
+              "355P"
+            ],
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": false,
+            "reviewedGeometry": "Historical 336P disagrees with current room size. 355P has a historical trace and similar area but no post-renovation boundary confirmation; neither is placed."
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/HDSI/literature-2010-review.json",
+          "data/indoor/HDSI/history-audit.json"
+        ],
+        "fullDocumentModeled": false,
+        "limitations": [
+          "All four historical floor plans are genuine numbered source drawings, but predate the renovation completed before HDSI moved in during summer 2023.",
+          "The existing HDSI runtime file has no interior polygons or current neighboring-room geometry, only floor listings and a campus footprint repeated across floors.",
+          "No surveyed scale, campus registration, or modern boundary validation has been established for the historical candidate.",
+          "Rooms 123, 336, and 355 remain unplaced. No historical polygon is added to the runtime map."
+        ]
+      }
+    },
+    {
+      "id": "MET-PRELIM-L1-2009",
+      "sourceUrl": "https://mededblg.wordpress.com/wp-content/uploads/2009/11/level-1_labeled50.jpg",
+      "resolvedUrl": "https://mededblg.wordpress.com/wp-content/uploads/2009/11/level-1_labeled50.jpg",
+      "bytes": 88995,
+      "contentType": "image/jpeg",
+      "acquiredAt": "2026-10-22T01:09:22.429Z",
+      "file": "local/indoor-sources/MET-PRELIM-L1-2009.jpg",
+      "downloadUrl": "https://mededblg.wordpress.com/wp-content/uploads/2009/11/level-1_labeled50.jpg",
+      "sha256": "71ea5ce050b694385f5380affe1ae8d80114b3d140cc05f39444c413164f9e67",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "geometryReviewed": false,
+      "dimensions": [
+        235,
+        228
+      ]
+    },
+    {
+      "id": "MET-PRELIM-L2-2009",
+      "sourceUrl": "https://mededblg.wordpress.com/wp-content/uploads/2009/11/level-2_labeled501.jpg",
+      "resolvedUrl": "https://mededblg.wordpress.com/wp-content/uploads/2009/11/level-2_labeled501.jpg",
+      "bytes": 79939,
+      "contentType": "image/jpeg",
+      "acquiredAt": "2026-10-22T01:09:26.851Z",
+      "file": "local/indoor-sources/MET-PRELIM-L2-2009.jpg",
+      "downloadUrl": "https://mededblg.wordpress.com/wp-content/uploads/2009/11/level-2_labeled501.jpg",
+      "sha256": "945fcccbc99b199115eaa099df690b4e0c3c819c91086557292829f2309975e5",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "geometryReviewed": false,
+      "dimensions": [
+        228,
+        222
+      ]
+    },
+    {
+      "id": "MET-PRELIM-L3-2009",
+      "sourceUrl": "https://mededblg.wordpress.com/wp-content/uploads/2009/11/level-3_labeled501.jpg",
+      "resolvedUrl": "https://mededblg.wordpress.com/wp-content/uploads/2009/11/level-3_labeled501.jpg",
+      "bytes": 74671,
+      "contentType": "image/jpeg",
+      "acquiredAt": "2026-10-22T01:09:31.272Z",
+      "file": "local/indoor-sources/MET-PRELIM-L3-2009.jpg",
+      "downloadUrl": "https://mededblg.wordpress.com/wp-content/uploads/2009/11/level-3_labeled501.jpg",
+      "sha256": "3eebb7c1a5ce2cecae3be8f637ef84e5328ad94a908bed2565e139e4755bc453",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "geometryReviewed": false,
+      "dimensions": [
+        229,
+        221
+      ]
+    },
+    {
+      "id": "SSB-GWATHMEY-1995",
+      "sourceUrl": "https://www.gwathmey-siegel.com/pdf/199304.pdf",
+      "resolvedUrl": "https://www.gwathmey-siegel.com/pdf/199304.pdf",
+      "bytes": 661560,
+      "contentType": "application/pdf",
+      "acquiredAt": "2026-10-22T01:10:02.004Z",
+      "file": "local/indoor-sources/SSB-GWATHMEY-1995.pdf",
+      "downloadUrl": "https://www.gwathmey-siegel.com/pdf/199304.pdf",
+      "sha256": "3fa522c687bb496fb0e916dc18f905d8e8195c65cbf57e9bc3d65871496182d8",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "geometryReviewed": false,
+      "pages": 4
+    },
+    {
+      "id": "UCSD-Know-Your-Campus",
+      "file": "local/indoor-sources/UCSD-Know-Your-Campus.pdf",
+      "sourceUrl": "https://emeriti.ucsd.edu/resources/Know-Your-Campus.pdf",
+      "downloadUrl": "https://emeriti.ucsd.edu/resources/Know-Your-Campus.pdf",
+      "bytes": 1462313,
+      "acquiredAt": "2026-10-22T01:28:07.008Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "4761d9a5bcf9429a45d03815951f6397accccb22a873e253a297ccdde6e5c835",
+      "geometryReviewed": false,
+      "pages": 38,
+      "reviewNote": "Naming history is evidence for the HSS2250 / Ledden Auditorium crosswalk; not a floor-plan source."
+    },
+    {
+      "id": "LEDDN-2250-SEATING",
+      "file": "local/indoor-sources/LEDDN-2250-SEATING.pdf",
+      "sourceUrl": "https://cseweb.ucsd.edu/classes/fa19/cse232-a/downloads/LeddenSeatmap.pdf",
+      "downloadUrl": "https://cseweb.ucsd.edu/classes/fa19/cse232-a/downloads/LeddenSeatmap.pdf",
+      "bytes": 112967,
+      "acquiredAt": "2026-10-22T01:31:00.304Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "4e17350f11e3bb44a932fec43450cc49038e0ee1eec0cd140a3d315b05b56b9a",
+      "geometryReviewed": true,
+      "pages": 1,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "page": 1,
+            "integratedRoomLabels": [
+              "AUD"
+            ],
+            "reviewedGeometry": "Named auditorium boundary and independent dimensional checks; original auditorium occupies its documented level, no campus registration."
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/LEDDN/public-fis-trace.json",
+          "data/indoor/LEDDN/public-fis-review.json"
+        ],
+        "runtimeLayout": "static/indoor/LEDDN-combined.json",
+        "fullDocumentModeled": false,
+        "limitations": [
+          "No BIM, floor heights, or campus placement inferred from the seating plan."
+        ]
+      }
+    },
+    {
+      "id": "PRICE-DIRECTORIES-SU26",
+      "file": "local/indoor-sources/PRICE-DIRECTORIES-SU26.pdf",
+      "sourceUrl": "https://universitycenters.ucsd.edu/_files/visit-us-files/PC_Directories11X17SU26__FNL.pdf",
+      "downloadUrl": "https://universitycenters.ucsd.edu/_files/visit-us-files/PC_Directories11X17SU26__FNL.pdf",
+      "bytes": 372619,
+      "acquiredAt": "2026-10-22T01:34:16.158Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "6373fdf733f58eb33899b80e0efe194e76365b2e5a653fc6a2a42fb13e1c00ac",
+      "geometryReviewed": true,
+      "pages": 1,
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "scope": [
+          {
+            "page": 1,
+            "reviewedGeometry": "Official directory establishes Theater 1.402 Level 1, not its wall boundary."
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/PRICE/directory-review.json"
+        ],
+        "fullDocumentModeled": false,
+        "limitations": [
+          "THTRE remains unplaced; published 4368 sqft is not a scale for the unrelated old 3250 sqft room."
+        ]
+      }
+    },
+    {
+      "id": "JEANN-SEATING-2021",
+      "file": "local/indoor-sources/JEANN-SEATING-2021.pdf",
+      "sourceUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Jeannie_Auditorium_GA0205_rev_Dec2021.pdf",
+      "downloadUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Jeannie_Auditorium_GA0205_rev_Dec2021.pdf",
+      "bytes": 407267,
+      "acquiredAt": "2026-10-22T01:34:44.785Z",
+      "contentType": "application/pdf",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "4924b52e7b79f3e69780d0fdfd0475d4e2197bd264fddf98152829feab1ae3f1",
+      "geometryReviewed": true,
+      "pages": 1,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "page": 1,
+            "integratedRoomLabels": [
+              "AUD"
+            ],
+            "reviewedGeometry": "Named auditorium boundary and independent dimensional checks; original auditorium occupies its documented level, no campus registration."
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/JEANN/seating-trace.json",
+          "data/indoor/JEANN/seating-review.json"
+        ],
+        "runtimeLayout": "static/indoor/JEANN-combined.json",
+        "fullDocumentModeled": false,
+        "limitations": [
+          "No BIM, floor heights, or campus placement inferred from the seating plan."
+        ]
+      }
+    },
+    {
+      "id": "PRICE-THEATER-PLAN",
+      "file": "local/indoor-sources/PRICE-THEATER-PLAN.jpg",
+      "sourceUrl": "https://universitycenters.ucsd.edu/_images/reservation-images/room-guide-images/PCT_1.jpg",
+      "downloadUrl": "https://universitycenters.ucsd.edu/_images/reservation-images/room-guide-images/PCT_1.jpg",
+      "bytes": 83429,
+      "acquiredAt": "2026-10-22T01:34:51.455Z",
+      "contentType": "image/jpeg",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "sha256": "e60a984e9c6a9f2fe896c9b7c4fe9536f437437a0c6609b062a005f5bb78e734",
+      "geometryReviewed": false,
+      "imageSize": [
+        900,
+        335
+      ]
+    },
+    {
+      "id": "WFH-1W102-SEATING",
+      "sourceUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Beyster_Auditorium_WFH_1W102.pdf",
+      "resolvedUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Beyster_Auditorium_WFH_1W102.pdf",
+      "bytes": 25628,
+      "contentType": "application/pdf",
+      "acquiredAt": "2026-10-22T01:41:13.805Z",
+      "file": "local/indoor-sources/WFH-1W102-SEATING.pdf",
+      "downloadUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Beyster_Auditorium_WFH_1W102.pdf",
+      "sha256": "723d61542d90212f8fe8d9ecb88fdb573825eda477c5008754d2ee270bed4fde",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "geometryReviewed": true,
+      "pages": 1,
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "page": 1,
+            "reviewedGeometry": "Seating diagram explicitly not to scale; no surveyed wall boundary or physical dimensions. Not imported as room geometry."
+          }
+        ],
+        "fullDocumentModeled": false,
+        "evidencePaths": [
+          "data/indoor/WFH/seating-review.json"
+        ],
+        "limitations": [
+          "Seating diagram explicitly not to scale; no surveyed wall boundary or physical dimensions. Not imported as room geometry."
+        ]
+      }
+    },
+    {
+      "id": "MALK-520-SEATING",
+      "sourceUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Malk_520_SP26.pdf",
+      "resolvedUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Malk_520_SP26.pdf",
+      "bytes": 28706,
+      "contentType": "application/pdf",
+      "acquiredAt": "2026-10-22T01:41:18.255Z",
+      "file": "local/indoor-sources/MALK-520-SEATING.pdf",
+      "downloadUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Malk_520_SP26.pdf",
+      "sha256": "eaeb5d0e1e4db148c0e021286e996e1d92287b678f92bd6159d60a61e78f6e76",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "geometryReviewed": true,
+      "pages": 1,
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "page": 1,
+            "reviewedGeometry": "Seating diagram explicitly not to scale; no surveyed wall boundary or physical dimensions. Not imported as room geometry."
+          }
+        ],
+        "fullDocumentModeled": false,
+        "evidencePaths": [
+          "data/indoor/research/seating-and-great-review.json"
+        ],
+        "limitations": [
+          "Seating diagram explicitly not to scale; no surveyed wall boundary or physical dimensions. Not imported as room geometry."
+        ]
+      }
+    },
+    {
+      "id": "PODEM-0132-SEATING",
+      "sourceUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/PODEM_0132_WI26.pdf",
+      "resolvedUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/PODEM_0132_WI26.pdf",
+      "bytes": 22341,
+      "contentType": "application/pdf",
+      "acquiredAt": "2026-10-22T01:41:22.675Z",
+      "file": "local/indoor-sources/PODEM-0132-SEATING.pdf",
+      "downloadUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/PODEM_0132_WI26.pdf",
+      "sha256": "239bd46f8c159a7624c7c0cb6937bf0b3087cd5d68cff12497974526c8058c75",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "geometryReviewed": true,
+      "pages": 1,
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "page": 1,
+            "reviewedGeometry": "Seating diagram explicitly not to scale; no surveyed wall boundary or physical dimensions. Not imported as room geometry."
+          }
+        ],
+        "fullDocumentModeled": false,
+        "evidencePaths": [
+          "data/indoor/research/seating-and-great-review.json"
+        ],
+        "limitations": [
+          "Seating diagram explicitly not to scale; no surveyed wall boundary or physical dimensions. Not imported as room geometry."
+        ]
+      }
+    },
+    {
+      "id": "APM-B402A-SEATING",
+      "sourceUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/APM_B402A_FA25.pdf",
+      "resolvedUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/APM_B402A_FA25.pdf",
+      "bytes": 24258,
+      "contentType": "application/pdf",
+      "acquiredAt": "2026-10-22T01:41:27.133Z",
+      "file": "local/indoor-sources/APM-B402A-SEATING.pdf",
+      "downloadUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/APM_B402A_FA25.pdf",
+      "sha256": "1ff8ea68ad9c8b64d443e981ab41836a1cd615e92d44f822860ed3439ac85319",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "geometryReviewed": true,
+      "pages": 1,
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "page": 1,
+            "reviewedGeometry": "Seating diagram explicitly not to scale; no surveyed wall boundary or physical dimensions. Not imported as room geometry."
+          }
+        ],
+        "fullDocumentModeled": false,
+        "evidencePaths": [
+          "data/indoor/research/seating-and-great-review.json"
+        ],
+        "limitations": [
+          "Seating diagram explicitly not to scale; no surveyed wall boundary or physical dimensions. Not imported as room geometry."
+        ]
+      }
+    },
+    {
+      "id": "WFH-1N108-SEATING",
+      "sourceUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Rady_1N108.pdf",
+      "resolvedUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Rady_1N108.pdf",
+      "bytes": 31178,
+      "contentType": "application/pdf",
+      "acquiredAt": "2026-10-22T01:41:31.484Z",
+      "file": "local/indoor-sources/WFH-1N108-SEATING.pdf",
+      "downloadUrl": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Rady_1N108.pdf",
+      "sha256": "dfadad42bb8b3bb09b7fb1fef26680ad7d320c3dccd76eb08643d9dd5264954f",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "geometryReviewed": true,
+      "pages": 1,
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "page": 1,
+            "reviewedGeometry": "Seating diagram explicitly not to scale; no surveyed wall boundary or physical dimensions. Not imported as room geometry."
+          }
+        ],
+        "fullDocumentModeled": false,
+        "evidencePaths": [
+          "data/indoor/WFH/seating-review.json"
+        ],
+        "limitations": [
+          "Seating diagram explicitly not to scale; no surveyed wall boundary or physical dimensions. Not imported as room geometry."
+        ]
+      }
+    },
+    {
+      "id": "GREAT-IHOUSE-LAYOUT",
+      "sourceUrl": "https://ihouse.ucsd.edu/_images/event-space/great-hall-layout.png",
+      "bytes": 73361,
+      "acquiredAt": "2026-10-22T01:39:36.193Z",
+      "contentType": "image/png",
+      "file": "local/indoor-sources/GREAT-IHOUSE-LAYOUT.png",
+      "downloadUrl": "https://ihouse.ucsd.edu/_images/event-space/great-hall-layout.png",
+      "sha256": "e486339e97f4ea58c81f51287bac5cb6f4077a5ed9862e3edfd1f0d96146cccc",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "geometryReviewed": true,
+      "imageSize": [
+        800,
+        616
+      ],
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "page": 1,
+            "reviewedGeometry": "True public venue floor plan with 10-foot scale bar, but no floor or numeric room labels; no GREAT schedule keys in the captured FA26 feed. Not imported into runtime."
+          }
+        ],
+        "fullDocumentModeled": false,
+        "evidencePaths": [
+          "data/indoor/research/seating-and-great-review.json"
+        ],
+        "limitations": [
+          "True public venue floor plan with 10-foot scale bar, but no floor or numeric room labels; no GREAT schedule keys in the captured FA26 feed. Not imported into runtime."
+        ]
+      }
+    },
+    {
+      "id": "BRF2-DBMI-PROPOSAL-2022",
+      "sourceUrl": "https://senate.ucsd.edu/media/568803/dept-of-biomedical-informatics-proposal-review-docs-4-15-22.pdf",
+      "resolvedUrl": "https://senate.ucsd.edu/media/568803/dept-of-biomedical-informatics-proposal-review-docs-4-15-22.pdf",
+      "bytes": 6293196,
+      "contentType": "application/pdf",
+      "acquiredAt": "2026-10-22T01:43:32.592Z",
+      "file": "local/indoor-sources/BRF2-DBMI-PROPOSAL-2022.pdf",
+      "downloadUrl": "https://senate.ucsd.edu/media/568803/dept-of-biomedical-informatics-proposal-review-docs-4-15-22.pdf",
+      "sha256": "32ec83ad2655e639604602864bce50a7dc835d3e92ecb841828ce9cb6cd2c14c",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "geometryReviewed": true,
+      "pages": 168,
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "page": 63,
+            "reviewedGeometry": "Floor 05 image is a low-resolution embedded bitmap; 5A03 cannot be reliably identified."
+          }
+        ],
+        "fullDocumentModeled": false,
+        "evidencePaths": [
+          "data/indoor/BRF2/source-review.json"
+        ],
+        "limitations": [
+          "No target classroom geometry is imported from this file; newer public FIS vectors, if present, are documented separately."
+        ]
+      }
+    },
+    {
+      "id": "BRF2-DESIGNER-PLAN",
+      "sourceUrl": "https://lockwoodcarhart.com/wp-content/uploads/2025/04/UCSD_11.jpg",
+      "resolvedUrl": "https://lockwoodcarhart.com/wp-content/uploads/2025/04/UCSD_11.jpg",
+      "bytes": 153245,
+      "contentType": "image/jpeg",
+      "acquiredAt": "2026-10-22T01:44:26.917Z",
+      "file": "local/indoor-sources/BRF2-DESIGNER-PLAN.jpg",
+      "downloadUrl": "https://lockwoodcarhart.com/wp-content/uploads/2025/04/UCSD_11.jpg",
+      "sha256": "10b596a4aebf83351fc6ccd674971a83feb35eae547e9956c3ad29b20b0412e8",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "geometryReviewed": true,
+      "imageSize": [
+        1440,
+        651
+      ],
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "reviewedGeometry": "Actual designer floor plan labels 3Axx/32xx, not the required first, fourth or fifth floor."
+          }
+        ],
+        "fullDocumentModeled": false,
+        "evidencePaths": [
+          "data/indoor/BRF2/source-review.json"
+        ],
+        "limitations": [
+          "No target classroom geometry is imported from this file; newer public FIS vectors, if present, are documented separately."
+        ]
+      }
+    },
+    {
+      "id": "ECKRT-DESIGNER-004",
+      "sourceUrl": "https://www.mosherdrew.com/wp-content/uploads/2024/04/Architects-Mosher-Drew-Page-004-1.jpg",
+      "resolvedUrl": "https://www.mosherdrew.com/wp-content/uploads/2024/04/Architects-Mosher-Drew-Page-004-1.jpg",
+      "bytes": 85633,
+      "contentType": "image/jpeg",
+      "acquiredAt": "2026-10-22T01:46:18.221Z",
+      "file": "local/indoor-sources/ECKRT-DESIGNER-004.jpg",
+      "downloadUrl": "https://www.mosherdrew.com/wp-content/uploads/2024/04/Architects-Mosher-Drew-Page-004-1.jpg",
+      "sha256": "4f7a8870d0cc4f7943c0af6b8248391ad15202a3ada5867a0e13bcc2f0743c90",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "geometryReviewed": true,
+      "imageSize": [
+        1920,
+        1080
+      ],
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "reviewedGeometry": "Architectural axonometric view without numbered rooms or dimensions."
+          }
+        ],
+        "fullDocumentModeled": false,
+        "evidencePaths": [
+          "data/indoor/ECKRT/source-review.json"
+        ],
+        "limitations": [
+          "No target classroom geometry is imported from this file; newer public FIS vectors, if present, are documented separately."
+        ]
+      }
+    },
+    {
+      "id": "ECKRT-DESIGNER-012",
+      "sourceUrl": "https://www.mosherdrew.com/wp-content/uploads/2024/02/Architects-Mosher-Drew-drawings-Page-012.jpg",
+      "resolvedUrl": "https://www.mosherdrew.com/wp-content/uploads/2024/02/Architects-Mosher-Drew-drawings-Page-012.jpg",
+      "bytes": 68592,
+      "contentType": "image/jpeg",
+      "acquiredAt": "2026-10-22T01:46:24.862Z",
+      "file": "local/indoor-sources/ECKRT-DESIGNER-012.jpg",
+      "downloadUrl": "https://www.mosherdrew.com/wp-content/uploads/2024/02/Architects-Mosher-Drew-drawings-Page-012.jpg",
+      "sha256": "77c22b3c37adc635898068502ecece9e1e14db8bf1a64f6a777ac946ba5c90ea",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/additional-sources.json",
+      "geometryReviewed": true,
+      "imageSize": [
+        1920,
+        1080
+      ],
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "reviewedGeometry": "Site plan, not room boundary evidence."
+          }
+        ],
+        "fullDocumentModeled": false,
+        "evidencePaths": [
+          "data/indoor/ECKRT/source-review.json"
+        ],
+        "limitations": [
+          "No target classroom geometry is imported from this file; newer public FIS vectors, if present, are documented separately."
+        ]
+      }
+    },
+    {
+      "id": "CALIT-QI-EVENT-DIAGRAM",
+      "file": "local/indoor-sources/CALIT-EVENT-DIAGRAM.jpg",
+      "sourceUrl": "https://sites.google.com/sitesv-images-rt/AMxu72ufE_uE-ZgcVfC2IaekPRM9118nxvgeBftSfHEqJ68iIVUcRskF7I0gP5DDCj7u-qJJP_tESRX9WGJZQImXaoRVvIIk0A2DUEyHN409w19M7SFhKvQRXMcEi4RzhpYXQJlYia1oVZXWkmx8CYNyt4Ubq3siVKEzIL2EmKhq5wnDWKzaaSMxJ4S6RNgGJhG_ncQ32ihgsmKqRI1cCKtRMRx3A7_XaO8YKaaEsIkz=w1280",
+      "downloadUrl": "https://sites.google.com/sitesv-images-rt/AMxu72ufE_uE-ZgcVfC2IaekPRM9118nxvgeBftSfHEqJ68iIVUcRskF7I0gP5DDCj7u-qJJP_tESRX9WGJZQImXaoRVvIIk0A2DUEyHN409w19M7SFhKvQRXMcEi4RzhpYXQJlYia1oVZXWkmx8CYNyt4Ubq3siVKEzIL2EmKhq5wnDWKzaaSMxJ4S6RNgGJhG_ncQ32ihgsmKqRI1cCKtRMRx3A7_XaO8YKaaEsIkz=w1280",
+      "acquiredAt": "2026-10-22T01:57:22.887Z",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/acquisition-index.json",
+      "bytes": 249610,
+      "sha256": "41632e5bb5c807a5acedcd4b719a30c92c44c7b42b1724c863cf315722a15712",
+      "geometryReviewed": true,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "reviewedGeometry": "Lower fixed-tier auditorium enclosure only; 1511 identity comes from separate historical SEAW page 7. Single-room area scale is imposed, not independent validation."
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/CALIT/auditorium-review.json"
+        ],
+        "fullDocumentModeled": false,
+        "runtimeLayout": "static/indoor/CALIT-combined.json"
+      },
+      "contentType": "image/jpeg",
+      "imageSize": [
+        1169,
+        1321
+      ],
+      "discoveryUrl": "https://sites.google.com/ucsd.edu/qi-events/facility/space-diagram"
+    },
+    {
+      "id": "CALIT-SEAW-NOV-2006",
+      "file": "local/indoor-sources/CALIT-SEAW-NOV-2006.pdf",
+      "sourceUrl": "https://static1.squarespace.com/static/5c3faa364eddecdc367bedc5/t/5ca25c04104c7b955977e897/1554144265417/Nov%2B06.pdf",
+      "downloadUrl": "https://static1.squarespace.com/static/5c3faa364eddecdc367bedc5/t/5ca25c04104c7b955977e897/1554144265417/Nov%2B06.pdf",
+      "acquiredAt": "2026-10-22T02:03:17.085Z",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/acquisition-index.json",
+      "bytes": 1728877,
+      "sha256": "774501ad90f518548721e3c30132b418bda7da42e353c0cb3dd6af0bd2f5595c",
+      "geometryReviewed": true,
+      "geometryReview": {
+        "status": "reviewed-identity-evidence-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "reviewedGeometry": "PDF page 7 identifies Main Auditorium as room 1511. Historical November 2006 identity evidence; no room geometry comes from this newsletter.",
+            "page": 7
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/CALIT/room-identity-review.json"
+        ],
+        "fullDocumentModeled": false
+      },
+      "contentType": "application/pdf",
+      "pages": 12
+    },
+    {
+      "id": "PACIF-CHEM-EAP-2023",
+      "file": "local/indoor-sources/PACIF-CHEM-EAP-2023.pdf",
+      "sourceUrl": "https://chemistry.ucsd.edu/sites/default/files/inline-files/safety/PacHall_EAP_2023.pdf",
+      "downloadUrl": "https://chemistry.ucsd.edu/sites/default/files/inline-files/safety/PacHall_EAP_2023.pdf",
+      "acquiredAt": "2026-10-22T02:00:02.970Z",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/acquisition-index.json",
+      "bytes": 272815,
+      "sha256": "f071b31cb00ed62c33e83937fb7d15b4ae9dd1c4fd8698e91fcf73818a9b39dc",
+      "geometryReviewed": true,
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "reviewedGeometry": "Pages 1–5 text; page 6 outdoor assembly map. No indoor room boundaries."
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/PACIF/new-source-review.json"
+        ],
+        "fullDocumentModeled": false
+      },
+      "contentType": "application/pdf",
+      "pages": 6
+    },
+    {
+      "id": "DANCE-ARCHITECTURE-1998-08",
+      "file": "local/indoor-sources/DANCE-ARCHITECTURE-1998-08.pdf",
+      "sourceUrl": "https://www.usmodernist.org/AJ/A-1998-08.pdf",
+      "downloadUrl": "https://www.usmodernist.org/AJ/A-1998-08.pdf",
+      "acquiredAt": "2026-10-22T02:00:55.235Z",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/acquisition-index.json",
+      "bytes": 59489213,
+      "sha256": "c5ec54b975bc737ec9e123194f21d857ddc49fa124bd7dd202a8b061ac6857ac",
+      "geometryReviewed": true,
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "reviewedGeometry": "Dance article PDF pages 52–56 (printed 62–66) includes a roof/site plan on page 54 and sections on page 56. No numbered classroom floor plan; remainder of 106-page issue not reviewed."
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/DANCE/new-source-review.json"
+        ],
+        "fullDocumentModeled": false
+      },
+      "contentType": "application/pdf",
+      "pages": 106
+    },
+    {
+      "id": "SERF-AA-SPACE-POLICY",
+      "file": "local/indoor-sources/SERF-AA-SPACE-POLICY.pdf",
+      "sourceUrl": "https://astro.ucsd.edu/about/policies-procedures/AA-Space-Policy.pdf",
+      "downloadUrl": "https://astro.ucsd.edu/about/policies-procedures/AA-Space-Policy.pdf",
+      "acquiredAt": "2026-10-22T02:01:17.540Z",
+      "status": "downloaded",
+      "catalog": "data/indoor/research/acquisition-index.json",
+      "bytes": 164455,
+      "sha256": "291cd136ed7385906ab582e375338e73de117fbb58896e5eabe09901ec1c9cad",
+      "geometryReviewed": true,
+      "geometryReview": {
+        "status": "reviewed-links-no-plan-acquired",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "reviewedGeometry": "PDF page 3 explicitly links third/fourth floor plans on Google Drive. The policy itself has no embedded floor plan. User reports UCSD account cannot open target; no floor plan acquired.",
+            "page": 3
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/SERF/second-pass-review.json"
+        ],
+        "fullDocumentModeled": false
+      },
+      "contentType": "application/pdf",
+      "pages": 13
+    },
+    {
+      "id": "SERF-BE-EAP-2014",
+      "file": "local/indoor-sources/SERF-BE-EAP-2014.pdf",
+      "sourceUrl": "https://be.ucsd.edu/sites/default/files/uploads/BeEmerActPlanSERF2014.pdf",
+      "downloadUrl": "https://be.ucsd.edu/sites/default/files/uploads/BeEmerActPlanSERF2014.pdf",
+      "acquiredAt": "2026-10-22T02:30:07.060Z",
+      "status": "downloaded",
+      "contentType": "application/pdf",
+      "pages": 8,
+      "bytes": 575692,
+      "sha256": "1d6fbbfc2885c01ebf0511009bc6728ee1b29475ad452dce3c4444ef73126175",
+      "geometryReviewed": true,
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "evidencePaths": [
+          "data/indoor/SERF/second-pass-review.json"
+        ],
+        "fullDocumentModeled": false,
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "reviewedGeometry": "All 8 pages rendered and visually inspected: page 5 outdoor Matthews Quad assembly map; page 6 University Center emergency/fire-zone map; page 8 contact/emergency card. No indoor numbered room boundaries; no geometry added."
+          }
+        ]
+      }
+    },
+    {
+      "id": "SDSC-EAP-2025-PUBLIC",
+      "file": "local/indoor-sources/SDSC-EAP-PUBLIC.pdf",
+      "sourceUrl": "https://business.sdsc.edu/assets/documents/sdsc_emergency_plan.pdf",
+      "downloadUrl": "https://business.sdsc.edu/assets/documents/sdsc_emergency_plan.pdf",
+      "acquiredAt": "2026-10-22T02:39:54.533Z",
+      "status": "downloaded",
+      "contentType": "application/pdf",
+      "pages": 26,
+      "revision": "Updated 9/2025, stated on cover; PDF metadata creation in April 2026 is not used as revision date.",
+      "bytes": 2442104,
+      "sha256": "ad45146e2af19436a2bb9bc3dd4c76fc1ed8b1361d73fcb4762b78caf0c719ca",
+      "geometryReviewed": true,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "floor": "EAST-L1",
+            "page": 24,
+            "roomLabels": [
+              "E129"
+            ],
+            "integratedRoomLabels": [
+              "E129"
+            ],
+            "reviewedGeometry": "Single E129 room boundary, independently checked against the original and overlay. The layout outline is the room extent only, not the full floor. Relative units with unknown scale, north and campus registration.",
+            "floorSilhouetteIntegrated": false
+          },
+          {
+            "floor": "EAST-B1",
+            "page": 23,
+            "roomLabels": [
+              "EB129"
+            ],
+            "integratedRoomLabels": [],
+            "reviewedGeometry": "Room identity cross-check only: EB129 is distinct from E129 on E1."
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/SDSC/east-e129-trace.json",
+          "data/indoor/SDSC/east-e129-review.json",
+          "data/indoor/SDSC/new-source-review.json"
+        ],
+        "fullDocumentModeled": false
+      }
+    }
+  ],
+  "geometryReviewNote": "geometryReviewed=true means the documented scope was visually checked, not that the entire PDF was modeled. Read geometryReview.status, scope, evidencePaths and fullDocumentModeled; conflict reviews may have no runtime integration.",
+  "geometryReviewSummary": {
+    "partiallyReviewedIntegratedSources": 13,
+    "note": "Source-document review counts only. Public FIS raster/vector acquisitions have separate catalogs. Use coverage-current.json and active-term-coverage.json for actual classroom coverage; downloaded files are not completed buildings.",
+    "identityEvidenceIntegratedSources": 1
+  },
+  "totals": {
+    "downloadedFiles": 66,
+    "pdfFiles": 49,
+    "pdfPages": 912,
+    "imageFiles": 17,
+    "bytes": 170501383
+  },
+  "lastUpdatedAt": "2026-10-22",
+  "auxiliaryPhotoIndex": "data/indoor/research/auxiliary-image-index.json"
+}

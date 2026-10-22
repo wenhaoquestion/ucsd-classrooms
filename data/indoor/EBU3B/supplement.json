@@ -1,0 +1,1242 @@
+{
+  "schemaVersion": 1,
+  "building": "EBU3B",
+  "output": "static/indoor/EBU3B-combined.json",
+  "inputHashes": {
+    "static/indoor/EBU3B.json": "634cdbc2bbd0eb5303a57d22888b5190656b1f9bd0693e5181b7afd34b51ef1b",
+    "static/indoor/facilities/EBU3B.json": "a1b811a6d3a288f9323e1265e81561fb5a446615e210be9f664be0f6c8b86907"
+  },
+  "sourceGeo": {
+    "origin": [
+      10.75,
+      -190.11
+    ],
+    "rotationDeg": 50,
+    "unitsPerMeter": 0.8931,
+    "groundElevation": 107.8,
+    "caans": [
+      "6548"
+    ],
+    "note": "Fitted to the campus-map footprint (Level 2 outline, overlap 0.83): about 1.12 m per unit. The fit puts north about 50 degrees from page-up, not the 29.5 degrees of the maps' compass rose, so the rose looks inaccurate."
+  },
+  "targetGeo": {
+    "origin": [
+      27.45,
+      -189.3
+    ],
+    "rotationDeg": 0,
+    "unitsPerMeter": 1,
+    "groundElevation": 107.8,
+    "caans": [
+      "6548"
+    ],
+    "note": "Scaled from official room areas (1.33 ft per drawing pixel); rotated 312.0 deg and fitted to the campus-map footprint on Level 2 (overlap 0.61)."
+  },
+  "formula": "targetLocal = targetScale * R(targetAngle) * (sourceOrigin + R(-sourceAngle) * sourceLocal / sourceScale - targetOrigin)",
+  "sourceHasSurveyedScale": false,
+  "positionAndDimensionConfidence": "approximate",
+  "supplementedFloors": [
+    "B",
+    "L1"
+  ],
+  "addedRoomPolygons": 65,
+  "recoveredScheduleKeys": [
+    "1202",
+    "B240",
+    "B250",
+    "B260",
+    "B270"
+  ],
+  "remainingFloorOnlyKeys": [
+    "1113",
+    "1117",
+    "1124"
+  ],
+  "crossCheck": {
+    "matchedUpperFloorRoomLabels": 235,
+    "medianCentroidDifferenceMeters": 1.7093,
+    "maxCentroidDifferenceMeters": 3.5157,
+    "comparisons": [
+      {
+        "floor": "L2",
+        "label": "2102",
+        "centroidDifferenceMeters": 1.0638
+      },
+      {
+        "floor": "L2",
+        "label": "2104",
+        "centroidDifferenceMeters": 1.1206
+      },
+      {
+        "floor": "L2",
+        "label": "2106",
+        "centroidDifferenceMeters": 1.2443
+      },
+      {
+        "floor": "L2",
+        "label": "2108",
+        "centroidDifferenceMeters": 1.3013
+      },
+      {
+        "floor": "L2",
+        "label": "2109",
+        "centroidDifferenceMeters": 1.8482
+      },
+      {
+        "floor": "L2",
+        "label": "2110",
+        "centroidDifferenceMeters": 1.5351
+      },
+      {
+        "floor": "L2",
+        "label": "2112",
+        "centroidDifferenceMeters": 1.5341
+      },
+      {
+        "floor": "L2",
+        "label": "2114",
+        "centroidDifferenceMeters": 1.7616
+      },
+      {
+        "floor": "L2",
+        "label": "2115",
+        "centroidDifferenceMeters": 2.3042
+      },
+      {
+        "floor": "L2",
+        "label": "2116",
+        "centroidDifferenceMeters": 1.9173
+      },
+      {
+        "floor": "L2",
+        "label": "2118",
+        "centroidDifferenceMeters": 2.0816
+      },
+      {
+        "floor": "L2",
+        "label": "2120",
+        "centroidDifferenceMeters": 2.298
+      },
+      {
+        "floor": "L2",
+        "label": "2122",
+        "centroidDifferenceMeters": 2.4387
+      },
+      {
+        "floor": "L2",
+        "label": "2123",
+        "centroidDifferenceMeters": 2.1049
+      },
+      {
+        "floor": "L2",
+        "label": "2124",
+        "centroidDifferenceMeters": 2.5985
+      },
+      {
+        "floor": "L2",
+        "label": "2126",
+        "centroidDifferenceMeters": 2.7957
+      },
+      {
+        "floor": "L2",
+        "label": "2127",
+        "centroidDifferenceMeters": 0.8947
+      },
+      {
+        "floor": "L2",
+        "label": "2128",
+        "centroidDifferenceMeters": 2.8168
+      },
+      {
+        "floor": "L2",
+        "label": "2129",
+        "centroidDifferenceMeters": 0.776
+      },
+      {
+        "floor": "L2",
+        "label": "2130",
+        "centroidDifferenceMeters": 3.0208
+      },
+      {
+        "floor": "L2",
+        "label": "2131",
+        "centroidDifferenceMeters": 0.5605
+      },
+      {
+        "floor": "L2",
+        "label": "2132",
+        "centroidDifferenceMeters": 3.0267
+      },
+      {
+        "floor": "L2",
+        "label": "2134",
+        "centroidDifferenceMeters": 3.1846
+      },
+      {
+        "floor": "L2",
+        "label": "2136",
+        "centroidDifferenceMeters": 3.0843
+      },
+      {
+        "floor": "L2",
+        "label": "2138",
+        "centroidDifferenceMeters": 3.3829
+      },
+      {
+        "floor": "L2",
+        "label": "2140",
+        "centroidDifferenceMeters": 3.016
+      },
+      {
+        "floor": "L2",
+        "label": "2142",
+        "centroidDifferenceMeters": 2.2832
+      },
+      {
+        "floor": "L2",
+        "label": "2144",
+        "centroidDifferenceMeters": 1.9706
+      },
+      {
+        "floor": "L2",
+        "label": "2146",
+        "centroidDifferenceMeters": 1.6069
+      },
+      {
+        "floor": "L2",
+        "label": "2148",
+        "centroidDifferenceMeters": 1.3002
+      },
+      {
+        "floor": "L2",
+        "label": "2150",
+        "centroidDifferenceMeters": 0.8423
+      },
+      {
+        "floor": "L2",
+        "label": "2154",
+        "centroidDifferenceMeters": 0.6123
+      },
+      {
+        "floor": "L2",
+        "label": "2202",
+        "centroidDifferenceMeters": 0.8701
+      },
+      {
+        "floor": "L2",
+        "label": "2203",
+        "centroidDifferenceMeters": 0.6471
+      },
+      {
+        "floor": "L2",
+        "label": "2204",
+        "centroidDifferenceMeters": 1.072
+      },
+      {
+        "floor": "L2",
+        "label": "2206",
+        "centroidDifferenceMeters": 1.429
+      },
+      {
+        "floor": "L2",
+        "label": "2207",
+        "centroidDifferenceMeters": 1.1932
+      },
+      {
+        "floor": "L2",
+        "label": "2208",
+        "centroidDifferenceMeters": 1.6015
+      },
+      {
+        "floor": "L2",
+        "label": "2209",
+        "centroidDifferenceMeters": 1.3392
+      },
+      {
+        "floor": "L2",
+        "label": "2210",
+        "centroidDifferenceMeters": 1.7641
+      },
+      {
+        "floor": "L2",
+        "label": "2211",
+        "centroidDifferenceMeters": 1.9713
+      },
+      {
+        "floor": "L2",
+        "label": "2212",
+        "centroidDifferenceMeters": 1.8939
+      },
+      {
+        "floor": "L2",
+        "label": "2214",
+        "centroidDifferenceMeters": 2.066
+      },
+      {
+        "floor": "L2",
+        "label": "2215",
+        "centroidDifferenceMeters": 3.5157
+      },
+      {
+        "floor": "L2",
+        "label": "2216",
+        "centroidDifferenceMeters": 2.2108
+      },
+      {
+        "floor": "L2",
+        "label": "2217",
+        "centroidDifferenceMeters": 2.5822
+      },
+      {
+        "floor": "L2",
+        "label": "2218",
+        "centroidDifferenceMeters": 2.4215
+      },
+      {
+        "floor": "L2",
+        "label": "2219",
+        "centroidDifferenceMeters": 2.1929
+      },
+      {
+        "floor": "L2",
+        "label": "2220",
+        "centroidDifferenceMeters": 2.6039
+      },
+      {
+        "floor": "L2",
+        "label": "2221",
+        "centroidDifferenceMeters": 2.0428
+      },
+      {
+        "floor": "L2",
+        "label": "2222",
+        "centroidDifferenceMeters": 2.7751
+      },
+      {
+        "floor": "L2",
+        "label": "2224",
+        "centroidDifferenceMeters": 3.0365
+      },
+      {
+        "floor": "L2",
+        "label": "2225",
+        "centroidDifferenceMeters": 1.7714
+      },
+      {
+        "floor": "L2",
+        "label": "2226",
+        "centroidDifferenceMeters": 3.172
+      },
+      {
+        "floor": "L2",
+        "label": "2227",
+        "centroidDifferenceMeters": 1.4564
+      },
+      {
+        "floor": "L2",
+        "label": "2228",
+        "centroidDifferenceMeters": 3.3367
+      },
+      {
+        "floor": "L2",
+        "label": "2229A",
+        "centroidDifferenceMeters": 1.3176
+      },
+      {
+        "floor": "L2",
+        "label": "2229B",
+        "centroidDifferenceMeters": 1.1959
+      },
+      {
+        "floor": "L2",
+        "label": "2231",
+        "centroidDifferenceMeters": 0.8632
+      },
+      {
+        "floor": "L2",
+        "label": "2232",
+        "centroidDifferenceMeters": 3.0194
+      },
+      {
+        "floor": "L2",
+        "label": "2233",
+        "centroidDifferenceMeters": 1.1865
+      },
+      {
+        "floor": "L2",
+        "label": "2234",
+        "centroidDifferenceMeters": 2.8436
+      },
+      {
+        "floor": "L2",
+        "label": "2236",
+        "centroidDifferenceMeters": 2.5805
+      },
+      {
+        "floor": "L2",
+        "label": "2237",
+        "centroidDifferenceMeters": 0.9499
+      },
+      {
+        "floor": "L2",
+        "label": "2238",
+        "centroidDifferenceMeters": 2.3867
+      },
+      {
+        "floor": "L2",
+        "label": "2240",
+        "centroidDifferenceMeters": 2.1054
+      },
+      {
+        "floor": "L2",
+        "label": "2242",
+        "centroidDifferenceMeters": 2.346
+      },
+      {
+        "floor": "L2",
+        "label": "2244",
+        "centroidDifferenceMeters": 2.312
+      },
+      {
+        "floor": "L2",
+        "label": "2246",
+        "centroidDifferenceMeters": 2.1449
+      },
+      {
+        "floor": "L2",
+        "label": "2248",
+        "centroidDifferenceMeters": 1.931
+      },
+      {
+        "floor": "L2",
+        "label": "2250",
+        "centroidDifferenceMeters": 1.7663
+      },
+      {
+        "floor": "L2",
+        "label": "2252",
+        "centroidDifferenceMeters": 1.6198
+      },
+      {
+        "floor": "L2",
+        "label": "2254",
+        "centroidDifferenceMeters": 1.4673
+      },
+      {
+        "floor": "L2",
+        "label": "2256",
+        "centroidDifferenceMeters": 1.3321
+      },
+      {
+        "floor": "L2",
+        "label": "2258",
+        "centroidDifferenceMeters": 1.2841
+      },
+      {
+        "floor": "L2",
+        "label": "2260",
+        "centroidDifferenceMeters": 1.3405
+      },
+      {
+        "floor": "L2",
+        "label": "2262",
+        "centroidDifferenceMeters": 1.3556
+      },
+      {
+        "floor": "L2",
+        "label": "2264",
+        "centroidDifferenceMeters": 1.065
+      },
+      {
+        "floor": "L2",
+        "label": "2266",
+        "centroidDifferenceMeters": 1.0743
+      },
+      {
+        "floor": "L2",
+        "label": "2268",
+        "centroidDifferenceMeters": 1.0794
+      },
+      {
+        "floor": "L2",
+        "label": "2270",
+        "centroidDifferenceMeters": 0.7856
+      },
+      {
+        "floor": "L2",
+        "label": "2272",
+        "centroidDifferenceMeters": 0.6514
+      },
+      {
+        "floor": "L2",
+        "label": "2274",
+        "centroidDifferenceMeters": 0.5622
+      },
+      {
+        "floor": "L3",
+        "label": "3102",
+        "centroidDifferenceMeters": 0.9598
+      },
+      {
+        "floor": "L3",
+        "label": "3104",
+        "centroidDifferenceMeters": 0.8333
+      },
+      {
+        "floor": "L3",
+        "label": "3106",
+        "centroidDifferenceMeters": 0.6927
+      },
+      {
+        "floor": "L3",
+        "label": "3108",
+        "centroidDifferenceMeters": 0.622
+      },
+      {
+        "floor": "L3",
+        "label": "3109",
+        "centroidDifferenceMeters": 1.0587
+      },
+      {
+        "floor": "L3",
+        "label": "3110",
+        "centroidDifferenceMeters": 0.5218
+      },
+      {
+        "floor": "L3",
+        "label": "3111",
+        "centroidDifferenceMeters": 0.8721
+      },
+      {
+        "floor": "L3",
+        "label": "3112",
+        "centroidDifferenceMeters": 0.6064
+      },
+      {
+        "floor": "L3",
+        "label": "3113",
+        "centroidDifferenceMeters": 1.0921
+      },
+      {
+        "floor": "L3",
+        "label": "3114",
+        "centroidDifferenceMeters": 0.5676
+      },
+      {
+        "floor": "L3",
+        "label": "3115",
+        "centroidDifferenceMeters": 1.6215
+      },
+      {
+        "floor": "L3",
+        "label": "3116",
+        "centroidDifferenceMeters": 0.5794
+      },
+      {
+        "floor": "L3",
+        "label": "3118",
+        "centroidDifferenceMeters": 0.7498
+      },
+      {
+        "floor": "L3",
+        "label": "3120",
+        "centroidDifferenceMeters": 0.8932
+      },
+      {
+        "floor": "L3",
+        "label": "3121",
+        "centroidDifferenceMeters": 1.3571
+      },
+      {
+        "floor": "L3",
+        "label": "3122",
+        "centroidDifferenceMeters": 0.8665
+      },
+      {
+        "floor": "L3",
+        "label": "3123",
+        "centroidDifferenceMeters": 1.217
+      },
+      {
+        "floor": "L3",
+        "label": "3124",
+        "centroidDifferenceMeters": 1.0994
+      },
+      {
+        "floor": "L3",
+        "label": "3125",
+        "centroidDifferenceMeters": 1.1911
+      },
+      {
+        "floor": "L3",
+        "label": "3126",
+        "centroidDifferenceMeters": 1.2841
+      },
+      {
+        "floor": "L3",
+        "label": "3127",
+        "centroidDifferenceMeters": 1.1569
+      },
+      {
+        "floor": "L3",
+        "label": "3128",
+        "centroidDifferenceMeters": 1.4437
+      },
+      {
+        "floor": "L3",
+        "label": "3129",
+        "centroidDifferenceMeters": 1.414
+      },
+      {
+        "floor": "L3",
+        "label": "3130",
+        "centroidDifferenceMeters": 1.6196
+      },
+      {
+        "floor": "L3",
+        "label": "3131",
+        "centroidDifferenceMeters": 1.6185
+      },
+      {
+        "floor": "L3",
+        "label": "3132",
+        "centroidDifferenceMeters": 1.7606
+      },
+      {
+        "floor": "L3",
+        "label": "3134",
+        "centroidDifferenceMeters": 1.9835
+      },
+      {
+        "floor": "L3",
+        "label": "3136",
+        "centroidDifferenceMeters": 2.0502
+      },
+      {
+        "floor": "L3",
+        "label": "3138",
+        "centroidDifferenceMeters": 2.2453
+      },
+      {
+        "floor": "L3",
+        "label": "3140",
+        "centroidDifferenceMeters": 2.0176
+      },
+      {
+        "floor": "L3",
+        "label": "3142",
+        "centroidDifferenceMeters": 1.7325
+      },
+      {
+        "floor": "L3",
+        "label": "3144",
+        "centroidDifferenceMeters": 1.5707
+      },
+      {
+        "floor": "L3",
+        "label": "3146",
+        "centroidDifferenceMeters": 1.4922
+      },
+      {
+        "floor": "L3",
+        "label": "3148",
+        "centroidDifferenceMeters": 1.5129
+      },
+      {
+        "floor": "L3",
+        "label": "3150",
+        "centroidDifferenceMeters": 1.6011
+      },
+      {
+        "floor": "L3",
+        "label": "3152",
+        "centroidDifferenceMeters": 1.7897
+      },
+      {
+        "floor": "L3",
+        "label": "3154",
+        "centroidDifferenceMeters": 1.9474
+      },
+      {
+        "floor": "L3",
+        "label": "3202",
+        "centroidDifferenceMeters": 1.6391
+      },
+      {
+        "floor": "L3",
+        "label": "3203",
+        "centroidDifferenceMeters": 2.2971
+      },
+      {
+        "floor": "L3",
+        "label": "3204",
+        "centroidDifferenceMeters": 1.6026
+      },
+      {
+        "floor": "L3",
+        "label": "3205",
+        "centroidDifferenceMeters": 1.8355
+      },
+      {
+        "floor": "L3",
+        "label": "3206",
+        "centroidDifferenceMeters": 1.4785
+      },
+      {
+        "floor": "L3",
+        "label": "3207",
+        "centroidDifferenceMeters": 1.7846
+      },
+      {
+        "floor": "L3",
+        "label": "3208",
+        "centroidDifferenceMeters": 1.5263
+      },
+      {
+        "floor": "L3",
+        "label": "3210",
+        "centroidDifferenceMeters": 1.5109
+      },
+      {
+        "floor": "L3",
+        "label": "3212",
+        "centroidDifferenceMeters": 1.6006
+      },
+      {
+        "floor": "L3",
+        "label": "3214",
+        "centroidDifferenceMeters": 1.6982
+      },
+      {
+        "floor": "L3",
+        "label": "3215",
+        "centroidDifferenceMeters": 2.433
+      },
+      {
+        "floor": "L3",
+        "label": "3216",
+        "centroidDifferenceMeters": 1.6897
+      },
+      {
+        "floor": "L3",
+        "label": "3217",
+        "centroidDifferenceMeters": 2.0736
+      },
+      {
+        "floor": "L3",
+        "label": "3218",
+        "centroidDifferenceMeters": 1.8355
+      },
+      {
+        "floor": "L3",
+        "label": "3219",
+        "centroidDifferenceMeters": 1.5825
+      },
+      {
+        "floor": "L3",
+        "label": "3220",
+        "centroidDifferenceMeters": 1.9046
+      },
+      {
+        "floor": "L3",
+        "label": "3222",
+        "centroidDifferenceMeters": 1.9985
+      },
+      {
+        "floor": "L3",
+        "label": "3224",
+        "centroidDifferenceMeters": 2.1555
+      },
+      {
+        "floor": "L3",
+        "label": "3225",
+        "centroidDifferenceMeters": 1.9914
+      },
+      {
+        "floor": "L3",
+        "label": "3226",
+        "centroidDifferenceMeters": 2.2747
+      },
+      {
+        "floor": "L3",
+        "label": "3228",
+        "centroidDifferenceMeters": 2.3629
+      },
+      {
+        "floor": "L3",
+        "label": "3230",
+        "centroidDifferenceMeters": 3.1353
+      },
+      {
+        "floor": "L3",
+        "label": "3232",
+        "centroidDifferenceMeters": 2.8727
+      },
+      {
+        "floor": "L3",
+        "label": "3234",
+        "centroidDifferenceMeters": 2.7292
+      },
+      {
+        "floor": "L3",
+        "label": "3236",
+        "centroidDifferenceMeters": 2.6172
+      },
+      {
+        "floor": "L3",
+        "label": "3238",
+        "centroidDifferenceMeters": 2.4964
+      },
+      {
+        "floor": "L3",
+        "label": "3240",
+        "centroidDifferenceMeters": 2.4951
+      },
+      {
+        "floor": "L3",
+        "label": "3242",
+        "centroidDifferenceMeters": 2.3986
+      },
+      {
+        "floor": "L3",
+        "label": "3244",
+        "centroidDifferenceMeters": 2.2781
+      },
+      {
+        "floor": "L3",
+        "label": "3246",
+        "centroidDifferenceMeters": 2.2561
+      },
+      {
+        "floor": "L3",
+        "label": "3248",
+        "centroidDifferenceMeters": 2.3044
+      },
+      {
+        "floor": "L3",
+        "label": "3250",
+        "centroidDifferenceMeters": 2.3643
+      },
+      {
+        "floor": "L3",
+        "label": "3252",
+        "centroidDifferenceMeters": 2.3561
+      },
+      {
+        "floor": "L3",
+        "label": "3254",
+        "centroidDifferenceMeters": 2.6643
+      },
+      {
+        "floor": "L3",
+        "label": "3256",
+        "centroidDifferenceMeters": 2.7833
+      },
+      {
+        "floor": "L3",
+        "label": "3258",
+        "centroidDifferenceMeters": 2.8925
+      },
+      {
+        "floor": "L3",
+        "label": "3260",
+        "centroidDifferenceMeters": 2.7024
+      },
+      {
+        "floor": "L3",
+        "label": "3262",
+        "centroidDifferenceMeters": 2.493
+      },
+      {
+        "floor": "L4",
+        "label": "4102",
+        "centroidDifferenceMeters": 0.6903
+      },
+      {
+        "floor": "L4",
+        "label": "4104",
+        "centroidDifferenceMeters": 0.5849
+      },
+      {
+        "floor": "L4",
+        "label": "4106",
+        "centroidDifferenceMeters": 0.3701
+      },
+      {
+        "floor": "L4",
+        "label": "4108",
+        "centroidDifferenceMeters": 0.268
+      },
+      {
+        "floor": "L4",
+        "label": "4109",
+        "centroidDifferenceMeters": 0.6477
+      },
+      {
+        "floor": "L4",
+        "label": "4110",
+        "centroidDifferenceMeters": 0.0902
+      },
+      {
+        "floor": "L4",
+        "label": "4111",
+        "centroidDifferenceMeters": 0.5018
+      },
+      {
+        "floor": "L4",
+        "label": "4112",
+        "centroidDifferenceMeters": 0.0927
+      },
+      {
+        "floor": "L4",
+        "label": "4113",
+        "centroidDifferenceMeters": 0.7662
+      },
+      {
+        "floor": "L4",
+        "label": "4114",
+        "centroidDifferenceMeters": 0.2826
+      },
+      {
+        "floor": "L4",
+        "label": "4115",
+        "centroidDifferenceMeters": 1.2371
+      },
+      {
+        "floor": "L4",
+        "label": "4116",
+        "centroidDifferenceMeters": 0.4183
+      },
+      {
+        "floor": "L4",
+        "label": "4118",
+        "centroidDifferenceMeters": 0.5984
+      },
+      {
+        "floor": "L4",
+        "label": "4120",
+        "centroidDifferenceMeters": 0.8022
+      },
+      {
+        "floor": "L4",
+        "label": "4121",
+        "centroidDifferenceMeters": 1.0882
+      },
+      {
+        "floor": "L4",
+        "label": "4122",
+        "centroidDifferenceMeters": 0.9326
+      },
+      {
+        "floor": "L4",
+        "label": "4123",
+        "centroidDifferenceMeters": 0.9902
+      },
+      {
+        "floor": "L4",
+        "label": "4124",
+        "centroidDifferenceMeters": 1.1797
+      },
+      {
+        "floor": "L4",
+        "label": "4125",
+        "centroidDifferenceMeters": 0.8084
+      },
+      {
+        "floor": "L4",
+        "label": "4126",
+        "centroidDifferenceMeters": 1.3506
+      },
+      {
+        "floor": "L4",
+        "label": "4127",
+        "centroidDifferenceMeters": 0.6587
+      },
+      {
+        "floor": "L4",
+        "label": "4128",
+        "centroidDifferenceMeters": 1.451
+      },
+      {
+        "floor": "L4",
+        "label": "4129",
+        "centroidDifferenceMeters": 0.9247
+      },
+      {
+        "floor": "L4",
+        "label": "4130",
+        "centroidDifferenceMeters": 1.6554
+      },
+      {
+        "floor": "L4",
+        "label": "4131",
+        "centroidDifferenceMeters": 1.0612
+      },
+      {
+        "floor": "L4",
+        "label": "4132",
+        "centroidDifferenceMeters": 1.6869
+      },
+      {
+        "floor": "L4",
+        "label": "4134",
+        "centroidDifferenceMeters": 1.8704
+      },
+      {
+        "floor": "L4",
+        "label": "4136",
+        "centroidDifferenceMeters": 1.8705
+      },
+      {
+        "floor": "L4",
+        "label": "4138",
+        "centroidDifferenceMeters": 2.2071
+      },
+      {
+        "floor": "L4",
+        "label": "4140",
+        "centroidDifferenceMeters": 1.8871
+      },
+      {
+        "floor": "L4",
+        "label": "4142",
+        "centroidDifferenceMeters": 1.3473
+      },
+      {
+        "floor": "L4",
+        "label": "4144",
+        "centroidDifferenceMeters": 1.1829
+      },
+      {
+        "floor": "L4",
+        "label": "4146",
+        "centroidDifferenceMeters": 1.029
+      },
+      {
+        "floor": "L4",
+        "label": "4148",
+        "centroidDifferenceMeters": 0.9461
+      },
+      {
+        "floor": "L4",
+        "label": "4150",
+        "centroidDifferenceMeters": 1.0986
+      },
+      {
+        "floor": "L4",
+        "label": "4152",
+        "centroidDifferenceMeters": 1.0627
+      },
+      {
+        "floor": "L4",
+        "label": "4154",
+        "centroidDifferenceMeters": 1.4137
+      },
+      {
+        "floor": "L4",
+        "label": "4202",
+        "centroidDifferenceMeters": 1.4706
+      },
+      {
+        "floor": "L4",
+        "label": "4203",
+        "centroidDifferenceMeters": 1.9782
+      },
+      {
+        "floor": "L4",
+        "label": "4204",
+        "centroidDifferenceMeters": 1.4549
+      },
+      {
+        "floor": "L4",
+        "label": "4205",
+        "centroidDifferenceMeters": 1.6929
+      },
+      {
+        "floor": "L4",
+        "label": "4206",
+        "centroidDifferenceMeters": 1.4371
+      },
+      {
+        "floor": "L4",
+        "label": "4207",
+        "centroidDifferenceMeters": 1.7093
+      },
+      {
+        "floor": "L4",
+        "label": "4208",
+        "centroidDifferenceMeters": 1.5602
+      },
+      {
+        "floor": "L4",
+        "label": "4209",
+        "centroidDifferenceMeters": 1.9311
+      },
+      {
+        "floor": "L4",
+        "label": "4210",
+        "centroidDifferenceMeters": 1.6278
+      },
+      {
+        "floor": "L4",
+        "label": "4212",
+        "centroidDifferenceMeters": 1.7065
+      },
+      {
+        "floor": "L4",
+        "label": "4214",
+        "centroidDifferenceMeters": 1.842
+      },
+      {
+        "floor": "L4",
+        "label": "4215",
+        "centroidDifferenceMeters": 2.7897
+      },
+      {
+        "floor": "L4",
+        "label": "4216",
+        "centroidDifferenceMeters": 1.8704
+      },
+      {
+        "floor": "L4",
+        "label": "4217",
+        "centroidDifferenceMeters": 2.4217
+      },
+      {
+        "floor": "L4",
+        "label": "4218",
+        "centroidDifferenceMeters": 2.1141
+      },
+      {
+        "floor": "L4",
+        "label": "4219",
+        "centroidDifferenceMeters": 2.2196
+      },
+      {
+        "floor": "L4",
+        "label": "4220",
+        "centroidDifferenceMeters": 2.2056
+      },
+      {
+        "floor": "L4",
+        "label": "4221",
+        "centroidDifferenceMeters": 2.1013
+      },
+      {
+        "floor": "L4",
+        "label": "4222",
+        "centroidDifferenceMeters": 2.3489
+      },
+      {
+        "floor": "L4",
+        "label": "4223",
+        "centroidDifferenceMeters": 1.5235
+      },
+      {
+        "floor": "L4",
+        "label": "4224",
+        "centroidDifferenceMeters": 2.4953
+      },
+      {
+        "floor": "L4",
+        "label": "4225",
+        "centroidDifferenceMeters": 1.8727
+      },
+      {
+        "floor": "L4",
+        "label": "4226",
+        "centroidDifferenceMeters": 2.6557
+      },
+      {
+        "floor": "L4",
+        "label": "4228",
+        "centroidDifferenceMeters": 2.7259
+      },
+      {
+        "floor": "L4",
+        "label": "4230",
+        "centroidDifferenceMeters": 3.3794
+      },
+      {
+        "floor": "L4",
+        "label": "4232",
+        "centroidDifferenceMeters": 3.1076
+      },
+      {
+        "floor": "L4",
+        "label": "4234",
+        "centroidDifferenceMeters": 2.9789
+      },
+      {
+        "floor": "L4",
+        "label": "4236",
+        "centroidDifferenceMeters": 2.7888
+      },
+      {
+        "floor": "L4",
+        "label": "4238",
+        "centroidDifferenceMeters": 2.6472
+      },
+      {
+        "floor": "L4",
+        "label": "4240",
+        "centroidDifferenceMeters": 2.5856
+      },
+      {
+        "floor": "L4",
+        "label": "4242",
+        "centroidDifferenceMeters": 2.5014
+      },
+      {
+        "floor": "L4",
+        "label": "4244",
+        "centroidDifferenceMeters": 2.2541
+      },
+      {
+        "floor": "L4",
+        "label": "4246",
+        "centroidDifferenceMeters": 2.2434
+      },
+      {
+        "floor": "L4",
+        "label": "4248",
+        "centroidDifferenceMeters": 2.259
+      },
+      {
+        "floor": "L4",
+        "label": "4250",
+        "centroidDifferenceMeters": 2.2168
+      },
+      {
+        "floor": "L4",
+        "label": "4252",
+        "centroidDifferenceMeters": 2.1264
+      },
+      {
+        "floor": "L4",
+        "label": "4254",
+        "centroidDifferenceMeters": 2.3807
+      },
+      {
+        "floor": "L4",
+        "label": "4256",
+        "centroidDifferenceMeters": 2.5418
+      },
+      {
+        "floor": "L4",
+        "label": "4258",
+        "centroidDifferenceMeters": 2.3442
+      },
+      {
+        "floor": "L4",
+        "label": "4262",
+        "centroidDifferenceMeters": 2.2495
+      }
+    ]
+  },
+  "limitations": [
+    "The source map has no scale bar; metric scale and campus placement come from the pre-existing approximate footprint fit.",
+    "The shared-label comparison is a sanity check, not independent survey validation.",
+    "CSE renovation may have changed the first floor after the undated map."
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "building": "MCGIL",
+  "trace": "data/indoor/MCGIL/fis-trace.json",
+  "output": "static/indoor/MCGIL-combined.json",
+  "source": {
+    "id": "MCGIL-L2-FIS",
+    "localPath": "local/indoor-sources/MCGIL-L2-FIS.png",
+    "sha256": "8dc6e066bdf8991b54dc3cd031e88863adbf5e505844e06abd53a198cf17569a",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=349&fcode=2&zoom=1",
+    "accessed": "2026-10-21",
+    "acquiredAt": "2026-10-22T01:19:52.404Z",
+    "printedDate": "2022-08-31",
+    "title": "UCSD Facilities Information System - McGill Hall - Second Floor - Master Plan",
+    "size": [
+      7095,
+      5321
+    ]
+  },
+  "transform": {
+    "formula": "x=a*u-b*sign*v+tx; z=b*u+a*sign*v+tz",
+    "a": 0.012744902039184327,
+    "b": 0.0,
+    "sign": -1,
+    "tx": -39.52399740103959,
+    "tz": 49.37650039984006,
+    "metersPerPixel": 0.012744902039184327
+  },
+  "registrationChecks": {
+    "controls": [
+      {
+        "sourcePoint": [
+          1404,
+          2846
+        ],
+        "targetFloor": "L2",
+        "targetPart": 0,
+        "targetVertex": 22,
+        "targetPoint": [
+          -21.58,
+          13.19
+        ],
+        "transformedPoint": [
+          -21.63015493802479,
+          13.104509196321466
+        ],
+        "residualMeters": 0.09911707886067059
+      },
+      {
+        "sourcePoint": [
+          4825,
+          2846
+        ],
+        "targetFloor": "L2",
+        "targetPart": 0,
+        "targetVertex": 13,
+        "targetPoint": [
+          21.92,
+          13.19
+        ],
+        "transformedPoint": [
+          21.97015493802479,
+          13.104509196321466
+        ],
+        "residualMeters": 0.0991170788606688
+      },
+      {
+        "sourcePoint": [
+          4825,
+          4853
+        ],
+        "targetFloor": "L2",
+        "targetPart": 0,
+        "targetVertex": 8,
+        "targetPoint": [
+          21.92,
+          -12.56
+        ],
+        "transformedPoint": [
+          21.97015493802479,
+          -12.474509196321478
+        ],
+        "residualMeters": 0.0991170788606596
+      },
+      {
+        "sourcePoint": [
+          1404,
+          4853
+        ],
+        "targetFloor": "L2",
+        "targetPart": 0,
+        "targetVertex": 27,
+        "targetPoint": [
+          -21.58,
+          -12.56
+        ],
+        "transformedPoint": [
+          -21.63015493802479,
+          -12.474509196321478
+        ],
+        "residualMeters": 0.0991170788606614
+      }
+    ],
+    "holdouts": [
+      {
+        "sourcePoint": [
+          3617,
+          3108
+        ],
+        "targetFloor": "L2",
+        "targetPart": 0,
+        "targetVertex": 16,
+        "targetPoint": [
+          6.67,
+          9.69
+        ],
+        "transformedPoint": [
+          6.57431327469012,
+          9.765344862055173
+        ],
+        "residualMeters": 0.1217899734733594
+      },
+      {
+        "sourcePoint": [
+          3815,
+          3108
+        ],
+        "targetFloor": "L2",
+        "targetPart": 0,
+        "targetVertex": 15,
+        "targetPoint": [
+          8.92,
+          9.69
+        ],
+        "transformedPoint": [
+          9.097803878448616,
+          9.765344862055173
+        ],
+        "residualMeters": 0.19310895222511906
+      },
+      {
+        "sourcePoint": [
+          2414,
+          4580
+        ],
+        "targetFloor": "L2",
+        "targetPart": 0,
+        "targetVertex": 1,
+        "targetPoint": [
+          -8.58,
+          -9.31
+        ],
+        "transformedPoint": [
+          -8.757803878448623,
+          -8.995150939624153
+        ],
+        "residualMeters": 0.36158560537018974
+      }
+    ]
+  },
+  "registrationReferenceRaster": "MCGIL-L2-FIS",
+  "areaChecks": [
+    {
+      "scheduleKey": "2342",
+      "tracedSqft": 282.0568657402969,
+      "printedSqft": 286,
+      "relativeDifference": -0.01378718272623447,
+      "referenceAreaBasis": "Printed source label"
+    },
+    {
+      "scheduleKey": "2334",
+      "tracedSqft": 282.64083440642594,
+      "printedSqft": 286,
+      "relativeDifference": -0.011745334243265959,
+      "referenceAreaBasis": "Printed source label"
+    },
+    {
+      "scheduleKey": "2330",
+      "tracedSqft": 282.64083440642594,
+      "printedSqft": 286,
+      "relativeDifference": -0.011745334243265959,
+      "referenceAreaBasis": "Printed source label"
+    },
+    {
+      "scheduleKey": "2322",
+      "tracedSqft": 282.64083440642594,
+      "printedSqft": 286,
+      "relativeDifference": -0.011745334243265959,
+      "referenceAreaBasis": "Printed source label"
+    },
+    {
+      "scheduleKey": "2315",
+      "tracedSqft": 481.02408201817633,
+      "printedSqft": 480,
+      "relativeDifference": 0.0021335042045340646,
+      "referenceAreaBasis": "Printed source label"
+    }
+  ],
+  "recoveredScheduleKeys": [
+    "2342",
+    "2334",
+    "2330",
+    "2322",
+    "2315"
+  ],
+  "remainingUnplacedKeys": [
+    "2331",
+    "5326"
+  ],
+  "retainedFloorCount": 6,
+  "reviewOverlays": [
+    "local/indoor-sources/MCGIL-review/L2-FIS-review.png",
+    "local/indoor-sources/MCGIL-review/L2-FIS-registration.png"
+  ],
+  "limitations": [
+    "Five L2 rooms are traced from directly readable labels and walls in the 2022 public FIS drawing; 2331 remains unplaced because its number is not shown.",
+    "Small column and doorway details are simplified. Printed areas are an independent consistency check; geometry and placement remain approximate.",
+    "The inherited local frame is reflected relative to the north-up 2022 L2 plan. Existing floor geometry is retained and the new rooms are registered to that same frame, but campus placement and a reliable north angle are withheld until the original lower-floor orientation can be independently checked.",
+    "All existing rooms, floor outlines and levels are retained. The original L1-derived slab includes an inherited hole that is not verified for L2; the new rooms do not rely on that hole.",
+    "The displayed FIS source warns it may be out of date. A public L1 request returned a login response, so no unsupported whole-building correction was made."
+  ]
+}

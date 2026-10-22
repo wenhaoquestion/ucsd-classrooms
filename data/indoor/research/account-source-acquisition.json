@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "scope": "Only the task-relevant building-plan attachment is retained locally. Mail bodies, other attachments, addresses, message identifiers and temporary authenticated URLs are omitted.",
+  "sources": [
+    {
+      "id": "SDSC-EAP-2024-ACCOUNT-COPY",
+      "title": "San Diego Supercomputer Center Emergency Action Plan",
+      "revision": "Updated May 2024",
+      "file": "local/indoor-sources/private/SDSC-EAP-2024.pdf",
+      "access": "Connected user account attachment; no public download URL established",
+      "acquiredAt": "2026-10-22T02:36:16.488Z",
+      "bytes": 1635253,
+      "sha256": "58671dd8353a12ead42aa8544d498ebad14b8efa521cf762d953b11002167acf",
+      "pages": 24,
+      "originalIsGitIgnored": true,
+      "documentNotServedByWebsite": true,
+      "review": "data/indoor/SDSC/new-source-review.json",
+      "geometryReviewStatus": "E129 on PDF page 21 cross-checked; superseded as the runtime/build source by the newer official public September 2025 edition. This private copy is not served or required to rebuild.",
+      "laterPublicAlternative": {
+        "url": "https://business.sdsc.edu/assets/documents/sdsc_emergency_plan.pdf",
+        "file": "local/indoor-sources/SDSC-EAP-PUBLIC.pdf",
+        "revision": "Updated 9/2025",
+        "note": "A newer public edition was located after the 2024 account copy supplied the exact document title. Separate files and hashes; not represented as identical copies."
+      }
+    }
+  ],
+  "connectedDiscovery": {
+    "drive": "Metadata searches for floor/SERF and exact filename terms did not locate a relevant building floor-plan file. No unrelated file contents were opened.",
+    "mail": "Targeted searches for UCSD floor plans and plan/EAP attachments found one relevant SDSC EAP. Exam seat-assignment notifications and unrelated results were not imported into the repository."
+  },
+  "separateFromPublicAcquisitionIndex": true
+}

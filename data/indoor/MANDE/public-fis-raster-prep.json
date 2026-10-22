@@ -1,0 +1,438 @@
+{
+  "schemaVersion": 1,
+  "building": "MANDE",
+  "fisBkey": 340,
+  "status": "awaiting-public-raster",
+  "runtimeChanges": false,
+  "baseLayout": "static/indoor/facilities/MANDE.json",
+  "baseLayoutSha256": "47e92301eda2ad7851eb10eaa196bd18b1b6a7f0412e4bde1d19977ed725d915",
+  "campusRegistrationPresent": false,
+  "coordinateSystem": {
+    "units": "meters",
+    "description": "Meters from the center of the building's campus-map footprint.",
+    "northDeg": 0,
+    "northNote": "Scaled from official room areas (1.33 ft per drawing pixel); rotated 360.0 deg (mirrored) and fitted to the campus-map footprint on Level 1 (overlap 0.42). The match is weak, so the building is not placed among its neighbors."
+  },
+  "preserveTotalRooms": 114,
+  "missingTotalScheduleRooms": 12,
+  "floors": [
+    {
+      "floor": "B2",
+      "floorLabel": "Basement 2",
+      "missingScheduleRooms": [
+        {
+          "label": "B202",
+          "scheduleKey": "B202",
+          "basis": "floor-listing",
+          "areaSqft": 3070
+        },
+        {
+          "label": "B206",
+          "scheduleKey": "B206",
+          "basis": "floor-listing",
+          "areaSqft": 1959
+        }
+      ],
+      "preserveRoomCount": 0,
+      "preserveRoomsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "existingScheduledAnchors": [],
+      "existingOutlineBoundsMeters": [
+        [
+          -77.53,
+          -4.94,
+          5.47,
+          25.56
+        ],
+        [
+          10.47,
+          2.31,
+          39.47,
+          18.31
+        ],
+        [
+          47.22,
+          2.31,
+          66.22,
+          18.31
+        ],
+        [
+          41.72,
+          2.56,
+          44.97,
+          8.56
+        ],
+        [
+          71.72,
+          2.56,
+          96.47,
+          18.06
+        ]
+      ],
+      "existingOutlineConfidence": "approximate",
+      "existingFloorNotes": [
+        "No room outlines for this floor; its outline is copied from Level 1."
+      ]
+    },
+    {
+      "floor": "B1",
+      "floorLabel": "Basement 1",
+      "missingScheduleRooms": [
+        {
+          "label": "B104",
+          "scheduleKey": "B104",
+          "basis": "room-number"
+        },
+        {
+          "label": "B111E",
+          "scheduleKey": "B111E",
+          "basis": "room-number"
+        },
+        {
+          "label": "B113",
+          "scheduleKey": "B113",
+          "basis": "room-number"
+        },
+        {
+          "label": "B114",
+          "scheduleKey": "B114",
+          "basis": "room-number"
+        },
+        {
+          "label": "B115B",
+          "scheduleKey": "B115B",
+          "basis": "room-number"
+        },
+        {
+          "label": "B146",
+          "scheduleKey": "B146",
+          "basis": "room-number"
+        },
+        {
+          "label": "B150",
+          "scheduleKey": "B150",
+          "basis": "room-number"
+        },
+        {
+          "label": "B152",
+          "scheduleKey": "B152",
+          "basis": "room-number"
+        },
+        {
+          "label": "B153",
+          "scheduleKey": "B153",
+          "basis": "room-number"
+        }
+      ],
+      "preserveRoomCount": 0,
+      "preserveRoomsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "existingScheduledAnchors": [],
+      "existingOutlineBoundsMeters": [
+        [
+          -77.53,
+          -4.94,
+          5.47,
+          25.56
+        ],
+        [
+          10.47,
+          2.31,
+          39.47,
+          18.31
+        ],
+        [
+          47.22,
+          2.31,
+          66.22,
+          18.31
+        ],
+        [
+          41.72,
+          2.56,
+          44.97,
+          8.56
+        ],
+        [
+          71.72,
+          2.56,
+          96.47,
+          18.06
+        ]
+      ],
+      "existingOutlineConfidence": "approximate",
+      "existingFloorNotes": [
+        "No room outlines for this floor; its outline is copied from Level 1."
+      ]
+    },
+    {
+      "floor": "L1",
+      "floorLabel": "Level 1",
+      "missingScheduleRooms": [],
+      "preserveRoomCount": 68,
+      "preserveRoomsSha256": "7056a2cf98eb3658ccb501346bb0d850dea6aa637522d7cd5b9697c9e539deb7",
+      "existingScheduledAnchors": [
+        {
+          "id": "L1-340-9225",
+          "label": "103",
+          "scheduleKey": "103",
+          "centroidMeters": [
+            62.485134,
+            7.35138
+          ],
+          "polygonAreaSqft": 748.914,
+          "listedAreaSqft": 748.0,
+          "confidence": {
+            "location": "approximate",
+            "shape": "direct",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L1-340-9226",
+          "label": "106",
+          "scheduleKey": "106",
+          "centroidMeters": [
+            51.036391,
+            12.494966
+          ],
+          "polygonAreaSqft": 844.626,
+          "listedAreaSqft": 845.0,
+          "confidence": {
+            "location": "approximate",
+            "shape": "direct",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L1-340-25663",
+          "label": "127",
+          "scheduleKey": "127",
+          "centroidMeters": [
+            15.386579,
+            15.051967
+          ],
+          "polygonAreaSqft": 581.139,
+          "listedAreaSqft": 581.0,
+          "confidence": {
+            "location": "approximate",
+            "shape": "direct",
+            "label": "direct"
+          }
+        }
+      ],
+      "existingOutlineBoundsMeters": [
+        [
+          -77.53,
+          -4.94,
+          5.47,
+          25.56
+        ],
+        [
+          10.47,
+          2.31,
+          39.47,
+          18.31
+        ],
+        [
+          47.22,
+          2.31,
+          66.22,
+          18.31
+        ],
+        [
+          41.72,
+          2.56,
+          44.97,
+          8.56
+        ],
+        [
+          71.72,
+          2.56,
+          96.47,
+          18.06
+        ]
+      ],
+      "existingOutlineConfidence": "approximate",
+      "existingFloorNotes": []
+    },
+    {
+      "floor": "L2",
+      "floorLabel": "Level 2",
+      "missingScheduleRooms": [
+        {
+          "label": "212",
+          "scheduleKey": "212",
+          "basis": "room-number"
+        }
+      ],
+      "preserveRoomCount": 46,
+      "preserveRoomsSha256": "c9af211fbf5d82a582d74efbd2d7046167c161d14cac426a06ea050ebea6ad90",
+      "existingScheduledAnchors": [
+        {
+          "id": "L2-340-19669",
+          "label": "201A",
+          "scheduleKey": "201A",
+          "centroidMeters": [
+            83.458424,
+            2.689597
+          ],
+          "polygonAreaSqft": 1754.686,
+          "listedAreaSqft": 1754.0,
+          "confidence": {
+            "location": "approximate",
+            "shape": "direct",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L2-340-19670",
+          "label": "201B",
+          "scheduleKey": "201B",
+          "centroidMeters": [
+            82.595849,
+            14.181213
+          ],
+          "polygonAreaSqft": 1136.585,
+          "listedAreaSqft": 1137.0,
+          "confidence": {
+            "location": "approximate",
+            "shape": "direct",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L2-340-9249",
+          "label": "203",
+          "scheduleKey": "203",
+          "centroidMeters": [
+            63.985,
+            7.335
+          ],
+          "polygonAreaSqft": 1200.397,
+          "listedAreaSqft": 1200.0,
+          "confidence": {
+            "location": "approximate",
+            "shape": "direct",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L2-340-9262",
+          "label": "219",
+          "scheduleKey": "219",
+          "centroidMeters": [
+            33.515,
+            7.335
+          ],
+          "polygonAreaSqft": 1200.397,
+          "listedAreaSqft": 1200.0,
+          "confidence": {
+            "location": "approximate",
+            "shape": "direct",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L2-340-19671",
+          "label": "220A",
+          "scheduleKey": "220A",
+          "centroidMeters": [
+            14.905,
+            1.055
+          ],
+          "polygonAreaSqft": 1374.247,
+          "listedAreaSqft": 1372.0,
+          "confidence": {
+            "location": "approximate",
+            "shape": "direct",
+            "label": "direct"
+          }
+        },
+        {
+          "id": "L2-340-19672",
+          "label": "220B",
+          "scheduleKey": "220B",
+          "centroidMeters": [
+            14.411577,
+            12.435286
+          ],
+          "polygonAreaSqft": 1637.659,
+          "listedAreaSqft": 1637.0,
+          "confidence": {
+            "location": "approximate",
+            "shape": "direct",
+            "label": "direct"
+          }
+        }
+      ],
+      "existingOutlineBoundsMeters": [
+        [
+          -15.8,
+          -8.02,
+          -7.55,
+          22.73
+        ],
+        [
+          -59.05,
+          -6.27,
+          -49.55,
+          20.73
+        ],
+        [
+          7.7,
+          -3.52,
+          22.2,
+          17.98
+        ],
+        [
+          75.45,
+          -3.52,
+          89.7,
+          17.98
+        ],
+        [
+          29.7,
+          -0.52,
+          67.7,
+          20.23
+        ]
+      ],
+      "existingOutlineConfidence": "approximate",
+      "existingFloorNotes": []
+    }
+  ],
+  "captureNeeds": {
+    "targetFloors": [
+      "B2",
+      "B1",
+      "L2"
+    ],
+    "additionalCalibrationFloors": [
+      "L1"
+    ],
+    "record": [
+      "Uncropped native-size raster",
+      "Image width and height",
+      "Source URL and exact FIS fcode",
+      "Capture SHA-256",
+      "Visible drawing title/date and scale annotation",
+      "Screenshot-to-drawing pixel mapping, if viewer transforms were applied"
+    ]
+  },
+  "acceptanceChecks": [
+    "Require explicit readable room label and closed wall perimeter.",
+    "Record traced pixel vertices and per-floor transform; retain uncertainty for any unreadable boundary.",
+    "Compare polygon area to the independently listed room area; do not tune each room scale to force agreement.",
+    "Check independent preserved-room alignment where available.",
+    "Reject overlapping additions or duplicate schedule keys.",
+    "Hash existing floor rooms before/after to show unchanged preserved geometry.",
+    "Do not add campus geo from a floorplan-only trace."
+  ],
+  "cautions": [
+    "Keep all 114 existing L1/L2 room polygons.",
+    "Existing frame was mirrored and weakly fitted; preserve it for compatibility without claiming campus registration.",
+    "B1 has only room-number-derived listings: confirm each label and floor explicitly on the raster.",
+    "Room 212 is absent from old FIS listing and geometry; do not assume it is 213 or an unlabeled service region.",
+    "Acquire L1 calibration raster; check shared stairs/elevators and wing geometry before transferring alignment to basement rasters.",
+    "Source used approximate 1.33 ft per drawing pixel; a new screenshot pixel is not necessarily the same scale."
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "sourcePdfSha256": "b3169e5e2b721fbee95f3746f7485a60105bd7c355f0bb8178315d692fd57b5e",
+  "traceSha256": "c846bee65852bcab52bfafa703fc4bdc4198f72b16eea8dff5107c03e7746ded",
+  "output": "static/indoor/CSB-combined.json",
+  "method": "Uniform scale and translation fit to three corresponding building/core corners. No rotation or campus georeference is claimed. North is page-up as printed. The residual is an internal drawing alignment check, not survey accuracy.",
+  "coordinateUnits": "relative",
+  "geoReferenced": false,
+  "floors": [
+    {
+      "floor": "LL",
+      "page": 2,
+      "scale": 0.9961362007364227,
+      "offset": [
+        148.55472854783454,
+        3.7350152881434724
+      ],
+      "rotationDeg": 0,
+      "anchorResidualsReferencePoints": [
+        0.4144687994943551,
+        0.9349721832907447,
+        0.7765252462594259
+      ],
+      "sourceAnchors": [
+        [
+          209.7,
+          57.7
+        ],
+        [
+          375.1,
+          142.0
+        ],
+        [
+          415.3,
+          500.4
+        ]
+      ],
+      "referenceAnchors": [
+        [
+          357.4,
+          60.8
+        ],
+        [
+          521.5,
+          145.8
+        ],
+        [
+          563,
+          502
+        ]
+      ],
+      "roomAreas": [
+        {
+          "key": "001",
+          "listedAreaSqft": 1468,
+          "tracedAreaPdfPointsSquared": 7818.4392
+        },
+        {
+          "key": "002",
+          "listedAreaSqft": 1468,
+          "tracedAreaPdfPointsSquared": 7803.8497
+        },
+        {
+          "key": "003",
+          "listedAreaSqft": 1178,
+          "tracedAreaPdfPointsSquared": 6510.032
+        },
+        {
+          "key": "004",
+          "listedAreaSqft": 767,
+          "tracedAreaPdfPointsSquared": 4380.394
+        },
+        {
+          "key": "005",
+          "listedAreaSqft": 767,
+          "tracedAreaPdfPointsSquared": 4580.5952
+        }
+      ]
+    },
+    {
+      "floor": "L1",
+      "page": 3,
+      "scale": 1.0,
+      "offset": [
+        0.0,
+        0.0
+      ],
+      "rotationDeg": 0,
+      "anchorResidualsReferencePoints": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sourceAnchors": [
+        [
+          357.4,
+          60.8
+        ],
+        [
+          521.5,
+          145.8
+        ],
+        [
+          563,
+          502
+        ]
+      ],
+      "referenceAnchors": [
+        [
+          357.4,
+          60.8
+        ],
+        [
+          521.5,
+          145.8
+        ],
+        [
+          563,
+          502
+        ]
+      ],
+      "roomAreas": [
+        {
+          "key": "115",
+          "listedAreaSqft": 804,
+          "tracedAreaPdfPointsSquared": 4065.1652
+        },
+        {
+          "key": "180",
+          "listedAreaSqft": 947,
+          "tracedAreaPdfPointsSquared": 4645.5804
+        }
+      ]
+    },
+    {
+      "floor": "L2",
+      "page": 4,
+      "scale": 1.0766666747877185,
+      "offset": [
+        38.23099666305984,
+        1.271331561319812
+      ],
+      "rotationDeg": 0,
+      "anchorResidualsReferencePoints": [
+        0.8743149172141582,
+        0.6168203326776521,
+        1.1056677682901639
+      ],
+      "sourceAnchors": [
+        [
+          297,
+          54.7
+        ],
+        [
+          449.3,
+          134.6
+        ],
+        [
+          486.4,
+          465.3
+        ]
+      ],
+      "referenceAnchors": [
+        [
+          357.4,
+          60.8
+        ],
+        [
+          521.5,
+          145.8
+        ],
+        [
+          563,
+          502
+        ]
+      ],
+      "roomAreas": []
+    }
+  ]
+}

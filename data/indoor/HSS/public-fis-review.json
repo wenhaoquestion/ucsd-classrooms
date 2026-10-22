@@ -1,0 +1,883 @@
+{
+  "schemaVersion": 1,
+  "building": "HSS",
+  "output": "static/indoor/HSS-combined.json",
+  "addedScheduleKeys": [
+    "1106B",
+    "1128A",
+    "1330",
+    "2025",
+    "2152",
+    "2305A",
+    "2333B"
+  ],
+  "correctedExistingRoom": "2333A",
+  "campusRegistration": false,
+  "unchangedUpperFloorRoomCount": 133,
+  "floors": [
+    {
+      "floor": "L1",
+      "source": "HSS-FIS-L1-2025",
+      "metersPerReferencePixel": 0.05095931728172001,
+      "sourceToCorrectedLocal": {
+        "a": -0.050884634699638075,
+        "b": 0.0027578921848754054,
+        "tx": 65.39253857343239,
+        "tz": 66.6618249432871
+      },
+      "sourceToOldLocal": {
+        "a": -0.012615340917124969,
+        "b": 0.0006668254674240768,
+        "tx": 25.28837588708897,
+        "tz": 15.03437536384394
+      },
+      "uniformLinearCorrectionFactor": 4.033840725108049,
+      "formula": "Corrected point = sourceToCorrectedLocal(inverse(sourceToOldLocal)(oldPoint)). Each map is x=a*u-b*v+tx; z=b*u+a*v+tz.",
+      "registrationChecks": {
+        "coreControls": [
+          {
+            "room": "4103",
+            "vertex": 3,
+            "source": [
+              1148,
+              1234
+            ],
+            "target": [
+              3.61,
+              7.06
+            ],
+            "residualMeters": 0.043348773991641
+          },
+          {
+            "room": "4103",
+            "vertex": 0,
+            "source": [
+              1246,
+              1234
+            ],
+            "target": [
+              -1.43,
+              7.33
+            ],
+            "residualMeters": 0.029014889251178275
+          },
+          {
+            "room": "4103",
+            "vertex": 1,
+            "source": [
+              1246,
+              1276
+            ],
+            "target": [
+              -1.55,
+              5.17
+            ],
+            "residualMeters": 0.0212228198241152
+          },
+          {
+            "room": "4103",
+            "vertex": 2,
+            "source": [
+              1148,
+              1276
+            ],
+            "target": [
+              3.5,
+              4.91
+            ],
+            "residualMeters": 0.04348307181707001
+          },
+          {
+            "room": "4102",
+            "vertex": 4,
+            "source": [
+              1247,
+              1281
+            ],
+            "target": [
+              -1.56,
+              4.89
+            ],
+            "residualMeters": 0.043438273284671015
+          },
+          {
+            "room": "4102",
+            "vertex": 3,
+            "source": [
+              1146,
+              1281
+            ],
+            "target": [
+              3.49,
+              4.63
+            ],
+            "residualMeters": 0.056631772673515546
+          },
+          {
+            "room": "4102",
+            "vertex": 2,
+            "source": [
+              1146,
+              1329
+            ],
+            "target": [
+              3.36,
+              2.19
+            ],
+            "residualMeters": 0.053925071191776086
+          },
+          {
+            "room": "4102",
+            "vertex": 1,
+            "source": [
+              1247,
+              1329
+            ],
+            "target": [
+              -1.69,
+              2.46
+            ],
+            "residualMeters": 0.03894410503473484
+          }
+        ],
+        "southStairHoldouts": [
+          {
+            "room": "4101",
+            "vertex": 11,
+            "source": [
+              1146,
+              1451
+            ],
+            "target": [
+              3.04,
+              -3.92
+            ],
+            "residualMeters": 0.09846983176569543
+          },
+          {
+            "room": "4101",
+            "vertex": 0,
+            "source": [
+              1247,
+              1451
+            ],
+            "target": [
+              -2.01,
+              -3.66
+            ],
+            "residualMeters": 0.08954975151232754
+          },
+          {
+            "room": "4101",
+            "vertex": 1,
+            "source": [
+              1247,
+              1499
+            ],
+            "target": [
+              -2.14,
+              -6.1
+            ],
+            "residualMeters": 0.09293924323180223
+          },
+          {
+            "room": "4101",
+            "vertex": 10,
+            "source": [
+              1146,
+              1499
+            ],
+            "target": [
+              2.91,
+              -6.36
+            ],
+            "residualMeters": 0.09990550015030439
+          }
+        ],
+        "oldRoomControls": [
+          {
+            "room": "1128B",
+            "vertex": 10,
+            "source": [
+              532,
+              969
+            ],
+            "target": [
+              17.95,
+              3.15
+            ],
+            "residualMeters": 0.02423157534371589
+          },
+          {
+            "room": "1128B",
+            "vertex": 5,
+            "source": [
+              532,
+              1086
+            ],
+            "target": [
+              17.88,
+              1.73
+            ],
+            "residualMeters": 0.049290331995262456
+          },
+          {
+            "room": "1138",
+            "vertex": 11,
+            "source": [
+              532,
+              882
+            ],
+            "target": [
+              18.01,
+              4.27
+            ],
+            "residualMeters": 0.02245244016602429
+          },
+          {
+            "room": "1106A",
+            "vertex": 4,
+            "source": [
+              532,
+              1475
+            ],
+            "target": [
+              17.54,
+              -3.24
+            ],
+            "residualMeters": 0.05760876097367419
+          },
+          {
+            "room": "1315",
+            "vertex": 0,
+            "source": [
+              1863,
+              1176
+            ],
+            "target": [
+              1.03,
+              1.39
+            ],
+            "residualMeters": 0.0582994219228548
+          },
+          {
+            "room": "1315",
+            "vertex": 5,
+            "source": [
+              1863,
+              1350
+            ],
+            "target": [
+              0.92,
+              -0.74
+            ],
+            "residualMeters": 0.03698659822906945
+          },
+          {
+            "room": "1315",
+            "vertex": 12,
+            "source": [
+              1736,
+              1176
+            ],
+            "target": [
+              2.5,
+              1.34
+            ],
+            "residualMeters": 0.10523416696824137
+          },
+          {
+            "room": "1305",
+            "vertex": 1,
+            "source": [
+              1863,
+              1475
+            ],
+            "target": [
+              0.83,
+              -2.29
+            ],
+            "residualMeters": 0.04937257435628927
+          }
+        ]
+      },
+      "inheritedAreaChecks": [
+        {
+          "label": "1106A",
+          "oldAreaSqft": 23.68060291676138,
+          "correctedAreaSqft": 385.3277341046375,
+          "printedAreaSqft": 442,
+          "relativeDifference": 0.12821779614335405
+        },
+        {
+          "label": "1128B",
+          "oldAreaSqft": 23.080514911029777,
+          "correctedAreaSqft": 375.5631383723554,
+          "printedAreaSqft": 406,
+          "relativeDifference": 0.07496763947695717
+        },
+        {
+          "label": "1138",
+          "oldAreaSqft": 16.16093509964794,
+          "correctedAreaSqft": 262.9686516819241,
+          "printedAreaSqft": 299,
+          "relativeDifference": 0.12050618166580573
+        },
+        {
+          "label": "1305",
+          "oldAreaSqft": 22.830792189362153,
+          "correctedAreaSqft": 371.49970260296124,
+          "printedAreaSqft": 410,
+          "relativeDifference": 0.09390316438302138
+        },
+        {
+          "label": "1315",
+          "oldAreaSqft": 33.63937283430122,
+          "correctedAreaSqft": 547.3755282069028,
+          "printedAreaSqft": 602,
+          "relativeDifference": 0.09073832523770298
+        },
+        {
+          "label": "1346",
+          "oldAreaSqft": 69.58168430225749,
+          "correctedAreaSqft": 1132.2241714791032,
+          "printedAreaSqft": 1181,
+          "relativeDifference": 0.04130044751981099
+        }
+      ],
+      "newAreaChecks": [
+        {
+          "room": "1106B",
+          "tracedAreaSqft": 411.7930107654442,
+          "printedAreaSqft": 406,
+          "relativeDifference": 0.01426849942227637,
+          "repairOfExistingRoom": false,
+          "usedToSetScale": false
+        },
+        {
+          "room": "1128A",
+          "tracedAreaSqft": 486.3417251764527,
+          "printedAreaSqft": 488,
+          "relativeDifference": 0.0033981041466133455,
+          "repairOfExistingRoom": false,
+          "usedToSetScale": false
+        },
+        {
+          "room": "1330",
+          "tracedAreaSqft": 1613.4895319292414,
+          "printedAreaSqft": 1529,
+          "relativeDifference": 0.0552580326548342,
+          "repairOfExistingRoom": false,
+          "usedToSetScale": false
+        }
+      ],
+      "roomIdentityRepairs": [],
+      "inheritedBoundaryClips": []
+    },
+    {
+      "floor": "L2",
+      "source": "HSS-FIS-L2-2024",
+      "metersPerReferencePixel": 0.051099902938849806,
+      "sourceToCorrectedLocal": {
+        "a": -0.05103441369581497,
+        "b": 0.002586251937511973,
+        "tx": 65.5508831571431,
+        "tz": 70.47696511607656
+      },
+      "sourceToOldLocal": {
+        "a": -0.01263149762791452,
+        "b": 0.0006739625894306396,
+        "tx": 25.335277570799256,
+        "tz": 15.022887470238118
+      },
+      "uniformLinearCorrectionFactor": 4.039688954360912,
+      "formula": "Corrected point = sourceToCorrectedLocal(inverse(sourceToOldLocal)(oldPoint)). Each map is x=a*u-b*v+tx; z=b*u+a*v+tz.",
+      "registrationChecks": {
+        "coreControls": [
+          {
+            "room": "4103",
+            "vertex": 3,
+            "source": [
+              1148,
+              1302
+            ],
+            "target": [
+              3.61,
+              7.06
+            ],
+            "residualMeters": 0.06239764683371209
+          },
+          {
+            "room": "4103",
+            "vertex": 0,
+            "source": [
+              1246,
+              1302
+            ],
+            "target": [
+              -1.43,
+              7.33
+            ],
+            "residualMeters": 0.08121967768089054
+          },
+          {
+            "room": "4103",
+            "vertex": 1,
+            "source": [
+              1246,
+              1342
+            ],
+            "target": [
+              -1.55,
+              5.17
+            ],
+            "residualMeters": 0.05834015785373979
+          },
+          {
+            "room": "4103",
+            "vertex": 2,
+            "source": [
+              1148,
+              1342
+            ],
+            "target": [
+              3.5,
+              4.91
+            ],
+            "residualMeters": 0.048364590835223605
+          },
+          {
+            "room": "4102",
+            "vertex": 4,
+            "source": [
+              1248,
+              1348
+            ],
+            "target": [
+              -1.56,
+              4.89
+            ],
+            "residualMeters": 0.0693454805893288
+          },
+          {
+            "room": "4102",
+            "vertex": 3,
+            "source": [
+              1147,
+              1348
+            ],
+            "target": [
+              3.49,
+              4.63
+            ],
+            "residualMeters": 0.04261614086966583
+          },
+          {
+            "room": "4102",
+            "vertex": 2,
+            "source": [
+              1147,
+              1396
+            ],
+            "target": [
+              3.36,
+              2.19
+            ],
+            "residualMeters": 0.04498629768079666
+          },
+          {
+            "room": "4102",
+            "vertex": 1,
+            "source": [
+              1248,
+              1396
+            ],
+            "target": [
+              -1.69,
+              2.46
+            ],
+            "residualMeters": 0.06047548883991796
+          }
+        ],
+        "southStairHoldouts": [
+          {
+            "room": "4101",
+            "vertex": 11,
+            "source": [
+              1147,
+              1515
+            ],
+            "target": [
+              3.04,
+              -3.92
+            ],
+            "residualMeters": 0.07281996562900958
+          },
+          {
+            "room": "4101",
+            "vertex": 0,
+            "source": [
+              1248,
+              1515
+            ],
+            "target": [
+              -2.01,
+              -3.66
+            ],
+            "residualMeters": 0.06767766455948555
+          },
+          {
+            "room": "4101",
+            "vertex": 1,
+            "source": [
+              1248,
+              1564
+            ],
+            "target": [
+              -2.14,
+              -6.1
+            ],
+            "residualMeters": 0.0468650757659835
+          },
+          {
+            "room": "4101",
+            "vertex": 10,
+            "source": [
+              1147,
+              1564
+            ],
+            "target": [
+              2.91,
+              -6.36
+            ],
+            "residualMeters": 0.06123632938904758
+          }
+        ],
+        "oldRoomControls": [
+          {
+            "room": "2154",
+            "vertex": 0,
+            "source": [
+              1017,
+              759
+            ],
+            "target": [
+              12.02,
+              6.09
+            ],
+            "residualMeters": 0.05259952781538804
+          },
+          {
+            "room": "2154",
+            "vertex": 1,
+            "source": [
+              1017,
+              935
+            ],
+            "target": [
+              11.91,
+              3.93
+            ],
+            "residualMeters": 0.06037756563508697
+          },
+          {
+            "room": "2154",
+            "vertex": 11,
+            "source": [
+              921,
+              759
+            ],
+            "target": [
+              13.16,
+              6.03
+            ],
+            "residualMeters": 0.03999453303206676
+          },
+          {
+            "room": "2154",
+            "vertex": 2,
+            "source": [
+              921,
+              935
+            ],
+            "target": [
+              13.07,
+              3.87
+            ],
+            "residualMeters": 0.03687432984108602
+          },
+          {
+            "room": "2150",
+            "vertex": 13,
+            "source": [
+              717,
+              759
+            ],
+            "target": [
+              15.75,
+              5.89
+            ],
+            "residualMeters": 0.03343112140023951
+          },
+          {
+            "room": "2150",
+            "vertex": 8,
+            "source": [
+              717,
+              935
+            ],
+            "target": [
+              15.66,
+              3.73
+            ],
+            "residualMeters": 0.036258046264777744
+          },
+          {
+            "room": "2305B",
+            "vertex": 0,
+            "source": [
+              1867,
+              1303
+            ],
+            "target": [
+              0.89,
+              -0.26
+            ],
+            "residualMeters": 0.08385576214531242
+          },
+          {
+            "room": "2305B",
+            "vertex": 1,
+            "source": [
+              1867,
+              1421
+            ],
+            "target": [
+              0.82,
+              -1.63
+            ],
+            "residualMeters": 0.04587542907054342
+          },
+          {
+            "room": "2305B",
+            "vertex": 2,
+            "source": [
+              1737,
+              1421
+            ],
+            "target": [
+              2.37,
+              -1.71
+            ],
+            "residualMeters": 0.08088073338598074
+          },
+          {
+            "room": "2321",
+            "vertex": 0,
+            "source": [
+              1867,
+              1182
+            ],
+            "target": [
+              0.97,
+              1.29
+            ],
+            "residualMeters": 0.06241790657512162
+          },
+          {
+            "room": "2321",
+            "vertex": 5,
+            "source": [
+              1867,
+              1299
+            ],
+            "target": [
+              0.9,
+              -0.11
+            ],
+            "residualMeters": 0.028849376527241517
+          },
+          {
+            "room": "2321",
+            "vertex": 6,
+            "source": [
+              1737,
+              1299
+            ],
+            "target": [
+              2.45,
+              -0.19
+            ],
+            "residualMeters": 0.0732015821089142
+          }
+        ]
+      },
+      "inheritedAreaChecks": [
+        {
+          "label": "2150",
+          "oldAreaSqft": 26.135850882812996,
+          "correctedAreaSqft": 426.51322810321454,
+          "printedAreaSqft": 463,
+          "relativeDifference": 0.07880512288722563
+        },
+        {
+          "label": "2154",
+          "oldAreaSqft": 27.199863427504816,
+          "correctedAreaSqft": 435.9146375259463,
+          "printedAreaSqft": 467,
+          "relativeDifference": 0.06656394534058607
+        },
+        {
+          "label": "2305B",
+          "oldAreaSqft": 22.52025337384008,
+          "correctedAreaSqft": 367.50997912514464,
+          "printedAreaSqft": 441,
+          "relativeDifference": 0.1666440382649781
+        },
+        {
+          "label": "2321",
+          "oldAreaSqft": 22.463742844152357,
+          "correctedAreaSqft": 366.58777904962534,
+          "printedAreaSqft": 443,
+          "relativeDifference": 0.17248808340942356
+        },
+        {
+          "label": "2333A",
+          "oldAreaSqft": 18.39390831559441,
+          "correctedAreaSqft": 300.17177723537884,
+          "printedAreaSqft": 291,
+          "relativeDifference": 0.031518134829480626
+        },
+        {
+          "label": "2346A",
+          "oldAreaSqft": 27.37962073146364,
+          "correctedAreaSqft": 446.8104698364768,
+          "printedAreaSqft": 466,
+          "relativeDifference": 0.041179249277946806
+        }
+      ],
+      "newAreaChecks": [
+        {
+          "room": "2025",
+          "tracedAreaSqft": 153.79998323542478,
+          "printedAreaSqft": 153,
+          "relativeDifference": 0.005228648597547458,
+          "repairOfExistingRoom": false,
+          "usedToSetScale": false
+        },
+        {
+          "room": "2152",
+          "tracedAreaSqft": 404.31524262958976,
+          "printedAreaSqft": 410,
+          "relativeDifference": 0.013865261879049351,
+          "repairOfExistingRoom": false,
+          "usedToSetScale": false
+        },
+        {
+          "room": "2305A",
+          "tracedAreaSqft": 431.15713719046244,
+          "printedAreaSqft": 423,
+          "relativeDifference": 0.01928401227059684,
+          "repairOfExistingRoom": false,
+          "usedToSetScale": false
+        },
+        {
+          "room": "2333B",
+          "tracedAreaSqft": 336.15638321545345,
+          "printedAreaSqft": 325,
+          "relativeDifference": 0.03432733297062596,
+          "repairOfExistingRoom": false,
+          "usedToSetScale": false
+        },
+        {
+          "room": "2333A",
+          "tracedAreaSqft": 292.30992975711024,
+          "printedAreaSqft": 291,
+          "relativeDifference": 0.004501476828557616,
+          "repairOfExistingRoom": true,
+          "usedToSetScale": false
+        }
+      ],
+      "roomIdentityRepairs": [
+        {
+          "scheduleKey": "2333A",
+          "reason": "The old 2333A perimeter has the northeastern step of 2333B and lies at its north-room location. The directly labeled 2333A rectangle is immediately south of 2333B and north of 2321 on this drawing.",
+          "oldInputRoom": {
+            "id": "L2-257-18692",
+            "label": "2333A",
+            "scheduleKey": "2333A",
+            "type": "unknown",
+            "floor": "L2",
+            "footprint": {
+              "outer": [
+                [
+                  1.32,
+                  3.62
+                ],
+                [
+                  1.31,
+                  3.41
+                ],
+                [
+                  1.13,
+                  3.4
+                ],
+                [
+                  1.08,
+                  3.3
+                ],
+                [
+                  1.03,
+                  2.48
+                ],
+                [
+                  2.56,
+                  2.4
+                ],
+                [
+                  2.62,
+                  3.55
+                ]
+              ]
+            },
+            "confidence": {
+              "location": "approximate",
+              "shape": "approximate",
+              "label": "direct"
+            },
+            "sources": [
+              {
+                "source": "UCSD-FIS"
+              }
+            ],
+            "notes": [
+              "Outline traced from the Facilities drawing image; its area is 100% of the listed area."
+            ]
+          }
+        }
+      ],
+      "inheritedBoundaryClips": [
+        {
+          "scheduleKey": "2154",
+          "referenceXMinimum": 921,
+          "reason": "The inherited outline included west-side door-swing protrusions inside adjacent room 2152. The 2024 plan shows the shared wall at reference x=921; close doors on that wall and remove only points beyond it."
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Campus registration remains unset. Low floors are aligned to the preserved metric L4 core; upper floors are unchanged.",
+    "The FIS images explicitly warn that viewer drawings may be inaccurate and updated CAD drawings are available. Later alterations are not verified.",
+    "Ten inherited lower-floor room shapes are retained exactly under one uniform similarity per floor; 2154 additionally has door-swing protrusions clipped to its verified shared wall. Their approximate traces can understate printed areas by up to 18%; they are not individually stretched to force area equality.",
+    "Existing low-floor outline fragments are retained under the same correction and are not full floor envelopes. Room source boundaries and shared core points establish placement independently of these fragments.",
+    "Room 2333A is a separate data repair: its former shape occupied the location labeled 2333B on the 2024 drawing; the direct labeled south room replaces it while its identifier and schedule key are retained.",
+    "Illustrative floor elevations are retained. Steps, seating, and door swing arcs are not modeled.",
+    "The inherited 2154 door-swing protrusions are clipped to its directly visible shared wall, preventing an overlap with the newly traced 2152. Other inherited edges remain uniformly transformed."
+  ],
+  "inputHashes": {
+    "data/indoor/HSS/public-fis-trace.json": "24796e9748302425183777c79db91b9fb2b4a6b11c1a7d14a4580b41487e82be",
+    "static/indoor/facilities/HSS.json": "5678e573a04f2028e4f889afac8663b121726bdaf6941399b598824da9dc34f5",
+    "local/indoor-sources/HSS-L1-FIS.png": "ebe3e5ed95328d61be00982490ad08d280b4d660959836cb140bcdf3c0238971",
+    "local/indoor-sources/HSS-L2-FIS.png": "c970a3a59cafbf7af845be063496a853a3cc15476b62fdf3e44c47ea5d09b60d"
+  }
+}

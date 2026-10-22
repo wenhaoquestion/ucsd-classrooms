@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-22T01:51:37.096356+00:00",
+  "entryUrl": "https://facilities.ucsd.edu/Classrooms/Default.htm",
+  "method": "Use only normalized GeoJSON coordinates and matching room IDs/labels/areas directly included in public viewer HTML. Raster availability is independently recorded; no authentication bypass or inferred room crosswalk.",
+  "limitations": [
+    "All imports have bounded room or circulation scope; none certifies a complete current floor or building.",
+    "A shared metric scale inferred from rounded official room areas is a consistency estimate, not surveyed dimensions.",
+    "These layouts have no independent campus registration or reliable true north."
+  ],
+  "sources": [
+    {
+      "id": "UNEXG-FIS-PUBLIC-VECTOR",
+      "rasterCatalogId": "UNEXG-L1-FIS",
+      "building": "UNEXG",
+      "floor": "L1",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=507&fcode=1&zoom=1",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/UNEXG-L1-FIS.html",
+        "sha256": "1efebeab79afd308cdf2728fa0df1dfd85239430f0dd6142f61619a6d3639f68"
+      },
+      "virtualCanvasSize": [
+        3318,
+        2489
+      ],
+      "sourceFormat": "public-viewer-inline-normalized-GeoJSON",
+      "rasterAcquired": false,
+      "publishedPolygonCountImported": 3,
+      "review": {
+        "status": "imported-native-vector",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "UNEXG",
+        "floor": "L1",
+        "scheduleKeysAdded": [
+          "123",
+          "124",
+          "125"
+        ],
+        "scope": "Only the directly identified classroom polygons in the public HTML are imported. Floor patches follow these rooms; corridors, exterior walls and door locations are not reconstructed.",
+        "evidencePaths": [
+          "data/indoor/UNEXG/public-vector-source.json",
+          "data/indoor/UNEXG/public-vector-review.json"
+        ],
+        "output": "static/indoor/UNEXG-combined.json",
+        "campusRegistration": false,
+        "limitations": [
+          "Room IDs, labels, areas and polygon coordinates are directly published together in the official embedded viewer HTML. The image tiles require login and were not obtained.",
+          "Coordinates are normalized separately by image width and height; source geometry is preserved under one shared uniform conversion per building.",
+          "The shared metric scale is estimated from listed room areas. Cross-room area agreement checks consistency, not independent surveying accuracy.",
+          "No campus rotation or absolute north direction is established. This supplement uses a local frame without geo.",
+          "Floor patches cover the sourced rooms only. Corridors, exterior walls and door locations are not reconstructed; floor height remains illustrative."
+        ]
+      }
+    },
+    {
+      "id": "UNEXN-FIS-PUBLIC-VECTOR",
+      "rasterCatalogId": "UNEXN-L1-FIS",
+      "building": "UNEXN",
+      "floor": "L1",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=512&fcode=1&zoom=1",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/UNEXN-L1-FIS.html",
+        "sha256": "c78972de6e9734ada44d7f3e186f5c2359498f311e53d2c5f1de7540253b1eda"
+      },
+      "virtualCanvasSize": [
+        3318,
+        2489
+      ],
+      "sourceFormat": "public-viewer-inline-normalized-GeoJSON",
+      "rasterAcquired": false,
+      "publishedPolygonCountImported": 2,
+      "review": {
+        "status": "imported-native-vector",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "UNEXN",
+        "floor": "L1",
+        "scheduleKeysAdded": [
+          "126",
+          "127"
+        ],
+        "scope": "Only the directly identified classroom polygons in the public HTML are imported. Floor patches follow these rooms; corridors, exterior walls and door locations are not reconstructed.",
+        "evidencePaths": [
+          "data/indoor/UNEXN/public-vector-source.json",
+          "data/indoor/UNEXN/public-vector-review.json"
+        ],
+        "output": "static/indoor/UNEXN-combined.json",
+        "campusRegistration": false,
+        "limitations": [
+          "Room IDs, labels, areas and polygon coordinates are directly published together in the official embedded viewer HTML. The image tiles require login and were not obtained.",
+          "Coordinates are normalized separately by image width and height; source geometry is preserved under one shared uniform conversion per building.",
+          "The shared metric scale is estimated from listed room areas. Cross-room area agreement checks consistency, not independent surveying accuracy.",
+          "No campus rotation or absolute north direction is established. This supplement uses a local frame without geo.",
+          "Floor patches cover the sourced rooms only. Corridors, exterior walls and door locations are not reconstructed; floor height remains illustrative."
+        ]
+      }
+    },
+    {
+      "id": "MCC-L1-FIS-VECTOR",
+      "rasterCatalogId": "MCC-L1-FIS",
+      "building": "MCC",
+      "floor": "L1",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=391&fcode=1&zoom=1",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MCC-L1-FIS.html",
+        "sha256": "3b59774a2f946b0ea2f739908f333407b438b9a2cb670a2e1c3f5e10d243862a",
+        "bytes": 65631
+      },
+      "virtualCanvasSize": [
+        5544,
+        4158
+      ],
+      "sourceFormat": "public-viewer-inline-normalized-GeoJSON",
+      "rasterAcquired": false,
+      "publishedPolygonCountImported": 54,
+      "review": {
+        "status": "imported-native-vector",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "MCC",
+        "floor": "L1",
+        "scheduleKeysAdded": [
+          "127",
+          "133",
+          "139",
+          "140"
+        ],
+        "scope": "54 published space polygons imported (45 room objects and 9 area objects); four exact Facilities room IDs recover the scheduled classrooms. Three inventory service spaces lack polygons, so this is not a complete floor envelope.",
+        "evidencePaths": [
+          "data/indoor/MCC/fis-vector-import.json",
+          "data/indoor/MCC/fis-vector-review.json"
+        ],
+        "output": "static/indoor/MCC-combined.json",
+        "campusRegistration": false,
+        "limitations": [
+          "Only L1 room boundaries are available for the four schedule keys 127, 133, 139 and 140; upper-floor classroom geometry remains unavailable.",
+          "L1 outlines consist of the exact available space polygons, not a reconstructed external wall or complete slab. Three listed L1 service spaces have no polygons.",
+          "L2 contains only the single published public circulation polygon (C)253; its small outline represents this partial coverage, not the whole second floor.",
+          "Native image coordinate frames are retained. Alignment between floors has not been independently established. The model has no campus geo registration or true-north direction.",
+          "The local meter scale is calibrated against rounded official listed areas; this is not surveyed dimension or current CAD accuracy. Floor elevations and heights remain explicitly estimated.",
+          "The viewer is a legacy public FIS source. Raster requests returned Login HTML, so no plan revision date or raster wall details are claimed. The HTML DC.Date is not treated as a drawing revision.",
+          "MCC 250 is corroborated by the Department of Communication Democracy Lab page, but is absent from this public second-floor inventory. Its floor remains inferred from the room number."
+        ]
+      }
+    },
+    {
+      "id": "MCC-L2-FIS-VECTOR",
+      "rasterCatalogId": "MCC-L2-FIS",
+      "building": "MCC",
+      "floor": "L2",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=391&fcode=2&zoom=1",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MCC-L2-FIS.html",
+        "sha256": "c7406c8b7128cdb96ddfbb78792a3d82c28e0ed922701e12992f10de747849ce",
+        "bytes": 38117
+      },
+      "virtualCanvasSize": [
+        5544,
+        4158
+      ],
+      "sourceFormat": "public-viewer-inline-normalized-GeoJSON",
+      "rasterAcquired": false,
+      "publishedPolygonCountImported": 1,
+      "review": {
+        "status": "partial-vector-no-classroom",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "MCC",
+        "floor": "L2",
+        "scheduleKeysAdded": [],
+        "scope": "Only public circulation polygon (C)253 is available and imported. No classroom boundary is published for 201/221/222/250; those schedule keys remain unplaced.",
+        "evidencePaths": [
+          "data/indoor/MCC/fis-vector-import.json",
+          "data/indoor/MCC/fis-vector-review.json"
+        ],
+        "output": "static/indoor/MCC-combined.json",
+        "campusRegistration": false,
+        "limitations": [
+          "Only L1 room boundaries are available for the four schedule keys 127, 133, 139 and 140; upper-floor classroom geometry remains unavailable.",
+          "L1 outlines consist of the exact available space polygons, not a reconstructed external wall or complete slab. Three listed L1 service spaces have no polygons.",
+          "L2 contains only the single published public circulation polygon (C)253; its small outline represents this partial coverage, not the whole second floor.",
+          "Native image coordinate frames are retained. Alignment between floors has not been independently established. The model has no campus geo registration or true-north direction.",
+          "The local meter scale is calibrated against rounded official listed areas; this is not surveyed dimension or current CAD accuracy. Floor elevations and heights remain explicitly estimated.",
+          "The viewer is a legacy public FIS source. Raster requests returned Login HTML, so no plan revision date or raster wall details are claimed. The HTML DC.Date is not treated as a drawing revision.",
+          "MCC 250 is corroborated by the Department of Communication Democracy Lab page, but is absent from this public second-floor inventory. Its floor remains inferred from the room number."
+        ],
+        "unresolvedScheduleKeys": [
+          "201",
+          "221",
+          "222",
+          "250"
+        ]
+      }
+    },
+    {
+      "id": "BRF2-L4-FIS-VECTOR",
+      "rasterCatalogId": "BRF2-L4-FIS",
+      "building": "BRF2",
+      "floor": "L4",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=903&fcode=4&zoom=1",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/BRF2-L4-FIS.html",
+        "sha256": "932f2b1c15f994f3cde444064206bf6ecff9317f7fa624a7dd5af414fe8b6f41",
+        "bytes": 146436
+      },
+      "virtualCanvasSize": [
+        6913,
+        9217
+      ],
+      "sourceFormat": "public-viewer-inline-normalized-GeoJSON",
+      "rasterAcquired": false,
+      "publishedPolygonCount": 127,
+      "publishedPolygonCountImported": 126,
+      "review": {
+        "status": "imported-native-vector",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "BRF2",
+        "floor": "L4",
+        "scheduleKeysAdded": [
+          "4103"
+        ],
+        "scope": "126 of 127 published fourth-floor space polygons converted (107 room objects and 19 shared/unknown areas). Classroom 4103 is an exact room-ID/label match. Public corridor 87238 self-intersects and is excluded; no complete exterior slab is asserted.",
+        "evidencePaths": [
+          "data/indoor/BRF2/fis-vector-import.json",
+          "data/indoor/BRF2/fis-vector-review.json",
+          "data/indoor/BRF2/validation-review.json",
+          "local/indoor-sources/BRF2-review/L4-vector-review.png"
+        ],
+        "output": "static/indoor/BRF2-combined.json",
+        "campusRegistration": false,
+        "limitations": [
+          "Public raster requests returned Login HTML. Native polygons are the geometry evidence; no raster details or drawing revision are claimed.",
+          "Only level L4 has recovered geometry. The other three current schedule keys are retained explicitly as knownUnmapped; they are not positioned on invented floor plates.",
+          "Floor outlines are the published space polygon parts, not a surveyed exterior slab. Unassigned polygons remain explicitly unknown areas.",
+          "Local meter scale is derived from published rounded room areas, not measured dimensions. Campus geo, true north and alignment to other floor plans are unverified and omitted.",
+          "The floor elevation and story height are display estimates.",
+          "The clear architect third-level drawing and low-resolution Senate fifth-level thumbnail cannot establish the missing current target rooms.",
+          "Public corridor ID 87238, (C)4107, has a self-intersecting boundary and is omitted from the runtime outline/areas and scale calibration; its unchanged original coordinates remain in the review."
+        ],
+        "scaleCalibration": {
+          "independentNonTargetPairs": 89,
+          "heldOutClassroom": {
+            "facilityRoomId": "73656",
+            "label": "4103",
+            "listedAreaSqft": 740.0,
+            "convertedAreaSqft": 739.6959263980723,
+            "absoluteDifferenceSqft": 0.30407360192771193,
+            "relativeDifference": 0.0004109102728752864,
+            "exported": true,
+            "usedForCalibration": false
+          },
+          "maximumAbsoluteAreaDifferenceSqft": 0.5030166831925129
+        }
+      }
+    }
+  ]
+}

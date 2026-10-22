@@ -42,7 +42,7 @@ export type Polygon = {
 export type Confidence = "direct" | "traced" | "approximate" | "unknown";
 
 /**
- * - `source-traced`: geometry was traced from cited public sources.
+ * - `source-traced`: geometry was traced from cited source documents.
  * - `facilities-plan`: converted from UCSD Facilities floor plans. Published
  *   layouts live in `static/indoor/facilities/` and load on demand.
  * - `exterior-shell`: generated in the browser from the campus map's
@@ -246,7 +246,11 @@ export type IndoorFloor = {
   vertical: VerticalInfo;
   /**
    * Floor boundary as one or more disconnected parts. Holes can represent
-   * courtyards or light wells.
+   * courtyards or light wells. An empty array records a floor established only
+   * by sourced `floor-listing` entries in `unplaced`; its outline confidence
+   * must be `unknown`, and it must have no rooms, areas or features. It stays
+   * in the room index but has no 3D representation. At least one other floor
+   * in the building must have a valid outline.
    */
   outline: Polygon[];
   outlineConfidence: Confidence;

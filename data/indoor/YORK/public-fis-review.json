@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "id": "YORK-FIS-L3-2024",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=529&fcode=3&zoom=1",
+    "localPath": "local/indoor-sources/YORK-L3-FIS.png",
+    "sha256": "905109248a6589728454275a0b5efd09041526006548ed22d904c7c444a7379b",
+    "imageSize": [
+      4609,
+      3457
+    ],
+    "revision": "2024-09-16",
+    "accessed": "2026-10-21",
+    "method": "Native-pixel assembly of public _BASE and A-AREA-CAFM tiles."
+  },
+  "output": "static/indoor/YORK-combined.json",
+  "campusRegistration": false,
+  "orientationConflict": "Source page-left north transforms toward local +z, contradicting inherited northDeg=0; geo removed and north left unknown.",
+  "transform": {
+    "formula": "x=a*u+b*v+tx; z=b*u-a*v+tz (mirrored)",
+    "a": -3.0090452972197696e-05,
+    "b": -0.02492925206871864,
+    "tx": 45.75808290933004,
+    "tz": 56.66402198858894
+  },
+  "registrationChecks": {
+    "controlPoints": [
+      {
+        "point": [
+          581,
+          1663
+        ],
+        "room": "3108",
+        "vertex": 0,
+        "targetPoint": [
+          4.33,
+          42.21
+        ],
+        "residualMeters": 0.05091050266890375
+      },
+      {
+        "point": [
+          877,
+          1663
+        ],
+        "room": "3108",
+        "vertex": 11,
+        "targetPoint": [
+          4.27,
+          35.01
+        ],
+        "residualMeters": 0.15895111516722005
+      },
+      {
+        "point": [
+          1050,
+          2200
+        ],
+        "room": "3208",
+        "vertex": 1,
+        "targetPoint": [
+          -9.06,
+          30.46
+        ],
+        "residualMeters": 0.11081511002301818
+      },
+      {
+        "point": [
+          1345,
+          1663
+        ],
+        "room": "3208",
+        "vertex": 14,
+        "targetPoint": [
+          4.16,
+          23.14
+        ],
+        "residualMeters": 0.10958260491065562
+      }
+    ],
+    "holdoutPoints": [
+      {
+        "point": [
+          581,
+          2200
+        ],
+        "room": "3108",
+        "vertex": 9,
+        "targetPoint": [
+          -8.96,
+          42.32
+        ],
+        "residualMeters": 0.16153388389446102
+      },
+      {
+        "point": [
+          877,
+          2200
+        ],
+        "room": "3108",
+        "vertex": 10,
+        "targetPoint": [
+          -9.02,
+          35.12
+        ],
+        "residualMeters": 0.26918407175531545
+      },
+      {
+        "point": [
+          1050,
+          1663
+        ],
+        "room": "3208",
+        "vertex": 0,
+        "targetPoint": [
+          4.23,
+          30.34
+        ],
+        "residualMeters": 0.20217295054881437
+      },
+      {
+        "point": [
+          839,
+          2838
+        ],
+        "room": "3000A",
+        "vertex": 6,
+        "targetPoint": [
+          -25.24,
+          36.18
+        ],
+        "residualMeters": 0.41216096480772374
+      }
+    ]
+  },
+  "areaChecks": [
+    {
+      "room": "3010",
+      "tracedSqft": 827.288717831752,
+      "listedSqft": 866,
+      "relativeDifference": 0.04470124961691457
+    }
+  ],
+  "recoveredKeys": [
+    "3010"
+  ],
+  "limitations": [
+    "Room 3010 is directly labeled in the 2024 plan. Its walls are manually traced; small columns and door recesses are simplified.",
+    "Registration mirrors the source y axis to match the inherited meter frame. Four independent corner checks include the adjacent 3000A room; the source north arrow contradicts the inherited campus orientation, so campus placement is omitted and true north remains unknown.",
+    "The source prints 871 square feet while the Facilities room inventory lists 866. Neither area was used to force the room dimensions.",
+    "The published FIS raster may lag current CAD or alterations.",
+    "The floor remains partial; one additional local floor patch follows room 3010 and does not claim a complete floor plate.",
+    "Fourth-floor schedule key 4124 remains unplaced: the acquired 2016 drawing labels separate 4124A and 4124B rooms, and no verified schedule crosswalk was found."
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "building": "SSB",
+  "source": {
+    "id": "SSB-FIS-L1-2019",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=448&fcode=1&zoom=1",
+    "localPath": "local/indoor-sources/SSB-L1-FIS.png",
+    "sha256": "d653981d73d3049ae3f3803cb98ec5c903a0535efff5564ce3ef700033943d3f",
+    "imageSize": [
+      4732,
+      3549
+    ],
+    "revision": "2019-04-23",
+    "accessed": "2026-10-21",
+    "method": "Native-pixel assembly of public _BASE and A-AREA-CAFM tiles at https://facilities.ucsd.edu/tdb/Buildings/0448/448-1/~10343/"
+  },
+  "targetLayout": "static/indoor/facilities/SSB.json",
+  "floor": "L1",
+  "controlPoints": [
+    {
+      "point": [
+        2347,
+        3061
+      ],
+      "room": "104",
+      "vertex": 3
+    },
+    {
+      "point": [
+        1873,
+        2806
+      ],
+      "room": "104",
+      "vertex": 5
+    },
+    {
+      "point": [
+        1147,
+        3121
+      ],
+      "room": "107",
+      "vertex": 7
+    },
+    {
+      "point": [
+        674,
+        2866
+      ],
+      "room": "107",
+      "vertex": 9
+    }
+  ],
+  "holdoutPoints": [
+    {
+      "point": [
+        2287,
+        2776
+      ],
+      "room": "104",
+      "vertex": 0
+    },
+    {
+      "point": [
+        674,
+        3121
+      ],
+      "room": "107",
+      "vertex": 8
+    }
+  ],
+  "rooms": [
+    {
+      "label": "103",
+      "outer": [
+        [
+          2354,
+          2807
+        ],
+        [
+          2574,
+          2807
+        ],
+        [
+          2574,
+          3061
+        ],
+        [
+          2354,
+          3061
+        ]
+      ],
+      "labelAt": [
+        2468,
+        2936
+      ],
+      "listedAreaSqft": 393
+    },
+    {
+      "label": "106",
+      "outer": [
+        [
+          1155,
+          2866
+        ],
+        [
+          1375,
+          2866
+        ],
+        [
+          1375,
+          3121
+        ],
+        [
+          1155,
+          3121
+        ]
+      ],
+      "labelAt": [
+        1276,
+        2990
+      ],
+      "listedAreaSqft": 393
+    },
+    {
+      "label": "139",
+      "outer": [
+        [
+          2667,
+          1577
+        ],
+        [
+          2833,
+          1542
+        ],
+        [
+          2926,
+          2017
+        ],
+        [
+          2765,
+          2046
+        ]
+      ],
+      "labelAt": [
+        2790,
+        1753
+      ],
+      "listedAreaSqft": 547
+    }
+  ],
+  "limitations": [
+    "Room boundaries are manually traced and simplified; small columns and door recesses are omitted.",
+    "Registration uses two existing rooms and two independent holdout corners. It preserves the existing local meter frame; no new campus registration is asserted.",
+    "The published FIS raster can lag current CAD or room inventory. Its printed revision is 2019-04-23, not the acquisition date.",
+    "The floor remains a partial model. Three additional local floor patches follow the recovered room footprints; they do not claim a complete floor outline."
+  ]
+}

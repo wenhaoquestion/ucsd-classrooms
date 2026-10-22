@@ -43,7 +43,7 @@ const STATUS_GLYPHS: Record<RoomStatusKind, string> = {
 export type ExplorerIntro = "rise" | "fade";
 
 const PROVENANCE_LABELS: Record<GeometryStatus, string> = {
-  "source-traced": "Traced from public floor maps",
+  "source-traced": "Traced from floor maps",
   "facilities-plan": "UCSD Facilities floor plans",
   "exterior-shell": "Exterior only, from the campus map",
   "schematic-demo": "Schematic demo, not the real layout",
@@ -557,18 +557,20 @@ export function BuildingExplorer({
                   </p>
                 )}
                 <ul>
-                  {index.building.sources
-                    .filter((source) => source.url)
-                    .map((source) => (
-                      <li key={source.id}>
+                  {index.building.sources.map((source) => (
+                    <li key={source.id}>
+                      {source.url ? (
                         <a href={source.url} target="_blank" rel="noreferrer" className="link">
                           {source.title}
-                        </a>{" "}
-                        <span className="explorer-source-meta">
-                          (accessed {source.accessed})
-                        </span>
-                      </li>
-                    ))}
+                        </a>
+                      ) : (
+                        <span>{source.title}</span>
+                      )}{" "}
+                      <span className="explorer-source-meta">
+                        (accessed {source.accessed})
+                      </span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             )}

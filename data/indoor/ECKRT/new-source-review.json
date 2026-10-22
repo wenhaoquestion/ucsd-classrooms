@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "building": "ECKRT",
+  "reviewedAt": "2026-10-22T02:01:13.961534+00:00",
+  "requestSnapshot": {
+    "file": "data/indoor/research/remaining-floorplan-requests.csv",
+    "sha256": "3b1869bfb19092a6bbd1da29bfb2f68ddc9994f48294a923f0fee1ab37aa3427"
+  },
+  "requestedFloors": [
+    {
+      "floor": "L2",
+      "keys": [
+        "225",
+        "227",
+        "236"
+      ],
+      "activeFA26Keys": [
+        "225",
+        "227",
+        "236"
+      ]
+    },
+    {
+      "floor": "L1",
+      "keys": [
+        "127",
+        "139"
+      ],
+      "activeFA26Keys": [
+        "127",
+        "139"
+      ]
+    }
+  ],
+  "status": "new-renovation-and-room-metadata-only",
+  "searchRounds": [
+    [
+      "Eckart floor plan UCSD",
+      "Eckart evacuation EAP"
+    ],
+    [
+      "Eckart renovation bid drawings",
+      "Eckart floorplan",
+      "site:ucsdplanroom.com Eckart"
+    ]
+  ],
+  "existingEvidence": [
+    "data/indoor/ECKRT/source-review.json",
+    "data/indoor/research/public-fis-raster-sources.json"
+  ],
+  "sources": [
+    {
+      "url": "https://senate.ucsd.edu/media/247174/sd-rep-assembly-meeting-packet_nov-29-2016.pdf",
+      "finding": "Official project-status table lists Eckart second-floor renovation with 1,900 new and 12,200 renovated assignable square feet. Retrieved table is construction timing and budget, not numbered room geometry.",
+      "retrievalStatus": "search-indexed-pdf-text",
+      "localFile": null
+    },
+    {
+      "url": "https://scripps.ucsd.edu/education/guide/space-at-scripps",
+      "finding": "Official room guide identifies 225 as Computer Lab Classroom, 227 as Lecture Hall and 236 as Classroom. It supplies reservation links but no room boundary drawing.",
+      "retrievalStatus": "web-page-read",
+      "identityKeys": [
+        "225",
+        "227",
+        "236"
+      ]
+    },
+    {
+      "url": "https://scripps.ucsd.edu/education/current/student-spaces",
+      "finding": "Current student-space page corroborates room names. Existing review already established the image is a calendar color key, not a plan; not counted as a new diagram.",
+      "retrievalStatus": "web-page-read-duplicate-source"
+    }
+  ],
+  "limitations": [
+    "Previously inspected obr photographs and Mosher Drew axonometric/site illustration are not re-counted as plans.",
+    "Renovations in 2012–2017 and 2022/2023 prevent treating an old library plan as a current numbered classroom layout."
+  ],
+  "runtimeDecision": {
+    "runtimeModified": false,
+    "addedGeometry": 0,
+    "preservedUnplaced": true
+  }
+}

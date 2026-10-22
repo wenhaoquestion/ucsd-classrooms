@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "building": "PRICE",
+  "output": "static/indoor/PRICE-combined.json",
+  "status": "floor-corrected-room-remains-unplaced",
+  "oldListing": {
+    "floor": "L2",
+    "label": "THTRE",
+    "scheduleKey": "THTRE",
+    "basis": "floor-listing",
+    "areaSqft": 3250
+  },
+  "newListing": {
+    "floor": "L1",
+    "label": "1.402",
+    "scheduleKey": "THTRE",
+    "basis": "floor-listing",
+    "areaSqft": 4368
+  },
+  "addedGeometry": 0,
+  "directory": {
+    "url": "https://universitycenters.ucsd.edu/_files/visit-us-files/PC_Directories11X17SU26__FNL.pdf",
+    "localPath": "local/indoor-sources/PRICE-DIRECTORIES-SU26.pdf",
+    "sha256": "6373fdf733f58eb33899b80e0efe194e76365b2e5a653fc6a2a42fb13e1c00ac",
+    "page": 1,
+    "revision": "SU26",
+    "accessed": "2026-10-22T01:34:16.158Z"
+  },
+  "roomGuide": {
+    "url": "https://universitycenters.ucsd.edu/events-and-reservations/room-guide-pages/theater.html",
+    "checked": "2026-10-22",
+    "officialFloor": "Level 1",
+    "listedAreaSqft": 4368,
+    "fixedSeats": 475
+  },
+  "galleryImage": {
+    "url": "https://universitycenters.ucsd.edu/_images/reservation-images/room-guide-images/PCT_1.jpg",
+    "localPath": "local/indoor-sources/PRICE-THEATER-PLAN.jpg",
+    "sha256": "e60a984e9c6a9f2fe896c9b7c4fe9536f437437a0c6609b062a005f5bb78e734",
+    "actualContent": "Interior photograph, despite gallery alt text Theater Layout. No room perimeter can be traced."
+  },
+  "limitations": [
+    "The old import associated THTRE with L2 and 3250 square feet. The current directory and room guide both explicitly place the theater on L1. The 3250-versus-4368 area discrepancy is retained here for audit; no room geometry or scale is derived from either number.",
+    "The four-floor directory is a schematic wayfinding plan with no dimensions or scale. No tracing or campus registration is claimed.",
+    "Existing campus exterior polygons and all other floor data are retained unchanged. The theater remains unplaced and this update does not increase geometry coverage."
+  ],
+  "inputHashes": {
+    "static/indoor/facilities/PRICE.json": "e5045ff76122e9b2d02c6ab7a8426d351c991c62999366c2060e9284dc0ef4dd"
+  }
+}

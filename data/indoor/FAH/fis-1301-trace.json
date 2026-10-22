@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "building": "FAH",
+  "output": "static/indoor/FAH.json",
+  "baseSha256": "1a6338d244878e68152675d371a038476b16725eae3bcf0eb9f3f7865dbf02e7",
+  "source": {
+    "id": "FAH-L1-FIS",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=975&fcode=1&zoom=1",
+    "localPath": "local/indoor-sources/FAH-L1-FIS.png",
+    "sha256": "62195b6738eb59d597494655ec284b4687e88da9952fd2b9cbfcc083ed5fb0b3",
+    "htmlPath": "local/indoor-sources/FAH-L1-FIS.html",
+    "htmlSha256": "96c00b5f737503583ef9f830bc2ad7c08178c46b3750fd1f0b5374ee53d306b4",
+    "imageSizePx": [
+      5761,
+      4321
+    ],
+    "acquiredAt": "2026-10-22T01:22:21.343Z",
+    "accessed": "2026-10-22",
+    "printedDate": "2024-09-17",
+    "title": "UCSD Facilities Information System - Franklin Antonio Hall - First Floor - Master Plan"
+  },
+  "registration": {
+    "method": "Similarity from explicitly corresponding corners in retained rooms 1101 and 1450. Source raster is approximately 90 degrees rotated relative to the retained emergency-plan frame; this is a relative frame, not a campus registration.",
+    "controlPoints": [
+      {
+        "room": "1101",
+        "vertex": 0,
+        "point": [
+          3689,
+          2942
+        ]
+      },
+      {
+        "room": "1101",
+        "vertex": 7,
+        "point": [
+          4437,
+          2942
+        ]
+      },
+      {
+        "room": "1450",
+        "vertex": 3,
+        "point": [
+          4683,
+          1624
+        ]
+      }
+    ],
+    "holdoutPoints": [
+      {
+        "room": "1101",
+        "vertex": 1,
+        "point": [
+          3689,
+          2506
+        ]
+      },
+      {
+        "room": "1101",
+        "vertex": 6,
+        "point": [
+          4437,
+          2506
+        ]
+      },
+      {
+        "room": "1450",
+        "vertex": 1,
+        "point": [
+          3947,
+          1088
+        ]
+      },
+      {
+        "room": "1450",
+        "vertex": 0,
+        "point": [
+          4138,
+          1755
+        ]
+      },
+      {
+        "room": "1450",
+        "vertex": 2,
+        "point": [
+          4499,
+          931
+        ]
+      }
+    ]
+  },
+  "room": {
+    "scheduleKey": "1301",
+    "label": "1301",
+    "floor": "L1",
+    "printedAreaSqft": 5877,
+    "labelAt": [
+      1715,
+      1580
+    ],
+    "outer": [
+      [
+        1230,
+        1479
+      ],
+      [
+        2234,
+        1479
+      ],
+      [
+        2234,
+        1545
+      ],
+      [
+        2104,
+        1545
+      ],
+      [
+        2104,
+        1553
+      ],
+      [
+        2160,
+        1553
+      ],
+      [
+        2207,
+        1592
+      ],
+      [
+        2252,
+        1635
+      ],
+      [
+        2299,
+        1686
+      ],
+      [
+        2344,
+        1745
+      ],
+      [
+        2382,
+        1807
+      ],
+      [
+        2420,
+        1905
+      ],
+      [
+        2420,
+        2063
+      ],
+      [
+        2342,
+        2103
+      ],
+      [
+        2258,
+        2140
+      ],
+      [
+        2171,
+        2170
+      ],
+      [
+        2108,
+        2187
+      ],
+      [
+        1827,
+        2187
+      ],
+      [
+        1827,
+        2267
+      ],
+      [
+        1611,
+        2267
+      ],
+      [
+        1611,
+        2187
+      ],
+      [
+        1432,
+        2187
+      ],
+      [
+        1335,
+        2169
+      ],
+      [
+        1230,
+        2145
+      ],
+      [
+        1201,
+        2145
+      ],
+      [
+        1044,
+        2063
+      ],
+      [
+        1044,
+        1905
+      ],
+      [
+        1088,
+        1790
+      ],
+      [
+        1125,
+        1725
+      ],
+      [
+        1177,
+        1665
+      ],
+      [
+        1235,
+        1608
+      ],
+      [
+        1304,
+        1553
+      ],
+      [
+        1360,
+        1553
+      ],
+      [
+        1360,
+        1545
+      ],
+      [
+        1230,
+        1545
+      ]
+    ]
+  },
+  "areaCheckReference": {
+    "room": "1101",
+    "printedAreaSqft": 2460,
+    "outer": [
+      [
+        3689,
+        2506
+      ],
+      [
+        3809,
+        2506
+      ],
+      [
+        3809,
+        2442
+      ],
+      [
+        4301,
+        2442
+      ],
+      [
+        4301,
+        2506
+      ],
+      [
+        4437,
+        2506
+      ],
+      [
+        4437,
+        2942
+      ],
+      [
+        3689,
+        2942
+      ]
+    ],
+    "note": "Gross corresponding FIS room boundary, with small columns/recesses simplified. Use source-pixel area ratio only; no conversion of runtime relative units to meters."
+  },
+  "limitations": [
+    "1301 is traced from its named outer wall boundary, including rear central entry area; stepped seating, furniture, columns and door swings are not room walls. The separate 1301C, 1301BB, 1301A and 1301B spaces are excluded.",
+    "Simplified curved wall segments use straight chords; this is an approximate room footprint, not measured three-dimensional auditorium geometry.",
+    "Retained 1101 and 1450 footprints, all four existing floor objects except the supplemented L1 fields, and relative room coordinates remain intact; absolute north is unknown. No geographic position is added.",
+    "Registration controls fit within 0.022 relative units; independent checks show up to 0.964 units (9.64 pixels in the old 2400-pixel render). This reflects the simplified emergency-plan boundaries, especially gross 1450 corners, and limits positional accuracy.",
+    "Both source north arrows point page-up, but room-wall registration rotates the frames by about 90 degrees. The relative room frame is retained; northDeg is null because absolute compass alignment is unresolved.",
+    "FIS viewer imagery may be outdated; title-block revision 2024-09-17 is recorded and no newer CAD-vault export is claimed."
+  ]
+}

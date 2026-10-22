@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "building": "EBU1",
+  "output": "static/indoor/EBU1-combined.json",
+  "inputHashes": {
+    "data/indoor/EBU1/ehs-2315-trace.json": "8ec8ed0dcb659285914453f6168582c27f24f65074f294d60fe077acb589dc97",
+    "static/indoor/facilities/EBU1.json": "f2f3d131631924937c897cafdae770e42312773ddeae981cace189778ff77462",
+    "local/indoor-sources/EBU1-EHS-2021.pdf": "3e5955af4fa3ed659bd9533df47253f822100a762ddb58a794cdbc9af1527c93"
+  },
+  "source": {
+    "id": "EBU1-EHS-2021",
+    "url": "https://drive.google.com/file/d/1HK5Ir1XdlH6yOvpq3E42cQnKvXAGm4Vn/view",
+    "localPath": "local/indoor-sources/EBU1-EHS-2021.pdf",
+    "sha256": "3e5955af4fa3ed659bd9533df47253f822100a762ddb58a794cdbc9af1527c93",
+    "page": 4,
+    "registrationReferencePage": 5,
+    "printedDate": "2021-06-21",
+    "pageSizePoints": [
+      612,
+      792
+    ],
+    "accessed": "2026-10-21"
+  },
+  "transform": {
+    "formula": "x = a*u - b*v + tx; z = b*u + a*v + tz",
+    "a": 0.1810116023818337,
+    "b": -0.0014821023555234977,
+    "tx": -57.82935574409829,
+    "tz": -75.82644953279355,
+    "metersPerPDFPoint": 0.18101766992266613,
+    "rotationDeg": -0.469120824610914
+  },
+  "registrationChecks": {
+    "controlPoints": [
+      {
+        "sourcePoint": [
+          274.2,
+          177.12
+        ],
+        "sourceRoom": "2327",
+        "targetRoom": "3331",
+        "targetVertex": 0,
+        "feature": "North mechanical tower, northwest interior exterior-wall corner",
+        "targetPoint": [
+          -7.94,
+          -44.17
+        ],
+        "transformedPoint": [
+          -7.933464401789166,
+          -44.17206698480771
+        ],
+        "residualMeters": 0.006854667765015404
+      },
+      {
+        "sourcePoint": [
+          306.12,
+          177.12
+        ],
+        "sourceRoom": "2327",
+        "targetRoom": "3331",
+        "targetVertex": 5,
+        "feature": "North mechanical tower, northeast interior exterior-wall corner",
+        "targetPoint": [
+          -2.15,
+          -44.22
+        ],
+        "transformedPoint": [
+          -2.155574053761036,
+          -44.21937569199602
+        ],
+        "residualMeters": 0.005608906828852973
+      },
+      {
+        "sourcePoint": [
+          109.32,
+          335.16
+        ],
+        "sourceRoom": "2115",
+        "targetRoom": "3117",
+        "targetVertex": 23,
+        "feature": "West mechanical tower, northwest interior exterior-wall corner",
+        "targetPoint": [
+          -37.55,
+          -15.32
+        ],
+        "transformedPoint": [
+          -37.544425946238974,
+          -15.320624308003993
+        ],
+        "residualMeters": 0.005608906828841756
+      },
+      {
+        "sourcePoint": [
+          141.24,
+          335.16
+        ],
+        "sourceRoom": "2115",
+        "targetRoom": "3117",
+        "targetVertex": 4,
+        "feature": "West mechanical tower, northeast interior exterior-wall corner",
+        "targetPoint": [
+          -31.76,
+          -15.37
+        ],
+        "transformedPoint": [
+          -31.766535598210837,
+          -15.3679330151923
+        ],
+        "residualMeters": 0.0068546677650146446
+      }
+    ],
+    "holdoutPoints": [
+      {
+        "sourcePoint": [
+          393.72,
+          353.28
+        ],
+        "sourceRoom": "2517",
+        "targetRoom": "3517",
+        "targetVertex": 26,
+        "feature": "Central mechanical tower, northwest interior exterior-wall corner",
+        "targetPoint": [
+          13.97,
+          -12.49
+        ],
+        "transformedPoint": [
+          13.962129465836618,
+          -12.462203982756051
+        ],
+        "residualMeters": 0.0288888193362566
+      },
+      {
+        "sourcePoint": [
+          425.64,
+          353.28
+        ],
+        "sourceRoom": "2517",
+        "targetRoom": "3517",
+        "targetVertex": 5,
+        "feature": "Central mechanical tower, northeast interior exterior-wall corner",
+        "targetPoint": [
+          19.76,
+          -12.54
+        ],
+        "transformedPoint": [
+          19.74001981386474,
+          -12.509512689944358
+        ],
+        "residualMeters": 0.03645111675145798
+      }
+    ]
+  },
+  "areaCheck": {
+    "tracedAreaSqft": 937.3112947359162,
+    "listedAreaSqft": 936,
+    "relativeDifference": 0.0014009559144403383
+  },
+  "addedRoomPolygons": 1,
+  "recoveredScheduleKeys": [
+    "2315"
+  ],
+  "remainingUnplacedKeys": [],
+  "limitations": [
+    "The source is a 2021 emergency plan; later alterations cannot be excluded. Its room number and traced area agree with the current supplied Facilities listing.",
+    "Registration uses repeated structural tower corners between Levels 2 and 3. The resulting position inherits the approximate existing Facilities-to-campus fit and does not represent independent survey accuracy.",
+    "Existing floor heights remain estimated. The rest of the Level 2 floor plate is still copied from another floor and is not newly verified by this one-room supplement."
+  ]
+}

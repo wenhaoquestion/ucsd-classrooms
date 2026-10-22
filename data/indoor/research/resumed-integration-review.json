@@ -1,0 +1,631 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-22T02:44:24.673303+00:00",
+  "scope": [
+    "CALIT auditorium supplement registration and room identity constraints",
+    "BRF2 source-listed L1/L5 without invented geometry and preserved L4 native vectors",
+    "WFH 3N129/3W113 photographic floor evidence",
+    "SDSC E129 exact room trace from the public September 2025 EAP, superseding the 2010 East Annex B1 floor listing"
+  ],
+  "method": [
+    "Read implementation and source metadata without modifying them.",
+    "Run actual runtime manifest, validator and index only for scoped layouts using an in-memory bundle; SDSC was rerun after registering the new geometry. No global test suite or browser rerun.",
+    "Compare original schedule keys against git HEAD, with BRF2 using its four documented current schedule keys; for the new SDSC supplement verify original base and archived base byte-for-byte against git HEAD.",
+    "Hash local source files; reproduce CALIT trace transform, BRF2 native vector conversions and new SDSC E129 trace transform without invoking mutating builders.",
+    "Reopen original event/department pages for BRF2, inspect WFH sign photographs, and independently open the public SDSC PDF URL. Render and inspect SDSC physical PDF pages 22, 23 and 24 plus the full E129 overlay; independently extract page 24 native image with pdfimages."
+  ],
+  "reviewerScopeNote": "This is a current integration recheck. The CALIT tracing builder was previously authored by this reviewer; root separately inspected its overlay. It is not claimed to be a fresh independent architectural survey.",
+  "result": "pass",
+  "summary": {
+    "reviewedBuildings": 4,
+    "preservedScheduleKeys": 12,
+    "duplicateKeys": 0,
+    "lostKeys": 0,
+    "danglingSourceRefs": 0,
+    "sourceFileHashesChecked": 8,
+    "allSourceFileHashesMatch": true,
+    "runtimeValidationErrors": 0,
+    "newGeometryInTheseResumedChanges": [
+      "CALIT 1511",
+      "SDSC E129"
+    ],
+    "floorEvidenceOnly": [
+      "BRF2 1104",
+      "BRF2 5A03",
+      "WFH 3N129",
+      "WFH 3W113"
+    ]
+  },
+  "layouts": {
+    "CALIT": {
+      "path": "static/indoor/CALIT-combined.json",
+      "sha256": "a19b1dc5b32cbb7be8bad24ffeac4ff553f4a6ffab055c8ae417e24838c51a02",
+      "originalKeys": [
+        "1511"
+      ],
+      "currentKeys": [
+        "1511"
+      ],
+      "duplicateKeys": [],
+      "missingKeys": [],
+      "addedKeys": [],
+      "duplicateSourceIds": [],
+      "unknownSourceRefs": [],
+      "originalBaseFileMatchesGit": true,
+      "traceTransformEqualsRoom": true,
+      "outlineEqualsRoom": true,
+      "reviewOutputHashMatches": true,
+      "inputHashChecks": [
+        {
+          "path": "data/indoor/CALIT/auditorium-trace.json",
+          "expected": "6a9a7ab77140210c538abab8de1dabb9abf9289d5e0a20742f3b951b8e910436",
+          "actual": "6a9a7ab77140210c538abab8de1dabb9abf9289d5e0a20742f3b951b8e910436",
+          "matches": true
+        },
+        {
+          "path": "static/indoor/facilities/CALIT.json",
+          "expected": "bb0ea997d62176f8e8f68f22754d124f0d001dfcb185c3ae0f283cd0ddc17481",
+          "actual": "bb0ea997d62176f8e8f68f22754d124f0d001dfcb185c3ae0f283cd0ddc17481",
+          "matches": true
+        },
+        {
+          "path": "local/indoor-sources/CALIT-EVENT-DIAGRAM.jpg",
+          "expected": "41632e5bb5c807a5acedcd4b719a30c92c44c7b42b1724c863cf315722a15712",
+          "actual": "41632e5bb5c807a5acedcd4b719a30c92c44c7b42b1724c863cf315722a15712",
+          "matches": true
+        },
+        {
+          "path": "local/indoor-sources/CALIT-SEAW-NOV-2006.pdf",
+          "expected": "774501ad90f518548721e3c30132b418bda7da42e353c0cb3dd6af0bd2f5595c",
+          "actual": "774501ad90f518548721e3c30132b418bda7da42e353c0cb3dd6af0bd2f5595c",
+          "matches": true
+        },
+        {
+          "path": "local/indoor-sources/CALIT-L1-FIS.html",
+          "expected": "cccb22a9af50b7c74ab5abec08ceefc0a7a45f54ebeb79196921419f4f6cbf1b",
+          "actual": "cccb22a9af50b7c74ab5abec08ceefc0a7a45f54ebeb79196921419f4f6cbf1b",
+          "matches": true
+        }
+      ]
+    },
+    "BRF2": {
+      "path": "static/indoor/BRF2-combined.json",
+      "sha256": "7c9c559d3fb94dbccd8d1e19d320d4075e1707bbc280bc0ef7ff51104b936cd4",
+      "originalKeys": [
+        "1102",
+        "1104",
+        "4103",
+        "5A03"
+      ],
+      "currentKeys": [
+        "1102",
+        "1104",
+        "4103",
+        "5A03"
+      ],
+      "duplicateKeys": [],
+      "missingKeys": [],
+      "addedKeys": [],
+      "duplicateSourceIds": [],
+      "unknownSourceRefs": [],
+      "sourceGeometryCheck": {
+        "publicPolygons": 127,
+        "currentRoomPolygons": 107,
+        "currentAreaPolygons": 19,
+        "all126MatchOriginalPublicVectors": true,
+        "excludedSelfIntersectingIdAbsent": true,
+        "outlineEqualsImportedFootprints": true,
+        "geometrySourceHashMatches": true
+      },
+      "reviewInputHashChecks": [
+        {
+          "path": "data/indoor/BRF2/fis-vector-import.json",
+          "matches": true
+        },
+        {
+          "path": "data/indoor/BRF2/floor-listing-evidence.json",
+          "matches": true
+        },
+        {
+          "path": "local/indoor-sources/BRF2-L4-FIS.html",
+          "matches": true
+        }
+      ]
+    },
+    "WFH": {
+      "path": "static/indoor/facilities/WFH.json",
+      "sha256": "f290a8694156518ccc111014cd01b5b8ff0bf8e25f9a9ed5e8c000ab52b1749d",
+      "originalKeys": [
+        "1N108",
+        "1W102",
+        "3N129",
+        "3W113",
+        "4N128",
+        "4W114"
+      ],
+      "currentKeys": [
+        "1N108",
+        "1W102",
+        "3N129",
+        "3W113",
+        "4N128",
+        "4W114"
+      ],
+      "duplicateKeys": [],
+      "missingKeys": [],
+      "addedKeys": [],
+      "duplicateSourceIds": [],
+      "unknownSourceRefs": [],
+      "originalFloorGeometryEqual": {
+        "L1": true,
+        "L2": true,
+        "L3": true,
+        "L4": true,
+        "L5": true
+      }
+    },
+    "SDSC": {
+      "path": "static/indoor/SDSC-combined.json",
+      "sha256": "a6c628326c884e597089fb73cc7b589f0bcbf0a949e19cf27aaee78f38250a73",
+      "originalKeys": [
+        "E129"
+      ],
+      "currentKeys": [
+        "E129"
+      ],
+      "duplicateKeys": [],
+      "missingKeys": [],
+      "addedKeys": [],
+      "duplicateSourceIds": [],
+      "unknownSourceRefs": [],
+      "manifestPathConfirmed": "static/indoor/SDSC-combined.json",
+      "preservedOriginalBase": {
+        "file": "static/indoor/facilities/SDSC.json",
+        "archivedFile": "data/indoor/SDSC/original-facilities-base.json",
+        "sha256": "ec0a0ed3443c691c6c7cf96c3d34d2bc34d9a61f6530d833b325c0035742c7a2",
+        "fileBytesMatchGitHead": true,
+        "archiveBytesMatchGitHead": true,
+        "floors": [
+          "B",
+          "L1",
+          "L2",
+          "L3",
+          "L4"
+        ],
+        "separateFromNewCoordinateFrame": true
+      },
+      "newRoom": {
+        "key": "E129",
+        "floor": "EAST-L1",
+        "roomId": "EAST-L1-E129-EAP-2025",
+        "exactPrintedLabelVerified": true,
+        "physicalPdfPage": 24,
+        "sourceImageSizePx": [
+          989,
+          811
+        ],
+        "sourcePixelPolygon": [
+          [
+            255,
+            262
+          ],
+          [
+            346,
+            262
+          ],
+          [
+            346,
+            309
+          ],
+          [
+            255,
+            309
+          ]
+        ],
+        "traceTransformMatchesRuntime": true,
+        "outlineEqualsRoom": true,
+        "geometryUnits": "relative",
+        "physicalScaleVerified": false,
+        "northKnown": false,
+        "campusGeoPresent": false,
+        "entireFloorMapped": false,
+        "heightIsDisplayPlaceholder": true
+      },
+      "distinctRoomCheck": {
+        "otherPrintedLabel": "EB129",
+        "physicalPdfPage": 23,
+        "noAliasOrRuntimeMappingCreated": true,
+        "finding": "Page 23 shows a different, wider EB129 room. Page 24 carries exact E129 and the E1xx room sequence. The 2010 E129/B1 text is superseded for the current mapping."
+      },
+      "inputHashChecks": [
+        {
+          "file": "data/indoor/SDSC/east-e129-trace.json",
+          "matches": true
+        },
+        {
+          "file": "data/indoor/SDSC/original-facilities-base.json",
+          "matches": true
+        }
+      ],
+      "publicSourceOnlyRebuild": {
+        "builder": "scripts/build-sdsc-east.py",
+        "requiredPublicPdf": "local/indoor-sources/SDSC-EAP-PUBLIC.pdf",
+        "private2024AttachmentRequired": false,
+        "privateAttachmentOpenedByThisReview": false
+      },
+      "retiredEvidenceOnlyFloorAbsent": true
+    }
+  },
+  "sourceHashChecks": [
+    {
+      "file": "local/indoor-sources/CALIT-EVENT-DIAGRAM.jpg",
+      "bytes": 249610,
+      "expectedBytes": 249610,
+      "sha256": "41632e5bb5c807a5acedcd4b719a30c92c44c7b42b1724c863cf315722a15712",
+      "expectedSha256": "41632e5bb5c807a5acedcd4b719a30c92c44c7b42b1724c863cf315722a15712",
+      "matches": true
+    },
+    {
+      "file": "local/indoor-sources/CALIT-SEAW-NOV-2006.pdf",
+      "bytes": 1728877,
+      "expectedBytes": 1728877,
+      "sha256": "774501ad90f518548721e3c30132b418bda7da42e353c0cb3dd6af0bd2f5595c",
+      "expectedSha256": "774501ad90f518548721e3c30132b418bda7da42e353c0cb3dd6af0bd2f5595c",
+      "matches": true
+    },
+    {
+      "file": "local/indoor-sources/CALIT-L1-FIS.html",
+      "bytes": 98751,
+      "expectedBytes": 98751,
+      "sha256": "cccb22a9af50b7c74ab5abec08ceefc0a7a45f54ebeb79196921419f4f6cbf1b",
+      "expectedSha256": "cccb22a9af50b7c74ab5abec08ceefc0a7a45f54ebeb79196921419f4f6cbf1b",
+      "matches": true
+    },
+    {
+      "file": "local/indoor-sources/BRF2-L4-FIS.html",
+      "bytes": 146436,
+      "sha256": "932f2b1c15f994f3cde444064206bf6ecff9317f7fa624a7dd5af414fe8b6f41",
+      "expectedSha256": "932f2b1c15f994f3cde444064206bf6ecff9317f7fa624a7dd5af414fe8b6f41",
+      "matches": true
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-22.jpg",
+      "bytes": 128093,
+      "sha256": "6a79dcc10a34be4bb9ac1205dc133dcdfaea481187e47266644a99240461a965",
+      "expectedSha256": "6a79dcc10a34be4bb9ac1205dc133dcdfaea481187e47266644a99240461a965",
+      "matches": true
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-19.jpg",
+      "bytes": 103621,
+      "sha256": "f619022563a75204753961cbcf5f0bd5a3c2a363d55659411d5956c49fa22772",
+      "expectedSha256": "f619022563a75204753961cbcf5f0bd5a3c2a363d55659411d5956c49fa22772",
+      "matches": true
+    },
+    {
+      "file": "local/indoor-sources/SDSC-EAP-PUBLIC.pdf",
+      "bytes": 2442104,
+      "expectedBytes": 2442104,
+      "sha256": "ad45146e2af19436a2bb9bc3dd4c76fc1ed8b1361d73fcb4762b78caf0c719ca",
+      "expectedSha256": "ad45146e2af19436a2bb9bc3dd4c76fc1ed8b1361d73fcb4762b78caf0c719ca",
+      "matches": true
+    },
+    {
+      "file": "local/indoor-sources/SDSC-EAP-PUBLIC-E1.png",
+      "bytes": 216027,
+      "expectedBytes": null,
+      "sha256": "09e2189113845033ff426a2a2d4033e7b100804f732c31896329185f0d575b2d",
+      "expectedSha256": "09e2189113845033ff426a2a2d4033e7b100804f732c31896329185f0d575b2d",
+      "matches": true
+    }
+  ],
+  "runtime": {
+    "CALIT": {
+      "path": "static/indoor/CALIT-combined.json",
+      "validation": {
+        "ok": true,
+        "issues": []
+      },
+      "coverage": {
+        "mapped": [
+          "1511"
+        ],
+        "unplaced": [],
+        "scheduleOnly": []
+      },
+      "floorIds": [
+        "L1"
+      ],
+      "emptyFloorKeys": []
+    },
+    "BRF2": {
+      "path": "static/indoor/BRF2-combined.json",
+      "validation": {
+        "ok": true,
+        "issues": []
+      },
+      "coverage": {
+        "mapped": [
+          "4103"
+        ],
+        "unplaced": [
+          {
+            "key": "1104",
+            "floor": "L1",
+            "basis": "floor-listing"
+          },
+          {
+            "key": "5A03",
+            "floor": "L5",
+            "basis": "floor-listing"
+          }
+        ],
+        "scheduleOnly": [
+          "1102"
+        ]
+      },
+      "floorIds": [
+        "L1",
+        "L4",
+        "L5"
+      ],
+      "emptyFloorKeys": [
+        {
+          "id": "L1",
+          "keys": [
+            "1104"
+          ],
+          "roomForKeyNull": true
+        },
+        {
+          "id": "L5",
+          "keys": [
+            "5A03"
+          ],
+          "roomForKeyNull": true
+        }
+      ]
+    },
+    "WFH": {
+      "path": "static/indoor/facilities/WFH.json",
+      "validation": {
+        "ok": true,
+        "issues": []
+      },
+      "coverage": {
+        "mapped": [],
+        "unplaced": [
+          {
+            "key": "1N108",
+            "floor": "L1",
+            "basis": "floor-listing"
+          },
+          {
+            "key": "1W102",
+            "floor": "L1",
+            "basis": "floor-listing"
+          },
+          {
+            "key": "3N129",
+            "floor": "L3",
+            "basis": "floor-listing"
+          },
+          {
+            "key": "3W113",
+            "floor": "L3",
+            "basis": "floor-listing"
+          },
+          {
+            "key": "4N128",
+            "floor": "L4",
+            "basis": "floor-listing"
+          },
+          {
+            "key": "4W114",
+            "floor": "L4",
+            "basis": "floor-listing"
+          }
+        ],
+        "scheduleOnly": []
+      },
+      "floorIds": [
+        "L1",
+        "L2",
+        "L3",
+        "L4",
+        "L5"
+      ],
+      "emptyFloorKeys": []
+    },
+    "SDSC": {
+      "path": "static/indoor/SDSC-combined.json",
+      "validation": {
+        "ok": true,
+        "issues": []
+      },
+      "coverage": {
+        "mapped": [
+          "E129"
+        ],
+        "unplaced": [],
+        "scheduleOnly": []
+      },
+      "floorIds": [
+        "EAST-L1"
+      ],
+      "emptyFloorKeys": [],
+      "E129": "EAST-L1-E129-EAP-2025",
+      "EB129": null,
+      "oldEastB1Absent": true
+    }
+  },
+  "emptyFloorValidatorProbes": {
+    "withoutSources": {
+      "rejected": true,
+      "errors": [
+        {
+          "level": "error",
+          "path": "floors[0].sources",
+          "message": "Missing source references."
+        }
+      ]
+    },
+    "wrongBasis": {
+      "rejected": true,
+      "errors": [
+        {
+          "level": "error",
+          "path": "floors[0].unplaced[0]",
+          "message": "A floor without an outline needs valid floor-listing rooms."
+        }
+      ]
+    },
+    "wrongConfidence": {
+      "rejected": true,
+      "errors": [
+        {
+          "level": "error",
+          "path": "floors[0].outlineConfidence",
+          "message": "A floor without an outline must use unknown confidence."
+        }
+      ]
+    },
+    "containsGeometry": {
+      "rejected": true,
+      "errors": [
+        {
+          "level": "error",
+          "path": "floors[0].rooms",
+          "message": "A floor without an outline must not contain geometry."
+        },
+        {
+          "level": "error",
+          "path": "floors[0].rooms[0].floor",
+          "message": "Room says floor L4 but is listed under L1."
+        },
+        {
+          "level": "error",
+          "path": "floors[1].rooms[0].id",
+          "message": "Duplicate id L4-FIS-73656 (also at floors[0].rooms[0].id)."
+        },
+        {
+          "level": "error",
+          "path": "floors[1].rooms[0].scheduleKey",
+          "message": "Schedule key 4103 is already assigned to L4-FIS-73656."
+        }
+      ]
+    },
+    "noValidOutline": {
+      "rejected": true,
+      "errors": [
+        {
+          "level": "error",
+          "path": "floors",
+          "message": "Layout needs at least one floor with a valid outline polygon."
+        }
+      ]
+    }
+  },
+  "sceneReview": {
+    "files": [
+      "src/explorer3d/IndoorScene.ts",
+      "src/lib/indoor/schema.ts",
+      "src/lib/indoor/validate.ts",
+      "src/lib/indoor/roomMapping.ts"
+    ],
+    "findings": [
+      "IndoorScene builds only floors with nonempty outlines, so BRF2 L1/L5 do not produce floor slabs or labels. SDSC now supplies one real E129 room polygon on EAST-L1 and no listing-only floor.",
+      "Floor selection uses floor IDs; removing empty records from visual indexing does not change room-index floor membership. Selecting a BRF2 listing-only floor hides all visual floors and the camera uses a finite center/radius fallback.",
+      "Validator requires listing-only floors to have source references, unknown outline confidence, nonempty floor-listing unplaced entries, and no rooms/areas/features. A building composed solely of empty floors is rejected.",
+      "New SDSC uses a single independent relative coordinate frame, with unknown north and no campus geo. Original Central building shells remain unchanged in the separate original file and are intentionally not merged with the East trace."
+    ],
+    "browserExecutedByThisReview": false,
+    "relatedSeparateBrowserEvidence": "data/indoor/research/browser-verification.json"
+  },
+  "directSourceChecks": [
+    {
+      "url": "https://ratgenes.org/ctc2019/",
+      "finding": "Original 2019 meeting program explicitly places reception room 1104 on the first floor; historical floor identity only."
+    },
+    {
+      "url": "https://ratgenes.org/meetings/nida-center-for-gwas-in-outbred-rats-9th-annual-retreat/",
+      "finding": "Original 2023 retreat page explicitly places 5A03 on floor 5 and separately identifies lunch in floor 4 room 4103. No extra polygon asserted from these text listings."
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-22.jpg",
+      "finding": "Original contractor photograph visibly says THIRD FLOOR and lists 3N129. No wall trace or current revision date inferred."
+    },
+    {
+      "file": "local/indoor-sources/WFH-CLEAR-RS-19.jpg",
+      "finding": "Original contractor directory photograph third-floor panel lists conference room 3W113. It supports floor only; tiny map is not used as room geometry."
+    },
+    {
+      "file": "local/indoor-sources/CALIT-SEAW-NOV-2006.pdf",
+      "page": 7,
+      "finding": "Previously visually verified direct historical Main Auditorium/1511 wording; file hash reverified. Undated official event diagram supplies only the wall trace, and public FIS row 31372 supplies 1511/L1/2865 sqft."
+    },
+    {
+      "url": "https://business.sdsc.edu/assets/documents/sdsc_emergency_plan.pdf",
+      "file": "local/indoor-sources/SDSC-EAP-PUBLIC.pdf",
+      "status": "official-public-pdf-opened-independently-and-local-pages-visually-reviewed",
+      "pages": 26,
+      "coverRevision": "Updated 9/2025",
+      "formRevision": "2025-05-15",
+      "inspectedPages": [
+        22,
+        23,
+        24
+      ],
+      "finding": "Page 22 explicitly introduces the East floor sequence B2, B1, 1–3. Page 23 has EB1xx labels including EB129; page 24 has exact E129 within the E1xx plan. The overlay follows the four E129 wall strokes and closes its door threshold, excluding E128/E130 and the surrounding corridor.",
+      "overlay": "local/indoor-sources/SDSC-EAP-PUBLIC-E129-trace-review.png",
+      "independentNativeExtractionHashMatches": true,
+      "noSourceNorthScaleOrDimensionsClaimed": true
+    }
+  ],
+  "knownLimits": [
+    "CALIT is a single auditorium partial layout; original eight-floor shell remains separately preserved and is not merged into its local coordinates.",
+    "CALIT area is calibrated to one FIS area and is not independent validation; north and campus geo remain unknown.",
+    "WFH photographs are undated. They corroborate floors only, not present room partitions.",
+    "BRF2 1102 remains knownUnmapped; 1104/5A03 remain unplaced on empty evidence-only floors.",
+    "SDSC review covers only the exact E129 room polygon on public PDF page 24, not the entire East building. Native image resolution limits wall tracing, door hardware is simplified, and the output is relative rather than metric.",
+    "SDSC source document is updated September 2025, but the embedded E1 drawing has no independently readable revision date. The PDF creation date is not treated as a plan revision. No field survey or confirmation of later alterations was performed.",
+    "The private 2024 EAP is not required to reproduce SDSC geometry and was not opened in this independent review; the public 2025 source alone supports the accepted room label and floor distinction."
+  ],
+  "findings": [
+    {
+      "id": "CALIT-BUILDER-KNOWN-UNMAPPED-KEY",
+      "severity": "low",
+      "path": "scripts/build-calit-auditorium.py",
+      "status": "resolved-by-root",
+      "finding": "The inventory guard formerly read knownUnmapped entries using key instead of scheduleKey. Current base knownUnmapped was empty, so current geometry was unaffected; future unresolved keys would have failed closed with KeyError.",
+      "repair": "Root changed the guard to scheduleKey and reports rebuilding with --review. Reviewer reread the repaired line and independently confirmed the runtime output hash is unchanged.",
+      "repairedBuilderSha256": "76d416968b4af6b492408ec1aff4608a887d475ba34bed213780cbde18957df1",
+      "unchangedOutputSha256": "a19b1dc5b32cbb7be8bad24ffeac4ff553f4a6ffab055c8ae417e24838c51a02"
+    }
+  ],
+  "implementationFilesModifiedByReview": [],
+  "historicalReviewUnchanged": "data/indoor/research/integration-review.json",
+  "checkedImplementationHashes": {
+    "scripts/build-calit-auditorium.py": "76d416968b4af6b492408ec1aff4608a887d475ba34bed213780cbde18957df1",
+    "scripts/build-sdsc-floor-listing.mjs": "18c6ef0373692fedd45e655f3ecb0d0d2d55e268675f102221d8e4b5ca01773e",
+    "scripts/enrich-indoor-metadata.mjs": "fedc346020ec267385694b4194c0cee4b993c13fb9523dc23e59c33e3cc89152",
+    "scripts/supplement-brf2-vectors.py": "9cf560b7f352e29941298d6d9f2827d269b0ab8b500b18c2d9da946626b292d1",
+    "src/lib/indoor/manifest.ts": "e7e3ff61f5ea6ae988db9f3f0ba122e19ffed78fa68d29ec3822add99e293869",
+    "src/lib/indoor/schema.ts": "2b75da0073f4012451c0e93414856b529b7cb182d1ca7ee8a577f7acb31a4da7",
+    "src/lib/indoor/validate.ts": "7550895999676584ae027ba9ccc0422bdf900919508eb91754ae5714925f19a9",
+    "src/lib/indoor/roomMapping.ts": "fa36a24dd6f7fcb07224a70627b42103b8d2eed964ee4bc233e2544b12048dcd",
+    "src/explorer3d/IndoorScene.ts": "368b3cae83035f963be646fe92a49ca23a41fb0563b7f113a07056cbaf1779c6",
+    "scripts/build-sdsc-east.py": "5a2e27db8f8ca4857ecada842463879bf56ed599917ec33d209f6cc2e3799628"
+  },
+  "previousReviewAt": "2026-10-22T02:35:27.377374+00:00",
+  "supersededFindings": [
+    {
+      "building": "SDSC",
+      "previousState": "E129 unplaced on the historical EAST-B1 evidence-only floor, from two 2010 INC seminar entries.",
+      "newState": "E129 mapped on EAST-L1 from the public September 2025 EAP; separate EB129 on the preceding EB1 page is not aliased.",
+      "reason": "A recent numbered plan distinguishes the two room identities directly. Historical text remains recorded as a source conflict rather than current geometry evidence.",
+      "oldCurrentMappingRemoved": true,
+      "originalBaseRestoredByteForByte": true
+    }
+  ]
+}

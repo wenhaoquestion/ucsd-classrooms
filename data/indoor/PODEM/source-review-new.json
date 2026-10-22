@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-22T01:59:06.143304+00:00",
+  "scope": "Additional public-source search after the prior integration report. Public pages and actually retained images only; no shared browser tabs, account registration, authentication bypass or external messages. No shared manifest/catalog/docs modified.",
+  "searchRounds": [
+    {
+      "round": 1,
+      "focus": "Exact building names, current numbered rooms, departmental emergency/floor-plan pages and official handbooks."
+    },
+    {
+      "round": 2,
+      "focus": "Original architects/designers, physical wayfinding installer photographs, public construction planroom and project bid identities."
+    }
+  ],
+  "runtimeModified": false,
+  "addedRoomGeometry": 0,
+  "exhaustiveness": "These targeted searches do not establish that all public or authorized sources are exhausted.",
+  "building": "PODEM",
+  "targetKeys": [
+    "0132",
+    "0133",
+    "1A18",
+    "1A19",
+    "1A20",
+    "1A22",
+    "1A23",
+    "0273",
+    "0274",
+    "0275"
+  ],
+  "priorEvidence": [
+    "data/indoor/research/new-building-sources.json",
+    "data/indoor/research/seating-and-great-review.json"
+  ],
+  "newSources": [
+    {
+      "url": "https://eighth.ucsd.edu/engagement-program/frequently-asked-questions.html",
+      "publisher": "UC San Diego Eighth College",
+      "reviewStatus": "public-page-reviewed",
+      "finding": "Official FAQ explicitly identifies 273, 274 and 275 as second-floor CCE classrooms. Baseline already has exact 0273/0274/0275 source-floor listings, so this corroborates existing floor evidence without changing coverage."
+    },
+    {
+      "url": "https://eighth.ucsd.edu/residential-life/living-at-eighth.html",
+      "publisher": "UC San Diego Eighth College",
+      "reviewStatus": "public-page-reviewed",
+      "finding": "Identifies the first two floors as academic offices/classrooms and links residential layout information. Does not show exact target classroom perimeters."
+    },
+    {
+      "url": "https://eighth.ucsd.edu/residential-life/Podemos-Layout-Info.pdf",
+      "reviewStatus": "indexed-residential-document-but-current-web-open-404",
+      "finding": "Search index identifies PODEMOS residential units; actual web open returned404. No file acquired or classroom-geometry claim made."
+    },
+    {
+      "url": "https://www.hksinc.com/what-we-do/projects/uc-san-diego-theatre-district-living-and-learning-neighborhood/",
+      "publisher": "HKS, original architect",
+      "reviewStatus": "public-project-page-reviewed",
+      "finding": "Confirms Podemos as16-story first phase and teaching program; extracted project description has no numbered classroom plan. All underlying images have not been acquired for visual review."
+    },
+    {
+      "url": "https://caps.ucsd.edu/about/locations.html",
+      "publisher": "UC San Diego CAPS",
+      "reviewStatus": "public-page-reviewed",
+      "finding": "Describes the second-floor administration wing and entrance at top of main stairs; no numbered target classrooms or boundaries."
+    },
+    {
+      "url": "https://www.ucsdplanroom.com/projects/bidding",
+      "reviewStatus": "normal-public-link-redirects-to-auth-login",
+      "finding": "Independent construction-planroom route exists but its project list requires an account. No registration or guessed private project key was used."
+    }
+  ],
+  "openNextSteps": [
+    "Original HKS/EYRC construction/wayfinding drawings for Theatre District Living and Learning Neighborhood Building5 (Podemos).",
+    "Public planroom registration or school-authorized access could expose archived bid sets, separately from Tririga; no file availability is presumed."
+  ],
+  "decision": "No new room geometry or changed floor metadata."
+}

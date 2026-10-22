@@ -1,0 +1,34 @@
+{
+  "building": "FAH",
+  "name": "Franklin Antonio Hall",
+  "source": {
+    "id": "FAH-EHS-2025",
+    "title": "Franklin Antonio Hall emergency evacuation floor plans",
+    "url": "https://drive.google.com/file/d/1CQ-lugGHgOvGZ-YGxk_BCSeTTtrMMHqj/view",
+    "publisher": "UC San Diego Environment, Health & Safety / Jacobs School of Engineering",
+    "building": "FAH",
+    "floors": [
+      "L1",
+      "L2",
+      "L3",
+      "L4"
+    ],
+    "accessed": "2026-10-21",
+    "revision": "2025 public source catalog; no revision date is printed on the floor pages",
+    "imageRef": "Original PDF: 1543720 bytes; SHA-256 b73a73b00757e67e33bc4e8eaf5aaf1810b968c9dd97e1e728a72088bf78d946",
+    "orientation": "North arrow points up.",
+    "scale": "No architectural scale bar; page scales are approximately normalized using corresponding common-core walls.",
+    "notes": [
+      "All four upper-ground floor pages reviewed from the downloaded original PDF.",
+      "The lower floor is also in the source (physical page 1), but is not imported in this supplement."
+    ]
+  },
+  "notes": [
+    "Two exact scheduled room labels, 1101 and 1450, have traced positions on Level 1.",
+    "1301 remains a source-listed Level 1 room without a position: the large northern auditorium is unnumbered in this PDF and is not assumed to be 1301.",
+    "All four previously browsable floors are retained with source-traced approximate silhouettes. Other rooms remain unmodeled.",
+    "The original Facilities layout is preserved unchanged. It had no room polygons and repeated the campus exterior footprint on every floor.",
+    "The campus exterior footprint has different southeast-wing angles from the floor diagrams, so a reliable uniform campus registration is not established. This supplement uses relative units and deliberately has no geo placement.",
+    "Floor alignment is approximate using matching common-core walls. Floor heights are illustrative. Small door recesses, external exit landings and columns are simplified."
+  ]
+}

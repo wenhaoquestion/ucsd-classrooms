@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-22T03:05:08.136011+00:00",
+  "scope": "Final targeted public-source search for GH L1, PODEM L1/L2, COA L2, MCC L2 and TASB; adjacent GH basement/L2 targets retained for context. No shared runtime, manifest, coverage, documentation or source catalog files changed.",
+  "requestSnapshot": {
+    "file": "data/indoor/research/remaining-floorplan-requests.csv",
+    "sha256": "313fcf60a4c1da9c8384f80f318e5633bc0ea67170300d6f38409d606fbf6260",
+    "targets": [
+      {
+        "building": "GH",
+        "building_name": "Galbraith Hall",
+        "floor": "L1",
+        "room_keys": [
+          "102",
+          "103",
+          "111",
+          "144",
+          "145",
+          "155",
+          "157",
+          "170",
+          "174"
+        ],
+        "active_FA26_room_keys": [
+          "102",
+          "103",
+          "111",
+          "144",
+          "145",
+          "155",
+          "157",
+          "170",
+          "174"
+        ],
+        "missing_keys": 9,
+        "requested_evidence": "Current numbered floor plan or room polygons, revision date, scale and registrar-to-Facilities room-ID crosswalk"
+      },
+      {
+        "building": "PODEM",
+        "building_name": "Podemos",
+        "floor": "L1",
+        "room_keys": [
+          "1A18",
+          "1A19",
+          "1A20",
+          "1A22",
+          "1A23",
+          "0132",
+          "0133"
+        ],
+        "active_FA26_room_keys": [
+          "1A18",
+          "1A19",
+          "1A20",
+          "1A22",
+          "1A23",
+          "0132",
+          "0133"
+        ],
+        "missing_keys": 7,
+        "requested_evidence": "Current numbered floor plan or room polygons, revision date, scale and registrar-to-Facilities room-ID crosswalk"
+      },
+      {
+        "building": "COA",
+        "building_name": "Coalition",
+        "floor": "L2",
+        "room_keys": [
+          "201",
+          "217",
+          "269",
+          "270",
+          "271",
+          "272"
+        ],
+        "active_FA26_room_keys": [
+          "201",
+          "269",
+          "270",
+          "271",
+          "272"
+        ],
+        "missing_keys": 6,
+        "requested_evidence": "Current numbered floor plan or room polygons, revision date, scale and registrar-to-Facilities room-ID crosswalk"
+      },
+      {
+        "building": "MCC",
+        "building_name": "Media Center and Communication Building",
+        "floor": "L2",
+        "room_keys": [
+          "201",
+          "221",
+          "222",
+          "250"
+        ],
+        "active_FA26_room_keys": [
+          "201",
+          "221",
+          "222",
+          "250"
+        ],
+        "missing_keys": 4,
+        "requested_evidence": "Current numbered floor plan or room polygons, revision date, scale and registrar-to-Facilities room-ID crosswalk"
+      },
+      {
+        "building": "GH",
+        "building_name": "Galbraith Hall",
+        "floor": "B",
+        "room_keys": [
+          "15",
+          "18A",
+          "18B",
+          "23"
+        ],
+        "active_FA26_room_keys": [
+          "15",
+          "18A",
+          "23"
+        ],
+        "missing_keys": 4,
+        "requested_evidence": "Current numbered floor plan or room polygons, revision date, scale and registrar-to-Facilities room-ID crosswalk"
+      },
+      {
+        "building": "GH",
+        "building_name": "Galbraith Hall",
+        "floor": "L2",
+        "room_keys": [
+          "203",
+          "247",
+          "253",
+          "254"
+        ],
+        "active_FA26_room_keys": [
+          "247",
+          "253",
+          "254"
+        ],
+        "missing_keys": 4,
+        "requested_evidence": "Current numbered floor plan or room polygons, revision date, scale and registrar-to-Facilities room-ID crosswalk"
+      },
+      {
+        "building": "PODEM",
+        "building_name": "Podemos",
+        "floor": "L2",
+        "room_keys": [
+          "0273",
+          "0274",
+          "0275"
+        ],
+        "active_FA26_room_keys": [
+          "0273",
+          "0274",
+          "0275"
+        ],
+        "missing_keys": 3,
+        "requested_evidence": "Current numbered floor plan or room polygons, revision date, scale and registrar-to-Facilities room-ID crosswalk"
+      },
+      {
+        "building": "TASB",
+        "building_name": "Triton Administrative Services Building",
+        "floor": "unverified",
+        "room_keys": [
+          "W1131",
+          "W1141"
+        ],
+        "active_FA26_room_keys": [
+          "W1131",
+          "W1141"
+        ],
+        "missing_keys": 2,
+        "requested_evidence": "Current numbered floor plan or room polygons, revision date, scale and registrar-to-Facilities room-ID crosswalk"
+      }
+    ]
+  },
+  "priorReviewsUsed": [
+    "data/indoor/GH/additional-source-review.json",
+    "data/indoor/GH/second-pass-review.json",
+    "data/indoor/GH/msi-sign-review.json",
+    "data/indoor/PODEM/source-review-new.json",
+    "data/indoor/COA/second-pass-review.json",
+    "data/indoor/MCC/fis-vector-review.json",
+    "data/indoor/MCC/second-pass-review.json",
+    "data/indoor/TASB/source-review.json",
+    "data/indoor/TASB/source-review-new.json",
+    "data/indoor/research/new-building-sources.json",
+    "data/indoor/research/seating-and-great-review.json",
+    "data/indoor/research/public-fis-raster-sources.json"
+  ],
+  "method": {
+    "rounds": [
+      {
+        "focus": "Exact building names plus EAP, emergency, evacuation and floor plan; departmental safety/business/handbook navigation.",
+        "representativeQueries": [
+          "site:theatre.ucsd.edu \"Galbraith\" \"Emergency\"",
+          "site:ucsd.edu \"Coalition\" \"Emergency Action Plan\"",
+          "site:communication.ucsd.edu \"Emergency\" \"plan\"",
+          "site:ucsd.edu \"Podemos\" \"floor plan\"",
+          "\"Triton Administrative\" \"Emergency Action Plan\"",
+          "\"Eighth College\" \"Emergency Action Plan\""
+        ]
+      },
+      {
+        "focus": "Exact current room keys, architectural/BIM downloads and official teaching-room links.",
+        "representativeQueries": [
+          "\"W1131\" \"UCSD\"",
+          "\"W1141\" \"UC San Diego\"",
+          "\"Coalition\" \"269\" \"UCSD\"",
+          "\"Podemos\" \"1A18\"",
+          "\"Podemos\" \"UC San Diego\" \"Revit\"",
+          "\"Triton Center\" \"Revit\" download",
+          "\"Arthur Wagner\" groundplan"
+        ]
+      },
+      {
+        "focus": "Follow official Theatre Vault folder and official podcast room links, including actual Floor plan link behavior."
+      }
+    ],
+    "authentication": "No new login, privilege escalation, protected-raster retry or external communication. A directory linked from the public Theatre site was read using the existing Drive connector; root independently checked the visible browser. Public linking does not establish anonymous access to every child file.",
+    "acceptance": "A target-numbered plan or original CAD/3D model with verifiable room identity and usable boundaries; location prose, generic EAPs, programs, seat counts and photographs alone are insufficient.",
+    "downloadedNewGeometryFiles": 0
+  },
+  "buildingFindings": [
+    {
+      "building": "GH",
+      "sources": [
+        {
+          "url": "https://theatre.ucsd.edu/facilities/safety-info.html",
+          "status": "public-page-reviewed",
+          "finding": "Links to general campus and UC performing-arts safety resources; no GH-specific numbered floor plan obtained."
+        },
+        {
+          "url": "https://www.ucop.edu/safety-and-loss-prevention/_files/perform-arts/SafetyPerformingArtsManual.pdf",
+          "status": "public-pdf-text-and-contents-reviewed",
+          "finding": "179-page general performing-arts safety manual. Text search found no Galbraith; no target room plan identified. A complete visual review of all pages was not performed."
+        },
+        {
+          "url": "https://theatre.ucsd.edu/about/the-vault.html",
+          "status": "public-page-reviewed",
+          "finding": "Official page links The Vault student-resource Drive directory."
+        },
+        {
+          "url": "https://drive.google.com/drive/folders/1yKXCtlHXSWDbAOvSzXIW0jfkGEDWgkgI",
+          "status": "existing-connector-and-visible-browser-readable",
+          "finding": "Connector returned 11 direct entries. Web text extraction alone showed an empty shell; that was not treated as denial or evidence of an empty folder. Relevant child checks are recorded below. Anonymous child-file availability not independently established.",
+          "directChildrenReturned": 11
+        },
+        {
+          "url": "https://drive.google.com/file/d/1jcnY8JxPmz7ZPUST310iYBLp8otLTk_J/view?usp=drivesdk",
+          "status": "connector-readable-text-reviewed",
+          "finding": "UCSD T+D LABS .pdf describes 2024-25 performance production and Arthur Wagner Theatre use. Retrieved text provides no target wall geometry. Original PDF pages/images were not independently rendered in this subtask.",
+          "title": "UCSD T+D LABS .pdf",
+          "mimeType": "application/pdf",
+          "listedSizeBytes": 48881
+        },
+        {
+          "url": "https://docs.google.com/document/d/1KwgNTXCMORlApV7ed8tViEgU9ZRFmOs6/edit",
+          "status": "connector-text-and-root-visible-browser-reviewed",
+          "finding": "One-page classroom/rehearsal reservation guidelines, including GH202 front-office booking. Root visually confirmed seven rule bullets and no visible floor plan; no raw DOCX fetch was performed.",
+          "title": "Reserving Classroom_Rehearsal Space.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "listedSizeBytes": 293188,
+          "rootScreenshot": "/tmp/ucsd-vault-reservation-doc-wide.png"
+        },
+        {
+          "url": "https://drive.google.com/drive/folders/1e_qwUNWl-7VXp9sGosTvpMPfs3MYH-qp",
+          "status": "connector-and-root-browser-current-account-visible-empty",
+          "finding": "Dance Area Photos returned zero children to the connector and root confirmed an empty file list in the visible browser. This is the current account-visible result, not a claim that every user would see no files."
+        },
+        {
+          "url": "https://drive.google.com/file/d/10qSlX1oo1if_sziiLfII4DHOtyv6hb4f/view",
+          "title": "Grad Handbook 2020-2021 with MDF.pdf",
+          "status": "targeted-text-review",
+          "finding": "Root retrieved 69,857 characters and checked map/floor/building/Galbraith/Wagner/facilities references. Retrieved content is graduate policy; no numbered floor-plan reference or target room boundary identified. This is not a full visual review of PDF pages or embedded images. Unrelated handbook text is not retained in the repository."
+        },
+        {
+          "url": "https://drive.google.com/file/d/1e-51qwpk_jz3xAmeLrUeLp-dr9DFo9hLf8ywVtQ_5kY/view",
+          "title": "Graduate Handbook 26-27",
+          "shortcutUrl": "https://drive.google.com/file/d/1d_dIWudTrnqs1RP1rxlCrvp6B0P_Yszh/view",
+          "status": "browser-resolved-shortcut-and-targeted-text-review",
+          "finding": "The initial connector media request against the shortcut returned 403; actual browser navigation resolved its real target, which the connector successfully read (73,628 characters). Targeted map/floor/building/Galbraith/Wagner/facilities references concern program descriptions, staff functions and a GH205 office; no numbered plan or target boundary identified. No claim that all embedded illustrations were visually reviewed. Unrelated handbook text is not retained."
+        }
+      ],
+      "result": "No additional target room geometry. Previously blocked FIS levels were not retried."
+    },
+    {
+      "building": "PODEM",
+      "sources": [
+        {
+          "url": "https://eighth.ucsd.edu/residential-life/index.html",
+          "status": "public-page-reviewed",
+          "finding": "Links a Theatre District neighborhood map; no new numbered academic-room plan obtained."
+        },
+        {
+          "url": "https://eighth.ucsd.edu/_images/residential-life/building-images/tdmap.png",
+          "status": "declared-image-link-not-visually-reviewed",
+          "finding": "Official page labels this a neighborhood map. Original image was not downloaded or visually verified in this final round; no room-boundary claim made."
+        },
+        {
+          "url": "https://podcast.ucsd.edu/info/computers.aspx",
+          "status": "public-page-reviewed",
+          "finding": "Official teaching-technology list links all seven target Podemos L1 rooms to Facilities details. This establishes room identities but does not itself contain floor geometry."
+        },
+        {
+          "url": "https://facilities.ucsd.edu/Classrooms/Details.htm?Room=119373",
+          "status": "public-page-and-floor-plan-link-reviewed",
+          "finding": "Identifies 0132; exposes bkey=1001843 and a floor-viewer URL with empty fcode. Clicking the declared Floor plan link redirected to the FIS welcome page, not a plan. No previously failed embed retry.",
+          "roomKey": "0132"
+        },
+        {
+          "url": "https://facilities.ucsd.edu/Classrooms/Details.htm?Room=119378",
+          "status": "public-page-and-floor-plan-link-reviewed",
+          "finding": "Identifies 1A18; exposes the same building key and empty-fcode viewer link. Declared Floor plan link also redirected to the FIS welcome page. No usable geometry obtained.",
+          "roomKey": "1A18"
+        },
+        {
+          "url": "https://facilities.ucsd.edu/Classrooms/Details.htm?Room=119351",
+          "status": "web-fetch-cache-miss",
+          "finding": "Official podcast page links 1A23 to this room detail URL, but this detail fetch returned a cache miss. No plan content or availability inferred.",
+          "roomKey": "1A23"
+        },
+        {
+          "url": "https://ugcbo.ucsd.edu/",
+          "status": "public-page-reviewed",
+          "finding": "College business-office route lists administrative resources but supplies no newly verified classroom plan."
+        },
+        {
+          "url": "https://ucsdcollab.atlassian.net/wiki/spaces/CBO/overview?homepageId=31948876",
+          "status": "public-navigation-returned-shell-with-login",
+          "finding": "Official College Business Office link returned a Confluence shell with login. No protected content or login attempted."
+        }
+      ],
+      "result": "No new target geometry or changed floor assignment; known L2 CCE evidence and earlier Regent design materials not recounted as new."
+    },
+    {
+      "building": "COA",
+      "sources": [
+        {
+          "url": "https://ugcbo.ucsd.edu/",
+          "status": "public-page-reviewed",
+          "finding": "College business-office route yielded no accessible numbered Coalition L2 plan."
+        },
+        {
+          "url": "https://podcast.ucsd.edu/info/computers.aspx",
+          "status": "public-page-reviewed",
+          "finding": "Coalition list covers basement/L1 teaching rooms already investigated, not the missing L2 target keys."
+        }
+      ],
+      "result": "No verified L2 plan from targeted EAP, exact-room, business-office or BIM searches. Existing L2 protected raster was not retried."
+    },
+    {
+      "building": "MCC",
+      "sources": [
+        {
+          "url": "https://communication.ucsd.edu/comm-net/index.html",
+          "status": "public-access-policy-page-reviewed",
+          "finding": "COMM-NET landing page describes AD-restricted faculty/staff/graduate forms and handbooks. Protected underlying site was not opened; no floor plan presumed available."
+        },
+        {
+          "url": "https://communication.ucsd.edu/graduate/resources.html",
+          "status": "public-page-reviewed",
+          "finding": "Public graduate resources are professional/funding guidance; no target numbered indoor plan recovered."
+        },
+        {
+          "url": "https://communication.ucsd.edu/about/contact.html",
+          "status": "public-page-reviewed",
+          "finding": "Confirms Communication building location, with campus-map navigation rather than target room boundaries."
+        },
+        {
+          "url": "https://podcast.ucsd.edu/info/computers.aspx",
+          "status": "public-page-reviewed",
+          "finding": "Lists Media Center / Communications 201 as an unlinked department space. No additional FIS geometry route supplied."
+        }
+      ],
+      "result": "No new 201/221/222/250 room polygons; corrected bkey391 identity and prior vector limitations retained."
+    },
+    {
+      "building": "TASB",
+      "sources": [
+        {
+          "url": "https://calendar.ucsd.edu/event/study-abroad-expo-fair-9638",
+          "status": "search-index-only-full-page-http-429",
+          "finding": "Search snippet names Multipurpose Room1321. Full page returned HTTP429, so it was not treated as a reviewed plan. The room differs from W1131/W1141 and no crosswalk was inferred."
+        },
+        {
+          "url": "https://today.ucsd.edu/story/new-campus-gateway-nears-completion",
+          "status": "public-search-result-reviewed",
+          "finding": "November2025 program description/rendering; no newly verified target-numbered floor plan obtained. No geometry inferred from exterior or project program."
+        }
+      ],
+      "result": "Exact W1131/W1141/EAP/CAD searches did not return a usable new plan; prior 404 naming documents, unnumbered Regents design and protected planroom were not retried."
+    }
+  ],
+  "unverifiedRemainingCandidates": [
+    {
+      "url": "https://www.hksinc.com/what-we-do/projects/uc-san-diego-theatre-district-living-and-learning-neighborhood/",
+      "status": "Prior public project text reviewed; not every underlying image visually examined. No downloadable numbered plan or original BIM file established."
+    },
+    {
+      "url": "https://eighth.ucsd.edu/_images/residential-life/building-images/tdmap.png",
+      "status": "Declared neighborhood-map image not visually examined in this final pass."
+    }
+  ],
+  "decision": {
+    "addedRoomGeometry": 0,
+    "runtimeModified": false,
+    "additionalVerifiedDownloadableFloorplans": 0,
+    "reason": "None of the newly checked routes established a target-numbered room boundary suitable for mapping. The two Vault handbooks received targeted text checks; visual-review limits and other unverified candidates remain explicit.",
+    "exhaustiveness": "This is an audit of targeted searches and actual access results, not proof that all public or authorized sources are exhausted."
+  },
+  "rootFollowupAt": "2026-10-22T03:05:40.000118+00:00"
+}

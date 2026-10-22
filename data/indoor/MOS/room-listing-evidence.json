@@ -1,0 +1,33 @@
+{
+  "building": "MOS",
+  "notes": "MO is the building prefix (letter O, not zero); schedule keys retain their own leading zero. Extracted factual labels only.",
+  "rooms": [
+    {
+      "floor": "L1",
+      "sourceLabel": "MO0113",
+      "scheduleKey": "0113",
+      "roomKey": "113139",
+      "areaSqft": 2684,
+      "sourceHtml": "local/indoor-sources/MOS-L1-FIS.html",
+      "htmlSha256": "b3c8fb4d474bac5d888aa7005947086a87b997886ce389b1bfd8ec18d3f0cca3"
+    },
+    {
+      "floor": "L1",
+      "sourceLabel": "MO0114",
+      "scheduleKey": "0114",
+      "roomKey": "113140",
+      "areaSqft": 2600,
+      "sourceHtml": "local/indoor-sources/MOS-L1-FIS.html",
+      "htmlSha256": "b3c8fb4d474bac5d888aa7005947086a87b997886ce389b1bfd8ec18d3f0cca3"
+    },
+    {
+      "floor": "L2",
+      "sourceLabel": "MO0204",
+      "scheduleKey": "0204",
+      "roomKey": "113141",
+      "areaSqft": 1998,
+      "sourceHtml": "local/indoor-sources/MOS-L2-FIS.html",
+      "htmlSha256": "df6b53b67256047e8829ee636f5ef881e6434a20eef1429c54bed2af908623ae"
+    }
+  ]
+}

@@ -1,0 +1,984 @@
+{
+  "schemaVersion": 1,
+  "building": "HSS",
+  "baseLayout": "static/indoor/facilities/HSS.json",
+  "baseSha256": "5678e573a04f2028e4f889afac8663b121726bdaf6941399b598824da9dc34f5",
+  "outputLayout": "static/indoor/HSS-combined.json",
+  "sources": [
+    {
+      "id": "HSS-FIS-L1-2025",
+      "title": "UCSD Facilities Information System - HSS - First Floor - Master Plan",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=257&fcode=1&zoom=1",
+      "accessed": "2026-10-22T01:17:28.488Z",
+      "printedDate": "2025-08-21",
+      "sheet": "A-1",
+      "localPath": "local/indoor-sources/HSS-L1-FIS.png",
+      "sha256": "ebe3e5ed95328d61be00982490ad08d280b4d660959836cb140bcdf3c0238971",
+      "nativeSize": [
+        2593,
+        1945
+      ],
+      "referenceSize": [
+        2593,
+        1945
+      ],
+      "pixelConversion": "Native u = reference u * nativeWidth/referenceWidth; native v = reference v * nativeHeight/referenceHeight.",
+      "warning": "FIS source warns that the viewer plan may be inaccurate and a newer downloadable CAD drawing is available."
+    },
+    {
+      "id": "HSS-FIS-L2-2024",
+      "title": "UCSD Facilities Information System - HSS - Second Floor - Master Plan",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=257&fcode=2&zoom=1",
+      "accessed": "2026-10-22T01:17:36.207Z",
+      "printedDate": "2024-05-02",
+      "sheet": "A-2",
+      "localPath": "local/indoor-sources/HSS-L2-FIS.png",
+      "sha256": "c970a3a59cafbf7af845be063496a853a3cc15476b62fdf3e44c47ea5d09b60d",
+      "nativeSize": [
+        5185,
+        3889
+      ],
+      "referenceSize": [
+        2592,
+        1944
+      ],
+      "pixelConversion": "Native u = reference u * nativeWidth/referenceWidth; native v = reference v * nativeHeight/referenceHeight.",
+      "warning": "FIS source warns that the viewer plan may be inaccurate and a newer downloadable CAD drawing is available."
+    }
+  ],
+  "floors": [
+    {
+      "id": "L1",
+      "source": "HSS-FIS-L1-2025",
+      "coreRegistration": {
+        "method": "Fit one orientation-preserving similarity from the printed elevator and north-stair perimeter to the corresponding preserved L4 service geometry. Validate the separate south stair without fitting it.",
+        "targetFloor": "L4",
+        "correspondenceEvidence": [
+          {
+            "sourceLabel": "1501",
+            "sourceUse": "elevator",
+            "printedAreaSqft": 117,
+            "targetRoom": "4103",
+            "basis": "Identical paired elevator shaft rectangle, area and position immediately north of the north stair."
+          },
+          {
+            "sourceLabel": "1511",
+            "sourceUse": "north stair",
+            "printedAreaSqft": 133,
+            "targetRoom": "4102",
+            "basis": "Rectangular stair enclosure immediately south of elevator; same area and width."
+          },
+          {
+            "sourceLabel": "1512",
+            "sourceUse": "south stair",
+            "printedAreaSqft": 153,
+            "targetRoom": "4101",
+            "basis": "Independent stair enclosure south of the service core; same main rectangle and projecting entrance."
+          }
+        ],
+        "controls": [
+          {
+            "room": "4103",
+            "vertex": 3,
+            "source": [
+              1148,
+              1234
+            ],
+            "target": [
+              3.61,
+              7.06
+            ]
+          },
+          {
+            "room": "4103",
+            "vertex": 0,
+            "source": [
+              1246,
+              1234
+            ],
+            "target": [
+              -1.43,
+              7.33
+            ]
+          },
+          {
+            "room": "4103",
+            "vertex": 1,
+            "source": [
+              1246,
+              1276
+            ],
+            "target": [
+              -1.55,
+              5.17
+            ]
+          },
+          {
+            "room": "4103",
+            "vertex": 2,
+            "source": [
+              1148,
+              1276
+            ],
+            "target": [
+              3.5,
+              4.91
+            ]
+          },
+          {
+            "room": "4102",
+            "vertex": 4,
+            "source": [
+              1247,
+              1281
+            ],
+            "target": [
+              -1.56,
+              4.89
+            ]
+          },
+          {
+            "room": "4102",
+            "vertex": 3,
+            "source": [
+              1146,
+              1281
+            ],
+            "target": [
+              3.49,
+              4.63
+            ]
+          },
+          {
+            "room": "4102",
+            "vertex": 2,
+            "source": [
+              1146,
+              1329
+            ],
+            "target": [
+              3.36,
+              2.19
+            ]
+          },
+          {
+            "room": "4102",
+            "vertex": 1,
+            "source": [
+              1247,
+              1329
+            ],
+            "target": [
+              -1.69,
+              2.46
+            ]
+          }
+        ],
+        "holdouts": [
+          {
+            "room": "4101",
+            "vertex": 11,
+            "source": [
+              1146,
+              1451
+            ],
+            "target": [
+              3.04,
+              -3.92
+            ]
+          },
+          {
+            "room": "4101",
+            "vertex": 0,
+            "source": [
+              1247,
+              1451
+            ],
+            "target": [
+              -2.01,
+              -3.66
+            ]
+          },
+          {
+            "room": "4101",
+            "vertex": 1,
+            "source": [
+              1247,
+              1499
+            ],
+            "target": [
+              -2.14,
+              -6.1
+            ]
+          },
+          {
+            "room": "4101",
+            "vertex": 10,
+            "source": [
+              1146,
+              1499
+            ],
+            "target": [
+              2.91,
+              -6.36
+            ]
+          }
+        ],
+        "maxControlResidualMeters": 0.12,
+        "maxHoldoutResidualMeters": 0.25
+      },
+      "oldFrameRegistration": {
+        "method": "Fit source pixel coordinates to matching corners of preserved same-floor room outlines. Invert this fit, then apply the L4-core-registered metric transform uniformly to all existing lower-floor geometry. No individual room scale adjustments.",
+        "controls": [
+          {
+            "room": "1128B",
+            "vertex": 10,
+            "source": [
+              532,
+              969
+            ],
+            "target": [
+              17.95,
+              3.15
+            ]
+          },
+          {
+            "room": "1128B",
+            "vertex": 5,
+            "source": [
+              532,
+              1086
+            ],
+            "target": [
+              17.88,
+              1.73
+            ]
+          },
+          {
+            "room": "1138",
+            "vertex": 11,
+            "source": [
+              532,
+              882
+            ],
+            "target": [
+              18.01,
+              4.27
+            ]
+          },
+          {
+            "room": "1106A",
+            "vertex": 4,
+            "source": [
+              532,
+              1475
+            ],
+            "target": [
+              17.54,
+              -3.24
+            ]
+          },
+          {
+            "room": "1315",
+            "vertex": 0,
+            "source": [
+              1863,
+              1176
+            ],
+            "target": [
+              1.03,
+              1.39
+            ]
+          },
+          {
+            "room": "1315",
+            "vertex": 5,
+            "source": [
+              1863,
+              1350
+            ],
+            "target": [
+              0.92,
+              -0.74
+            ]
+          },
+          {
+            "room": "1315",
+            "vertex": 12,
+            "source": [
+              1736,
+              1176
+            ],
+            "target": [
+              2.5,
+              1.34
+            ]
+          },
+          {
+            "room": "1305",
+            "vertex": 1,
+            "source": [
+              1863,
+              1475
+            ],
+            "target": [
+              0.83,
+              -2.29
+            ]
+          }
+        ],
+        "maxOldFrameResidualMeters": 0.12
+      },
+      "inheritedRoomAreas": {
+        "1106A": 442,
+        "1128B": 406,
+        "1138": 299,
+        "1305": 410,
+        "1315": 602,
+        "1346": 1181
+      },
+      "rooms": [
+        {
+          "scheduleKey": "1106B",
+          "label": "1106B",
+          "printedAreaSqft": 406,
+          "outer": [
+            [
+              532,
+              1234
+            ],
+            [
+              659,
+              1234
+            ],
+            [
+              659,
+              1350
+            ],
+            [
+              532,
+              1350
+            ]
+          ],
+          "labelPoint": [
+            600,
+            1290
+          ],
+          "maxRelativeAreaDifference": 0.06
+        },
+        {
+          "scheduleKey": "1128A",
+          "label": "1128A",
+          "printedAreaSqft": 488,
+          "outer": [
+            [
+              532,
+              1092
+            ],
+            [
+              659,
+              1092
+            ],
+            [
+              659,
+              1229
+            ],
+            [
+              532,
+              1229
+            ]
+          ],
+          "labelPoint": [
+            600,
+            1157
+          ],
+          "maxRelativeAreaDifference": 0.06
+        },
+        {
+          "scheduleKey": "1330",
+          "label": "1330",
+          "printedAreaSqft": 1529,
+          "outer": [
+            [
+              1633,
+              932
+            ],
+            [
+              1836,
+              932
+            ],
+            [
+              1836,
+              949
+            ],
+            [
+              1867,
+              949
+            ],
+            [
+              1867,
+              1171
+            ],
+            [
+              1633,
+              1171
+            ],
+            [
+              1633,
+              1153
+            ],
+            [
+              1610,
+              1153
+            ],
+            [
+              1610,
+              1075
+            ],
+            [
+              1653,
+              1075
+            ],
+            [
+              1653,
+              1021
+            ],
+            [
+              1610,
+              1021
+            ],
+            [
+              1610,
+              951
+            ],
+            [
+              1633,
+              951
+            ]
+          ],
+          "labelPoint": [
+            1813,
+            1049
+          ],
+          "maxRelativeAreaDifference": 0.08
+        }
+      ]
+    },
+    {
+      "id": "L2",
+      "source": "HSS-FIS-L2-2024",
+      "coreRegistration": {
+        "method": "Fit one orientation-preserving similarity from the printed elevator and north-stair perimeter to the corresponding preserved L4 service geometry. Validate the separate south stair without fitting it.",
+        "targetFloor": "L4",
+        "correspondenceEvidence": [
+          {
+            "sourceLabel": "2514",
+            "sourceUse": "elevator",
+            "printedAreaSqft": 117,
+            "targetRoom": "4103",
+            "basis": "Identical paired elevator shaft rectangle, area and position immediately north of the north stair."
+          },
+          {
+            "sourceLabel": "2512",
+            "sourceUse": "north stair",
+            "printedAreaSqft": 133,
+            "targetRoom": "4102",
+            "basis": "Rectangular stair enclosure immediately south of elevator; same area and width."
+          },
+          {
+            "sourceLabel": "2511",
+            "sourceUse": "south stair",
+            "printedAreaSqft": 153,
+            "targetRoom": "4101",
+            "basis": "Independent stair enclosure south of the service core; same main rectangle and projecting entrance."
+          }
+        ],
+        "controls": [
+          {
+            "room": "4103",
+            "vertex": 3,
+            "source": [
+              1148,
+              1302
+            ],
+            "target": [
+              3.61,
+              7.06
+            ]
+          },
+          {
+            "room": "4103",
+            "vertex": 0,
+            "source": [
+              1246,
+              1302
+            ],
+            "target": [
+              -1.43,
+              7.33
+            ]
+          },
+          {
+            "room": "4103",
+            "vertex": 1,
+            "source": [
+              1246,
+              1342
+            ],
+            "target": [
+              -1.55,
+              5.17
+            ]
+          },
+          {
+            "room": "4103",
+            "vertex": 2,
+            "source": [
+              1148,
+              1342
+            ],
+            "target": [
+              3.5,
+              4.91
+            ]
+          },
+          {
+            "room": "4102",
+            "vertex": 4,
+            "source": [
+              1248,
+              1348
+            ],
+            "target": [
+              -1.56,
+              4.89
+            ]
+          },
+          {
+            "room": "4102",
+            "vertex": 3,
+            "source": [
+              1147,
+              1348
+            ],
+            "target": [
+              3.49,
+              4.63
+            ]
+          },
+          {
+            "room": "4102",
+            "vertex": 2,
+            "source": [
+              1147,
+              1396
+            ],
+            "target": [
+              3.36,
+              2.19
+            ]
+          },
+          {
+            "room": "4102",
+            "vertex": 1,
+            "source": [
+              1248,
+              1396
+            ],
+            "target": [
+              -1.69,
+              2.46
+            ]
+          }
+        ],
+        "holdouts": [
+          {
+            "room": "4101",
+            "vertex": 11,
+            "source": [
+              1147,
+              1515
+            ],
+            "target": [
+              3.04,
+              -3.92
+            ]
+          },
+          {
+            "room": "4101",
+            "vertex": 0,
+            "source": [
+              1248,
+              1515
+            ],
+            "target": [
+              -2.01,
+              -3.66
+            ]
+          },
+          {
+            "room": "4101",
+            "vertex": 1,
+            "source": [
+              1248,
+              1564
+            ],
+            "target": [
+              -2.14,
+              -6.1
+            ]
+          },
+          {
+            "room": "4101",
+            "vertex": 10,
+            "source": [
+              1147,
+              1564
+            ],
+            "target": [
+              2.91,
+              -6.36
+            ]
+          }
+        ],
+        "maxControlResidualMeters": 0.12,
+        "maxHoldoutResidualMeters": 0.25
+      },
+      "oldFrameRegistration": {
+        "method": "Fit source pixel coordinates to matching corners of preserved same-floor room outlines. Invert this fit, then apply the L4-core-registered metric transform uniformly to all existing lower-floor geometry. No individual room scale adjustments.",
+        "controls": [
+          {
+            "room": "2154",
+            "vertex": 0,
+            "source": [
+              1017,
+              759
+            ],
+            "target": [
+              12.02,
+              6.09
+            ]
+          },
+          {
+            "room": "2154",
+            "vertex": 1,
+            "source": [
+              1017,
+              935
+            ],
+            "target": [
+              11.91,
+              3.93
+            ]
+          },
+          {
+            "room": "2154",
+            "vertex": 11,
+            "source": [
+              921,
+              759
+            ],
+            "target": [
+              13.16,
+              6.03
+            ]
+          },
+          {
+            "room": "2154",
+            "vertex": 2,
+            "source": [
+              921,
+              935
+            ],
+            "target": [
+              13.07,
+              3.87
+            ]
+          },
+          {
+            "room": "2150",
+            "vertex": 13,
+            "source": [
+              717,
+              759
+            ],
+            "target": [
+              15.75,
+              5.89
+            ]
+          },
+          {
+            "room": "2150",
+            "vertex": 8,
+            "source": [
+              717,
+              935
+            ],
+            "target": [
+              15.66,
+              3.73
+            ]
+          },
+          {
+            "room": "2305B",
+            "vertex": 0,
+            "source": [
+              1867,
+              1303
+            ],
+            "target": [
+              0.89,
+              -0.26
+            ]
+          },
+          {
+            "room": "2305B",
+            "vertex": 1,
+            "source": [
+              1867,
+              1421
+            ],
+            "target": [
+              0.82,
+              -1.63
+            ]
+          },
+          {
+            "room": "2305B",
+            "vertex": 2,
+            "source": [
+              1737,
+              1421
+            ],
+            "target": [
+              2.37,
+              -1.71
+            ]
+          },
+          {
+            "room": "2321",
+            "vertex": 0,
+            "source": [
+              1867,
+              1182
+            ],
+            "target": [
+              0.97,
+              1.29
+            ]
+          },
+          {
+            "room": "2321",
+            "vertex": 5,
+            "source": [
+              1867,
+              1299
+            ],
+            "target": [
+              0.9,
+              -0.11
+            ]
+          },
+          {
+            "room": "2321",
+            "vertex": 6,
+            "source": [
+              1737,
+              1299
+            ],
+            "target": [
+              2.45,
+              -0.19
+            ]
+          }
+        ],
+        "maxOldFrameResidualMeters": 0.12
+      },
+      "inheritedRoomAreas": {
+        "2150": 463,
+        "2154": 467,
+        "2305B": 441,
+        "2321": 443,
+        "2333A": 291,
+        "2346A": 466
+      },
+      "rooms": [
+        {
+          "scheduleKey": "2025",
+          "label": "2025",
+          "printedAreaSqft": 153,
+          "outer": [
+            [
+              1251,
+              1299
+            ],
+            [
+              1327,
+              1299
+            ],
+            [
+              1327,
+              1371
+            ],
+            [
+              1251,
+              1371
+            ]
+          ],
+          "labelPoint": [
+            1287,
+            1330
+          ],
+          "maxRelativeAreaDifference": 0.06
+        },
+        {
+          "scheduleKey": "2152",
+          "label": "2152",
+          "printedAreaSqft": 410,
+          "outer": [
+            [
+              815,
+              761
+            ],
+            [
+              920,
+              761
+            ],
+            [
+              920,
+              898
+            ],
+            [
+              815,
+              898
+            ]
+          ],
+          "labelPoint": [
+            863,
+            832
+          ],
+          "maxRelativeAreaDifference": 0.06
+        },
+        {
+          "scheduleKey": "2305A",
+          "label": "2305A",
+          "printedAreaSqft": 423,
+          "outer": [
+            [
+              1737,
+              1426
+            ],
+            [
+              1867,
+              1426
+            ],
+            [
+              1867,
+              1544
+            ],
+            [
+              1737,
+              1544
+            ]
+          ],
+          "labelPoint": [
+            1803,
+            1478
+          ],
+          "maxRelativeAreaDifference": 0.06
+        },
+        {
+          "scheduleKey": "2333B",
+          "label": "2333B",
+          "printedAreaSqft": 325,
+          "outer": [
+            [
+              1738,
+              1000
+            ],
+            [
+              1848,
+              1000
+            ],
+            [
+              1848,
+              1018
+            ],
+            [
+              1863,
+              1018
+            ],
+            [
+              1863,
+              1024
+            ],
+            [
+              1868,
+              1024
+            ],
+            [
+              1868,
+              1095
+            ],
+            [
+              1738,
+              1095
+            ]
+          ],
+          "labelPoint": [
+            1801,
+            1044
+          ],
+          "maxRelativeAreaDifference": 0.06
+        }
+      ],
+      "repairs": [
+        {
+          "scheduleKey": "2333A",
+          "label": "2333A",
+          "printedAreaSqft": 291,
+          "outer": [
+            [
+              1737,
+              1098
+            ],
+            [
+              1867,
+              1098
+            ],
+            [
+              1867,
+              1178
+            ],
+            [
+              1737,
+              1178
+            ]
+          ],
+          "labelPoint": [
+            1800,
+            1140
+          ],
+          "maxRelativeAreaDifference": 0.06,
+          "reason": "The old 2333A perimeter has the northeastern step of 2333B and lies at its north-room location. The directly labeled 2333A rectangle is immediately south of 2333B and north of 2321 on this drawing."
+        }
+      ],
+      "boundaryClips": [
+        {
+          "scheduleKey": "2154",
+          "referenceXMinimum": 921,
+          "reason": "The inherited outline included west-side door-swing protrusions inside adjacent room 2152. The 2024 plan shows the shared wall at reference x=921; close doors on that wall and remove only points beyond it."
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Campus registration remains unset. Low floors are aligned to the preserved metric L4 core; upper floors are unchanged.",
+    "The FIS images explicitly warn that viewer drawings may be inaccurate and updated CAD drawings are available. Later alterations are not verified.",
+    "Ten inherited lower-floor room shapes are retained exactly under one uniform similarity per floor; 2154 additionally has door-swing protrusions clipped to its verified shared wall. Their approximate traces can understate printed areas by up to 18%; they are not individually stretched to force area equality.",
+    "Existing low-floor outline fragments are retained under the same correction and are not full floor envelopes. Room source boundaries and shared core points establish placement independently of these fragments.",
+    "Room 2333A is a separate data repair: its former shape occupied the location labeled 2333B on the 2024 drawing; the direct labeled south room replaces it while its identifier and schedule key are retained.",
+    "Illustrative floor elevations are retained. Steps, seating, and door swing arcs are not modeled.",
+    "The inherited 2154 door-swing protrusions are clipped to its directly visible shared wall, preventing an overlap with the newly traced 2152. Other inherited edges remain uniformly transformed."
+  ]
+}

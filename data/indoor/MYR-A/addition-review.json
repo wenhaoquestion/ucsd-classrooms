@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "building": "MYR-A",
+  "output": "static/indoor/MYR-A.json",
+  "inputHashes": {
+    "data/indoor/MYR-A/addition-trace.json": "8c63d050f43e7359dfdcf4cdd55dfbf9653bcf01e5e98cb035f757d3537efa6b",
+    "static/indoor/facilities/MAYER.json": "a73d5600dd86f5a45930c021f7589221b6f7866cee84922fd98380f146659896",
+    "data/indoor/MYR-A/fa26-schedule.json": "d07eaacc95596e83dcd650e150c227944977870c8893996bb9485afcd0d13a62",
+    "local/indoor-sources/PHYSICS-EAP.pdf": "af741cc9572bb131053093ccf0c57039880763c74e8eec14bb0ece27e7bd4550",
+    "local/indoor-sources/classrooms-FA26.txt": "b485329436badb02834df241fd81ea48d9ec9e0f2edef106cb11d7f56d43453b"
+  },
+  "scheduleInventory": {
+    "term": "FA26",
+    "keys": [
+      "2544",
+      "2574",
+      "2702",
+      "2722",
+      "3544",
+      "4623",
+      "5623"
+    ],
+    "meetingRecordCount": 48,
+    "source": {
+      "url": "https://sheeptester.github.io/uxdy/data/classrooms-FA26.txt",
+      "localPath": "local/indoor-sources/classrooms-FA26.txt",
+      "sha256": "b485329436badb02834df241fd81ea48d9ec9e0f2edef106cb11d7f56d43453b",
+      "acquiredAt": "2026-10-22T01:39:35.656Z",
+      "scrapedAt": "2026-10-15T00:29:00.000Z",
+      "note": "The website schedule feed is a third-party scrape, not an official geometry source. Only exact building and room keys are taken from it."
+    }
+  },
+  "existingRoomPolygonsPreserved": 176,
+  "reusedMappedRoomIds": [
+    {
+      "scheduleKey": "2544",
+      "roomId": "L2-804-41295",
+      "floor": "L2",
+      "crossCheckPdfPage": 25
+    },
+    {
+      "scheduleKey": "2574",
+      "roomId": "L2-804-41300",
+      "floor": "L2",
+      "crossCheckPdfPage": 25
+    },
+    {
+      "scheduleKey": "2702",
+      "roomId": "L2-804-41316",
+      "floor": "L2",
+      "crossCheckPdfPage": 25
+    },
+    {
+      "scheduleKey": "2722",
+      "roomId": "L2-804-41318",
+      "floor": "L2",
+      "crossCheckPdfPage": 25
+    },
+    {
+      "scheduleKey": "3544",
+      "roomId": "L3-804-41327",
+      "floor": "L3",
+      "crossCheckPdfPage": 29
+    },
+    {
+      "scheduleKey": "4623",
+      "roomId": "L4-804-41382",
+      "floor": "L4",
+      "crossCheckPdfPage": 33
+    }
+  ],
+  "newTrace": {
+    "scheduleKey": "5623",
+    "floor": "L5",
+    "page": 37,
+    "renderSizePx": [
+      1553,
+      2400
+    ],
+    "renderCommand": "pdftoppm -f 37 -l 37 -scale-to 2400 -png local/indoor-sources/PHYSICS-EAP.pdf local/indoor-sources/physics-review/detail",
+    "labelAt": [
+      997,
+      566
+    ],
+    "outer": [
+      [
+        955,
+        549
+      ],
+      [
+        1001,
+        518
+      ],
+      [
+        1035,
+        518
+      ],
+      [
+        1035,
+        560
+      ],
+      [
+        1030,
+        560
+      ],
+      [
+        1030,
+        567
+      ],
+      [
+        1035,
+        567
+      ],
+      [
+        1035,
+        608
+      ],
+      [
+        955,
+        608
+      ]
+    ],
+    "traceNotes": "Principal inside walls, with the east column projection retained. Door swings and the slight upper doorway/column recesses are simplified. The small adjoining room5653 and eastern restroom/shaft are excluded.",
+    "registration": {
+      "targetFloor": "L4",
+      "controls": [
+        {
+          "sourcePoint": [
+            730,
+            746
+          ],
+          "targetRoomId": "L4-804-41391",
+          "targetVertex": 16,
+          "feature": "5722/4722 repeated exterior west wall, lower-left corner on printed page"
+        },
+        {
+          "sourcePoint": [
+            730,
+            645
+          ],
+          "targetRoomId": "L4-804-41391",
+          "targetVertex": 4,
+          "feature": "5722/4722 repeated exterior west wall, upper-left corner on printed page"
+        },
+        {
+          "sourcePoint": [
+            1444,
+            439
+          ],
+          "targetRoomId": "L4-804-41354",
+          "targetVertex": 5,
+          "feature": "5512/4512 repeated exterior end bay, lower-left corner on printed page"
+        },
+        {
+          "sourcePoint": [
+            1444,
+            404
+          ],
+          "targetRoomId": "L4-804-41354",
+          "targetVertex": 0,
+          "feature": "5512/4512 repeated exterior end bay, upper-left corner on printed page"
+        }
+      ],
+      "holdouts": [
+        {
+          "sourcePoint": [
+            1444,
+            605
+          ],
+          "targetRoomId": "L4-804-41359",
+          "targetVertex": 5,
+          "feature": "5517/4517 repeated exterior end bay, lower-left corner on printed page"
+        },
+        {
+          "sourcePoint": [
+            1492,
+            605
+          ],
+          "targetRoomId": "L4-804-41359",
+          "targetVertex": 2,
+          "feature": "5517/4517 repeated exterior end bay, lower-right corner on printed page"
+        }
+      ]
+    }
+  },
+  "registrationChecks": {
+    "controls": [
+      {
+        "sourcePoint": [
+          730,
+          746
+        ],
+        "targetRoomId": "L4-804-41391",
+        "targetVertex": 16,
+        "feature": "5722/4722 repeated exterior west wall, lower-left corner on printed page",
+        "targetPoint": [
+          11.02,
+          -26.53
+        ],
+        "transformedPoint": [
+          11.060225,
+          -26.561801
+        ],
+        "residualMeters": 0.05127722911780603
+      },
+      {
+        "sourcePoint": [
+          730,
+          645
+        ],
+        "targetRoomId": "L4-804-41391",
+        "targetVertex": 4,
+        "feature": "5722/4722 repeated exterior west wall, upper-left corner on printed page",
+        "targetPoint": [
+          20.75,
+          -26.61
+        ],
+        "transformedPoint": [
+          20.705193,
+          -26.576516
+        ],
+        "residualMeters": 0.055936084104983075
+      },
+      {
+        "sourcePoint": [
+          1444,
+          439
+        ],
+        "targetRoomId": "L4-804-41354",
+        "targetVertex": 5,
+        "feature": "5512/4512 repeated exterior end bay, lower-left corner on printed page",
+        "targetPoint": [
+          40.6,
+          41.59
+        ],
+        "transformedPoint": [
+          40.481133,
+          41.576708
+        ],
+        "residualMeters": 0.11960786325739783
+      },
+      {
+        "sourcePoint": [
+          1444,
+          404
+        ],
+        "targetRoomId": "L4-804-41354",
+        "targetVertex": 0,
+        "feature": "5512/4512 repeated exterior end bay, upper-left corner on printed page",
+        "targetPoint": [
+          43.7,
+          41.56
+        ],
+        "transformedPoint": [
+          43.823449,
+          41.571609
+        ],
+        "residualMeters": 0.12399364694208508
+      }
+    ],
+    "holdouts": [
+      {
+        "sourcePoint": [
+          1444,
+          605
+        ],
+        "targetRoomId": "L4-804-41359",
+        "targetVertex": 5,
+        "feature": "5517/4517 repeated exterior end bay, lower-left corner on printed page",
+        "targetPoint": [
+          25.18,
+          41.72
+        ],
+        "transformedPoint": [
+          24.629008,
+          41.600893
+        ],
+        "residualMeters": 0.5637186013544354
+      },
+      {
+        "sourcePoint": [
+          1492,
+          605
+        ],
+        "targetRoomId": "L4-804-41359",
+        "targetVertex": 2,
+        "feature": "5517/4517 repeated exterior end bay, lower-right corner on printed page",
+        "targetPoint": [
+          25.65,
+          46.15
+        ],
+        "transformedPoint": [
+          24.636001,
+          46.18464
+        ],
+        "residualMeters": 1.0145905093193988
+      }
+    ]
+  },
+  "transform": {
+    "a": 0.00014569452322697,
+    "b": 0.09549472980180669,
+    "tx": 82.19293664756133,
+    "tz": -96.38164168578614
+  },
+  "tracedAreaSqft": 633.3214753913003,
+  "areaNote": "Computed trace area is reported for review only; no listed5623 area was available for independent checking.",
+  "limitations": [
+    "This is a distinct schedule-code view of the connected Mayer complex: the original176 bkey804 room polygons are reused unchanged. Existing MAYER layouts are not edited.",
+    "Only the seven keys found in the captured FA26 application feed are mapped; no new schedule keys are invented from room labels.",
+    "The six reviewed old-wing MAYER keys are removed from this separate Addition view because they belong to the MAYER schedule code.",
+    "The original bkey804 first-through-fourth-floor geometry is retained, including unscheduled spaces. No campus footprint is used to invent classroom geometry.",
+    "Level5 only models the room5623 region traced from the actual PDF. Its outline is partial, not a copy of the Level4 slab.",
+    "The fifth-floor approximate registration reuses independently checked repeated exterior walls from Level4; maximum held-out error is about1.02m.",
+    "Campus alignment is the existing approximate Facilities fit with low footprint overlap; it is not a surveyed registration. Geo CAAN is restricted to the official Addition6264.",
+    "EAP cover update date is2026, but the embedded legacy diagram revision is unknown. Recent renovations may not appear in these legacy boundaries."
+  ]
+}

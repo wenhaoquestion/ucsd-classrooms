@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "building": "PFBH",
+  "floor": "B",
+  "status": "historical-source-trace-needs-current-plan",
+  "source": {
+    "id": "PFBH-EHS-2021",
+    "url": "https://drive.google.com/file/d/1YzNE37aPieBW4tzsEDbtIOsPQhF5in55/view",
+    "localPath": "local/indoor-sources/PFBH-EHS-2021.pdf",
+    "sha256": "8ba2d7710840d11906f1c7a5c9fbe1d90410dbca4e23781dcfbd94e79f3c3612",
+    "page": 2,
+    "printedDate": "2021-07-09",
+    "pageTitle": "POWELL-FOCHT BIOENGINEERING BUILDING - BASEMENT",
+    "pageSizePoints": [612, 792],
+    "accessed": "2026-10-21"
+  },
+  "coordinateSystem": {
+    "units": "PDF points",
+    "origin": "top-left of unrotated PDF page 2",
+    "xDirection": "right",
+    "yDirection": "down",
+    "metersPerPoint": null,
+    "campusTransform": null
+  },
+  "method": "Manually traced visible interior wall boundaries after rendering the actual PDF at 300 dpi. Close door openings along the surrounding wall line; exclude movable furniture. Simplified rectangles represent the historical rooms, not current classroom geometry.",
+  "rooms": [
+    {
+      "label": "003",
+      "scheduleKeyCandidate": "003",
+      "outer": [[414.5, 417.5], [484.3, 417.5], [484.3, 469.3], [414.5, 469.3]],
+      "labelBounds": [441.759344, 436.747183, 452.665672, 444.03723],
+      "labelEvidence": "PDF text bounds and visual inspection independently identify 003 inside this polygon.",
+      "shapeConfidence": "approximate",
+      "runtimePlacementAllowed": false
+    },
+    {
+      "label": "005",
+      "scheduleKeyCandidate": "005",
+      "outer": [[414.5, 520.6], [442.9, 520.6], [442.9, 557.8], [414.5, 557.8]],
+      "labelBounds": [423.318661, 534.026192, 434.224989, 541.316239],
+      "labelEvidence": "PDF text bounds and visual inspection independently identify 005 inside this polygon.",
+      "shapeConfidence": "approximate",
+      "runtimePlacementAllowed": false
+    }
+  ],
+  "limitations": [
+    "No metric scale or campus registration is assigned to this trace.",
+    "The 2021 drawing makes 003 substantially larger than 005, while the supplied Facilities listing assigns 858 ft2 to 003 and 1327 ft2 to 005. A uniform scale cannot reconcile both rooms.",
+    "The area conflict may reflect changed partitions, renumbering, source age or an error in the existing listing; the available evidence does not establish which.",
+    "Obtain a current basement plan or a Facilities room-ID crosswalk before assigning these historical polygons to current schedule rooms.",
+    "The existing basement outline was copied from Level 1 and is not a verified basement registration reference."
+  ]
+}

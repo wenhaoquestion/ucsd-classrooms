@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "status": "sent",
+  "sentAt": "2026-10-22T03:00:51Z",
+  "recipient": "omcp@ucsd.edu",
+  "subject": "Request for classroom floor-plan data / correct access route for UCSD classroom map",
+  "authorization": "Explicit user authorization in this conversation before sending.",
+  "sender": "Connected UCSD Gmail account; domain verified before sending.",
+  "verification": "Send response and subsequent read-back both show SENT; recipient, subject and attachment MIME metadata verified.",
+  "attachment": {
+    "file": "data/indoor/research/remaining-floorplan-requests.csv",
+    "filename": "remaining-floorplan-requests.csv",
+    "bytes": 10944,
+    "sha256": "313fcf60a4c1da9c8384f80f318e5633bc0ea67170300d6f38409d606fbf6260",
+    "rows": 64,
+    "uniqueStoredAndActiveGapKeys": 133,
+    "activeFA26GapKeys": 100
+  },
+  "copy": "data/indoor/research/ucsd-floorplan-request-draft.txt",
+  "responseStatus": "Awaiting response; this send does not establish access to any remaining drawing.",
+  "privateIdentifiers": "Sender address, message identifiers and account identifiers intentionally omitted from repository receipt."
+}

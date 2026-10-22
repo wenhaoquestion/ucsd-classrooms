@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "building": "UNEXN",
+  "source": {
+    "id": "UNEXN-FIS-PUBLIC-VECTOR",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=512&fcode=1&zoom=1",
+    "htmlFile": "local/indoor-sources/UNEXN-L1-FIS.html",
+    "htmlSha256": "c78972de6e9734ada44d7f3e186f5c2359498f311e53d2c5f1de7540253b1eda",
+    "accessed": "2026-10-21",
+    "nativeImageSize": [
+      3318,
+      2489
+    ],
+    "revision": "Not printed in public metadata; published floor-plan key 5624"
+  },
+  "output": "static/indoor/UNEXN-combined.json",
+  "recoveredKeys": [
+    "126",
+    "127"
+  ],
+  "sharedMetersPerPixel": 0.006348906180385704,
+  "perRoomMetersPerPixel": [
+    0.006350132632443602,
+    0.006347679728327806
+  ],
+  "originPx": [
+    1605.6200159999999,
+    1187.2617115
+  ],
+  "areaConsistencyChecks": [
+    {
+      "room": "126",
+      "listedSqft": 646,
+      "convertedSqft": 645.7505016399892,
+      "relativeDifference": 0.0003862203715336854
+    },
+    {
+      "room": "127",
+      "listedSqft": 676,
+      "convertedSqft": 676.2612647656738,
+      "relativeDifference": 0.0003864863397540219
+    }
+  ],
+  "campusRegistration": false,
+  "limitations": [
+    "Room IDs, labels, areas and polygon coordinates are directly published together in the official embedded viewer HTML. The image tiles require login and were not obtained.",
+    "Coordinates are normalized separately by image width and height; source geometry is preserved under one shared uniform conversion per building.",
+    "The shared metric scale is estimated from listed room areas. Cross-room area agreement checks consistency, not independent surveying accuracy.",
+    "No campus rotation or absolute north direction is established. This supplement uses a local frame without geo.",
+    "Floor patches cover the sourced rooms only. Corridors, exterior walls and door locations are not reconstructed; floor height remains illustrative."
+  ]
+}

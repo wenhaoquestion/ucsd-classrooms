@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-22T01:59:06.143304+00:00",
+  "scope": "Additional public-source search after the prior integration report. Public pages and actually retained images only; no shared browser tabs, account registration, authentication bypass or external messages. No shared manifest/catalog/docs modified.",
+  "searchRounds": [
+    {
+      "round": 1,
+      "focus": "Exact building names, current numbered rooms, departmental emergency/floor-plan pages and official handbooks."
+    },
+    {
+      "round": 2,
+      "focus": "Original architects/designers, physical wayfinding installer photographs, public construction planroom and project bid identities."
+    }
+  ],
+  "runtimeModified": false,
+  "addedRoomGeometry": 0,
+  "exhaustiveness": "These targeted searches do not establish that all public or authorized sources are exhausted.",
+  "building": "MALK",
+  "targetKeys": [
+    "192",
+    "287",
+    "387",
+    "487",
+    "520",
+    "530"
+  ],
+  "priorEvidence": [
+    "data/indoor/MALK/fis-basement-review.json",
+    "data/indoor/research/new-building-sources.json"
+  ],
+  "newSources": [
+    {
+      "url": "https://economics.ucsd.edu/about/contact-us.html",
+      "publisher": "UC San Diego Economics",
+      "reviewStatus": "current-public-directory-reviewed",
+      "finding": "CurrentFall2026 directory explicitly identifies192/287/387/487 as graduate classrooms and520/530 as department seminar spaces. It confirms identities but supplies no wall boundaries."
+    },
+    {
+      "url": "https://advancement.ucsd.edu/_files/Malk-Hall-Naming-Menu.pdf",
+      "publisher": "UC San Diego Advancement",
+      "pages": 2,
+      "reviewStatus": "extracted-text-reviewed-screenshot-fetch-failed",
+      "finding": "Two-page naming menu enumerates classroom/seminar categories and department programs. No numbered room plans appear in extracted text; screenshots failed, so unseen image contents are not asserted.",
+      "localFile": null
+    },
+    {
+      "url": "https://gpshelp.ucsd.edu/self-help/21cic-orientation",
+      "publisher": "UC San Diego GPS IT",
+      "reviewStatus": "complete-public-page-text-reviewed",
+      "finding": "Contains technical orientation and a printer on second floor, not an exposed floor-plan link or target room layout."
+    },
+    {
+      "url": "https://marshall.ucsd.edu/res-life-new/your-home-at-tmc/index.html",
+      "publisher": "UC San Diego Marshall College",
+      "reviewStatus": "public-page-reviewed",
+      "finding": "Sample8/10-person residential apartment layouts belong to residential towers; they do not establish Malk academic classroom geometry."
+    },
+    {
+      "url": "https://www.ucsdplanroom.com/projects/bidding",
+      "reviewStatus": "normal-public-link-redirects-to-auth-login",
+      "finding": "Separate potential archived bid-set path. RWNLLN BuildingE identity already documented in earlier HDH source; no current room numbering inferred from design labels."
+    }
+  ],
+  "openNextSteps": [
+    "RWNLLN BuildingE original architectural/wayfinding files via EYRC/Hensel Phelps or authorized construction-planroom access.",
+    "Original full-resolution images in official naming/project materials remain uninspected if acquired later."
+  ],
+  "decision": "Six upper-floor target keys remain unplaced. Existing acquired basement geometry is unchanged; public-viewer upper-floor login results were not repeatedly probed."
+}

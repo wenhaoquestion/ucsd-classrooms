@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "building": "UNEXG",
+  "source": {
+    "id": "UNEXG-FIS-PUBLIC-VECTOR",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=507&fcode=1&zoom=1",
+    "htmlFile": "local/indoor-sources/UNEXG-L1-FIS.html",
+    "htmlSha256": "1efebeab79afd308cdf2728fa0df1dfd85239430f0dd6142f61619a6d3639f68",
+    "accessed": "2026-10-21",
+    "nativeImageSize": [
+      3318,
+      2489
+    ],
+    "revision": "Not printed in public metadata; published floor-plan key 5619"
+  },
+  "output": "static/indoor/UNEXG-combined.json",
+  "recoveredKeys": [
+    "123",
+    "124",
+    "125"
+  ],
+  "sharedMetersPerPixel": 0.00635116470478203,
+  "perRoomMetersPerPixel": [
+    0.00635116470478203,
+    0.006350884715729974,
+    0.006351771157357542
+  ],
+  "originPx": [
+    1597.222158,
+    1108.6018445
+  ],
+  "areaConsistencyChecks": [
+    {
+      "room": "123",
+      "listedSqft": 451,
+      "convertedSqft": 451.0000586563152,
+      "relativeDifference": 1.3005834853530018e-07
+    },
+    {
+      "room": "124",
+      "listedSqft": 450,
+      "convertedSqft": 450.03974076338085,
+      "relativeDifference": 8.831280751309123e-05
+    },
+    {
+      "room": "125",
+      "listedSqft": 447,
+      "convertedSqft": 446.9147334122758,
+      "relativeDifference": 0.00019075299267168333
+    }
+  ],
+  "campusRegistration": false,
+  "limitations": [
+    "Room IDs, labels, areas and polygon coordinates are directly published together in the official embedded viewer HTML. The image tiles require login and were not obtained.",
+    "Coordinates are normalized separately by image width and height; source geometry is preserved under one shared uniform conversion per building.",
+    "The shared metric scale is estimated from listed room areas. Cross-room area agreement checks consistency, not independent surveying accuracy.",
+    "No campus rotation or absolute north direction is established. This supplement uses a local frame without geo.",
+    "Floor patches cover the sourced rooms only. Corridors, exterior walls and door locations are not reconstructed; floor height remains illustrative."
+  ]
+}

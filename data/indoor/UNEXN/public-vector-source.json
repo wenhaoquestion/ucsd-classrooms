@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "building": "UNEXN",
+  "floor": "L1",
+  "source": {
+    "id": "UNEXN-FIS-PUBLIC-VECTOR",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=512&fcode=1&zoom=1",
+    "htmlFile": "local/indoor-sources/UNEXN-L1-FIS.html",
+    "htmlSha256": "c78972de6e9734ada44d7f3e186f5c2359498f311e53d2c5f1de7540253b1eda",
+    "accessed": "2026-10-21",
+    "nativeImageSize": [
+      3318,
+      2489
+    ],
+    "revision": "Not printed in public metadata; published floor-plan key 5624"
+  },
+  "rooms": [
+    {
+      "facilityRoomId": "25781",
+      "scheduleKey": "126",
+      "label": "126",
+      "listedAreaSqft": 646,
+      "sourcePolygon": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.055385,
+              0.254564
+            ],
+            [
+              0.460477,
+              0.254564
+            ],
+            [
+              0.460477,
+              0.699443
+            ],
+            [
+              0.055385,
+              0.699443
+            ],
+            [
+              0.055385,
+              0.254564
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "facilityRoomId": "25782",
+      "scheduleKey": "127",
+      "label": "127",
+      "listedAreaSqft": 676,
+      "sourcePolygon": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.488207,
+              0.254564
+            ],
+            [
+              0.912439,
+              0.254564
+            ],
+            [
+              0.912439,
+              0.699443
+            ],
+            [
+              0.488207,
+              0.699443
+            ],
+            [
+              0.488207,
+              0.254564
+            ]
+          ]
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Room IDs, labels, areas and polygon coordinates are directly published together in the official embedded viewer HTML. The image tiles require login and were not obtained.",
+    "Coordinates are normalized separately by image width and height; source geometry is preserved under one shared uniform conversion per building.",
+    "The shared metric scale is estimated from listed room areas. Cross-room area agreement checks consistency, not independent surveying accuracy.",
+    "No campus rotation or absolute north direction is established. This supplement uses a local frame without geo.",
+    "Floor patches cover the sourced rooms only. Corridors, exterior walls and door locations are not reconstructed; floor height remains illustrative."
+  ]
+}

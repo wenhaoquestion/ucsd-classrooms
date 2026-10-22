@@ -9,7 +9,7 @@ import {
   pointInPolygon,
   selfIntersections,
 } from "../src/lib/indoor/geometry";
-import { SOURCE_LAYOUTS } from "../src/lib/indoor/manifest";
+import { INDOOR_MANIFEST, SOURCE_LAYOUTS } from "../src/lib/indoor/manifest";
 import {
   computeCoverage,
   indexIndoorBuilding,
@@ -91,6 +91,23 @@ function building(rooms: IndoorRoom[], overrides: Partial<IndoorBuilding> = {}):
   };
 }
 
+function buildingWithListedFloor(): IndoorBuilding {
+  const data = building([room("A", { scheduleKey: "101" })]);
+  data.sources[0].floors.push("L2");
+  data.floors.push({
+    id: "L2",
+    label: "Level 2",
+    shortLabel: "2",
+    vertical: { baseElevation: 3, height: 3, estimated: true },
+    outline: [],
+    outlineConfidence: "unknown",
+    rooms: [],
+    unplaced: [{ label: "201", scheduleKey: "201", basis: "floor-listing" }],
+    sources: [{ source: "S1", note: "Room 201 is explicitly listed on Level 2." }],
+  });
+  return data;
+}
+
 const errors = (data: unknown) =>
   validateIndoorBuilding(data).issues.filter((issue) => issue.level === "error");
 
@@ -98,6 +115,73 @@ describe("validateIndoorBuilding", () => {
   it("accepts a well-formed layout", () => {
     const result = validateIndoorBuilding(building([room("A")]), "TEST");
     assert.equal(result.ok, true, JSON.stringify(result.issues));
+  });
+
+  it("keeps sourced rooms on a floor without inventing an outline or mapped position", () => {
+    const data = buildingWithListedFloor();
+    const result = validateIndoorBuilding(data);
+    assert.equal(result.ok, true, JSON.stringify(result.issues));
+    const index = indexIndoorBuilding(data);
+    assert.equal(index.floorsById.get("L2"), data.floors[1]);
+    assert.equal(index.unplacedByKey.get("201")?.floor.id, "L2");
+    assert.equal(index.unplacedByKey.get("201")?.room.basis, "floor-listing");
+    assert.equal(roomForKey(index, "201"), null);
+    const coverage = computeCoverage(index, ["101", "201"]);
+    assert.deepEqual(coverage.mapped.map(({ key }) => key), ["101"]);
+    assert.deepEqual(coverage.unplaced.map(({ key }) => key), ["201"]);
+    assert.deepEqual(coverage.scheduleOnly, []);
+  });
+
+  it("requires evidence and actual listings for a floor without an outline", () => {
+    for (const sources of [[], [{ source: "NOPE" }]]) {
+      const data = buildingWithListedFloor();
+      // Even Facilities layouts must cite the evidence for listing-only floors.
+      data.geometryStatus = "facilities-plan";
+      data.floors[1].sources = sources;
+      assert.ok(errors(data).some((issue) => issue.path.startsWith("floors[1].sources")));
+    }
+    const inferred = buildingWithListedFloor();
+    inferred.floors[1].unplaced![0].basis = "room-number";
+    assert.ok(errors(inferred).some((issue) => issue.path === "floors[1].unplaced[0]"));
+    const noRooms = buildingWithListedFloor();
+    noRooms.floors[1].unplaced = [];
+    assert.ok(errors(noRooms).some((issue) => issue.path === "floors[1].unplaced"));
+    const noEvidence = buildingWithListedFloor();
+    noEvidence.floors[1].outlineConfidence = "direct";
+    assert.ok(errors(noEvidence).some((issue) => issue.path === "floors[1].outlineConfidence"));
+  });
+
+  it("rejects every kind of geometry on a floor whose outline is unknown", () => {
+    const withRoom = buildingWithListedFloor();
+    withRoom.floors[1].rooms.push(room("B", { floor: "L2" }));
+    assert.ok(errors(withRoom).some((issue) => issue.path === "floors[1].rooms"));
+    const withArea = buildingWithListedFloor();
+    withArea.floors[1].areas = [{
+      id: "corridor",
+      kind: "corridor",
+      footprint: room("B").footprint,
+      confidence: "traced",
+      sources: [{ source: "S1" }],
+    }];
+    assert.ok(errors(withArea).some((issue) => issue.path === "floors[1].areas"));
+    const withFeature = buildingWithListedFloor();
+    withFeature.floors[1].features = [{
+      id: "stairs",
+      kind: "stairs",
+      at: [1, 1],
+      confidence: "direct",
+      sources: [{ source: "S1" }],
+    }];
+    assert.ok(errors(withFeature).some((issue) => issue.path === "floors[1].features"));
+  });
+
+  it("requires a valid building footprint even when every floor has documentary evidence", () => {
+    const data = buildingWithListedFloor();
+    data.floors.shift();
+    assert.ok(errors(data).some((issue) => issue.message.includes("at least one floor with a valid outline")));
+    const invalidOutline = buildingWithListedFloor();
+    invalidOutline.floors[0].outline = [{ outer: [[0, 0], [1, 1], [2, 2]] }];
+    assert.equal(validateIndoorBuilding(invalidOutline).ok, false);
   });
 
   it("rejects the wrong building and non-objects", () => {
@@ -358,6 +442,30 @@ describe("EBU3B source-traced layout", () => {
       assert.equal(floor.vertical.estimated, true);
       assert.ok(floor.sources.length > 0);
     }
+  });
+});
+
+describe("BRF2 geometry and documentary floor listings", () => {
+  it("loads the real fourth-floor plan alongside sourced first- and fifth-floor listings", () => {
+    const data = JSON.parse(
+      readFileSync(`static/${INDOOR_MANIFEST.BRF2.file}`, "utf8")
+    ) as IndoorBuilding;
+    const result = validateIndoorBuilding(data, "BRF2");
+    assert.equal(result.ok, true, JSON.stringify(result.issues));
+    const index = indexIndoorBuilding(data);
+    for (const [key, floor] of [["1104", "L1"], ["5A03", "L5"]]) {
+      const entry = index.unplacedByKey.get(key);
+      assert.equal(entry?.floor.id, floor);
+      assert.equal(entry?.room.basis, "floor-listing");
+      assert.equal(entry?.floor.outline.length, 0);
+      assert.equal(roomForKey(index, key), null);
+    }
+    assert.equal(roomForKey(index, "4103")?.floor, "L4");
+    assert.ok(index.floorsById.get("L4")!.outline.length > 0);
+    const coverage = computeCoverage(index, ["1104", "4103", "5A03"]);
+    assert.deepEqual(coverage.mapped.map(({ key }) => key), ["4103"]);
+    assert.deepEqual(coverage.unplaced.map(({ key }) => key), ["1104", "5A03"]);
+    assert.deepEqual(coverage.scheduleOnly, []);
   });
 });
 

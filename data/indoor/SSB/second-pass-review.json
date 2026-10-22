@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "building": "SSB",
+  "reviewedAt": "2026-10-22T02:02:28.272687+00:00",
+  "scope": "Third-floor current rooms 333 and 353",
+  "method": "Second pass through public department pages, original event pages, architect documentation and explicit document links. Known failed FIS endpoints were not retried. No email or access request was sent.",
+  "sources": [
+    {
+      "url": "https://plandesignbuild.ucsd.edu/_files/planning/GenslerUCSanDiegoBenchmarkingStudyJune2019.pdf",
+      "file": "local/indoor-sources/UCSD-GENSLER-2018.pdf",
+      "bytes": 7406133,
+      "sha256": "9bc20d172da73bbf357e6c0b201ddcb281c77057d92ef9c5c4b0e9822e634524",
+      "pdfPage": 101,
+      "printedPage": 101,
+      "title": "Backfill Opportunities | Social Sciences Building",
+      "printedFloorCaption": "Typical Floor",
+      "nativeImageSizePx": [
+        669,
+        355
+      ],
+      "nativeImage": {
+        "file": "local/indoor-sources/SSB-review/Gensler-native-000.jpg",
+        "bytes": 27628,
+        "sha256": "023ead1d52f8b459e63a2ed76e86aad5f47c14802f316ff4af46ec953d2cf310"
+      },
+      "pageRender": "local/indoor-sources/SSB-review/Gensler-page101.png",
+      "inspectionMagnification": "local/indoor-sources/SSB-review/Gensler-native-nearest4x.png",
+      "status": "reviewed-inadequate-room-label-resolution",
+      "finding": "Actual divided floor plan visually reviewed at native resolution and nearest-neighbor magnification. Current target labels 333 and 353 are not reliably legible. Typical Floor does not establish L3. Whole-building 84000 GSF cannot calibrate this floor."
+    },
+    {
+      "url": "https://polisci.ucsd.edu/_files/handbook.pdf",
+      "pdfPage": 7,
+      "section": "Room Availability & Reservations",
+      "status": "text-only-room-existence",
+      "finding": "Lists seminar/conference rooms 104, 333 and 353; no floor drawing located in the 22-page extracted text."
+    },
+    {
+      "url": "https://pages.ucsd.edu/~jlbroz/PElunch/index_OLD.thml",
+      "status": "directions-not-floor-plan",
+      "finding": "Places Political Science on the third floor and the lunch group in room 333, but gives no interior boundary."
+    },
+    {
+      "url": "https://ethnicstudies.ucsd.edu/people/faculty-resources/facilities/emergencyplan.html",
+      "status": "public-text-emergency-plan-no-target-map",
+      "finding": "Department emergency directions identify some second-floor locations but do not provide a numbered third-floor drawing."
+    }
+  ],
+  "decision": "Preserve existing geometry and leave 333/353 unplaced. A higher-resolution, specifically identified third-floor source is needed.",
+  "geometryAdded": 0
+}

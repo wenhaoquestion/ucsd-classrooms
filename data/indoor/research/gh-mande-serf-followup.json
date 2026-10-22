@@ -1,0 +1,103 @@
+{
+  "reviewedAt": "2026-10-21",
+  "scope": [
+    "GH",
+    "MANDE",
+    "SERF"
+  ],
+  "status": "public-source-review-complete-for-this-pass",
+  "integrated": {
+    "building": "GH",
+    "rooms": [
+      "242"
+    ],
+    "runtime": "static/indoor/GH-combined.json",
+    "evidence": [
+      "data/indoor/GH/242-trace.json",
+      "data/indoor/GH/242-review.json"
+    ],
+    "limitations": "Only the complete 2016 numbered single-room plan is traced. Relative central position uses a 2012 design proposal. The spanning L2-L3 auditorium is displayed once on L3. No campus geo."
+  },
+  "leads": [
+    {
+      "building": "GH",
+      "url": "https://www.defreitasarchitects.com/caralli-residence-1-2-1-1-1-1-1-1-1-1-1",
+      "publisher": "Kevin deFreitas Architects",
+      "verified": "Primary project text identifies one new 417-seat lecture hall and a two-level renovation; photos, no numbered full-floor plan on this page.",
+      "scope": "Architect project record, not numbered classroom coverage."
+    },
+    {
+      "building": "GH",
+      "url": "https://reclaimucsd.wordpress.com/2012/02/14/clics-a-recent-history/",
+      "verified": "Links two 6300x4500 architect drawings downloaded locally. They are dated 2012-02-17 and marked Program Schematic Plan / NOT FOR CONSTRUCTION.",
+      "files": [
+        "local/indoor-sources/GH-CLICS-L2-2012.jpg",
+        "local/indoor-sources/GH-CLICS-L3-2012.jpg"
+      ],
+      "limits": "No final classroom numbers on proposed studios/conference rooms; cannot assign 247/253/254/320/321 solely from similar areas or functions."
+    },
+    {
+      "building": "MANDE",
+      "url": "https://mandeville.ucsd.edu/facilities/technical-information.html",
+      "publisher": "UC San Diego Mandeville Auditorium",
+      "verified": "Public overview, basement, seating and section PDFs; page explicitly offers CAD/vwx via Technical Director for the lighting plot.",
+      "limits": "These cover the auditorium, backstage and dressing rooms, not verified Mandeville classroom B1/B2 plans. CAD/vwx provision is a request route, not an acquired file."
+    },
+    {
+      "building": "MANDE",
+      "url": "https://visarts.ucsd.edu/facilities/index.html",
+      "publisher": "UC San Diego Visual Arts",
+      "verified": "Public page says registered students/instructors can access a Facilities Guide with an @ucsd.edu Google account and gives the facilities-office contact.",
+      "limits": "Guide contents not inspected; no claim it contains the missing basement plans. Access requires the users authorized institutional account."
+    },
+    {
+      "building": "MANDE",
+      "url": "https://msp.ucsd.edu/syllabi/6.06f/index.htm",
+      "publisher": "UC San Diego / Miller Puckette",
+      "verified": "2006 course page explicitly places B202 two floors below the main floor.",
+      "roomLabels": [
+        "B202"
+      ],
+      "floorEvidenceOnly": "B2",
+      "limits": "No room boundary or floor drawing; B202 already has a B2 listing."
+    },
+    {
+      "building": "SERF",
+      "url": "https://griest.physics.ucsd.edu/2021/Fall/physics2d/",
+      "publisher": "UC San Diego Physics",
+      "verified": "2021 course page explicitly identifies CASS 383 as the third floor of SERF.",
+      "roomLabels": [
+        "383"
+      ],
+      "floorEvidenceOnly": "L3",
+      "limits": "No boundary geometry. May support upgrading room-number inference to text-backed floor evidence."
+    },
+    {
+      "building": "SERF",
+      "url": "https://cer.ucsd.edu/resources/for-staff.html",
+      "publisher": "UC San Diego Center for Energy Research",
+      "verified": "Public emergency-map listing names SERF L1 and L2, already present in the downloaded CER EAP.",
+      "limits": "No L3 entry. Source page number 3 of 5 printed on the standalone L2 sheet does not imply that the linked PDF contains the other floors."
+    },
+    {
+      "building": "SERF",
+      "url": "https://cass.ucsd.edu/images/3/3d/Eap_quickref.pdf",
+      "publisher": "UC San Diego CASS",
+      "verified": "Emergency quick-reference document, not a numbered L3 plan.",
+      "limits": "Assembly/response information only; not classroom geometry."
+    },
+    {
+      "building": "SERF",
+      "url": "https://www.cass.ucsd.edu/archive/cass_map.html",
+      "publisher": "UC San Diego CASS archive",
+      "verified": "Old directions identify CASS as SERF L3/L4; outdoor campus maps and building photos.",
+      "limits": "No interior floor drawing."
+    }
+  ],
+  "remainingGeometry": [
+    "GH other 19 schedule rooms",
+    "MANDE missing classroom B1/B2 rooms",
+    "SERF 329 and 383"
+  ],
+  "outreachSent": false
+}

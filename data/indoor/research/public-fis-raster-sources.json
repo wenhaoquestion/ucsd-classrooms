@@ -1,0 +1,2600 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-22T01:29:02.951625+00:00",
+  "discoveryUrl": "https://blink.ucsd.edu/faculty/instruction/tech-guide/classroom/details.html",
+  "entryUrl": "https://facilities.ucsd.edu/Classrooms/Default.htm",
+  "method": "Follow public ClassroomDetails floor-plan embeds. Read documented building/floor IDs; verify raster MIME before retrieving four tiles concurrently. Preserve native tile coordinates on a white canvas; no rescaling or inferred geometry. HTML metadata alone does not mean a floor image was acquired.",
+  "authentication": "No legacy FIS login or Tririga export used. Floor tile responses requiring login were not bypassed.",
+  "note": "Composite raster sources are tracked separately from downloaded original PDF/JPEG files in acquisition-index.json. The viewer carries a general warning that published raster plans may lag current CAD. Per-building trace records specify printed dates and geometric review. keys identify acquisition targets and are not a list of successfully placed rooms; geometryReview.scheduleKeysAdded gives the bounded modeled scope.",
+  "sources": [
+    {
+      "id": "APM-B-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=121&fcode=B&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "B402A"
+      ],
+      "title": "UCSD Facilities Information System - APM - Basement - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        3896,
+        5195
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0121/121-B/~6818/",
+      "checkedAt": "2026-10-22T01:20:56.066Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/APM-B-FIS.html",
+        "sha256": "8964e0a159b46c5949bef4ef99d01668332fef9bddcf57f8de31c7a958fcb366"
+      }
+    },
+    {
+      "id": "BONN-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=143&fcode=2&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "2130"
+      ],
+      "title": "UCSD Facilities Information System - Bonner Hall - Second Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        3802,
+        5069
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0143/143-2/~10686/",
+      "checkedAt": "2026-10-22T01:20:55.951Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/BONN-L2-FIS.html",
+        "sha256": "e7b246e5c5b4a4b39a8a7b5d8e1b458d63579b5c1eac2886cfaabccd3f5da690"
+      }
+    },
+    {
+      "id": "BSB-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=135&fcode=1&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "1105",
+        "1214"
+      ],
+      "title": "UCSD Facilities Information System - BSB - First Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        4113,
+        5484
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0135/135-1/~11120/",
+      "checkedAt": "2026-10-22T01:20:52.052Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/BSB-L1-FIS.html",
+        "sha256": "b77cefedb271daea01c3365b520a1e2f2e6b65215b820a717a281939b69ea1d2"
+      }
+    },
+    {
+      "id": "BSB-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=135&fcode=2&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "2100"
+      ],
+      "title": "UCSD Facilities Information System - BSB - Second Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        4113,
+        5484
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0135/135-2/~11121/",
+      "checkedAt": "2026-10-22T01:20:52.435Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/BSB-L2-FIS.html",
+        "sha256": "bc02115a1f4ff2a27aa7279493de933d571262b8ac3b0180ee82b1ef45654ad8"
+      }
+    },
+    {
+      "id": "CALIT-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=641&fcode=1&zoom=1",
+      "zoom": 1,
+      "keys": [
+        "1511"
+      ],
+      "title": "UCSD Facilities Information System - Atkinson Hall - First Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        324,
+        432
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0641/641-1/~11621/",
+      "checkedAt": "2026-10-22T01:20:56.458Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/CALIT-L1-FIS.html",
+        "sha256": "cccb22a9af50b7c74ab5abec08ceefc0a7a45f54ebeb79196921419f4f6cbf1b"
+      }
+    },
+    {
+      "id": "CCC-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=795&fcode=2&zoom=1",
+      "zoom": 1,
+      "keys": [
+        "ARTSP"
+      ],
+      "title": "UCSD Facilities Information System - Price East - Second Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        217,
+        289
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0795/795-2/~11666/",
+      "checkedAt": "2026-10-22T01:20:56.535Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/CCC-L2-FIS.html",
+        "sha256": "4f34b355839c1cf12736d93e0357c7dc365b8115e46e6192b27f75f6ecf9a890"
+      }
+    },
+    {
+      "id": "CENTR-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=171&fcode=2&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "205",
+        "218"
+      ],
+      "width": 5761,
+      "height": 4321,
+      "title": "UCSD Facilities Information System - Center Hall - Second Floor - Master Plan",
+      "acquiredAt": "2026-10-22T01:21:35.344Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/CENTR-L2-FIS.png",
+      "bytes": 775945,
+      "sha256": "20c8cfa8c4189fbd2073d0a11cad112451a82d9b7bd1a963a913c7d7af4e5f80",
+      "nativeImageSize": [
+        5761,
+        4321
+      ],
+      "tileCount": 782,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0171/171-2/~11335/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/CENTR-L2-FIS.html",
+        "sha256": "30983e98ed65052463183263ddd3b8785ba7936cc26301b847e0cf6887434c63"
+      },
+      "geometryReview": {
+        "status": "partially-modeled",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "CENTR",
+        "floor": "L2",
+        "sourcePrintedRevision": "2021-08-18",
+        "scheduleKeysAdded": [
+          "205",
+          "218"
+        ],
+        "scope": "Two classroom boundaries and cross-wing registration controls. Duplicate MS labels 258/269 denote these same spaces, not extra rooms. Limited L2 slab union includes the real 205 extension; other existing geometry is preserved.",
+        "evidencePaths": [
+          "data/indoor/CENTR/fis-trace.json",
+          "data/indoor/CENTR/fis-review.json"
+        ],
+        "output": "static/indoor/CENTR-combined.json",
+        "limitations": [
+          "Only scheduled rooms 205 and 218 are traced from the public 2021 FIS raster. The same boundaries also carry duplicate MS labels 258 and 269; these are not additional classrooms.",
+          "Door jambs, small column recesses and curved parapet details are simplified. New geometry is approximate, not a survey.",
+          "A single similarity transformation uses controls in both wings and independent corners in three other rooms. Existing room polygons and floor elevations are retained unchanged. The L2 slab is the exact union of its original approximate outline and the source-traced 205 footprint, because the old slab omitted this upper-floor extension. This is a limited geometry supplement, not a newly surveyed whole-floor outline.",
+          "The source warns that displayed FIS plans may be out of date; later alterations cannot be excluded."
+        ],
+        "overlayPaths": [
+          "local/indoor-sources/CENTR-review/L2-FIS-review.png",
+          "local/indoor-sources/CENTR-review/L2-FIS-registration.png"
+        ]
+      }
+    },
+    {
+      "id": "CMME-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=148&fcode=2&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "2047"
+      ],
+      "title": "UCSD Facilities Information System - CMM East - Second Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        3501,
+        4668
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0148/148-2/~11364/",
+      "checkedAt": "2026-10-22T01:20:56.983Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/CMME-L2-FIS.html",
+        "sha256": "2f0cd8992755b81b07012fcf96dd63e4f427b36b7dd833d889f4d6eb00343cc7"
+      }
+    },
+    {
+      "id": "CMRR-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=150&fcode=1&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "109",
+        "1H"
+      ],
+      "title": "UCSD Facilities Information System - CMRR - First Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        3313,
+        4418
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0150/150-1/~11301/",
+      "checkedAt": "2026-10-22T01:20:54.799Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/CMRR-L1-FIS.html",
+        "sha256": "f11bfb83772eeb5a0607169f1a2da672c5e29b9b34f33f0f0f2aa0b573e6c0d8"
+      }
+    },
+    {
+      "id": "COA-B-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001856&fcode=B&zoom=1",
+      "zoom": 5,
+      "width": 4609,
+      "height": 3457,
+      "title": "UCSD Facilities Information System - Coalition - Basement - Master Plan",
+      "acquiredAt": "2026-10-22T01:15:43.772Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/COA-B-FIS.png",
+      "bytes": 747633,
+      "sha256": "bdb2cac73eb16433d9ef31c47c6c820772090b295895bba0ae2cedbd259f3753",
+      "nativeImageSize": [
+        4609,
+        3457
+      ],
+      "tileCount": 532,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/1001856/1001856-B/~11539/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/COA-B-FIS.html",
+        "sha256": "83a3fbdc4d84b80cb7c18a675795ca338cb8a79f281eafcd8565609add28e902"
+      },
+      "geometryReview": {
+        "status": "partially-modeled",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "COA",
+        "floor": "B",
+        "sourcePrintedRevision": "2025-03-18",
+        "scheduleKeysAdded": [
+          "B17",
+          "B21",
+          "B23",
+          "B26",
+          "B27",
+          "B30"
+        ],
+        "scope": "Six scheduled classrooms only. B27 includes the source CB27/CB28 combination, with documented movable partition. Existing approximate slab is retained, not certified as a complete basement envelope.",
+        "evidencePaths": [
+          "data/indoor/COA/trace.json",
+          "data/indoor/COA/review.json"
+        ],
+        "output": "static/indoor/COA-combined.json",
+        "limitations": [
+          "Fourteen scheduled classrooms on B and L1 are manually traced; small columns, door recesses and wall thickness are simplified. Source labels use the C building prefix, omitted by the current official room listing and schedule keys.",
+          "C125/C126, C127/C128 and CB27/CB28 are modeled as combined footprints under schedule keys 125, 127 and B27, supported by UCSD split-room references. Movable partitions can divide the rooms; a booking does not establish that both halves are available.",
+          "Pixel scale is estimated from the printed C130 area. Rotation and translation fit the campus roof footprint; neither room sizes nor campus positions are surveyed.",
+          "Existing campus-footprint floor slabs and all ten floor levels are retained unchanged as approximate context. These roof-derived slabs are not independently verified whole-floor outlines; open lobbies and the remaining non-classroom interior are not modeled.",
+          "The public FIS drawings are dated March 2025 and warn that the displayed plan may be out of date. Minor printed/current room-area differences remain documented.",
+          "L2 tile responses require a login; no L2 geometry is inferred. Its six floor-listed classrooms remain unplaced."
+        ],
+        "overlayPaths": [
+          "local/indoor-sources/COA-review/B-review.png",
+          "local/indoor-sources/COA-review/campus-registration.png"
+        ]
+      }
+    },
+    {
+      "id": "COA-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001856&fcode=1&zoom=1",
+      "zoom": 5,
+      "width": 4609,
+      "height": 3457,
+      "title": "UCSD Facilities Information System - Coalition - First Floor - Master Plan",
+      "acquiredAt": "2026-10-22T01:15:21.980Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/COA-L1-FIS.png",
+      "bytes": 815511,
+      "sha256": "40c025d9d8271a0e4905d76f3ae277bc803323c9db654c83baf83c5da2d3da19",
+      "nativeImageSize": [
+        4609,
+        3457
+      ],
+      "tileCount": 532,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/1001856/1001856-1/~11537/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/COA-L1-FIS.html",
+        "sha256": "123fb067e9746f302dba3d76a500904c46e8493eac2ced1958301a394ad8b57e"
+      },
+      "geometryReview": {
+        "status": "partially-modeled",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "COA",
+        "floor": "L1",
+        "sourcePrintedRevision": "2025-03-14",
+        "scheduleKeysAdded": [
+          "117",
+          "121",
+          "122",
+          "123",
+          "124",
+          "125",
+          "127",
+          "130"
+        ],
+        "scope": "Eight scheduled classrooms only. 125 combines C125/C126 and 127 combines C127/C128 through documented split-room references; C124 excludes its separate closets. Other interiors and full floor envelopes are not reviewed.",
+        "evidencePaths": [
+          "data/indoor/COA/trace.json",
+          "data/indoor/COA/review.json"
+        ],
+        "output": "static/indoor/COA-combined.json",
+        "limitations": [
+          "Fourteen scheduled classrooms on B and L1 are manually traced; small columns, door recesses and wall thickness are simplified. Source labels use the C building prefix, omitted by the current official room listing and schedule keys.",
+          "C125/C126, C127/C128 and CB27/CB28 are modeled as combined footprints under schedule keys 125, 127 and B27, supported by UCSD split-room references. Movable partitions can divide the rooms; a booking does not establish that both halves are available.",
+          "Pixel scale is estimated from the printed C130 area. Rotation and translation fit the campus roof footprint; neither room sizes nor campus positions are surveyed.",
+          "Existing campus-footprint floor slabs and all ten floor levels are retained unchanged as approximate context. These roof-derived slabs are not independently verified whole-floor outlines; open lobbies and the remaining non-classroom interior are not modeled.",
+          "The public FIS drawings are dated March 2025 and warn that the displayed plan may be out of date. Minor printed/current room-area differences remain documented.",
+          "L2 tile responses require a login; no L2 geometry is inferred. Its six floor-listed classrooms remain unplaced."
+        ],
+        "overlayPaths": [
+          "local/indoor-sources/COA-review/L1-review.png",
+          "local/indoor-sources/COA-review/campus-registration.png"
+        ]
+      }
+    },
+    {
+      "id": "COA-L2-FIS",
+      "status": "raster-requires-login",
+      "error": "Tile request returned login HTML, not PNG; stopped this floor."
+    },
+    {
+      "id": "DANCE-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=193&fcode=1&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "1",
+        "2",
+        "3"
+      ],
+      "title": "UCSD Facilities Information System - Wagner Dance Building - First Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        5746,
+        7661
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0193/193-1/~5005/",
+      "checkedAt": "2026-10-22T01:20:52.527Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/DANCE-L1-FIS.html",
+        "sha256": "39527dff50ec79e1670c4f51a252a514b12f2e25abef898656ecae1ff21cd77c"
+      }
+    },
+    {
+      "id": "EBU2-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=197&fcode=3&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "313",
+        "L330",
+        "333A",
+        "335",
+        "339",
+        "305",
+        "330A"
+      ],
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - EBU2 - Third Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "status": "raster-requires-login",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/EBU2-L3-FIS.html",
+        "sha256": "400fc1b53eb81c67392238d2688689ca3ab18c220938cbdc67a672ae60c7d3b7"
+      }
+    },
+    {
+      "id": "EBU3B-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=643&fcode=1&zoom=1",
+      "zoom": 4,
+      "keys": [
+        "1113",
+        "1117",
+        "1124"
+      ],
+      "title": "UCSD Facilities Information System - CSE - First Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        1729,
+        2305
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0643/643-1/~11503/",
+      "checkedAt": "2026-10-22T01:20:52.632Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/EBU3B-L1-FIS.html",
+        "sha256": "d817de2f017a4978bc1174e4c8652f2f6ea556550e4b449e50fd6f36fd5c2796"
+      }
+    },
+    {
+      "id": "ECKRT-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=218&fcode=1&zoom=1",
+      "zoom": 4,
+      "keys": [
+        "127",
+        "139"
+      ],
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - Eckart Building - First Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "status": "raster-requires-login",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/ECKRT-L1-FIS.html",
+        "sha256": "6481f039b0586c538b731f21349ffd4ff45c6e0ad2da09093a4f14a730b470d8"
+      }
+    },
+    {
+      "id": "ECKRT-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=218&fcode=2&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "225",
+        "227",
+        "236"
+      ],
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - Eckart Building - Second Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "status": "raster-requires-login",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/ECKRT-L2-FIS.html",
+        "sha256": "235d83711f73b98aa69e2327b83dad25945780199afb315b5e85c95d81e01bad"
+      }
+    },
+    {
+      "id": "FAH-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=975&fcode=1&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "1301"
+      ],
+      "width": 5761,
+      "height": 4321,
+      "title": "UCSD Facilities Information System - Franklin Antonio Hall - First Floor - Master Plan",
+      "acquiredAt": "2026-10-22T01:22:21.343Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/FAH-L1-FIS.png",
+      "bytes": 604169,
+      "sha256": "62195b6738eb59d597494655ec284b4687e88da9952fd2b9cbfcc083ed5fb0b3",
+      "nativeImageSize": [
+        5761,
+        4321
+      ],
+      "tileCount": 782,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0975/975-1/~11513/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/FAH-L1-FIS.html",
+        "sha256": "96c00b5f737503583ef9f830bc2ad7c08178c46b3750fd1f0b5374ee53d306b4"
+      },
+      "geometryReview": {
+        "status": "partially-modeled",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "FAH",
+        "floor": "L1",
+        "sourcePrintedRevision": "2024-09-17",
+        "scheduleKeysAdded": [
+          "1301"
+        ],
+        "scope": "Only auditorium 1301 traced; separate 1301C/1301BB/1301A/1301B excluded. Controls align to existing 1101/1450 emergency-plan footprints in the retained relative frame; no campus registration or complete floor remodel.",
+        "evidencePaths": [
+          "data/indoor/FAH/fis-1301-trace.json",
+          "data/indoor/FAH/fis-1301-review.json"
+        ],
+        "output": "static/indoor/FAH.json",
+        "limitations": [
+          "1301 is traced from its named outer wall boundary, including rear central entry area; stepped seating, furniture, columns and door swings are not room walls. The separate 1301C, 1301BB, 1301A and 1301B spaces are excluded.",
+          "Simplified curved wall segments use straight chords; this is an approximate room footprint, not measured three-dimensional auditorium geometry.",
+          "Retained 1101 and 1450 footprints, all four existing floor objects except the supplemented L1 fields, and the relative coordinate system remain intact. No geographic position is added.",
+          "Registration controls fit within 0.022 relative units; independent checks show up to 0.964 units (9.64 pixels in the old 2400-pixel render). This reflects the simplified emergency-plan boundaries, especially gross 1450 corners, and limits positional accuracy.",
+          "The public FIS raster north arrow differs by about 90 degrees from the retained emergency-plan frame. Registration preserves the latter; it does not assert a new absolute compass alignment.",
+          "FIS viewer imagery may be outdated; title-block revision 2024-09-17 is recorded and no newer CAD-vault export is claimed."
+        ]
+      }
+    },
+    {
+      "id": "GH-B-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=250&fcode=B&zoom=1",
+      "zoom": 5,
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - Galbraith Hall - Basement - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "status": "raster-requires-login",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/GH-B-FIS.html",
+        "sha256": "09ca07af05ad54f3e93b0f406582cdf764ef8266482b448b931342a1d8ec1d01"
+      }
+    },
+    {
+      "id": "GH-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=250&fcode=1&zoom=1",
+      "zoom": 5,
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - Galbraith Hall - First Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "status": "raster-requires-login",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/GH-L1-FIS.html",
+        "sha256": "61c95f5141501a9ab47973543d3d8fa27f2029cd220ad1eee5540955431ebf52"
+      }
+    },
+    {
+      "id": "GH-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=250&fcode=2&zoom=1",
+      "zoom": 5,
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - Galbraith Hall - Second Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/GH-L2-FIS.html",
+        "sha256": "5ba066c4cd1d836e7607b1f051fa378cff5acf33a6a7ffe229e786c09f97b897"
+      },
+      "status": "raster-requires-login"
+    },
+    {
+      "id": "GH-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=250&fcode=3&zoom=1",
+      "zoom": 5,
+      "width": 4363,
+      "height": 3273,
+      "title": "UCSD Facilities Information System - Galbraith Hall - Third Floor - Master Plan",
+      "acquiredAt": "2026-10-22T01:17:20.891Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/GH-L3-FIS.png",
+      "bytes": 592363,
+      "sha256": "cd4d790bff8830d96871a264c8a1c5ea30771e8ffdde6dae8289672fa0b29d9e",
+      "nativeImageSize": [
+        4363,
+        3273
+      ],
+      "tileCount": 468,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0250/250-3/~10950/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/GH-L3-FIS.html",
+        "sha256": "b8d1209fe732389126f92d7228f64f091a73767664f2be60006fe79e8354485d"
+      },
+      "geometryReview": {
+        "status": "partially-modeled",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "GH",
+        "floor": "L3",
+        "sourcePrintedRevision": "2021-11-09",
+        "scheduleKeysAdded": [
+          "320",
+          "321"
+        ],
+        "scope": "Only rooms 320/321 traced. The visible upper projection of 242 is registration evidence; its existing full 2016 auditorium footprint is retained. No campus registration or whole-floor certification.",
+        "evidencePaths": [
+          "data/indoor/GH/public-fis-trace.json",
+          "data/indoor/GH/public-fis-review.json"
+        ],
+        "output": "static/indoor/GH-combined.json",
+        "limitations": [
+          "No campus registration is claimed. All prior floor plates and the full dimensioned 2016 room-242 footprint are retained unchanged.",
+          "The 2021 L3 plan shows upper-level room-242 boundaries plus lower-level projections. They serve only as shared perimeter controls; no partial upper-level polygon replaces the complete auditorium.",
+          "Registration to the independently traced 2016 room 242 has residuals up to 0.72 m at two rear entrance corners. New room placement is approximate.",
+          "321 sets the single image scale; 320 is an independent area check. Neither room is independently resized to match its area.",
+          "Floor heights remain estimated; internal steps, door swing arcs, seats, and circulation are not modeled."
+        ]
+      }
+    },
+    {
+      "id": "HDSI-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=329&fcode=1&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "123"
+      ],
+      "title": "UCSD Facilities Information System - Halicioglu Data Science Institute - First Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        3457,
+        4609
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0329/329-1/~11529/",
+      "checkedAt": "2026-10-22T01:20:52.902Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/HDSI-L1-FIS.html",
+        "sha256": "b5638502f0a89a27bcf5a889a0db71f8fc117c18f022fb7a56b349f13acf75f8"
+      }
+    },
+    {
+      "id": "HDSI-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=329&fcode=3&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "336",
+        "355"
+      ],
+      "title": "UCSD Facilities Information System - Halicioglu Data Science Institute - Third Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        3457,
+        4609
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0329/329-3/~11531/",
+      "checkedAt": "2026-10-22T01:20:53.180Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/HDSI-L3-FIS.html",
+        "sha256": "578daae0101e653bf0e9d94546a32e46c3ca374880cb028087e2c9135f7c6c90"
+      }
+    },
+    {
+      "id": "HSS-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=257&fcode=1&zoom=1",
+      "zoom": 4,
+      "width": 2593,
+      "height": 1945,
+      "title": "UCSD Facilities Information System - HSS - First Floor - Master Plan",
+      "acquiredAt": "2026-10-22T01:17:28.488Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/HSS-L1-FIS.png",
+      "bytes": 225378,
+      "sha256": "ebe3e5ed95328d61be00982490ad08d280b4d660959836cb140bcdf3c0238971",
+      "nativeImageSize": [
+        2593,
+        1945
+      ],
+      "tileCount": 176,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0257/257-1/~11487/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/HSS-L1-FIS.html",
+        "sha256": "d20463bdea23cc33aebbfa802970217213aaf27d63cf701ee3b2430e176a6e37"
+      },
+      "geometryReview": {
+        "status": "partially-modeled",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "HSS",
+        "floor": "L1",
+        "sourcePrintedRevision": "2025-08-21",
+        "scheduleKeysAdded": [
+          "1106B",
+          "1128A",
+          "1330"
+        ],
+        "scope": "Three newly traced classrooms and shared-core controls used to correct the scale of inherited L1 geometry. Existing fragments remain partial floor coverage; upper-floor geometry is unchanged.",
+        "evidencePaths": [
+          "data/indoor/HSS/public-fis-trace.json",
+          "data/indoor/HSS/public-fis-review.json"
+        ],
+        "output": "static/indoor/HSS-combined.json",
+        "limitations": [
+          "Campus registration remains unset. Low floors are aligned to the preserved metric L4 core; upper floors are unchanged.",
+          "The FIS images explicitly warn that viewer drawings may be inaccurate and updated CAD drawings are available. Later alterations are not verified.",
+          "Ten inherited lower-floor room shapes are retained exactly under one uniform similarity per floor; 2154 additionally has door-swing protrusions clipped to its verified shared wall. Their approximate traces can understate printed areas by up to 18%; they are not individually stretched to force area equality.",
+          "Existing low-floor outline fragments are retained under the same correction and are not full floor envelopes. Room source boundaries and shared core points establish placement independently of these fragments.",
+          "Room 2333A is a separate data repair: its former shape occupied the location labeled 2333B on the 2024 drawing; the direct labeled south room replaces it while its identifier and schedule key are retained.",
+          "Illustrative floor elevations are retained. Steps, seating, and door swing arcs are not modeled.",
+          "The inherited 2154 door-swing protrusions are clipped to its directly visible shared wall, preventing an overlap with the newly traced 2152. Other inherited edges remain uniformly transformed.",
+          "True north is unverified in the retained relative frame; the combined layout uses northDeg null and no campus geo."
+        ],
+        "additionalUses": [
+          {
+            "building": "LEDDN",
+            "scope": "Printed evidence that the auditorium occupies both L1 and L2; no additional L1 auditorium trace from this raster.",
+            "evidencePaths": [
+              "data/indoor/LEDDN/public-fis-trace.json",
+              "data/indoor/LEDDN/public-fis-review.json"
+            ],
+            "coverage": "floor-occupancy-evidence-only",
+            "entireSourceModeled": false
+          }
+        ],
+        "campusRegistration": false,
+        "trueNorthVerified": false,
+        "orientationReviewedAt": "2026-10-22T01:52:06.392279+00:00"
+      }
+    },
+    {
+      "id": "HSS-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=257&fcode=2&zoom=1",
+      "zoom": 5,
+      "width": 5185,
+      "height": 3889,
+      "title": "UCSD Facilities Information System - HSS - Second Floor - Master Plan",
+      "acquiredAt": "2026-10-22T01:17:36.207Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/HSS-L2-FIS.png",
+      "bytes": 555027,
+      "sha256": "c970a3a59cafbf7af845be063496a853a3cc15476b62fdf3e44c47ea5d09b60d",
+      "nativeImageSize": [
+        5185,
+        3889
+      ],
+      "tileCount": 672,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0257/257-2/~11378/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/HSS-L2-FIS.html",
+        "sha256": "6507db25e00d1beb5c1716be34f102a011a297ac66ddcfee5415c17079f11c47"
+      },
+      "geometryReview": {
+        "status": "partially-modeled",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "HSS",
+        "floor": "L2",
+        "sourcePrintedRevision": "2024-05-02",
+        "scheduleKeysAdded": [
+          "2025",
+          "2152",
+          "2305A",
+          "2333B"
+        ],
+        "scope": "Four newly traced classroom boundaries and shared-core controls. Existing 2333A was replaced by the separately labeled south room; 2154 door-swing protrusions were clipped at its visible shared wall. Partial floor fragments remain.",
+        "evidencePaths": [
+          "data/indoor/HSS/public-fis-trace.json",
+          "data/indoor/HSS/public-fis-review.json"
+        ],
+        "output": "static/indoor/HSS-combined.json",
+        "limitations": [
+          "Campus registration remains unset. Low floors are aligned to the preserved metric L4 core; upper floors are unchanged.",
+          "The FIS images explicitly warn that viewer drawings may be inaccurate and updated CAD drawings are available. Later alterations are not verified.",
+          "Ten inherited lower-floor room shapes are retained exactly under one uniform similarity per floor; 2154 additionally has door-swing protrusions clipped to its verified shared wall. Their approximate traces can understate printed areas by up to 18%; they are not individually stretched to force area equality.",
+          "Existing low-floor outline fragments are retained under the same correction and are not full floor envelopes. Room source boundaries and shared core points establish placement independently of these fragments.",
+          "Room 2333A is a separate data repair: its former shape occupied the location labeled 2333B on the 2024 drawing; the direct labeled south room replaces it while its identifier and schedule key are retained.",
+          "Illustrative floor elevations are retained. Steps, seating, and door swing arcs are not modeled.",
+          "The inherited 2154 door-swing protrusions are clipped to its directly visible shared wall, preventing an overlap with the newly traced 2152. Other inherited edges remain uniformly transformed.",
+          "True north is unverified in the retained relative frame; the combined layout uses northDeg null and no campus geo."
+        ],
+        "existingScheduleKeysRepaired": [
+          "2333A",
+          "2154"
+        ],
+        "additionalUses": [
+          {
+            "building": "LEDDN",
+            "scheduleKeysAdded": [
+              "AUD"
+            ],
+            "sourceLabelsModeled": [
+              "2250",
+              "2255",
+              "2260"
+            ],
+            "scope": "Auditorium 2250, lobby 2255 and service room 2260 only, calibrated using the separate 2018 dimensioned seating plan. Auditorium spans L1/L2; its horizontal projection is displayed once on L2. The lobby selection boundary is an open passage, not an asserted wall. No campus registration.",
+            "evidencePaths": [
+              "data/indoor/LEDDN/public-fis-trace.json",
+              "data/indoor/LEDDN/public-fis-review.json"
+            ],
+            "output": "static/indoor/LEDDN-combined.json",
+            "coverage": "partial",
+            "entireSourceModeled": false
+          }
+        ],
+        "campusRegistration": false,
+        "trueNorthVerified": false,
+        "orientationReviewedAt": "2026-10-22T01:52:06.392279+00:00"
+      }
+    },
+    {
+      "id": "HSS-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=257&fcode=3&zoom=1",
+      "zoom": 2,
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - HSS - Third Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "status": "raster-requires-login",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/HSS-L3-FIS.html",
+        "sha256": "28e688bb79eb512bd0fe5fd12418f98b8fb5bacb63d661c77ca52ed098ba8991"
+      }
+    },
+    {
+      "id": "HSS-L4-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=257&fcode=4&zoom=1",
+      "zoom": 4,
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - HSS - Fourth Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/HSS-L4-FIS.html",
+        "sha256": "c7c2680c8cc82ef802fb0e3f9953fac96c8085ef00f0c8043676a0de8cbd9b40"
+      },
+      "status": "raster-requires-login"
+    },
+    {
+      "id": "HUBBS-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=261&fcode=3&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "3300"
+      ],
+      "title": "UCSD Facilities Information System - Hubbs Hall - Third Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        3489,
+        4652
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0261/261-3/~10464/",
+      "checkedAt": "2026-10-22T01:20:56.898Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/HUBBS-L3-FIS.html",
+        "sha256": "8a495683a8e94816144850d7381c4b37aa58df9aaacbf65384064a266a31673f"
+      }
+    },
+    {
+      "id": "JEANN-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001812&fcode=2&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "AUD"
+      ],
+      "title": "UCSD Facilities Information System - The Jeannie - Second Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        4608,
+        6144
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/1001812/1001812-2/~11534/",
+      "checkedAt": "2026-10-22T01:20:57.373Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/JEANN-L2-FIS.html",
+        "sha256": "e11fdf6cea3dfd0253e5af6785b3d123da3d99e81c10c9a8ea6fc56114553174"
+      }
+    },
+    {
+      "id": "LASB-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=273&fcode=1&zoom=1",
+      "zoom": 1,
+      "keys": [
+        "4"
+      ],
+      "title": "UCSD Facilities Information System - Gildred Lat Amer Studies - First Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        317,
+        423
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0273/273-1/~11510/",
+      "checkedAt": "2026-10-22T01:20:57.456Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/LASB-L1-FIS.html",
+        "sha256": "c7cf6d7204f3417b91e51da2a0111875e1c2543e36c2432872776e3de6f435a1"
+      }
+    },
+    {
+      "id": "LEDDN-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=257&fcode=2&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "AUD"
+      ],
+      "title": "UCSD Facilities Information System - HSS - Second Floor - Master Plan",
+      "status": "public-raster",
+      "mime": "image/png",
+      "size": [
+        3889,
+        5185
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0257/257-2/~11378/",
+      "checkedAt": "2026-10-22T01:20:57.469Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/LEDDN-L2-FIS.html",
+        "sha256": "6507db25e00d1beb5c1716be34f102a011a297ac66ddcfee5415c17079f11c47"
+      }
+    },
+    {
+      "id": "LFFB-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=597&fcode=2&zoom=1",
+      "zoom": 4,
+      "keys": [
+        "205",
+        "2A05"
+      ],
+      "title": "UCSD Facilities Information System - Leichtag - Second Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        1651,
+        2201
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0597/597-2/~11330/",
+      "checkedAt": "2026-10-22T01:20:53.179Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/LFFB-L2-FIS.html",
+        "sha256": "d9d73a8e041b749c5cfa4e14b6fb2e76dedf3c1f30bdb76662cdfdf31a4753b2"
+      }
+    },
+    {
+      "id": "LFFB-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=597&fcode=3&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "3A05"
+      ],
+      "title": "UCSD Facilities Information System - Leichtag - Third Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        3312,
+        4415
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0597/597-3/~8038/",
+      "checkedAt": "2026-10-22T01:20:54.462Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/LFFB-L3-FIS.html",
+        "sha256": "9f6ab09e37a88009b2588f6b9437968ef9359e2fad144042063da666396e820e"
+      }
+    },
+    {
+      "id": "MALK-B-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001857&fcode=B&zoom=1",
+      "zoom": 5,
+      "width": 5760,
+      "height": 4320,
+      "title": "UCSD Facilities Information System - Brian C. Malk Hall - Basement - Master Plan",
+      "acquiredAt": "2026-10-22T01:16:42.058Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/MALK-B-FIS.png",
+      "bytes": 898948,
+      "sha256": "7840ed21be17ee2fcf0db108bb199a22b4af2e11a998e87637b34103108db4f7",
+      "nativeImageSize": [
+        5760,
+        4320
+      ],
+      "tileCount": 782,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/1001857/1001857-B/~11434/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MALK-B-FIS.html",
+        "sha256": "324a16de2fb8309735ded3c9cac1e43aec9078be3be03bdf247e638860bc1803"
+      },
+      "geometryReview": {
+        "status": "partially-modeled",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "MALK",
+        "floor": "B",
+        "sourcePrintedRevision": "2025-03-21",
+        "scheduleKeysAdded": [
+          "B90",
+          "B91",
+          "B92"
+        ],
+        "scope": "Three classrooms and a simplified basement outer envelope. EB90/EB91/EB92 map to schedule keys through reviewed Facilities IDs. The open light court is included in the gross envelope; no detailed courtyard/interior or upper-floor review.",
+        "evidencePaths": [
+          "data/indoor/MALK/fis-basement-trace.json",
+          "data/indoor/MALK/fis-basement-review.json"
+        ],
+        "output": "static/indoor/MALK-combined.json",
+        "limitations": [
+          "The raster title block is dated 2025-03-21. FIS warns that viewer imagery is no longer maintained and may differ from the current CAD vault; no post-publication remodeling guarantee is made.",
+          "Only three explicitly numbered classroom polygons and the simplified basement outer envelope are traced. Small door, jamb, column and wall-thickness details are omitted; rounded corners are approximated with short line segments.",
+          "The basement outer envelope replaces a repeated campus-roof silhouette. The open light court is included within the simplified overall basement envelope; no ceiling, circulation mesh, interior courtyard walls or upper-floor room geometry is reconstructed.",
+          "Registration inherits the approximate campus transform. Control/holdout residuals and room-area agreement are drawing consistency checks, not a surveyed accuracy claim.",
+          "All five upper floors, their room lists, estimated heights and sources are retained unchanged. Their existing outlines remain campus-derived approximations, not newly reviewed floor plans.",
+          "Source room labels carry the E wing prefix (EB90/EB91/EB92); schedule keys B90/B91/B92 are preserved only through the reviewed Facilities room-ID crosswalk."
+        ],
+        "overlayPaths": [
+          "local/indoor-sources/MALK-review/B-review.png",
+          "local/indoor-sources/MALK-review/B-rooms-review.png"
+        ]
+      }
+    },
+    {
+      "id": "MALK-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001857&fcode=1&zoom=1",
+      "zoom": 5,
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - Brian C. Malk Hall - First Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "status": "raster-requires-login",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MALK-L1-FIS.html",
+        "sha256": "1c57a18ec4a656aeba52c11ee5a6fa63c12c3b4d86393f1b9846f391a0e47602"
+      }
+    },
+    {
+      "id": "MALK-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001857&fcode=2&zoom=1",
+      "zoom": 5,
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - Brian C. Malk Hall - Second Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "status": "raster-requires-login",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MALK-L2-FIS.html",
+        "sha256": "b7d9a54bdf05877554edc3b4bfd0efbc2e3f9c7b5b8f4c94053ed40bcd261ee9"
+      }
+    },
+    {
+      "id": "MALK-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001857&fcode=3&zoom=1",
+      "zoom": 5,
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - Brian C. Malk Hall - Third Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "status": "raster-requires-login",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MALK-L3-FIS.html",
+        "sha256": "a058e0e240c35b4c849450078e4ca1c4b3310b3f06530d45ed8a2bd76afe181c"
+      }
+    },
+    {
+      "id": "MALK-L4-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001857&fcode=4&zoom=1",
+      "zoom": 5,
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - Brian C. Malk Hall - Fourth Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "status": "raster-requires-login",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MALK-L4-FIS.html",
+        "sha256": "a894269560da47d10024be44b1c99d0fceaef271906494045919e8cc5fc8ce7d"
+      }
+    },
+    {
+      "id": "MALK-L5-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001857&fcode=5&zoom=1",
+      "zoom": 5,
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - Brian C. Malk Hall - Fifth Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "status": "raster-requires-login",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MALK-L5-FIS.html",
+        "sha256": "ff77b82910196c27586cccfc8ab2cdf08f6c7a674d606b9398ed413b0a4905bd"
+      }
+    },
+    {
+      "id": "MANDE-B1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=340&fcode=B1&zoom=1",
+      "zoom": 5,
+      "width": 7976,
+      "height": 5982,
+      "title": "UCSD Facilities Information System - Mandeville Center - Basement 1 - Master Plan",
+      "acquiredAt": "2026-10-22T01:18:29.479Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/MANDE-B1-FIS.png",
+      "bytes": 671865,
+      "sha256": "2d75a4c674a3f395470f3ed8c646ab5d06627192de2e94a9c383c87472f09b09",
+      "nativeImageSize": [
+        7976,
+        5982
+      ],
+      "tileCount": 1536,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0340/340-B1/~11512/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MANDE-B1-FIS.html",
+        "sha256": "cd2cc800551a4690d9e5aa39ab312272949e1fce9cd275038859bbbc5708f367"
+      },
+      "geometryReview": {
+        "status": "partially-modeled",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "MANDE",
+        "floor": "B1",
+        "sourcePrintedRevision": "2018-10-11",
+        "scheduleKeysAdded": [
+          "B104",
+          "B111E",
+          "B113",
+          "B114",
+          "B115B",
+          "B146",
+          "B150",
+          "B152",
+          "B153"
+        ],
+        "scope": "Nine classrooms and four reviewed teaching-wing portions; eastern service/unexcavated areas omitted.",
+        "evidencePaths": [
+          "data/indoor/MANDE/fis-basements-trace.json",
+          "data/indoor/MANDE/fis-basements-review.json"
+        ],
+        "output": "static/indoor/MANDE-combined.json",
+        "limitations": [
+          "Manually simplified classroom wall boundaries from dated public Facilities master-plan rasters. Perimeter columns, narrow wall recesses, doors and furniture are simplified; these are not measured 3D interiors.",
+          "B1 outline covers only four reviewed teaching-wing portions, not the entire basement; unreviewed eastern service areas and unexcavated regions are omitted. B2 uses its visible outer floor envelope. Neither basement reuses the former copied L1 outline.",
+          "L1 and L2 room geometry and all 114 pre-existing room objects are preserved. L1 raster is calibration evidence only. L2 room 212 remains unplaced.",
+          "Registration is into the original mirrored local coordinate frame. No campus longitude/latitude or absolute north correction is added. Exact reflected transforms and independent checks are recorded in the review JSON.",
+          "FIS warns its viewer imagery may be out of date; current CAD-vault/Tririga export remains unavailable. Different drawing revisions are stated individually."
+        ]
+      }
+    },
+    {
+      "id": "MANDE-B2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=340&fcode=B2&zoom=1",
+      "zoom": 5,
+      "width": 5760,
+      "height": 4320,
+      "title": "UCSD Facilities Information System - Mandeville Center - Basement 2 - Master Plan",
+      "acquiredAt": "2026-10-22T01:18:37.039Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/MANDE-B2-FIS.png",
+      "bytes": 400631,
+      "sha256": "1d506b203acf31435a4edd90be1f321727d1ccaa2e629c052643fbcfdf366552",
+      "nativeImageSize": [
+        5760,
+        4320
+      ],
+      "tileCount": 782,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0340/340-B2/~11381/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MANDE-B2-FIS.html",
+        "sha256": "059564ec3e7db8c09d336e5ec8babdceb77691343b8efe38a439217658c45909"
+      },
+      "geometryReview": {
+        "status": "partially-modeled",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "MANDE",
+        "floor": "B2",
+        "sourcePrintedRevision": "2024-09-19",
+        "scheduleKeysAdded": [
+          "B202",
+          "B206"
+        ],
+        "scope": "Two classrooms and the visible outer floor envelope, with simplified wall detail.",
+        "evidencePaths": [
+          "data/indoor/MANDE/fis-basements-trace.json",
+          "data/indoor/MANDE/fis-basements-review.json"
+        ],
+        "output": "static/indoor/MANDE-combined.json",
+        "limitations": [
+          "Manually simplified classroom wall boundaries from dated public Facilities master-plan rasters. Perimeter columns, narrow wall recesses, doors and furniture are simplified; these are not measured 3D interiors.",
+          "B1 outline covers only four reviewed teaching-wing portions, not the entire basement; unreviewed eastern service areas and unexcavated regions are omitted. B2 uses its visible outer floor envelope. Neither basement reuses the former copied L1 outline.",
+          "L1 and L2 room geometry and all 114 pre-existing room objects are preserved. L1 raster is calibration evidence only. L2 room 212 remains unplaced.",
+          "Registration is into the original mirrored local coordinate frame. No campus longitude/latitude or absolute north correction is added. Exact reflected transforms and independent checks are recorded in the review JSON.",
+          "FIS warns its viewer imagery may be out of date; current CAD-vault/Tririga export remains unavailable. Different drawing revisions are stated individually."
+        ]
+      }
+    },
+    {
+      "id": "MANDE-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=340&fcode=1&zoom=1",
+      "zoom": 5,
+      "width": 7841,
+      "height": 5881,
+      "title": "UCSD Facilities Information System - Mandeville Center - First Floor - Master Plan",
+      "acquiredAt": "2026-10-22T01:22:53.459Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/MANDE-L1-FIS.png",
+      "bytes": 583290,
+      "sha256": "230307a44919309eddd41b5bb0b5baa2346011cff3f21d7c89339dde05abe9bb",
+      "nativeImageSize": [
+        7841,
+        5881
+      ],
+      "tileCount": 1426,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0340/340-1/~7703/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MANDE-L1-FIS.html",
+        "sha256": "e37c140ac0c37a6d3a9874d2f4bbe082525c13a068ff86c40f9f532a34a71400"
+      },
+      "geometryReview": {
+        "status": "registration-only",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "MANDE",
+        "floor": "L1",
+        "sourcePrintedRevision": "2017-06-28",
+        "scheduleKeysAdded": [],
+        "scope": "Calibration and cross-floor registration evidence only. No new L1 classroom geometry or complete L1 outline was traced; existing rooms are preserved.",
+        "evidencePaths": [
+          "data/indoor/MANDE/fis-basements-trace.json",
+          "data/indoor/MANDE/fis-basements-review.json"
+        ],
+        "output": "static/indoor/MANDE-combined.json",
+        "limitations": [
+          "Manually simplified classroom wall boundaries from dated public Facilities master-plan rasters. Perimeter columns, narrow wall recesses, doors and furniture are simplified; these are not measured 3D interiors.",
+          "B1 outline covers only four reviewed teaching-wing portions, not the entire basement; unreviewed eastern service areas and unexcavated regions are omitted. B2 uses its visible outer floor envelope. Neither basement reuses the former copied L1 outline.",
+          "L1 and L2 room geometry and all 114 pre-existing room objects are preserved. L1 raster is calibration evidence only. L2 room 212 remains unplaced.",
+          "Registration is into the original mirrored local coordinate frame. No campus longitude/latitude or absolute north correction is added. Exact reflected transforms and independent checks are recorded in the review JSON.",
+          "FIS warns its viewer imagery may be out of date; current CAD-vault/Tririga export remains unavailable. Different drawing revisions are stated individually."
+        ]
+      }
+    },
+    {
+      "id": "MANDE-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=340&fcode=2&zoom=1",
+      "zoom": 5,
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - Mandeville Center - Second Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "status": "raster-requires-login",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MANDE-L2-FIS.html",
+        "sha256": "27de497427286e5291656f58870febd19fdddf9e694335c45d5c266ab8700048"
+      }
+    },
+    {
+      "id": "MCGIL-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=349&fcode=1&zoom=1",
+      "zoom": 5,
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - McGill Hall - First Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MCGIL-L1-FIS.html",
+        "sha256": "df8d418565ebf74e266569b06d7cb6c2400026495e651f1f64044dd59e2971a7"
+      },
+      "status": "raster-requires-login"
+    },
+    {
+      "id": "MCGIL-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=349&fcode=2&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "2315",
+        "2322",
+        "2330",
+        "2331",
+        "2334",
+        "2342"
+      ],
+      "width": 7095,
+      "height": 5321,
+      "title": "UCSD Facilities Information System - McGill Hall - Second Floor - Master Plan",
+      "acquiredAt": "2026-10-22T01:19:52.404Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/MCGIL-L2-FIS.png",
+      "bytes": 599772,
+      "sha256": "8dc6e066bdf8991b54dc3cd031e88863adbf5e505844e06abd53a198cf17569a",
+      "nativeImageSize": [
+        7095,
+        5321
+      ],
+      "tileCount": 1176,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0349/349-2/~11127/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MCGIL-L2-FIS.html",
+        "sha256": "84127c86f62953a5f9978e78e96e41caeedc9895f35acb3fa359676b6ec7fb3d"
+      },
+      "geometryReview": {
+        "status": "partially-modeled",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "MCGIL",
+        "floor": "L2",
+        "sourcePrintedRevision": "2022-08-31",
+        "scheduleKeysAdded": [
+          "2315",
+          "2322",
+          "2330",
+          "2334",
+          "2342"
+        ],
+        "scope": "Five directly labeled rooms traced into the preserved local meter frame. 2331 has no verified label/crosswalk and remains unplaced. Inherited frame is reflected relative to this source, so combined layout withholds campus geo and absolute north rather than inventing a whole-building correction.",
+        "evidencePaths": [
+          "data/indoor/MCGIL/fis-trace.json",
+          "data/indoor/MCGIL/fis-review.json"
+        ],
+        "output": "static/indoor/MCGIL-combined.json",
+        "limitations": [
+          "Five L2 rooms are traced from directly readable labels and walls in the 2022 public FIS drawing; 2331 remains unplaced because its number is not shown.",
+          "Small column and doorway details are simplified. Printed areas are an independent consistency check; geometry and placement remain approximate.",
+          "The inherited local frame is reflected relative to the north-up 2022 L2 plan. Existing floor geometry is retained and the new rooms are registered to that same frame, but campus placement and a reliable north angle are withheld until the original lower-floor orientation can be independently checked.",
+          "All existing rooms, floor outlines and levels are retained. The original L1-derived slab includes an inherited hole that is not verified for L2; the new rooms do not rely on that hole.",
+          "The displayed FIS source warns it may be out of date. A public L1 request returned a login response, so no unsupported whole-building correction was made."
+        ],
+        "unresolvedScheduleKeys": [
+          "2331"
+        ],
+        "overlayPaths": [
+          "local/indoor-sources/MCGIL-review/L2-FIS-review.png",
+          "local/indoor-sources/MCGIL-review/L2-FIS-registration.png"
+        ]
+      }
+    },
+    {
+      "id": "MCGIL-L5-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=349&fcode=5&zoom=1",
+      "zoom": 4,
+      "keys": [
+        "5326"
+      ],
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - McGill Hall - Fifth Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "status": "raster-requires-login",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MCGIL-L5-FIS.html",
+        "sha256": "32dbfe8da7268ce9e57ae5f35f929afe0acfe03eacb828841cf089760dde66db"
+      }
+    },
+    {
+      "id": "MCTF-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=449&fcode=1&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "130",
+        "140"
+      ],
+      "title": "UCSD Facilities Information System - Marine Conservation and Technology - First Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        3457,
+        4609
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0449/449-1/~11516/",
+      "checkedAt": "2026-10-22T01:20:50.610Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MCTF-L1-FIS.html",
+        "sha256": "9f5002b6bc2512e0864df6b3d2f47b19d09dbab7bfb5a6fc5b205fd46473dcce"
+      }
+    },
+    {
+      "id": "MCTF-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=449&fcode=2&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "202",
+        "210"
+      ],
+      "title": "UCSD Facilities Information System - Marine Conservation and Technology - Second Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        3457,
+        4609
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0449/449-2/~11207/",
+      "checkedAt": "2026-10-22T01:20:50.933Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MCTF-L2-FIS.html",
+        "sha256": "ba9e5f4e98517dce448a97650f9a3a641d5641a9b0fb767f9aa96a9bf931d709"
+      }
+    },
+    {
+      "id": "MET-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=848&fcode=3&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "304",
+        "312",
+        "313",
+        "315"
+      ],
+      "title": "UCSD Facilities Information System - Medical Education and Telemedicine - Third Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        5793,
+        7724
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0848/848-3/~11388/",
+      "checkedAt": "2026-10-22T01:20:51.216Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MET-L3-FIS.html",
+        "sha256": "fe11e7b4d2eeec381ed567da71f67ee535785a6f5cd0939c15ce1fb0469eb11e"
+      }
+    },
+    {
+      "id": "MNDLR-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=768&fcode=3&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "3545"
+      ],
+      "title": "UCSD Facilities Information System - Mandler Hall - Third Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        5321,
+        7095
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0768/768-3/~11202/",
+      "checkedAt": "2026-10-22T01:20:57.856Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MNDLR-L3-FIS.html",
+        "sha256": "8876c283e4d0a622e4425528fe9297e328e4789140590f80ce7fbe98f9ed55cd"
+      }
+    },
+    {
+      "id": "MOS-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001811&fcode=1&zoom=1",
+      "zoom": 4,
+      "keys": [
+        "0113",
+        "0114"
+      ],
+      "width": 2305,
+      "height": 1729,
+      "title": "UCSD Facilities Information System - NTPLL - Mosaic - First Floor - Master Plan",
+      "acquiredAt": "2026-10-22T01:21:23.701Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/MOS-L1-FIS.png",
+      "bytes": 245194,
+      "sha256": "a5e4a7dd99591f185351a6ab7c1d6146612801fbbda6a46e6402fb5f5aa17928",
+      "nativeImageSize": [
+        2305,
+        1729
+      ],
+      "tileCount": 140,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/1001811/1001811-1/~11249/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MOS-L1-FIS.html",
+        "sha256": "b3c8fb4d474bac5d888aa7005947086a87b997886ce389b1bfd8ec18d3f0cca3"
+      },
+      "geometryReview": {
+        "status": "partially-modeled",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "MOS",
+        "floor": "L1",
+        "sourcePrintedRevision": "2023-09-01",
+        "scheduleKeysAdded": [
+          "0113",
+          "0114"
+        ],
+        "scope": "Only MO0113/MO0114 classroom boundaries, exterior control points and official HTML room-label/area crosswalk. Overprinted raster labels are corroborated by the public room tree; leading-zero schedule keys retained.",
+        "evidencePaths": [
+          "data/indoor/MOS/fis-trace-L1.json",
+          "data/indoor/MOS/fis-review-L1.json",
+          "data/indoor/MOS/room-listing-evidence.json"
+        ],
+        "output": "static/indoor/MOS-combined.json",
+        "limitations": [
+          "Only the three scheduled rooms MO0113, MO0114 and MO0204 are traced. Official FIS room-tree labels and areas establish the MO building prefix and the leading-zero schedule keys. L1 raster text is overprinted, so the retained HTML listing corroborates its labels.",
+          "Doorway jambs, thin wall widths and small column details are simplified; adjacent projection/support rooms are excluded. Metric scale and campus position remain approximate.",
+          "L1 uses four campus-footprint controls with three independent facade holdouts. L2 uses the same pixel frame, checked against the common southwest and southeast stair cores and northwestern exterior corner; it is not a separate survey fit.",
+          "All seven original floor levels and approximate campus-footprint slabs are retained. The partial classroom geometry does not describe all floor areas or an as-built interior.",
+          "The public FIS plans dated 2023-09-01 warn that displayed drawings may be out of date."
+        ],
+        "overlayPaths": [
+          "local/indoor-sources/MOS-review/L1-FIS-review.png",
+          "local/indoor-sources/MOS-review/L1-FIS-registration.png"
+        ]
+      }
+    },
+    {
+      "id": "MOS-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001811&fcode=2&zoom=1",
+      "zoom": 4,
+      "keys": [
+        "0204"
+      ],
+      "width": 2305,
+      "height": 1729,
+      "title": "UCSD Facilities Information System - NTPLL - Mosaic - Second Floor - Master Plan",
+      "acquiredAt": "2026-10-22T01:21:28.797Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/MOS-L2-FIS.png",
+      "bytes": 196996,
+      "sha256": "0800da29684d184fae4a7241f2954e80d7bdd7e4620481c5217d1af08acd4be2",
+      "nativeImageSize": [
+        2305,
+        1729
+      ],
+      "tileCount": 140,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/1001811/1001811-2/~11251/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MOS-L2-FIS.html",
+        "sha256": "df6b53b67256047e8829ee636f5ef881e6434a20eef1429c54bed2af908623ae"
+      },
+      "geometryReview": {
+        "status": "partially-modeled",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "MOS",
+        "floor": "L2",
+        "sourcePrintedRevision": "2023-09-01",
+        "scheduleKeysAdded": [
+          "0204"
+        ],
+        "scope": "Only MO0204 classroom boundary, aligned to the L1 native pixel frame through common stair cores and an exterior corner. Other rooms and upper floors were not newly modeled.",
+        "evidencePaths": [
+          "data/indoor/MOS/fis-trace-L2.json",
+          "data/indoor/MOS/fis-review-L2.json",
+          "data/indoor/MOS/room-listing-evidence.json"
+        ],
+        "output": "static/indoor/MOS-combined.json",
+        "limitations": [
+          "Only the three scheduled rooms MO0113, MO0114 and MO0204 are traced. Official FIS room-tree labels and areas establish the MO building prefix and the leading-zero schedule keys. L1 raster text is overprinted, so the retained HTML listing corroborates its labels.",
+          "Doorway jambs, thin wall widths and small column details are simplified; adjacent projection/support rooms are excluded. Metric scale and campus position remain approximate.",
+          "L1 uses four campus-footprint controls with three independent facade holdouts. L2 uses the same pixel frame, checked against the common southwest and southeast stair cores and northwestern exterior corner; it is not a separate survey fit.",
+          "All seven original floor levels and approximate campus-footprint slabs are retained. The partial classroom geometry does not describe all floor areas or an as-built interior.",
+          "The public FIS plans dated 2023-09-01 warn that displayed drawings may be out of date."
+        ],
+        "overlayPaths": [
+          "local/indoor-sources/MOS-review/L2-FIS-review.png",
+          "local/indoor-sources/MOS-review/L2-FIS-registration.png"
+        ]
+      }
+    },
+    {
+      "id": "PACIF-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=420&fcode=3&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "3500"
+      ],
+      "title": "UCSD Facilities Information System - Pacific Hall - Third Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        3554,
+        4739
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0420/420-3/~11472/",
+      "checkedAt": "2026-10-22T01:20:51.218Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/PACIF-L3-FIS.html",
+        "sha256": "0ddbbbf06ae09f79e0d302404f385845388073a996d68c453dd51408034f1278"
+      }
+    },
+    {
+      "id": "PACIF-L4-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=420&fcode=4&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "4500",
+        "4501",
+        "4503"
+      ],
+      "title": "UCSD Facilities Information System - Pacific Hall - Fourth Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        3554,
+        4739
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0420/420-4/~11471/",
+      "checkedAt": "2026-10-22T01:20:51.520Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/PACIF-L4-FIS.html",
+        "sha256": "34c018da8700afd0736070b3b068e6132366fcafcaa5e25efa62e8f6b39f9d4c"
+      }
+    },
+    {
+      "id": "PCYNH-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=636&fcode=2&zoom=1",
+      "zoom": 1,
+      "keys": [
+        "240",
+        "245"
+      ],
+      "width": 260,
+      "height": 195,
+      "title": "UCSD Facilities Information System - Pepper Canyon Hall - Second Floor - Master Plan",
+      "acquiredAt": "2026-10-22T01:21:38.791Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/PCYNH-L2-FIS.png",
+      "bytes": 8388,
+      "sha256": "70821acfabe2573ae536c3ea0d1b18927c772607952eec8c147fd654d67c7d3d",
+      "nativeImageSize": [
+        260,
+        195
+      ],
+      "tileCount": 4,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0636/636-2/~11644/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": false,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/PCYNH-L2-FIS.html",
+        "sha256": "7299a162e608a8ce9b43338e599e7fcec13963339a9f7509bf934e39307284aa"
+      },
+      "geometryReview": {
+        "status": "insufficient-resolution",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "artifact-resolution-check-only",
+        "entireSourceModeled": false,
+        "building": "PCYNH",
+        "floor": "L2",
+        "scheduleKeysAdded": [],
+        "unresolvedScheduleKeys": [
+          "240",
+          "245"
+        ],
+        "scope": "Only a 260 by 195 pixel raster was acquired. It is insufficient to verify the target room labels and wall boundaries; no geometry is traced from this thumbnail.",
+        "evidencePaths": [
+          "local/indoor-sources/PCYNH-L2-FIS.png",
+          "local/indoor-sources/PCYNH-L2-FIS.html"
+        ]
+      }
+    },
+    {
+      "id": "PFBH-B-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=593&fcode=B&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "003",
+        "005"
+      ],
+      "title": "UCSD Facilities Information System - Powell-Focht Bioengineering - Basement - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        3911,
+        5284
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0593/593-B/~11482/",
+      "checkedAt": "2026-10-22T01:20:55.073Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/PFBH-B-FIS.html",
+        "sha256": "296055470e57626385e889c12c9eb0325510d3179c6cc96c359236dd41d0fa32"
+      }
+    },
+    {
+      "id": "PODEM-L1-FIS",
+      "error": "No public raster init",
+      "title": "UCSD Facilities Information System - Error Message",
+      "status": "unavailable"
+    },
+    {
+      "id": "PODEM-L2-FIS",
+      "error": "No public raster init",
+      "title": "UCSD Facilities Information System - Error Message",
+      "status": "unavailable"
+    },
+    {
+      "id": "PRICE-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=430&fcode=2&zoom=1",
+      "zoom": 1,
+      "keys": [
+        "THTRE"
+      ],
+      "title": "UCSD Facilities Information System - Price West - Second Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        217,
+        289
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0430/430-2/~11662/",
+      "checkedAt": "2026-10-22T01:20:58.083Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/PRICE-L2-FIS.html",
+        "sha256": "7166ae26c89675f9d14158255f630a05628cd439261a86e1514bc0d4fa4cf7c0"
+      }
+    },
+    {
+      "id": "RBC-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=274&fcode=3&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "1301",
+        "1328"
+      ],
+      "title": "UCSD Facilities Information System - Robinson 1 - Third Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        3111,
+        4148
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0274/274-3/~10660/",
+      "checkedAt": "2026-10-22T01:20:50.611Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/RBC-L3-FIS.html",
+        "sha256": "e1d0e27c01a043cb8450374c430a444d9db6186758655b6330d4f3f35f12379c"
+      }
+    },
+    {
+      "id": "RBC-L4-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=274&fcode=4&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "1401",
+        "1428"
+      ],
+      "title": "UCSD Facilities Information System - Robinson 1 - Fourth Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        3111,
+        4148
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0274/274-4/~10661/",
+      "checkedAt": "2026-10-22T01:20:50.422Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/RBC-L4-FIS.html",
+        "sha256": "c80dfa0a65a632a769486929da90eb4a8c5e5c99218b3264bab41a6f245dff7a"
+      }
+    },
+    {
+      "id": "SERF-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=442&fcode=3&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "329",
+        "383"
+      ],
+      "title": "UCSD Facilities Information System - Error Message",
+      "status": "no-raster-init"
+    },
+    {
+      "id": "SOLIS-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=460&fcode=1&zoom=1",
+      "zoom": 5,
+      "width": 4830,
+      "height": 3623,
+      "title": "UCSD Facilities Information System - Solis Hall - First Floor - Master Plan",
+      "acquiredAt": "2026-10-22T01:17:45.196Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/SOLIS-L1-FIS.png",
+      "bytes": 606037,
+      "sha256": "9858a7264b0dff02607fc372f0571e1036ac55bebf7f9b113256c7cd1c5cd1c7",
+      "nativeImageSize": [
+        4830,
+        3623
+      ],
+      "tileCount": 570,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0460/460-1/~11379/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/SOLIS-L1-FIS.html",
+        "sha256": "d042a194fbc68fcee2bb7a9d934e95eda6bacc1d15e47e8805abf1c1525604fb"
+      },
+      "geometryReview": {
+        "status": "partially-modeled",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "SOLIS",
+        "floor": "L1",
+        "sourcePrintedRevision": "2024-09-17",
+        "scheduleKeysAdded": [
+          "104",
+          "105",
+          "107",
+          "109",
+          "110",
+          "111"
+        ],
+        "scope": "Six classrooms traced, including clipped mechanical corners and projecting booths where visible. Furniture and distancing circles excluded. Campus alignment uses exterior roof correspondences and remains approximate; no full interior certification.",
+        "evidencePaths": [
+          "data/indoor/SOLIS/public-fis-trace.json",
+          "data/indoor/SOLIS/public-fis-review.json"
+        ],
+        "output": "static/indoor/SOLIS-combined.json",
+        "limitations": [
+          "These are traced room perimeters, not survey geometry; door openings are closed for visualization.",
+          "Interior furniture and social-distancing circles are excluded.",
+          "104/107 clipped mechanical corners and projecting booths are retained at the raster precision.",
+          "Source 2024 floor plan carries the publisher warning that newer CAD / Tririga information may exist.",
+          "Campus translation follows six explicit exterior roof correspondences; retained campus map placement and floor height remain approximate."
+        ]
+      }
+    },
+    {
+      "id": "SSB-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=448&fcode=1&zoom=1",
+      "zoom": 5,
+      "width": 4732,
+      "height": 3549,
+      "title": "UCSD Facilities Information System - SSB - First Floor - Master Plan",
+      "acquiredAt": "2026-10-22T01:17:51.731Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/SSB-L1-FIS.png",
+      "bytes": 470243,
+      "sha256": "d653981d73d3049ae3f3803cb98ec5c903a0535efff5564ce3ef700033943d3f",
+      "nativeImageSize": [
+        4732,
+        3549
+      ],
+      "tileCount": 532,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0448/448-1/~10343/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/SSB-L1-FIS.html",
+        "sha256": "8468be420684824b6b467ca95ef22efa8f6c0e6f37230f31b1a4d1795c7ae33d"
+      },
+      "geometryReview": {
+        "status": "partially-modeled",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "SSB",
+        "floor": "L1",
+        "sourcePrintedRevision": "2019-04-23",
+        "scheduleKeysAdded": [
+          "103",
+          "106",
+          "139"
+        ],
+        "scope": "Three classrooms and three local floor patches only, registered against two existing rooms with independent holdout corners. The existing meter frame is preserved; no new campus alignment or complete floor plate.",
+        "evidencePaths": [
+          "data/indoor/SSB/public-fis-trace.json",
+          "data/indoor/SSB/public-fis-review.json"
+        ],
+        "output": "static/indoor/SSB-combined.json",
+        "limitations": [
+          "Room boundaries are manually traced and simplified; small columns and door recesses are omitted.",
+          "Registration uses two existing rooms and two independent holdout corners. It preserves the existing local meter frame; no new campus registration is asserted.",
+          "The published FIS raster can lag current CAD or room inventory. Its printed revision is 2019-04-23, not the acquisition date.",
+          "The floor remains a partial model. Three additional local floor patches follow the recovered room footprints; they do not claim a complete floor outline."
+        ],
+        "overlayPaths": [
+          "local/indoor-sources/SSB-review/L1-review.png"
+        ]
+      }
+    },
+    {
+      "id": "SSB-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=448&fcode=3&zoom=1",
+      "zoom": 5,
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - SSB - Third Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/SSB-L3-FIS.html",
+        "sha256": "3f1ef6500245873665b8f84769427b77e47e4af3181c0e3cff2dfd77b353d933"
+      },
+      "status": "raster-requires-login"
+    },
+    {
+      "id": "UNEXG-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=507&fcode=1&zoom=1",
+      "zoom": 4,
+      "keys": [
+        "123",
+        "124",
+        "125"
+      ],
+      "title": "UCSD Facilities Information System - ESPP - Building G - First Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        2489,
+        3318
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0507/507-1/~5619/",
+      "checkedAt": "2026-10-22T01:20:54.345Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/UNEXG-L1-FIS.html",
+        "sha256": "1efebeab79afd308cdf2728fa0df1dfd85239430f0dd6142f61619a6d3639f68"
+      },
+      "geometryReviewed": false,
+      "vectorSourceAvailable": true,
+      "vectorGeometryReview": {
+        "status": "imported-native-vector",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "UNEXG",
+        "floor": "L1",
+        "scheduleKeysAdded": [
+          "123",
+          "124",
+          "125"
+        ],
+        "scope": "Only the directly identified classroom polygons in the public HTML are imported. Floor patches follow these rooms; corridors, exterior walls and door locations are not reconstructed.",
+        "evidencePaths": [
+          "data/indoor/UNEXG/public-vector-source.json",
+          "data/indoor/UNEXG/public-vector-review.json"
+        ],
+        "output": "static/indoor/UNEXG-combined.json",
+        "campusRegistration": false,
+        "limitations": [
+          "Room IDs, labels, areas and polygon coordinates are directly published together in the official embedded viewer HTML. The image tiles require login and were not obtained.",
+          "Coordinates are normalized separately by image width and height; source geometry is preserved under one shared uniform conversion per building.",
+          "The shared metric scale is estimated from listed room areas. Cross-room area agreement checks consistency, not independent surveying accuracy.",
+          "No campus rotation or absolute north direction is established. This supplement uses a local frame without geo.",
+          "Floor patches cover the sourced rooms only. Corridors, exterior walls and door locations are not reconstructed; floor height remains illustrative."
+        ]
+      }
+    },
+    {
+      "id": "UNEXN-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=512&fcode=1&zoom=1",
+      "zoom": 4,
+      "keys": [
+        "126",
+        "127"
+      ],
+      "title": "UCSD Facilities Information System - ESPP - Building N - First Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        2489,
+        3318
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0512/512-1/~5624/",
+      "checkedAt": "2026-10-22T01:20:55.334Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/UNEXN-L1-FIS.html",
+        "sha256": "c78972de6e9734ada44d7f3e186f5c2359498f311e53d2c5f1de7540253b1eda"
+      },
+      "geometryReviewed": false,
+      "vectorSourceAvailable": true,
+      "vectorGeometryReview": {
+        "status": "imported-native-vector",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "UNEXN",
+        "floor": "L1",
+        "scheduleKeysAdded": [
+          "126",
+          "127"
+        ],
+        "scope": "Only the directly identified classroom polygons in the public HTML are imported. Floor patches follow these rooms; corridors, exterior walls and door locations are not reconstructed.",
+        "evidencePaths": [
+          "data/indoor/UNEXN/public-vector-source.json",
+          "data/indoor/UNEXN/public-vector-review.json"
+        ],
+        "output": "static/indoor/UNEXN-combined.json",
+        "campusRegistration": false,
+        "limitations": [
+          "Room IDs, labels, areas and polygon coordinates are directly published together in the official embedded viewer HTML. The image tiles require login and were not obtained.",
+          "Coordinates are normalized separately by image width and height; source geometry is preserved under one shared uniform conversion per building.",
+          "The shared metric scale is estimated from listed room areas. Cross-room area agreement checks consistency, not independent surveying accuracy.",
+          "No campus rotation or absolute north direction is established. This supplement uses a local frame without geo.",
+          "Floor patches cover the sourced rooms only. Corridors, exterior walls and door locations are not reconstructed; floor height remains illustrative."
+        ]
+      }
+    },
+    {
+      "id": "UREY-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=516&fcode=2&zoom=1",
+      "zoom": 4,
+      "keys": [
+        "2265"
+      ],
+      "title": "UCSD Facilities Information System - Urey Hall - Second Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        1882,
+        2510
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0516/516-2/~11484/",
+      "checkedAt": "2026-10-22T01:20:57.886Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/UREY-L2-FIS.html",
+        "sha256": "1856892c35f3e5cbb79de418e223d9aba6eb28be184605d5c7b4206d414380aa"
+      }
+    },
+    {
+      "id": "VAF-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=521&fcode=3&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "366"
+      ],
+      "title": "UCSD Facilities Information System - Error Message",
+      "status": "no-raster-init"
+    },
+    {
+      "id": "VAUGN-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=436&fcode=1&zoom=1",
+      "zoom": 4,
+      "keys": [
+        "100",
+        "147"
+      ],
+      "title": "UCSD Facilities Information System - Vaughan - First Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        1729,
+        2305
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0436/436-1/~11508/",
+      "checkedAt": "2026-10-22T01:20:51.824Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/VAUGN-L1-FIS.html",
+        "sha256": "d14b9665b4b5f4f9f3a2e8f3760aa2a34f394c2128a4e5a3af75ac810be6582a"
+      }
+    },
+    {
+      "id": "VAUGN-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=436&fcode=3&zoom=1",
+      "zoom": 4,
+      "keys": [
+        "300",
+        "328"
+      ],
+      "title": "UCSD Facilities Information System - Vaughan - Third Floor - Master Plan",
+      "status": "raster-requires-login-or-unavailable",
+      "mime": "text/html",
+      "size": [
+        1729,
+        2305
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0436/436-3/~11507/",
+      "checkedAt": "2026-10-22T01:20:51.719Z",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/VAUGN-L3-FIS.html",
+        "sha256": "0ae1374586602c26924ab013524959a52aa413b988d0c30bef4aae0e20b3b604"
+      }
+    },
+    {
+      "id": "WFH-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=900&fcode=1&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "1N108",
+        "1W102"
+      ],
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - Wells Fargo Hall - First Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "status": "raster-requires-login",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/WFH-L1-FIS.html",
+        "sha256": "9099e87b794f3f23bb2582af99cd8e09d7ff90a52ccd82a59534f4c3395932c3"
+      }
+    },
+    {
+      "id": "WFH-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=900&fcode=3&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "3N129",
+        "3W113"
+      ],
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - Wells Fargo Hall - Third Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "status": "raster-requires-login",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/WFH-L3-FIS.html",
+        "sha256": "eb1ea2d672235a99fbaf7a3bafa33b4e7984bd301ca39973627ab8951d4e6055"
+      }
+    },
+    {
+      "id": "WFH-L4-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=900&fcode=4&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "4N128",
+        "4W114"
+      ],
+      "error": "raster-not-image",
+      "contentType": "text/html",
+      "title": "UCSD Facilities Information System - Wells Fargo Hall - Fourth Floor - Master Plan",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "status": "raster-requires-login",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/WFH-L4-FIS.html",
+        "sha256": "2217a0e47404a5a131f39a176cdbd91bc0e6d95c51f05719017f4462a8907a87"
+      }
+    },
+    {
+      "id": "YORK-L3-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=529&fcode=3&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "3010"
+      ],
+      "width": 4609,
+      "height": 3457,
+      "title": "UCSD Facilities Information System - York Hall - Third Floor - Master Plan",
+      "acquiredAt": "2026-10-22T01:22:06.962Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/YORK-L3-FIS.png",
+      "bytes": 535217,
+      "sha256": "905109248a6589728454275a0b5efd09041526006548ed22d904c7c444a7379b",
+      "nativeImageSize": [
+        4609,
+        3457
+      ],
+      "tileCount": 532,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0529/529-3/~11380/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": true,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/YORK-L3-FIS.html",
+        "sha256": "725d304457d1544ab2a9d16009ab70df222a9d5f101d3b062511742c63f0140f"
+      },
+      "geometryReview": {
+        "status": "partially-modeled",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "YORK",
+        "floor": "L3",
+        "sourcePrintedRevision": "2024-09-16",
+        "scheduleKeysAdded": [
+          "3010"
+        ],
+        "scope": "Only room 3010 and its local floor patch, using mirrored registration to existing rooms with holdouts including 3000A. Printed area 871 sq ft differs from the inventory 866 sq ft; dimensions were not forced to either value.",
+        "evidencePaths": [
+          "data/indoor/YORK/public-fis-trace.json",
+          "data/indoor/YORK/public-fis-review.json"
+        ],
+        "output": "static/indoor/YORK-combined.json",
+        "limitations": [
+          "Room 3010 is directly labeled in the 2024 plan. Its walls are manually traced; small columns and door recesses are simplified.",
+          "Registration mirrors the source y axis to match the inherited meter frame. Four independent corner checks include the adjacent 3000A room; campus placement has been removed because the inherited mirrored frame conflicts with the printed north direction; true north remains unknown.",
+          "The source prints 871 square feet while the Facilities room inventory lists 866. Neither area was used to force the room dimensions.",
+          "The published FIS raster may lag current CAD or alterations.",
+          "The floor remains partial; one additional local floor patch follows room 3010 and does not claim a complete floor plate.",
+          "Fourth-floor schedule key 4124 remains unplaced: the acquired 2016 drawing labels separate 4124A and 4124B rooms, and no verified schedule crosswalk was found."
+        ],
+        "overlayPaths": [
+          "local/indoor-sources/YORK-review/L3-review.png"
+        ],
+        "campusRegistration": false,
+        "trueNorthVerified": false,
+        "orientationReviewedAt": "2026-10-22T01:52:06.392279+00:00"
+      }
+    },
+    {
+      "id": "YORK-L4-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=529&fcode=4&zoom=1",
+      "zoom": 5,
+      "keys": [
+        "4124"
+      ],
+      "width": 4609,
+      "height": 3457,
+      "title": "UCSD Facilities Information System - York Hall - Fourth Floor - Master Plan",
+      "acquiredAt": "2026-10-22T01:22:13.521Z",
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/YORK-L4-FIS.png",
+      "bytes": 476575,
+      "sha256": "53b6836ee2840f967751230e0e5efaacf322a15894116cc88f97946744e521b9",
+      "nativeImageSize": [
+        4609,
+        3457
+      ],
+      "tileCount": 532,
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0529/529-4/~9988/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": false,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/YORK-L4-FIS.html",
+        "sha256": "d0f8f7cc04e0a8b6a280753b9ef2261c7216d531429721853fe2bac76478f4f4"
+      },
+      "geometryReview": {
+        "status": "reviewed-identifier-conflict-not-integrated",
+        "reviewedAt": "2026-10-22T01:38:09.703403+00:00",
+        "coverage": "room-label-crosswalk-only",
+        "entireSourceModeled": false,
+        "building": "YORK",
+        "floor": "L4",
+        "sourcePrintedRevisionYear": 2016,
+        "scheduleKeysAdded": [],
+        "unresolvedScheduleKeys": [
+          "4124"
+        ],
+        "scope": "The acquired drawing labels distinct 4124A and 4124B. No verified mapping to the unsuffixed schedule key 4124 was found; neither room was guessed or combined.",
+        "evidencePaths": [
+          "data/indoor/YORK/public-fis-review.json",
+          "local/indoor-sources/YORK-L4-FIS.png"
+        ]
+      }
+    },
+    {
+      "id": "MCC-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=391&fcode=1&zoom=1",
+      "zoom": 5,
+      "title": "UCSD Facilities Information System - Communication - First Floor - Master Plan",
+      "status": "raster-requires-login",
+      "mime": "text/html",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "error": "raster-not-image",
+      "catalogedAt": "2026-10-22T01:38:09.703403+00:00",
+      "acquisitionTimestamp": null,
+      "timestampNote": "The retained failed raster acquisition record has no request timestamp; catalogedAt is the catalog update time, not an invented acquisition time.",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MCC-L1-FIS.html",
+        "sha256": "3b59774a2f946b0ea2f739908f333407b438b9a2cb670a2e1c3f5e10d243862a",
+        "bytes": 65631
+      },
+      "geometryReviewed": false,
+      "vectorSourceAvailable": true,
+      "vectorGeometryReview": {
+        "status": "imported-native-vector",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "MCC",
+        "floor": "L1",
+        "scheduleKeysAdded": [
+          "127",
+          "133",
+          "139",
+          "140"
+        ],
+        "scope": "54 published space polygons imported (45 room objects and 9 area objects); four exact Facilities room IDs recover the scheduled classrooms. Three inventory service spaces lack polygons, so this is not a complete floor envelope.",
+        "evidencePaths": [
+          "data/indoor/MCC/fis-vector-import.json",
+          "data/indoor/MCC/fis-vector-review.json"
+        ],
+        "output": "static/indoor/MCC-combined.json",
+        "campusRegistration": false,
+        "limitations": [
+          "Only L1 room boundaries are available for the four schedule keys 127, 133, 139 and 140; upper-floor classroom geometry remains unavailable.",
+          "L1 outlines consist of the exact available space polygons, not a reconstructed external wall or complete slab. Three listed L1 service spaces have no polygons.",
+          "L2 contains only the single published public circulation polygon (C)253; its small outline represents this partial coverage, not the whole second floor.",
+          "Native image coordinate frames are retained. Alignment between floors has not been independently established. The model has no campus geo registration or true-north direction.",
+          "The local meter scale is calibrated against rounded official listed areas; this is not surveyed dimension or current CAD accuracy. Floor elevations and heights remain explicitly estimated.",
+          "The viewer is a legacy public FIS source. Raster requests returned Login HTML, so no plan revision date or raster wall details are claimed. The HTML DC.Date is not treated as a drawing revision.",
+          "MCC 250 is corroborated by the Department of Communication Democracy Lab page, but is absent from this public second-floor inventory. Its floor remains inferred from the room number."
+        ]
+      }
+    },
+    {
+      "id": "MCC-L2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=391&fcode=2&zoom=1",
+      "zoom": 5,
+      "title": "UCSD Facilities Information System - Communication - Second Floor - Master Plan",
+      "status": "raster-requires-login",
+      "mime": "text/html",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "error": "raster-not-image",
+      "catalogedAt": "2026-10-22T01:38:09.703403+00:00",
+      "acquisitionTimestamp": null,
+      "timestampNote": "The retained failed raster acquisition record has no request timestamp; catalogedAt is the catalog update time, not an invented acquisition time.",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/MCC-L2-FIS.html",
+        "sha256": "c7406c8b7128cdb96ddfbb78792a3d82c28e0ed922701e12992f10de747849ce",
+        "bytes": 38117
+      },
+      "geometryReviewed": false,
+      "vectorSourceAvailable": true,
+      "vectorGeometryReview": {
+        "status": "partial-vector-no-classroom",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "MCC",
+        "floor": "L2",
+        "scheduleKeysAdded": [],
+        "scope": "Only public circulation polygon (C)253 is available and imported. No classroom boundary is published for 201/221/222/250; those schedule keys remain unplaced.",
+        "evidencePaths": [
+          "data/indoor/MCC/fis-vector-import.json",
+          "data/indoor/MCC/fis-vector-review.json"
+        ],
+        "output": "static/indoor/MCC-combined.json",
+        "campusRegistration": false,
+        "limitations": [
+          "Only L1 room boundaries are available for the four schedule keys 127, 133, 139 and 140; upper-floor classroom geometry remains unavailable.",
+          "L1 outlines consist of the exact available space polygons, not a reconstructed external wall or complete slab. Three listed L1 service spaces have no polygons.",
+          "L2 contains only the single published public circulation polygon (C)253; its small outline represents this partial coverage, not the whole second floor.",
+          "Native image coordinate frames are retained. Alignment between floors has not been independently established. The model has no campus geo registration or true-north direction.",
+          "The local meter scale is calibrated against rounded official listed areas; this is not surveyed dimension or current CAD accuracy. Floor elevations and heights remain explicitly estimated.",
+          "The viewer is a legacy public FIS source. Raster requests returned Login HTML, so no plan revision date or raster wall details are claimed. The HTML DC.Date is not treated as a drawing revision.",
+          "MCC 250 is corroborated by the Department of Communication Democracy Lab page, but is absent from this public second-floor inventory. Its floor remains inferred from the room number."
+        ],
+        "unresolvedScheduleKeys": [
+          "201",
+          "221",
+          "222",
+          "250"
+        ]
+      }
+    },
+    {
+      "id": "PRICE-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=430&fcode=1&zoom=1",
+      "zoom": 1,
+      "width": 289,
+      "height": 217,
+      "title": "UCSD Facilities Information System - Price West - First Floor - Master Plan",
+      "acquiredAt": "2026-10-22T01:37:11.819Z",
+      "bytes": 19640,
+      "tileCount": 4,
+      "status": "raster-acquired",
+      "file": "local/indoor-sources/PRICE-L1-FIS.png",
+      "sha256": "7c28828735741fcc295ae6baec8e93272658e93cf8928b30de9241be7bd881d6",
+      "nativeImageSize": [
+        289,
+        217
+      ],
+      "tileBase": "https://facilities.ucsd.edu/tdb/Buildings/0430/430-1/~11661/",
+      "layers": [
+        "_BASE",
+        "A-AREA-CAFM"
+      ],
+      "artifactType": "native-pixel-composite-of-public-source-tiles",
+      "geometryReviewed": false,
+      "htmlEvidence": {
+        "file": "local/indoor-sources/PRICE-L1-FIS.html",
+        "sha256": "aa1157743598a41dd1f2161bc010ead940369046c89fc047415c5ae077dd67cf",
+        "bytes": 35630
+      },
+      "vectorSourceAvailable": false,
+      "publicVectorPolygonCount": 0,
+      "geometryReview": {
+        "status": "insufficient-resolution-and-no-vector",
+        "reviewedAt": "2026-10-22T01:40:41.115779+00:00",
+        "coverage": "artifact-and-room-inventory-check-only",
+        "entireSourceModeled": false,
+        "building": "PRICE",
+        "floor": "L1",
+        "scheduleKeysAdded": [],
+        "unresolvedScheduleKeys": [
+          "THTRE"
+        ],
+        "scope": "The 289 by 217 preview cannot establish classroom wall geometry. Public HTML polys is empty and theater labels 1.402/1402 are absent. Separate current official directory and room guide establish L1 only; THTRE remains unplaced.",
+        "evidencePaths": [
+          "data/indoor/PRICE/fis-inventory-review.json",
+          "data/indoor/PRICE/directory-review.json",
+          "local/indoor-sources/PRICE-L1-FIS.html"
+        ],
+        "output": "static/indoor/PRICE-combined.json"
+      }
+    },
+    {
+      "id": "BRF2-L1-FIS",
+      "building": "BRF2",
+      "floor": "L1",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=903&fcode=1&zoom=1",
+      "title": "UCSD Facilities Information System - Error Message",
+      "status": "viewer-error-no-raster-init",
+      "error": "No public raster init",
+      "catalogedAt": "2026-10-22T01:51:37.096356+00:00",
+      "acquisitionTimestamp": null,
+      "timestampNote": "The failed acquisition record contains no request timestamp. catalogedAt is the source-review update time, not an acquisition time.",
+      "geometryReviewed": false,
+      "vectorSourceAvailable": false,
+      "publicVectorPolygonCount": 0,
+      "htmlEvidence": null,
+      "htmlEvidenceNote": "The acquisition record retained only the Error Message title and lack of init; no raw HTML was supplied or hashed.",
+      "geometryReview": {
+        "status": "viewer-error-not-modeled",
+        "coverage": "request-status-only",
+        "entireSourceModeled": false,
+        "scheduleKeysAdded": [],
+        "unresolvedScheduleKeys": [
+          "1102",
+          "1104"
+        ],
+        "scope": "Normal public first-floor request returned an Error Message page without init. No classroom inventory or shape was obtained."
+      }
+    },
+    {
+      "id": "BRF2-L4-FIS",
+      "building": "BRF2",
+      "floor": "L4",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=903&fcode=4&zoom=1",
+      "title": "UCSD Facilities Information System - Israni BRF - Fourth Floor - Master Plan",
+      "status": "raster-requires-login",
+      "error": "raster-not-image",
+      "catalogedAt": "2026-10-22T01:51:37.096356+00:00",
+      "acquisitionTimestamp": null,
+      "timestampNote": "The failed acquisition record contains no request timestamp. catalogedAt is the source-review update time, not an acquisition time.",
+      "geometryReviewed": false,
+      "vectorSourceAvailable": true,
+      "publicVectorPolygonCount": 127,
+      "zoom": 5,
+      "mime": "text/html",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/BRF2-L4-FIS.html",
+        "sha256": "932f2b1c15f994f3cde444064206bf6ecff9317f7fa624a7dd5af414fe8b6f41",
+        "bytes": 146436
+      },
+      "vectorGeometryReview": {
+        "status": "imported-native-vector",
+        "coverage": "partial",
+        "entireSourceModeled": false,
+        "building": "BRF2",
+        "floor": "L4",
+        "scheduleKeysAdded": [
+          "4103"
+        ],
+        "scope": "126 of 127 published fourth-floor space polygons converted (107 room objects and 19 shared/unknown areas). Classroom 4103 is an exact room-ID/label match. Public corridor 87238 self-intersects and is excluded; no complete exterior slab is asserted.",
+        "evidencePaths": [
+          "data/indoor/BRF2/fis-vector-import.json",
+          "data/indoor/BRF2/fis-vector-review.json",
+          "data/indoor/BRF2/validation-review.json",
+          "local/indoor-sources/BRF2-review/L4-vector-review.png"
+        ],
+        "output": "static/indoor/BRF2-combined.json",
+        "campusRegistration": false,
+        "limitations": [
+          "Public raster requests returned Login HTML. Native polygons are the geometry evidence; no raster details or drawing revision are claimed.",
+          "Only level L4 has recovered geometry. The other three current schedule keys are retained explicitly as knownUnmapped; they are not positioned on invented floor plates.",
+          "Floor outlines are the published space polygon parts, not a surveyed exterior slab. Unassigned polygons remain explicitly unknown areas.",
+          "Local meter scale is derived from published rounded room areas, not measured dimensions. Campus geo, true north and alignment to other floor plans are unverified and omitted.",
+          "The floor elevation and story height are display estimates.",
+          "The clear architect third-level drawing and low-resolution Senate fifth-level thumbnail cannot establish the missing current target rooms.",
+          "Public corridor ID 87238, (C)4107, has a self-intersecting boundary and is omitted from the runtime outline/areas and scale calibration; its unchanged original coordinates remain in the review."
+        ],
+        "scaleCalibration": {
+          "independentNonTargetPairs": 89,
+          "heldOutClassroom": {
+            "facilityRoomId": "73656",
+            "label": "4103",
+            "listedAreaSqft": 740.0,
+            "convertedAreaSqft": 739.6959263980723,
+            "absoluteDifferenceSqft": 0.30407360192771193,
+            "relativeDifference": 0.0004109102728752864,
+            "exported": true,
+            "usedForCalibration": false
+          },
+          "maximumAbsoluteAreaDifferenceSqft": 0.5030166831925129
+        }
+      }
+    },
+    {
+      "id": "BRF2-L5-FIS",
+      "building": "BRF2",
+      "floor": "L5",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=903&fcode=5&zoom=1",
+      "title": "UCSD Facilities Information System - Israni BRF - Fifth Floor - Master Plan",
+      "status": "raster-requires-login",
+      "error": "raster-not-image",
+      "catalogedAt": "2026-10-22T01:51:37.096356+00:00",
+      "acquisitionTimestamp": null,
+      "timestampNote": "The failed acquisition record contains no request timestamp. catalogedAt is the source-review update time, not an acquisition time.",
+      "geometryReviewed": false,
+      "vectorSourceAvailable": false,
+      "publicVectorPolygonCount": 0,
+      "zoom": 5,
+      "mime": "text/html",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/BRF2-L5-FIS.html",
+        "sha256": "3c25393a0afd3174b03ec79c699abda13ead8511f74317b6f0290bdb893c3f00",
+        "bytes": 32932
+      },
+      "vectorGeometryReview": {
+        "status": "reviewed-empty-vector-no-target-label",
+        "coverage": "inventory-only",
+        "entireSourceModeled": false,
+        "scheduleKeysAdded": [],
+        "unresolvedScheduleKeys": [
+          "5A03"
+        ],
+        "scope": "Public polys is empty. The 21 listed entries include 5243N/P/Q and 5A-G through 5A-S plus circulation/structure labels, but not 5A03. These labels do not establish a room-number alias.",
+        "evidencePaths": [
+          "data/indoor/BRF2/public-fis-attempts.json",
+          "local/indoor-sources/BRF2-L5-FIS.html"
+        ]
+      }
+    }
+  ],
+  "reviewUpdatedAt": "2026-10-22T01:52:06.392279+00:00",
+  "geometryReviewedMeaning": "For an acquired raster, true means only the explicit partial tracing or registration scope in geometryReview has been reviewed. It never means the entire image/floor/building was modeled. False can include an inspected thumbnail or an unresolved room-label crosswalk. Public HTML vector use is recorded separately in vectorGeometryReview and does not make an unavailable raster acquired or reviewed.",
+  "artifactVerification": {
+    "checkedAt": "2026-10-22T01:40:41.115779+00:00",
+    "method": "Recomputed SHA-256 and byte length; decoded PNG and checked native width/height; independently recomputed retained HTML SHA-256. No source bytes, original acquisition timestamps or original hashes were changed.",
+    "acquiredRastersChecked": 20,
+    "allRecordedMetadataMatched": true,
+    "report": "data/indoor/research/public-fis-raster-review.json"
+  }
+}

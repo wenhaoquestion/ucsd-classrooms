@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "building": "SDSC",
+  "reviewedAt": "2026-10-22T02:42:20.138988+00:00",
+  "requestSnapshot": {
+    "file": "data/indoor/research/remaining-floorplan-requests.csv",
+    "sha256": "13e1048c4c903bf25174febb43476d6700b69895081c7f49883fd735ad32c82d"
+  },
+  "targetKeys": [
+    "E129"
+  ],
+  "activeFA26TargetKeys": [],
+  "status": "public-2025-plan-e129-geometry-completed-historical-floor-corrected",
+  "searchRounds": [
+    [
+      "SDSC official contact building map",
+      "SCCN facilities floorplan image",
+      "SDSC E129 room"
+    ],
+    [
+      "\"SCCN_floorplan.jpg\"",
+      "\"SDSC\" \"E129\" \"plan\"",
+      "\"SDSC\" \"B1\" \"floor plan\""
+    ],
+    [
+      "site:sccn.ucsd.edu \"floorplan\"",
+      "site:inc.ucsd.edu \"E129\" map",
+      "site:sdsc.edu \"E129\" floor"
+    ]
+  ],
+  "existingEvidence": [
+    {
+      "file": "static/indoor/facilities/SDSC.json",
+      "beforeEnrichmentSha256": "ec0a0ed3443c691c6c7cf96c3d34d2bc34d9a61f6530d833b325c0035742c7a2",
+      "finding": "Original FIS bkey 440 lists B/L1/L2/L3/L4, each with an exterior outline and zero room polygons. Before enrichment E129 was knownUnmapped. Those original five floors are preserved without changes; no east-annex registration is asserted."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.sdsc.edu/contact.html",
+      "retrievalStatus": "web-page-read",
+      "finding": "The official building map hyperlink points to MAP_directions.jpg. Text identifies the east-building auditorium and classrooms E-B230/E-B234, but supplies no E129 boundary."
+    },
+    {
+      "url": "https://www.sdsc.edu/_files/images/MAP_directions.jpg",
+      "localFile": "local/indoor-sources/SDSC-DIRECTIONS.jpg",
+      "bytes": 112333,
+      "sha256": "191270428297adc326361611c386889112daecf86760f71307fd9d79ce4dff5f",
+      "localFileMtimeUtc": "2026-10-22T02:06:51.676202+00:00",
+      "retrievedAt": null,
+      "timestampNote": "Downloaded by root around 2026-10-22T02:06Z. Exact retrieval timestamp was not returned; localFileMtimeUtc is a filesystem timestamp, not an asserted network retrieval time.",
+      "retrievalStatus": "downloaded-and-visually-reviewed",
+      "finding": "Campus driving/parking map, 800 by 613 pixels, with an SDSC site label. No indoor floor plan, room labels or room boundaries.",
+      "targetKeysMatched": []
+    },
+    {
+      "url": "https://sccn.ucsd.edu/facilities/floorplan.php",
+      "retrievalStatus": "web-page-read",
+      "finding": "Official Floor Plan page links SCCN_floorplan.jpg. The page text provides no room geometry or list of numbered rooms. The image itself was not obtained."
+    },
+    {
+      "url": "https://sccn.ucsd.edu/facilities/images/SCCN_floorplan.jpg",
+      "retrievalStatus": "failed-not-downloaded",
+      "attempts": [
+        {
+          "method": "root browser request",
+          "result": "DNS EAI_AGAIN"
+        },
+        {
+          "method": "web open HTTPS",
+          "result": "Cache miss"
+        },
+        {
+          "method": "web open declared HTTP variant",
+          "requestedUrl": "http://sccn.ucsd.edu/facilities/images/SCCN_floorplan.jpg",
+          "result": "Resolved to HTTPS; Cache miss"
+        }
+      ],
+      "finding": "Image content and coverage remain unverified; this is a candidate source, not an acquired floorplan."
+    },
+    {
+      "url": "https://inc.ucsd.edu/events/seminar/",
+      "retrievalStatus": "web-page-read",
+      "events": [
+        {
+          "date": "2010-07-12",
+          "title": "Funneling attention in automated behavior"
+        },
+        {
+          "date": "2010-06-18",
+          "title": "The Basal Ganglia and Implicit Choices in Motor Control"
+        }
+      ],
+      "historicalFloorListing": {
+        "room": "E129",
+        "buildingPart": "San Diego Supercomputer Center East Annex",
+        "floorLabel": "B1",
+        "wing": "South"
+      },
+      "finding": "The two 2010 entries state E129 on B1. This historical floor assignment is superseded for current mapping: the official September 2025 numbered plan distinguishes E129 on E1 from EB129 on B1. The May 2024 document independently shows the same distinction.",
+      "currentMappingAuthority": false
+    },
+    {
+      "url": "https://sccn.ucsd.edu/contact/",
+      "retrievalStatus": "web-page-read",
+      "finding": "SCCN wayfinding refers to B1 and the north wing. It does not establish the current floor of E129; the newer numbered EAP plan places the exact E129 room on E1."
+    },
+    {
+      "url": "https://act.ucsd.edu/scheduleOfClasses/scheduleOfClassesStudentResult.htm?sections=917539&selectedTerm=FA25&tabNum=tabs-sec",
+      "retrievalStatus": "web-page-read",
+      "scheduleTerm": "FA25",
+      "sectionId": "917539",
+      "finding": "Official ECON 232 lecture and final records use SDSC E129 in Fall 2025. This establishes recent schedule identity, but supplies no floor or polygon."
+    },
+    {
+      "url": "https://business.sdsc.edu/assets/documents/sdsc_emergency_plan.pdf",
+      "title": "San Diego Supercomputer Center Emergency Action Plan",
+      "revision": "Updated September 2025 (cover); form revised 2025-05-15",
+      "retrievalStatus": "downloaded-and-visually-reviewed",
+      "localFile": "local/indoor-sources/SDSC-EAP-PUBLIC.pdf",
+      "sha256": "ad45146e2af19436a2bb9bc3dd4c76fc1ed8b1361d73fcb4762b78caf0c719ca",
+      "bytes": 2442104,
+      "retrievedAt": "2026-10-22T02:39:54.533Z",
+      "pdfPages": 26,
+      "visuallyInspectedPages": [
+        23,
+        24
+      ],
+      "geometryPage": 24,
+      "nativeImage": {
+        "pdfObject": "86 0",
+        "imageSizePx": [
+          989,
+          811
+        ],
+        "sha256": "09e2189113845033ff426a2a2d4033e7b100804f732c31896329185f0d575b2d",
+        "localFile": "local/indoor-sources/SDSC-EAP-PUBLIC-E1.png",
+        "revisionPrintedOnImage": null,
+        "note": "Native image extracted with pdfimages -f 24 -l 24 -png. The document cover says Updated 9/2025; PDF creation date in 2026 is not treated as its plan revision."
+      },
+      "finding": "Physical PDF page 24 labels exact E129 on East E1 with four visible room boundaries. Page 23 instead shows the distinct EB129 on East B1. The floorplan sequence starts on page 22 as B2, B1, 1–3. Only the E129 footprint is traced; no full-floor exterior or physical scale is inferred.",
+      "targetKeysMatched": [
+        "E129"
+      ]
+    }
+  ],
+  "limitations": [
+    "Only room E129 is traced. The floor outline is exactly the acquired room extent, not the full East building exterior or a complete floor plan.",
+    "All geometry uses relative source-image units. No reliable dimension or area is available for metric calibration.",
+    "True north, campus placement, floor height and vertical registration are unknown. No geo record is supplied.",
+    "The original Central building shells are archived separately and are not merged with this independent East Annex drawing frame.",
+    "The source cover is updated September 2025, but the embedded drawing has no independently readable revision date; later alterations remain possible.",
+    "The builder and runtime provenance use the official public PDF only. The private 2024 document is independent research corroboration and is not distributed or needed to rebuild."
+  ],
+  "runtimeDecision": {
+    "runtimeModified": true,
+    "outputFile": "static/indoor/SDSC-combined.json",
+    "builder": "scripts/build-sdsc-east.py",
+    "rebuildCommand": "python scripts/build-sdsc-east.py",
+    "addedGeometry": 1,
+    "placedKeys": [
+      "E129"
+    ],
+    "floorId": "EAST-L1",
+    "floorLabel": "East E1 · E129 only",
+    "unplacedKeys": [],
+    "originalBaseArchive": "data/indoor/SDSC/original-facilities-base.json",
+    "originalBaseSha256": "ec0a0ed3443c691c6c7cf96c3d34d2bc34d9a61f6530d833b325c0035742c7a2",
+    "originalFacilitiesBaseRestored": true,
+    "historicalFloorListingRetired": true,
+    "retiredBuilderAction": "scripts/build-sdsc-floor-listing.mjs now only restores the original five-floor base; the call from general metadata enrichment was removed.",
+    "publicSourceOnlyForRebuild": true,
+    "geometryUnits": "relative",
+    "northDeg": null,
+    "campusRegistration": false,
+    "entireFloorMapped": false,
+    "reason": "Trace the exact current E129 room from the official public September 2025 numbered East E1 plan, leaving the independent Central building shells out of this unregistered drawing frame."
+  },
+  "verification": {
+    "validatorOk": true,
+    "outputSha256": "a6c628326c884e597089fb73cc7b589f0bcbf0a949e19cf27aaee78f38250a73",
+    "exactRoom": "E129",
+    "actualFloor": "EAST-L1",
+    "mappedRoomCount": 1,
+    "eb129NotAliased": true,
+    "historicalB1NotPresent": true,
+    "relativeUnitsExplicit": true,
+    "noCampusRegistration": true,
+    "noRuntimePrivateSourceDependency": true,
+    "originalBaseRestoredByteForByte": true,
+    "rebuildByteIdempotent": true
+  },
+  "privateCorroboration": {
+    "title": "San Diego Supercomputer Center Emergency Action Plan",
+    "revision": "Updated May 2024",
+    "access": "user-authorized private attachment; not publicly hosted",
+    "sha256": "58671dd8353a12ead42aa8544d498ebad14b8efa521cf762d953b11002167acf",
+    "pdfPage": 21,
+    "finding": "Independently shows E129 on East E1 and distinct EB129 on East EB1 (page 20). Only this corroboration is retained; no private attachment is required by the builder or published layout."
+  },
+  "historicalFloorConflict": {
+    "url": "https://inc.ucsd.edu/events/seminar/",
+    "dates": [
+      "2010-06-18",
+      "2010-07-12"
+    ],
+    "earlierAssignment": "East Annex B1 South Wing, E129",
+    "resolution": "Superseded for current mapping by the September 2025 numbered plan, corroborated independently by the May 2024 plan. Both distinguish E129/E1 from EB129/EB1. No alias between E129 and EB129 is created."
+  }
+}

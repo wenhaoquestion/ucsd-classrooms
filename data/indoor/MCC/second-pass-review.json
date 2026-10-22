@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "building": "MCC",
+  "reviewedAt": "2026-10-22T02:02:28.272687+00:00",
+  "scope": "Second-floor rooms 201/221/222/250",
+  "method": "Second pass through public department pages, original event pages, architect documentation and explicit document links. Known failed FIS endpoints were not retried. No email or access request was sent.",
+  "sources": [
+    {
+      "url": "https://communication.ucsd.edu/about/contact.html",
+      "status": "campus-location-map-only",
+      "finding": "Department map links lead to the Concept3D outdoor location and an embedded Google map; no interior plan."
+    },
+    {
+      "url": "https://communication.ucsd.edu/comm-net/index.html",
+      "status": "explicit-authentication-required-not-followed",
+      "finding": "Page states faculty, staff and graduate access requires AD sign-in. No authenticated access attempted."
+    },
+    {
+      "url": "https://commugrad.ucsd.edu/",
+      "status": "room-existence-other-level",
+      "finding": "Public undergraduate announcements locate lounge 122A on the first floor; they do not establish the current second-floor targets."
+    },
+    {
+      "url": "https://blink.ucsd.edu/technology/media/teaching-lab/policies/facilities.html",
+      "status": "public-facility-list-no-floorplan",
+      "finding": "Lists production studios 139/140 and editing rooms 213\u2013220 and 237\u2013240. No perimeter drawing or target-room crosswalk for 201/221/222/250 was provided."
+    }
+  ],
+  "decision": "No new public L2 geometry identified. Retain imported L1 rooms and the L2 corridor; target classroom positions remain unknown.",
+  "geometryAdded": 0
+}

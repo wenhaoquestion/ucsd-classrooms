@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "building": "GH",
+  "reviewedAt": "2026-10-22T02:02:28.272687+00:00",
+  "scope": "Remaining basement, first-floor and second-floor classrooms",
+  "method": "Second pass through public department pages, original event pages, architect documentation and explicit document links. Known failed FIS endpoints were not retried. No email or access request was sent.",
+  "sources": [
+    {
+      "url": "https://blink.ucsd.edu/sponsor/vmc/index.html",
+      "status": "public-new-route-inspected",
+      "finding": "Official page links venue technical specifications on Google Drive."
+    },
+    {
+      "url": "https://drive.google.com/drive/folders/1yr0Wf01BFTXEdRGUPpJzhhB_az7kKtcD",
+      "status": "folder-listed-no-target-files",
+      "tool": "Google Drive list_folder, top_k 100",
+      "finding": "Accessible listing contains one Epstein Family Amphitheater Tech Specs shortcut; no Wagner or Galbraith drawing."
+    },
+    {
+      "url": "https://drive.google.com/drive/folders/1CQIicg6d8A1d9Q85q7nc9YtvMjWxJxmY",
+      "status": "public-link-redirected-to-login-stopped",
+      "finding": "Official VMC Safety Resources link redirects to Google sign-in; no subsequent access attempt."
+    },
+    {
+      "url": "https://theatre.ucsd.edu/_files/22-23%20UG%20Handbook%20.pdf",
+      "status": "handbook-text-no-floor-map",
+      "finding": "Nine-page handbook identifies GH 202 administration and other named spaces; no numbered floor plan found."
+    },
+    {
+      "url": "https://caps.ucsd.edu/about/locations.html",
+      "status": "other-room-directions-only",
+      "finding": "Lists Galbraith second-floor offices 256/257/258 and relative hallway directions; cannot establish neighboring 247/253/254 perimeters."
+    },
+    {
+      "url": "http://www.ebidboard.com/public/projects/showproject.asp?mbrguid={16364B92-FCC6-433B-96E3-CA1500962C96}&projectguid={B302C0DF-F411-4BEE-8376-10533F431446}",
+      "status": "observed-historical-project-link-inaccessible",
+      "finding": "The original 2011 project link was observed in the public Reclaim CLICS documentation. Normal web access could not retrieve the project page. No bid drawings acquired and no claim that the source is deleted."
+    },
+    {
+      "url": "https://motivational.com/project/ucsd-galbraith-hall/",
+      "status": "thirty-public-gallery-images-reviewed",
+      "evidence": "data/indoor/GH/msi-sign-review.json",
+      "finding": "Thirty contractor photos acquired. DSCN1591 contains a second-floor evacuation plan at insufficient native resolution; DSCN1600 directly confirms 242 on L2/L3 and 247/253/254 on L2. No new room geometry."
+    }
+  ],
+  "decision": "No new classroom boundary added. Preserve 242/320/321 and all unplaced entries. Physical directory independently corroborates 242 spanning L2/L3. Do not assign final room perimeters from the conflicting unlabeled 2012 schematic design.",
+  "geometryAdded": 0
+}

@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "building": "SDSC",
+  "source": {
+    "id": "SDSC-EAP-2025-PUBLIC",
+    "title": "San Diego Supercomputer Center Emergency Action Plan",
+    "revision": "Updated September 2025 (cover); form revised 2025-05-15",
+    "access": "official public document",
+    "url": "https://business.sdsc.edu/assets/documents/sdsc_emergency_plan.pdf",
+    "localFile": "local/indoor-sources/SDSC-EAP-PUBLIC.pdf",
+    "sha256": "ad45146e2af19436a2bb9bc3dd4c76fc1ed8b1361d73fcb4762b78caf0c719ca",
+    "bytes": 2442104,
+    "acquiredAt": "2026-10-22T02:39:54.533Z",
+    "pdfPage": 24,
+    "image": {
+      "pdfObject": "86 0",
+      "imageSizePx": [
+        989,
+        811
+      ],
+      "sha256": "09e2189113845033ff426a2a2d4033e7b100804f732c31896329185f0d575b2d",
+      "localFile": "local/indoor-sources/SDSC-EAP-PUBLIC-E1.png",
+      "revisionPrintedOnImage": null,
+      "note": "Native image extracted with pdfimages -f 24 -l 24 -png. The document cover says Updated 9/2025; PDF creation date in 2026 is not treated as its plan revision."
+    }
+  },
+  "supportingSource": {
+    "id": "SDSC-REGISTRAR-FA25-917539",
+    "title": "UC San Diego Fall 2025 ECON 232 section 917539: SDSC E129",
+    "url": "https://act.ucsd.edu/scheduleOfClasses/scheduleOfClassesStudentResult.htm?sections=917539&selectedTerm=FA25&tabNum=tabs-sec",
+    "accessed": "2026-10-22",
+    "use": "Recent schedule identity only: the lecture and final use E129. No floor, wall geometry or scale is derived from this schedule."
+  },
+  "originalBase": "data/indoor/SDSC/original-facilities-base.json",
+  "originalBaseSha256": "ec0a0ed3443c691c6c7cf96c3d34d2bc34d9a61f6530d833b325c0035742c7a2",
+  "outputLayout": "static/indoor/SDSC-combined.json",
+  "transform": {
+    "originPx": [
+      494.5,
+      405.5
+    ],
+    "rotationDeg": 0,
+    "scale": 0.1,
+    "units": "relative",
+    "note": "One arbitrary relative unit equals ten native source pixels. This is not a conversion to meters, a physical area estimate, or campus registration."
+  },
+  "room": {
+    "id": "EAST-L1-E129-EAP-2025",
+    "label": "E129",
+    "scheduleKey": "E129",
+    "floor": "EAST-L1",
+    "outerPx": [
+      [
+        255,
+        262
+      ],
+      [
+        346,
+        262
+      ],
+      [
+        346,
+        309
+      ],
+      [
+        255,
+        309
+      ]
+    ],
+    "labelPx": [
+      300,
+      285
+    ],
+    "traceTolerancePx": 1.5,
+    "boundaryNotes": [
+      "Manual trace follows the centers of the four visible boundary strokes. Native image resolution limits wall-center precision to approximately 1.5 pixels.",
+      "The door opening near the lower-right corner is closed along the continuous bottom-wall line to form the footprint; door-swing arcs and emergency icons are not room boundary vertices.",
+      "In this source orientation E128 is immediately right, E130 left, E114–E102 above and E154–E147 below the room row. These labels distinguish E129 on PDF page 24 from EB129 on page 23."
+    ]
+  },
+  "floorIdentity": {
+    "currentFloor": "East E1",
+    "evidence": "The East plan sequence starts at physical PDF page 22 and is listed as B2, B1, 1–3. Pages 22–26 follow that order; page 24 carries exact E129 and adjacent E1xx labels. Page 23 uses EB1xx, including the distinct EB129.",
+    "historicalConflict": {
+      "url": "https://inc.ucsd.edu/events/seminar/",
+      "dates": [
+        "2010-06-18",
+        "2010-07-12"
+      ],
+      "earlierAssignment": "East Annex B1 South Wing, E129",
+      "resolution": "Superseded for current mapping by the September 2025 numbered plan, corroborated independently by the May 2024 plan. Both distinguish E129/E1 from EB129/EB1. No alias between E129 and EB129 is created."
+    }
+  },
+  "limitations": [
+    "Only room E129 is traced. The floor outline is exactly the acquired room extent, not the full East building exterior or a complete floor plan.",
+    "All geometry uses relative source-image units. No reliable dimension or area is available for metric calibration.",
+    "True north, campus placement, floor height and vertical registration are unknown. No geo record is supplied.",
+    "The original Central building shells are archived separately and are not merged with this independent East Annex drawing frame.",
+    "The source cover is updated September 2025, but the embedded drawing has no independently readable revision date; later alterations remain possible.",
+    "The builder and runtime provenance use the official public PDF only. The private 2024 document is independent research corroboration and is not distributed or needed to rebuild."
+  ],
+  "priorDocumentReview": {
+    "title": "San Diego Supercomputer Center Emergency Action Plan",
+    "revision": "Updated May 2024",
+    "access": "user-authorized private attachment; not publicly hosted",
+    "sha256": "58671dd8353a12ead42aa8544d498ebad14b8efa521cf762d953b11002167acf",
+    "pdfPage": 21,
+    "finding": "Independently shows E129 on East E1 and distinct EB129 on East EB1 (page 20). Only this corroboration is retained; no private attachment is required by the builder or published layout."
+  }
+}

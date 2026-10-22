@@ -1,0 +1,1237 @@
+{
+  "schemaVersion": 1,
+  "accessed": "2026-10-21",
+  "publisher": "UC San Diego departments and Environment, Health & Safety",
+  "verificationNote": "Initial room/floor evidence came from PDF text. Original source bytes have now been acquired through Playwright MCP and indexed with SHA-256 in acquisition-index.json. Completed visual tracing and exceptions are recorded in per-building data/indoor directories; a downloaded source is not a claim of complete or current geometry.",
+  "downloadNote": "See acquisition-index.json and each acquisitionEvidence for successfully saved public originals. Some historical alternatives remain leads only. Temporary signed URLs and account credentials are not stored.",
+  "sources": [
+    {
+      "id": "CSB-EHS-2018",
+      "buildings": [
+        "CSB"
+      ],
+      "title": "Cognitive Science Building emergency pre-plan",
+      "url": "https://cogsci.ucsd.edu/_files/resources/Cognitive%20Science%20Building_11-8-18.pdf",
+      "format": "pdf",
+      "verification": "original-pdf-visually-reviewed-partial",
+      "pages": 4,
+      "revision": "2018-04-11 printed; filename ends 11-8-18",
+      "priority": "high",
+      "coverage": [
+        {
+          "building": "CSB",
+          "floor": "LL",
+          "page": 2,
+          "verifiedRoomLabels": [
+            "001",
+            "002",
+            "003",
+            "004",
+            "005"
+          ]
+        },
+        {
+          "building": "CSB",
+          "floor": "L1",
+          "page": 3,
+          "verifiedRoomLabels": [
+            "115",
+            "180"
+          ]
+        },
+        {
+          "building": "CSB",
+          "floor": "L2",
+          "page": 4,
+          "verifiedRoomLabels": [
+            "272",
+            "280"
+          ]
+        }
+      ],
+      "gaps": [
+        "All 9 scheduled CSB rooms have traced polygons across LL/L1/L2. Other room interiors remain unmodeled."
+      ],
+      "limitations": [
+        "Relative coordinates, approximate floor registration and illustrative heights; no surveyed metric scale or campus placement is claimed.",
+        "Only the listed room polygons are integrated; other rooms in the PDF have not been modeled."
+      ],
+      "originalBinarySaved": true,
+      "sha256": "b3169e5e2b721fbee95f3746f7485a60105bd7c355f0bb8178315d692fd57b5e",
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/CSB-emergency-2018.pdf",
+        "sha256": "b3169e5e2b721fbee95f3746f7485a60105bd7c355f0bb8178315d692fd57b5e",
+        "acquiredAt": "2026-10-21T23:04:49.840Z"
+      },
+      "byteLength": 120589,
+      "geometryReviewed": true,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "floor": "LL",
+            "page": 2,
+            "roomLabels": [
+              "001",
+              "002",
+              "003",
+              "004",
+              "005"
+            ],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [
+              "001",
+              "002",
+              "003",
+              "004",
+              "005"
+            ],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L1",
+            "page": 3,
+            "roomLabels": [
+              "115",
+              "180"
+            ],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [
+              "115",
+              "180"
+            ],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L2",
+            "page": 4,
+            "roomLabels": [
+              "272",
+              "280"
+            ],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [
+              "272",
+              "280"
+            ],
+            "floorSilhouetteIntegrated": true
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/CSB/trace.json",
+          "data/indoor/CSB/registration.json"
+        ],
+        "runtimeLayout": "static/indoor/CSB-combined.json",
+        "fullDocumentModeled": false,
+        "limitations": [
+          "Relative coordinates, approximate floor registration and illustrative heights; no surveyed metric scale or campus placement is claimed.",
+          "Only the listed room polygons are integrated; other rooms in the PDF have not been modeled."
+        ]
+      }
+    },
+    {
+      "id": "SME-EHS-2021",
+      "buildings": [
+        "SME"
+      ],
+      "title": "SME EVAC EH&S MAP.pdf",
+      "url": "https://drive.google.com/file/d/15_SRb9XB9o_4e6YpUPHiNpwfiwZLjYmF/view",
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=15_SRb9XB9o_4e6YpUPHiNpwfiwZLjYmF",
+      "format": "pdf",
+      "verification": "original-pdf-visually-reviewed-partial",
+      "discoveryUrl": "https://docs.google.com/document/d/1QuQlcZdcU9MriaFMTgx9HCyC6bRB4XYr8-GSTqnyqTE/edit",
+      "pages": 6,
+      "revision": "2021-07-28 printed",
+      "priority": "high",
+      "coverage": [
+        {
+          "building": "SME",
+          "floor": "B",
+          "page": 2
+        },
+        {
+          "building": "SME",
+          "floor": "L1",
+          "page": 3,
+          "verifiedRoomLabels": [
+            "102",
+            "118",
+            "141",
+            "143",
+            "145",
+            "149"
+          ]
+        },
+        {
+          "building": "SME",
+          "floor": "L2",
+          "page": 4,
+          "verifiedRoomLabels": [
+            "248"
+          ]
+        },
+        {
+          "building": "SME",
+          "floor": "L3",
+          "page": 5,
+          "verifiedRoomLabels": [
+            "302",
+            "304",
+            "306",
+            "313"
+          ]
+        },
+        {
+          "building": "SME",
+          "floor": "L4",
+          "page": 6,
+          "verifiedRoomLabels": [
+            "411",
+            "420"
+          ]
+        }
+      ],
+      "gaps": [
+        "All 13 scheduled SME rooms have traced polygons; all five floor silhouettes are traced. Other room interiors remain unmodeled."
+      ],
+      "limitations": [
+        "Relative coordinates, approximate floor registration and illustrative heights; no surveyed metric scale or campus placement is claimed.",
+        "Only the listed room polygons are integrated; other rooms in the PDF have not been modeled."
+      ],
+      "originalBinarySaved": true,
+      "sha256": "50210ce5adb840d70b94fce58c26df824354db92e3266a3132c65205a0922fd2",
+      "discoveryLinkText": "Campus-provided evacuation maps",
+      "downloadUrlNote": "Public original successfully retrieved through Playwright MCP; acquisition-index.json records the tested URL, byte count and SHA-256.",
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/SME-EHS-2021.pdf",
+        "sha256": "50210ce5adb840d70b94fce58c26df824354db92e3266a3132c65205a0922fd2",
+        "acquiredAt": "2026-10-21T23:05:17.471Z"
+      },
+      "byteLength": 793979,
+      "geometryReviewed": true,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "floor": "B",
+            "page": 2,
+            "roomLabels": [],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L1",
+            "page": 3,
+            "roomLabels": [
+              "102",
+              "118",
+              "141",
+              "143",
+              "145",
+              "149"
+            ],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [
+              "102",
+              "118",
+              "141",
+              "143",
+              "145",
+              "149"
+            ],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L2",
+            "page": 4,
+            "roomLabels": [
+              "248"
+            ],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [
+              "248"
+            ],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L3",
+            "page": 5,
+            "roomLabels": [
+              "302",
+              "304",
+              "306",
+              "313"
+            ],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [
+              "302",
+              "304",
+              "306",
+              "313"
+            ],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L4",
+            "page": 6,
+            "roomLabels": [
+              "411",
+              "420"
+            ],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [
+              "411",
+              "420"
+            ],
+            "floorSilhouetteIntegrated": true
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/SME/trace.json",
+          "data/indoor/SME/review.json"
+        ],
+        "runtimeLayout": "static/indoor/SME.json",
+        "fullDocumentModeled": false,
+        "limitations": [
+          "Relative coordinates, approximate floor registration and illustrative heights; no surveyed metric scale or campus placement is claimed.",
+          "Only the listed room polygons are integrated; other rooms in the PDF have not been modeled."
+        ]
+      }
+    },
+    {
+      "id": "EBU1-EHS-2021",
+      "buildings": [
+        "EBU1"
+      ],
+      "title": "JACOBS HALL EVAC EH&S MAP.pdf",
+      "url": "https://drive.google.com/file/d/1HK5Ir1XdlH6yOvpq3E42cQnKvXAGm4Vn/view",
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=1HK5Ir1XdlH6yOvpq3E42cQnKvXAGm4Vn",
+      "format": "pdf",
+      "verification": "original-pdf-visually-reviewed-partial",
+      "pages": 9,
+      "revision": "2021-06-21 printed",
+      "byteLength": 925556,
+      "priority": "high",
+      "coverage": [
+        {
+          "building": "EBU1",
+          "floor": "B",
+          "page": 2
+        },
+        {
+          "building": "EBU1",
+          "floor": "L1",
+          "page": 3
+        },
+        {
+          "building": "EBU1",
+          "floor": "L2",
+          "page": 4,
+          "verifiedRoomLabels": [
+            "2315"
+          ]
+        },
+        {
+          "building": "EBU1",
+          "floor": "L3",
+          "page": 5
+        },
+        {
+          "building": "EBU1",
+          "floor": "L4",
+          "page": 6
+        },
+        {
+          "building": "EBU1",
+          "floor": "L5",
+          "page": 7
+        },
+        {
+          "building": "EBU1",
+          "floor": "L6",
+          "page": 8
+        },
+        {
+          "building": "EBU1",
+          "floor": "L7",
+          "page": 9
+        }
+      ],
+      "gaps": [
+        "Room 2315 on physical page 4 is integrated. This one-room supplement does not validate the rest of the second-floor plate or the complete PDF."
+      ],
+      "limitations": [
+        "The source is a 2021 emergency plan; later alterations cannot be excluded. Its room number and traced area agree with the current supplied Facilities listing.",
+        "Registration uses repeated structural tower corners between Levels 2 and 3. The resulting position inherits the approximate existing Facilities-to-campus fit and does not represent independent survey accuracy.",
+        "Existing floor heights remain estimated. The rest of the Level 2 floor plate is still copied from another floor and is not newly verified by this one-room supplement."
+      ],
+      "originalBinarySaved": true,
+      "sha256": "3e5955af4fa3ed659bd9533df47253f822100a762ddb58a794cdbc9af1527c93",
+      "discoveryUrl": "https://docs.google.com/document/d/1LZ9WSbiC0n0SlW5V4rXwCxlA13nqEnPZwNW6iJc_AwE/edit",
+      "discoveryLinkText": "Campus-provided evacuation maps",
+      "downloadUrlNote": "Public original successfully retrieved through Playwright MCP; acquisition-index.json records the tested URL, byte count and SHA-256.",
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/EBU1-EHS-2021.pdf",
+        "sha256": "3e5955af4fa3ed659bd9533df47253f822100a762ddb58a794cdbc9af1527c93",
+        "acquiredAt": "2026-10-21T23:05:47.876Z"
+      },
+      "geometryReviewed": true,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "floor": "L2",
+            "page": 4,
+            "roomLabels": [
+              "2315"
+            ],
+            "reviewedGeometry": "Only this room polygon is newly traced and integrated; the surrounding copied floor plate is not newly verified.",
+            "integratedRoomLabels": [
+              "2315"
+            ],
+            "floorSilhouetteIntegrated": false
+          },
+          {
+            "floor": "L3",
+            "page": 5,
+            "roomLabels": [],
+            "reviewedGeometry": "Corresponding structural/exterior wall corners reviewed as registration references only.",
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": false
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/EBU1/supplement-2315.json",
+          "data/indoor/EBU1/ehs-2315-trace.json"
+        ],
+        "runtimeLayout": "static/indoor/EBU1-combined.json",
+        "fullDocumentModeled": false,
+        "remainingUnplacedScheduleKeys": [],
+        "limitations": [
+          "The source is a 2021 emergency plan; later alterations cannot be excluded. Its room number and traced area agree with the current supplied Facilities listing.",
+          "Registration uses repeated structural tower corners between Levels 2 and 3. The resulting position inherits the approximate existing Facilities-to-campus fit and does not represent independent survey accuracy.",
+          "Existing floor heights remain estimated. The rest of the Level 2 floor plate is still copied from another floor and is not newly verified by this one-room supplement."
+        ]
+      }
+    },
+    {
+      "id": "EBU2-EHS-2021",
+      "buildings": [
+        "EBU2"
+      ],
+      "title": "EBU2 EVAC EH&S MAP.pdf",
+      "url": "https://drive.google.com/file/d/1BDYqGwk89tMSmBlxhWRuy414a6AdPYau/view",
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=1BDYqGwk89tMSmBlxhWRuy414a6AdPYau",
+      "format": "pdf",
+      "verification": "original-pdf-visually-reviewed-partial",
+      "pages": 7,
+      "revision": "2021-06-29 printed",
+      "byteLength": 687952,
+      "priority": "high",
+      "coverage": [
+        {
+          "building": "EBU2",
+          "floor": "B",
+          "page": 2
+        },
+        {
+          "building": "EBU2",
+          "floor": "L1",
+          "page": 3
+        },
+        {
+          "building": "EBU2",
+          "floor": "L2",
+          "page": 4
+        },
+        {
+          "building": "EBU2",
+          "floor": "L3",
+          "page": 5,
+          "verifiedRoomLabels": [
+            "305",
+            "313",
+            "330A",
+            "333A",
+            "335",
+            "339"
+          ],
+          "unverifiedScheduleKeys": [
+            "L330"
+          ]
+        },
+        {
+          "building": "EBU2",
+          "floor": "L4",
+          "page": 6
+        },
+        {
+          "building": "EBU2",
+          "floor": "L5",
+          "page": 7,
+          "verifiedRoomLabels": [
+            "584"
+          ]
+        }
+      ],
+      "gaps": [
+        "Room 584 on physical page 7 is integrated. Seven third-floor schedule keys remain unplaced; the L330 alias and 333A area conflict require clarification."
+      ],
+      "limitations": [
+        "The PDF is a 2021 emergency plan; later changes cannot be excluded. The existing room number and listed area agree with this traced room.",
+        "Registration uses the repeated exterior office-wing facade across Levels 2 and 5. It inherits the existing approximate Facilities-to-campus fit and is not independent geodetic validation.",
+        "The floor plate remains the existing copied Level 2 outline; this supplement verifies room 584 only, not the rest of the fifth-floor floor plate or roofs.",
+        "The third-floor source shows separate 330A and 330B rooms; the schedule key L330 has no verified alias and remains unplaced.",
+        "The source shows 333A with an area visually comparable to 335, while the existing listing assigns 162 versus 1106 ft2; this unresolved conflict is not used to place 333A."
+      ],
+      "originalBinarySaved": true,
+      "sha256": "5cf6be0d0a50acc1b5f28744fd1393b85e7ffae556ba88c9aa32b75fd086a4c1",
+      "discoveryUrl": "https://docs.google.com/document/d/1PmmljgeOIn8zs5IX5xWoLGRIsNjdO3NjOh5rm1OFvbY/edit",
+      "discoveryLinkText": "Campus-provided evacuation maps",
+      "downloadUrlNote": "Public original successfully retrieved through Playwright MCP; acquisition-index.json records the tested URL, byte count and SHA-256.",
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/EBU2-EHS-2021.pdf",
+        "sha256": "5cf6be0d0a50acc1b5f28744fd1393b85e7ffae556ba88c9aa32b75fd086a4c1",
+        "acquiredAt": "2026-10-21T23:05:23.514Z"
+      },
+      "geometryReviewed": true,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "floor": "L5",
+            "page": 7,
+            "roomLabels": [
+              "584"
+            ],
+            "reviewedGeometry": "Only this room polygon is newly traced and integrated; the surrounding copied floor plate is not newly verified.",
+            "integratedRoomLabels": [
+              "584"
+            ],
+            "floorSilhouetteIntegrated": false
+          },
+          {
+            "floor": "L2",
+            "page": 4,
+            "roomLabels": [],
+            "reviewedGeometry": "Corresponding structural/exterior wall corners reviewed as registration references only.",
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": false
+          },
+          {
+            "floor": "L3",
+            "page": 5,
+            "roomLabels": [
+              "305",
+              "313",
+              "330A",
+              "333A",
+              "335",
+              "339"
+            ],
+            "reviewedGeometry": "Room labels and selected geometry conflicts inspected; no third-floor polygons integrated. L330 remains without a verified alias, and 333A area conflicts with the Facilities listing.",
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": false
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/EBU2/supplement-584.json",
+          "data/indoor/EBU2/ehs-584-trace.json"
+        ],
+        "runtimeLayout": "static/indoor/EBU2-combined.json",
+        "fullDocumentModeled": false,
+        "remainingUnplacedScheduleKeys": [
+          "313",
+          "L330",
+          "333A",
+          "335",
+          "339",
+          "305",
+          "330A"
+        ],
+        "limitations": [
+          "The PDF is a 2021 emergency plan; later changes cannot be excluded. The existing room number and listed area agree with this traced room.",
+          "Registration uses the repeated exterior office-wing facade across Levels 2 and 5. It inherits the existing approximate Facilities-to-campus fit and is not independent geodetic validation.",
+          "The floor plate remains the existing copied Level 2 outline; this supplement verifies room 584 only, not the rest of the fifth-floor floor plate or roofs.",
+          "The third-floor source shows separate 330A and 330B rooms; the schedule key L330 has no verified alias and remains unplaced.",
+          "The source shows 333A with an area visually comparable to 335, while the existing listing assigns 162 versus 1106 ft2; this unresolved conflict is not used to place 333A."
+        ]
+      }
+    },
+    {
+      "id": "PFBH-EHS-2021",
+      "buildings": [
+        "PFBH"
+      ],
+      "title": "PFBH EVAC EH&S MAP.pdf",
+      "url": "https://drive.google.com/file/d/1YzNE37aPieBW4tzsEDbtIOsPQhF5in55/view",
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=1YzNE37aPieBW4tzsEDbtIOsPQhF5in55",
+      "format": "pdf",
+      "verification": "original-pdf-visually-reviewed-conflict",
+      "pages": 6,
+      "revision": "2021-07-09 printed",
+      "byteLength": 881686,
+      "priority": "high",
+      "coverage": [
+        {
+          "building": "PFBH",
+          "floor": "B",
+          "page": 2,
+          "verifiedRoomLabels": [
+            "003",
+            "005"
+          ]
+        },
+        {
+          "building": "PFBH",
+          "floor": "L1",
+          "page": 3
+        },
+        {
+          "building": "PFBH",
+          "floor": "L2",
+          "page": 4
+        },
+        {
+          "building": "PFBH",
+          "floor": "L3",
+          "page": 5
+        },
+        {
+          "building": "PFBH",
+          "floor": "L4",
+          "page": 6
+        }
+      ],
+      "gaps": [
+        "Basement 003 and 005 remain unplaced: the historical drawing and current supplied room areas conflict. A current plan or authoritative room crosswalk is required."
+      ],
+      "limitations": [
+        "No metric scale or campus registration is assigned to this trace.",
+        "The 2021 drawing makes 003 substantially larger than 005, while the supplied Facilities listing assigns 858 ft2 to 003 and 1327 ft2 to 005. A uniform scale cannot reconcile both rooms.",
+        "The area conflict may reflect changed partitions, renumbering, source age or an error in the existing listing; the available evidence does not establish which.",
+        "Obtain a current basement plan or a Facilities room-ID crosswalk before assigning these historical polygons to current schedule rooms.",
+        "The existing basement outline was copied from Level 1 and is not a verified basement registration reference."
+      ],
+      "originalBinarySaved": true,
+      "sha256": "8ba2d7710840d11906f1c7a5c9fbe1d90410dbca4e23781dcfbd94e79f3c3612",
+      "discoveryUrl": "https://docs.google.com/document/d/1ZvnwujyUitoYYAkd0EDubpEr_Ew6rcBipeKMMOV4uFU/edit",
+      "discoveryLinkText": "Campus-provided evacuation maps",
+      "downloadUrlNote": "Public original successfully retrieved through Playwright MCP; acquisition-index.json records the tested URL, byte count and SHA-256.",
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/PFBH-EHS-2021.pdf",
+        "sha256": "8ba2d7710840d11906f1c7a5c9fbe1d90410dbca4e23781dcfbd94e79f3c3612",
+        "acquiredAt": "2026-10-21T23:05:30.075Z"
+      },
+      "geometryReviewed": true,
+      "geometryReview": {
+        "status": "reviewed-conflict-not-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "floor": "B",
+            "page": 2,
+            "roomLabels": [
+              "003",
+              "005"
+            ],
+            "reviewedGeometry": "Historical room polygons inspected and retained as research traces, but not assigned to current schedule rooms.",
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": false
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/PFBH/plan-conflict.json",
+          "data/indoor/PFBH/ehs-basement-trace.json"
+        ],
+        "runtimeLayout": null,
+        "fullDocumentModeled": false,
+        "remainingUnplacedScheduleKeys": [
+          "003",
+          "005"
+        ],
+        "limitations": [
+          "No metric scale or campus registration is assigned to this trace.",
+          "The 2021 drawing makes 003 substantially larger than 005, while the supplied Facilities listing assigns 858 ft2 to 003 and 1327 ft2 to 005. A uniform scale cannot reconcile both rooms.",
+          "The area conflict may reflect changed partitions, renumbering, source age or an error in the existing listing; the available evidence does not establish which.",
+          "Obtain a current basement plan or a Facilities room-ID crosswalk before assigning these historical polygons to current schedule rooms.",
+          "The existing basement outline was copied from Level 1 and is not a verified basement registration reference."
+        ],
+        "nextEvidenceNeeded": "A current numbered PFBH basement plan, or an authoritative crosswalk explaining changes to rooms 003 and 005."
+      }
+    },
+    {
+      "id": "FAH-EHS-2025",
+      "buildings": [
+        "FAH"
+      ],
+      "title": "FAH EVAC EH&S MAP - Jan 2025.pdf",
+      "url": "https://drive.google.com/file/d/1CQ-lugGHgOvGZ-YGxk_BCSeTTtrMMHqj/view",
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=1CQ-lugGHgOvGZ-YGxk_BCSeTTtrMMHqj",
+      "format": "pdf",
+      "verification": "original-pdf-visually-reviewed-partial",
+      "pages": 5,
+      "revision": "January 2025 in file title",
+      "priority": "high",
+      "coverage": [
+        {
+          "building": "FAH",
+          "floorLabel": "Lower Floor",
+          "page": 1
+        },
+        {
+          "building": "FAH",
+          "floor": "L1",
+          "verifiedRoomLabels": [
+            "1101",
+            "1450"
+          ],
+          "unverifiedScheduleKeys": [
+            "1301"
+          ],
+          "page": 2
+        },
+        {
+          "building": "FAH",
+          "floor": "L2",
+          "page": 3
+        },
+        {
+          "building": "FAH",
+          "floor": "L3",
+          "page": 4
+        },
+        {
+          "building": "FAH",
+          "floor": "L4",
+          "page": 5
+        }
+      ],
+      "gaps": [
+        "1101 and 1450 are traced on L1; This PDF alone does not identify 1301; that room is now separately traced from the public FIS raster. L1\u2013L4 silhouettes are traced; lower floor page 1 is not integrated."
+      ],
+      "limitations": [
+        "Relative coordinates, approximate floor registration and illustrative heights; no surveyed metric scale or campus placement is claimed.",
+        "Only the listed room polygons are integrated; other rooms in the PDF have not been modeled.",
+        "Physical page 1 (Lower Floor) is not imported; the four previous L1\u2013L4 floors are retained."
+      ],
+      "originalBinarySaved": true,
+      "sha256": "b73a73b00757e67e33bc4e8eaf5aaf1810b968c9dd97e1e728a72088bf78d946",
+      "byteLength": 1543720,
+      "discoveryUrl": "https://docs.google.com/document/d/1RkAEOMWbcc2WzwaGJDKPGnFY360grmgasDdsVlB342o/edit",
+      "discoveryLinkText": "Campus-provided evacuation maps",
+      "downloadUrlNote": "Public original successfully retrieved through Playwright MCP; acquisition-index.json records the tested URL, byte count and SHA-256.",
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/FAH-EHS-2025.pdf",
+        "sha256": "b73a73b00757e67e33bc4e8eaf5aaf1810b968c9dd97e1e728a72088bf78d946",
+        "acquiredAt": "2026-10-21T23:05:56.344Z"
+      },
+      "geometryReviewed": true,
+      "geometryReview": {
+        "status": "partially-reviewed-integrated",
+        "reviewedAt": "2026-10-21",
+        "scope": [
+          {
+            "floor": "L1",
+            "page": 2,
+            "roomLabels": [
+              "1101",
+              "1450"
+            ],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [
+              "1101",
+              "1450"
+            ],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L2",
+            "page": 3,
+            "roomLabels": [],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L3",
+            "page": 4,
+            "roomLabels": [],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": true
+          },
+          {
+            "floor": "L4",
+            "page": 5,
+            "roomLabels": [],
+            "reviewedGeometry": "Simplified floor silhouette and only the listed scheduled-room polygons; other room interiors are not modeled.",
+            "integratedRoomLabels": [],
+            "floorSilhouetteIntegrated": true
+          }
+        ],
+        "evidencePaths": [
+          "data/indoor/FAH/trace.json",
+          "data/indoor/FAH/review.json"
+        ],
+        "runtimeLayout": "static/indoor/FAH.json",
+        "fullDocumentModeled": false,
+        "limitations": [
+          "Relative coordinates, approximate floor registration and illustrative heights; no surveyed metric scale or campus placement is claimed.",
+          "Only the listed room polygons are integrated; other rooms in the PDF have not been modeled.",
+          "Physical page 1 (Lower Floor) is not imported; the four previous L1\u2013L4 floors are retained."
+        ],
+        "remainingUnplaced": [
+          {
+            "floor": "L1",
+            "scheduleKeys": [
+              "1301"
+            ],
+            "reason": "The northern auditorium is unnumbered in the source; its identity is not inferred."
+          }
+        ]
+      }
+    },
+    {
+      "id": "SME-EHS-2012",
+      "buildings": [
+        "SME"
+      ],
+      "title": "SME Emergency info",
+      "url": "https://structures.ucsd.edu/sites/default/files/2016-06/SME%20Emergency%20info.pdf",
+      "format": "pdf",
+      "verification": "pdf-text-verified",
+      "pages": 6,
+      "revision": "2012-06-18 printed",
+      "priority": "backup",
+      "coverage": [
+        {
+          "building": "SME",
+          "floor": "B",
+          "page": 2
+        },
+        {
+          "building": "SME",
+          "floor": "L1",
+          "page": 3
+        },
+        {
+          "building": "SME",
+          "floor": "L2",
+          "page": 4
+        },
+        {
+          "building": "SME",
+          "floor": "L3",
+          "page": 5
+        },
+        {
+          "building": "SME",
+          "floor": "L4",
+          "page": 6
+        }
+      ],
+      "gaps": [
+        "Older alternate copy for SME."
+      ],
+      "limitations": [
+        "Use structures.ucsd.edu without www; www version failed in web fetch.",
+        "PDF physical page numbers differ from printed labels (3 of 8 through 7 of 8).",
+        "Room labels are absent from extracted text; use newer 2021 source first."
+      ],
+      "originalBinarySaved": false,
+      "sha256": null
+    },
+    {
+      "id": "CSE-EHS-2017",
+      "buildings": [
+        "EBU3B"
+      ],
+      "title": "CSE EVAC EH&S MAP.pdf",
+      "url": "https://drive.google.com/file/d/1b6A2X2FXoBSGWWh-o9nE6k473BxE87wk/view",
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=1b6A2X2FXoBSGWWh-o9nE6k473BxE87wk",
+      "format": "pdf",
+      "verification": "connected-drive-pdf-text-verified",
+      "pages": 6,
+      "revision": "2017-04-27; basement printed 2017-04-24",
+      "priority": "backup",
+      "coverage": [
+        {
+          "building": "EBU3B",
+          "floor": "B",
+          "page": 2
+        },
+        {
+          "building": "EBU3B",
+          "floor": "L1",
+          "page": 3
+        },
+        {
+          "building": "EBU3B",
+          "floor": "L2",
+          "page": 4
+        },
+        {
+          "building": "EBU3B",
+          "floor": "L3",
+          "page": 5
+        },
+        {
+          "building": "EBU3B",
+          "floor": "L4",
+          "page": 6
+        }
+      ],
+      "gaps": [
+        "Alternate CSE diagrams; existing department image trace is more useful for basement classrooms."
+      ],
+      "limitations": [
+        "1113, 1117 and 1124 do not appear in extracted text.",
+        "Old basement drawing is described as mechanical rooms; cannot assume coverage of current B240\u2013B270."
+      ],
+      "originalBinarySaved": true,
+      "sha256": "e5be7b4edff5ed3ddc547d9557d521ccb1cca1ee20e746a16c527e300cdb20e4",
+      "discoveryUrl": "https://docs.google.com/document/d/1Koyw1KS-9pj_dEzQqe5PNY_rUD3V4KYVvU6nBXulTWc/edit",
+      "discoveryLinkText": "Campus-provided evacuation maps",
+      "downloadUrlNote": "Public original successfully retrieved through Playwright MCP; acquisition-index.json records the tested URL, byte count and SHA-256.",
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/CSE-EHS-2017.pdf",
+        "sha256": "e5be7b4edff5ed3ddc547d9557d521ccb1cca1ee20e746a16c527e300cdb20e4",
+        "acquiredAt": "2026-10-21T23:06:02.771Z"
+      },
+      "byteLength": 1354098
+    },
+    {
+      "id": "CER-EAP-SERF-EBU2",
+      "buildings": [
+        "SERF",
+        "EBU2"
+      ],
+      "title": "Center for Energy Research emergency action plan",
+      "url": "https://cer.ucsd.edu/_files/resources/eap",
+      "format": "pdf",
+      "verification": "pdf-text-verified",
+      "pages": 12,
+      "revision": "Floor maps dated 2013-08-09",
+      "priority": "backup",
+      "coverage": [
+        {
+          "building": "SERF",
+          "floor": "L1",
+          "page": 4
+        },
+        {
+          "building": "SERF",
+          "floor": "L2",
+          "page": 5
+        },
+        {
+          "building": "EBU2",
+          "floor": "L4",
+          "page": 6
+        },
+        {
+          "building": "EBU2",
+          "floor": "L2",
+          "page": 7
+        },
+        {
+          "building": "EBU2",
+          "floor": "B",
+          "page": 8
+        }
+      ],
+      "gaps": [
+        "Provides absent SERF floor geometry for L1 and L2, but scheduled rooms 329 and 383 are on L3."
+      ],
+      "limitations": [
+        "Does not establish SERF 329 or 383 positions.",
+        "Some embedded PDFs have different printed page numbers; pages here are 1-based physical pages."
+      ],
+      "originalBinarySaved": true,
+      "sha256": "a60c172b412b45f416f4083640cc90dcd7b73cc1a26608a3b5b1d54365c99f80",
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/CER-EAP-SERF-EBU2.pdf",
+        "sha256": "a60c172b412b45f416f4083640cc90dcd7b73cc1a26608a3b5b1d54365c99f80",
+        "acquiredAt": "2026-10-21T23:07:37.640Z"
+      },
+      "byteLength": 1600276
+    },
+    {
+      "id": "SERF-SECOND-EXIT",
+      "buildings": [
+        "SERF"
+      ],
+      "title": "SERF second-floor emergency exit routes",
+      "url": "https://be.ucsd.edu/sites/default/files/uploads/EmergencyRoutesSER.pdf",
+      "format": "pdf",
+      "verification": "pdf-text-verified",
+      "pages": 1,
+      "revision": null,
+      "priority": "backup",
+      "coverage": [
+        {
+          "building": "SERF",
+          "floor": "L2",
+          "page": 1
+        }
+      ],
+      "gaps": [
+        "Second-floor alternate diagram, including room labels and apparent area values."
+      ],
+      "limitations": [
+        "No third-floor map; no improvement for 329/383.",
+        "Area values and room numbers interleave in extracted text, so automated parsing needs visual confirmation."
+      ],
+      "originalBinarySaved": true,
+      "sha256": "dbb3226acfc3dbf00a0c972485d281a539800020abfd5e5e791f9356b8c79cef",
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/SERF-SECOND-EXIT.pdf",
+        "sha256": "dbb3226acfc3dbf00a0c972485d281a539800020abfd5e5e791f9356b8c79cef",
+        "acquiredAt": "2026-10-21T23:07:42.035Z"
+      },
+      "byteLength": 71686
+    },
+    {
+      "id": "EBU1-FIFTH-EXIT-2003",
+      "buildings": [
+        "EBU1"
+      ],
+      "title": "Engineering Building Unit 1 fifth-floor emergency exit routes",
+      "url": "https://bioengineering.ucsd.edu/sites/default/files/uploads/EmergencyRoutesEBU.pdf",
+      "format": "pdf",
+      "verification": "search-index-text-verified",
+      "pages": 1,
+      "revision": "2003-08-01 printed",
+      "priority": "backup",
+      "coverage": [
+        {
+          "building": "EBU1",
+          "floor": "L5",
+          "page": 1
+        }
+      ],
+      "gaps": [
+        "Older comparison source only; newer 2021 map covers all floors."
+      ],
+      "limitations": [
+        "Does not resolve missing second-floor geometry."
+      ],
+      "originalBinarySaved": true,
+      "sha256": "b70565db454967ee5d89680e129f98d554fe2525a7d3e4e594df484d4dbda5a8",
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/EBU1-FIFTH-EXIT-2003.pdf",
+        "sha256": "b70565db454967ee5d89680e129f98d554fe2525a7d3e4e594df484d4dbda5a8",
+        "acquiredAt": "2026-10-21T23:08:15.073Z"
+      },
+      "byteLength": 52593
+    },
+    {
+      "id": "PSB-EAP-2024",
+      "buildings": [
+        "PSB"
+      ],
+      "title": "SSPPS emergency action plan 2024",
+      "url": "https://pharmacy.ucsd.edu/sites/default/files/docs/administration/EAP%20SSPPS2024%20%281%29.pdf",
+      "format": "pdf",
+      "verification": "pdf-text-verified",
+      "pages": 17,
+      "revision": "March/April 2024",
+      "priority": "backup",
+      "coverage": [
+        {
+          "building": "PSB",
+          "pages": [
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "description": "Evacuation/floor-plan attachment pages; individual floor assignments not visible in extracted text"
+        }
+      ],
+      "gaps": [
+        "Current Facilities layout already places scheduled PSB rooms."
+      ],
+      "limitations": [
+        "Map pages have little extractable text; geometry and floor labels require visual review."
+      ],
+      "originalBinarySaved": true,
+      "sha256": "a27d6f64d71a0d113ef5cd7c02d81b5219e115e314b3006994115cc6626357fc",
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/PSB-EAP-2024.pdf",
+        "sha256": "a27d6f64d71a0d113ef5cd7c02d81b5219e115e314b3006994115cc6626357fc",
+        "acquiredAt": "2026-10-21T23:07:14.196Z"
+      },
+      "byteLength": 832442
+    },
+    {
+      "id": "IGPP-MUNK-2013",
+      "buildings": [
+        "IGPP"
+      ],
+      "title": "IGPP Munk Laboratory emergency pre-plan",
+      "url": "https://igpp.ucsd.edu/system/files/2024-11/IGPP_Munk_Lab.pdf",
+      "format": "pdf",
+      "verification": "pdf-text-verified",
+      "pages": 5,
+      "revision": "2013-10-09 printed; hosted under 2024-11",
+      "priority": "backup",
+      "coverage": [
+        {
+          "building": "IGPP",
+          "floor": "B",
+          "page": 2
+        },
+        {
+          "building": "IGPP",
+          "floor": "L1",
+          "page": 3
+        },
+        {
+          "building": "IGPP",
+          "floor": "L2",
+          "page": 4
+        },
+        {
+          "building": "IGPP",
+          "floor": "L3",
+          "page": 5
+        }
+      ],
+      "gaps": [
+        "Cross-check for Munk component of existing combined IGPP layout."
+      ],
+      "limitations": [
+        "Current Facilities layout already places scheduled IGPP rooms.",
+        "Hosting date is not plan revision date."
+      ],
+      "originalBinarySaved": true,
+      "sha256": "e790fa77da4053e1e09ef76f36e682d6d9fdd778afd1e0b66b5a537e3bf5cd0b",
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/IGPP-MUNK-2013.pdf",
+        "sha256": "e790fa77da4053e1e09ef76f36e682d6d9fdd778afd1e0b66b5a537e3bf5cd0b",
+        "acquiredAt": "2026-10-21T23:07:27.956Z"
+      },
+      "byteLength": 113348
+    },
+    {
+      "id": "IGPP-4000",
+      "buildings": [
+        "IGPP"
+      ],
+      "title": "IGPP 4000 emergency pre-plan",
+      "url": "https://igpp.ucsd.edu/system/files/2024-11/IGPP_4000.pdf",
+      "format": "pdf",
+      "verification": "original-pdf-downloaded-not-geometry-reviewed",
+      "pages": 4,
+      "revision": null,
+      "priority": "backup",
+      "coverage": [],
+      "gaps": [
+        "Possible cross-check for IGPP 4000 building."
+      ],
+      "limitations": [
+        "Initial web fetches timed out; the original PDF was subsequently downloaded through Playwright MCP. Floor and room geometry have not been reviewed."
+      ],
+      "originalBinarySaved": true,
+      "sha256": "fbf30f6916324890434f0ab8fd2c725a0d9084c096573e313aeafdfa65911c97",
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/IGPP-4000.pdf",
+        "sha256": "fbf30f6916324890434f0ab8fd2c725a0d9084c096573e313aeafdfa65911c97",
+        "acquiredAt": "2026-10-21T23:07:32.466Z"
+      },
+      "byteLength": 90585
+    },
+    {
+      "id": "JSOE-EMERGENCY-INDEX",
+      "buildings": [
+        "EBU1",
+        "EBU2",
+        "PFBH",
+        "SME",
+        "FAH",
+        "EBU3B"
+      ],
+      "title": "Jacobs School Emergency Action Plan",
+      "url": "https://jacobsschool.ucsd.edu/facilities/emergency",
+      "format": "html",
+      "verification": "page-and-public-document-links-verified",
+      "pages": null,
+      "priority": "index",
+      "coverage": [],
+      "gaps": [
+        "Official entry point to building information sheets; the final link in each sheet points to complete EH&S PDFs."
+      ],
+      "limitations": [
+        "The building information sheets themselves are mostly contacts and an outdoor assembly map, not indoor floor plans.",
+        "Embedded hyperlink destinations were resolved through native Google Docs structure reads."
+      ],
+      "originalBinarySaved": false,
+      "sha256": null
+    },
+    {
+      "id": "PFBH-EXIT-INDEX",
+      "buildings": [
+        "PFBH",
+        "EBU1",
+        "SERF"
+      ],
+      "title": "Bioengineering Safety and Emergency Resources",
+      "url": "https://www.be.ucsd.edu/about/facilities/rooms/safety",
+      "format": "html",
+      "verification": "page-text-verified",
+      "pages": null,
+      "priority": "index",
+      "coverage": [
+        {
+          "building": "PFBH",
+          "floors": [
+            "B",
+            "L1",
+            "L2",
+            "L3",
+            "L4"
+          ]
+        },
+        {
+          "building": "EBU1",
+          "floor": "L5"
+        },
+        {
+          "building": "SERF",
+          "floor": "L2"
+        }
+      ],
+      "gaps": [
+        "Alternate older evacuation route diagrams are linked by floor."
+      ],
+      "limitations": [
+        "Several PDF links failed in web fetch; use complete 2021 Jacobs copies first."
+      ],
+      "originalBinarySaved": false,
+      "sha256": null
+    }
+  ],
+  "acquisitionIndex": "data/indoor/research/acquisition-index.json"
+}

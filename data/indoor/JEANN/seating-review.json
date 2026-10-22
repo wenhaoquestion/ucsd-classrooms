@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "building": "JEANN",
+  "output": "static/indoor/JEANN-combined.json",
+  "addedScheduleKeys": [
+    "AUD"
+  ],
+  "printedRoomLabel": "GA0205",
+  "displayFloor": "L2",
+  "metersPerReferencePixel": 0.023686356821589205,
+  "scaleEvidence": {
+    "name": "Main front wall clear width",
+    "from": [
+      368,
+      1418
+    ],
+    "to": [
+      1035,
+      1418
+    ],
+    "dimensionInches": 622,
+    "dimensionText": "51 feet 10 inches",
+    "note": "Printed extension lines start at the front wall corners. The long horizontal dimension determines scale; no listed area is used to set it."
+  },
+  "dimensionChecks": [
+    {
+      "name": "Room depth along west side",
+      "from": [
+        72,
+        461
+      ],
+      "to": [
+        297,
+        1476
+      ],
+      "dimensionInches": 961.5,
+      "dimensionText": "80 feet 1 1/2 inches",
+      "maxRelativeDifference": 0.015,
+      "measuredMeters": 24.625268859701304,
+      "expectedMeters": 24.4221,
+      "relativeDifference": 0.008319057726456913
+    },
+    {
+      "name": "Front row to front wall",
+      "from": [
+        759,
+        1214
+      ],
+      "to": [
+        759,
+        1459
+      ],
+      "dimensionInches": 228,
+      "dimensionText": "19 feet 0 inches",
+      "maxRelativeDifference": 0.01,
+      "measuredMeters": 5.803157421289355,
+      "expectedMeters": 5.7912,
+      "relativeDifference": 0.002064757095136649
+    },
+    {
+      "name": "Southwest vestibule width",
+      "from": [
+        369,
+        1490
+      ],
+      "to": [
+        490,
+        1490
+      ],
+      "dimensionInches": 112.5,
+      "dimensionText": "9 feet 4 1/2 inches",
+      "maxRelativeDifference": 0.01,
+      "measuredMeters": 2.866049175412294,
+      "expectedMeters": 2.8575,
+      "relativeDifference": 0.002991837414626053
+    },
+    {
+      "name": "Southwest vestibule side length",
+      "from": [
+        385,
+        1465
+      ],
+      "to": [
+        413,
+        1594
+      ],
+      "dimensionInches": 122.75,
+      "dimensionText": "10 feet 2 3/4 inches",
+      "maxRelativeDifference": 0.01,
+      "measuredMeters": 3.1266888202110588,
+      "expectedMeters": 3.11785,
+      "relativeDifference": 0.002834908738733155
+    }
+  ],
+  "mainRoomAreaSqft": 5889.067094296462,
+  "listedAreaSqft": 5878,
+  "relativeAreaDifference": 0.0018827993018819544,
+  "campusRegistration": false,
+  "limitations": [
+    "The 2021 drawing is a historical source. The independently retrieved FIS inventory still directly identifies GA0205 and lists 5878 square feet; the actual current FIS raster was not accessible.",
+    "Only the auditorium room is modeled. The floor outline represents the available room extent, not a surveyed whole-building boundary. Other rooms and entrance vestibules are omitted.",
+    "No campus registration is supplied. Drawing orientation has no north arrow, so the local drawing axes must not be interpreted as verified geographic north.",
+    "The room is displayed on L2 according to the current FIS inventory; the seating drawing does not supply actual tier elevations or building heights. The inherited vertical height is estimated."
+  ],
+  "inputHashes": {
+    "data/indoor/JEANN/seating-trace.json": "b646a59fe75f3113db061d9a12fe09745411bd53cdb83dafb13a97f992224701",
+    "static/indoor/facilities/JEANN.json": "298e50034281f260b11c6a7db9a6df1d95cb5980579189fda77a7298cba9162c",
+    "local/indoor-sources/JEANN-SEATING-2021.pdf": "4924b52e7b79f3e69780d0fdfd0475d4e2197bd264fddf98152829feab1ae3f1",
+    "local/indoor-sources/JEANN-L2-FIS.html": "e11fdf6cea3dfd0253e5af6785b3d123da3d99e81c10c9a8ea6fc56114553174"
+  }
+}

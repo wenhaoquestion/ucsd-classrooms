@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "building": "BRF2",
+  "reviewedAt": "2026-10-22T02:00:05Z",
+  "verification": "Public original event-organizer pages opened and read via web tool. This artifact preserves only bounded factual floor excerpts; it is not a downloaded HTML or a floor drawing.",
+  "listings": [
+    {
+      "sourceId": "BRF2-1104-CTC-2019",
+      "scheduleKey": "1104",
+      "floor": "L1",
+      "floorLabel": "First floor",
+      "title": "Complex Traits Consortium / Rat Genomics 17th Annual Meeting",
+      "url": "https://ratgenes.org/ctc2019/",
+      "eventDate": "2019-06-08",
+      "section": "Program / Saturday June 8 / Welcome reception",
+      "excerpt": "Biomedical research Facility II (BRFII), Room 1104 (first floor)",
+      "limitations": [
+        "Historic 2019 event location; no newer source contradicting the floor was found."
+      ]
+    },
+    {
+      "sourceId": "BRF2-5A03-RETREAT-2023",
+      "scheduleKey": "5A03",
+      "floor": "L5",
+      "floorLabel": "Fifth floor",
+      "title": "NIDA Center for GWAS in Outbred Rats \u2014 9th Annual Retreat",
+      "url": "https://ratgenes.org/meetings/nida-center-for-gwas-in-outbred-rats-9th-annual-retreat/",
+      "eventDate": "2023-10-27",
+      "section": "Venue / Main presentation room and research posters",
+      "excerpt": "Floor 5, Room 5A03",
+      "limitations": [
+        "The event page explicitly uses Floor 5; other departmental directions sometimes call the office wing 5A. This listing follows the room-specific event wording and does not infer a separate 5A floor geometry."
+      ]
+    }
+  ],
+  "geometryRecovered": false
+}

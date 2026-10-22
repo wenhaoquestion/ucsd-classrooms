@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "building": "GH",
+  "reviewedAt": "2026-10-22T01:48:46.289713+00:00",
+  "status": "additional-public-search-no-new-numbered-plan",
+  "scope": "Remaining basement, first-floor and second-floor schedule rooms. Existing 242/320/321 geometry and known 2012/2017 renovation sources were not replaced or re-downloaded.",
+  "activeTerm": "FA26",
+  "remainingKeys": [
+    "15",
+    "18A",
+    "23",
+    "102",
+    "103",
+    "111",
+    "144",
+    "145",
+    "155",
+    "157",
+    "170",
+    "174",
+    "247",
+    "253",
+    "254"
+  ],
+  "sourcesChecked": [
+    {
+      "url": "https://theatre.ucsd.edu/facilities/theaters/wagner-theatre.html",
+      "finding": "Official room identity: Arthur Wagner Theatre is Galbraith Hall room 157, first floor, 99 audience seats with thrust seating. Public linked material provides photographs and a technical-specifications contact; no numbered or dimensioned plan was found.",
+      "geometryAvailable": false
+    },
+    {
+      "url": "https://theatre.ucsd.edu/facilities/galbraith-hall.html",
+      "finding": "Official page confirms GH144 conference room and describes rehearsal/design spaces. No complete labeled floor drawing was obtained.",
+      "geometryAvailable": false
+    },
+    {
+      "url": "https://theatre.ucsd.edu/academics/undergraduate/practicum-information.html",
+      "finding": "Confirms offices GH102 and GH222 and practicum meetings in GH157; these room identities do not establish their footprints.",
+      "geometryAvailable": false
+    },
+    {
+      "url": "https://facilityservices.ucsd.edu/_files/FM-Project-Management-2022-Projects.pdf",
+      "pdfPage": 10,
+      "finding": "Official 2022 project report describes exterior south stair repairs, not classroom reconfiguration.",
+      "geometryAvailable": false
+    }
+  ],
+  "excludedFalsePositives": [
+    {
+      "url": "https://wearcam.org/ece516/eceLabSafetyOperationalManual_2023_24_v31.pdf",
+      "reason": "Galbraith Building basement plan is University of Toronto (GB040), not UC San Diego Galbraith Hall."
+    }
+  ],
+  "searchRoutes": [
+    "UC San Diego Theatre & Dance venue/technical pages",
+    "Departmental emergency and evacuation queries",
+    "UC San Diego Library Digital Collections and historical drawing queries",
+    "Public planning and renovation project reports"
+  ],
+  "runtimeDecision": {
+    "runtimeModified": false,
+    "addedRoomGeometry": 0,
+    "existingLayout": "static/indoor/GH-combined.json",
+    "preservedPlacedKeys": [
+      "242",
+      "320",
+      "321"
+    ]
+  },
+  "limitations": [
+    "This search result is not proof that no further public floor plan exists.",
+    "Photographs, seat capacity and room-name lists were not used to invent wall shapes.",
+    "Previously checked protected raster paths were not retried."
+  ]
+}

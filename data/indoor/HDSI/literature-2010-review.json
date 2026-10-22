@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "building": "HDSI",
+  "status": "historical-source-requires-current-boundary-confirmation",
+  "source": {
+    "id": "HDSI-LITERATURE-2010",
+    "title": "Literature Building AC Magnetic Field Survey Report, February 15, 2010",
+    "publisher": "Field Management Services Corp.; published by UC San Diego Environment, Health and Safety",
+    "url": "https://blink.ucsd.edu/_files/safety-tab/public-health/lit-building/FMS_Literature_Bldg_Report_2-15-2010.pdf",
+    "indexUrl": "https://blink.ucsd.edu/safety/resources/public-health/lit-building/index.html",
+    "localPath": "local/indoor-sources/HDSI-LITERATURE-2010.pdf",
+    "sha256": "9200106ebc0fd0e1eef64dd05fa7652aed076fe47a8266db0688b2fd3bd1f3fb",
+    "bytes": 1209807,
+    "accessed": "2026-10-21",
+    "printedReportDate": "2010-02-15",
+    "planSurveyDate": "2010-01-13",
+    "pages": 21,
+    "numberedFloorPlans": {"L1": 12, "L2": 16, "L3": 18, "L4": 20},
+    "coordinateSystem": "PDF points from the displayed page top left, x right, y down. Page numbers are one based. No campus registration has been performed.",
+    "thirdFloorPageSizePoints": [792, 612]
+  },
+  "roomComparisons": [
+    {
+      "scheduleKey": "123",
+      "floor": "L1",
+      "page": 12,
+      "historicalLabel": "123",
+      "labelBounds": [289.7107, 297.642606, 294.556127, 300.366921],
+      "historicalPrintedAreaSqft": 96,
+      "currentListedAreaSqft": 2285,
+      "decision": "reject-same-number-transfer",
+      "reason": "The current listed area is over twenty-three times the historical room area. This is not a matching current room boundary."
+    },
+    {
+      "scheduleKey": "336",
+      "floor": "L3",
+      "page": 18,
+      "historicalLabel": "336P",
+      "labelBounds": [382.205203, 387.61664, 386.91071, 389.755507],
+      "historicalPrintedAreaSqft": 162,
+      "currentListedAreaSqft": 494,
+      "decision": "reject-same-number-transfer",
+      "reason": "The current listed area is more than three times the historical office area. A separate historical toilet label (TM)336P has area 158 and must not be mistaken for this room."
+    },
+    {
+      "scheduleKey": "355",
+      "floor": "L3",
+      "page": 18,
+      "historicalLabel": "355P",
+      "labelBounds": [396.221775, 465.067512, 400.927282, 467.206379],
+      "historicalPrintedAreaSqft": 420,
+      "currentListedAreaSqft": 418,
+      "historicalOuterApproximate": [[365.04, 437.04], [427.68, 437.04], [427.68, 501.6], [431.04, 501.6], [431.04, 505.68], [365.04, 505.68]],
+      "traceMethod": "Visual inner-wall trace from a 300 dpi render, with the doorway closed along its wall and small frame details simplified. Historical PDF coordinates only; not scaled to the modern area.",
+      "historicalAdjacency": [
+        "Room 354P, printed area 237 square feet, shares the right-hand wall on the displayed page.",
+        "The entrance is at the upper-left edge from the central corridor.",
+        "The lower edge is an exterior window wall; a small column/wall return occurs at the lower right."
+      ],
+      "decision": "retain-as-historical-candidate-only",
+      "reason": "The 420 versus 418 square-foot area agreement supports a candidate, but no post-renovation wall plan or independently verified neighboring-room geometry was acquired. Area agreement and a matching room number alone do not establish the current footprint."
+    }
+  ],
+  "currentEvidence": [
+    {
+      "url": "https://regents.universityofcalifornia.edu/regmeet/july24/a2.pdf",
+      "title": "Establishment of the School of Computing, Information, and Data Sciences at UC San Diego",
+      "date": "2024-07-17",
+      "page": 9,
+      "finding": "Confirms HDSI had moved into the renovated Data Science Building in Warren College during the prior summer; this postdates every acquired 2010 plan."
+    },
+    {
+      "url": "https://zhiting.ucsd.edu/teaching/dsc250winter2025/",
+      "title": "DSC 250 Advanced Data Mining, Winter 2025",
+      "finding": "Lists HDSI 355 for office hours. Confirms current room use, not geometry."
+    },
+    {
+      "url": "https://dsc-courses.github.io/dsc152-2026-sp/syllabus/",
+      "title": "DSC 152 syllabus, Spring 2026",
+      "finding": "Lists office hours in HDSI 355 after a change from 336. Does not show room boundaries or adjacency."
+    }
+  ],
+  "limitations": [
+    "All four historical floor plans are genuine numbered source drawings, but predate the renovation completed before HDSI moved in during summer 2023.",
+    "The existing HDSI runtime file has no interior polygons or current neighboring-room geometry, only floor listings and a campus footprint repeated across floors.",
+    "No surveyed scale, campus registration, or modern boundary validation has been established for the historical candidate.",
+    "Rooms 123, 336, and 355 remain unplaced. No historical polygon is added to the runtime map."
+  ],
+  "nextEvidenceNeeded": "A current numbered third-floor plan or verified post-renovation geometry showing room 355, room 354, the central corridor, and the exterior window wall. Current first- and third-floor plans are required for rooms 123 and 336."
+}

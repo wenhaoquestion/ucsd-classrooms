@@ -1,0 +1,36 @@
+{
+  "building": "SME",
+  "name": "Structural and Materials Engineering",
+  "source": {
+    "id": "SME-EHS-2021",
+    "title": "Structural and Materials Engineering emergency floor plans (2021)",
+    "url": "https://drive.google.com/file/d/15_SRb9XB9o_4e6YpUPHiNpwfiwZLjYmF/view",
+    "publisher": "UC San Diego Environment, Health & Safety / Jacobs School of Engineering",
+    "building": "SME",
+    "floors": [
+      "B",
+      "L1",
+      "L2",
+      "L3",
+      "L4"
+    ],
+    "accessed": "2026-10-21",
+    "revision": "2021-07-28 printed on all floor plans",
+    "imageRef": "Original PDF: 793979 bytes; SHA-256 50210ce5adb840d70b94fce58c26df824354db92e3266a3132c65205a0922fd2",
+    "orientation": "North arrow points up on each page.",
+    "scale": "No architectural scale bar shown. Separate page scales are normalized by corresponding lab-wing walls.",
+    "notes": [
+      "Visual room and wall verification completed from the local original PDF.",
+      "The publisher uses building index 734.",
+      "Room positions follow the 2021 diagram; renovations after that date are not represented."
+    ]
+  },
+  "knownUnmapped": [],
+  "notes": [
+    "All 13 schedule rooms present in the existing SME Facilities floor listings have traced polygons.",
+    "The other offices, research rooms and service spaces remain unmodeled; the floor silhouette is approximate.",
+    "The original Facilities file remains available unchanged. Its four unscheduled shapes are not carried into this coordinate system because they do not establish a reliable whole-building alignment.",
+    "Floor registration is approximate: corresponding rectangular lab-wing corners establish relative scale and alignment. The basement plan is drawn larger than the upper floors.",
+    "Floor heights are illustrative. No campus placement or meter scale is claimed."
+  ]
+}

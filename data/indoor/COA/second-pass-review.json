@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "building": "COA",
+  "reviewedAt": "2026-10-22T02:02:28.272687+00:00",
+  "scope": "Second-floor rooms 201/269/270/271/272",
+  "method": "Second pass through public department pages, original event pages, architect documentation and explicit document links. Known failed FIS endpoints were not retried. No email or access request was sent.",
+  "sources": [
+    {
+      "url": "https://marshall.ucsd.edu/contact-us/college-directory/index.html",
+      "status": "floor-level-department-location-only",
+      "finding": "College administration, advising, student affairs and DOC are located on Coalition Level 2; no room numbers or wall drawing."
+    },
+    {
+      "url": "https://marshall.ucsd.edu/contact-us/map-directions.html",
+      "status": "campus-location-map-only",
+      "finding": "Level 2 text links the campus Concept3D map, which locates the building but does not supply a floor drawing."
+    },
+    {
+      "url": "https://marshall.ucsd.edu/doc/index.html",
+      "status": "floor-level-department-location-only",
+      "finding": "DOC office is on Coalition Second Floor, without numbered room geometry."
+    },
+    {
+      "url": "https://regents.universityofcalifornia.edu/regmeet/mar23/f9attach6.pdf",
+      "status": "existing-source-not-reacquired",
+      "finding": "Already retained design attachment under COA-MALK-REGENTS-2023; not counted as a new source."
+    },
+    {
+      "url": "https://facilityservices.ucsd.edu/information/density.html",
+      "status": "public-program-description-no-target-floorplan",
+      "finding": "Public page lists Coalition in the sensor installation program. It states non-public occupancy information is limited to space administrators and links a public wait-time service for libraries, dining and gyms. No Coalition numbered floor drawing was exposed; restricted dashboards were not accessed."
+    }
+  ],
+  "decision": "No newly verified numbered L2 plan. Preserve 14 existing B/L1 classroom geometries and keep L2 targets unplaced.",
+  "geometryAdded": 0
+}

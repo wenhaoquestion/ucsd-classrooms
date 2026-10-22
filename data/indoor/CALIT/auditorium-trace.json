@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "building": "CALIT",
+  "reviewed": "2026-10-22",
+  "baseLayout": "static/indoor/facilities/CALIT.json",
+  "outputLayout": "static/indoor/CALIT-combined.json",
+  "sources": [
+    {
+      "id": "CALIT-QI-EVENT-DIAGRAM",
+      "title": "QI Standard Event Setup — Atkinson Hall auditorium and theater",
+      "url": "https://sites.google.com/ucsd.edu/qi-events/facility/space-diagram",
+      "publisher": "UC San Diego Qualcomm Institute",
+      "revision": "Undated official event diagram; accessed 2026-10-22.",
+      "localPath": "local/indoor-sources/CALIT-EVENT-DIAGRAM.jpg",
+      "imageSizePx": [
+        1169,
+        1321
+      ],
+      "use": "Visible auditorium wall enclosure, lower-right region. The image itself has no room number or established scale.",
+      "sha256": "41632e5bb5c807a5acedcd4b719a30c92c44c7b42b1724c863cf315722a15712",
+      "bytes": 249610
+    },
+    {
+      "id": "CALIT-SEAW-NOV-2006",
+      "title": "SEAW Seattle Chapter Equilibrium — November 2006, page 7",
+      "url": "https://static1.squarespace.com/static/5c3faa364eddecdc367bedc5/t/5ca25c04104c7b955977e897/1554144265417/Nov%2B06.pdf",
+      "publisher": "Structural Engineers Association of Washington, Seattle Chapter",
+      "revision": "November 2006; historical seminar announcement for December 16, 2006.",
+      "localPath": "local/indoor-sources/CALIT-SEAW-NOV-2006.pdf",
+      "page": 7,
+      "acquiredAt": "2026-10-22T02:03:17.085Z",
+      "use": "Directly inspected page 7 explicitly identifies the Atkinson Hall Main Auditorium as Room 1511; historical identity evidence, not a current survey.",
+      "sha256": "774501ad90f518548721e3c30132b418bda7da42e353c0cb3dd6af0bd2f5595c",
+      "bytes": 1728877
+    },
+    {
+      "id": "CALIT-FIS-L1-LISTING",
+      "title": "UCSD Facilities public Atkinson Hall Level 1 room listing",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=641&fcode=1&zoom=4",
+      "publisher": "UC San Diego Facilities Information System",
+      "revision": "Public listing accessed 2026-10-22; metadata revision unspecified.",
+      "localPath": "local/indoor-sources/CALIT-L1-FIS.html",
+      "use": "Room key 31372 is listed as 1511 on Floor 1, area 2865 sqft. The area is the sole scale constraint, not an independent geometry validation.",
+      "sha256": "cccb22a9af50b7c74ab5abec08ceefc0a7a45f54ebeb79196921419f4f6cbf1b",
+      "bytes": 98751
+    }
+  ],
+  "originPx": [
+    930,
+    890
+  ],
+  "scale": {
+    "method": "uniform-scale-fitted-to-one-room-area",
+    "listedAreaSqft": 2865,
+    "source": "CALIT-FIS-L1-LISTING",
+    "roomKey": 31372,
+    "independentAreaValidation": false,
+    "note": "The trace has no reliable dimension or scale bar. sqrt(listedSqft * 0.09290304 / tracedPixelArea) is used for approximate metric display. Agreement with 2865 sqft is imposed, not independent verification."
+  },
+  "room": {
+    "key": "1511",
+    "outer": [
+      [
+        818,
+        667
+      ],
+      [
+        1072,
+        667
+      ],
+      [
+        1072,
+        677
+      ],
+      [
+        1069,
+        677
+      ],
+      [
+        1069,
+        725
+      ],
+      [
+        1073,
+        725
+      ],
+      [
+        1073,
+        783
+      ],
+      [
+        1081,
+        783
+      ],
+      [
+        1081,
+        810
+      ],
+      [
+        1086,
+        810
+      ],
+      [
+        1086,
+        805
+      ],
+      [
+        1100,
+        814
+      ],
+      [
+        1110,
+        814
+      ],
+      [
+        1110,
+        872
+      ],
+      [
+        1107,
+        872
+      ],
+      [
+        1107,
+        1115
+      ],
+      [
+        775,
+        1115
+      ],
+      [
+        775,
+        878
+      ],
+      [
+        742,
+        859
+      ],
+      [
+        742,
+        812
+      ],
+      [
+        750,
+        812
+      ],
+      [
+        750,
+        788
+      ],
+      [
+        800,
+        788
+      ],
+      [
+        800,
+        812
+      ],
+      [
+        809,
+        812
+      ],
+      [
+        809,
+        777
+      ],
+      [
+        818,
+        777
+      ],
+      [
+        818,
+        728
+      ],
+      [
+        817,
+        728
+      ],
+      [
+        817,
+        677
+      ],
+      [
+        813,
+        677
+      ],
+      [
+        813,
+        667
+      ]
+    ],
+    "labelAt": [
+      930,
+      963
+    ],
+    "boundaryNotes": [
+      "Trace follows the principal visible inner enclosure of the lower fixed-tier auditorium, including its stage. Stage-side entry offsets and audience-entry recesses are retained; door openings are closed at the threshold, rather than following open door leaves.",
+      "The upper black-box theater, pre-function lobby, left-side long narrow access corridor, and right-side shaded corridor are excluded.",
+      "Minor wall thickness changes, columns and door hardware are simplified. Curved seat rows and tier heights are not reconstructed; the polygon represents the room extent, not a detailed seating or accessibility model."
+    ]
+  },
+  "limitations": [
+    "Only the L1 auditorium room is modeled. The outline represents its perimeter and is not a complete floor plan or a building exterior.",
+    "The official QI event diagram is undated. Historical SEAW page 7 supplies the explicit Main Auditorium–1511 crosswalk; present public FIS metadata confirms room number, floor and area. These sources do not establish modern as-built accuracy or confirm that no intervening changes occurred.",
+    "Metric display scale is calibrated from a single room area (2865 sqft). There is no independent scale dimension or area validation, and boundary measurement conventions may differ.",
+    "North is unknown and no campus georeference is present. Drawing-axis local coordinates must not be overlaid on the campus map.",
+    "Tier heights and total room height are unknown; the renderer uses an explicitly estimated 4 m extrusion.",
+    "The original Facilities layout remains preserved at static/indoor/facilities/CALIT.json with B and L1–L7 outlines. Its eight-floor shell is not merged into this independent single-room coordinate frame."
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "building": "GH",
+  "output": "static/indoor/GH-combined.json",
+  "addedScheduleKeys": [
+    "242"
+  ],
+  "displayFloor": "L3",
+  "physicalFloorScope": [
+    "L2",
+    "L3"
+  ],
+  "displayFloorBasis": "Preserved existing Facilities listing, not confirmation that room 242 occupies only L3",
+  "campusRegistration": false,
+  "metersPerTracePixel": 0.026300253164556968,
+  "independentDimensionScaleDifference": 0.010674458822828026,
+  "localOffsetMeters": [
+    2.4007306889352815,
+    2.2190459610027857
+  ],
+  "tracedAreaSqft": 3844.7357984943283,
+  "listedAreaSqft": 3954,
+  "relativeAreaDifference": 0.027633839531024718,
+  "retainedFloors": [
+    "B",
+    "L1",
+    "L2",
+    "L3"
+  ],
+  "remainingUnplaced": [
+    "15",
+    "18A",
+    "18B",
+    "23",
+    "103",
+    "111",
+    "144",
+    "145",
+    "155",
+    "157",
+    "170",
+    "174",
+    "102",
+    "203",
+    "247",
+    "253",
+    "254",
+    "320",
+    "321"
+  ],
+  "limitations": [
+    "Room 242 spans L2 and L3. Its complete projected footprint is displayed once on L3; slope, tier heights, and routes between entrances are not modeled.",
+    "The 2012 source is explicitly a schematic design proposal, not for construction. It is used only for approximate central location and orientation, never to identify unlabeled final room numbers.",
+    "2017 lower-level plan depicts only part of the auditorium. Its small lower-level boundary must not substitute for the complete numbered 2016 room diagram.",
+    "No campus geo is supplied. All four inherited approximate floor plates stay in their original local meter frame; the room is explicitly transformed into that same frame with a coarse scheme-derived offset.",
+    "The original approximate floor plates are not verified interior envelopes and the remaining 19 classrooms remain unplaced.",
+    "Room area agrees approximately with the listed Facilities area; this does not establish survey accuracy or verify post-2016 alterations."
+  ],
+  "inputHashes": {
+    "data/indoor/GH/242-trace.json": "7d15843b9fad255fe520745ee54cf6e666387235169756d500739d09f0916ada",
+    "static/indoor/facilities/GH.json": "2c35133ef62c5b8d976cad9544d1ed1660c3da1bdc4c4bcad08de3c325cef1d1"
+  }
+}

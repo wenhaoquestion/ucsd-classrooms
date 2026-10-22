@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "building": "MWEIS",
+  "checked": "2026-10-22",
+  "scheduleKeys": [
+    "SCENE",
+    "STUDI"
+  ],
+  "status": "no-supported-room-boundaries",
+  "addedGeometry": 0,
+  "sources": [
+    {
+      "url": "https://theatre.ucsd.edu/facilities/theaters/tech-specs/weiss-tech.html",
+      "finding": "Technical specification describes the theater stage and the scene shop loading connection, but supplies no scene-shop or classroom-studio perimeter. Stage width and depth do not define SCENE or STUDI."
+    },
+    {
+      "url": "https://theatre.ucsd.edu/facilities/theaters/tech-specs/index.html",
+      "finding": "Additional drafting is available through Production Drive by permission/request; no public room-labelled drafting was exposed on the index."
+    },
+    {
+      "url": "https://theatre.ucsd.edu/facilities/theaters/mandell-weiss-theatre.html",
+      "finding": "Confirms scene, paint and prop shops and work yard. Does not map schedule SCENE or STUDI to numbered rooms or floorplan polygons."
+    },
+    {
+      "url": "https://theatre.ucsd.edu/facilities/safety-info.html",
+      "finding": "Links the systemwide UCOP performing-arts safety manual; no Mandell Weiss building-specific evacuation or room floorplan."
+    },
+    {
+      "url": "https://theatre.ucsd.edu/facilities/theaters/index.html",
+      "finding": "Distinguishes Mandell Weiss Theatre from Mandell Weiss Forum, Wagner Dance Building and Galbraith. Unrelated named dance studios or performance stages are not evidence for MWEIS STUDI."
+    }
+  ],
+  "decision": "Retain both schedule rooms without geometry. No external message or access request was sent, no protected drawings were fetched, and no theater-stage outline was substituted for the scene shop or an unidentified studio."
+}

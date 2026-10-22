@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "buildingCode": "CALIT",
+  "reviewedAt": "2026-10-22T02:02:52.928814+00:00",
+  "question": "Does scheduled CALIT 1511 identify the lower fixed-tier auditorium in the public QI event diagram, rather than the upper black-box theater?",
+  "status": "direct-historical-number-name-link-verified-from-original-pdf",
+  "sourceFiles": [
+    {
+      "path": "local/indoor-sources/CALIT-EVENT-DIAGRAM.jpg",
+      "bytes": 249610,
+      "sha256": "41632e5bb5c807a5acedcd4b719a30c92c44c7b42b1724c863cf315722a15712"
+    },
+    {
+      "path": "local/indoor-sources/CALIT-L1-FIS.html",
+      "bytes": 98751,
+      "sha256": "cccb22a9af50b7c74ab5abec08ceefc0a7a45f54ebeb79196921419f4f6cbf1b"
+    },
+    {
+      "localPath": "local/indoor-sources/CALIT-SEAW-NOV-2006.pdf",
+      "bytes": 1728877,
+      "sha256": "774501ad90f518548721e3c30132b418bda7da42e353c0cb3dd6af0bd2f5595c"
+    }
+  ],
+  "confirmedFacts": [
+    {
+      "sourceUrl": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=641&fcode=1&zoom=4",
+      "localFile": "local/indoor-sources/CALIT-L1-FIS.html",
+      "kind": "official-room-list",
+      "fact": "Floor 1 lists room 1511, Room key 31372, 2865 sqft. This source does not supply a usable room polygon or a venue name.",
+      "line": 805
+    },
+    {
+      "sourceUrl": "https://sites.google.com/ucsd.edu/qi-events/facility",
+      "kind": "official-venue-description",
+      "fact": "The Auditorium has fixed tiered seating and capacity 200; the distinct Theater supports different setups, capacity 90 (70 seated)."
+    },
+    {
+      "sourceUrl": "https://sonicarts.ucsd.edu/facilities/qualcomm-auditorium.html",
+      "kind": "official-venue-description",
+      "fact": "Qualcomm/Calit2 Auditorium is a 200-seat venue."
+    },
+    {
+      "sourceUrl": "https://sonicarts.ucsd.edu/facilities/calit2-theater.html",
+      "kind": "official-venue-description",
+      "fact": "Calit2 Theater is a reconfigurable two-story black-box space with movable seating up to 90."
+    },
+    {
+      "sourceUrl": "https://today.ucsd.edu/story/10-intriguing-spaces-in-qis-atkinson-hall",
+      "publicationDate": "2023-11-21",
+      "kind": "official-institutional-news",
+      "fact": "Separate Theater and Auditorium sections corroborate a 90-guest configurable theater and an auditorium of up to 201 seats."
+    },
+    {
+      "sourceUrl": "https://sites.google.com/ucsd.edu/qi-events/facility/space-diagram",
+      "kind": "official-diagram-visual-review",
+      "fact": "The supplied diagram visibly distinguishes the lower stepped seating and stage enclosure from the upper open rectangle. No numeric room labels were visible in the diagram."
+    }
+  ],
+  "numberNameLink": {
+    "sourceUrl": "https://static1.squarespace.com/static/5c3faa364eddecdc367bedc5/t/5ca25c04104c7b955977e897/1554144265417/Nov%2B06.pdf",
+    "publisher": "Structural Engineers Association of Washington, Equilibrium newsletter",
+    "publicationDate": "2006-11",
+    "eventDate": "2006-12-16",
+    "quote": "Atkinson Hall Main Auditorium– Room 1511 of the Calit 2 Building, UC San Diego.",
+    "retrievalStatus": "Original PDF acquired and page 7 rendered and visually inspected. The direct Main Auditorium–Room 1511 statement is confirmed; page footer identifies November 2006.",
+    "historicalPrimaryUrl": "http://nees.ucsd.edu/7StoryNew.html",
+    "historicalPrimaryRetrievalStatus": "HTTP and HTTPS inaccessible via web tool; not evidence of authentication restriction or confirmed HTTP 404.",
+    "interpretation": "Explicit historical room name-to-number statement in a directly inspected professional-association announcement. This remains a secondary historical source, not a modern UCSD as-built verification.",
+    "localPath": "local/indoor-sources/CALIT-SEAW-NOV-2006.pdf",
+    "page": 7,
+    "sha256": "774501ad90f518548721e3c30132b418bda7da42e353c0cb3dd6af0bd2f5595c"
+  },
+  "otherSourcesReviewed": [
+    {
+      "url": "https://csro.calit2.net/Calit2_Services_to_Campus.pdf",
+      "result": "12-page institutional brochure text confirms separate Auditorium and Theater; no 1511 text match."
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1_u_ERUV4ZkJ4a6Xlix16itToKGYCgs4A1NM5PUxZjQo/edit?usp=sharing",
+      "discoveredVia": "https://blink.ucsd.edu/facilities/services/general/conference/rooms/",
+      "result": "Official linked venue sheet rows 6/7 identify Auditorium 200 and Black Box Theater 90 without room numbers."
+    },
+    {
+      "url": "https://nheri.ucsd.edu/index.php/node/108",
+      "result": "Official publication record confirms a 2006 NEES/UCSD seminar on this topic but does not name its room."
+    },
+    {
+      "url": "https://cse125.ucsd.edu/2009/groups.html",
+      "result": "Official 2009 course event uses Atkinson Hall Main Auditorium; no 1511."
+    }
+  ],
+  "recommendation": {
+    "geometry": "The visible lower auditorium enclosure may be traced as a source-derived venue shape independently of assigning 1511.",
+    "numberLink": "Crosswalk now supported by a directly inspected original November 2006 announcement. Preserve the historical date and publisher, and do not describe it as a current floor-plan room label or present-day as-built verification.",
+    "scale": "The FIS 2865 sqft value can only be used as an explicitly declared area-based scale after identity is accepted; it does not independently prove the room identity.",
+    "placement": "No geographic or north orientation was established by this review."
+  }
+}

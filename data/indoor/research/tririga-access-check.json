@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-22T01:54:07.241Z",
+  "localDate": "2026-10-21",
+  "timeZone": "America/Los_Angeles",
+  "method": "User completed UCSD SSO in the headed Firefox controlled by Playwright MCP; only visible UI routes were inspected.",
+  "status": "authenticated-floor-plan-entry-unavailable-access-request-open",
+  "authenticatedHome": "https://ucsd.tririga.com/app/tririga/#",
+  "observations": [
+    "Home title is Home - Facilities Information Management.",
+    "Expanded side navigation contains only Home; Portfolio and Floors are not present.",
+    "Work Location displays a work-location form, not a floor-plan viewer.",
+    "Workplace Services can search for and select Galbraith Hall, but no floor plan was obtained. Its meeting-room search remained covered by a loading indicator.",
+    "The official access request form has a View and Print Floorplans permission option.",
+    "At approximately 00:42 UTC on 2026-10-22, the official MyStuff portal displayed an Open request titled Request user account set-up for Tririga or Facilities Activity Hub. Submission actor was not established; the observation is not attributed to an assistant submission. No ticket identifier or personal information is recorded."
+  ],
+  "authenticatedPlansDownloaded": 0,
+  "requestForm": {
+    "url": "https://support.ucsd.edu/its?id=sc_cat_item&sys_id=e3908c91db157f0006037a131f96193d",
+    "state": "open-request-observed",
+    "observedRequestTitle": "Request user account set-up for Tririga or Facilities Activity Hub",
+    "observedRequestStatus": "Open",
+    "observedAt": "2026-10-22T01:54:07.241Z",
+    "submissionActor": "not-established",
+    "preparedIntent": "Earlier preparation selected Tririga and View and Print Floorplans for read-only PDF/PNG export. The visible Open request does not independently verify every submitted form field.",
+    "floorPlanPermissionGranted": false,
+    "authenticatedPlansExported": 0,
+    "privacy": "Ticket identifiers, requester identity, department and other personal details are omitted."
+  },
+  "limitations": [
+    "Missing navigation is an observed UI limitation; a complete account-role audit was not performed.",
+    "A successful campus SSO login does not establish access to every Tririga function or to the separately authenticated legacy FIS.",
+    "No work-location update or reservation was submitted.",
+    "An Open access request does not establish approved floor-plan permissions. Portfolio/Floors access and an actual export still need verification."
+  ],
+  "checkedAtPrecision": "millisecond",
+  "latestRecheck": {
+    "homeCheckedAt": "2026-10-22T01:54:00.000Z",
+    "homeTitle": "Home - IBM TRIRIGA",
+    "homeUrl": "https://ucsd.tririga.com/app/tririga/#",
+    "floorPlanNavigationVisible": false,
+    "portalCheckedAt": "2026-10-22T01:54:07.241Z",
+    "portalUrl": "https://support.ucsd.edu/its?id=my_stuff",
+    "requestStatus": "Open",
+    "method": "Reloaded the existing authenticated browser tabs and inspected the visible UI. No Portfolio, Floors or floor-plan export entry was visible; the existing account setup request remained Open."
+  }
+}

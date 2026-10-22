@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "building": "MOS",
+  "input": "static/indoor/facilities/MOS.json",
+  "output": "data/indoor/MOS/partial-L1.json",
+  "source": {
+    "id": "MOS-L1-FIS",
+    "localPath": "local/indoor-sources/MOS-L1-FIS.png",
+    "sha256": "a5e4a7dd99591f185351a6ab7c1d6146612801fbbda6a46e6402fb5f5aa17928",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001811&fcode=1&zoom=1",
+    "accessed": "2026-10-21",
+    "acquiredAt": "2026-10-22T01:21:23.701Z",
+    "printedDate": "2023-09-01",
+    "title": "UCSD Facilities Information System - NTPLL - Mosaic - First Floor - Master Plan",
+    "size": [
+      2305,
+      1729
+    ],
+    "htmlPath": "local/indoor-sources/MOS-L1-FIS.html",
+    "htmlSha256": "b3c8fb4d474bac5d888aa7005947086a87b997886ce389b1bfd8ec18d3f0cca3"
+  },
+  "floor": "L1",
+  "registration": {
+    "mirrorSourceY": false,
+    "referenceRaster": "MOS-L1-FIS",
+    "controls": [
+      {
+        "sourcePoint": [
+          300,
+          393
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 25,
+        "sourceImage": "MOS-L1-FIS"
+      },
+      {
+        "sourcePoint": [
+          705,
+          514
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 1,
+        "sourceImage": "MOS-L1-FIS"
+      },
+      {
+        "sourcePoint": [
+          1605,
+          681
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 4,
+        "sourceImage": "MOS-L1-FIS"
+      },
+      {
+        "sourcePoint": [
+          1605,
+          1246
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 9,
+        "sourceImage": "MOS-L1-FIS"
+      }
+    ],
+    "holdouts": [
+      {
+        "sourcePoint": [
+          1605,
+          1017
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 5,
+        "sourceImage": "MOS-L1-FIS"
+      },
+      {
+        "sourcePoint": [
+          1513,
+          1473
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 13,
+        "sourceImage": "MOS-L1-FIS"
+      },
+      {
+        "sourcePoint": [
+          780,
+          504
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 3,
+        "sourceImage": "MOS-L1-FIS"
+      }
+    ],
+    "maxControlResidualMeters": 0.25,
+    "maxHoldoutResidualMeters": 0.4
+  },
+  "rooms": [
+    {
+      "scheduleKey": "0113",
+      "sourceLabel": "MO0113",
+      "printedAreaSqft": 2684,
+      "listedAreaSqft": 2684,
+      "outer": [
+        [
+          783,
+          791
+        ],
+        [
+          1151,
+          791
+        ],
+        [
+          1160,
+          821
+        ],
+        [
+          1160,
+          867
+        ],
+        [
+          1109,
+          867
+        ],
+        [
+          1109,
+          976
+        ],
+        [
+          1160,
+          976
+        ],
+        [
+          1160,
+          1056
+        ],
+        [
+          783,
+          1056
+        ]
+      ],
+      "labelAt": [
+        960,
+        910
+      ],
+      "officialRoomKey": "113139",
+      "areaBasis": "Official FIS HTML room tree corroborating the raster label; room identifier 113139"
+    },
+    {
+      "scheduleKey": "0114",
+      "sourceLabel": "MO0114",
+      "printedAreaSqft": 2600,
+      "listedAreaSqft": 2600,
+      "outer": [
+        [
+          1231,
+          791
+        ],
+        [
+          1547,
+          791
+        ],
+        [
+          1547,
+          831
+        ],
+        [
+          1600,
+          831
+        ],
+        [
+          1600,
+          1013
+        ],
+        [
+          1581,
+          1013
+        ],
+        [
+          1581,
+          1056
+        ],
+        [
+          1223,
+          1056
+        ],
+        [
+          1223,
+          977
+        ],
+        [
+          1275,
+          977
+        ],
+        [
+          1275,
+          867
+        ],
+        [
+          1223,
+          867
+        ],
+        [
+          1223,
+          821
+        ]
+      ],
+      "labelAt": [
+        1420,
+        910
+      ],
+      "officialRoomKey": "113140",
+      "areaBasis": "Official FIS HTML room tree corroborating the raster label; room identifier 113140"
+    }
+  ],
+  "limitations": [
+    "Only the three scheduled rooms MO0113, MO0114 and MO0204 are traced. Official FIS room-tree labels and areas establish the MO building prefix and the leading-zero schedule keys. L1 raster text is overprinted, so the retained HTML listing corroborates its labels.",
+    "Doorway jambs, thin wall widths and small column details are simplified; adjacent projection/support rooms are excluded. Metric scale and campus position remain approximate.",
+    "L1 uses four campus-footprint controls with three independent facade holdouts. L2 uses the same pixel frame, checked against the common southwest and southeast stair cores and northwestern exterior corner; it is not a separate survey fit.",
+    "All seven original floor levels and approximate campus-footprint slabs are retained. The partial classroom geometry does not describe all floor areas or an as-built interior.",
+    "The public FIS plans dated 2023-09-01 warn that displayed drawings may be out of date."
+  ]
+}

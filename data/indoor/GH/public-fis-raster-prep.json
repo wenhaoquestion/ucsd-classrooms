@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "building": "GH",
+  "fisBkey": 250,
+  "status": "awaiting-public-raster",
+  "runtimeChanges": false,
+  "baseLayout": "static/indoor/GH-combined.json",
+  "baseLayoutSha256": "b60b03813667ae2403e5dc794e3732b1c8d54a038ad93fc90bd4d31f148ca9f5",
+  "campusRegistrationPresent": false,
+  "coordinateSystem": {
+    "units": "meters",
+    "northDeg": 0,
+    "description": "Independent local meter view centered on the inherited approximate floor plates. Room 242 scale comes from its dimensioned UCSD seating plan; its coarse position uses the 2012 design scheme. Campus registration is deliberately unset.",
+    "northNote": "North is inherited from the old local floor frame. The 2012 scheme points north to page left; matching the auditorium front makes north point down in the 2016 room diagram. This orientation crosswalk is approximate."
+  },
+  "preserveTotalRooms": 1,
+  "missingTotalScheduleRooms": 19,
+  "floors": [
+    {
+      "floor": "B",
+      "floorLabel": "Basement",
+      "missingScheduleRooms": [
+        {
+          "label": "15",
+          "scheduleKey": "15",
+          "basis": "floor-listing",
+          "areaSqft": 3022
+        },
+        {
+          "label": "18A",
+          "scheduleKey": "18A",
+          "basis": "floor-listing",
+          "areaSqft": 548
+        },
+        {
+          "label": "18B",
+          "scheduleKey": "18B",
+          "basis": "floor-listing",
+          "areaSqft": 493
+        },
+        {
+          "label": "23",
+          "scheduleKey": "23",
+          "basis": "floor-listing",
+          "areaSqft": 2673
+        }
+      ],
+      "preserveRoomCount": 0,
+      "preserveRoomsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "existingScheduledAnchors": [],
+      "existingOutlineBoundsMeters": [
+        [
+          -31.65,
+          -31.55,
+          31.65,
+          31.55
+        ]
+      ],
+      "existingOutlineConfidence": "approximate",
+      "existingFloorNotes": [
+        "The inherited approximate campus-derived floor plate and floor-only room listings are retained in the same local frame. The plate is not a newly verified floor plan."
+      ]
+    },
+    {
+      "floor": "L1",
+      "floorLabel": "Level 1",
+      "missingScheduleRooms": [
+        {
+          "label": "103",
+          "scheduleKey": "103",
+          "basis": "floor-listing",
+          "areaSqft": 341
+        },
+        {
+          "label": "111",
+          "scheduleKey": "111",
+          "basis": "floor-listing",
+          "areaSqft": 1267
+        },
+        {
+          "label": "144",
+          "scheduleKey": "144",
+          "basis": "floor-listing",
+          "areaSqft": 688
+        },
+        {
+          "label": "145",
+          "scheduleKey": "145",
+          "basis": "floor-listing",
+          "areaSqft": 649
+        },
+        {
+          "label": "155",
+          "scheduleKey": "155",
+          "basis": "floor-listing",
+          "areaSqft": 2116
+        },
+        {
+          "label": "157",
+          "scheduleKey": "157",
+          "basis": "floor-listing",
+          "areaSqft": 2197
+        },
+        {
+          "label": "170",
+          "scheduleKey": "170",
+          "basis": "floor-listing",
+          "areaSqft": 1479
+        },
+        {
+          "label": "174",
+          "scheduleKey": "174",
+          "basis": "floor-listing",
+          "areaSqft": 521
+        },
+        {
+          "label": "102",
+          "scheduleKey": "102",
+          "basis": "room-number"
+        }
+      ],
+      "preserveRoomCount": 0,
+      "preserveRoomsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "existingScheduledAnchors": [],
+      "existingOutlineBoundsMeters": [
+        [
+          -31.65,
+          -31.55,
+          31.65,
+          31.55
+        ]
+      ],
+      "existingOutlineConfidence": "approximate",
+      "existingFloorNotes": [
+        "The inherited approximate campus-derived floor plate and floor-only room listings are retained in the same local frame. The plate is not a newly verified floor plan."
+      ]
+    },
+    {
+      "floor": "L2",
+      "floorLabel": "Level 2",
+      "missingScheduleRooms": [
+        {
+          "label": "203",
+          "scheduleKey": "203",
+          "basis": "floor-listing",
+          "areaSqft": 235
+        },
+        {
+          "label": "247",
+          "scheduleKey": "247",
+          "basis": "floor-listing",
+          "areaSqft": 1574
+        },
+        {
+          "label": "253",
+          "scheduleKey": "253",
+          "basis": "floor-listing",
+          "areaSqft": 485
+        },
+        {
+          "label": "254",
+          "scheduleKey": "254",
+          "basis": "floor-listing",
+          "areaSqft": 577
+        }
+      ],
+      "preserveRoomCount": 0,
+      "preserveRoomsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "existingScheduledAnchors": [],
+      "existingOutlineBoundsMeters": [
+        [
+          -31.65,
+          -31.55,
+          31.65,
+          31.55
+        ]
+      ],
+      "existingOutlineConfidence": "approximate",
+      "existingFloorNotes": [
+        "The inherited approximate campus-derived floor plate and floor-only room listings are retained in the same local frame. The plate is not a newly verified floor plan."
+      ]
+    },
+    {
+      "floor": "L3",
+      "floorLabel": "Level 3 \u00b7 room 242 spans Levels 2\u20133",
+      "missingScheduleRooms": [
+        {
+          "label": "320",
+          "scheduleKey": "320",
+          "basis": "floor-listing",
+          "areaSqft": 1759
+        },
+        {
+          "label": "321",
+          "scheduleKey": "321",
+          "basis": "floor-listing",
+          "areaSqft": 1077
+        }
+      ],
+      "preserveRoomCount": 1,
+      "preserveRoomsSha256": "3065c1852e46c5087f034e01a3b38dd2aae54c0d735c94d7fb2f018ef64e17ca",
+      "existingScheduledAnchors": [
+        {
+          "id": "L3-242-SPANNING-L2-L3",
+          "label": "242",
+          "scheduleKey": "242",
+          "centroidMeters": [
+            2.384648,
+            2.337549
+          ],
+          "polygonAreaSqft": 3844.736,
+          "listedAreaSqft": null,
+          "confidence": {
+            "location": "approximate",
+            "shape": "traced",
+            "label": "direct"
+          }
+        }
+      ],
+      "existingOutlineBoundsMeters": [
+        [
+          -31.65,
+          -31.55,
+          31.65,
+          31.55
+        ]
+      ],
+      "existingOutlineConfidence": "approximate",
+      "existingFloorNotes": [
+        "This auditorium spans Levels 2 and 3. L3 is retained only as the display layer from the Facilities listing; it does not establish a single physical floor or an entrance route. The 2016 numbered seating plan supplies the full room boundary and dimensions. The 2017 published building plan shows only its lower portion. Approximate placement uses a 2012 design scheme marked NOT FOR CONSTRUCTION.",
+        "The inherited approximate campus-derived floor plate and floor-only room listings are retained in the same local frame. The plate is not a newly verified floor plan."
+      ]
+    }
+  ],
+  "captureNeeds": {
+    "targetFloors": [
+      "B",
+      "L1",
+      "L2",
+      "L3"
+    ],
+    "additionalCalibrationFloors": [],
+    "record": [
+      "Uncropped native-size raster",
+      "Image width and height",
+      "Source URL and exact FIS fcode",
+      "Capture SHA-256",
+      "Visible drawing title/date and scale annotation",
+      "Screenshot-to-drawing pixel mapping, if viewer transforms were applied"
+    ]
+  },
+  "acceptanceChecks": [
+    "Require explicit readable room label and closed wall perimeter.",
+    "Record traced pixel vertices and per-floor transform; retain uncertainty for any unreadable boundary.",
+    "Compare polygon area to the independently listed room area; do not tune each room scale to force agreement.",
+    "Check independent preserved-room alignment where available.",
+    "Reject overlapping additions or duplicate schedule keys.",
+    "Hash existing floor rooms before/after to show unchanged preserved geometry.",
+    "Do not add campus geo from a floorplan-only trace."
+  ],
+  "cautions": [
+    "Keep existing full room 242 geometry from static/indoor/GH-combined.json; base facilities/GH.json does not contain it.",
+    "242 spans Levels 2 and 3 and is displayed once on L3; a partial floor cut must not replace its complete projection.",
+    "Existing floor plate is approximate campus-derived geometry, not a verified interior envelope.",
+    "Initial pixel-to-meter scale can be checked with multiple independently listed room areas; reuse 242 as location anchor only if its full or partial correspondence is visually unambiguous."
+  ]
+}

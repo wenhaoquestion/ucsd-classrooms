@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "building": "EBU2",
+  "output": "static/indoor/EBU2-combined.json",
+  "inputHashes": {
+    "data/indoor/EBU2/ehs-584-trace.json": "279e819407a29b61183e1f89c8cabddf9ed22e9925dfe10f3da36466c92debab",
+    "static/indoor/facilities/EBU2.json": "7a8f6d46aa7a76efdca7210c163662161246a16af5027ee1ba877cf02a637e2e",
+    "local/indoor-sources/EBU2-EHS-2021.pdf": "5cf6be0d0a50acc1b5f28744fd1393b85e7ffae556ba88c9aa32b75fd086a4c1"
+  },
+  "source": {
+    "id": "EBU2-EHS-2021",
+    "url": "https://drive.google.com/file/d/1BDYqGwk89tMSmBlxhWRuy414a6AdPYau/view",
+    "localPath": "local/indoor-sources/EBU2-EHS-2021.pdf",
+    "sha256": "5cf6be0d0a50acc1b5f28744fd1393b85e7ffae556ba88c9aa32b75fd086a4c1",
+    "page": 7,
+    "registrationReferencePage": 4,
+    "printedDate": "2021-06-29",
+    "pageSizePoints": [
+      612,
+      792
+    ],
+    "accessed": "2026-10-21"
+  },
+  "transform": {
+    "formula": "x = a*u - b*v + tx; z = b*u + a*v + tz",
+    "a": 0.17370707209692907,
+    "b": -0.0015190487579621974,
+    "tx": -62.32177215763456,
+    "tz": -60.079780543064665,
+    "metersPerPDFPoint": 0.17371371392500012,
+    "rotationDeg": -0.5010323595013253
+  },
+  "registrationChecks": {
+    "controlPoints": [
+      {
+        "sourcePoint": [
+          226.2,
+          192.0
+        ],
+        "sourceRoom": "560",
+        "targetRoom": "261",
+        "targetVertex": 1,
+        "feature": "North-end office, northwest interior exterior-wall corner",
+        "targetPoint": [
+          -22.73,
+          -27.07
+        ],
+        "transformedPoint": [
+          -22.73757508778047,
+          -27.071631529505332
+        ],
+        "residualMeters": 0.007748796255457725
+      },
+      {
+        "sourcePoint": [
+          236.88,
+          192.0
+        ],
+        "sourceRoom": "560",
+        "targetRoom": "261",
+        "targetVertex": 2,
+        "feature": "North-end office, northeast end of horizontal exterior wall",
+        "targetPoint": [
+          -20.89,
+          -27.09
+        ],
+        "transformedPoint": [
+          -20.882383557785268,
+          -27.087854970240365
+        ],
+        "residualMeters": 0.007912733072718068
+      },
+      {
+        "sourcePoint": [
+          226.2,
+          507.96
+        ],
+        "sourceRoom": "574",
+        "targetRoom": "277",
+        "targetVertex": 3,
+        "feature": "South-end office, southwest interior exterior-wall corner",
+        "targetPoint": [
+          -22.25,
+          27.81
+        ],
+        "transformedPoint": [
+          -22.257616442214733,
+          27.812854970240373
+        ],
+        "residualMeters": 0.008133944128391149
+      },
+      {
+        "sourcePoint": [
+          236.88,
+          507.96
+        ],
+        "sourceRoom": "574",
+        "targetRoom": "277",
+        "targetVertex": 2,
+        "feature": "South-end office, southeast end of horizontal exterior wall",
+        "targetPoint": [
+          -20.41,
+          27.8
+        ],
+        "transformedPoint": [
+          -20.40242491221953,
+          27.79663152950534
+        ],
+        "residualMeters": 0.008290268292113571
+      }
+    ],
+    "holdoutPoints": [
+      {
+        "sourcePoint": [
+          148.2,
+          270.12
+        ],
+        "sourceRoom": "554",
+        "targetRoom": "255",
+        "targetVertex": 3,
+        "feature": "West facade, upper office next to restroom, northwest interior exterior-wall corner",
+        "targetPoint": [
+          -36.18,
+          -13.37
+        ],
+        "transformedPoint": [
+          -36.16805862236893,
+          -13.383149254172181
+        ],
+        "residualMeters": 0.017762302356744825
+      },
+      {
+        "sourcePoint": [
+          148.2,
+          429.84
+        ],
+        "sourceRoom": "580",
+        "targetRoom": "283",
+        "targetVertex": 2,
+        "feature": "West facade, lower office next to restroom, southwest interior exterior-wall corner",
+        "targetPoint": [
+          -35.94,
+          14.35
+        ],
+        "transformedPoint": [
+          -35.9254361547472,
+          14.361344301149323
+        ],
+        "residualMeters": 0.01846073555181089
+      }
+    ]
+  },
+  "areaCheck": {
+    "tracedAreaSqft": 890.288661969913,
+    "listedAreaSqft": 896,
+    "relativeDifference": 0.006374261194293518
+  },
+  "addedRoomPolygons": 1,
+  "recoveredScheduleKeys": [
+    "584"
+  ],
+  "remainingUnplacedKeys": [
+    "313",
+    "L330",
+    "333A",
+    "335",
+    "339",
+    "305",
+    "330A"
+  ],
+  "limitations": [
+    "The PDF is a 2021 emergency plan; later changes cannot be excluded. The existing room number and listed area agree with this traced room.",
+    "Registration uses the repeated exterior office-wing facade across Levels 2 and 5. It inherits the existing approximate Facilities-to-campus fit and is not independent geodetic validation.",
+    "The floor plate remains the existing copied Level 2 outline; this supplement verifies room 584 only, not the rest of the fifth-floor floor plate or roofs.",
+    "The third-floor source shows separate 330A and 330B rooms; the schedule key L330 has no verified alias and remains unplaced.",
+    "The source shows 333A with an area visually comparable to 335, while the existing listing assigns 162 versus 1106 ft2; this unresolved conflict is not used to place 333A."
+  ]
+}

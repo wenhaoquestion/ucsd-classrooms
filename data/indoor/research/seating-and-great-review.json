@@ -1,0 +1,91 @@
+{
+  "reviewedAt": "2026-10-22",
+  "sources": [
+    {
+      "id": "MALK-520-SEATING",
+      "sha256": "eaeb5d0e1e4db148c0e021286e996e1d92287b678f92bd6159d60a61e78f6e76",
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "page": 1,
+            "reviewedGeometry": "Seating diagram explicitly not to scale; no surveyed wall boundary or physical dimensions. Not imported as room geometry."
+          }
+        ],
+        "fullDocumentModeled": false,
+        "evidencePaths": [
+          "data/indoor/research/seating-and-great-review.json"
+        ],
+        "limitations": [
+          "Seating diagram explicitly not to scale; no surveyed wall boundary or physical dimensions. Not imported as room geometry."
+        ]
+      }
+    },
+    {
+      "id": "PODEM-0132-SEATING",
+      "sha256": "239bd46f8c159a7624c7c0cb6937bf0b3087cd5d68cff12497974526c8058c75",
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "page": 1,
+            "reviewedGeometry": "Seating diagram explicitly not to scale; no surveyed wall boundary or physical dimensions. Not imported as room geometry."
+          }
+        ],
+        "fullDocumentModeled": false,
+        "evidencePaths": [
+          "data/indoor/research/seating-and-great-review.json"
+        ],
+        "limitations": [
+          "Seating diagram explicitly not to scale; no surveyed wall boundary or physical dimensions. Not imported as room geometry."
+        ]
+      }
+    },
+    {
+      "id": "APM-B402A-SEATING",
+      "sha256": "1ff8ea68ad9c8b64d443e981ab41836a1cd615e92d44f822860ed3439ac85319",
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "page": 1,
+            "reviewedGeometry": "Seating diagram explicitly not to scale; no surveyed wall boundary or physical dimensions. Not imported as room geometry."
+          }
+        ],
+        "fullDocumentModeled": false,
+        "evidencePaths": [
+          "data/indoor/research/seating-and-great-review.json"
+        ],
+        "limitations": [
+          "Seating diagram explicitly not to scale; no surveyed wall boundary or physical dimensions. Not imported as room geometry."
+        ]
+      }
+    },
+    {
+      "id": "GREAT-IHOUSE-LAYOUT",
+      "sha256": "e486339e97f4ea58c81f51287bac5cb6f4077a5ed9862e3edfd1f0d96146cccc",
+      "geometryReview": {
+        "status": "reviewed-context-not-integrated",
+        "reviewedAt": "2026-10-22",
+        "scope": [
+          {
+            "page": 1,
+            "reviewedGeometry": "True public venue floor plan with 10-foot scale bar, but no floor or numeric room labels; no GREAT schedule keys in the captured FA26 feed. Not imported into runtime."
+          }
+        ],
+        "fullDocumentModeled": false,
+        "evidencePaths": [
+          "data/indoor/research/seating-and-great-review.json"
+        ],
+        "limitations": [
+          "True public venue floor plan with 10-foot scale bar, but no floor or numeric room labels; no GREAT schedule keys in the captured FA26 feed. Not imported into runtime."
+        ]
+      }
+    }
+  ],
+  "visualEvidence": "Source pages rendered with pdftoppm and inspected; seating montage /tmp/seat-sources-review.png. GREAT source inspected at native resolution.",
+  "decision": "No new scheduled room polygon from these sources."
+}

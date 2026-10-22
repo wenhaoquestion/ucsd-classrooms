@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "building": "CENTR",
+  "input": "static/indoor/facilities/CENTR.json",
+  "output": "static/indoor/CENTR-combined.json",
+  "source": {
+    "id": "CENTR-L2-FIS",
+    "localPath": "local/indoor-sources/CENTR-L2-FIS.png",
+    "sha256": "20c8cfa8c4189fbd2073d0a11cad112451a82d9b7bd1a963a913c7d7af4e5f80",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=171&fcode=2&zoom=1",
+    "accessed": "2026-10-21",
+    "acquiredAt": "2026-10-22T01:21:35.344Z",
+    "printedDate": "2021-08-18",
+    "title": "UCSD Facilities Information System - Center Hall - Second Floor - Master Plan",
+    "size": [
+      5761,
+      4321
+    ]
+  },
+  "floor": "L2",
+  "registration": {
+    "mirrorSourceY": false,
+    "controls": [
+      {
+        "sourcePoint": [
+          4340,
+          2252
+        ],
+        "targetFloor": "L2",
+        "targetRoom": "202",
+        "targetVertex": 5
+      },
+      {
+        "sourcePoint": [
+          4508,
+          2475
+        ],
+        "targetFloor": "L2",
+        "targetRoom": "202",
+        "targetVertex": 3
+      },
+      {
+        "sourcePoint": [
+          1397,
+          1996
+        ],
+        "targetFloor": "L2",
+        "targetRoom": "220",
+        "targetVertex": 9
+      },
+      {
+        "sourcePoint": [
+          1432,
+          2243
+        ],
+        "targetFloor": "L2",
+        "targetRoom": "220",
+        "targetVertex": 7
+      }
+    ],
+    "holdouts": [
+      {
+        "sourcePoint": [
+          3948,
+          2638
+        ],
+        "targetFloor": "L2",
+        "targetRoom": "208",
+        "targetVertex": 5
+      },
+      {
+        "sourcePoint": [
+          1154,
+          2292
+        ],
+        "targetFloor": "L2",
+        "targetRoom": "217B",
+        "targetVertex": 11
+      },
+      {
+        "sourcePoint": [
+          1063,
+          1633
+        ],
+        "targetFloor": "L2",
+        "targetRoom": "224C",
+        "targetVertex": 3
+      }
+    ],
+    "maxControlResidualMeters": 0.3,
+    "maxHoldoutResidualMeters": 0.45
+  },
+  "rooms": [
+    {
+      "scheduleKey": "205",
+      "sourceLabel": "205",
+      "printedAreaSqft": 500,
+      "listedAreaSqft": 500,
+      "outer": [
+        [
+          4477,
+          2645
+        ],
+        [
+          4731,
+          2892
+        ],
+        [
+          4586,
+          3038
+        ],
+        [
+          4337,
+          2787
+        ]
+      ],
+      "labelAt": [
+        4545,
+        2820
+      ]
+    },
+    {
+      "scheduleKey": "218",
+      "sourceLabel": "218",
+      "printedAreaSqft": 463,
+      "listedAreaSqft": 463,
+      "outer": [
+        [
+          1050,
+          2048
+        ],
+        [
+          1299,
+          2012
+        ],
+        [
+          1339,
+          2256
+        ],
+        [
+          1160,
+          2284
+        ],
+        [
+          1157,
+          2301
+        ],
+        [
+          1101,
+          2310
+        ],
+        [
+          1078,
+          2194
+        ],
+        [
+          1060,
+          2197
+        ]
+      ],
+      "labelAt": [
+        1200,
+        2170
+      ]
+    }
+  ],
+  "limitations": [
+    "Only scheduled rooms 205 and 218 are traced from the public 2021 FIS raster. The same boundaries also carry duplicate MS labels 258 and 269; these are not additional classrooms.",
+    "Door jambs, small column recesses and curved parapet details are simplified. New geometry is approximate, not a survey.",
+    "A single similarity transformation uses controls in both wings and independent corners in three other rooms. Existing room polygons and floor elevations are retained unchanged. The L2 slab is the exact union of its original approximate outline and the source-traced 205 footprint, because the old slab omitted this upper-floor extension. This is a limited geometry supplement, not a newly surveyed whole-floor outline.",
+    "The source warns that displayed FIS plans may be out of date; later alterations cannot be excluded."
+  ],
+  "slabUnionRoomKeys": [
+    "205"
+  ]
+}

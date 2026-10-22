@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "building": "TASB",
+  "name": "Triton Administrative Services Building",
+  "reviewedAt": "2026-10-22T01:47:29Z",
+  "status": "public-sources-reviewed-target-room-geometry-unresolved",
+  "activeTerm": "FA26",
+  "activeTermEvidence": "data/indoor/research/active-term-coverage.json",
+  "activeScheduleKeys": ["W1131", "W1141"],
+  "scope": "Current official Commons, Triton Center, Study Abroad, ISEO and University Centers public pages; the acquired FIS public viewer HTML; existing Regents design graphics; newly discovered Advancement brochure text. No authenticated routes were probed and no room identifiers were guessed.",
+  "sources": [
+    {
+      "id": "TASB-COMMONS-CONTACT",
+      "url": "https://commons.ucsd.edu/what/contact-us.html",
+      "publisher": "UC San Diego Teaching and Learning Commons",
+      "reviewStatus": "public-page-reviewed",
+      "finding": "The West building location separates first-floor workshop rooms from second-floor offices and the welcome desk.",
+      "imageUrl": "https://commons.ucsd.edu/_images/commons-central-images/commons_tasbspace.jpg",
+      "imageDescriptionInPage": "North entrance of the Triton Administrative Services Building",
+      "targetKeysMatched": [],
+      "limitations": [
+        "Neither target room number appears on the reviewed page.",
+        "The entrance photograph is not a floor plan.",
+        "The workshop description supports a first-floor search priority; it does not establish that either scheduled classroom is a specific workshop room.",
+        "The page's second-floor heading refers to offices and the welcome desk. It must not be assigned to W1131 or W1141."
+      ]
+    },
+    {
+      "id": "TASB-COMMONS-HOURS",
+      "url": "https://commons.ucsd.edu/who/hours.html",
+      "publisher": "UC San Diego Teaching and Learning Commons",
+      "reviewStatus": "public-page-reviewed",
+      "finding": "Confirms the name Triton Administrative Services Building West and the second-floor Commons office location; provides no numbered room layout.",
+      "targetKeysMatched": []
+    },
+    {
+      "id": "UCSD-PUBLIC-FIS-VIEWER-HTML",
+      "url": "https://facilities.ucsd.edu/Classrooms/Default.htm",
+      "file": "local/indoor-sources/UCSD-Classrooms-public.html",
+      "bytes": 919818,
+      "sha256": "f4666b3d62a52ac27fd8f15448ea1a967967bd6637e595dfbcd9ace9997fefd0",
+      "reviewStatus": "acquired-html-reviewed-offline",
+      "actualContent": "Campus building-viewer HTML with building layers, rather than a TASB classroom details table.",
+      "caseInsensitiveLiteralCounts": {
+        "TASB": 0,
+        "W1131": 0,
+        "W1141": 0,
+        "Administrative": 0,
+        "Triton": 2
+      },
+      "tritonMatches": ["Triton Clubhouse (926)", "Triton Stadium (925)"],
+      "verifiedTASBBuildingKey": null,
+      "verifiedTASBRoomIds": [],
+      "limitations": [
+        "Absence from this response does not establish absence from every FIS dataset.",
+        "Digit substrings 1131 and 1141 inside unrelated coordinates or timestamps are not room identifiers.",
+        "No actual TASB building key or room ID was recovered, so no guessed floor-viewer request was made."
+      ]
+    },
+    {
+      "id": "TASB-REGENTS-2023",
+      "url": "https://regents.universityofcalifornia.edu/regmeet/mar23/f8attach6.pdf",
+      "file": "local/indoor-sources/TASB-REGENTS-2023.pdf",
+      "bytes": 2652265,
+      "sha256": "9d75034fa17ce301b410f889d332392db16b8c43718fb42524750c7fd4123c84",
+      "acquiredAt": "2026-10-21T23:06:20.504Z",
+      "pages": 10,
+      "reviewStatus": "previously-catalogued-design-source-referenced",
+      "priorReview": "data/indoor/research/new-building-sources.json",
+      "relevantPages": [
+        {"page": 3, "content": "Site plan identifies Building A functions."},
+        {"page": 4, "content": "Level 1 design; caption says levels 2 and 3 similar."},
+        {"page": 5, "content": "Level 4 design; caption says levels 5 and 6 similar."}
+      ],
+      "targetKeysMatched": [],
+      "limitations": [
+        "This is the already acquired March 2023 unnumbered design, not a new source or a current as-built floor plan.",
+        "Similarity captions cannot establish identical floor geometry or the location of W1131 and W1141."
+      ]
+    },
+    {
+      "id": "TASB-TRITON-CENTER",
+      "url": "https://tritoncenter.ucsd.edu/administrative-services-building/index.html",
+      "publisher": "UC San Diego Triton Center",
+      "reviewStatus": "public-page-reviewed",
+      "finding": "Identifies the building programs, including the Commons, Transfer Hub, Global Initiatives and Student First Stop; no numbered target-room plan was recovered.",
+      "relatedExperienceUrl": "https://campus360.org/ucsd-triton-center/triton-center",
+      "limitations": ["The linked 360 experience is not evidence of an exportable room-resolved 3D model."],
+      "targetKeysMatched": []
+    },
+    {
+      "id": "TASB-STUDY-ABROAD",
+      "url": "https://studyabroad.ucsd.edu/about/contact-us.html",
+      "publisher": "UC San Diego Study Abroad",
+      "reviewStatus": "public-page-reviewed-linked-map-unresolved",
+      "finding": "Confirms the Fall 2026 move to TASB and links a location map; no target classroom numbers or wall plan appear in the reviewed page.",
+      "locationMapUrl": "https://arcg.is/WOeK9",
+      "locationMapFetchResult": "Web fetch cache miss; map contents not inspected and not classified as an indoor plan.",
+      "targetKeysMatched": []
+    },
+    {
+      "id": "TASB-ISEO-MOVE",
+      "urls": [
+        "https://iseo.ucsd.edu/contact/student.html",
+        "https://iseo.ucsd.edu/contact/scholar.html"
+      ],
+      "publisher": "UC San Diego International Services and Engagement Office",
+      "reviewStatus": "public-pages-reviewed",
+      "finding": "Current relocation information describes the East wing and its Myers/Gilman entrance; it does not identify the two West-prefixed classroom keys.",
+      "targetKeysMatched": []
+    },
+    {
+      "id": "TASB-UNIVERSITY-CENTERS",
+      "url": "https://universitycenters.ucsd.edu/events-and-reservations/policies-and-forms.html",
+      "publisher": "UC San Diego University Centers",
+      "reviewStatus": "public-page-reviewed",
+      "finding": "The public page lists TASB reservation guidelines as forthcoming. No target room guide or numbered floor plan was recovered from the reviewed reservations pages.",
+      "targetKeysMatched": []
+    },
+    {
+      "id": "TASB-ADVANCEMENT-2025",
+      "url": "https://advancement.ucsd.edu/_files/Triton-Admin-Services-Building-Naming-Opportunities.pdf",
+      "publisher": "UC San Diego Advancement",
+      "pages": 2,
+      "printedRevision": "2025-10-22",
+      "reviewStatus": "cached-text-reviewed-current-download-failed",
+      "finding": "The web tool exposed cached PDF text describing building programs and naming opportunities, including learning rooms, without target room labels. The root agent's direct public browser GET subsequently returned HTTP 404; no PDF file was acquired.",
+      "acquisitionStatus": "failed",
+      "httpStatus": 404,
+      "file": null,
+      "visualFetchResult": "Both web PDF screenshot requests returned cache miss; direct acquisition returned HTTP 404.",
+      "targetKeysMatched": [],
+      "limitations": ["Cached search content does not establish current availability. Without visual inspection, embedded images are not claimed to be absent or to supply usable geometry."]
+    },
+    {
+      "id": "TASB-2026-CONSTRUCTION-NOTICE",
+      "url": "https://ucsdcampusnotices.atlassian.net/wiki/spaces/CN/pages/255852553/CONSTRUCTION%2BALERT%2BBreezeway%2Bat%2Bthe%2BTriton%2BAdministrative%2BServices%2BBuilding%2Band%2BSurrounding%2BAreas%2B-%2B09-24-2026",
+      "publisher": "UC San Diego Campus Notices",
+      "published": "2026-09-24",
+      "reviewStatus": "public-page-shell-only",
+      "finding": "The public response exposes the notice title and an embedded-content placeholder, without a readable room plan. No authentication was attempted.",
+      "targetKeysMatched": []
+    }
+  ],
+  "runtimeDecision": {
+    "addedRoomGeometry": 0,
+    "runtimeModified": false,
+    "unplacedTargetKeys": ["W1131", "W1141"],
+    "categoryAtReview": "no-layout",
+    "officialFloorAssigned": null,
+    "reason": "The reviewed sources establish current building functions and West-wing context but do not identify either target room boundary. A numbered current West first-floor plan is the best next source to inspect; the floor remains a search hypothesis for these exact keys until room-specific evidence is acquired.",
+    "neededEvidence": [
+      "A current numbered floor plan explicitly showing W1131 and W1141, with readable room boundaries.",
+      "A public or authorized room record that directly establishes each target key's building, floor and actual FIS identifier.",
+      "A dimension, scale bar or independent verified room area before assigning metric scale to a recovered plan."
+    ]
+  }
+}

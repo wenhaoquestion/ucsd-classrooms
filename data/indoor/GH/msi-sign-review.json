@@ -1,0 +1,486 @@
+{
+  "schemaVersion": 1,
+  "building": "GH",
+  "reviewedAt": "2026-10-22T02:26:24.455108+00:00",
+  "sourcePage": "https://motivational.com/project/ucsd-galbraith-hall/",
+  "discoveredFrom": "https://motivational.com/portfolio/",
+  "publisher": "Motivational Systems Inc., original signage contractor",
+  "retrievalMethod": "Root agent opened the public project page in a normal browser and downloaded the 30 image URLs declared in its DOM. This reviewer did not operate the shared browser.",
+  "acquisitionInterval": {
+    "from": "2026-10-22T02:24:28.512Z",
+    "to": "2026-10-22T02:24:32.230Z"
+  },
+  "captureDate": null,
+  "dateLimitation": "The upload path includes 2018/10, but individual capture dates and present renovation status are not established.",
+  "images": [
+    {
+      "id": "GH-MSI-DSCN1567",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1567.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1567.jpg",
+      "bytes": 147978,
+      "sha256": "8e1ff937e7f65612b594482be1ef93f672c1e1d5c1e99126ff4c7ed09fe32f34",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1569",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1569.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1569.jpg",
+      "bytes": 284715,
+      "sha256": "0aa2dc8e8848e0631bc5d6433b97f3ec8b99fe7616c80dbafda20ad8eb354493",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1571",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1571.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1571.jpg",
+      "bytes": 175912,
+      "sha256": "71b7b076bc55294b2f7bdc339861496a4997320716b43642e8ff38ec6283c9e2",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1572",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1572.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1572.jpg",
+      "bytes": 323749,
+      "sha256": "f5e88f0a43411c1fb235c077b15fb4d088886d4f21fb63e1a9e2854817478161",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1573",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1573.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1573.jpg",
+      "bytes": 355283,
+      "sha256": "9913f95fcfc9e2b1a72625f98b6f3b0b9fb35cefb537476de0899f37caec40cc",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1576",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1576.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1576.jpg",
+      "bytes": 194621,
+      "sha256": "429c7757d6d8d7671b0dd370c30c02b1014702a100c0b0db5342cfe173e6523c",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1578",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1578.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1578.jpg",
+      "bytes": 188282,
+      "sha256": "a5e346c58370db49dead9f37e43c73c3a826a27f59685d12bad12068892449ea",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1580",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1580.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1580.jpg",
+      "bytes": 169266,
+      "sha256": "fac07bc5a2925e47b9a23f3439b9dc18b759998c8da30eb33e37ed17a4ea8958",
+      "imageSizePx": [
+        1125,
+        1500
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1581",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1581.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1581.jpg",
+      "bytes": 170168,
+      "sha256": "e3060cd143fa8daeec365dc32c3ac16517bbdf9cfccb5832007b430472541439",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1582",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1582.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1582.jpg",
+      "bytes": 186875,
+      "sha256": "3c9f6b1fc434f6938a910f95bb3492b7c566e646281f7a832f31cbeb75c61f2f",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1584",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1584.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1584.jpg",
+      "bytes": 199206,
+      "sha256": "99d484c3d6491cf962585307592b68bb9236226aec2719e83f07b352db1c5404",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1587",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1587.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1587.jpg",
+      "bytes": 165746,
+      "sha256": "1f670a5b8bd0eb9938542b3ba79ffdf7e2adec67a5fcd308458c27116d531fba",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1588",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1588.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1588.jpg",
+      "bytes": 165228,
+      "sha256": "9da9d4a15d32c18f19c993c7d6281d31ed011f79fd2c1601b0cd28263b1ca2fa",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1589",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1589.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1589.jpg",
+      "bytes": 151518,
+      "sha256": "0bbdfdbfb1fa2b138e8ef372af813f4572a8fecc10e56feb878e81371fed124b",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1590",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1590.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1590.jpg",
+      "bytes": 126106,
+      "sha256": "5ba3cba45cad4b5d03c121ead9e93d2ce14bf2fb912ecaccb88a4c028716387f",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1591",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1591.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1591.jpg",
+      "bytes": 206956,
+      "sha256": "59cd0bcbe94bbbd6fdbad3170aca640d232a80028e5d006770560da265d8ef13",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1592",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1592.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1592.jpg",
+      "bytes": 179399,
+      "sha256": "17fcb0cef5d8d3b6c2c825e4698b0ffce10ca12acd4ef827d12f16bfd508ea08",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1593",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1593.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1593.jpg",
+      "bytes": 202244,
+      "sha256": "76431f57562fdb415d9ea31318ad4ed572264ae45ae49fdf7dc57eca72ddde28",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1594",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1594.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1594.jpg",
+      "bytes": 242613,
+      "sha256": "40819a6d54a70615e8ca89346a24b51db45f9651d8185c80ebecb0d097f02500",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1595",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1595.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1595.jpg",
+      "bytes": 252110,
+      "sha256": "6b50a2682c55117de45d1d31908a172aa5f6290b3d07dcd80ce259c669f08ef5",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1597",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1597.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1597.jpg",
+      "bytes": 215608,
+      "sha256": "3815290512d61d8a92f532b533e709a5f6efea3f59f5209555a578fb0f489d9b",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1600",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1600.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1600.jpg",
+      "bytes": 180685,
+      "sha256": "1db6207ff1763f07ce46241e7ca43bb08e9e59263deaf06dd766debe724cdeac",
+      "imageSizePx": [
+        1125,
+        1500
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1603",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1603.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1603.jpg",
+      "bytes": 218890,
+      "sha256": "d7929e83277386138f10551d553d9146daa6d5f55a4a77ce14414ffa825b094c",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1605",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1605.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1605.jpg",
+      "bytes": 150692,
+      "sha256": "33c30a673730966b70a9426f864dd1515026e5f9c38b36604dd0118ac9318f8e",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1608",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1608.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1608.jpg",
+      "bytes": 131416,
+      "sha256": "823d501343b6ad459406206095b872f2cf02168dd0b62d6f64c5a2ca48ef263d",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1612",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1612.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1612.jpg",
+      "bytes": 135787,
+      "sha256": "6b110bef11e64aed88a7afaa4f85ec239868fe22a5a963448a30b2a14a4892ee",
+      "imageSizePx": [
+        1125,
+        1500
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1616",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1616.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1616.jpg",
+      "bytes": 167580,
+      "sha256": "e234d948225da7f31e4c560124a84e5bd10accdeba8d22db1a1ad80c84b5956e",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1618",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1618.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1618.jpg",
+      "bytes": 181863,
+      "sha256": "79bc81d83f4bcb879fd25cb28e29e34c3313a1668a50f1e26babf8faefe90ca3",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1619",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1619.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1619.jpg",
+      "bytes": 171656,
+      "sha256": "2e9c993112430ebfe01ac3932effef86113fa4a945eff26dd3427c9109fccecd",
+      "imageSizePx": [
+        1125,
+        1500
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    },
+    {
+      "id": "GH-MSI-DSCN1620",
+      "localFile": "local/indoor-sources/GH-MSI-DSCN1620.jpg",
+      "url": "https://motivational.com/wp-content/uploads/2018/10/DSCN1620.jpg",
+      "bytes": 146228,
+      "sha256": "08142d69a70c89eb6623614c1bff37c93fa25df7e41ae09a3b5ead4bd0f31cf8",
+      "imageSizePx": [
+        1500,
+        1125
+      ],
+      "artifactType": "installed-sign-or-interior-photograph",
+      "geometryImported": false
+    }
+  ],
+  "visualReview": {
+    "scope": "All 30 downloaded images reviewed on three contact sheets; DSCN1591 and DSCN1600 inspected at native size.",
+    "contactSheets": [
+      "local/indoor-sources/GH-review/MSI-contact-1.jpg",
+      "local/indoor-sources/GH-review/MSI-contact-2.jpg",
+      "local/indoor-sources/GH-review/MSI-contact-3.jpg"
+    ],
+    "nativeCropForReading": "local/indoor-sources/GH-review/MSI-1591-evac-reading.png",
+    "cropMethod": "Original pixels cropped and enlarged with nearest-neighbor interpolation for inspection only; no generated detail."
+  },
+  "findings": [
+    {
+      "image": "GH-MSI-DSCN1591",
+      "kind": "installed-emergency-plan-photograph",
+      "floor": "L2",
+      "finding": "Photograph visibly places the evacuation sign beneath the Level 2 marker. The complete printed sheet occupies about 230 by 180 original pixels; its actual floor drawing is smaller. Target room numbers and perimeter details cannot be reliably resolved.",
+      "higherResolutionCheck": "Root checked DOM src, srcset and lightbox data-mfp-src. The retained 1500 px wide JPG is the largest declared source; no higher-resolution link was exposed.",
+      "usableRoomGeometry": false
+    },
+    {
+      "image": "GH-MSI-DSCN1600",
+      "kind": "direct-physical-floor-directory",
+      "explicitFloorListings": {
+        "L2": [
+          "242",
+          "247",
+          "253",
+          "254"
+        ],
+        "L3": [
+          "242",
+          "320",
+          "321"
+        ]
+      },
+      "finding": "Physical directory lists 242 on both Levels 2 and 3; 247 is Acting/Directing Studio and 253/254 are Conference Rooms on Level 2. This independently corroborates the auditorium floor span and the existing unplaced L2 assignments.",
+      "usableRoomGeometry": false
+    },
+    {
+      "images": [
+        "GH-MSI-DSCN1581",
+        "GH-MSI-DSCN1593",
+        "GH-MSI-DSCN1605"
+      ],
+      "kind": "room-label-and-direction-signs",
+      "finding": "Photographs corroborate 247 as Acting/Directing Studio, the conference-room direction to 254, and 321 as Design Collaborative Studio. They do not establish complete room perimeters.",
+      "usableRoomGeometry": false
+    },
+    {
+      "sources": [
+        "GH-CLICS-L2-2012.jpg",
+        "GH-ARCHITECT-2017.jpg"
+      ],
+      "kind": "cross-source-review",
+      "finding": "The 2012 schematic design uniquely names an Acting/Directing Studio, but the 2017 published plan has different nearby partitions and no printed 247 label. The small evacuation photograph cannot resolve this difference. No final room outline is assigned from the schematic proposal."
+    }
+  ],
+  "decision": {
+    "addedGeometry": 0,
+    "runtimeModified": false,
+    "preservedUnplacedKeys": [
+      "15",
+      "18A",
+      "23",
+      "102",
+      "103",
+      "111",
+      "144",
+      "145",
+      "155",
+      "157",
+      "170",
+      "174",
+      "247",
+      "253",
+      "254"
+    ],
+    "reason": "The new source provides explicit physical floor listings and an actual evacuation-plan photograph, but no readable numbered perimeter suitable for the missing classrooms. Existing geometry is preserved."
+  }
+}

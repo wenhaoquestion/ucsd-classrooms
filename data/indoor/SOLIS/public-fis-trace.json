@@ -1,0 +1,396 @@
+{
+  "schemaVersion": 1,
+  "building": "SOLIS",
+  "baseLayout": "static/indoor/facilities/SOLIS.json",
+  "outputLayout": "static/indoor/SOLIS-combined.json",
+  "source": {
+    "id": "SOLIS-FIS-2024",
+    "localPath": "local/indoor-sources/SOLIS-L1-FIS.png",
+    "sha256": "9858a7264b0dff02607fc372f0571e1036ac55bebf7f9b113256c7cd1c5cd1c7",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=460&fcode=1&zoom=1",
+    "title": "UCSD Facilities Information System - Solis Hall - First Floor - Master Plan",
+    "accessed": "2026-10-22",
+    "imageSize": [
+      4830,
+      3623
+    ],
+    "referenceSize": [
+      2415,
+      1812
+    ],
+    "referenceCoordinates": "Pixel coordinates on a deterministic 2415x1812 resize of the full source PNG; top left origin. Native source coordinates are x*2 and y*(3623/1812).",
+    "printedDate": "2024-09-17",
+    "caan": "6613",
+    "sheet": "A-1, 1 of 2",
+    "floor": "L1",
+    "printedScale": "1/4 inch = 1 foot",
+    "warning": "FIS image states the viewer plan may be inaccurate and that revised DWG / Tririga plans may exist."
+  },
+  "rooms": [
+    {
+      "label": "104",
+      "scheduleKey": "104",
+      "listedAreaSqft": 1533,
+      "outer": [
+        [
+          1204,
+          231
+        ],
+        [
+          1739,
+          267
+        ],
+        [
+          1775,
+          387
+        ],
+        [
+          1775,
+          531
+        ],
+        [
+          1741,
+          649
+        ],
+        [
+          1200,
+          677
+        ],
+        [
+          1158,
+          635
+        ],
+        [
+          1217,
+          576
+        ],
+        [
+          1249,
+          576
+        ],
+        [
+          1249,
+          325
+        ],
+        [
+          1215,
+          292
+        ],
+        [
+          1158,
+          266
+        ]
+      ],
+      "labelPoint": [
+        1710,
+        466
+      ]
+    },
+    {
+      "label": "105",
+      "scheduleKey": "105",
+      "listedAreaSqft": 700,
+      "outer": [
+        [
+          1788,
+          428
+        ],
+        [
+          2028,
+          428
+        ],
+        [
+          2028,
+          848
+        ],
+        [
+          1788,
+          848
+        ]
+      ],
+      "labelPoint": [
+        1906,
+        635
+      ]
+    },
+    {
+      "label": "107",
+      "scheduleKey": "107",
+      "listedAreaSqft": 3173,
+      "outer": [
+        [
+          993,
+          669
+        ],
+        [
+          1626,
+          777
+        ],
+        [
+          1678,
+          951
+        ],
+        [
+          1678,
+          1144
+        ],
+        [
+          1627,
+          1316
+        ],
+        [
+          1004,
+          1426
+        ],
+        [
+          913,
+          1334
+        ],
+        [
+          913,
+          1198
+        ],
+        [
+          940,
+          1198
+        ],
+        [
+          976,
+          1178
+        ],
+        [
+          976,
+          901
+        ],
+        [
+          956,
+          890
+        ],
+        [
+          909,
+          890
+        ],
+        [
+          909,
+          736
+        ]
+      ],
+      "labelPoint": [
+        1542,
+        1056
+      ]
+    },
+    {
+      "label": "109",
+      "scheduleKey": "109",
+      "listedAreaSqft": 549,
+      "outer": [
+        [
+          400,
+          1279
+        ],
+        [
+          730,
+          1279
+        ],
+        [
+          730,
+          1490
+        ],
+        [
+          701,
+          1520
+        ],
+        [
+          400,
+          1520
+        ]
+      ],
+      "labelPoint": [
+        560,
+        1400
+      ]
+    },
+    {
+      "label": "110",
+      "scheduleKey": "110",
+      "listedAreaSqft": 548,
+      "outer": [
+        [
+          400,
+          1035
+        ],
+        [
+          730,
+          1035
+        ],
+        [
+          730,
+          1274
+        ],
+        [
+          400,
+          1274
+        ]
+      ],
+      "labelPoint": [
+        560,
+        1161
+      ]
+    },
+    {
+      "label": "111",
+      "scheduleKey": "111",
+      "listedAreaSqft": 555,
+      "outer": [
+        [
+          400,
+          788
+        ],
+        [
+          730,
+          788
+        ],
+        [
+          730,
+          1030
+        ],
+        [
+          400,
+          1030
+        ]
+      ],
+      "labelPoint": [
+        560,
+        919
+      ]
+    }
+  ],
+  "registration": {
+    "method": "north-up uniform scale from 105 area, translation to inherited approximate campus footprint",
+    "scaleControlRoom": "105",
+    "controls": [
+      {
+        "source": [
+          1787,
+          309
+        ],
+        "target": [
+          14.9,
+          -14.35
+        ],
+        "description": "NE roof corner of 104"
+      },
+      {
+        "source": [
+          1787,
+          420
+        ],
+        "target": [
+          15,
+          -11.35
+        ],
+        "description": "104/105 roof step"
+      },
+      {
+        "source": [
+          2036,
+          420
+        ],
+        "target": [
+          21.3,
+          -11.35
+        ],
+        "description": "NE corner 105"
+      },
+      {
+        "source": [
+          2036,
+          893
+        ],
+        "target": [
+          21.4,
+          0.75
+        ],
+        "description": "SE corner 105/123"
+      },
+      {
+        "source": [
+          701,
+          1528
+        ],
+        "target": [
+          -12.4,
+          17.05
+        ],
+        "description": "109 southeast corner at diagonal cut"
+      },
+      {
+        "source": [
+          359,
+          1528
+        ],
+        "target": [
+          -21.1,
+          17.05
+        ],
+        "description": "109 southwest roof corner"
+      }
+    ],
+    "holdouts": [
+      {
+        "source": [
+          1974,
+          1016
+        ],
+        "target": [
+          19.8,
+          3.75
+        ],
+        "description": "SE roofline corner east of entrance steps"
+      },
+      {
+        "source": [
+          1635,
+          1326
+        ],
+        "target": [
+          11.2,
+          11.65
+        ],
+        "description": "SE outer corner 107 at diagonal side"
+      }
+    ],
+    "maxControlResidualMeters": 0.4,
+    "maxHoldoutResidualMeters": 0.4
+  },
+  "independentAreaCheck": {
+    "label": "123",
+    "outer": [
+      [
+        1904,
+        853
+      ],
+      [
+        2028,
+        853
+      ],
+      [
+        2028,
+        892
+      ],
+      [
+        1904,
+        892
+      ]
+    ],
+    "printedAreaSqft": 34
+  },
+  "limitations": [
+    "These are traced room perimeters, not survey geometry; door openings are closed for visualization.",
+    "Interior furniture and social-distancing circles are excluded.",
+    "104/107 clipped mechanical corners and projecting booths are retained at the raster precision.",
+    "Source 2024 floor plan carries the publisher warning that newer CAD / Tririga information may exist.",
+    "Campus translation follows six explicit exterior roof correspondences; retained campus map placement and floor height remain approximate."
+  ]
+}

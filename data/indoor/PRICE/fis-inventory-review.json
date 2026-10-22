@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "building": "PRICE",
+  "sourceUrl": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=430&fcode=1&zoom=1",
+  "accessed": "2026-10-22T01:37:11.819Z",
+  "rasterFile": "local/indoor-sources/PRICE-L1-FIS.png",
+  "rasterSha256": "7c28828735741fcc295ae6baec8e93272658e93cf8928b30de9241be7bd881d6",
+  "rasterSize": [
+    289,
+    217
+  ],
+  "htmlSha256": "aa1157743598a41dd1f2161bc010ead940369046c89fc047415c5ae077dd67cf",
+  "publicPolygons": {},
+  "sourcePolygonsLiteral": "{\"polys\": {}}",
+  "targetLabelPresent": false,
+  "targetCheckedLabels": [
+    "1.402",
+    "1402"
+  ],
+  "finding": "The public Level 1 embed exposes a 289 by 217 preview and an empty vector dictionary. Room 1.402 is absent from its listed inventory entries, so no geometry can be recovered from this response. No further raster URLs were guessed.",
+  "oldAreaCrosscheck": {
+    "file": "local/indoor-sources/PRICE-L2-FIS.html",
+    "sha256": "7166ae26c89675f9d14158255f630a05628cd439261a86e1514bc0d4fa4cf7c0",
+    "roomId": "13512",
+    "actualListedRoom": "2106",
+    "areaSqft": 3250,
+    "evidenceHtml": "<td onClick=\"remoteToggleHighlight('Room', '13512:#000000');\" class=\"layer\" style=\"color: green;\" >2106 <span class=fn5 style=\"color: green;\" >(3250 sqft)</span></td>",
+    "conclusion": "The existing THTRE area3250 numerically matches room2106; no explicit authoritative 2106-to-Theater alias was established. It must not be used to scale the official1.402 wayfinding outline.",
+    "hashVerification": "Hash recomputed from the preserved file bytes after rechecking the exact room13512 /2106 /3250 sqft HTML row."
+  },
+  "decision": "Use the current University Centers directory and room guide for floor identity only; leave THTRE without a room polygon."
+}

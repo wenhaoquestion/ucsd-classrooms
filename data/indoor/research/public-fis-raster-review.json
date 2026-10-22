@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-22T01:40:41.115779+00:00",
+  "catalog": "data/indoor/research/public-fis-raster-sources.json",
+  "acquiredRastersChecked": 20,
+  "allRecordedMetadataMatched": true,
+  "results": [
+    {
+      "id": "CENTR-L2-FIS",
+      "file": "local/indoor-sources/CENTR-L2-FIS.png",
+      "sha256": "20c8cfa8c4189fbd2073d0a11cad112451a82d9b7bd1a963a913c7d7af4e5f80",
+      "bytes": 775945,
+      "nativeImageSize": [
+        5761,
+        4321
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "COA-B-FIS",
+      "file": "local/indoor-sources/COA-B-FIS.png",
+      "sha256": "bdb2cac73eb16433d9ef31c47c6c820772090b295895bba0ae2cedbd259f3753",
+      "bytes": 747633,
+      "nativeImageSize": [
+        4609,
+        3457
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "COA-L1-FIS",
+      "file": "local/indoor-sources/COA-L1-FIS.png",
+      "sha256": "40c025d9d8271a0e4905d76f3ae277bc803323c9db654c83baf83c5da2d3da19",
+      "bytes": 815511,
+      "nativeImageSize": [
+        4609,
+        3457
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "FAH-L1-FIS",
+      "file": "local/indoor-sources/FAH-L1-FIS.png",
+      "sha256": "62195b6738eb59d597494655ec284b4687e88da9952fd2b9cbfcc083ed5fb0b3",
+      "bytes": 604169,
+      "nativeImageSize": [
+        5761,
+        4321
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "GH-L3-FIS",
+      "file": "local/indoor-sources/GH-L3-FIS.png",
+      "sha256": "cd4d790bff8830d96871a264c8a1c5ea30771e8ffdde6dae8289672fa0b29d9e",
+      "bytes": 592363,
+      "nativeImageSize": [
+        4363,
+        3273
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "HSS-L1-FIS",
+      "file": "local/indoor-sources/HSS-L1-FIS.png",
+      "sha256": "ebe3e5ed95328d61be00982490ad08d280b4d660959836cb140bcdf3c0238971",
+      "bytes": 225378,
+      "nativeImageSize": [
+        2593,
+        1945
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "HSS-L2-FIS",
+      "file": "local/indoor-sources/HSS-L2-FIS.png",
+      "sha256": "c970a3a59cafbf7af845be063496a853a3cc15476b62fdf3e44c47ea5d09b60d",
+      "bytes": 555027,
+      "nativeImageSize": [
+        5185,
+        3889
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "MALK-B-FIS",
+      "file": "local/indoor-sources/MALK-B-FIS.png",
+      "sha256": "7840ed21be17ee2fcf0db108bb199a22b4af2e11a998e87637b34103108db4f7",
+      "bytes": 898948,
+      "nativeImageSize": [
+        5760,
+        4320
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "MANDE-B1-FIS",
+      "file": "local/indoor-sources/MANDE-B1-FIS.png",
+      "sha256": "2d75a4c674a3f395470f3ed8c646ab5d06627192de2e94a9c383c87472f09b09",
+      "bytes": 671865,
+      "nativeImageSize": [
+        7976,
+        5982
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "MANDE-B2-FIS",
+      "file": "local/indoor-sources/MANDE-B2-FIS.png",
+      "sha256": "1d506b203acf31435a4edd90be1f321727d1ccaa2e629c052643fbcfdf366552",
+      "bytes": 400631,
+      "nativeImageSize": [
+        5760,
+        4320
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "MANDE-L1-FIS",
+      "file": "local/indoor-sources/MANDE-L1-FIS.png",
+      "sha256": "230307a44919309eddd41b5bb0b5baa2346011cff3f21d7c89339dde05abe9bb",
+      "bytes": 583290,
+      "nativeImageSize": [
+        7841,
+        5881
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "MCGIL-L2-FIS",
+      "file": "local/indoor-sources/MCGIL-L2-FIS.png",
+      "sha256": "8dc6e066bdf8991b54dc3cd031e88863adbf5e505844e06abd53a198cf17569a",
+      "bytes": 599772,
+      "nativeImageSize": [
+        7095,
+        5321
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "MOS-L1-FIS",
+      "file": "local/indoor-sources/MOS-L1-FIS.png",
+      "sha256": "a5e4a7dd99591f185351a6ab7c1d6146612801fbbda6a46e6402fb5f5aa17928",
+      "bytes": 245194,
+      "nativeImageSize": [
+        2305,
+        1729
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "MOS-L2-FIS",
+      "file": "local/indoor-sources/MOS-L2-FIS.png",
+      "sha256": "0800da29684d184fae4a7241f2954e80d7bdd7e4620481c5217d1af08acd4be2",
+      "bytes": 196996,
+      "nativeImageSize": [
+        2305,
+        1729
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "PCYNH-L2-FIS",
+      "file": "local/indoor-sources/PCYNH-L2-FIS.png",
+      "sha256": "70821acfabe2573ae536c3ea0d1b18927c772607952eec8c147fd654d67c7d3d",
+      "bytes": 8388,
+      "nativeImageSize": [
+        260,
+        195
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "SOLIS-L1-FIS",
+      "file": "local/indoor-sources/SOLIS-L1-FIS.png",
+      "sha256": "9858a7264b0dff02607fc372f0571e1036ac55bebf7f9b113256c7cd1c5cd1c7",
+      "bytes": 606037,
+      "nativeImageSize": [
+        4830,
+        3623
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "SSB-L1-FIS",
+      "file": "local/indoor-sources/SSB-L1-FIS.png",
+      "sha256": "d653981d73d3049ae3f3803cb98ec5c903a0535efff5564ce3ef700033943d3f",
+      "bytes": 470243,
+      "nativeImageSize": [
+        4732,
+        3549
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "YORK-L3-FIS",
+      "file": "local/indoor-sources/YORK-L3-FIS.png",
+      "sha256": "905109248a6589728454275a0b5efd09041526006548ed22d904c7c444a7379b",
+      "bytes": 535217,
+      "nativeImageSize": [
+        4609,
+        3457
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "YORK-L4-FIS",
+      "file": "local/indoor-sources/YORK-L4-FIS.png",
+      "sha256": "53b6836ee2840f967751230e0e5efaacf322a15894116cc88f97946744e521b9",
+      "bytes": 476575,
+      "nativeImageSize": [
+        4609,
+        3457
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    },
+    {
+      "id": "PRICE-L1-FIS",
+      "file": "local/indoor-sources/PRICE-L1-FIS.png",
+      "sha256": "7c28828735741fcc295ae6baec8e93272658e93cf8928b30de9241be7bd881d6",
+      "bytes": 19640,
+      "nativeImageSize": [
+        289,
+        217
+      ],
+      "pngDecoded": true,
+      "recordedMetadataMatches": true,
+      "htmlSha256Matches": true
+    }
+  ],
+  "geometryReviewSummary": {
+    "partiallyModeledRasterCount": 16,
+    "registrationOnlyRasterCount": 1,
+    "identifierConflictNotIntegratedRasterCount": 1,
+    "insufficientResolutionRasterCount": 2,
+    "entireSourcesModeled": 0,
+    "insufficientResolutionAndNoVectorSubsetCount": 1
+  },
+  "vectorSummary": {
+    "htmlSourcesWithImportedGeometry": 5,
+    "classroomScheduleKeysAdded": 10,
+    "rasterAcquiredFromTheseVectorSources": 0,
+    "note": "MCC L2 contributes only circulation; BRF2 L4 adds classroom 4103 and excludes one self-intersecting source corridor. Source counts describe bounded imports, not complete buildings."
+  },
+  "vectorReviewedAt": "2026-10-22T01:51:37.096356+00:00",
+  "additionalHtmlVerification": {
+    "checkedAt": "2026-10-22T01:52:18.868679+00:00",
+    "sources": [
+      {
+        "id": "BRF2-L4-FIS",
+        "file": "local/indoor-sources/BRF2-L4-FIS.html",
+        "sha256": "932f2b1c15f994f3cde444064206bf6ecff9317f7fa624a7dd5af414fe8b6f41",
+        "bytes": 146436,
+        "recordedMetadataMatches": true
+      },
+      {
+        "id": "BRF2-L5-FIS",
+        "file": "local/indoor-sources/BRF2-L5-FIS.html",
+        "sha256": "3c25393a0afd3174b03ec79c699abda13ead8511f74317b6f0290bdb893c3f00",
+        "bytes": 32932,
+        "recordedMetadataMatches": true
+      }
+    ],
+    "note": "BRF2 L1 acquisition retained only the error title/status, so no HTML hash is asserted. These checks add no acquired raster."
+  }
+}

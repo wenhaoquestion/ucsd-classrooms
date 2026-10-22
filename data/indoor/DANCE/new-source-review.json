@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "building": "DANCE",
+  "reviewedAt": "2026-10-22T02:02:11.801169+00:00",
+  "requestSnapshot": {
+    "file": "data/indoor/research/remaining-floorplan-requests.csv",
+    "sha256": "3b1869bfb19092a6bbd1da29bfb2f68ddc9994f48294a923f0fee1ab37aa3427"
+  },
+  "requestedFloors": [
+    {
+      "floor": "L1",
+      "keys": [
+        "1",
+        "2",
+        "3"
+      ],
+      "activeFA26Keys": [
+        "1",
+        "2",
+        "3"
+      ]
+    }
+  ],
+  "status": "historical-original-reviewed-site-plan-and-sections-only",
+  "searchRounds": [
+    [
+      "Wagner Dance floor plan",
+      "Antoine Predock UCSD dance studio plan"
+    ],
+    [
+      "Predock UCSD Dance Architecture August 1998",
+      "site:predock.com UCSD Dance"
+    ]
+  ],
+  "existingEvidence": [
+    "data/indoor/research/public-fis-raster-sources.json"
+  ],
+  "sources": [
+    {
+      "url": "https://theatre.ucsd.edu/facilities/theaters/wagner-dance.html",
+      "finding": "Official department page attributes the three-studio building to Antoine Predock, opened January 1998. It cites Architecture August 1998. Studio 3 is described as a performance space.",
+      "retrievalStatus": "web-page-read"
+    },
+    {
+      "url": "https://www.usmodernist.org/AJ/A-1998-08.pdf",
+      "finding": "PDF pages52\u201356 (printed62\u201366) contain the completed-building article. PDF54 has a small roof/site plan, PDF56 has east\u2013west and north\u2013south sections; other images are photographs. There is no interior floorplan or room-number-labelled polygon. Photo captions refer to Studio1 and Studio3, but roof edges and section cuts do not define full classroom footprints.",
+      "localFile": "local/indoor-sources/DANCE-ARCHITECTURE-1998-08.pdf",
+      "retrievalStatus": "downloaded-and-visually-reviewed",
+      "sourceAgeCaution": "1998 publication; not a current as-built drawing.",
+      "retrievedAt": "2026-10-22T02:00:55.235Z",
+      "pdfPages": 106,
+      "articleTitle": "Second Position",
+      "articleAuthor": "Aaron Betsky",
+      "articlePrintedPages": [
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "visuallyInspectedPdfPages": [
+        52,
+        53,
+        54,
+        55,
+        56
+      ],
+      "targetKeysMatched": [],
+      "bytes": 59489213,
+      "sha256": "c5ec54b975bc737ec9e123194f21d857ddc49fa124bd7dd202a8b061ac6857ac"
+    },
+    {
+      "url": "https://architecture-history.org/architects/architects/PREDOC/OBJ/1997%2C%20Dance%20Studio%2C%20University%20of%20California%2C%20San%20Diego%20%20La%20Jolla%2C%20California%2C%20USA.html",
+      "finding": "The page gallery exposes seven images, all actually downloaded and visually reviewed. They are interior/exterior photographs; none is a floor plan, dimensioned wall drawing or numbered-room crosswalk. DS05 and DS06 show the same exterior view.",
+      "localFile": null,
+      "retrievalStatus": "seven-gallery-images-downloaded-and-visually-reviewed",
+      "reviewImage": "/tmp/dance-history-contactsheet.jpg",
+      "images": [
+        {
+          "id": "DANCE-HISTORY-DS01",
+          "url": "https://architecture-history.org/architects/architects/PREDOC/PIC/DS01.jpeg",
+          "localFile": "local/indoor-sources/DANCE-HISTORY-DS01.jpeg",
+          "bytes": 608796,
+          "sha256": "0e5b05272261706f59a26f7fd9c43be9e2f7ca35febcef00a097f46167beeaa7",
+          "imageSizePx": [
+            1045,
+            650
+          ],
+          "acquiredAtApproximate": "2026-10-22T02:03:27Z",
+          "acquiredAtPrecision": "approximate; provided by downloading root agent",
+          "artifactType": "project-photograph",
+          "geometryImported": false
+        },
+        {
+          "id": "DANCE-HISTORY-DS02",
+          "url": "https://architecture-history.org/architects/architects/PREDOC/PIC/DS02.jpeg",
+          "localFile": "local/indoor-sources/DANCE-HISTORY-DS02.jpeg",
+          "bytes": 211052,
+          "sha256": "ead85425715239a01e1cdb6300dc6be2f599f5fc93c0d51bfa80a7125cdba9c5",
+          "imageSizePx": [
+            576,
+            448
+          ],
+          "acquiredAtApproximate": "2026-10-22T02:03:27Z",
+          "acquiredAtPrecision": "approximate; provided by downloading root agent",
+          "artifactType": "project-photograph",
+          "geometryImported": false
+        },
+        {
+          "id": "DANCE-HISTORY-DS03",
+          "url": "https://architecture-history.org/architects/architects/PREDOC/PIC/DS03.jpeg",
+          "localFile": "local/indoor-sources/DANCE-HISTORY-DS03.jpeg",
+          "bytes": 217242,
+          "sha256": "d8bd5aa1825ac8beb827bbb8f28a6fa92486c59baff328d7a142088baa4bb590",
+          "imageSizePx": [
+            576,
+            450
+          ],
+          "acquiredAtApproximate": "2026-10-22T02:03:27Z",
+          "acquiredAtPrecision": "approximate; provided by downloading root agent",
+          "artifactType": "project-photograph",
+          "geometryImported": false
+        },
+        {
+          "id": "DANCE-HISTORY-DS04",
+          "url": "https://architecture-history.org/architects/architects/PREDOC/PIC/DS04.jpeg",
+          "localFile": "local/indoor-sources/DANCE-HISTORY-DS04.jpeg",
+          "bytes": 258747,
+          "sha256": "a4b631d389e874e8d04c84bf61c1b9592664d1a074ef7ebf82e0a39c7f8a31ac",
+          "imageSizePx": [
+            576,
+            449
+          ],
+          "acquiredAtApproximate": "2026-10-22T02:03:27Z",
+          "acquiredAtPrecision": "approximate; provided by downloading root agent",
+          "artifactType": "project-photograph",
+          "geometryImported": false
+        },
+        {
+          "id": "DANCE-HISTORY-DS05",
+          "url": "https://architecture-history.org/architects/architects/PREDOC/PIC/DS05.jpeg",
+          "localFile": "local/indoor-sources/DANCE-HISTORY-DS05.jpeg",
+          "bytes": 335929,
+          "sha256": "1e7c4d159717c14fa9f67fe5444df1f84a925f6f842ffd28cce1f41f7b2204bc",
+          "imageSizePx": [
+            576,
+            432
+          ],
+          "acquiredAtApproximate": "2026-10-22T02:03:27Z",
+          "acquiredAtPrecision": "approximate; provided by downloading root agent",
+          "artifactType": "project-photograph",
+          "geometryImported": false
+        },
+        {
+          "id": "DANCE-HISTORY-DS06",
+          "url": "https://architecture-history.org/architects/architects/PREDOC/PIC/DS06.jpeg",
+          "localFile": "local/indoor-sources/DANCE-HISTORY-DS06.jpeg",
+          "bytes": 335929,
+          "sha256": "1e7c4d159717c14fa9f67fe5444df1f84a925f6f842ffd28cce1f41f7b2204bc",
+          "imageSizePx": [
+            576,
+            432
+          ],
+          "acquiredAtApproximate": "2026-10-22T02:03:27Z",
+          "acquiredAtPrecision": "approximate; provided by downloading root agent",
+          "artifactType": "project-photograph",
+          "geometryImported": false
+        },
+        {
+          "id": "DANCE-HISTORY-DS300",
+          "url": "https://architecture-history.org/architects/architects/PREDOC/PIC/DS300.jpeg",
+          "localFile": "local/indoor-sources/DANCE-HISTORY-DS300.jpeg",
+          "bytes": 296383,
+          "sha256": "856a706752695f24e6b1e61b00af9fa2cec70d330f41e8d80fd0b05d499aabbf",
+          "imageSizePx": [
+            576,
+            777
+          ],
+          "acquiredAtApproximate": "2026-10-22T02:03:27Z",
+          "acquiredAtPrecision": "approximate; provided by downloading root agent",
+          "artifactType": "project-photograph",
+          "geometryImported": false
+        }
+      ],
+      "duplicateReview": {
+        "images": [
+          "DANCE-HISTORY-DS05",
+          "DANCE-HISTORY-DS06"
+        ],
+        "sameVisualContent": true,
+        "byteIdentical": true,
+        "reason": "Visual comparison of the downloaded images shows the same exterior facade and landscape composition."
+      }
+    },
+    {
+      "url": "https://predock.com/projects/",
+      "finding": "Current architect project index was opened. No UCSD Dance project or original numbered drawing was exposed among its visible project links.",
+      "retrievalStatus": "web-page-read"
+    }
+  ],
+  "limitations": [
+    "A roof/site plan and two vertical sections establish historical building form, but cannot supply the three interior classroom perimeters.",
+    "Photos and captions mention Studio 1/3 without a plan-based room crosswalk.",
+    "The article is from 1998; present partitions and campus alignment are not independently verified."
+  ],
+  "runtimeDecision": {
+    "runtimeModified": false,
+    "addedGeometry": 0,
+    "preservedUnplaced": true
+  }
+}

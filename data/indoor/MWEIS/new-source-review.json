@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "building": "MWEIS",
+  "reviewedAt": "2026-10-22T02:01:13.961534+00:00",
+  "requestSnapshot": {
+    "file": "data/indoor/research/remaining-floorplan-requests.csv",
+    "sha256": "3b1869bfb19092a6bbd1da29bfb2f68ddc9994f48294a923f0fee1ab37aa3427"
+  },
+  "requestedFloors": [
+    {
+      "floor": "unverified",
+      "keys": [
+        "SCENE",
+        "STUDI"
+      ],
+      "activeFA26Keys": [
+        "SCENE"
+      ]
+    }
+  ],
+  "status": "seismic-source-and-technical-directory-checked-no-scene-studio-plan",
+  "searchRounds": [
+    [
+      "Mandell Weiss scene shop plan",
+      "Mandell Weiss emergency action plan"
+    ],
+    [
+      "Mandell Weiss Seismic plans LPA",
+      "Mandell Weiss Theatre Shops technical drawings"
+    ]
+  ],
+  "existingEvidence": [
+    "data/indoor/MWEIS/technical-source-review.json"
+  ],
+  "sources": [
+    {
+      "url": "https://theatre.ucsd.edu/facilities/theaters/tech-specs/weiss-tech.html",
+      "finding": "Public technical page gives stage dimensions and a loading opening connecting the scene shop. It still does not define SCENE/STUDI walls. Current recheck yielded no public numbered shop plan.",
+      "retrievalStatus": "web-page-read-duplicate-source"
+    },
+    {
+      "url": "https://plandesignbuild.ucsd.edu/_files/planning/MandellWeissTheatre-and-ShopsSeismicImprovements-NOE.pdf",
+      "finding": "Official October2023 environmental notice describes replacement bracing and strengthened beams/columns in Theatre and Shop. No exact classroom identity or room-perimeter drawing was retrieved from the indexed notice.",
+      "retrievalStatus": "search-indexed-pdf-text",
+      "localFile": null
+    },
+    {
+      "url": "https://www.ucop.edu/operating-budget/_files/legreports/2526/uc_capital_expenditures_leg_report.pdf",
+      "finding": "January2026 UCOP report printed page48 says the combined CUP and Mandell Weiss seismic projects are complete. This is renovation-history evidence only, not an interior plan.",
+      "retrievalStatus": "search-indexed-pdf-text",
+      "localFile": null,
+      "printedPage": 48
+    },
+    {
+      "url": "https://drive.google.com/drive/folders/1yr0Wf01BFTXEdRGUPpJzhhB_az7kKtcD",
+      "finding": "Venue Managers Council Technical Specifications directory was listed read-only by teammate public_plan_sources using the Drive connector. It contained only an Epstein Family Amphitheater technical-specification shortcut, no Wagner/Weiss/Galbraith drawing. Separate Safety directory redirected to login and was not pursued.",
+      "discoveryUrl": "https://blink.ucsd.edu/sponsor/vmc/index.html",
+      "retrievalStatus": "teammate-public-directory-listing",
+      "targetKeysMatched": []
+    }
+  ],
+  "limitations": [
+    "The theater stage, scene shop, costume shop and unidentified schedule STUDI must not be treated as interchangeable.",
+    "A third-party bid listing calls a package abandoned while the newer UCOP report says the projects are complete; the official report is retained for project status, neither supplies geometry."
+  ],
+  "runtimeDecision": {
+    "runtimeModified": false,
+    "addedGeometry": 0,
+    "preservedUnplaced": true
+  }
+}

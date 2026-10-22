@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "building": "LEDDN",
+  "baseLayout": "static/indoor/facilities/LEDDN.json",
+  "outputLayout": "static/indoor/LEDDN-combined.json",
+  "source": {
+    "id": "LEDDN-FIS-L2-2024",
+    "title": "UCSD Facilities Information System - HSS - Second Floor - Master Plan",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=257&fcode=2&zoom=1",
+    "accessed": "2026-10-22T01:17:36.207Z",
+    "printedDate": "2024-05-02",
+    "sheet": "A-2",
+    "localPath": "local/indoor-sources/HSS-L2-FIS.png",
+    "sha256": "c970a3a59cafbf7af845be063496a853a3cc15476b62fdf3e44c47ea5d09b60d",
+    "nativeSize": [
+      5185,
+      3889
+    ],
+    "referenceSize": [
+      2592,
+      1944
+    ],
+    "pixelConversion": "Native u = reference u * nativeWidth/referenceWidth; native v = reference v * nativeHeight/referenceHeight.",
+    "warning": "FIS source warns that the viewer plan may be inaccurate and a newer downloadable CAD drawing is available."
+  },
+  "supportingSources": [
+    {
+      "id": "LEDDN-2250-SEATING-2018",
+      "title": "HSS 2250 Ledden Auditorium \u2014 dimensioned seating plan, 216 seats",
+      "url": "https://cseweb.ucsd.edu/classes/fa19/cse232-a/downloads/LeddenSeatmap.pdf",
+      "localPath": "local/indoor-sources/LEDDN-2250-SEATING.pdf",
+      "page": 1,
+      "revision": "2018-04-27",
+      "accessed": "2026-10-22T01:31:00.304Z",
+      "use": "Independent physical dimensions and perimeter cross-check; the numbered seating plan is not a whole-building floor inventory.",
+      "sha256": "4e17350f11e3bb44a932fec43450cc49038e0ee1eec0cd140a3d315b05b56b9a"
+    },
+    {
+      "id": "UCSD-KNOW-YOUR-CAMPUS",
+      "title": "UC San Diego Know Your Campus \u2014 Patrick J. Ledden Auditorium",
+      "url": "https://emeriti.ucsd.edu/resources/Know-Your-Campus.pdf",
+      "localPath": "local/indoor-sources/UCSD-Know-Your-Campus.pdf",
+      "page": 15,
+      "accessed": "2026-10-22T01:28:07.008Z",
+      "use": "Explicit name crosswalk: former HSS room 2250 became Ledden Auditorium; text also identifies its separate building.",
+      "sha256": "4761d9a5bcf9429a45d03815951f6397accccb22a873e253a297ccdde6e5c835"
+    },
+    {
+      "id": "LEDDN-FIS-L1-2025",
+      "title": "UCSD Facilities Information System - HSS - First Floor - Master Plan",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=257&fcode=1&zoom=1",
+      "accessed": "2026-10-22T01:17:28.488Z",
+      "printedDate": "2025-08-21",
+      "sheet": "A-1",
+      "localPath": "local/indoor-sources/HSS-L1-FIS.png",
+      "sha256": "ebe3e5ed95328d61be00982490ad08d280b4d660959836cb140bcdf3c0238971",
+      "nativeSize": [
+        2593,
+        1945
+      ],
+      "referenceSize": [
+        2593,
+        1945
+      ],
+      "pixelConversion": "Native u = reference u * nativeWidth/referenceWidth; native v = reference v * nativeHeight/referenceHeight.",
+      "warning": "FIS source warns that the viewer plan may be inaccurate and a newer downloadable CAD drawing is available.",
+      "use": "First-floor auditorium annotation explicitly says the classroom occupies first and second floors and is counted on second floor."
+    }
+  ],
+  "scaleReference": {
+    "file": "data/indoor/HSS/public-fis-review.json",
+    "floor": "L2",
+    "field": "metersPerReferencePixel",
+    "method": "Use the independently verified L2 raster scale from HSS core registration. Confirm against dimensioned Ledden room drawing; no area-derived or room-specific scaling."
+  },
+  "referenceOrigin": [
+    1200,
+    425
+  ],
+  "classroom": {
+    "label": "2250",
+    "scheduleKey": "AUD",
+    "printedAreaSqft": 1888,
+    "outer": [
+      [
+        1082,
+        279
+      ],
+      [
+        1318,
+        279
+      ],
+      [
+        1318,
+        520
+      ],
+      [
+        1314,
+        522
+      ],
+      [
+        1314,
+        559
+      ],
+      [
+        1301,
+        559
+      ],
+      [
+        1301,
+        573
+      ],
+      [
+        1248,
+        573
+      ],
+      [
+        1248,
+        577
+      ],
+      [
+        1152,
+        577
+      ],
+      [
+        1152,
+        573
+      ],
+      [
+        1098,
+        573
+      ],
+      [
+        1098,
+        559
+      ],
+      [
+        1084,
+        559
+      ],
+      [
+        1084,
+        520
+      ],
+      [
+        1082,
+        520
+      ]
+    ],
+    "labelPoint": [
+      1200,
+      529
+    ],
+    "northBoundaryNote": "The shared classification boundary with lobby 2255 is the straight line at y=279. The curve below it is a seating-row/step edge, not the room perimeter. The north passage remains open; this polygon does not claim a partition wall.",
+    "bottomNotchNote": "The center of the south boundary is obscured by blue CAD hatch in the FIS raster. Its small stepped notch is confirmed by the dimensioned 2018 drawing and visible hatch extent."
+  },
+  "lobby": {
+    "label": "2255",
+    "printedAreaSqft": 232,
+    "outer": [
+      [
+        1106,
+        221
+      ],
+      [
+        1293,
+        221
+      ],
+      [
+        1293,
+        277
+      ],
+      [
+        1230,
+        277
+      ],
+      [
+        1230,
+        244
+      ],
+      [
+        1168,
+        244
+      ],
+      [
+        1168,
+        277
+      ],
+      [
+        1106,
+        277
+      ]
+    ]
+  },
+  "serviceRoom": {
+    "label": "2260",
+    "printedAreaSqft": 50,
+    "outer": [
+      [
+        1170,
+        245
+      ],
+      [
+        1228,
+        245
+      ],
+      [
+        1228,
+        275
+      ],
+      [
+        1170,
+        275
+      ]
+    ],
+    "labelPoint": [
+      1198,
+      257
+    ]
+  },
+  "outline": [
+    [
+      1079,
+      217
+    ],
+    [
+      1321,
+      217
+    ],
+    [
+      1321,
+      579
+    ],
+    [
+      1079,
+      579
+    ]
+  ],
+  "dimensionChecks": [
+    {
+      "name": "Lower room width between inside faces",
+      "referencePixels": 230,
+      "dimensionInches": 463,
+      "dimensionText": "38 feet 7 inches",
+      "maxRelativeDifference": 0.015
+    },
+    {
+      "name": "Full auditorium length including north lobby",
+      "referencePixels": 354,
+      "dimensionInches": 716.5,
+      "dimensionText": "59 feet 8 1/2 inches",
+      "maxRelativeDifference": 0.02
+    },
+    {
+      "name": "Projection room width",
+      "referencePixels": 58,
+      "dimensionInches": 117,
+      "dimensionText": "9 feet 9 inches",
+      "maxRelativeDifference": 0.02
+    },
+    {
+      "name": "Projection room depth",
+      "referencePixels": 30,
+      "dimensionInches": 59.75,
+      "dimensionText": "4 feet 11 3/4 inches",
+      "maxRelativeDifference": 0.02
+    }
+  ],
+  "limitations": [
+    "The auditorium physically occupies L1 and L2, as printed on the first-floor FIS sheet; its complete horizontal projection is shown once on display floor L2. Internal levels, steps, and paths are not modeled.",
+    "The older generated LEDDN layout duplicated all HSS office floors because both share Facilities bkey257. This independent layout retains only the directly identified auditorium, lobby and service room; the original input remains intact for audit.",
+    "No campus registration or surveyed footprint is claimed. The overall rectangular exterior envelope is approximate; numbered room boundaries come from the actual floor plan.",
+    "The seating plan is dated 2018 and FIS plan 2024. Both remain historical sources; the FIS viewer explicitly warns that updated CAD plans may differ.",
+    "No room area is used to set scale. The main-room trace differs by less than 4% from the printed 1888ft\u00b2. The open passage to separately listed lobby2255 is modeled as a room-selection boundary, not an asserted wall."
+  ]
+}

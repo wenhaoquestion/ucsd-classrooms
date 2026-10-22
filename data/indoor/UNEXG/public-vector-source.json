@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "building": "UNEXG",
+  "floor": "L1",
+  "source": {
+    "id": "UNEXG-FIS-PUBLIC-VECTOR",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=507&fcode=1&zoom=1",
+    "htmlFile": "local/indoor-sources/UNEXG-L1-FIS.html",
+    "htmlSha256": "1efebeab79afd308cdf2728fa0df1dfd85239430f0dd6142f61619a6d3639f68",
+    "accessed": "2026-10-21",
+    "nativeImageSize": [
+      3318,
+      2489
+    ],
+    "revision": "Not printed in public metadata; published floor-plan key 5619"
+  },
+  "rooms": [
+    {
+      "facilityRoomId": "2207",
+      "scheduleKey": "123",
+      "label": "123",
+      "listedAreaSqft": 451,
+      "sourcePolygon": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.627188,
+              0.66784
+            ],
+            [
+              0.909908,
+              0.66784
+            ],
+            [
+              0.909908,
+              0.222961
+            ],
+            [
+              0.627188,
+              0.222961
+            ],
+            [
+              0.627188,
+              0.66784
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "facilityRoomId": "2208",
+      "scheduleKey": "124",
+      "label": "124",
+      "listedAreaSqft": 450,
+      "sourcePolygon": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.339041,
+              0.66784
+            ],
+            [
+              0.621159,
+              0.66784
+            ],
+            [
+              0.621159,
+              0.222961
+            ],
+            [
+              0.339041,
+              0.222961
+            ],
+            [
+              0.339041,
+              0.66784
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "facilityRoomId": "2209",
+      "scheduleKey": "125",
+      "label": "125",
+      "listedAreaSqft": 447,
+      "sourcePolygon": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.052854,
+              0.66784
+            ],
+            [
+              0.333013,
+              0.66784
+            ],
+            [
+              0.333013,
+              0.222961
+            ],
+            [
+              0.052854,
+              0.222961
+            ],
+            [
+              0.052854,
+              0.66784
+            ]
+          ]
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Room IDs, labels, areas and polygon coordinates are directly published together in the official embedded viewer HTML. The image tiles require login and were not obtained.",
+    "Coordinates are normalized separately by image width and height; source geometry is preserved under one shared uniform conversion per building.",
+    "The shared metric scale is estimated from listed room areas. Cross-room area agreement checks consistency, not independent surveying accuracy.",
+    "No campus rotation or absolute north direction is established. This supplement uses a local frame without geo.",
+    "Floor patches cover the sourced rooms only. Corridors, exterior walls and door locations are not reconstructed; floor height remains illustrative."
+  ]
+}

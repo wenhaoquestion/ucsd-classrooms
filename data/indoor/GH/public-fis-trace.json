@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 1,
+  "building": "GH",
+  "baseBuilder": "scripts/supplement-gh-242.py",
+  "baseLayout": "static/indoor/GH-combined.json",
+  "outputLayout": "static/indoor/GH-combined.json",
+  "source": {
+    "id": "GH-FIS-L3-2021",
+    "title": "UCSD Facilities Information System - Galbraith Hall - Third Floor - Master Plan",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=250&fcode=3&zoom=1",
+    "accessed": "2026-10-22T01:17:20.891Z",
+    "printedDate": "2021-11-09",
+    "sheet": "A-4, 4 OF 4",
+    "localPath": "local/indoor-sources/GH-L3-FIS.png",
+    "sha256": "cd4d790bff8830d96871a264c8a1c5ea30771e8ffdde6dae8289672fa0b29d9e",
+    "nativeSize": [
+      4363,
+      3273
+    ],
+    "referenceSize": [
+      2182,
+      1636
+    ],
+    "pixelConversion": "Native u = reference u * 4363/2182; native v = reference v * 3273/1636. Reference dimensions include subpixel resize rounding.",
+    "warning": "The source FIS sheet warns that the viewer plan may be inaccurate and an updated CAD drawing is available. This trace does not verify later alterations."
+  },
+  "registration": {
+    "scaleControlRoom": "321",
+    "method": "One common area-calibrated scale, north-up orientation, translation fitted to five identifiable room-242 perimeter points; room 242 is retained unchanged. Approximate within-building alignment only, with no campus geo.",
+    "controls": [
+      {
+        "source": [
+          1089,
+          608
+        ],
+        "target": [
+          2.400731,
+          -9.589768
+        ],
+        "existing242Vertex": 15
+      },
+      {
+        "source": [
+          931,
+          650
+        ],
+        "target": [
+          -5.93645,
+          -7.196445
+        ],
+        "existing242Vertex": 9
+      },
+      {
+        "source": [
+          1248,
+          650
+        ],
+        "target": [
+          10.68531,
+          -7.196445
+        ],
+        "existing242Vertex": 21
+      },
+      {
+        "source": [
+          914,
+          1030
+        ],
+        "target": [
+          -6.199452,
+          11.923839
+        ],
+        "existing242Vertex": 7
+      },
+      {
+        "source": [
+          1264,
+          1030
+        ],
+        "target": [
+          10.948313,
+          11.923839
+        ],
+        "existing242Vertex": 23
+      }
+    ],
+    "holdouts": [
+      {
+        "source": [
+          1031,
+          1037
+        ],
+        "target": [
+          -0.413396,
+          12.265743
+        ],
+        "existing242Vertex": 3
+      },
+      {
+        "source": [
+          1140,
+          1037
+        ],
+        "target": [
+          5.162257,
+          12.265743
+        ],
+        "existing242Vertex": 2
+      },
+      {
+        "source": [
+          971,
+          1079
+        ],
+        "target": [
+          -4.332134,
+          14.606465
+        ],
+        "existing242Vertex": 5
+      },
+      {
+        "source": [
+          1209,
+          1079
+        ],
+        "target": [
+          9.159896,
+          14.606465
+        ],
+        "existing242Vertex": 0
+      }
+    ],
+    "maxControlResidualMeters": 0.4,
+    "maxHoldoutResidualMeters": 0.8
+  },
+  "rooms": [
+    {
+      "scheduleKey": "320",
+      "label": "320",
+      "listedAreaSqft": 1759,
+      "outer": [
+        [
+          598,
+          350
+        ],
+        [
+          778,
+          350
+        ],
+        [
+          778,
+          720
+        ],
+        [
+          786,
+          720
+        ],
+        [
+          786,
+          778
+        ],
+        [
+          778,
+          778
+        ],
+        [
+          778,
+          783
+        ],
+        [
+          737,
+          783
+        ],
+        [
+          737,
+          676
+        ],
+        [
+          600,
+          676
+        ],
+        [
+          600,
+          662
+        ],
+        [
+          590,
+          662
+        ],
+        [
+          590,
+          642
+        ],
+        [
+          593,
+          642
+        ],
+        [
+          593,
+          621
+        ],
+        [
+          598,
+          621
+        ]
+      ],
+      "labelPoint": [
+        690,
+        506
+      ]
+    },
+    {
+      "scheduleKey": "321",
+      "label": "321",
+      "listedAreaSqft": 1077,
+      "outer": [
+        [
+          596,
+          840
+        ],
+        [
+          778,
+          840
+        ],
+        [
+          778,
+          1023
+        ],
+        [
+          786,
+          1023
+        ],
+        [
+          786,
+          1075
+        ],
+        [
+          778,
+          1075
+        ],
+        [
+          778,
+          1084
+        ],
+        [
+          650,
+          1084
+        ],
+        [
+          650,
+          972
+        ],
+        [
+          596,
+          972
+        ]
+      ],
+      "labelPoint": [
+        690,
+        956
+      ]
+    }
+  ],
+  "limitations": [
+    "No campus registration is claimed. All prior floor plates and the full dimensioned 2016 room-242 footprint are retained unchanged.",
+    "The 2021 L3 plan shows upper-level room-242 boundaries plus lower-level projections. They serve only as shared perimeter controls; no partial upper-level polygon replaces the complete auditorium.",
+    "Registration to the independently traced 2016 room 242 has residuals up to 0.72 m at two rear entrance corners. New room placement is approximate.",
+    "321 sets the single image scale; 320 is an independent area check. Neither room is independently resized to match its area.",
+    "Floor heights remain estimated; internal steps, door swing arcs, seats, and circulation are not modeled."
+  ]
+}

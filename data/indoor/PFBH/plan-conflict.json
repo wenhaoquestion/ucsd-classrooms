@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "building": "PFBH",
+  "floor": "B",
+  "status": "blocked-by-conflicting-source-geometry",
+  "source": {
+    "id": "PFBH-EHS-2021",
+    "url": "https://drive.google.com/file/d/1YzNE37aPieBW4tzsEDbtIOsPQhF5in55/view",
+    "localPath": "local/indoor-sources/PFBH-EHS-2021.pdf",
+    "sha256": "8ba2d7710840d11906f1c7a5c9fbe1d90410dbca4e23781dcfbd94e79f3c3612",
+    "page": 2,
+    "printedDate": "2021-07-09",
+    "pageTitle": "POWELL-FOCHT BIOENGINEERING BUILDING - BASEMENT",
+    "pageSizePoints": [
+      612,
+      792
+    ],
+    "accessed": "2026-10-21",
+    "bytes": 881686
+  },
+  "inputHashes": {
+    "data/indoor/PFBH/ehs-basement-trace.json": "0f3ac9d86bc2bd1c6f777a8428e49f83f831fcbc0f1c495c3d408513f76befc8",
+    "static/indoor/facilities/PFBH.json": "40bdffd9bd8735b49facd67bff190fe6ce5346f98b0a697dd84642000e103045"
+  },
+  "rooms": [
+    {
+      "label": "003",
+      "historicalAreaSquarePoints": 3615.64,
+      "currentListedAreaSqft": 858,
+      "runtimePlacementAllowed": false
+    },
+    {
+      "label": "005",
+      "historicalAreaSquarePoints": 1056.48,
+      "currentListedAreaSqft": 1327,
+      "runtimePlacementAllowed": false
+    }
+  ],
+  "comparison": {
+    "historical003To005AreaRatio": 3.422346,
+    "facilitiesListed003To005AreaRatio": 0.646571,
+    "ratioDisagreementFactor": 5.293069,
+    "interpretation": "Relative room areas are incompatible under any common scale or affine registration. Door/wall tracing uncertainty is far smaller than this disagreement."
+  },
+  "runtimeChanges": {
+    "addedRoomPolygons": 0,
+    "recoveredScheduleKeys": [],
+    "remainingUnplacedKeys": [
+      "003",
+      "005"
+    ]
+  },
+  "nextEvidenceNeeded": "A current numbered PFBH basement plan, or an authoritative crosswalk explaining changes to rooms 003 and 005.",
+  "limitations": [
+    "No metric scale or campus registration is assigned to this trace.",
+    "The 2021 drawing makes 003 substantially larger than 005, while the supplied Facilities listing assigns 858 ft2 to 003 and 1327 ft2 to 005. A uniform scale cannot reconcile both rooms.",
+    "The area conflict may reflect changed partitions, renumbering, source age or an error in the existing listing; the available evidence does not establish which.",
+    "Obtain a current basement plan or a Facilities room-ID crosswalk before assigning these historical polygons to current schedule rooms.",
+    "The existing basement outline was copied from Level 1 and is not a verified basement registration reference."
+  ]
+}

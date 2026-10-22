@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-22T01:59:06.143304+00:00",
+  "scope": "Additional public-source search after the prior integration report. Public pages and actually retained images only; no shared browser tabs, account registration, authentication bypass or external messages. No shared manifest/catalog/docs modified.",
+  "searchRounds": [
+    {
+      "round": 1,
+      "focus": "Exact building names, current numbered rooms, departmental emergency/floor-plan pages and official handbooks."
+    },
+    {
+      "round": 2,
+      "focus": "Original architects/designers, physical wayfinding installer photographs, public construction planroom and project bid identities."
+    }
+  ],
+  "runtimeModified": false,
+  "addedRoomGeometry": 0,
+  "exhaustiveness": "These targeted searches do not establish that all public or authorized sources are exhausted.",
+  "building": "TASB",
+  "targetKeys": [
+    "W1131",
+    "W1141"
+  ],
+  "priorEvidence": "data/indoor/TASB/source-review.json",
+  "newSources": [
+    {
+      "url": "https://plandesignbuild.ucsd.edu/_files/projects/5148-Triton-Center-FAQ-D5-09.21.23.pdf",
+      "publisher": "UC San Diego Planning, Design and Construction",
+      "pages": 3,
+      "reviewStatus": "full-extracted-text-reviewed",
+      "finding": "Project5148 FAQ identifies Student Success Building programs and six-story design. It supplies neither W1131/W1141 nor a numbered current floor plan."
+    },
+    {
+      "url": "https://advancement.ucsd.edu/_files/Teaching-Learning-Commons.pdf",
+      "reviewStatus": "search-index-discovery-current-open-404",
+      "finding": "Separate Commons advancement brochure discovered; current request404, no file acquired or embedded-graphic claim made."
+    },
+    {
+      "url": "https://www.ucsdplanroom.com/",
+      "publisher": "UC San Diego Online Planroom",
+      "reviewStatus": "home-and-normal-projects-bidding-link-reviewed",
+      "biddingUrl": "https://www.ucsdplanroom.com/projects/bidding",
+      "observedRedirect": "https://www.ucsdplanroom.com/auth/login",
+      "finding": "Planroom is a separate possible acquisition route with user registration. Bidding list currently requires login; no registration, private project key, or authenticated download attempted."
+    },
+    {
+      "url": "https://tritoncenter.ucsd.edu/administrative-services-building/index.html",
+      "publisher": "UC San Diego",
+      "reviewStatus": "rechecked-building-program-description",
+      "finding": "Current program page still does not publish either classroom key or boundary."
+    }
+  ],
+  "discoveryOnlyLeads": [
+    {
+      "url": "https://projects.constructconnect.com/details/6634262-triton-center-bp10-05-general-works%26find_loc%3Dcalifornia-92093",
+      "finding": "Third-party indexed bid package10-05 identifies a2024McCarthy/UCSD package, but advertises subscription specifications only. Not used as geometry evidence or proof of an obtainable plan."
+    }
+  ],
+  "openNextSteps": [
+    "Ask campus construction-planroom administrator for public or authorized project5148 Student Academic Resources / Student Success / TASB West first-floor plan and exact W1131/W1141 labels.",
+    "Original LMN project imagery remains a possible route, but the attempted public project URL was inaccessible via the web tool; no image content inferred."
+  ],
+  "decision": "Both keys remain no-layout. West first-floor workshop context alone is not an exact room-floor or perimeter crosswalk."
+}

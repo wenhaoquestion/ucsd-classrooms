@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "building": "ASANT",
+  "name": "Asante Meeting Rooms",
+  "reviewed": "2026-10-21",
+  "source": {
+    "id": "ASANT-IHOUSE-LAYOUT",
+    "url": "https://ihouse.ucsd.edu/_images/event-space/asante-layout.jpg",
+    "discoveryUrl": "https://ihouse.ucsd.edu/event-space/asante.html",
+    "localPath": "local/indoor-sources/ASANT-IHOUSE-LAYOUT.jpg",
+    "sha256": "1eefb03546f31cd574cc3677c58066ac8dba8518172455ad45a8e4f3d470325f",
+    "imageSizePx": [700, 546],
+    "revision": "Undated floor plan linked by the official I-House Asante Meeting Rooms page; accessed 2026-10-21."
+  },
+  "faqUrl": "https://ihouse.ucsd.edu/event-space/faq.html",
+  "originPx": [350, 280],
+  "localUnitsPerPixel": 0.1,
+  "outline": [
+    [[25, 100], [463, 39], [574, 303], [674, 469], [454, 476], [453, 521], [27, 526]],
+    [[458, 482], [674, 479], [674, 515], [458, 519]]
+  ],
+  "rooms": [
+    {"key": "123A", "printedLabel": "AH123A", "outer": [[33, 128], [60, 127], [60, 99], [293, 67], [295, 306], [60, 309], [59, 284], [33, 283]], "labelAt": [84, 111], "capacity": 20, "note": "The source depicts a movable partition shared with Room 123D. The polygon represents the separately named room configuration."},
+    {"key": "123B", "printedLabel": "AH123B", "outer": [[302, 65], [459, 44], [568, 299], [302, 305]], "labelAt": [417, 65], "capacity": 32},
+    {"key": "123C", "printedLabel": "AH123C", "outer": [[303, 313], [571, 307], [667, 465], [447, 471], [447, 514], [304, 516]], "labelAt": [349, 487], "capacity": 32},
+    {"key": "123D", "printedLabel": "AH123D", "outer": [[34, 341], [60, 340], [60, 315], [295, 312], [297, 517], [59, 520], [59, 496], [34, 494]], "labelAt": [89, 507], "capacity": 24, "note": "The source depicts a movable partition shared with Room 123A. The polygon represents the separately named room configuration."}
+  ],
+  "features": [
+    {"id": "ASANT-A-entrance", "kind": "entrance", "label": "Room A exterior doors", "at": [214, 74]},
+    {"id": "ASANT-B-entrance", "kind": "entrance", "label": "Room B exterior doors", "at": [348, 55]},
+    {"id": "ASANT-stairs", "kind": "stairs", "label": "Stairs shown on source plan", "at": [555, 499]}
+  ],
+  "identityCorrection": {
+    "previousName": "Asante House",
+    "previousCaan": "7024",
+    "previousCampusName": "Asante W",
+    "correctCaan": "7025",
+    "correctCampusName": "Asante Meeting",
+    "campusLocation": [32.88401748728981, -117.24212409262746],
+    "locationBasis": "Centroid of the public campus-map CAAN 7025 polygon in static/campus/buildings.json, converted using src/lib/indoor/campus.ts. The small polygon is insufficient for indoor georegistration; this is a building map point only.",
+    "preservedSource": "static/indoor/facilities/ASANT.json",
+    "explanation": "The original Facilities layout is Asante W housing, with 15 unscheduled polygons on three floors. Its tiny service-space 123D is unrelated to the meeting-room label. Preserve that original file, but use the independently documented four-room meeting venue for the ASANT schedule code."
+  },
+  "limitations": [
+    "The source image is undated and depicts one meeting-room level. The L1 identifier is retained from the prior schedule inventory; elevations and floor-to-floor height are not supplied by the plan.",
+    "Room boundaries follow visible walls and the movable partition. Wall thickness, small columns, door recesses and stair geometry are simplified; chairs and tables are omitted.",
+    "Relative drawing units are used. The published approximate rental areas and small furniture dimensions are not used to assert an architectural metric scale.",
+    "No reliable north angle or campus registration is established. The corrected campus map point and CAAN identify the venue but do not place this local indoor model on campus.",
+    "The original three-floor Asante W apartment layout remains preserved separately. Its 15 unscheduled shapes and service room 123D are not mixed into this meeting-room coordinate system."
+  ]
+}

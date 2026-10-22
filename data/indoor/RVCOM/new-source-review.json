@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "building": "RVCOM",
+  "reviewedAt": "2026-10-22T02:01:13.961534+00:00",
+  "requestSnapshot": {
+    "file": "data/indoor/research/remaining-floorplan-requests.csv",
+    "sha256": "3b1869bfb19092a6bbd1da29bfb2f68ddc9994f48294a923f0fee1ab37aa3427"
+  },
+  "requestedFloors": [
+    {
+      "floor": "unverified",
+      "keys": [
+        "C",
+        "FORML"
+      ],
+      "activeFA26Keys": [
+        "C",
+        "FORML"
+      ]
+    }
+  ],
+  "status": "official-reservations-verified-no-meeting-room-layout",
+  "searchRounds": [
+    [
+      "Revelle Conference Rooms floor plan",
+      "Revelle Formal Lounge diagram"
+    ],
+    [
+      "site:revelle.ucsd.edu Conference Rooms reservation",
+      "Revelle Neighborhood Room Layouts"
+    ]
+  ],
+  "existingEvidence": [],
+  "sources": [
+    {
+      "url": "https://revelle.ucsd.edu/res-life/reservations.html",
+      "finding": "Official reservation page identifies Conference Room C and Revelle Formal Lounge with capacities36 and39. No floor number or numbered indoor diagram is supplied by the retrieved page.",
+      "retrievalStatus": "web-page-read",
+      "identityKeys": [
+        "C",
+        "FORML"
+      ]
+    },
+    {
+      "url": "https://conference.ucsd.edu/_files/Neighborhood-Room-Layouts-Revelle.pdf",
+      "finding": "One-page brochure mentions conference rooms A/B/C and Formal Lounge in text, but its sample-layout labels are Blake/Argo Residence Hall, Fleet Residence Hall and CDK Apartments. They are residential unit examples, not C or FORML.",
+      "retrievalStatus": "pdf-text-read",
+      "pdfPages": 1,
+      "localFile": null,
+      "targetKeysMatched": []
+    },
+    {
+      "url": "https://revelle.ucsd.edu/student-life/involvement/student-govt/index.html",
+      "finding": "Official council page places Formal Lounge behind Rogers Market. Relative exterior wayfinding does not establish the room perimeter or metric position.",
+      "retrievalStatus": "web-page-read",
+      "identityKeys": [
+        "FORML"
+      ]
+    },
+    {
+      "url": "https://conference.ucsd.edu/venues/choice-venues.html",
+      "finding": "Barrett Room layout belongs to the fourth floor of RRSS Administration, a distinct venue. Its dimensions cannot be substituted for RVCOM C or FORML.",
+      "retrievalStatus": "web-page-read",
+      "targetKeysMatched": []
+    }
+  ],
+  "limitations": [
+    "Room capacity is not a dimension.",
+    "Residential sample suite plans and a different named meeting venue are excluded."
+  ],
+  "runtimeDecision": {
+    "runtimeModified": false,
+    "addedGeometry": 0,
+    "preservedUnplaced": true
+  }
+}

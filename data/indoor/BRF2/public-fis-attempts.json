@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "building": "BRF2",
+  "reviewedAt": "2026-10-22T01:51:37.096356+00:00",
+  "attempts": [
+    {
+      "id": "BRF2-L1-FIS",
+      "building": "BRF2",
+      "floor": "L1",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=903&fcode=1&zoom=1",
+      "title": "UCSD Facilities Information System - Error Message",
+      "status": "viewer-error-no-raster-init",
+      "error": "No public raster init",
+      "catalogedAt": "2026-10-22T01:51:37.096356+00:00",
+      "acquisitionTimestamp": null,
+      "timestampNote": "The failed acquisition record contains no request timestamp. catalogedAt is the source-review update time, not an acquisition time.",
+      "geometryReviewed": false,
+      "vectorSourceAvailable": false,
+      "publicVectorPolygonCount": 0,
+      "htmlEvidence": null,
+      "htmlEvidenceNote": "The acquisition record retained only the Error Message title and lack of init; no raw HTML was supplied or hashed."
+    },
+    {
+      "id": "BRF2-L4-FIS",
+      "building": "BRF2",
+      "floor": "L4",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=903&fcode=4&zoom=1",
+      "title": "UCSD Facilities Information System - Israni BRF - Fourth Floor - Master Plan",
+      "status": "raster-requires-login",
+      "error": "raster-not-image",
+      "catalogedAt": "2026-10-22T01:51:37.096356+00:00",
+      "acquisitionTimestamp": null,
+      "timestampNote": "The failed acquisition record contains no request timestamp. catalogedAt is the source-review update time, not an acquisition time.",
+      "geometryReviewed": false,
+      "vectorSourceAvailable": true,
+      "publicVectorPolygonCount": 127,
+      "zoom": 5,
+      "mime": "text/html",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/BRF2-L4-FIS.html",
+        "sha256": "932f2b1c15f994f3cde444064206bf6ecff9317f7fa624a7dd5af414fe8b6f41",
+        "bytes": 146436
+      }
+    },
+    {
+      "id": "BRF2-L5-FIS",
+      "building": "BRF2",
+      "floor": "L5",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=903&fcode=5&zoom=1",
+      "title": "UCSD Facilities Information System - Israni BRF - Fifth Floor - Master Plan",
+      "status": "raster-requires-login",
+      "error": "raster-not-image",
+      "catalogedAt": "2026-10-22T01:51:37.096356+00:00",
+      "acquisitionTimestamp": null,
+      "timestampNote": "The failed acquisition record contains no request timestamp. catalogedAt is the source-review update time, not an acquisition time.",
+      "geometryReviewed": false,
+      "vectorSourceAvailable": false,
+      "publicVectorPolygonCount": 0,
+      "zoom": 5,
+      "mime": "text/html",
+      "responseTitle": "UCSD Facilities Information System - Login Page",
+      "htmlEvidence": {
+        "file": "local/indoor-sources/BRF2-L5-FIS.html",
+        "sha256": "3c25393a0afd3174b03ec79c699abda13ead8511f74317b6f0290bdb893c3f00",
+        "bytes": 32932
+      }
+    }
+  ],
+  "fifthFloorPublishedInventory": [
+    {
+      "facilityRoomId": "94065",
+      "label": "5243N",
+      "areaSqft": 227.0
+    },
+    {
+      "facilityRoomId": "94066",
+      "label": "5243P",
+      "areaSqft": 225.0
+    },
+    {
+      "facilityRoomId": "94067",
+      "label": "5243Q",
+      "areaSqft": 224.0
+    },
+    {
+      "facilityRoomId": "114158",
+      "label": "5A-G",
+      "areaSqft": 25.0
+    },
+    {
+      "facilityRoomId": "114168",
+      "label": "5A-H",
+      "areaSqft": 25.0
+    },
+    {
+      "facilityRoomId": "114161",
+      "label": "5A-I",
+      "areaSqft": 25.0
+    },
+    {
+      "facilityRoomId": "114169",
+      "label": "5A-J",
+      "areaSqft": 25.0
+    },
+    {
+      "facilityRoomId": "114159",
+      "label": "5A-K",
+      "areaSqft": 28.0
+    },
+    {
+      "facilityRoomId": "114173",
+      "label": "5A-L",
+      "areaSqft": 26.0
+    },
+    {
+      "facilityRoomId": "114166",
+      "label": "5A-M",
+      "areaSqft": 28.0
+    },
+    {
+      "facilityRoomId": "114172",
+      "label": "5A-N",
+      "areaSqft": 26.0
+    },
+    {
+      "facilityRoomId": "114163",
+      "label": "5A-O",
+      "areaSqft": 25.0
+    },
+    {
+      "facilityRoomId": "114170",
+      "label": "5A-P",
+      "areaSqft": 25.0
+    },
+    {
+      "facilityRoomId": "114160",
+      "label": "5A-Q",
+      "areaSqft": 27.0
+    },
+    {
+      "facilityRoomId": "114171",
+      "label": "5A-R",
+      "areaSqft": 27.0
+    },
+    {
+      "facilityRoomId": "114167",
+      "label": "5A-S",
+      "areaSqft": 25.0
+    },
+    {
+      "facilityRoomId": "114165",
+      "label": "(CE)5101-E2",
+      "areaSqft": 102.0
+    },
+    {
+      "facilityRoomId": "114164",
+      "label": "(CE)5A00-E1",
+      "areaSqft": 85.0
+    },
+    {
+      "facilityRoomId": "114162",
+      "label": "(CS)5205-ST2",
+      "areaSqft": 282.0
+    },
+    {
+      "facilityRoomId": "114157",
+      "label": "(CS)5245-ST3",
+      "areaSqft": 204.0
+    },
+    {
+      "facilityRoomId": "98757",
+      "label": "(CU)903-5-0",
+      "areaSqft": 216.0
+    }
+  ],
+  "outerViewerReview": {
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/Default.htm?bkey=903",
+    "status": "login-page",
+    "finding": "Root observed the normal outer viewer return Login Page, so no floor-selector codes were recovered. No alternate-code enumeration or authentication bypass was attempted."
+  },
+  "importEvidence": "data/indoor/BRF2/fis-vector-review.json",
+  "limitations": [
+    "No raw first-floor error HTML was retained by the acquisition tool; only the observed title/status is cataloged.",
+    "Other floor outlines and current room crosswalks are not inferred from the third-floor architect plan or fifth-floor thumbnail."
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "building": "VAUGN",
+  "reviewedAt": "2026-10-22T02:01:13.961534+00:00",
+  "requestSnapshot": {
+    "file": "data/indoor/research/remaining-floorplan-requests.csv",
+    "sha256": "3b1869bfb19092a6bbd1da29bfb2f68ddc9994f48294a923f0fee1ab37aa3427"
+  },
+  "requestedFloors": [
+    {
+      "floor": "L1",
+      "keys": [
+        "100",
+        "147"
+      ],
+      "activeFA26Keys": [
+        "100",
+        "147"
+      ]
+    },
+    {
+      "floor": "L3",
+      "keys": [
+        "300",
+        "328"
+      ],
+      "activeFA26Keys": [
+        "300"
+      ]
+    }
+  ],
+  "status": "new-official-wayfinding-only",
+  "searchRounds": [
+    [
+      "Vaughan Hall floor plan architect",
+      "Vaughan Hall emergency EAP"
+    ],
+    [
+      "Vaughan Hall plan Leidenfrost",
+      "Vaughan Hall marine vertebrate collection visit"
+    ]
+  ],
+  "existingEvidence": [
+    "data/indoor/VAUGN/public-wayfinding-review.json",
+    "data/indoor/research/public-fis-raster-sources.json"
+  ],
+  "sources": [
+    {
+      "url": "https://scripps.ucsd.edu/marine-vertebrate-collection/visit-marine-vertebrate-collection",
+      "finding": "Official visit instructions locate fish collection room 224 on the second floor southeast corner. They describe ground-floor doors next to a lecture hall, but do not give a numbered target-room polygon. No requested room is located by this alone.",
+      "retrievalStatus": "web-page-read",
+      "targetKeysMatched": []
+    },
+    {
+      "url": "https://plandesignbuild.ucsd.edu/_files/capital/2004LRDP.pdf",
+      "finding": "Building inventory identifies the present Vaughan Hall as a 1999 building, distinct from the older small Vaughan Hall in a 2000 demolition application. Inventory is not an interior plan.",
+      "retrievalStatus": "search-indexed-pdf-text",
+      "localFile": null
+    },
+    {
+      "url": "https://scripps.ucsd.edu/education/guide/space-at-scripps",
+      "finding": "Official guide corroborates reservable Vaughan rooms 100,147,300,328,348. This is the same identity source recorded previously, not new geometry.",
+      "retrievalStatus": "web-page-read-duplicate-source"
+    }
+  ],
+  "limitations": [
+    "Do not use unrelated Vaughan Hall in Burbank or the demolished former Scripps Vaughan building.",
+    "New wayfinding is for room224, not one of the requested four classrooms; no campus point or room polygon is inferred."
+  ],
+  "runtimeDecision": {
+    "runtimeModified": false,
+    "addedGeometry": 0,
+    "preservedUnplaced": true
+  }
+}

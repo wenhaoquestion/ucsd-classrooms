@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "building": "MOS",
+  "trace": "data/indoor/MOS/fis-trace-L2.json",
+  "output": "static/indoor/MOS-combined.json",
+  "source": {
+    "id": "MOS-L2-FIS",
+    "localPath": "local/indoor-sources/MOS-L2-FIS.png",
+    "sha256": "0800da29684d184fae4a7241f2954e80d7bdd7e4620481c5217d1af08acd4be2",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001811&fcode=2&zoom=1",
+    "accessed": "2026-10-21",
+    "acquiredAt": "2026-10-22T01:21:28.797Z",
+    "printedDate": "2023-09-01",
+    "title": "UCSD Facilities Information System - NTPLL - Mosaic - Second Floor - Master Plan",
+    "size": [
+      2305,
+      1729
+    ],
+    "htmlPath": "local/indoor-sources/MOS-L2-FIS.html",
+    "htmlSha256": "df6b53b67256047e8829ee636f5ef881e6434a20eef1429c54bed2af908623ae"
+  },
+  "transform": {
+    "formula": "x=a*u-b*sign*v+tx; z=b*u+a*sign*v+tz",
+    "a": 0.051017025148708935,
+    "b": -0.00029042329405307865,
+    "sign": 1,
+    "tx": -52.01495515428865,
+    "tz": -48.13952877175185,
+    "metersPerPixel": 0.051017851784583484
+  },
+  "registrationChecks": {
+    "controls": [
+      {
+        "sourcePoint": [
+          300,
+          393
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 25,
+        "sourceImage": "MOS-L1-FIS",
+        "targetPoint": [
+          -36.55,
+          -28.15
+        ],
+        "transformedPoint": [
+          -36.59571125511311,
+          -28.17696487652516
+        ],
+        "residualMeters": 0.053071870233046076
+      },
+      {
+        "sourcePoint": [
+          705,
+          514
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 1,
+        "sourceImage": "MOS-L1-FIS",
+        "targetPoint": [
+          -15.85,
+          -22.15
+        ],
+        "transformedPoint": [
+          -15.898674851305572,
+          -22.121526267622876
+        ],
+        "residualMeters": 0.05639144070781956
+      },
+      {
+        "sourcePoint": [
+          1605,
+          681
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 4,
+        "sourceImage": "MOS-L1-FIS",
+        "targetPoint": [
+          29.95,
+          -14.05
+        ],
+        "transformedPoint": [
+          30.06514847263933,
+          -13.863064032436249
+        ],
+        "residualMeters": 0.21955460988138373
+      },
+      {
+        "sourcePoint": [
+          1605,
+          1246
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 9,
+        "sourceImage": "MOS-L1-FIS",
+        "targetPoint": [
+          30.25,
+          15.15
+        ],
+        "transformedPoint": [
+          30.229237633779327,
+          14.961555176584298
+        ],
+        "residualMeters": 0.18958514531275011
+      }
+    ],
+    "holdouts": [
+      {
+        "sourcePoint": [
+          1605,
+          1017
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 5,
+        "sourceImage": "MOS-L1-FIS",
+        "targetPoint": [
+          30.15,
+          3.05
+        ],
+        "transformedPoint": [
+          30.162730699441163,
+          3.2786564175299517
+        ],
+        "residualMeters": 0.2290105412113009
+      },
+      {
+        "sourcePoint": [
+          1513,
+          1473
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 13,
+        "sourceImage": "MOS-L1-FIS",
+        "targetPoint": [
+          25.75,
+          26.25
+        ],
+        "transformedPoint": [
+          25.601597407848153,
+          26.56913882839411
+        ],
+        "residualMeters": 0.35195585113214434
+      },
+      {
+        "sourcePoint": [
+          780,
+          504
+        ],
+        "targetFloor": "L1",
+        "targetPart": 0,
+        "targetVertex": 3,
+        "sourceImage": "MOS-L1-FIS",
+        "targetPoint": [
+          -12.25,
+          -22.95
+        ],
+        "transformedPoint": [
+          -12.075302198092928,
+          -22.653478266163944
+        ],
+        "residualMeters": 0.34415761015602014
+      }
+    ]
+  },
+  "registrationReferenceRaster": "MOS-L1-FIS",
+  "areaChecks": [
+    {
+      "scheduleKey": "0204",
+      "tracedSqft": 2023.5782347396935,
+      "printedSqft": 1998,
+      "relativeDifference": 0.012801919289135766,
+      "referenceAreaBasis": "Official FIS HTML room tree corroborating the raster label; room identifier 113141"
+    }
+  ],
+  "recoveredScheduleKeys": [
+    "0204"
+  ],
+  "remainingUnplacedKeys": [],
+  "retainedFloorCount": 7,
+  "reviewOverlays": [
+    "local/indoor-sources/MOS-review/L2-FIS-review.png",
+    "local/indoor-sources/MOS-review/L2-FIS-registration.png"
+  ],
+  "limitations": [
+    "Only the three scheduled rooms MO0113, MO0114 and MO0204 are traced. Official FIS room-tree labels and areas establish the MO building prefix and the leading-zero schedule keys. L1 raster text is overprinted, so the retained HTML listing corroborates its labels.",
+    "Doorway jambs, thin wall widths and small column details are simplified; adjacent projection/support rooms are excluded. Metric scale and campus position remain approximate.",
+    "L1 uses four campus-footprint controls with three independent facade holdouts. L2 uses the same pixel frame, checked against the common southwest and southeast stair cores and northwestern exterior corner; it is not a separate survey fit.",
+    "All seven original floor levels and approximate campus-footprint slabs are retained. The partial classroom geometry does not describe all floor areas or an as-built interior.",
+    "The public FIS plans dated 2023-09-01 warn that displayed drawings may be out of date."
+  ]
+}

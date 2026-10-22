@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "building": "PACIF",
+  "reviewedAt": "2026-10-22T02:01:13.961534+00:00",
+  "requestSnapshot": {
+    "file": "data/indoor/research/remaining-floorplan-requests.csv",
+    "sha256": "3b1869bfb19092a6bbd1da29bfb2f68ddc9994f48294a923f0fee1ab37aa3427"
+  },
+  "requestedFloors": [
+    {
+      "floor": "L4",
+      "keys": [
+        "4500",
+        "4501",
+        "4503"
+      ],
+      "activeFA26Keys": [
+        "4500",
+        "4503"
+      ]
+    },
+    {
+      "floor": "L3",
+      "keys": [
+        "3500"
+      ],
+      "activeFA26Keys": [
+        "3500"
+      ]
+    }
+  ],
+  "status": "new-eap-reviewed-no-indoor-plan",
+  "searchRounds": [
+    [
+      "Pacific Hall emergency action plan chemistry EAP",
+      "Pacific Hall 3500 4500 4503 floor plan"
+    ],
+    [
+      "Pacific Hall conference rooms chemistry reservations",
+      "PacHall_EAP_2023.pdf"
+    ]
+  ],
+  "existingEvidence": [
+    "data/indoor/research/additional-sources.json",
+    "data/indoor/research/public-fis-raster-sources.json"
+  ],
+  "sources": [
+    {
+      "url": "https://chemistry.ucsd.edu/safety/EAPs2",
+      "finding": "Official Chemistry EAP index explicitly links Pacific Hall to the PDF below.",
+      "retrievalStatus": "web-page-read"
+    },
+    {
+      "url": "https://chemistry.ucsd.edu/sites/default/files/inline-files/safety/PacHall_EAP_2023.pdf",
+      "finding": "Six pages: cover and emergency instructions on pages 1–5; the sole image on page 6 is an exterior assembly-area campus illustration. Page 6 was rendered and visually inspected. No room numbers or indoor boundaries.",
+      "localFile": "local/indoor-sources/PACIF-CHEM-EAP-2023.pdf",
+      "retrievedAt": "2026-10-22T02:00:02.970Z",
+      "revision": "December 2023",
+      "pdfPages": 6,
+      "visuallyInspectedPages": [
+        6
+      ],
+      "targetKeysMatched": [],
+      "retrievalStatus": "downloaded-and-reviewed",
+      "sha256": "f071b31cb00ed62c33e83937fb7d15b4ae9dd1c4fd8698e91fcf73818a9b39dc",
+      "bytes": 272815
+    },
+    {
+      "url": "https://chemistry.ucsd.edu/administration/conf-rooms",
+      "finding": "Official reservation list identifies 4500 as Pacific Hall Theatre, 4501 as conference room and 4503 as meeting room. Calendar links do not supply polygons; the page says Chemistry membership and UCSD login are required for calendars, which were not opened.",
+      "retrievalStatus": "web-page-read",
+      "identityKeys": [
+        "4500",
+        "4501",
+        "4503"
+      ]
+    }
+  ],
+  "limitations": [
+    "The new EAP is a separate 2023 document, but its only map still covers outdoor evacuation assembly. It does not improve room placement.",
+    "Room capacity is not room area."
+  ],
+  "runtimeDecision": {
+    "runtimeModified": false,
+    "addedGeometry": 0,
+    "preservedUnplaced": true
+  }
+}

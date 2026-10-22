@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "building": "JEANN",
+  "baseLayout": "static/indoor/facilities/JEANN.json",
+  "outputLayout": "static/indoor/JEANN-combined.json",
+  "source": {
+    "id": "JEANN-GA0205-SEATING-2021",
+    "title": "Jeannie Auditorium [GA0205] \u2014 dimensioned seating plan, 608 seats",
+    "url": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Jeannie_Auditorium_GA0205_rev_Dec2021.pdf",
+    "localPath": "local/indoor-sources/JEANN-SEATING-2021.pdf",
+    "sha256": "4924b52e7b79f3e69780d0fdfd0475d4e2197bd264fddf98152829feab1ae3f1",
+    "page": 1,
+    "printedDate": "2021-12-02",
+    "accessed": "2026-10-22T01:34:44.785Z",
+    "indexUrl": "https://mathweb.ucsd.edu/~gptesler/assigningseats.html",
+    "indexNote": "Official UCSD mathematics seating index identifies this December 2021 drawing as the revision superseding the October 27, 2021 version.",
+    "pageSizePoints": [
+      612,
+      792
+    ],
+    "referenceSize": [
+      1376,
+      1780
+    ],
+    "referenceRender": "pdftoppm -scale-to 2600 -png -singlefile, then Pillow resize to referenceSize. The native raster is 2010 by 2600. Reference x and y map to PDF points by pageWidth/referenceWidth and pageHeight/referenceHeight."
+  },
+  "supportingSource": {
+    "id": "JEANN-FIS-L2-INVENTORY",
+    "title": "UCSD FIS The Jeannie Second Floor inventory",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001812&fcode=2&zoom=1",
+    "localPath": "local/indoor-sources/JEANN-L2-FIS.html",
+    "sha256": "e11fdf6cea3dfd0253e5af6785b3d123da3d99e81c10c9a8ea6fc56114553174",
+    "accessed": "2026-10-22",
+    "roomId": "126640",
+    "printedRoomLabel": "GA0205",
+    "listedAreaSqft": 5878,
+    "use": "Current inventory explicitly lists GA0205 on the second floor. Raster was unavailable; only the inventory is used for room/floor identity and independent area validation."
+  },
+  "scale": {
+    "name": "Main front wall clear width",
+    "from": [
+      368,
+      1418
+    ],
+    "to": [
+      1035,
+      1418
+    ],
+    "dimensionInches": 622,
+    "dimensionText": "51 feet 10 inches",
+    "note": "Printed extension lines start at the front wall corners. The long horizontal dimension determines scale; no listed area is used to set it."
+  },
+  "dimensionChecks": [
+    {
+      "name": "Room depth along west side",
+      "from": [
+        72,
+        461
+      ],
+      "to": [
+        297,
+        1476
+      ],
+      "dimensionInches": 961.5,
+      "dimensionText": "80 feet 1 1/2 inches",
+      "maxRelativeDifference": 0.015
+    },
+    {
+      "name": "Front row to front wall",
+      "from": [
+        759,
+        1214
+      ],
+      "to": [
+        759,
+        1459
+      ],
+      "dimensionInches": 228,
+      "dimensionText": "19 feet 0 inches",
+      "maxRelativeDifference": 0.01
+    },
+    {
+      "name": "Southwest vestibule width",
+      "from": [
+        369,
+        1490
+      ],
+      "to": [
+        490,
+        1490
+      ],
+      "dimensionInches": 112.5,
+      "dimensionText": "9 feet 4 1/2 inches",
+      "maxRelativeDifference": 0.01
+    },
+    {
+      "name": "Southwest vestibule side length",
+      "from": [
+        385,
+        1465
+      ],
+      "to": [
+        413,
+        1594
+      ],
+      "dimensionInches": 122.75,
+      "dimensionText": "10 feet 2 3/4 inches",
+      "maxRelativeDifference": 0.01
+    }
+  ],
+  "referenceOrigin": [
+    700,
+    950
+  ],
+  "classroom": {
+    "label": "GA0205",
+    "scheduleKey": "AUD",
+    "floor": "L2",
+    "listedAreaSqft": 5878,
+    "labelPoint": [
+      700,
+      1320
+    ],
+    "outer": [
+      [
+        145,
+        443
+      ],
+      [
+        219,
+        420
+      ],
+      [
+        250,
+        342
+      ],
+      [
+        381,
+        308
+      ],
+      [
+        389,
+        338
+      ],
+      [
+        439,
+        327
+      ],
+      [
+        452,
+        411
+      ],
+      [
+        540,
+        400
+      ],
+      [
+        638,
+        396
+      ],
+      [
+        638,
+        391
+      ],
+      [
+        710,
+        391
+      ],
+      [
+        790,
+        394
+      ],
+      [
+        870,
+        403
+      ],
+      [
+        956,
+        419
+      ],
+      [
+        969,
+        336
+      ],
+      [
+        1010,
+        345
+      ],
+      [
+        1019,
+        310
+      ],
+      [
+        1166,
+        348
+      ],
+      [
+        1203,
+        429
+      ],
+      [
+        1254,
+        446
+      ],
+      [
+        1035,
+        1459
+      ],
+      [
+        368,
+        1459
+      ]
+    ],
+    "boundaryNotes": [
+      "Trace follows the lecture room perimeter, including the two rear seating bays. It excludes the central rear control/service enclosure and all four separate entrance vestibules.",
+      "Door openings are closed by straight lines at the jambs. Door swing arcs, seat rows, and red dimension lines are not room edges.",
+      "The curved rear wall is sampled at visible points. Structural corner boxes lie outside the trace. No seats, tier elevations or stepped floor surface are reconstructed."
+    ]
+  },
+  "limitations": [
+    "The 2021 drawing is a historical source. The independently retrieved FIS inventory still directly identifies GA0205 and lists 5878 square feet; the actual current FIS raster was not accessible.",
+    "Only the auditorium room is modeled. The floor outline represents the available room extent, not a surveyed whole-building boundary. Other rooms and entrance vestibules are omitted.",
+    "No campus registration is supplied. Drawing orientation has no north arrow, so the local drawing axes must not be interpreted as verified geographic north.",
+    "The room is displayed on L2 according to the current FIS inventory; the seating drawing does not supply actual tier elevations or building heights. The inherited vertical height is estimated."
+  ]
+}

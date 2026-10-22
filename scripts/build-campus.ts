@@ -39,6 +39,13 @@ const EXTRA_CAANS: Record<string, string[]> = {
   MAYER: ["6352", "6264"], // Mayer Hall, Mayer Hall Addition
 };
 
+/** Official venue identity takes precedence over nearby housing footprints. */
+const REVIEWED_CAANS: Record<string, string[]> = {
+  // I-House's 123A–D floor plan identifies Asante Meeting, not Asante W housing.
+  // Source and corrected map point: data/indoor/ASANT/meeting-trace.json.
+  ASANT: ["7025"],
+};
+
 const [footprintsPath, attributesPath] = process.argv.slice(2);
 if (!footprintsPath || !attributesPath) {
   console.error("Usage: npm run campus:build -- <footprints.json> <attributes.json>");
@@ -135,6 +142,10 @@ for (const college of Object.values(buildingsJson.colleges) as Record<
   { location: [number, number] }
 >[]) {
   for (const [code, { location }] of Object.entries(college)) {
+    if (REVIEWED_CAANS[code]) {
+      codes[code] = [...REVIEWED_CAANS[code]];
+      continue;
+    }
     const point: Point2 = lonLatToCampus(location[1], location[0]);
     const hits = new Set<string>();
     let nearest: { caan: string; distance: number } | null = null;

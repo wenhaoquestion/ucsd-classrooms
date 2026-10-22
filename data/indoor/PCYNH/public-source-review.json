@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "building": "PCYNH",
+  "reviewedAt": "2026-10-22",
+  "missingScheduleKeys": [
+    "240",
+    "245"
+  ],
+  "conclusion": "No additional classroom mapping: public FIS source has only a 260x195 raster and no polygons, while the Gensler existing-plan labels are too low-resolution to verify these exact room numbers.",
+  "publicFis": {
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=636&fcode=2&zoom=1",
+    "localHtml": "local/indoor-sources/PCYNH-L2-FIS.html",
+    "htmlSha256": "7299a162e608a8ce9b43338e599e7fcec13963339a9f7509bf934e39307284aa",
+    "planKey": 11644,
+    "publishedImageDimensions": [
+      [
+        260,
+        195
+      ]
+    ],
+    "polygonCount": 0,
+    "scopeLimit": "Only explicitly published image scales reviewed; no unlisted zoom paths requested.",
+    "listedRooms": [
+      {
+        "room": "240",
+        "facilityRoomId": "30733",
+        "areaSqft": 994
+      },
+      {
+        "room": "245",
+        "facilityRoomId": "30734",
+        "areaSqft": 450
+      }
+    ]
+  },
+  "additionalSources": [
+    {
+      "url": "https://plandesignbuild.ucsd.edu/_files/planning/GenslerUCSanDiegoBenchmarkingStudyJune2019.pdf",
+      "localPath": "local/indoor-sources/UCSD-GENSLER-2018.pdf",
+      "sha256": "9bc20d172da73bbf357e6c0b201ddcb281c77057d92ef9c5c4b0e9822e634524",
+      "pagesReviewed": [
+        103,
+        104
+      ],
+      "findings": [
+        "Page103 includes a420x431 color existing second-floor drawing.",
+        "Page104 includes a1582x1024 faint existing-plan scan, but the actual plan occupies roughly500x600pixels and room-number glyphs are only a few pixels. Exact240/245 labels could not be read reliably.",
+        "Page104 also includes a1983x1239 readable sample activity-based test-fit plan; it is a proposal with different office partitions and is not acceptable as current classroom geometry."
+      ],
+      "reproduction": "pdfimages -f 103 -l 104 -png local/indoor-sources/UCSD-GENSLER-2018.pdf /tmp/pcynh-gensler; inspect image000(color current),004(proposed test fit),006(faint current).",
+      "status": "reviewed-insufficient-for-exact-room-mapping"
+    },
+    {
+      "url": "https://ph.ucsd.edu/undergrad/advising/index.html",
+      "finding": "Official Public Health location information places advising on the second floor near240; no floor boundaries found.",
+      "status": "location-only"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/understanding-your-bsph-major-for-fa26-new-students-tickets-1999581569301",
+      "publisher": "UC San Diego Bachelor of Science in Public Health",
+      "finding": "Room245 second-floor directions go past Raza Resource Centro through the glass door right of240 and along the hall. Directions support floor and adjacency only, not room boundaries.",
+      "status": "location-only"
+    }
+  ],
+  "nextUsefulEvidence": "A legible official existing second-floor plan showing exact room numbers240 and245, such as an authorized current Facilities/CAD export or a department emergency diagram. Historical proposals and Pepper Canyon West apartment plans are different evidence and cannot substitute."
+}

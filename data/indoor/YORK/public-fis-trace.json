@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "building": "YORK",
+  "source": {
+    "id": "YORK-FIS-L3-2024",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=529&fcode=3&zoom=1",
+    "localPath": "local/indoor-sources/YORK-L3-FIS.png",
+    "sha256": "905109248a6589728454275a0b5efd09041526006548ed22d904c7c444a7379b",
+    "imageSize": [
+      4609,
+      3457
+    ],
+    "revision": "2024-09-16",
+    "accessed": "2026-10-21",
+    "method": "Native-pixel assembly of public _BASE and A-AREA-CAFM tiles."
+  },
+  "targetLayout": "static/indoor/facilities/YORK.json",
+  "floor": "L3",
+  "controlPoints": [
+    {
+      "point": [
+        581,
+        1663
+      ],
+      "room": "3108",
+      "vertex": 0
+    },
+    {
+      "point": [
+        877,
+        1663
+      ],
+      "room": "3108",
+      "vertex": 11
+    },
+    {
+      "point": [
+        1050,
+        2200
+      ],
+      "room": "3208",
+      "vertex": 1
+    },
+    {
+      "point": [
+        1345,
+        1663
+      ],
+      "room": "3208",
+      "vertex": 14
+    }
+  ],
+  "holdoutPoints": [
+    {
+      "point": [
+        581,
+        2200
+      ],
+      "room": "3108",
+      "vertex": 9
+    },
+    {
+      "point": [
+        877,
+        2200
+      ],
+      "room": "3108",
+      "vertex": 10
+    },
+    {
+      "point": [
+        1050,
+        1663
+      ],
+      "room": "3208",
+      "vertex": 0
+    },
+    {
+      "point": [
+        839,
+        2838
+      ],
+      "room": "3000A",
+      "vertex": 6
+    }
+  ],
+  "rooms": [
+    {
+      "label": "3010",
+      "outer": [
+        [
+          847,
+          2555
+        ],
+        [
+          1284,
+          2555
+        ],
+        [
+          1284,
+          2838
+        ],
+        [
+          847,
+          2838
+        ]
+      ],
+      "labelAt": [
+        1080,
+        2700
+      ],
+      "listedAreaSqft": 866,
+      "printedAreaSqft": 871
+    }
+  ],
+  "limitations": [
+    "Room 3010 is directly labeled in the 2024 plan. Its walls are manually traced; small columns and door recesses are simplified.",
+    "Registration mirrors the source y axis to match the inherited meter frame. Four independent corner checks include the adjacent 3000A room; the source north arrow contradicts the inherited campus orientation, so campus placement is omitted and true north remains unknown.",
+    "The source prints 871 square feet while the Facilities room inventory lists 866. Neither area was used to force the room dimensions.",
+    "The published FIS raster may lag current CAD or alterations.",
+    "The floor remains partial; one additional local floor patch follows room 3010 and does not claim a complete floor plate.",
+    "Fourth-floor schedule key 4124 remains unplaced: the acquired 2016 drawing labels separate 4124A and 4124B rooms, and no verified schedule crosswalk was found."
+  ]
+}

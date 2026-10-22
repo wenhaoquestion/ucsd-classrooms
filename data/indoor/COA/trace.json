@@ -1,0 +1,615 @@
+{
+  "schemaVersion": 1,
+  "building": "COA",
+  "sources": {
+    "L1": {
+      "id": "COA-L1-FIS",
+      "localPath": "local/indoor-sources/COA-L1-FIS.png",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001856&fcode=1&zoom=1",
+      "sha256": "40c025d9d8271a0e4905d76f3ae277bc803323c9db654c83baf83c5da2d3da19",
+      "accessed": "2026-10-21",
+      "acquiredAt": "2026-10-22T01:15:21.980Z",
+      "printedDate": "2025-03-14",
+      "tileCount": 532
+    },
+    "B": {
+      "id": "COA-B-FIS",
+      "localPath": "local/indoor-sources/COA-B-FIS.png",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001856&fcode=B&zoom=1",
+      "sha256": "bdb2cac73eb16433d9ef31c47c6c820772090b295895bba0ae2cedbd259f3753",
+      "accessed": "2026-10-21",
+      "acquiredAt": "2026-10-22T01:15:43.772Z",
+      "printedDate": "2025-03-18",
+      "tileCount": 532
+    }
+  },
+  "render": {
+    "size": [
+      4609,
+      3457
+    ],
+    "coordinates": "Native zoom-5 stitched BASE and A-AREA-CAFM tiles; pixels from top-left, no screenshot scaling or offset."
+  },
+  "registration": {
+    "targetLayout": "static/indoor/facilities/COA.json",
+    "targetFloor": "L1",
+    "scaleAnchor": {
+      "floor": "L1",
+      "scheduleKey": "130",
+      "printedAreaSqft": 2398,
+      "note": "Area-derived isotropic scale from the unambiguous C130 rectangle; this room is calibration, not an independent area check."
+    },
+    "controlPoints": [
+      {
+        "sourcePoint": [
+          2391,
+          1385
+        ],
+        "targetPart": 0,
+        "targetVertex": 6
+      },
+      {
+        "sourcePoint": [
+          3557,
+          2056
+        ],
+        "targetPart": 1,
+        "targetVertex": 7
+      },
+      {
+        "sourcePoint": [
+          3169,
+          2524
+        ],
+        "targetPart": 1,
+        "targetVertex": 12
+      },
+      {
+        "sourcePoint": [
+          2054,
+          1975
+        ],
+        "targetPart": 0,
+        "targetVertex": 15
+      }
+    ],
+    "holdoutPoints": [
+      {
+        "sourcePoint": [
+          2820,
+          1636
+        ],
+        "targetPart": 1,
+        "targetVertex": 26
+      },
+      {
+        "sourcePoint": [
+          2527,
+          2144
+        ],
+        "targetPart": 1,
+        "targetVertex": 21
+      },
+      {
+        "sourcePoint": [
+          2335,
+          2137
+        ],
+        "targetPart": 0,
+        "targetVertex": 14
+      }
+    ]
+  },
+  "floors": {
+    "L1": {
+      "rooms": [
+        {
+          "scheduleKey": "117",
+          "sourceLabels": [
+            "C117"
+          ],
+          "outer": [
+            [
+              2391,
+              1385
+            ],
+            [
+              2600,
+              1511
+            ],
+            [
+              2476,
+              1722
+            ],
+            [
+              2275,
+              1604
+            ]
+          ],
+          "labelAt": [
+            2435.5,
+            1555.5
+          ],
+          "sourceAreasSqft": [
+            1529
+          ],
+          "listedAreaSqft": 1522
+        },
+        {
+          "scheduleKey": "121",
+          "sourceLabels": [
+            "C121"
+          ],
+          "outer": [
+            [
+              2820,
+              1636
+            ],
+            [
+              2970,
+              1724
+            ],
+            [
+              2844,
+              1941
+            ],
+            [
+              2701,
+              1853
+            ]
+          ],
+          "labelAt": [
+            2833.75,
+            1788.5
+          ],
+          "sourceAreasSqft": [
+            1144
+          ],
+          "listedAreaSqft": 1138
+        },
+        {
+          "scheduleKey": "122",
+          "sourceLabels": [
+            "C122"
+          ],
+          "outer": [
+            [
+              2979,
+              1733
+            ],
+            [
+              3134,
+              1823
+            ],
+            [
+              3017,
+              2026
+            ],
+            [
+              2862,
+              1936
+            ]
+          ],
+          "labelAt": [
+            2998.0,
+            1879.5
+          ],
+          "sourceAreasSqft": [
+            1087
+          ],
+          "listedAreaSqft": 1080
+        },
+        {
+          "scheduleKey": "123",
+          "sourceLabels": [
+            "C123"
+          ],
+          "outer": [
+            [
+              3200,
+              1850
+            ],
+            [
+              3390,
+              1963
+            ],
+            [
+              3266,
+              2182
+            ],
+            [
+              3075,
+              2070
+            ]
+          ],
+          "labelAt": [
+            3232.75,
+            2016.25
+          ],
+          "sourceAreasSqft": [
+            1462
+          ],
+          "listedAreaSqft": 1451
+        },
+        {
+          "scheduleKey": "124",
+          "sourceLabels": [
+            "C124"
+          ],
+          "outer": [
+            [
+              3398,
+              1975
+            ],
+            [
+              3544,
+              2060
+            ],
+            [
+              3455,
+              2235
+            ],
+            [
+              3420,
+              2215
+            ],
+            [
+              3404,
+              2243
+            ],
+            [
+              3368,
+              2222
+            ],
+            [
+              3386,
+              2191
+            ],
+            [
+              3350,
+              2170
+            ],
+            [
+              3332,
+              2201
+            ],
+            [
+              3282,
+              2172
+            ]
+          ],
+          "labelAt": [
+            3400,
+            2100
+          ],
+          "sourceAreasSqft": [
+            1071
+          ],
+          "listedAreaSqft": 1062
+        },
+        {
+          "scheduleKey": "125",
+          "sourceLabels": [
+            "C125",
+            "C126"
+          ],
+          "outer": [
+            [
+              2980,
+              2125
+            ],
+            [
+              3292,
+              2306
+            ],
+            [
+              3168,
+              2514
+            ],
+            [
+              2856,
+              2339
+            ]
+          ],
+          "labelAt": [
+            3074.0,
+            2321.0
+          ],
+          "sourceAreasSqft": [
+            1384,
+            1070
+          ],
+          "listedAreaSqft": 1379
+        },
+        {
+          "scheduleKey": "127",
+          "sourceLabels": [
+            "C127",
+            "C128"
+          ],
+          "outer": [
+            [
+              2651,
+              1934
+            ],
+            [
+              2980,
+              2125
+            ],
+            [
+              2856,
+              2339
+            ],
+            [
+              2527,
+              2144
+            ]
+          ],
+          "labelAt": [
+            2753.5,
+            2135.5
+          ],
+          "sourceAreasSqft": [
+            1354,
+            1254
+          ],
+          "listedAreaSqft": 1343
+        },
+        {
+          "scheduleKey": "130",
+          "sourceLabels": [
+            "C130"
+          ],
+          "outer": [
+            [
+              2202,
+              1739
+            ],
+            [
+              2480,
+              1899
+            ],
+            [
+              2334,
+              2137
+            ],
+            [
+              2053,
+              1974
+            ]
+          ],
+          "labelAt": [
+            2267.25,
+            1937.25
+          ],
+          "sourceAreasSqft": [
+            2398
+          ],
+          "listedAreaSqft": 2398
+        }
+      ]
+    },
+    "B": {
+      "rooms": [
+        {
+          "scheduleKey": "B17",
+          "sourceLabels": [
+            "CB17"
+          ],
+          "outer": [
+            [
+              2391,
+              1385
+            ],
+            [
+              2600,
+              1511
+            ],
+            [
+              2476,
+              1722
+            ],
+            [
+              2275,
+              1604
+            ]
+          ],
+          "labelAt": [
+            2435.5,
+            1555.5
+          ],
+          "sourceAreasSqft": [
+            1541
+          ],
+          "listedAreaSqft": 1531
+        },
+        {
+          "scheduleKey": "B21",
+          "sourceLabels": [
+            "CB21"
+          ],
+          "outer": [
+            [
+              2820,
+              1636
+            ],
+            [
+              3006,
+              1744
+            ],
+            [
+              2880,
+              1960
+            ],
+            [
+              2701,
+              1853
+            ]
+          ],
+          "labelAt": [
+            2851.75,
+            1798.25
+          ],
+          "sourceAreasSqft": [
+            1355
+          ],
+          "listedAreaSqft": 1350
+        },
+        {
+          "scheduleKey": "B23",
+          "sourceLabels": [
+            "CB23"
+          ],
+          "outer": [
+            [
+              3200,
+              1850
+            ],
+            [
+              3390,
+              1963
+            ],
+            [
+              3266,
+              2182
+            ],
+            [
+              3075,
+              2070
+            ]
+          ],
+          "labelAt": [
+            3232.75,
+            2016.25
+          ],
+          "sourceAreasSqft": [
+            1458
+          ],
+          "listedAreaSqft": 1458
+        },
+        {
+          "scheduleKey": "B26",
+          "sourceLabels": [
+            "CB26"
+          ],
+          "outer": [
+            [
+              2980,
+              2125
+            ],
+            [
+              3173,
+              2237
+            ],
+            [
+              3044,
+              2453
+            ],
+            [
+              2856,
+              2339
+            ]
+          ],
+          "labelAt": [
+            3013.25,
+            2288.5
+          ],
+          "sourceAreasSqft": [
+            1512
+          ],
+          "listedAreaSqft": 1512
+        },
+        {
+          "scheduleKey": "B27",
+          "sourceLabels": [
+            "CB27",
+            "CB28"
+          ],
+          "outer": [
+            [
+              2651,
+              1934
+            ],
+            [
+              2980,
+              2125
+            ],
+            [
+              2856,
+              2339
+            ],
+            [
+              2527,
+              2144
+            ]
+          ],
+          "labelAt": [
+            2753.5,
+            2135.5
+          ],
+          "sourceAreasSqft": [
+            1305,
+            1192
+          ],
+          "listedAreaSqft": 1297
+        },
+        {
+          "scheduleKey": "B30",
+          "sourceLabels": [
+            "CB30"
+          ],
+          "outer": [
+            [
+              2294,
+              1715
+            ],
+            [
+              2498,
+              1834
+            ],
+            [
+              2398,
+              2025
+            ],
+            [
+              2188,
+              1904
+            ]
+          ],
+          "labelAt": [
+            2344.5,
+            1869.5
+          ],
+          "sourceAreasSqft": [
+            1458
+          ],
+          "listedAreaSqft": 1454
+        }
+      ]
+    }
+  },
+  "combinationEvidence": [
+    {
+      "id": "COA-SPLIT-ROOMS",
+      "url": "https://podcast.ucsd.edu/info/computers.aspx",
+      "publisher": "UC San Diego Educational Technology Services",
+      "accessed": "2026-10-21",
+      "evidence": "Coalition 126 uses 125 when split, 128 uses 127, and B28 uses B27."
+    },
+    {
+      "id": "COA-SEATING-ROOMS",
+      "url": "https://mathweb.ucsd.edu/~gptesler/assigningseats.html",
+      "publisher": "UC San Diego Mathematics / Glenn Tesler",
+      "accessed": "2026-10-21",
+      "evidence": "COA 125-126, 127-128, and B27-B28 can each be split into two rooms."
+    }
+  ],
+  "limitations": [
+    "Fourteen scheduled classrooms on B and L1 are manually traced; small columns, door recesses and wall thickness are simplified. Source labels use the C building prefix, omitted by the current official room listing and schedule keys.",
+    "C125/C126, C127/C128 and CB27/CB28 are modeled as combined footprints under schedule keys 125, 127 and B27, supported by UCSD split-room references. Movable partitions can divide the rooms; a booking does not establish that both halves are available.",
+    "Pixel scale is estimated from the printed C130 area. Rotation and translation fit the campus roof footprint; neither room sizes nor campus positions are surveyed.",
+    "Existing campus-footprint floor slabs and all ten floor levels are retained unchanged as approximate context. These roof-derived slabs are not independently verified whole-floor outlines; open lobbies and the remaining non-classroom interior are not modeled.",
+    "The public FIS drawings are dated March 2025 and warn that the displayed plan may be out of date. Minor printed/current room-area differences remain documented.",
+    "L2 tile responses require a login; no L2 geometry is inferred. Its six floor-listed classrooms remain unplaced."
+  ]
+}

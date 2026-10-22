@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "building": "CSB",
+  "source": "CSB-EHS-2018",
+  "sourceUrl": "https://cogsci.ucsd.edu/_files/resources/Cognitive%20Science%20Building_11-8-18.pdf",
+  "sourceFile": "local/indoor-sources/CSB-emergency-2018.pdf",
+  "sha256": "b3169e5e2b721fbee95f3746f7485a60105bd7c355f0bb8178315d692fd57b5e",
+  "byteLength": 120589,
+  "pageSizePoints": [792, 612],
+  "coordinateConvention": "PDF page points, x right and y down, before any floor registration. Raster review at 1800 x 1391 pixels; long wall endpoints cross-checked against pdftocairo SVG paths.",
+  "reviewed": "2026-10-21",
+  "revision": "04/11/18 printed on plans; PDF metadata creation 2018-11-07",
+  "method": "Manually reviewed room identities and long wall segments in the original vector PDF and rendered page crops. Room polygons follow the principal interior wall lines; door swings, door recesses, thin walls and small columns are simplified. Exterior outlines are simplified traces, not surveyed boundaries. Other room interiors are not traced.",
+  "referenceFloor": "L1",
+  "referenceOriginPoints": [400, 300],
+  "localUnitsPerReferencePoint": 0.1,
+  "registrationMethod": "Uniform scale and translation fit to three corresponding building/core corners. No rotation or campus georeference is claimed. North is page-up as printed. The residual is an internal drawing alignment check, not survey accuracy.",
+  "anchorNames": ["northwest elevator enclosure apex", "northeast wing exterior apex beside stair core", "southeast stair enclosure bottom-right corner"],
+  "floors": [
+    {
+      "id": "LL", "page": 2,
+      "anchors": [[209.7, 57.7], [375.1, 142.0], [415.3, 500.4]],
+      "outline": [
+        {"outer": [[338,180],[375,142],[424,191],[497,118],[551,173],[559,184],[600,224],[609,230],[660,280],[639,303],[630,312],[579,364],[570,384],[548,398],[547,428],[533,444],[521,446],[494,478],[494,489],[466,489],[455,479],[456,460],[415,501],[362,501],[325,463],[374,414],[392,431],[489,330],[430,272],[438,264],[397,223],[383,239],[353,209],[363,203]]},
+        {"outer": [[152,116],[179,86],[192,88],[210,57],[225,72],[196,103],[188,96],[169,115],[169,131]]}
+      ],
+      "rooms": [
+        {"key":"001","labelAt":[488.395,185.5],"polygon":[[425.175,192.095],[497.115,120.155],[551.455,174.495],[479.515,246.435]],"areaSqft":1468},
+        {"key":"002","labelAt":[543.025,241.64],"polygon":[[481.02,247.92],[552.925,176.015],[607.19,230.28],[535.285,302.185]],"areaSqft":1468},
+        {"key":"003","labelAt":[582.47,307.705],"polygon":[[521.36,319.04],[589.06,251.34],[637.14,299.42],[569.44,367.12]],"areaSqft":1178},
+        {"key":"004","labelAt":[509.045,371.37],"polygon":[[459.49,362.41],[497.69,324.21],[555.025,381.545],[516.825,419.745]],"areaSqft":767},
+        {"key":"005","labelAt":[468.075,413],"polygon":[[418.125,403.825],[458.05,363.9],[515.415,421.265],[475.49,461.19]],"areaSqft":767}
+      ]
+    },
+    {
+      "id": "L1", "page": 3,
+      "anchors": [[357.4,60.8],[521.5,145.8],[563,502]],
+      "outline": [{"outer":[[357,61],[373,76],[366,83],[476,192],[521,146],[698,322],[672,348],[677,355],[563,469],[563,502],[505,502],[505,492],[482,487],[470,473],[459,469],[452,477],[345,370],[220,495],[208,507],[193,494],[197,485],[102,390],[109,382],[94,367],[88,375],[79,360],[100,339],[99,309],[105,308],[105,292],[302,95],[310,100],[343,67],[346,72]],"holes":[[[443,337],[529,251],[609,327],[522,414]]]}],
+      "rooms": [
+        {"key":"115","labelAt":[294.195,329.64],"polygon":[[247.42,336.81],[298.21,285.92],[338.19,325.94],[287.36,376.79]],"areaSqft":804},
+        {"key":"180","labelAt":[478.065,253.41],"polygon":[[428.04,265.23],[488.41,204.85],[526.85,243.35],[466.51,303.73]],"areaSqft":947}
+      ]
+    },
+    {
+      "id": "L2", "page": 4,
+      "anchors": [[297,54.7],[449.3,134.6],[486.4,465.3]],
+      "outline": [{"outer":[[297,54.7],[312,70],[305,75],[406,176],[449,134],[611,296],[586,321],[591,329],[486,434],[486,465],[437,465],[437,455],[416,451],[401,434],[394,432],[388,440],[282,335],[168,448],[156,459],[144,449],[151,439],[23,350],[35,350],[85,301],[84,284],[95,277],[95,268],[244,107],[259,123],[276,105],[277,94],[287,83],[282,79]],"holes":[[[376,309],[457,228],[528,297],[442,383]]]}],
+      "rooms": [
+        {"key":"272","labelAt":[391.005,249.09],"polygon":[[359.485,247.025],[389.775,216.735],[425.12,252.08],[397.5,280.2],[392.2,279.82],[362.16,249.62]]},
+        {"key":"280","labelAt":[419.305,221.06],"polygon":[[390.455,216.055],[417.75,188.76],[453.07,224.08],[425.775,251.375]]}
+      ]
+    }
+  ],
+  "limitations": [
+    "Historical emergency diagrams may predate room alterations. The PDF has no scale bar or measured wall dimensions.",
+    "Room shapes simplify small door recesses and wall thickness. Their principal boundaries are supported by the source drawing; shape confidence is approximate.",
+    "The basement has a different footprint from the upper floors and a separately shown northwest stair core. Its main floor outline is retained separately.",
+    "Three common exterior/core anchors support approximate floor alignment. Vertical spacing is illustrative. The supplement intentionally omits campus georeferencing and uses relative units.",
+    "Only the nine scheduled classrooms are traced; offices and other interior spaces remain unmodeled. Courtyard voids are retained on the upper floors."
+  ]
+}

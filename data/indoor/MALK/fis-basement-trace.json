@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "building": "MALK",
+  "output": "static/indoor/MALK-combined.json",
+  "baseLayout": "static/indoor/facilities/MALK.json",
+  "baseSha256": "30348df96c08384a3df27e76d1da4b7d8fbde1477d6902125e9f652e8396015c",
+  "source": {
+    "id": "MALK-FIS-B-2025",
+    "title": "UCSD Facilities Information System - Brian C. Malk Hall - Basement - Master Plan",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001857&fcode=B&zoom=1",
+    "localPath": "local/indoor-sources/MALK-B-FIS.png",
+    "sha256": "7840ed21be17ee2fcf0db108bb199a22b4af2e11a998e87637b34103108db4f7",
+    "imageSizePx": [
+      5760,
+      4320
+    ],
+    "htmlPath": "local/indoor-sources/MALK-B-FIS.html",
+    "htmlSha256": "324a16de2fb8309735ded3c9cac1e43aec9078be3be03bdf247e638860bc1803",
+    "acquisitionRecord": "local/indoor-sources/MALK-B-FIS-acquisition.json",
+    "acquiredAt": "2026-10-22T01:16:42.058Z",
+    "accessed": "2026-10-21",
+    "printedDate": "2025-03-21",
+    "printedScale": "1/10 inch = 1 foot; pixel density is not assumed from this printed scale",
+    "floorPlanKey": 11434,
+    "bkey": 1001857,
+    "fcode": "B",
+    "layers": [
+      "_BASE",
+      "A-AREA-CAFM"
+    ],
+    "composition": "Original public viewer tiles assembled at native zoom 5; no screenshot/device-pixel scaling."
+  },
+  "registration": {
+    "method": "Non-reflecting similarity into retained local meter/campus frame using visible eastern facade corners and the north roof-overhang reference. The basement extends west beyond the old campus-derived floor outline.",
+    "targetFloor": "B",
+    "controlPoints": [
+      {
+        "sourcePoint": [
+          3795,
+          795
+        ],
+        "targetPolygon": 1,
+        "targetVertex": 0,
+        "description": "Northeast roof/overhang reference corner, not a basement slab corner."
+      },
+      {
+        "sourcePoint": [
+          3795,
+          2707
+        ],
+        "targetPolygon": 1,
+        "targetVertex": 1,
+        "description": "East facade elbow above southeast projecting lounge."
+      },
+      {
+        "sourcePoint": [
+          3909,
+          3015
+        ],
+        "targetPolygon": 1,
+        "targetVertex": 2,
+        "description": "Southeast lounge outer corner."
+      }
+    ],
+    "holdoutPoints": [
+      {
+        "sourcePoint": [
+          3660,
+          3105
+        ],
+        "targetPolygon": 1,
+        "targetVertex": 3,
+        "description": "Reentrant southwest end of southeast lounge facade."
+      },
+      {
+        "sourcePoint": [
+          3705,
+          3232
+        ],
+        "targetPolygon": 1,
+        "targetVertex": 4,
+        "description": "Southeast stair outer corner."
+      }
+    ]
+  },
+  "floorOutlinePixels": [
+    [
+      2665,
+      1410
+    ],
+    [
+      3795,
+      1410
+    ],
+    [
+      3795,
+      2707
+    ],
+    [
+      3909,
+      3015
+    ],
+    [
+      3660,
+      3105
+    ],
+    [
+      3705,
+      3232
+    ],
+    [
+      3363,
+      3357
+    ],
+    [
+      2955,
+      3501
+    ],
+    [
+      2925,
+      3499
+    ],
+    [
+      2905,
+      3489
+    ],
+    [
+      2890,
+      3472
+    ],
+    [
+      2450,
+      2225
+    ],
+    [
+      2445,
+      2205
+    ],
+    [
+      2450,
+      2180
+    ],
+    [
+      2470,
+      2165
+    ],
+    [
+      2725,
+      2073
+    ],
+    [
+      2665,
+      1900
+    ]
+  ],
+  "rooms": [
+    {
+      "label": "EB90",
+      "scheduleKey": "B90",
+      "facilityRoomId": 129103,
+      "listedAreaSqft": 1443,
+      "drawnAreaSqft": 1445,
+      "labelAt": [
+        3060,
+        3183
+      ],
+      "outer": [
+        [
+          2758,
+          3014
+        ],
+        [
+          3175,
+          2865
+        ],
+        [
+          3341,
+          3327
+        ],
+        [
+          3338,
+          3341
+        ],
+        [
+          3328,
+          3351
+        ],
+        [
+          2945,
+          3490
+        ],
+        [
+          2932,
+          3487
+        ],
+        [
+          2921,
+          3480
+        ],
+        [
+          2910,
+          3468
+        ]
+      ],
+      "crosswalk": {
+        "url": "https://facilities.ucsd.edu/Classrooms/Details.htm?Room=129103",
+        "verifiedTitle": "EB90 [B90]",
+        "verifiedBy": "Visible official public Classroom Details page, inspected by the browser acquisition agent on 2026-10-21",
+        "seats": 58
+      }
+    },
+    {
+      "label": "EB91",
+      "scheduleKey": "B91",
+      "facilityRoomId": 129105,
+      "listedAreaSqft": 1440,
+      "drawnAreaSqft": 1443,
+      "labelAt": [
+        2890,
+        2697
+      ],
+      "outer": [
+        [
+          2589,
+          2550
+        ],
+        [
+          3006,
+          2400
+        ],
+        [
+          3173,
+          2865
+        ],
+        [
+          2758,
+          3015
+        ]
+      ],
+      "crosswalk": {
+        "url": "https://facilities.ucsd.edu/Classrooms/Details.htm?Room=129105",
+        "verifiedTitle": "EB91 [B91]",
+        "verifiedBy": "Visible official public Classroom Details page, inspected by the browser acquisition agent on 2026-10-21",
+        "seats": 58
+      }
+    },
+    {
+      "label": "EB92",
+      "scheduleKey": "B92",
+      "facilityRoomId": 129118,
+      "listedAreaSqft": 1067,
+      "drawnAreaSqft": 1070,
+      "labelAt": [
+        2755,
+        2304
+      ],
+      "outer": [
+        [
+          2462,
+          2209
+        ],
+        [
+          2462,
+          2194
+        ],
+        [
+          2470,
+          2181
+        ],
+        [
+          2484,
+          2172
+        ],
+        [
+          2876,
+          2046
+        ],
+        [
+          3006,
+          2400
+        ],
+        [
+          2589,
+          2550
+        ]
+      ],
+      "crosswalk": {
+        "url": "https://facilities.ucsd.edu/Classrooms/Details.htm?Room=129118",
+        "verifiedTitle": "EB92 [B92]",
+        "verifiedBy": "Visible official public Classroom Details page, inspected by the browser acquisition agent on 2026-10-21",
+        "seats": 40
+      }
+    }
+  ],
+  "limitations": [
+    "The raster title block is dated 2025-03-21. FIS warns that viewer imagery is no longer maintained and may differ from the current CAD vault; no post-publication remodeling guarantee is made.",
+    "Only three explicitly numbered classroom polygons and the simplified basement outer envelope are traced. Small door, jamb, column and wall-thickness details are omitted; rounded corners are approximated with short line segments.",
+    "The basement outer envelope replaces a repeated campus-roof silhouette. The open light court is included within the simplified overall basement envelope; no ceiling, circulation mesh, interior courtyard walls or upper-floor room geometry is reconstructed.",
+    "Registration inherits the approximate campus transform. Control/holdout residuals and room-area agreement are drawing consistency checks, not a surveyed accuracy claim.",
+    "All five upper floors, their room lists, estimated heights and sources are retained unchanged. Their existing outlines remain campus-derived approximations, not newly reviewed floor plans.",
+    "Source room labels carry the E wing prefix (EB90/EB91/EB92); schedule keys B90/B91/B92 are preserved only through the reviewed Facilities room-ID crosswalk."
+  ]
+}

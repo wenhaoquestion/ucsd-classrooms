@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "accessed": "2026-10-21",
+  "sources": [
+    {
+      "id": "MANDE-AUDITORIUM-OVERVIEW",
+      "buildings": [
+        "MANDE"
+      ],
+      "title": "Mandeville Auditorium Overview",
+      "url": "https://mandeville.ucsd.edu/_files/overview/DIAGRAM-Auditorium%20Overview.pdf",
+      "format": "pdf",
+      "verification": "Official technical-information page links this one-page PDF; PDF text retrieved.",
+      "pages": [
+        {
+          "page": 1,
+          "content": "Auditorium, lobby, stage, Eastroom and support spaces; some dimensions."
+        }
+      ],
+      "limitations": [
+        "2010 overview; does not identify missing MANDE B1/B2 classroom numbers. Not a complete Mandeville Center floor plan."
+      ],
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/MANDE-AUDITORIUM-OVERVIEW.pdf",
+        "sha256": "f823bb9d8dc3a2d84da4720bf811d80358b9d122dcc065a9a31fe979dc101d5c",
+        "acquiredAt": "2026-10-21T23:07:00.384Z"
+      }
+    },
+    {
+      "id": "MANDE-AUDITORIUM-BASEMENT",
+      "buildings": [
+        "MANDE"
+      ],
+      "title": "Mandeville Auditorium basement",
+      "url": "https://mandeville.ucsd.edu/_files/overview/DIAGRAM-Basement.pdf",
+      "format": "pdf",
+      "verification": "Official one-page PDF opened and text retrieved.",
+      "pages": [
+        {
+          "page": 1,
+          "content": "Green room, dressing rooms, loading dock and freight elevator."
+        }
+      ],
+      "limitations": [
+        "No missing classroom labels established. Auditorium support spaces must not be equated with MANDE classroom basements."
+      ],
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/MANDE-AUDITORIUM-BASEMENT.pdf",
+        "sha256": "cb354e399909d7040e6a74ca4d275f3acceaecfa5a0dcabbebc2112858649da0",
+        "acquiredAt": "2026-10-21T23:07:04.942Z"
+      }
+    },
+    {
+      "id": "MANDE-EASTROOM-2019",
+      "buildings": [
+        "MANDE"
+      ],
+      "title": "Mandeville Auditorium East Room and Lobby",
+      "url": "https://mandeville.ucsd.edu/_files/overview/Mandeville-Auditoriu_-East-Room_Lobby_with-dims.pdf",
+      "format": "pdf",
+      "verification": "Official one-page PDF opened; dated 19 July 2019, scale 1/8 inch = 1 foot.",
+      "pages": [
+        {
+          "page": 1,
+          "content": "Dimensioned East Room and lobby plan."
+        }
+      ],
+      "limitations": [
+        "Useful room-scale reference only; no missing schedule-room mapping confirmed."
+      ],
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/MANDE-EASTROOM-2019.pdf",
+        "sha256": "81265d4d2545c756a0e00c07289dffdee925dd0005d30da9b0fd221f2f894252",
+        "acquiredAt": "2026-10-21T23:07:09.237Z"
+      }
+    },
+    {
+      "id": "MUSIC-MAP-INDEX",
+      "buildings": [
+        "CPMC",
+        "WLH"
+      ],
+      "title": "Music department floor maps",
+      "url": "https://music-cms.ucsd.edu/intranet/maps.html",
+      "format": "html",
+      "verification": "Public page opened; links CPMC floors 1, 2, 3 and Warren Lecture Hall.",
+      "limitations": [
+        "Three CPMC floor images and the Warren map were downloaded on 2026-10-21; see acquisition-index.json. Existing classroom geometry was not replaced."
+      ]
+    },
+    {
+      "id": "CPMC-SECOND-2021",
+      "buildings": [
+        "CPMC"
+      ],
+      "title": "Conrad Prebys Music Center second floor",
+      "url": "https://music-cms.ucsd.edu/_files/maps/CPMC_2nd_Floor_2022.pdf",
+      "format": "pdf",
+      "verification": "Search-index PDF text confirms second-floor classroom labels 264/265, room 231, and recording studio 203; printed update August 2021.",
+      "limitations": [
+        "Direct download returned HTTP 404 on 2026-10-21. Retained as historical search-index evidence only; current index links September 2026 JPEGs."
+      ],
+      "acquisitionStatus": "failed"
+    },
+    {
+      "id": "CCC-DIRECTIONS",
+      "buildings": [
+        "CCC"
+      ],
+      "title": "Cross-Cultural Center directions",
+      "url": "https://ccc.ucsd.edu/about-us/directions.html",
+      "format": "html",
+      "verification": "Official directions identify the center on Price Center East floor 2.",
+      "limitations": [
+        "Establishes the center's floor, not individual room coordinates."
+      ]
+    },
+    {
+      "id": "CCC-ROOMS",
+      "buildings": [
+        "CCC"
+      ],
+      "title": "Cross-Cultural Center room descriptions",
+      "url": "https://ccc.ucsd.edu/reserve-a-room/room-descriptions.html",
+      "format": "html",
+      "verification": "Official directory identifies ArtSpace as a room within the center.",
+      "limitations": [
+        "Combined with directions supports ARTSP floor 2; no numeric room alias or polygon established."
+      ]
+    },
+    {
+      "id": "CPMC-FIRST-2026",
+      "buildings": [
+        "CPMC"
+      ],
+      "title": "Conrad Prebys Music Center first floor (September 2026)",
+      "url": "https://music-cms.ucsd.edu/_files/maps/CPMC_Floor_Plan_1_20260903.jpg",
+      "format": "jpg",
+      "verification": "Direct link inspected on the official Music maps index through Playwright MCP; original JPEG downloaded and signature checked.",
+      "limitations": [
+        "Source date inferred from the published filename; room-by-room current geometry has not been audited. Existing mapped classrooms are not overwritten."
+      ],
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/CPMC-FIRST-2026.jpg",
+        "sha256": "8c66b8f75467c0cac07c06e99bc2e400ebc18eb3e0a2963ca0ead141bc18b505",
+        "acquiredAt": "2026-10-21T23:08:41.181Z"
+      }
+    },
+    {
+      "id": "CPMC-SECOND-2026",
+      "buildings": [
+        "CPMC"
+      ],
+      "title": "Conrad Prebys Music Center second floor (September 2026)",
+      "url": "https://music-cms.ucsd.edu/_files/maps/CPMC_Floor_Plan_2_20260902.jpg",
+      "format": "jpg",
+      "verification": "Direct link inspected on the official Music maps index through Playwright MCP; original JPEG downloaded and signature checked.",
+      "limitations": [
+        "Source date inferred from the published filename; room-by-room current geometry has not been audited. Existing mapped classrooms are not overwritten."
+      ],
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/CPMC-SECOND-2026.jpg",
+        "sha256": "689e043df2e63594e66f3c2561e2601ff80a7a1294c9048c4b5f69e1f6b7005e",
+        "acquiredAt": "2026-10-21T23:08:45.827Z"
+      }
+    },
+    {
+      "id": "CPMC-THIRD-2026",
+      "buildings": [
+        "CPMC"
+      ],
+      "title": "Conrad Prebys Music Center third floor (September 2026)",
+      "url": "https://music-cms.ucsd.edu/_files/maps/CPMC_Floor_Plan_3_20260902.jpg",
+      "format": "jpg",
+      "verification": "Direct link inspected on the official Music maps index through Playwright MCP; original JPEG downloaded and signature checked.",
+      "limitations": [
+        "Source date inferred from the published filename; room-by-room current geometry has not been audited. Existing mapped classrooms are not overwritten."
+      ],
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/CPMC-THIRD-2026.jpg",
+        "sha256": "d6a52094f870b3b4e0d369cb9c7dd20cd51a2875620fdfe31887e0b4cfe5552c",
+        "acquiredAt": "2026-10-21T23:08:50.315Z"
+      }
+    },
+    {
+      "id": "WLH-MUSIC-2026",
+      "buildings": [
+        "WLH"
+      ],
+      "title": "Warren Lecture Hall Music department map (2026)",
+      "url": "https://music-cms.ucsd.edu/_files/maps/Warren_2026.jpg",
+      "format": "jpg",
+      "verification": "Direct link inspected on the official Music maps index through Playwright MCP; original JPEG downloaded and signature checked.",
+      "limitations": [
+        "Source date inferred from the published filename; room-by-room current geometry has not been audited. Existing mapped classrooms are not overwritten."
+      ],
+      "acquisitionStatus": "downloaded",
+      "acquisitionEvidence": {
+        "file": "local/indoor-sources/WLH-MUSIC-2026.jpg",
+        "sha256": "a4367d5943d1e7c5d85a22b3cc9767f5cf04ffb0123f7c2cda6fc3ffbaa45b18",
+        "acquiredAt": "2026-10-21T23:08:54.751Z"
+      }
+    }
+  ],
+  "acquisitionIndex": "data/indoor/research/acquisition-index.json"
+}

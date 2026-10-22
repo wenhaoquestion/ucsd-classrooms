@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "building": "MCC",
+  "reviewed": "2026-10-21",
+  "output": "data/indoor/MCC/corrected-base.json",
+  "inputHashes": {
+    "static/indoor/facilities/MCC.json": "d38c7af3bc73092161bfd64aef74dfd51cd70f6454bf5b8c913f1a59a832198e",
+    "static/campus/buildings.json": "252b8e3adccef2e052a87ccbd2be6cfed74755b150d6a698bae6e8a8d25b8510"
+  },
+  "evidence": [
+    {
+      "id": "MCC-DEPARTMENT-CONTACT",
+      "title": "Department of Communication: Contact Us",
+      "url": "https://communication.ucsd.edu/about/contact.html",
+      "publisher": "UC San Diego Department of Communication",
+      "building": "MCC",
+      "floors": [
+        "L1",
+        "L2"
+      ],
+      "accessed": "2026-10-21",
+      "notes": [
+        "Identifies MCC as Media Center and Communication Building and places the department on the west campus. Establishes building identity, not room geometry."
+      ]
+    },
+    {
+      "id": "MCC-FACILITY-ADDRESS",
+      "title": "Space Planning Live Density Program",
+      "url": "https://facilityservices.ucsd.edu/information/density.html",
+      "publisher": "UC San Diego Facility Services",
+      "building": "MCC",
+      "floors": [
+        "L1",
+        "L2"
+      ],
+      "accessed": "2026-10-21",
+      "notes": [
+        "Lists Communication Building in Marshall at 3010 Exploration Drive, with the first and second floors. Does not provide classroom boundaries or measured floor heights."
+      ]
+    },
+    {
+      "id": "MCC-DEMOCRACY-LAB",
+      "title": "Democracy Lab facilities",
+      "url": "https://democracylab.ucsd.edu/facilities/democracy-lab",
+      "publisher": "UC San Diego Department of Communication",
+      "building": "MCC",
+      "floors": [
+        "L2"
+      ],
+      "accessed": "2026-10-21",
+      "notes": [
+        "Identifies Democracy Lab as MCC 250 and links access to the Communication building. Corroborates the schedule room and building; the second-floor assignment remains inferred from its number."
+      ]
+    }
+  ],
+  "rejected": {
+    "input": "static/indoor/facilities/MCC.json",
+    "name": "Moores Cancer Center",
+    "caans": [
+      "6551"
+    ],
+    "source": {
+      "id": "UCSD-FIS",
+      "title": "UCSD Facilities building viewer (bkey 629)",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/Default.htm?bkey=629",
+      "publisher": "UC San Diego Facilities",
+      "building": "MCC",
+      "floors": [
+        "B",
+        "L1",
+        "L2",
+        "L3",
+        "L4",
+        "L5"
+      ],
+      "accessed": "2026-10-19",
+      "notes": [
+        "Scaled from official room areas (1.33 ft per drawing pixel); rotated 0.0 deg and fitted to the campus-map footprint on Level 2 (overlap 0.69)."
+      ]
+    },
+    "polygons": 554,
+    "scheduleMappings": [
+      {
+        "id": "B-629-32431",
+        "floor": "B",
+        "scheduleKey": "221",
+        "notes": [
+          "300 sq ft (FICM use 225)",
+          "Labeled B221 on the Facilities plan."
+        ]
+      },
+      {
+        "id": "L2-629-30370",
+        "floor": "L2",
+        "scheduleKey": "250",
+        "notes": [
+          "466 sq ft (FICM use 340)",
+          "Labeled 2250 on the Facilities plan."
+        ]
+      }
+    ],
+    "retainedForAuditOnly": true
+  },
+  "corrected": {
+    "name": "Media Center and Communication Building",
+    "college": "marshall",
+    "caans": [
+      "6614"
+    ],
+    "location": [
+      32.88148188000796,
+      -117.2402227584624
+    ],
+    "campusPoint": [
+      -581.7499999998422,
+      -152.80000000038035
+    ],
+    "sourceCampusParts": [
+      {
+        "caan": "6614",
+        "name": "Communication",
+        "rings": [
+          [
+            [
+              -575.8,
+              -169.3
+            ],
+            [
+              -577.1,
+              -168
+            ],
+            [
+              -565.4,
+              -163.2
+            ],
+            [
+              -554.4,
+              -152.3
+            ],
+            [
+              -567,
+              -139.7
+            ],
+            [
+              -580.7,
+              -139
+            ],
+            [
+              -580,
+              -138.3
+            ],
+            [
+              -581.4,
+              -136.8
+            ],
+            [
+              -584.5,
+              -135.1
+            ],
+            [
+              -579.8,
+              -130.3
+            ],
+            [
+              -585.3,
+              -124.7
+            ],
+            [
+              -609.1,
+              -151
+            ],
+            [
+              -606.8,
+              -161.8
+            ],
+            [
+              -607.6,
+              -162.6
+            ],
+            [
+              -595.5,
+              -175.1
+            ],
+            [
+              -594.4,
+              -174.2
+            ],
+            [
+              -587.7,
+              -180.9
+            ]
+          ]
+        ],
+        "base": 127.5,
+        "top": 136
+      }
+    ],
+    "distanceFromRejectedOriginMeters": 1657.4,
+    "geometryStatus": "exterior-shell",
+    "placedScheduleKeys": 0,
+    "unplacedScheduleKeys": [
+      "127",
+      "133",
+      "139",
+      "140",
+      "201",
+      "221",
+      "222",
+      "250"
+    ],
+    "floors": [
+      {
+        "id": "L1",
+        "keys": [
+          "127",
+          "133",
+          "139",
+          "140"
+        ]
+      },
+      {
+        "id": "L2",
+        "keys": [
+          "201",
+          "221",
+          "222",
+          "250"
+        ]
+      }
+    ],
+    "indoorGeometryAvailable": false,
+    "floorAssignments": "room-number inference",
+    "floorHeights": "estimated"
+  },
+  "validation": {
+    "ok": true,
+    "issues": []
+  }
+}

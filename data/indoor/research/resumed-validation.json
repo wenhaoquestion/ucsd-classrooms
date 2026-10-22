@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-22T02:44:31.618198+00:00",
+  "scope": "Resumed source acquisition and integration: CALIT 1511 and SDSC E129 room geometry, BRF2 outline-free floor evidence, WFH floor identity, and cited-source UI. SDSC E129 now uses the newer official public September 2025 E1 plan, superseding the interim historical B1 assignment.",
+  "checks": {
+    "npmTest": "passed; npm wrapper counts 3 bundle files",
+    "directSemanticTestRuns": {
+      "indoor-supplements": {
+        "tests": 25,
+        "pass": 25,
+        "fail": 0
+      },
+      "indoor": {
+        "tests": 36,
+        "pass": 36,
+        "fail": 0
+      },
+      "view": {
+        "tests": 3,
+        "pass": 3,
+        "fail": 0
+      }
+    },
+    "typecheck": "passed",
+    "lint": "src scripts tests passed",
+    "indoorValidation": {
+      "errors": 0,
+      "warnings": 56,
+      "warningsOrigin": "Preserved pre-existing geometry; no new warning introduced by this resumed increment."
+    },
+    "productionBuild": "passed",
+    "originalSourceHashes": {
+      "documentsAndImages": 66,
+      "auxiliaryPhotosAndDirectionMap": 90,
+      "errors": 0,
+      "accountOnlyResearchCopies": 1
+    },
+    "browserEvidence": "data/indoor/research/browser-verification.json",
+    "independentIncrementReview": "data/indoor/research/resumed-integration-review.json: passed; 4 buildings, 12 preserved keys, 8 scoped source hashes",
+    "finalPublicSearch": "data/indoor/research/final-public-search.json; no additional verified target geometry from this final pass."
+  },
+  "storedCoverage": {
+    "knownBuildingCodes": 100,
+    "indoorBuildingCodes": 79,
+    "knownCodesWithoutIndoorLayout": 21,
+    "placed": 420,
+    "floorListed": 96,
+    "floorInferred": 28,
+    "unmapped": 7,
+    "roomPolygons": 9481,
+    "floors": 329,
+    "floorsWithoutRoomPolygons": 118,
+    "recordedScheduleKeys": 551,
+    "positionGaps": 131
+  },
+  "activeTermCoverage": {
+    "courses": 1503,
+    "meetingRecords": 5523,
+    "recordKinds": {
+      "section": 4167,
+      "exam": 1356
+    },
+    "locationBuildingCodes": 74,
+    "physicalBuildingCodes": 74,
+    "physicalBuildingsWithoutIndoorFile": 1,
+    "registeredBuildingsWithRuntimeErrors": 0,
+    "activePhysicalKeysAbsentFromRegisteredLayoutRecords": 2,
+    "missingKeyComparisonUnavailableForBuildings": [],
+    "uniqueLocationKeys": 461,
+    "physicalRoomKeys": 461,
+    "counts": {
+      "placed": 361,
+      "floorListed": 69,
+      "floorInferred": 23,
+      "unmapped": 6,
+      "no-layout": 2,
+      "nonphysical": 0
+    },
+    "placedFractionOfPhysicalRoomKeys": 0.7830802603036876,
+    "existingGeometryCandidateKeys": 0,
+    "uniqueUnmappedLabelCandidateKeys": 0
+  },
+  "verifiedFileHashes": {
+    "src/lib/indoor/manifest.ts": "e7e3ff61f5ea6ae988db9f3f0ba122e19ffed78fa68d29ec3822add99e293869",
+    "src/lib/indoor/schema.ts": "ac22b89d76ceacb7851d03beaa44250c3d9be0c29b6196cb20c80510b48d7d73",
+    "src/lib/indoor/validate.ts": "7550895999676584ae027ba9ccc0422bdf900919508eb91754ae5714925f19a9",
+    "src/explorer3d/IndoorScene.ts": "368b3cae83035f963be646fe92a49ca23a41fb0563b7f113a07056cbaf1779c6",
+    "static/indoor/CALIT-combined.json": "a19b1dc5b32cbb7be8bad24ffeac4ff553f4a6ffab055c8ae417e24838c51a02",
+    "static/indoor/BRF2-combined.json": "7c9c559d3fb94dbccd8d1e19d320d4075e1707bbc280bc0ef7ff51104b936cd4",
+    "static/indoor/facilities/WFH.json": "f290a8694156518ccc111014cd01b5b8ff0bf8e25f9a9ed5e8c000ab52b1749d",
+    "static/indoor/facilities/SDSC.json": "ec0a0ed3443c691c6c7cf96c3d34d2bc34d9a61f6530d833b325c0035742c7a2",
+    "data/indoor/research/acquisition-index.json": "49c76eac11ee13efaccf2e85867e11d5ee5e7690f7ee66895e13a142f60c7ecf",
+    "data/indoor/research/auxiliary-image-index.json": "ff28cdc2511fa0b95e7275da91a6ea8f0787bc19496b7f9f727f7a1c2f81a349",
+    "static/indoor/SDSC-combined.json": "a6c628326c884e597089fb73cc7b589f0bcbf0a949e19cf27aaee78f38250a73",
+    "scripts/build-sdsc-east.py": "5a2e27db8f8ca4857ecada842463879bf56ed599917ec33d209f6cc2e3799628",
+    "data/indoor/SDSC/east-e129-trace.json": "4b0fa68a668966aae5479fc8d54bb5d43bef2c064c592143ff97720a3fb5d036",
+    "src/components/explorer/BuildingExplorer.tsx": "a0fc28bbbcf8d242550ea4b7e5826d269218e8477ebfbbe1614fab82dcd379c1",
+    "tests/indoor-supplements.test.ts": "b09ffcdf567ea6f9c1e26317aa6fcd98eaa7d868d5023137632da7a637c51fd6",
+    "data/indoor/research/browser-verification.json": "df17c9c0d9cfadf63ba988b1d0f58514df84f747d1217f70112727424a51ac83",
+    "data/indoor/research/resumed-integration-review.json": "c64b75d167497fe0d4b77ee07f27785d157b8bb77565cb816609fee5722cf22c",
+    "data/indoor/research/final-public-search.json": "7807dd7c473385c6a367c60757e12ad8da47bdcee941d848145bbe4d75455682",
+    "data/indoor/research/floorplan-request-sent.json": "9e3d5e4962df07e6fbed6269dde5057c094a7a9444dfbd752839080f04f293db",
+    "data/indoor/research/remaining-floorplan-requests.csv": "313fcf60a4c1da9c8384f80f318e5633bc0ea67170300d6f38409d606fbf6260"
+  },
+  "notDone": [
+    "No deploy, commit, push or new account registration.",
+    "Remaining target rooms have not all been mapped; see remaining-floorplan-requests.csv."
+  ],
+  "authorizedExternalRequest": "User-authorized request sent to omcp@ucsd.edu with latest CSV; see floorplan-request-sent.json. Awaiting university response."
+}

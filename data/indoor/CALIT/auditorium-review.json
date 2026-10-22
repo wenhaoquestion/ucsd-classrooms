@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "building": "CALIT",
+  "reviewed": "2026-10-22",
+  "output": "static/indoor/CALIT-combined.json",
+  "addedScheduleKeys": [
+    "1511"
+  ],
+  "preservedScheduleKeys": [
+    "1511"
+  ],
+  "sourceImageSizePx": [
+    1169,
+    1321
+  ],
+  "sourcePixelArea": 141286.5,
+  "metersPerPixel": 0.043403718928562256,
+  "scaleBasis": {
+    "method": "uniform-scale-fitted-to-one-room-area",
+    "listedAreaSqft": 2865,
+    "source": "CALIT-FIS-L1-LISTING",
+    "roomKey": 31372,
+    "independentAreaValidation": false,
+    "note": "The trace has no reliable dimension or scale bar. sqrt(listedSqft * 0.09290304 / tracedPixelArea) is used for approximate metric display. Agreement with 2865 sqft is imposed, not independent verification."
+  },
+  "calibratedAreaSqft": 2864.999917166252,
+  "independentAreaValidation": false,
+  "roomIdentityEvidence": {
+    "source": "CALIT-SEAW-NOV-2006",
+    "page": 7,
+    "pageVisuallyInspected": true,
+    "quotedText": "Atkinson Hall Main Auditorium\u2013 Room 1511 of the Calit 2 Building, UC San Diego.",
+    "evidenceDate": "2006-11",
+    "modernAsBuiltConfirmation": false
+  },
+  "northKnown": false,
+  "campusRegistration": false,
+  "includedFloors": [
+    "L1"
+  ],
+  "basePreservedSeparately": {
+    "path": "static/indoor/facilities/CALIT.json",
+    "floors": [
+      "B",
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L5",
+      "L6",
+      "L7"
+    ],
+    "roomPolygons": 0
+  },
+  "limitations": [
+    "Only the L1 auditorium room is modeled. The outline represents its perimeter and is not a complete floor plan or a building exterior.",
+    "The official QI event diagram is undated. Historical SEAW page 7 supplies the explicit Main Auditorium\u20131511 crosswalk; present public FIS metadata confirms room number, floor and area. These sources do not establish modern as-built accuracy or confirm that no intervening changes occurred.",
+    "Metric display scale is calibrated from a single room area (2865 sqft). There is no independent scale dimension or area validation, and boundary measurement conventions may differ.",
+    "North is unknown and no campus georeference is present. Drawing-axis local coordinates must not be overlaid on the campus map.",
+    "Tier heights and total room height are unknown; the renderer uses an explicitly estimated 4 m extrusion.",
+    "The original Facilities layout remains preserved at static/indoor/facilities/CALIT.json with B and L1\u2013L7 outlines. Its eight-floor shell is not merged into this independent single-room coordinate frame."
+  ],
+  "inputHashes": {
+    "data/indoor/CALIT/auditorium-trace.json": "6a9a7ab77140210c538abab8de1dabb9abf9289d5e0a20742f3b951b8e910436",
+    "static/indoor/facilities/CALIT.json": "bb0ea997d62176f8e8f68f22754d124f0d001dfcb185c3ae0f283cd0ddc17481",
+    "local/indoor-sources/CALIT-EVENT-DIAGRAM.jpg": "41632e5bb5c807a5acedcd4b719a30c92c44c7b42b1724c863cf315722a15712",
+    "local/indoor-sources/CALIT-SEAW-NOV-2006.pdf": "774501ad90f518548721e3c30132b418bda7da42e353c0cb3dd6af0bd2f5595c",
+    "local/indoor-sources/CALIT-L1-FIS.html": "cccb22a9af50b7c74ab5abec08ceefc0a7a45f54ebeb79196921419f4f6cbf1b"
+  },
+  "outputSha256": "a19b1dc5b32cbb7be8bad24ffeac4ff553f4a6ffab055c8ae417e24838c51a02",
+  "reviewOverlay": "local/indoor-sources/CALIT-auditorium-review.png",
+  "identityPageImage": "local/indoor-sources/CALIT-seaw-page-7-review.png"
+}

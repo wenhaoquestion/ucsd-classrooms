@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "building": "CENTR",
+  "trace": "data/indoor/CENTR/fis-trace.json",
+  "output": "static/indoor/CENTR-combined.json",
+  "source": {
+    "id": "CENTR-L2-FIS",
+    "localPath": "local/indoor-sources/CENTR-L2-FIS.png",
+    "sha256": "20c8cfa8c4189fbd2073d0a11cad112451a82d9b7bd1a963a913c7d7af4e5f80",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=171&fcode=2&zoom=1",
+    "accessed": "2026-10-21",
+    "acquiredAt": "2026-10-22T01:21:35.344Z",
+    "printedDate": "2021-08-18",
+    "title": "UCSD Facilities Information System - Center Hall - Second Floor - Master Plan",
+    "size": [
+      5761,
+      4321
+    ]
+  },
+  "transform": {
+    "formula": "x=a*u-b*sign*v+tx; z=b*u+a*sign*v+tz",
+    "a": -0.0013138394691968262,
+    "b": 0.025261518672102738,
+    "sign": 1,
+    "tx": 55.719119973971125,
+    "tz": -70.89221721333124,
+    "metersPerPixel": 0.025295661678869256
+  },
+  "registrationChecks": {
+    "controls": [
+      {
+        "sourcePoint": [
+          4340,
+          2252
+        ],
+        "targetFloor": "L2",
+        "targetRoom": "202",
+        "targetVertex": 5,
+        "targetPoint": [
+          -7.01,
+          35.94
+        ],
+        "transformedPoint": [
+          -6.871883371918464,
+          35.78400733896339
+        ],
+        "residualMeters": 0.20835045776262334
+      },
+      {
+        "sourcePoint": [
+          4508,
+          2475
+        ],
+        "targetFloor": "L2",
+        "targetRoom": "202",
+        "targetVertex": 3,
+        "targetPoint": [
+          -12.59,
+          39.62
+        ],
+        "transformedPoint": [
+          -12.72592706662244,
+          39.73495627424576
+        ],
+        "residualMeters": 0.1780199776122003
+      },
+      {
+        "sourcePoint": [
+          1397,
+          1996
+        ],
+        "targetFloor": "L2",
+        "targetRoom": "220",
+        "targetVertex": 9,
+        "targetPoint": [
+          3.18,
+          -38.22
+        ],
+        "transformedPoint": [
+          3.4616949659860907,
+          -38.22429920892058
+        ],
+        "residualMeters": 0.28172777118922354
+      },
+      {
+        "sourcePoint": [
+          1432,
+          2243
+        ],
+        "targetFloor": "L2",
+        "targetRoom": "220",
+        "targetVertex": 7,
+        "targetPoint": [
+          -2.54,
+          -37.71
+        ],
+        "transformedPoint": [
+          -2.8238845274451734,
+          -37.664664404288594
+        ],
+        "residualMeters": 0.2874817231778005
+      }
+    ],
+    "holdouts": [
+      {
+        "sourcePoint": [
+          3948,
+          2638
+        ],
+        "targetFloor": "L2",
+        "targetRoom": "208",
+        "targetVertex": 5,
+        "targetPoint": [
+          -16.52,
+          25.38
+        ],
+        "transformedPoint": [
+          -16.107804507424966,
+          25.37434998438914
+        ],
+        "residualMeters": 0.41223421349468026
+      },
+      {
+        "sourcePoint": [
+          1154,
+          2292
+        ],
+        "targetFloor": "L2",
+        "targetRoom": "217B",
+        "targetVertex": 11,
+        "targetPoint": [
+          -3.71,
+          -44.58
+        ],
+        "transformedPoint": [
+          -3.6964515699414875,
+          -44.7517447291238
+        ],
+        "residualMeters": 0.1722782979334844
+      },
+      {
+        "sourcePoint": [
+          1063,
+          1633
+        ],
+        "targetFloor": "L2",
+        "targetRoom": "224C",
+        "targetVertex": 3,
+        "targetPoint": [
+          12.75,
+          -46.36
+        ],
+        "transformedPoint": [
+          13.070448626671123,
+          -46.184722718084444
+        ],
+        "residualMeters": 0.3652525809506535
+      }
+    ]
+  },
+  "registrationReferenceRaster": "CENTR-L2-FIS",
+  "areaChecks": [
+    {
+      "scheduleKey": "205",
+      "tracedSqft": 493.82404523995604,
+      "printedSqft": 500,
+      "relativeDifference": -0.012351909520087911,
+      "referenceAreaBasis": "Printed source label"
+    },
+    {
+      "scheduleKey": "218",
+      "tracedSqft": 440.97619069451673,
+      "printedSqft": 463,
+      "relativeDifference": -0.04756762269002868,
+      "referenceAreaBasis": "Printed source label"
+    }
+  ],
+  "recoveredScheduleKeys": [
+    "205",
+    "218"
+  ],
+  "remainingUnplacedKeys": [],
+  "retainedFloorCount": 4,
+  "reviewOverlays": [
+    "local/indoor-sources/CENTR-review/L2-FIS-review.png",
+    "local/indoor-sources/CENTR-review/L2-FIS-registration.png"
+  ],
+  "limitations": [
+    "Only scheduled rooms 205 and 218 are traced from the public 2021 FIS raster. The same boundaries also carry duplicate MS labels 258 and 269; these are not additional classrooms.",
+    "Door jambs, small column recesses and curved parapet details are simplified. New geometry is approximate, not a survey.",
+    "A single similarity transformation uses controls in both wings and independent corners in three other rooms. Existing room polygons and floor elevations are retained unchanged. The L2 slab is the exact union of its original approximate outline and the source-traced 205 footprint, because the old slab omitted this upper-floor extension. This is a limited geometry supplement, not a newly surveyed whole-floor outline.",
+    "The source warns that displayed FIS plans may be out of date; later alterations cannot be excluded."
+  ]
+}

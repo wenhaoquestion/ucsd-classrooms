@@ -58,8 +58,8 @@
     },
     "erc": {
       "ASANT": {
-        "location": [32.88423744331073, -117.24213984468823],
-        "name": "Asante House",
+        "location": [32.88401748728981, -117.24212409262746],
+        "name": "Asante Meeting Rooms",
         "images": [
           { "url": "https://i.imgur.com/41b7QoK.jpeg", "size": [4032, 3024] },
           { "url": "https://i.imgur.com/cg9qmez.jpeg", "size": [4032, 3024] },
@@ -182,6 +182,11 @@
           { "url": "https://i.imgur.com/3vsXk5i.jpeg", "size": [3024, 4032] },
           { "url": "https://i.imgur.com/AB7VKGW.jpeg", "size": [3024, 4032] }
         ]
+      },
+      "MCC": {
+        "location": [32.88148188000796, -117.2402227584624],
+        "name": "Media Center and Communication Building",
+        "images": []
       },
       "PETER": {
         "location": [32.879984046654364, -117.2402525268966],
@@ -776,13 +781,6 @@
       "SCRB": {
         "location": [32.8758549279704, -117.23394815633426],
         "name": "Stein Clinical Research Building",
-        "images": []
-      }
-    },
-    "health": {
-      "MCC": {
-        "location": [32.87832294065095, -117.22294309501584],
-        "name": "Moores Cancer Center",
         "images": []
       }
     },

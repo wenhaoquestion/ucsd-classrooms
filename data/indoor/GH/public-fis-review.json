@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "building": "GH",
+  "output": "static/indoor/GH-combined.json",
+  "addedScheduleKeys": [
+    "320",
+    "321"
+  ],
+  "preservedScheduleKeys": [
+    "242"
+  ],
+  "campusRegistration": false,
+  "transform": {
+    "formula": "x=s*u+tx; z=s*v+tz",
+    "s": 0.050797379754995035,
+    "tx": -52.9488156291406,
+    "tz": -40.33979657356406
+  },
+  "registrationChecks": {
+    "controls": [
+      {
+        "source": [
+          1089,
+          608
+        ],
+        "target": [
+          2.400731,
+          -9.589768
+        ],
+        "existing242Vertex": 15,
+        "residualMeters": 0.1383421457257322
+      },
+      {
+        "source": [
+          931,
+          650
+        ],
+        "target": [
+          -5.93645,
+          -7.196445
+        ],
+        "existing242Vertex": 9,
+        "residualMeters": 0.30665282168928415
+      },
+      {
+        "source": [
+          1248,
+          650
+        ],
+        "target": [
+          10.68531,
+          -7.196445
+        ],
+        "existing242Vertex": 21,
+        "residualMeters": 0.26973661420170647
+      },
+      {
+        "source": [
+          914,
+          1030
+        ],
+        "target": [
+          -6.199452,
+          11.923839
+        ],
+        "existing242Vertex": 7,
+        "residualMeters": 0.3257045287327155
+      },
+      {
+        "source": [
+          1264,
+          1030
+        ],
+        "target": [
+          10.948313,
+          11.923839
+        ],
+        "existing242Vertex": 23,
+        "residualMeters": 0.3160641131748424
+      }
+    ],
+    "holdouts": [
+      {
+        "source": [
+          1031,
+          1037
+        ],
+        "target": [
+          -0.413396,
+          12.265743
+        ],
+        "existing242Vertex": 3,
+        "residualMeters": 0.17822337862917942
+      },
+      {
+        "source": [
+          1140,
+          1037
+        ],
+        "target": [
+          5.162257,
+          12.265743
+        ],
+        "existing242Vertex": 2,
+        "residualMeters": 0.21428501405604633
+      },
+      {
+        "source": [
+          971,
+          1079
+        ],
+        "target": [
+          -4.332134,
+          14.606465
+        ],
+        "existing242Vertex": 5,
+        "residualMeters": 0.7205045355839201
+      },
+      {
+        "source": [
+          1209,
+          1079
+        ],
+        "target": [
+          9.159896,
+          14.606465
+        ],
+        "existing242Vertex": 0,
+        "residualMeters": 0.707846115141561
+      }
+    ]
+  },
+  "areaChecks": [
+    {
+      "room": "320",
+      "tracedAreaSqft": 1771.1506086238908,
+      "listedAreaSqft": 1759,
+      "relativeDifference": 0.0069076797179594696,
+      "usedToSetScale": false
+    },
+    {
+      "room": "321",
+      "tracedAreaSqft": 1077.0,
+      "listedAreaSqft": 1077,
+      "relativeDifference": 0.0,
+      "usedToSetScale": true
+    }
+  ],
+  "limitations": [
+    "No campus registration is claimed. All prior floor plates and the full dimensioned 2016 room-242 footprint are retained unchanged.",
+    "The 2021 L3 plan shows upper-level room-242 boundaries plus lower-level projections. They serve only as shared perimeter controls; no partial upper-level polygon replaces the complete auditorium.",
+    "Registration to the independently traced 2016 room 242 has residuals up to 0.72 m at two rear entrance corners. New room placement is approximate.",
+    "321 sets the single image scale; 320 is an independent area check. Neither room is independently resized to match its area.",
+    "Floor heights remain estimated; internal steps, door swing arcs, seats, and circulation are not modeled."
+  ],
+  "inputHashes": {
+    "data/indoor/GH/public-fis-trace.json": "2f6a20d21eb595ef60cee7fe47bec46dfd904bda1aa7cf5d920271626ccb850d",
+    "scripts/supplement-gh-242.py": "3a0c23175921b5636c08bea406e61e4ce852120ed13fc33c86a6389eb9abf0f6",
+    "local/indoor-sources/GH-L3-FIS.png": "cd4d790bff8830d96871a264c8a1c5ea30771e8ffdde6dae8289672fa0b29d9e"
+  },
+  "remainingUnplaced": [
+    "15",
+    "18A",
+    "18B",
+    "23",
+    "103",
+    "111",
+    "144",
+    "145",
+    "155",
+    "157",
+    "170",
+    "174",
+    "102",
+    "203",
+    "247",
+    "253",
+    "254"
+  ]
+}

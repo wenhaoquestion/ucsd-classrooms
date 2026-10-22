@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "building": "BRF2",
+  "output": "static/indoor/BRF2-combined.json",
+  "source": {
+    "id": "BRF2-L4-FIS-VECTOR",
+    "floor": "L4",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=903&fcode=4&zoom=1",
+    "title": "UCSD Facilities Information System - Israni BRF - Fourth Floor - Master Plan",
+    "localPath": "local/indoor-sources/BRF2-L4-FIS.html",
+    "sha256": "932f2b1c15f994f3cde444064206bf6ecff9317f7fa624a7dd5af414fe8b6f41",
+    "accessed": "2026-10-22",
+    "bkey": 903,
+    "fcode": "4",
+    "planKey": 11089,
+    "imageSizePx": [
+      6913,
+      9217
+    ]
+  },
+  "classrooms": {
+    "73656": "4103"
+  },
+  "knownUnmapped": [
+    {
+      "scheduleKey": "1102",
+      "reason": "Current schedule key; the normal public first-floor viewer returned an error. No room polygon or floor outline was recovered."
+    }
+  ],
+  "scaleCalibration": {
+    "imageOriginPx": [
+      3456.5,
+      4608.5
+    ],
+    "minimumCalibrationAreaSqft": 100,
+    "excludeTargetRooms": true,
+    "expectedCalibrationPairs": 89,
+    "method": "Intersect all 89 non-target polygon-area squared-scale intervals implied by whole-square-foot rounding, then choose the interval midpoint. 4103 is a held-out check; all 125 pairs are audited with a 0.01 sq ft coordinate-quantization margin."
+  },
+  "limitations": [
+    "Public raster requests returned Login HTML. Native polygons are the geometry evidence; no raster details or drawing revision are claimed.",
+    "Only level L4 has recovered geometry. Event-organizer sources explicitly place 1104 on L1 and 5A03 on L5; these levels have empty outlines and unplaced listings only. 1102 remains knownUnmapped.",
+    "Floor outlines are the published space polygon parts, not a surveyed exterior slab. Unassigned polygons remain explicitly unknown areas.",
+    "Local meter scale is derived from published rounded room areas, not measured dimensions. Campus geo, true north and alignment to other floor plans are unverified and omitted.",
+    "The floor elevation and story height are display estimates.",
+    "The clear architect third-level drawing and low-resolution Senate fifth-level thumbnail cannot establish the missing current target rooms.",
+    "Public corridor ID 87238, (C)4107, has a self-intersecting boundary and is omitted from the runtime outline/areas and scale calibration; its unchanged original coordinates remain in the review."
+  ],
+  "excludedPolygons": {
+    "87238": {
+      "label": "(C)4107",
+      "reason": "The published corridor ring self-intersects/self-touches at nonconsecutive repeated vertices. It is excluded from runtime and scale calibration rather than repaired without independent wall evidence."
+    }
+  }
+}

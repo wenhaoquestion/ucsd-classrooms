@@ -1,0 +1,1095 @@
+{
+  "schemaVersion": 1,
+  "building": "MANDE",
+  "baseLayout": "static/indoor/facilities/MANDE.json",
+  "baseSha256": "47e92301eda2ad7851eb10eaa196bd18b1b6a7f0412e4bde1d19977ed725d915",
+  "output": "static/indoor/MANDE-combined.json",
+  "sources": {
+    "B1": {
+      "id": "MANDE-B1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=340&fcode=B1&zoom=1",
+      "localPath": "local/indoor-sources/MANDE-B1-FIS.png",
+      "sha256": "2d75a4c674a3f395470f3ed8c646ab5d06627192de2e94a9c383c87472f09b09",
+      "htmlPath": "local/indoor-sources/MANDE-B1-FIS.html",
+      "htmlSha256": "cd2cc800551a4690d9e5aa39ab312272949e1fce9cd275038859bbbc5708f367",
+      "imageSizePx": [
+        7976,
+        5982
+      ],
+      "acquiredAt": "2026-10-22T01:18:29.479Z",
+      "accessed": "2026-10-22",
+      "printedDate": "2018-10-11",
+      "title": "UCSD Facilities Information System - Mandeville Center - Basement 1 - Master Plan"
+    },
+    "B2": {
+      "id": "MANDE-B2-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=340&fcode=B2&zoom=1",
+      "localPath": "local/indoor-sources/MANDE-B2-FIS.png",
+      "sha256": "1d506b203acf31435a4edd90be1f321727d1ccaa2e629c052643fbcfdf366552",
+      "htmlPath": "local/indoor-sources/MANDE-B2-FIS.html",
+      "htmlSha256": "059564ec3e7db8c09d336e5ec8babdceb77691343b8efe38a439217658c45909",
+      "imageSizePx": [
+        5760,
+        4320
+      ],
+      "acquiredAt": "2026-10-22T01:18:37.039Z",
+      "accessed": "2026-10-22",
+      "printedDate": "2024-09-19",
+      "title": "UCSD Facilities Information System - Mandeville Center - Basement 2 - Master Plan"
+    },
+    "L1": {
+      "id": "MANDE-L1-FIS",
+      "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=340&fcode=1&zoom=1",
+      "localPath": "local/indoor-sources/MANDE-L1-FIS.png",
+      "sha256": "230307a44919309eddd41b5bb0b5baa2346011cff3f21d7c89339dde05abe9bb",
+      "htmlPath": "local/indoor-sources/MANDE-L1-FIS.html",
+      "htmlSha256": "e37c140ac0c37a6d3a9874d2f4bbe082525c13a068ff86c40f9f532a34a71400",
+      "imageSizePx": [
+        7841,
+        5881
+      ],
+      "acquiredAt": "2026-10-22T01:22:53.459Z",
+      "accessed": "2026-10-22",
+      "printedDate": "2017-06-28",
+      "title": "UCSD Facilities Information System - Mandeville Center - First Floor - Master Plan"
+    }
+  },
+  "registration": {
+    "localFrame": {
+      "method": "Reflected similarity from three L1 raster room corners to retained Facilities room vertices; five withheld room corners verify the frame. Existing frame is mirrored, without reliable geographic registration.",
+      "controlPoints": [
+        {
+          "room": "101",
+          "vertex": 0,
+          "point": [
+            429,
+            2728
+          ]
+        },
+        {
+          "room": "101",
+          "vertex": 9,
+          "point": [
+            429,
+            3209
+          ]
+        },
+        {
+          "room": "134",
+          "vertex": 4,
+          "point": [
+            4911,
+            3569
+          ]
+        }
+      ],
+      "holdoutPoints": [
+        {
+          "room": "103",
+          "vertex": 1,
+          "point": [
+            1903,
+            3043
+          ]
+        },
+        {
+          "room": "103",
+          "vertex": 2,
+          "point": [
+            1903,
+            2663
+          ]
+        },
+        {
+          "room": "103",
+          "vertex": 0,
+          "point": [
+            1619,
+            3043
+          ]
+        },
+        {
+          "room": "134",
+          "vertex": 3,
+          "point": [
+            4911,
+            2483
+          ]
+        },
+        {
+          "room": "134",
+          "vertex": 14,
+          "point": [
+            5375,
+            2369
+          ]
+        }
+      ]
+    },
+    "B1": {
+      "target": "L1",
+      "method": "Shared west stairwell (B101/102) and far eastern elevator shaft (B1202/160), not floor-envelope bounds.",
+      "controlPoints": [
+        {
+          "feature": "West stairwell outer northwest corner",
+          "sourcePoint": [
+            1291,
+            2797
+          ],
+          "targetPoint": [
+            1267,
+            2843
+          ]
+        },
+        {
+          "feature": "West stairwell inner southwest corner",
+          "sourcePoint": [
+            1303,
+            3037
+          ],
+          "targetPoint": [
+            1279,
+            3083
+          ]
+        },
+        {
+          "feature": "Eastern elevator shaft northeast corner",
+          "sourcePoint": [
+            4861,
+            2323
+          ],
+          "targetPoint": [
+            4837,
+            2369
+          ]
+        }
+      ],
+      "holdoutPoints": [
+        {
+          "feature": "Eastern elevator shaft southwest corner",
+          "sourcePoint": [
+            4759,
+            2449
+          ],
+          "targetPoint": [
+            4735,
+            2495
+          ]
+        },
+        {
+          "feature": "West stairwell inner southeast corner",
+          "sourcePoint": [
+            1409,
+            3037
+          ],
+          "targetPoint": [
+            1385,
+            3083
+          ]
+        }
+      ]
+    },
+    "B2": {
+      "target": "B1",
+      "method": "Shared west stairwell (B250/B101) and central elevator shaft (B253/B120). Half-scale pixel correspondence checked at distinct corners.",
+      "controlPoints": [
+        {
+          "feature": "West stairwell inner northwest corner",
+          "sourcePoint": [
+            253,
+            1862
+          ],
+          "targetPoint": [
+            1303,
+            2809
+          ]
+        },
+        {
+          "feature": "West stairwell inner southwest corner",
+          "sourcePoint": [
+            253,
+            2318
+          ],
+          "targetPoint": [
+            1303,
+            3037
+          ]
+        },
+        {
+          "feature": "Central elevator shaft northwest corner",
+          "sourcePoint": [
+            2217,
+            1490
+          ],
+          "targetPoint": [
+            2285,
+            2623
+          ]
+        }
+      ],
+      "holdoutPoints": [
+        {
+          "feature": "West stairwell inner southeast corner",
+          "sourcePoint": [
+            465,
+            2318
+          ],
+          "targetPoint": [
+            1409,
+            3037
+          ]
+        },
+        {
+          "feature": "Central elevator shaft southeast corner",
+          "sourcePoint": [
+            2405,
+            1762
+          ],
+          "targetPoint": [
+            2379,
+            2759
+          ]
+        }
+      ]
+    }
+  },
+  "rooms": [
+    {
+      "floor": "B1",
+      "scheduleKey": "B104",
+      "label": "B104",
+      "drawnAreaSqft": 864,
+      "outer": [
+        [
+          2131,
+          2803
+        ],
+        [
+          2339,
+          2803
+        ],
+        [
+          2339,
+          2839
+        ],
+        [
+          2379,
+          2839
+        ],
+        [
+          2379,
+          2933
+        ],
+        [
+          2415,
+          2933
+        ],
+        [
+          2415,
+          2923
+        ],
+        [
+          2451,
+          2923
+        ],
+        [
+          2451,
+          2933
+        ],
+        [
+          2455,
+          2933
+        ],
+        [
+          2455,
+          3223
+        ],
+        [
+          2131,
+          3223
+        ]
+      ],
+      "labelAt": [
+        2290,
+        3020
+      ]
+    },
+    {
+      "floor": "B1",
+      "scheduleKey": "B111E",
+      "label": "B111E",
+      "drawnAreaSqft": 930,
+      "outer": [
+        [
+          1303,
+          1727
+        ],
+        [
+          1579,
+          1727
+        ],
+        [
+          1579,
+          1883
+        ],
+        [
+          1563,
+          1883
+        ],
+        [
+          1563,
+          1895
+        ],
+        [
+          1579,
+          1895
+        ],
+        [
+          1579,
+          1949
+        ],
+        [
+          1563,
+          1949
+        ],
+        [
+          1563,
+          1985
+        ],
+        [
+          1587,
+          1985
+        ],
+        [
+          1587,
+          2017
+        ],
+        [
+          1563,
+          2017
+        ],
+        [
+          1563,
+          2029
+        ],
+        [
+          1579,
+          2029
+        ],
+        [
+          1579,
+          2181
+        ],
+        [
+          1563,
+          2181
+        ],
+        [
+          1563,
+          2193
+        ],
+        [
+          1303,
+          2193
+        ]
+      ],
+      "labelAt": [
+        1420,
+        1940
+      ]
+    },
+    {
+      "floor": "B1",
+      "scheduleKey": "B113",
+      "label": "B113",
+      "drawnAreaSqft": 719,
+      "outer": [
+        [
+          1855,
+          1279
+        ],
+        [
+          2236,
+          1279
+        ],
+        [
+          2236,
+          1527
+        ],
+        [
+          2227,
+          1527
+        ],
+        [
+          2227,
+          1539
+        ],
+        [
+          2209,
+          1539
+        ],
+        [
+          2209,
+          1557
+        ],
+        [
+          1909,
+          1557
+        ],
+        [
+          1909,
+          1539
+        ],
+        [
+          1897,
+          1539
+        ],
+        [
+          1897,
+          1557
+        ],
+        [
+          1855,
+          1557
+        ]
+      ],
+      "labelAt": [
+        2035,
+        1400
+      ]
+    },
+    {
+      "floor": "B1",
+      "scheduleKey": "B114",
+      "label": "B114",
+      "drawnAreaSqft": 1599,
+      "outer": [
+        [
+          2242,
+          1279
+        ],
+        [
+          2839,
+          1279
+        ],
+        [
+          2839,
+          1527
+        ],
+        [
+          2831,
+          1527
+        ],
+        [
+          2831,
+          1593
+        ],
+        [
+          2843,
+          1593
+        ],
+        [
+          2843,
+          1667
+        ],
+        [
+          2239,
+          1667
+        ],
+        [
+          2239,
+          1593
+        ],
+        [
+          2247,
+          1593
+        ],
+        [
+          2247,
+          1527
+        ],
+        [
+          2242,
+          1527
+        ]
+      ],
+      "labelAt": [
+        2535,
+        1460
+      ]
+    },
+    {
+      "floor": "B1",
+      "scheduleKey": "B115B",
+      "label": "B115B",
+      "drawnAreaSqft": 953,
+      "outer": [
+        [
+          2543,
+          1731
+        ],
+        [
+          2839,
+          1731
+        ],
+        [
+          2839,
+          2125
+        ],
+        [
+          2831,
+          2125
+        ],
+        [
+          2831,
+          2197
+        ],
+        [
+          2547,
+          2197
+        ],
+        [
+          2547,
+          2125
+        ],
+        [
+          2543,
+          2125
+        ]
+      ],
+      "labelAt": [
+        2688,
+        1950
+      ]
+    },
+    {
+      "floor": "B1",
+      "scheduleKey": "B146",
+      "label": "B146",
+      "drawnAreaSqft": 483,
+      "outer": [
+        [
+          3715,
+          3269
+        ],
+        [
+          3919,
+          3235
+        ],
+        [
+          3919,
+          3563
+        ],
+        [
+          3909,
+          3559
+        ],
+        [
+          3873,
+          3541
+        ],
+        [
+          3671,
+          3513
+        ],
+        [
+          3671,
+          3477
+        ],
+        [
+          3657,
+          3477
+        ],
+        [
+          3657,
+          3461
+        ],
+        [
+          3671,
+          3461
+        ],
+        [
+          3671,
+          3377
+        ],
+        [
+          3657,
+          3377
+        ],
+        [
+          3657,
+          3361
+        ],
+        [
+          3671,
+          3361
+        ],
+        [
+          3671,
+          3345
+        ],
+        [
+          3657,
+          3345
+        ],
+        [
+          3657,
+          3333
+        ],
+        [
+          3715,
+          3333
+        ]
+      ],
+      "labelAt": [
+        3810,
+        3405
+      ]
+    },
+    {
+      "floor": "B1",
+      "scheduleKey": "B150",
+      "label": "B150",
+      "drawnAreaSqft": 1630,
+      "outer": [
+        [
+          2231,
+          3787
+        ],
+        [
+          2847,
+          3787
+        ],
+        [
+          2847,
+          4171
+        ],
+        [
+          2231,
+          4171
+        ]
+      ],
+      "labelAt": [
+        2535,
+        3940
+      ]
+    },
+    {
+      "floor": "B1",
+      "scheduleKey": "B152",
+      "label": "B152",
+      "drawnAreaSqft": 601,
+      "outer": [
+        [
+          2543,
+          3365
+        ],
+        [
+          2847,
+          3365
+        ],
+        [
+          2847,
+          3651
+        ],
+        [
+          2543,
+          3651
+        ]
+      ],
+      "labelAt": [
+        2690,
+        3505
+      ]
+    },
+    {
+      "floor": "B1",
+      "scheduleKey": "B153",
+      "label": "B153",
+      "drawnAreaSqft": 601,
+      "outer": [
+        [
+          2231,
+          3365
+        ],
+        [
+          2537,
+          3365
+        ],
+        [
+          2537,
+          3651
+        ],
+        [
+          2231,
+          3651
+        ]
+      ],
+      "labelAt": [
+        2375,
+        3505
+      ]
+    },
+    {
+      "floor": "B2",
+      "scheduleKey": "B202",
+      "label": "B202",
+      "drawnAreaSqft": 3070,
+      "outer": [
+        [
+          633,
+          1490
+        ],
+        [
+          2173,
+          1490
+        ],
+        [
+          2173,
+          1746
+        ],
+        [
+          2121,
+          1746
+        ],
+        [
+          2121,
+          1726
+        ],
+        [
+          2101,
+          1726
+        ],
+        [
+          2101,
+          1958
+        ],
+        [
+          2109,
+          1958
+        ],
+        [
+          2109,
+          1972
+        ],
+        [
+          2125,
+          1972
+        ],
+        [
+          2125,
+          2112
+        ],
+        [
+          2109,
+          2112
+        ],
+        [
+          2109,
+          2130
+        ],
+        [
+          2093,
+          2130
+        ],
+        [
+          2093,
+          2666
+        ],
+        [
+          2109,
+          2666
+        ],
+        [
+          2109,
+          2690
+        ],
+        [
+          633,
+          2690
+        ]
+      ],
+      "labelAt": [
+        1365,
+        2070
+      ]
+    },
+    {
+      "floor": "B2",
+      "scheduleKey": "B206",
+      "label": "B206",
+      "drawnAreaSqft": 1959,
+      "outer": [
+        [
+          2141,
+          2150
+        ],
+        [
+          3309,
+          2150
+        ],
+        [
+          3309,
+          2666
+        ],
+        [
+          3349,
+          2666
+        ],
+        [
+          3349,
+          2826
+        ],
+        [
+          3317,
+          2826
+        ],
+        [
+          3317,
+          3102
+        ],
+        [
+          2133,
+          3102
+        ],
+        [
+          2133,
+          2830
+        ],
+        [
+          2101,
+          2830
+        ],
+        [
+          2101,
+          2694
+        ],
+        [
+          2141,
+          2694
+        ]
+      ],
+      "labelAt": [
+        2720,
+        2590
+      ]
+    }
+  ],
+  "floorOutlines": {
+    "B1": [
+      {
+        "outer": [
+          [
+            1291,
+            1267
+          ],
+          [
+            3791,
+            1267
+          ],
+          [
+            3791,
+            2401
+          ],
+          [
+            3485,
+            2401
+          ],
+          [
+            3485,
+            1567
+          ],
+          [
+            2859,
+            1567
+          ],
+          [
+            2859,
+            2205
+          ],
+          [
+            2231,
+            2205
+          ],
+          [
+            2231,
+            1591
+          ],
+          [
+            1595,
+            1591
+          ],
+          [
+            1595,
+            2521
+          ],
+          [
+            1291,
+            2521
+          ]
+        ]
+      },
+      {
+        "outer": [
+          [
+            2107,
+            2599
+          ],
+          [
+            2967,
+            2599
+          ],
+          [
+            2967,
+            3247
+          ],
+          [
+            2107,
+            3247
+          ]
+        ]
+      },
+      {
+        "outer": [
+          [
+            2215,
+            3349
+          ],
+          [
+            2863,
+            3349
+          ],
+          [
+            2863,
+            4187
+          ],
+          [
+            2215,
+            4187
+          ]
+        ]
+      },
+      {
+        "outer": [
+          [
+            3631,
+            3319
+          ],
+          [
+            3699,
+            3319
+          ],
+          [
+            3699,
+            3259
+          ],
+          [
+            3931,
+            3220
+          ],
+          [
+            3931,
+            3575
+          ],
+          [
+            3629,
+            3520
+          ]
+        ]
+      }
+    ],
+    "B2": [
+      {
+        "outer": [
+          [
+            229,
+            1838
+          ],
+          [
+            609,
+            1838
+          ],
+          [
+            609,
+            1466
+          ],
+          [
+            3061,
+            1466
+          ],
+          [
+            3061,
+            1274
+          ],
+          [
+            3453,
+            1274
+          ],
+          [
+            3453,
+            1466
+          ],
+          [
+            4873,
+            1466
+          ],
+          [
+            4873,
+            1958
+          ],
+          [
+            5365,
+            1958
+          ],
+          [
+            5365,
+            2222
+          ],
+          [
+            4873,
+            2222
+          ],
+          [
+            4873,
+            2714
+          ],
+          [
+            3613,
+            2714
+          ],
+          [
+            3613,
+            3126
+          ],
+          [
+            1837,
+            3126
+          ],
+          [
+            1837,
+            2714
+          ],
+          [
+            609,
+            2714
+          ],
+          [
+            609,
+            2342
+          ],
+          [
+            229,
+            2342
+          ]
+        ]
+      }
+    ]
+  },
+  "limitations": [
+    "Manually simplified classroom wall boundaries from dated public Facilities master-plan rasters. Perimeter columns, narrow wall recesses, doors and furniture are simplified; these are not measured 3D interiors.",
+    "B1 outline covers only four reviewed teaching-wing portions, not the entire basement; unreviewed eastern service areas and unexcavated regions are omitted. B2 uses its visible outer floor envelope. Neither basement reuses the former copied L1 outline.",
+    "L1 and L2 room geometry and all 114 pre-existing room objects are preserved. L1 raster is calibration evidence only. L2 room 212 remains unplaced.",
+    "Registration is into the original mirrored local coordinate frame. No campus longitude/latitude or absolute north correction is added. Exact reflected transforms and independent checks are recorded in the review JSON.",
+    "FIS warns its viewer imagery may be out of date; current CAD-vault/Tririga export remains unavailable. Different drawing revisions are stated individually."
+  ]
+}

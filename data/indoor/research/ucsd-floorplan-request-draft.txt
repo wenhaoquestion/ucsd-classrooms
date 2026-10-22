@@ -1,0 +1,26 @@
+SENT COPY — authorized by the user
+To: omcp@ucsd.edu
+Subject: Request for classroom floor-plan data / correct access route for UCSD classroom map
+
+Hello UC San Diego Space Management team,
+
+I’m working on a UCSD classroom-location website that matches schedule building codes and room numbers to floor plans. I have a UCSD account, but the available Tririga navigation did not provide a Floors/Portfolio export, and the department-linked SERF floor-plan files were not accessible with my account.
+
+Could you advise the correct access route, or provide existing room-numbered floor plans for the teaching spaces in the attached list? A vector PDF, SVG, room-boundary export, DWG, or an existing IFC model would work. I only need room numbers, floor identifiers, room boundaries and the relevant building/code crosswalk; occupant names and other staff information are unnecessary.
+
+The attached remaining-floorplan-requests.csv groups the unresolved rooms by building and floor. Its active_FA26_room_keys column identifies the 100 unresolved rooms appearing in the retained Fall 2026 schedule snapshot. The whole list also includes unresolved rooms from other saved schedule records, so the two totals should not be conflated.
+
+Highest-priority examples are:
+- Galbraith Hall (GH), Level 1: 102, 103, 111, 144, 145, 155, 157, 170, 174.
+- Podemos (PODEM), Levels 1–2: 0132, 0133, 1A18, 1A19, 1A20, 1A22, 1A23, 0273, 0274, 0275.
+- Coalition (COA), Level 2: 201, 217, 269, 270, 271, 272.
+- Media Center and Communication (MCC), Level 2: 201, 221, 222, 250.
+- SERF, Level 3: 329 and 383. Astronomy’s public space policy links the actual third/fourth-floor files, but I could not open them.
+- Triton Administrative Services Building (TASB): W1131 and W1141; current floor and room-boundary confirmation are needed.
+
+For any supplied files, could you include the revision date and indicate whether classroom geometry may be displayed on a public student-facing website? A limited classroom-only export or referral to the relevant building/department contact would also help.
+
+Thank you.
+
+Sent attachment: data/indoor/research/remaining-floorplan-requests.csv
+Status: SENT on 2026-10-22 at 03:00:51 UTC (2026-10-21 20:00:51 America/Los_Angeles). Gmail confirmed SENT and the CSV attachment; no response has been received in this workflow.

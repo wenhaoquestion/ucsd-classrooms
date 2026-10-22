@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "building": "EBU2",
+  "source": {
+    "id": "EBU2-EHS-2021",
+    "url": "https://drive.google.com/file/d/1BDYqGwk89tMSmBlxhWRuy414a6AdPYau/view",
+    "localPath": "local/indoor-sources/EBU2-EHS-2021.pdf",
+    "sha256": "5cf6be0d0a50acc1b5f28744fd1393b85e7ffae556ba88c9aa32b75fd086a4c1",
+    "page": 7,
+    "registrationReferencePage": 4,
+    "printedDate": "2021-06-29",
+    "pageSizePoints": [612, 792],
+    "accessed": "2026-10-21"
+  },
+  "coordinateSystem": {
+    "units": "PDF points",
+    "origin": "top-left of unrotated PDF page 7",
+    "xDirection": "right",
+    "yDirection": "down"
+  },
+  "method": "Trace room 584 from the actual PDF rendered at 600 dpi. Fit one orientation-preserving similarity transform to repeated exterior facade corners at the north and south ends of the office wing, comparing PDF pages 4 and 7 against existing Level 2 Facilities geometry. Check two additional west-facade corners withheld from the fit and the official room area. This establishes an approximate inherited placement, not surveyed accuracy.",
+  "registration": {
+    "targetLayout": "static/indoor/facilities/EBU2.json",
+    "targetFloor": "L2",
+    "controlPoints": [
+      {"sourcePoint": [226.2, 192.0], "sourceRoom": "560", "targetRoom": "261", "targetVertex": 1, "feature": "North-end office, northwest interior exterior-wall corner"},
+      {"sourcePoint": [236.88, 192.0], "sourceRoom": "560", "targetRoom": "261", "targetVertex": 2, "feature": "North-end office, northeast end of horizontal exterior wall"},
+      {"sourcePoint": [226.2, 507.96], "sourceRoom": "574", "targetRoom": "277", "targetVertex": 3, "feature": "South-end office, southwest interior exterior-wall corner"},
+      {"sourcePoint": [236.88, 507.96], "sourceRoom": "574", "targetRoom": "277", "targetVertex": 2, "feature": "South-end office, southeast end of horizontal exterior wall"}
+    ],
+    "holdoutPoints": [
+      {"sourcePoint": [148.2, 270.12], "sourceRoom": "554", "targetRoom": "255", "targetVertex": 3, "feature": "West facade, upper office next to restroom, northwest interior exterior-wall corner"},
+      {"sourcePoint": [148.2, 429.84], "sourceRoom": "580", "targetRoom": "283", "targetVertex": 2, "feature": "West facade, lower office next to restroom, southwest interior exterior-wall corner"}
+    ]
+  },
+  "rooms": [
+    {
+      "label": "584",
+      "scheduleKey": "584",
+      "floor": "L5",
+      "outer": [[149.76, 313.2], [186.96, 313.2], [186.96, 386.88], [149.76, 386.88]],
+      "labelBounds": [163.717861, 344.87651, 175.894145, 353.048978],
+      "method": "Trace the four main interior wall faces; close the two door openings along their wall line. Ignore door-swing arcs and movable objects. Small jamb and column recesses are simplified.",
+      "listedAreaSqft": 896
+    }
+  ],
+  "limitations": [
+    "The PDF is a 2021 emergency plan; later changes cannot be excluded. The existing room number and listed area agree with this traced room.",
+    "Registration uses the repeated exterior office-wing facade across Levels 2 and 5. It inherits the existing approximate Facilities-to-campus fit and is not independent geodetic validation.",
+    "The floor plate remains the existing copied Level 2 outline; this supplement verifies room 584 only, not the rest of the fifth-floor floor plate or roofs.",
+    "The third-floor source shows separate 330A and 330B rooms; the schedule key L330 has no verified alias and remains unplaced.",
+    "The source shows 333A with an area visually comparable to 335, while the existing listing assigns 162 versus 1106 ft2; this unresolved conflict is not used to place 333A."
+  ]
+}

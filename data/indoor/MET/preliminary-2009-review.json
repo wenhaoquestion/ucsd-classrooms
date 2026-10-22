@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "building": "MET",
+  "decision": "historical-reference-only",
+  "runtimeChanges": false,
+  "newlyPlacedScheduleKeys": [],
+  "sourcePage": {
+    "title": "Floor Plans | Medical Education Telemedicine Building",
+    "url": "https://mededblg.wordpress.com/2009/11/30/floor-plans/",
+    "author": "somedcom",
+    "published": "2009-11-30",
+    "statusStatedByPublisher": "preliminary floor plans",
+    "orientationStatedByPublisher": "North at top"
+  },
+  "artifacts": [
+    {
+      "floor": "L1",
+      "path": "local/indoor-sources/MET-PRELIM-L1-2009.jpg",
+      "bytes": 88995,
+      "sha256": "71ea5ce050b694385f5380affe1ae8d80114b3d140cc05f39444c413164f9e67",
+      "widthPixels": 235,
+      "heightPixels": 228
+    },
+    {
+      "floor": "L2",
+      "path": "local/indoor-sources/MET-PRELIM-L2-2009.jpg",
+      "bytes": 79939,
+      "sha256": "945fcccbc99b199115eaa099df690b4e0c3c819c91086557292829f2309975e5",
+      "widthPixels": 228,
+      "heightPixels": 222
+    },
+    {
+      "floor": "L3",
+      "path": "local/indoor-sources/MET-PRELIM-L3-2009.jpg",
+      "bytes": 74671,
+      "sha256": "3eebb7c1a5ce2cecae3be8f637ef84e5328ad94a908bed2565e139e4755bc453",
+      "widthPixels": 229,
+      "heightPixels": 221
+    }
+  ],
+  "targetScheduleKeys": {
+    "L3": [
+      "304",
+      "312",
+      "313",
+      "315"
+    ]
+  },
+  "observations": [
+    "Plans show actual lower/first/second/third-level program arrangements; acquired artifacts cover L1-L3.",
+    "L3 shows student lounge/offices and EdCom/IT core along the north edge, with learning communities and group rooms on the west and southwest sides."
+  ],
+  "limitations": [
+    "Downloaded JPEG originals are only 228-235 pixels wide; fine room numbers, wall junctions and door positions are not reliably legible.",
+    "Large program labels and colored overlays cover parts of the plan.",
+    "Preconstruction preliminary plans from 2009 cannot be assumed to match the building completed in 2011 or subsequent partitions.",
+    "No room polygons or schedule joins were created from these images."
+  ],
+  "nextEvidenceNeeded": "Higher-resolution numbered final/as-built third-floor plan; verify core and perimeter against FIS L1/L2 before registration."
+}

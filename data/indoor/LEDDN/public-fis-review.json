@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "building": "LEDDN",
+  "output": "static/indoor/LEDDN-combined.json",
+  "addedScheduleKeys": [
+    "AUD"
+  ],
+  "printedRoomLabel": "2250",
+  "nameCrosswalkSource": "UCSD-KNOW-YOUR-CAMPUS, PDF page15",
+  "metersPerReferencePixel": 0.051099902938849806,
+  "dimensionChecks": [
+    {
+      "name": "Lower room width between inside faces",
+      "referencePixels": 230,
+      "dimensionInches": 463,
+      "dimensionText": "38 feet 7 inches",
+      "maxRelativeDifference": 0.015,
+      "tracedMeters": 11.752977675935455,
+      "dimensionedMeters": 11.7602,
+      "relativeDifference": 0.0006141327583327749
+    },
+    {
+      "name": "Full auditorium length including north lobby",
+      "referencePixels": 354,
+      "dimensionInches": 716.5,
+      "dimensionText": "59 feet 8 1/2 inches",
+      "maxRelativeDifference": 0.02,
+      "tracedMeters": 18.08936564035283,
+      "dimensionedMeters": 18.199099999999998,
+      "relativeDifference": 0.006029658590104292
+    },
+    {
+      "name": "Projection room width",
+      "referencePixels": 58,
+      "dimensionInches": 117,
+      "dimensionText": "9 feet 9 inches",
+      "maxRelativeDifference": 0.02,
+      "tracedMeters": 2.9637943704532885,
+      "dimensionedMeters": 2.9718,
+      "relativeDifference": 0.0026938655181073523
+    },
+    {
+      "name": "Projection room depth",
+      "referencePixels": 30,
+      "dimensionInches": 59.75,
+      "dimensionText": "4 feet 11 3/4 inches",
+      "maxRelativeDifference": 0.02,
+      "tracedMeters": 1.5329970881654942,
+      "dimensionedMeters": 1.51765,
+      "relativeDifference": 0.010112402836948142
+    }
+  ],
+  "mainRoomAreaSqft": 1941.5002046318825,
+  "listedAreaSqft": 1888,
+  "relativeAreaDifference": 0.028336972792310622,
+  "campusRegistration": false,
+  "removedUnrelatedHssRoomCount": 145,
+  "displayFloor": "L2",
+  "physicalFloorScope": [
+    "L1",
+    "L2"
+  ],
+  "limitations": [
+    "The auditorium physically occupies L1 and L2, as printed on the first-floor FIS sheet; its complete horizontal projection is shown once on display floor L2. Internal levels, steps, and paths are not modeled.",
+    "The older generated LEDDN layout duplicated all HSS office floors because both share Facilities bkey257. This independent layout retains only the directly identified auditorium, lobby and service room; the original input remains intact for audit.",
+    "No campus registration or surveyed footprint is claimed. The overall rectangular exterior envelope is approximate; numbered room boundaries come from the actual floor plan.",
+    "The seating plan is dated 2018 and FIS plan 2024. Both remain historical sources; the FIS viewer explicitly warns that updated CAD plans may differ.",
+    "No room area is used to set scale. The main-room trace differs by less than 4% from the printed 1888ft\u00b2. The open passage to separately listed lobby2255 is modeled as a room-selection boundary, not an asserted wall."
+  ],
+  "inputHashes": {
+    "data/indoor/LEDDN/public-fis-trace.json": "c0b5c524222a2d7f3c64dda035cc678ddd35b4fa559cf8e7472cfbdddd5a00d3",
+    "static/indoor/facilities/LEDDN.json": "d2b683f25741a3976c4aa06e7538c581ef223607eb7036febf2e409b094cf289",
+    "data/indoor/HSS/public-fis-review.json": "6acabe9e6635ed72e8c85bbc88117444e1bcf97beae9e0a3289defe3b08d04b4",
+    "local/indoor-sources/HSS-L2-FIS.png": "c970a3a59cafbf7af845be063496a853a3cc15476b62fdf3e44c47ea5d09b60d",
+    "local/indoor-sources/LEDDN-2250-SEATING.pdf": "4e17350f11e3bb44a932fec43450cc49038e0ee1eec0cd140a3d315b05b56b9a",
+    "local/indoor-sources/UCSD-Know-Your-Campus.pdf": "4761d9a5bcf9429a45d03815951f6397accccb22a873e253a297ccdde6e5c835",
+    "local/indoor-sources/HSS-L1-FIS.png": "ebe3e5ed95328d61be00982490ad08d280b4d660959836cb140bcdf3c0238971"
+  }
+}

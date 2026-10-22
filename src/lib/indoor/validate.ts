@@ -247,6 +247,7 @@ export function validateIndoorBuilding(
   };
   const roomIds = new Set<string>();
   const scheduleKeys = new Map<string, string>();
+  let hasValidOutline = false;
   if (!Array.isArray(building.floors) || building.floors.length === 0) {
     error("floors", "Layout needs at least one floor.");
   } else {
@@ -277,15 +278,42 @@ export function validateIndoorBuilding(
           "Floors must be listed bottom to top with increasing elevation."
         );
       }
-      checkRefs(`${path}.sources`, floor.sources, sourcesRequired);
+      const listingOnly = Array.isArray(floor.outline) && floor.outline.length === 0;
+      checkRefs(`${path}.sources`, floor.sources, sourcesRequired || listingOnly);
       checkConfidence(`${path}.outlineConfidence`, floor.outlineConfidence);
       let tolerance: number | null = null;
-      if (!Array.isArray(floor.outline) || floor.outline.length === 0) {
-        error(`${path}.outline`, "Floor needs at least one outline polygon.");
+      if (!Array.isArray(floor.outline)) {
+        error(`${path}.outline`, "Floor needs an outline array.");
+      } else if (listingOnly) {
+        if (floor.outlineConfidence !== "unknown") {
+          error(`${path}.outlineConfidence`, "A floor without an outline must use unknown confidence.");
+        }
+        for (const field of ["rooms", "areas", "features"] as const) {
+          if (floor[field] && floor[field].length > 0) {
+            error(`${path}.${field}`, "A floor without an outline must not contain geometry.");
+          }
+        }
+        if (!Array.isArray(floor.unplaced) || floor.unplaced.length === 0) {
+          error(`${path}.unplaced`, "A floor without an outline needs sourced floor-listing rooms.");
+        } else {
+          floor.unplaced.forEach((room, r) => {
+            if (
+              !isRecord(room) ||
+              room.basis !== "floor-listing" ||
+              typeof room.label !== "string" ||
+              !room.label ||
+              (room.scheduleKey !== null &&
+                (typeof room.scheduleKey !== "string" || !room.scheduleKey))
+            ) {
+              error(`${path}.unplaced[${r}]`, "A floor without an outline needs valid floor-listing rooms.");
+            }
+          });
+        }
       } else {
         const tolerances = floor.outline.map((part, o) =>
           checkPolygon(`${path}.outline[${o}]`, part)
         );
+        hasValidOutline ||= tolerances.some((value) => value !== null);
         tolerance = tolerances.includes(null)
           ? null
           : Math.max(...(tolerances as number[]));
@@ -388,6 +416,9 @@ export function validateIndoorBuilding(
         }
       }
     });
+    if (!hasValidOutline) {
+      error("floors", "Layout needs at least one floor with a valid outline polygon.");
+    }
   }
 
   // Aliases

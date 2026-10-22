@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "building": "SERF",
+  "reviewedAt": "2026-10-22T02:31:30.471973+00:00",
+  "scope": "Third-floor rooms 329/383",
+  "method": "Public department, historical CASS archive, emergency-document and search-index follow-up. Source links were followed without authentication. Existing user login tabs were not accessed; no messages or requests were sent externally.",
+  "sources": [
+    {
+      "url": "https://astro.ucsd.edu/about/policies-procedures/AA-Space-Policy.pdf",
+      "file": "local/indoor-sources/SERF-AA-SPACE-POLICY.pdf",
+      "bytes": 164455,
+      "sha256": "291cd136ed7385906ab582e375338e73de117fbb58896e5eabe09901ec1c9cad",
+      "status": "verified-public-policy-with-exact-floorplan-links",
+      "pdfPage": 3,
+      "printedPage": 2,
+      "revision": "2024-07-10",
+      "finding": "References explicitly name separate SERF third-floor and fourth-floor PDFs updated 2023-09-15; the policy itself contains no embedded floor plan."
+    },
+    {
+      "url": "https://drive.google.com/open?id=1L6Pva6AuGGLgFtzX5gWT9hhbuT8o55lj&usp=drive_fs",
+      "linkedTitle": "floor plan 3rd floor with occupants updated 9-15-23_v2.pdf",
+      "floor": "L3",
+      "status": "google-sign-in-required-no-map-acquired",
+      "discoveredFrom": "SERF-AA-SPACE-POLICY.pdf, PDF page 3, reference 2; linked title and URL verified using pdftohtml XML.",
+      "finding": "Normal public Drive link redirects to Google sign-in, independently checked by root. Connector404 did not establish deletion. No authenticated access or PDF download was performed by this reviewer.",
+      "accessUpdateRef": "accessUpdate"
+    },
+    {
+      "url": "https://drive.google.com/open?id=1zP0RwcWoPKd28Zkbvl_QsZ4oiiGQuw2F&usp=drive_fs",
+      "linkedTitle": "floor plan 4th floor with occupants updated 9-15-23_v2.pdf",
+      "floor": "L4",
+      "status": "connector404-public-browser-status-unverified",
+      "discoveredFrom": "SERF-AA-SPACE-POLICY.pdf, PDF page 3, reference 3; linked title and URL verified using pdftohtml XML.",
+      "accessUpdateRef": "accessUpdate"
+    },
+    {
+      "url": "https://astro.ucsd.edu/about/policies-procedures/index.html",
+      "status": "current-seminar-room-confirmation",
+      "finding": "Current room reservations section directly lists SERF 329 and 383 as seminar rooms. No drawing embedded."
+    },
+    {
+      "url": "https://griest.physics.ucsd.edu/2021/Fall/physics2d/",
+      "status": "explicit-floor-text-only",
+      "finding": "Course page identifies CASS 383 as the third floor of the SERF Building."
+    },
+    {
+      "url": "https://cass.ucsd.edu/images/3/3d/Eap_quickref.pdf",
+      "status": "search-indexed-quick-reference-not-floorplan",
+      "finding": "Indexed content shows an outdoor assembly map and contacts; current web fetch returns 502. Not treated as third-floor geometry."
+    },
+    {
+      "url": "https://be.ucsd.edu/sites/default/files/uploads/BeEmerActPlanSERF2014.pdf",
+      "file": "local/indoor-sources/SERF-BE-EAP-2014.pdf",
+      "bytes": 575692,
+      "sha256": "1d6fbbfc2885c01ebf0511009bc6728ee1b29475ad452dce3c4444ef73126175",
+      "acquiredAt": "2026-10-22T02:30:07.060Z",
+      "pages": 8,
+      "documentYear": 2014,
+      "status": "all-eight-pages-rendered-and-visually-reviewed-no-indoor-plan",
+      "finding": "Pages 1–4 contain cover and emergency instructions; page 5 contains an outdoor evacuation meeting map at Matthews Quad; page 6 is an outdoor University Center emergency-response-region map; pages 7–8 contain utility-outage instructions, contacts and an emergency card. No interior room boundaries or room 329/383 geometry.",
+      "reviewImage": "local/indoor-sources/SERF-review/bioengineering-eap-2014-all-pages.png",
+      "geometryAdded": 0
+    },
+    {
+      "url": "https://www.cass.ucsd.edu/archive/cass_map.html",
+      "status": "read-official-historical-archive-campus-map-only",
+      "finding": "States that CASS occupies SERF third and fourth floors, with third-floor offices/library/conference space. Linked graphics are campus aerial/location maps and exterior photos, not floor plans."
+    },
+    {
+      "url": "https://www.cass.ucsd.edu/archive/directory.html",
+      "status": "read-official-historical-room-directory-no-room-geometry",
+      "finding": "Historical office-number directory. Number sequences and staff assignments do not provide room boundaries or a reliable coordinate crosswalk."
+    },
+    {
+      "url": "https://www.cass.ucsd.edu/archive/index.html",
+      "status": "read-and-followed-public-facilities-library-links",
+      "finding": "Archive index links research facilities, library, directions and technical capabilities; no floor-plan download on the index."
+    },
+    {
+      "url": "https://www.cass.ucsd.edu/archive/res_facilities.html",
+      "status": "read-no-serf-floor-plan",
+      "finding": "Research facilities concern telescopes, computing and the library; no SERF interior plan."
+    },
+    {
+      "url": "https://www.cass.ucsd.edu/archive/marlar/marlar.html",
+      "status": "web-tool-cache-miss-unverified",
+      "finding": "Linked from archive directory. Cache miss is not evidence of nonexistence; no image or floor plan obtained."
+    },
+    {
+      "url": "https://www.cass.ucsd.edu/archive/marlar/index.html",
+      "status": "web-tool-cache-miss-unverified",
+      "finding": "Linked from archive home. No page content acquired."
+    },
+    {
+      "url": "https://www.cass.ucsd.edu/archive/subcontracts.html",
+      "status": "web-tool-cache-miss-unverified",
+      "finding": "Linked technical-capabilities page could not be fetched by web tool."
+    },
+    {
+      "url": "https://astro.ucsd.edu/about/visiting/index.html",
+      "status": "read-current-official-location-text-only",
+      "finding": "Confirms department on SERF floors 3 and 4 and administrative suite 322 east of elevator. Illustrations are exterior building photo and parking map; no room polygons."
+    },
+    {
+      "url": "https://astro.ucsd.edu/research/labs/index.html",
+      "status": "read-current-official-lab-descriptions-no-plan",
+      "finding": "Describes instrumentation laboratories and adjacent High Bay; not a room-numbered SERF floor plan."
+    },
+    {
+      "url": "https://cer.ucsd.edu/resources/for-staff.html",
+      "status": "read-public-emergency-map-link-list",
+      "finding": "The CER Emergency Maps section explicitly links only SERF first and second floors and outdoor response-region map, plus EBU2 maps. All are said to be included in the already acquired CER EAP; no third/fourth-floor link was listed."
+    },
+    {
+      "url": "https://cer.ucsd.edu/_files/resources/serf-2ndfloor",
+      "status": "public-one-page-pdf-text-verified-wrong-floor",
+      "pages": 1,
+      "documentDate": "2013-08-09",
+      "finding": "Real room-numbered second-floor drawing, printed Page 3 of 5, with title Visio-Science and Engineering Research Facility.vsd. The public PDF itself has one page. The original five-sheet set is a concrete possible owner-held source, but pages 4–5 were not found or acquired. Do not copy second-floor geometry onto third floor."
+    }
+  ],
+  "decision": "Public alternatives checked in four targeted routes, including newly acquired eight-page 2014 Bioengineering EAP. No readable L3 target plan found; retain 329/383 without invented coordinates. The inaccessible exact Drive references and the older five-sheet emergency-plan master remain precise source gaps.",
+  "geometryAdded": 0,
+  "previousReviewAt": "2026-10-22T02:02:28.272687+00:00",
+  "accessUpdate": {
+    "reportedBy": "User observation relayed by root agent",
+    "finding": "The user reports that their UCSD account also cannot access the linked department floor plans. This reviewer did not inspect the login session or retry authentication.",
+    "result": "No further user login requested; restricted Drive links are not treated as public copies.",
+    "individualLinkRetestPerformed": false
+  },
+  "searchRounds": [
+    {
+      "route": "Exact department document identifiers and titles",
+      "queries": [
+        "\"1L6Pva6AuGGLgFtzX5gWT9hhbuT8o55lj\"",
+        "\"floor plan 3rd floor with occupants\"",
+        "\"floor plan 3rd floor\" \"SERF\"",
+        "\"SERF\" \"floor\" \"occupants\""
+      ],
+      "result": "No indexed public mirror identified. Empty/unrelated search results do not establish that a mirror does not exist."
+    },
+    {
+      "route": "Department and official historical archives",
+      "queries": [
+        "site:cass.ucsd.edu SERF floor plan",
+        "site:ucsd.edu \"SERF\" \"383\" \"floor plan\"",
+        "site:ucsd.edu \"SERF\" \"329\" \"map\"",
+        "site:ucsd.edu \"SERF\" \"floorplan\"",
+        "site:ucsd.edu \"SERF\" \"third floor\" \"pdf\""
+      ],
+      "result": "Read CASS archive directions/directory/facilities and current Astronomy pages; room/floor identity confirmed but no plan geometry. Some old library links remain unverified cache misses."
+    },
+    {
+      "route": "Emergency-plan alternatives",
+      "queries": [
+        "site:ucsd.edu SERF emergency evacuation floor plan",
+        "\"SERF\" \"Evacuation\" site:physics.ucsd.edu",
+        "\"Science and Engineering Research Facility.vsd\"",
+        "\"SCIENCE & ENGINEERING RESEARCH FACILITY - THIRD FLOOR\""
+      ],
+      "result": "New Bioengineering 2014 EAP acquired and visually checked all eight pages; outdoor maps only. CER public link list and existing 12-page EAP expose SERF L1/L2, not target L3. Existing one-page Bioengineering second-floor exit plan also does not cover target rooms."
+    },
+    {
+      "route": "Project, planning and indexed archive alternatives",
+      "queries": [
+        "UC San Diego SERF renovation plans 3rd 4th floor",
+        "site:plandesignbuild.ucsd.edu SERF",
+        "site:ucsdplanroom.com SERF",
+        "site:library.ucsd.edu \"Science and Engineering Research Facility\"",
+        "\"Science Engineering Research Facility\" drawings UCSD",
+        "\"Science and Engineering Research Facility\" UCSD architect"
+      ],
+      "result": "No relevant public SERF L3/L4 drawing attachment identified among returned results. Similar building names from other institutions were excluded; campus overview/seismic lists are not interior plans."
+    }
+  ],
+  "localGeometryCheck": {
+    "baseFile": "static/indoor/facilities/SERF.json",
+    "targetScheduleKeys": [
+      "329",
+      "383"
+    ],
+    "targetFloor": "L3",
+    "finding": "Existing L4 rooms do not supply boundaries for L3; no cross-floor copying or numbering-based geometry added.",
+    "additionalGeometryAdded": 0
+  },
+  "boundedOutcome": {
+    "status": "public-alternative-pass-complete-no-target-geometry",
+    "remainingTargets": [
+      "SERF 329",
+      "SERF 383"
+    ],
+    "notAClaimOfGlobalExhaustion": true,
+    "concreteSourceGaps": [
+      "Readable copy of the policy-linked 2023-09-15 third-floor occupant plan (fourth-floor companion useful only for validation/context).",
+      "Original five-sheet 2013-08-09 Science and Engineering Research Facility Visio emergency-plan set, of which CER publishes first/second-floor extracts; verify whether remaining sheets actually contain L3/L4 before use.",
+      "Old CASS Marlar library and technical-capabilities pages remain unverified web-tool cache misses, not proven dead links."
+    ],
+    "nextAuthorizedActionIfSourceBecomesAvailable": "Acquire an owner-published public replacement or user-provided authorized copy; visually verify floor title and 329/383 labels before tracing. No login retry, external request, or assumed coordinate placement performed."
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "building": "ECKRT",
+  "reviewedAt": "2026-10-22T01:48:46.289713+00:00",
+  "status": "new-designer-sources-reviewed-no-exact-room-crosswalk",
+  "activeScheduleKeys": [
+    "127",
+    "139",
+    "225",
+    "227",
+    "236"
+  ],
+  "discoveryUrl": "https://www.mosherdrew.com/our-projects/scripps-institute-oceanography/",
+  "projectDescription": {
+    "publisher": "Mosher Drew, project architect",
+    "completionYearListed": 2023,
+    "projectAreaSqft": 5800
+  },
+  "sources": [
+    {
+      "id": "ECKRT-DESIGNER-004",
+      "file": "local/indoor-sources/ECKRT-DESIGNER-004.jpg",
+      "url": "https://www.mosherdrew.com/wp-content/uploads/2024/04/Architects-Mosher-Drew-Page-004-1.jpg",
+      "sha256": "4f7a8870d0cc4f7943c0af6b8248391ad15202a3ada5867a0e13bcc2f0743c90",
+      "bytes": 85633,
+      "imageSize": [
+        1920,
+        1080
+      ],
+      "kind": "exploded-axonometric-interior-design-diagram",
+      "geometryReviewed": false,
+      "reviewStatus": "visually-reviewed-no-exact-room-crosswalk",
+      "scope": "Complete image visually inspected. Shows a partial interior arrangement with an exploded ceiling, doors, glazing and partition walls. Numbers 1 and 2 label ceiling-design callouts, not classroom numbers. No floor identifier, room numbers, north, scale or dimensions.",
+      "targetKeysMatched": [],
+      "decision": "Do not flatten this perspective into numbered room polygons or assign any pictured space to 127 or 139."
+    },
+    {
+      "id": "ECKRT-DESIGNER-012",
+      "file": "local/indoor-sources/ECKRT-DESIGNER-012.jpg",
+      "url": "https://www.mosherdrew.com/wp-content/uploads/2024/02/Architects-Mosher-Drew-drawings-Page-012.jpg",
+      "sha256": "77c22b3c37adc635898068502ecece9e1e14db8bf1a64f6a777ac946ba5c90ea",
+      "bytes": 68592,
+      "imageSize": [
+        1920,
+        1080
+      ],
+      "kind": "exterior-site-diagram",
+      "geometryReviewed": false,
+      "reviewStatus": "visually-reviewed-no-interior-geometry",
+      "scope": "Complete image visually inspected. Campus/coast site diagram only, with building massing and landscape; there are no interior rooms or labels.",
+      "targetKeysMatched": [],
+      "decision": "Not an indoor floor plan."
+    }
+  ],
+  "renovationEvidence": [
+    {
+      "url": "https://facilityservices.ucsd.edu/_files/FM-Project-Management-2022-Projects.pdf",
+      "pdfPage": 5,
+      "verification": "public PDF text",
+      "title": "Eckart Hall First Floor Remodel",
+      "workOrder": "W10000319",
+      "completionListed": "2022-04",
+      "finding": "Official report describes remodeling the northeast part of the first floor and adding a restroom. This establishes a later alteration risk for older first-floor drawings. It does not establish which current classroom boundaries changed."
+    },
+    {
+      "url": "https://obrarchitecture.com/architecture/ucsd-eckart-building/",
+      "verification": "architect project text; image inventory checked separately by root",
+      "finding": "Architect lists renovation phases in 2012, 2014 and 2017, including first-floor offices and second-floor teaching/study rooms. Public image inventory found Phase I/II/III photographs; no numbered plan was obtained."
+    }
+  ],
+  "additionalSourcesChecked": [
+    {
+      "url": "https://scripps.ucsd.edu/education/current/student-spaces",
+      "finding": "Current official room list corroborates 227 and 236; the linked image is a calendar color key, not a floor plan."
+    },
+    {
+      "url": "https://scripps.ucsd.edu/news/library-update",
+      "finding": "2012 notice documents conversion of the former library first and second floors; an earlier library plan cannot establish current classroom partitions."
+    }
+  ],
+  "runtimeDecision": {
+    "addedRoomGeometry": 0,
+    "runtimeModified": false,
+    "baseLayout": "static/indoor/facilities/ECKRT.json",
+    "preservedUnplacedKeys": [
+      "127",
+      "139",
+      "225",
+      "227",
+      "236"
+    ]
+  },
+  "limitations": [
+    "The 2022 university project report and 2023 designer portfolio use different completion dates; these are retained as separate dated claims, not silently reconciled.",
+    "The designer project area is a tenant-improvement scope, not the footprint or area of any specific classroom."
+  ]
+}

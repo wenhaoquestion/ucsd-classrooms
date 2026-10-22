@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "building": "BRF2",
+  "name": "Biomedical Research Facility II",
+  "currentPublicName": "Israni Biomedical Research Facility",
+  "reviewedAt": "2026-10-22T01:51:37.096356+00:00",
+  "status": "partial-public-vector-layout-ready",
+  "activeTerm": "FA26",
+  "activeTermEvidence": "data/indoor/research/active-term-coverage.json",
+  "activeScheduleKeys": [
+    "5A03",
+    "1102",
+    "1104",
+    "4103"
+  ],
+  "sources": [
+    {
+      "id": "BRF2-DBMI-PROPOSAL-2022",
+      "url": "https://senate.ucsd.edu/media/568803/dept-of-biomedical-informatics-proposal-review-docs-4-15-22.pdf",
+      "publisher": "UC San Diego Academic Senate / proposed Department of Biomedical Informatics",
+      "documentYear": 2022,
+      "file": "local/indoor-sources/BRF2-DBMI-PROPOSAL-2022.pdf",
+      "bytes": 6293196,
+      "sha256": "32ec83ad2655e639604602864bce50a7dc835d3e92ecb841828ce9cb6cd2c14c",
+      "pages": 168,
+      "pageReviewed": 63,
+      "printedPage": 60,
+      "figure": "C9",
+      "printedFloorTitle": "BRF2 - Floor 05",
+      "renderedEvidence": "local/indoor-sources/BRF2-review/proposal-page63.png",
+      "nativeImageEvidence": "local/indoor-sources/BRF2-review/page63-native-000.jpg",
+      "nativeImageSize": [
+        634,
+        240
+      ],
+      "nativeMagnificationEvidence": "local/indoor-sources/BRF2-review/floor05-native-magnified.png",
+      "reviewStatus": "reviewed-insufficient-resolution-for-exact-room-crosswalk",
+      "geometryReviewed": false,
+      "reviewScope": "Visually inspected the complete page and extracted native image. The image combines a building photograph with a partial fifth-floor office-wing plan; the actual plan occupies only approximately 300 by 215 pixels. This is a partial source assessment, not a review of all 168 pages.",
+      "explicitRoomLabelsVerified": [],
+      "targetKeysMatched": [],
+      "dimensionsOrScaleAvailable": false,
+      "limitations": [
+        "The Floor 05 title is readable, but the target label 5A03 is not reliably legible in the original embedded pixels.",
+        "A large conference-room outline and smaller offices are visible. Their room identity is not established by the number of conference rooms or by nearby text.",
+        "The 3312 sq ft allocation described in adjacent prose is departmental space, not the area of 5A03 or a floor-scale calibration.",
+        "The picture does not provide the complete lab-wing floor footprint."
+      ],
+      "decision": "Do not assign the visible conference room to 5A03 without an explicit source crosswalk; do not trace the picture into a current classroom geometry."
+    },
+    {
+      "id": "BRF2-DESIGNER-PLAN",
+      "url": "https://lockwoodcarhart.com/wp-content/uploads/2025/04/UCSD_11.jpg",
+      "discoveryUrl": "https://lockwoodcarhart.com/project/ucsd-health-sciences-building/",
+      "publisher": "Lockwood Carhart, project designer portfolio",
+      "file": "local/indoor-sources/BRF2-DESIGNER-PLAN.jpg",
+      "bytes": 153245,
+      "sha256": "10b596a4aebf83351fc6ccd674971a83feb35eae547e9956c3ad29b20b0412e8",
+      "imageSize": [
+        1440,
+        651
+      ],
+      "reviewStatus": "reviewed-other-floor-no-current-target-crosswalk",
+      "geometryReviewed": false,
+      "reviewScope": "Visually inspected the full native drawing. Readable sample labels include conference rooms 3A03 and 3A04 and laboratories with 32xx labels. These establish a third-level plan; no matching room labels for the current four target keys were found.",
+      "floorInferredFromActualLabels": "L3 / 3A office wing",
+      "explicitRoomLabelsVerified": [
+        "3A03",
+        "3A04"
+      ],
+      "targetKeysMatched": [],
+      "dimensionsOrScaleAvailable": false,
+      "limitations": [
+        "The 2025 URL upload path is not a drawing revision date.",
+        "No dimension string, scale bar, north arrow or drawing title block establishing a current as-built revision is supplied.",
+        "Wall geometry on this third-level drawing must not be copied to floors 1, 4 or 5A."
+      ],
+      "decision": "Retain the acquired source for possible future third-floor work; no current schedule room is modeled."
+    }
+  ],
+  "publicIdentityEvidence": [
+    {
+      "url": "https://idekerlab.ucsd.edu/facilities/",
+      "finding": "Official lab website identifies Israni Biomedical Research Facility as formerly BRF2."
+    },
+    {
+      "url": "https://cardiology.ucsd.edu/research/labs/adler/contact.html",
+      "finding": "Official directions place the Division of Biomedical Informatics on floor 5A. This is floor identity evidence, not a room perimeter."
+    },
+    {
+      "file": "local/indoor-sources/UCSD-Classrooms-public.html",
+      "finding": "The acquired HTML is a campus building viewer, with Israni Biomedical Research Facility (903) and Bldg-903-Off. It supplies bkey 903 but has no 5A03 string or classroom room-ID table."
+    }
+  ],
+  "runtimeDecision": {
+    "addedRoomGeometry": 1,
+    "output": "static/indoor/BRF2-combined.json",
+    "newLayoutCreated": true,
+    "recoveredScheduleKeys": [
+      "4103"
+    ],
+    "unplacedTargetKeys": [
+      "1102",
+      "1104",
+      "5A03"
+    ],
+    "reason": "The public fourth-floor HTML adds exact vector room 4103. Original event-organizer pages explicitly place 1104 on L1 and 5A03 on L5; these levels retain empty outlines and unplaced listings only. 1102 remains knownUnmapped. Architect/proposal images still do not establish missing room perimeters.",
+    "floorListedUnplacedKeys": [
+      "1104",
+      "5A03"
+    ],
+    "unmappedKeys": [
+      "1102"
+    ]
+  },
+  "publicVectorImport": {
+    "sourceId": "BRF2-L4-FIS-VECTOR",
+    "floor": "L4",
+    "reviewPath": "data/indoor/BRF2/fis-vector-review.json",
+    "scope": "126 of 127 published fourth-floor space polygons converted (107 room objects and 19 shared/unknown areas). Classroom 4103 is an exact room-ID/label match. Public corridor 87238 self-intersects and is excluded; no complete exterior slab is asserted.",
+    "rasterAcquired": false
+  },
+  "floorListingEvidence": "data/indoor/BRF2/floor-listing-evidence.json"
+}

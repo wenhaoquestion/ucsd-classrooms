@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "building": "VAUGN",
+  "decision": "wayfinding-evidence-only",
+  "runtimeChanges": "Room 100 floor-only basis upgraded from number inference to official written floor evidence; no polygon added.",
+  "newlyPlacedScheduleKeys": [],
+  "sources": [
+    {
+      "title": "Scripps Benthic Invertebrate Collection: Contact Us",
+      "url": "https://scripps.ucsd.edu/benthic-invertebrate-collection/contact-us",
+      "evidence": [
+        "First-floor south entrance is near VH100 and faces Pawka Green.",
+        "Second-floor entrance is on Naga Lane and faces Scripps Pier.",
+        "Current street address is 8650 Naga Lane. Former street addresses differ without indicating a move."
+      ]
+    },
+    {
+      "title": "Space at Scripps Oceanography",
+      "url": "https://scripps.ucsd.edu/education/guide/space-at-scripps",
+      "evidence": [
+        "Current reservable room list includes Vaughan Hall 100, 147, 300, 328 and 348."
+      ]
+    },
+    {
+      "title": "California Coastal Commission 6-00-40",
+      "url": "https://documents.coastal.ca.gov/reports/2000/10/T4a%2Cb%2Cc%2Cd-10-2000.pdf",
+      "evidence": [
+        "2000 demolition application describes the older Vaughan Hall as a three-story 4,410-square-foot detached structure south of Discovery Way."
+      ]
+    }
+  ],
+  "targetScheduleKeys": [
+    "100",
+    "147",
+    "300",
+    "328"
+  ],
+  "supportedFloorEvidence": {
+    "100": {
+      "floor": "L1",
+      "basis": "official-written-wayfinding",
+      "relativeLocation": "Near first-floor south entrance facing Pawka Green",
+      "polygonEstablished": false
+    }
+  },
+  "limitations": [
+    "No interior boundary or room polygon is supplied by these pages.",
+    "The current four-floor building must not be confused with the older Vaughan Hall addressed by the 2000 demolition application.",
+    "Written entrance proximity supports a floor and approximate direction, but not a point or polygon."
+  ],
+  "runtimeEvidenceScript": "scripts/enrich-indoor-metadata.mjs"
+}

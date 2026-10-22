@@ -1,0 +1,224 @@
+{
+  "building": "GH",
+  "baseLayout": "static/indoor/facilities/GH.json",
+  "imageSizePx": [
+    850,
+    1100
+  ],
+  "render": "pdftoppm -f 1 -singlefile -scale-to 2200 -png GH-242-SEATING.pdf, then resize 1700x2200 to 850x1100",
+  "sources": [
+    {
+      "id": "GH-242-SEATING-2016",
+      "title": "Galbraith Hall 242 \u2014 417-seat room diagram",
+      "localPath": "local/indoor-sources/GH-242-SEATING.pdf",
+      "url": "https://mathweb.ucsd.edu/~gptesler/Seats/RoomsZF/Galbraith_242.pdf",
+      "publisher": "UC San Diego",
+      "building": "GH",
+      "floors": [
+        "L2",
+        "L3"
+      ],
+      "accessed": "2026-10-21",
+      "revision": "2016-05-24",
+      "sha256": "1c2011190620f885e2d767bdc12bc9f56a5db421b56b667114e33ecfb6ebf07d",
+      "page": 1,
+      "scale": "34 ft 1 in horizontal dimension; independently checked against the 10 ft 6 in front depth dimension."
+    },
+    {
+      "id": "GH-DESIGN-L3-2012",
+      "title": "Galbraith Hall renovation \u2014 Third Floor Plan, Option C",
+      "localPath": "local/indoor-sources/GH-CLICS-L3-2012.jpg",
+      "url": "https://reclaimucsd.wordpress.com/wp-content/uploads/2012/02/4613_l3-optc.jpg",
+      "publisher": "Kevin deFreitas Architects, drawing reproduced by Reclaim UCSD",
+      "building": "GH",
+      "floors": [
+        "L3"
+      ],
+      "accessed": "2026-10-21",
+      "revision": "2012-02-17",
+      "sha256": "dd492f75b514130684469ae634b994177a11fcb7b538463486715a05ba453fb1",
+      "imageRef": "Third Floor Level Plan, sheet OPT C",
+      "orientation": "Printed north symbol points left. Program Schematic Plan; NOT FOR CONSTRUCTION."
+    },
+    {
+      "id": "GH-ARCHITECT-2017",
+      "title": "Galbraith Hall renovation \u2014 published lower-level plan and section",
+      "localPath": "local/indoor-sources/GH-ARCHITECT-2017.jpg",
+      "url": "https://images.adsttc.com/media/images/5876/534e/e58e/ce26/2e00/025a/large_jpg/Galbraith_Floor_Black_6_invert.jpg?1484149481",
+      "publisher": "Kevin deFreitas Architects / ArchDaily",
+      "building": "GH",
+      "floors": [
+        "L2",
+        "L3"
+      ],
+      "accessed": "2026-10-21",
+      "revision": "2017-02-04",
+      "sha256": "ccde78b28a27afc54d1a46bb3236589ee1c72e0773731533189b3019021d07fc",
+      "imageRef": "Galbraith Floor Plan; 2013 project, published 2017"
+    }
+  ],
+  "dimensionCheck": {
+    "primary": {
+      "label": "34 ft 1 in",
+      "meters": 10.388600000000002,
+      "pixels": 395,
+      "endpointsPx": [
+        [
+          205,
+          141
+        ],
+        [
+          600,
+          141
+        ]
+      ]
+    },
+    "independent": {
+      "label": "10 ft 6 in",
+      "meters": 3.2004,
+      "pixels": 123,
+      "endpointsPx": [
+        [
+          482,
+          871
+        ],
+        [
+          482,
+          994
+        ]
+      ]
+    }
+  },
+  "roomOuterPx": [
+    [
+      146,
+      74
+    ],
+    [
+      264,
+      74
+    ],
+    [
+      298,
+      163
+    ],
+    [
+      510,
+      163
+    ],
+    [
+      543,
+      74
+    ],
+    [
+      659,
+      74
+    ],
+    [
+      659,
+      154
+    ],
+    [
+      730,
+      176
+    ],
+    [
+      693,
+      703
+    ],
+    [
+      720,
+      903
+    ],
+    [
+      684,
+      925
+    ],
+    [
+      635,
+      947
+    ],
+    [
+      580,
+      967
+    ],
+    [
+      522,
+      983
+    ],
+    [
+      462,
+      991
+    ],
+    [
+      403,
+      994
+    ],
+    [
+      345,
+      991
+    ],
+    [
+      285,
+      983
+    ],
+    [
+      225,
+      967
+    ],
+    [
+      170,
+      947
+    ],
+    [
+      124,
+      925
+    ],
+    [
+      88,
+      903
+    ],
+    [
+      114,
+      703
+    ],
+    [
+      78,
+      176
+    ],
+    [
+      146,
+      154
+    ]
+  ],
+  "registration": {
+    "roomOriginPx": [
+      403,
+      545
+    ],
+    "schemeInteriorBoundsPx": [
+      1108,
+      773,
+      3980,
+      3647
+    ],
+    "schemeAuditoriumBoundsPx": [
+      1882,
+      1545,
+      3408,
+      2657
+    ],
+    "method": "The 2012 L3 diagram shows the unique central auditorium. Its center is normalized within the visible interior floor rectangle to the inherited approximate local plate. Only this coarse center and orientation are used; the room is scaled independently using the official 2016 printed dimensions. No campus registration or surveyed correspondence is claimed.",
+    "rotationDeg": 180,
+    "displayFloor": "L3",
+    "displayFloorBasis": "Existing Facilities L3 listing retained only to show the single cross-level auditorium once; not a verified unique floor or entrance route."
+  },
+  "limitations": [
+    "Room 242 spans L2 and L3. Its complete projected footprint is displayed once on L3; slope, tier heights, and routes between entrances are not modeled.",
+    "The 2012 source is explicitly a schematic design proposal, not for construction. It is used only for approximate central location and orientation, never to identify unlabeled final room numbers.",
+    "2017 lower-level plan depicts only part of the auditorium. Its small lower-level boundary must not substitute for the complete numbered 2016 room diagram.",
+    "No campus geo is supplied. All four inherited approximate floor plates stay in their original local meter frame; the room is explicitly transformed into that same frame with a coarse scheme-derived offset.",
+    "The original approximate floor plates are not verified interior envelopes and the remaining 19 classrooms remain unplaced.",
+    "Room area agrees approximately with the listed Facilities area; this does not establish survey accuracy or verify post-2016 alterations."
+  ]
+}

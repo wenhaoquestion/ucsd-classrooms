@@ -1,0 +1,232 @@
+{
+  "acquiredAt": "2026-10-22T02:03:57.314Z",
+  "files": [
+    {
+      "file": "WFH-GDN-01.jpg",
+      "url": "https://static.wixstatic.com/media/b9be85_19ada67c0f32497a9e484f1fdb3b6ff7~mv2.jpg",
+      "bytes": 244768,
+      "sha256": "f82bef89925da1e2f6c7e47c2f4ec2fc47e90cab759b5ba6043c0c0d63651d53",
+      "imageSize": [
+        1200,
+        798
+      ]
+    },
+    {
+      "file": "WFH-GDN-02.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_5817da7664a94e15b3091831eb126728~mv2.jpg",
+      "bytes": 69384,
+      "sha256": "0d79d049b7fb766b772bdb13557dbfdef13abbff3df74503f5de4b05c6b081bc",
+      "imageSize": [
+        620,
+        240
+      ]
+    },
+    {
+      "file": "WFH-GDN-03.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_294b3bbcf2ab45f4b7ea1ffd44cc3629~mv2.jpg",
+      "bytes": 43997,
+      "sha256": "4081183054a3e70153f84ab545b9c5df45ced1f8346be9aae437f1c05d60fb44",
+      "imageSize": [
+        564,
+        532
+      ]
+    },
+    {
+      "file": "WFH-GDN-04.jpg",
+      "url": "https://static.wixstatic.com/media/b9be85_b1b14c487dc1490ba144f755385df33f~mv2.jpg",
+      "bytes": 162257,
+      "sha256": "eca41058d8b636cc66f15d21012aea0da2cadc879081f6368c93857acad5d6c2",
+      "imageSize": [
+        800,
+        423
+      ]
+    },
+    {
+      "file": "WFH-GDN-05.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_ad0805d602774b3ab57d7e9dc03062c8~mv2_d_1936_2592_s_2.jpg",
+      "bytes": 1667004,
+      "sha256": "17a5776d693b2d04808ca8112d2a1e7900a54f44825ec5bf41d9c2e3c18de90a",
+      "imageSize": [
+        2592,
+        1936
+      ]
+    },
+    {
+      "file": "WFH-GDN-06.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_68dd5ebff05f4f7e8bac5cdb8fb27f14~mv2.jpg",
+      "bytes": 387604,
+      "sha256": "f1b91bc3a96a0bfd7d73d6fd52d8467f8f1a7cd21c5e46b4d02eefbc21a6cbb0",
+      "imageSize": [
+        800,
+        423
+      ]
+    },
+    {
+      "file": "WFH-GDN-07.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_822e085b0bff412a80cb68bdbc4d5437~mv2.jpg",
+      "bytes": 401294,
+      "sha256": "4340b8aa5be8709be119c29eeb51c9da59ce759b58210a68c8d44a19e80307a7",
+      "imageSize": [
+        800,
+        534
+      ]
+    },
+    {
+      "file": "WFH-GDN-08.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_54a2508e41bd461d921ac59b8dbc36c4~mv2.jpg",
+      "bytes": 226361,
+      "sha256": "0f024161f45ef0e543fd14eb7d80ad46b8d7435f860d6629445deea6247a15c5",
+      "imageSize": [
+        750,
+        1125
+      ]
+    },
+    {
+      "file": "WFH-GDN-09.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_fa0c77bd8ca04ff693f51b7e0573e587~mv2.jpg",
+      "bytes": 289547,
+      "sha256": "a2936755f9196b9bc421fed105cff1a86fe7ac8943f2bd0cad0a228544a2dadd",
+      "imageSize": [
+        1500,
+        1000
+      ]
+    },
+    {
+      "file": "WFH-GDN-10.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_56099afcd63a44c4b2876ad32ae57a6c~mv2.jpg",
+      "bytes": 311204,
+      "sha256": "44319c73de9da8fe653ef5e1d9e39fa6fa82c2486dd5bde3315ff8c733e00ac0",
+      "imageSize": [
+        1500,
+        1000
+      ]
+    },
+    {
+      "file": "WFH-GDN-11.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_519ece1f73124c2d921f30efc7b18579~mv2.jpg",
+      "bytes": 340229,
+      "sha256": "7f1d7e0d27c298bc6d297dec1d8c825738261ae35eccb16a974e4e8bd3126c1e",
+      "imageSize": [
+        1500,
+        1000
+      ]
+    },
+    {
+      "file": "WFH-GDN-12.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_f86368dbb64149ac8f1be37dadb196e2~mv2.jpg",
+      "bytes": 328331,
+      "sha256": "6615e831bfd8d72295a280e99ab2793524741f4ac7f24cdaeae188a701ce6e13",
+      "imageSize": [
+        1500,
+        1000
+      ]
+    },
+    {
+      "file": "WFH-GDN-13.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_0d1d8b48ac4b426888391d127e6d9a8c~mv2_d_3008_2000_s_2.jpg",
+      "bytes": 2960203,
+      "sha256": "7158f61f108b045912d4ed0e8711d1f938127ea2e0e286ca072d4940f137b580",
+      "imageSize": [
+        3008,
+        2000
+      ]
+    },
+    {
+      "file": "WFH-GDN-14.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_7c2ebe5e49ff4f5e891fb9e633ec0d7a~mv2_d_2048_1364_s_2.jpg",
+      "bytes": 1558299,
+      "sha256": "9c840c98bb4180a98e52d8dd3a3a23167fb0988fc320cd1706498ac226358328",
+      "imageSize": [
+        2048,
+        1364
+      ]
+    },
+    {
+      "file": "WFH-GDN-15.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_55c20d84bf424f7987b2925f7863e076~mv2_d_2000_3008_s_2.jpg",
+      "bytes": 1324881,
+      "sha256": "c46989f892be5a10d1eeb89cd8167c4d484b06f5c17d9c91aac83e7905962a40",
+      "imageSize": [
+        2000,
+        3008
+      ]
+    },
+    {
+      "file": "WFH-GDN-16.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_d49f6fc9a60a405a8cacf4229d828454~mv2.jpg",
+      "bytes": 331899,
+      "sha256": "6806a0d1810a942b43888241fd3018df372c7769d47b84fe870e71eba6599995",
+      "imageSize": [
+        1500,
+        989
+      ]
+    },
+    {
+      "file": "WFH-GDN-17.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_0c74e16e78674c8e8d39d6ee481b60b7~mv2_d_2448_3264_s_4_2.jpg",
+      "bytes": 1329002,
+      "sha256": "ac2636010b5ed59fbf5de7b562794fe9120c414f2483041b56326298b9f75433",
+      "imageSize": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "WFH-GDN-18.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_734a54d35fa048e3b2024ba82b5dcc4a~mv2_d_2592_1936_s_2.jpg",
+      "bytes": 1902551,
+      "sha256": "21b1e3eb2c3924801c614834c3e76db91bb991bf3434f77a9c1bd4136526deb9",
+      "imageSize": [
+        2592,
+        1936
+      ]
+    },
+    {
+      "file": "WFH-GDN-19.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_d78a9b3fc7bd4989945b6194ff27a3ab~mv2_d_2448_3264_s_4_2.jpg",
+      "bytes": 959597,
+      "sha256": "d865118071f2ec6e0920d1c19120703c1bd340b34e6e029fdc5d18b5541fa8e1",
+      "imageSize": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "WFH-GDN-20.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_dbfcdebf6a954f0fb2add357d416e47a~mv2.jpg",
+      "bytes": 122415,
+      "sha256": "da1ed075d5ac04e515e9ba6828e0d8be22e334aeac9b4c60496695d61dd058df",
+      "imageSize": [
+        300,
+        450
+      ]
+    },
+    {
+      "file": "WFH-GDN-21.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_9af96eb916c0496c920de720b7157637~mv2_d_2592_1936_s_2.jpg",
+      "bytes": 2057114,
+      "sha256": "5b5e0d9bc0252eb4c3ab46da7d73a1f2c7e1829bb093d9433dd7754c0a319db2",
+      "imageSize": [
+        2592,
+        1936
+      ]
+    },
+    {
+      "file": "WFH-GDN-22.jpg",
+      "url": "https://static.wixstatic.com/media/d761c2_53b6f5fa83a84c5693a502401abad625~mv2.jpg",
+      "bytes": 566048,
+      "sha256": "826144a14f0de3c18c4bc7a1cec70c949dfb7362ed6696589b018be25eb70632",
+      "imageSize": [
+        781,
+        1177
+      ]
+    }
+  ],
+  "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci",
+  "review": {
+    "status": "reviewed-no-numbered-floor-plan",
+    "finding": "All 22 images visually checked in contact sheets: exterior/interior photos and one perspective sketch, no readable complete numbered room boundaries.",
+    "geometryAdded": 0,
+    "discoveryUrl": "https://www.global-dn.com/copy-of-hkmz-boundary-crossing-faci"
+  }
+}

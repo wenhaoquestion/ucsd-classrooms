@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "building": "RBC",
+  "scheduleKey": "GARDN",
+  "decision": "candidate-alias-awaiting-direct-confirmation",
+  "runtimeChanges": false,
+  "sources": [
+    {
+      "url": "https://jewishstudies.ucsd.edu/events/index.html",
+      "publisher": "UC San Diego Jewish Studies",
+      "eventDate": "2025-05-19",
+      "observation": "Event location names Elizabeth Libby Gardner Room, Robinson Building 1, GPS."
+    },
+    {
+      "url": "https://gps.ucsd.edu/about/directions.html",
+      "publisher": "UC San Diego GPS",
+      "observation": "Gardner Room has 64 fixed theater seats; Robinson 1 is the administration building."
+    },
+    {
+      "url": "https://gps.ucsd.edu/_files/misc/gps-maps.pdf",
+      "publisher": "UC San Diego GPS",
+      "path": "local/indoor-sources/GPS-MAPS-2026.pdf",
+      "sha256": "576f8c233e6c6656566c87018aca46363b81413760bd887d59a2a9eb017c0b41",
+      "page": 2,
+      "observation": "Named Gardner Classroom appears in the low wing east of the courtyard, north of Robinson Auditorium and south of IGCC offices. This is a perspective wayfinding map, not an interior floor plan."
+    },
+    {
+      "url": "https://gps.ucsd.edu/_files/misc/GPS_Facilities_2019-web.pdf",
+      "publisher": "UC San Diego GPS",
+      "observation": "Gardner is listed separately from the 18-seat seminar rooms 1201, 1301 and 1401; do not alias Gardner to 1201."
+    }
+  ],
+  "candidate": {
+    "roomId": "L2-274-35461",
+    "label": "1235",
+    "floor": "L2",
+    "fisBkey": 274,
+    "fisRoomKey": 35461,
+    "officialAreaSqft": 1108,
+    "polygonAreaSqft": 1109.882,
+    "ficmUse": 110,
+    "existingGeometryPath": "static/indoor/facilities/RBC.json",
+    "reason": "Only classroom polygon above 700 sqft in the imported Robinson 1 second floor; location is consistent with the east low-wing placement on the GPS map. This is inferential, not an explicit numeric alias."
+  },
+  "unresolved": [
+    "No inspected source explicitly equates Gardner / GARDN with room 1235.",
+    "Wayfinding map does not state an FIS floor number or provide room boundaries.",
+    "Current geometry has a complex interior indentation; existing imported polygon is retained unmodified."
+  ],
+  "nextCheck": {
+    "url": "https://facilities.ucsd.edu/Classrooms/Details.htm?Room=35461",
+    "purpose": "Check official room common name or photograph against Gardner; root browser operator notified."
+  },
+  "newlyPlacedScheduleKeys": []
+}

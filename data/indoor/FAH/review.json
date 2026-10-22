@@ -1,0 +1,91 @@
+{
+  "building": "FAH",
+  "reviewed": "2026-10-21",
+  "sourcePdf": "local/indoor-sources/FAH-EHS-2025.pdf",
+  "sourceSha256": "b73a73b00757e67e33bc4e8eaf5aaf1810b968c9dd97e1e728a72088bf78d946",
+  "sourceBytes": 1543720,
+  "sourcePages": 5,
+  "validation": {
+    "ok": true,
+    "issues": []
+  },
+  "visualReview": {
+    "method": "Compared source render and colored overlays for both classroom labels, room boundaries, all four retained floor silhouettes, and third/fourth-floor atria.",
+    "rooms": [
+      {
+        "scheduleKey": "1101",
+        "floor": "L1",
+        "sourcePage": 2,
+        "labelVerified": true,
+        "positionVerified": true,
+        "shape": "simplified-trace"
+      },
+      {
+        "scheduleKey": "1450",
+        "floor": "L1",
+        "sourcePage": 2,
+        "labelVerified": true,
+        "positionVerified": true,
+        "shape": "simplified-gross-room-trace"
+      }
+    ],
+    "floors": [
+      {
+        "floor": "L1",
+        "sourcePage": 2
+      },
+      {
+        "floor": "L2",
+        "sourcePage": 3
+      },
+      {
+        "floor": "L3",
+        "sourcePage": 4
+      },
+      {
+        "floor": "L4",
+        "sourcePage": 5
+      }
+    ],
+    "unplaced": [
+      {
+        "scheduleKey": "1301",
+        "floor": "L1",
+        "basis": "preserved Facilities floor listing",
+        "reason": "Northern auditorium has no printed room number. Its identity is not inferred from size, use or elimination."
+      }
+    ],
+    "overlayCommand": "python scripts/review-fah-indoor.py",
+    "overlayDirectory": "local/indoor-sources/FAH-render"
+  },
+  "buildCommand": "node scripts/build-fah-indoor.mjs",
+  "integration": {
+    "file": "indoor/FAH.json",
+    "status": "source-traced"
+  },
+  "preservation": {
+    "previousFloors": [
+      "L1",
+      "L2",
+      "L3",
+      "L4"
+    ],
+    "retainedFloors": [
+      "L1",
+      "L2",
+      "L3",
+      "L4"
+    ],
+    "previousScheduledRooms": 3,
+    "placedScheduledRooms": 2,
+    "unplacedScheduledRooms": 1,
+    "originalFacilitiesFileUnmodified": true
+  },
+  "limitations": [
+    "Relative units only: the existing campus exterior footprint differs from the actual floor diagrams, so uniform georegistration is not claimed.",
+    "Floor registration and height are approximate.",
+    "Only the two exact classroom labels have room polygons. Other interior rooms are not represented.",
+    "Small vestibules, door recesses, columns, exit landings and curved atria are simplified.",
+    "The PDF lower floor on page 1 was not part of the previous four-floor inventory and is not imported in this supplement."
+  ]
+}

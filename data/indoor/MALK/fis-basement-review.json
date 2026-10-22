@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "building": "MALK",
+  "output": "static/indoor/MALK-combined.json",
+  "source": {
+    "id": "MALK-FIS-B-2025",
+    "title": "UCSD Facilities Information System - Brian C. Malk Hall - Basement - Master Plan",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=1001857&fcode=B&zoom=1",
+    "localPath": "local/indoor-sources/MALK-B-FIS.png",
+    "sha256": "7840ed21be17ee2fcf0db108bb199a22b4af2e11a998e87637b34103108db4f7",
+    "imageSizePx": [
+      5760,
+      4320
+    ],
+    "htmlPath": "local/indoor-sources/MALK-B-FIS.html",
+    "htmlSha256": "324a16de2fb8309735ded3c9cac1e43aec9078be3be03bdf247e638860bc1803",
+    "acquisitionRecord": "local/indoor-sources/MALK-B-FIS-acquisition.json",
+    "acquiredAt": "2026-10-22T01:16:42.058Z",
+    "accessed": "2026-10-21",
+    "printedDate": "2025-03-21",
+    "printedScale": "1/10 inch = 1 foot; pixel density is not assumed from this printed scale",
+    "floorPlanKey": 11434,
+    "bkey": 1001857,
+    "fcode": "B",
+    "layers": [
+      "_BASE",
+      "A-AREA-CAFM"
+    ],
+    "composition": "Original public viewer tiles assembled at native zoom 5; no screenshot/device-pixel scaling."
+  },
+  "inputHashes": {
+    "data/indoor/MALK/fis-basement-trace.json": "4535d0a4e2206ac533045cd2e154dcbd6671de09e1e4bc60fac44086b37bcd0c",
+    "static/indoor/facilities/MALK.json": "30348df96c08384a3df27e76d1da4b7d8fbde1477d6902125e9f652e8396015c",
+    "local/indoor-sources/MALK-B-FIS.png": "7840ed21be17ee2fcf0db108bb199a22b4af2e11a998e87637b34103108db4f7",
+    "local/indoor-sources/MALK-B-FIS.html": "324a16de2fb8309735ded3c9cac1e43aec9078be3be03bdf247e638860bc1803"
+  },
+  "transform": {
+    "formula": "x=a*u-b*v+tx; z=b*u+a*v+tz",
+    "a": 0.02445144170017232,
+    "b": -0.00021079839172889107,
+    "tx": -79.49696707639289,
+    "tz": -51.5920249511775,
+    "metersPerPixel": 0.02445235034058856,
+    "rotationDeg": -0.4939405664951764
+  },
+  "registrationChecks": {
+    "controlPoints": [
+      {
+        "sourcePoint": [
+          3795,
+          795
+        ],
+        "targetPolygon": 1,
+        "targetVertex": 0,
+        "description": "Northeast roof/overhang reference corner, not a basement slab corner.",
+        "targetPoint": [
+          13.45,
+          -32.95
+        ],
+        "transformedPoint": [
+          13.46383889718554,
+          -32.953108696151645
+        ],
+        "residualMeters": 0.014183760681680254
+      },
+      {
+        "sourcePoint": [
+          3795,
+          2707
+        ],
+        "targetPolygon": 1,
+        "targetVertex": 1,
+        "description": "East facade elbow above southeast projecting lounge.",
+        "targetPoint": [
+          13.95,
+          13.75
+        ],
+        "transformedPoint": [
+          13.866885422171165,
+          13.798047834577822
+        ],
+        "residualMeters": 0.09600326794064384
+      },
+      {
+        "sourcePoint": [
+          3909,
+          3015
+        ],
+        "targetPolygon": 1,
+        "targetVertex": 2,
+        "description": "Southeast lounge outer corner.",
+        "targetPoint": [
+          16.65,
+          21.35
+        ],
+        "transformedPoint": [
+          16.71927568064332,
+          21.3050608615738
+        ],
+        "residualMeters": 0.08257509364865948
+      }
+    ],
+    "holdoutPoints": [
+      {
+        "sourcePoint": [
+          3660,
+          3105
+        ],
+        "targetPolygon": 1,
+        "targetVertex": 3,
+        "description": "Reentrant southwest end of southeast lounge facade.",
+        "targetPoint": [
+          10.85,
+          23.55
+        ],
+        "transformedPoint": [
+          10.64983855255602,
+          23.558179414129818
+        ],
+        "residualMeters": 0.20032849986553652
+      },
+      {
+        "sourcePoint": [
+          3705,
+          3232
+        ],
+        "targetPolygon": 1,
+        "targetVertex": 4,
+        "description": "Southeast stair outer corner.",
+        "targetPoint": [
+          11.85,
+          26.65
+        ],
+        "transformedPoint": [
+          11.776924824813335,
+          26.65402658242389
+        ],
+        "residualMeters": 0.0731860273179115
+      }
+    ]
+  },
+  "areaChecks": [
+    {
+      "scheduleKey": "B90",
+      "tracedAreaSqft": 1469.457911970581,
+      "listedAreaSqft": 1443,
+      "rasterLabelAreaSqft": 1445,
+      "relativeDifferenceFromListing": 0.01833535133096409
+    },
+    {
+      "scheduleKey": "B91",
+      "tracedAreaSqft": 1407.1516762507508,
+      "listedAreaSqft": 1440,
+      "rasterLabelAreaSqft": 1443,
+      "relativeDifferenceFromListing": 0.022811335936978594
+    },
+    {
+      "scheduleKey": "B92",
+      "tracedAreaSqft": 1097.8569832329117,
+      "listedAreaSqft": 1067,
+      "rasterLabelAreaSqft": 1070,
+      "relativeDifferenceFromListing": 0.028919384473206966
+    }
+  ],
+  "recoveredScheduleKeys": [
+    "B90",
+    "B91",
+    "B92"
+  ],
+  "remainingUnplacedKeys": [
+    "192",
+    "287",
+    "387",
+    "487",
+    "520",
+    "530"
+  ],
+  "limitations": [
+    "The raster title block is dated 2025-03-21. FIS warns that viewer imagery is no longer maintained and may differ from the current CAD vault; no post-publication remodeling guarantee is made.",
+    "Only three explicitly numbered classroom polygons and the simplified basement outer envelope are traced. Small door, jamb, column and wall-thickness details are omitted; rounded corners are approximated with short line segments.",
+    "The basement outer envelope replaces a repeated campus-roof silhouette. The open light court is included within the simplified overall basement envelope; no ceiling, circulation mesh, interior courtyard walls or upper-floor room geometry is reconstructed.",
+    "Registration inherits the approximate campus transform. Control/holdout residuals and room-area agreement are drawing consistency checks, not a surveyed accuracy claim.",
+    "All five upper floors, their room lists, estimated heights and sources are retained unchanged. Their existing outlines remain campus-derived approximations, not newly reviewed floor plans.",
+    "Source room labels carry the E wing prefix (EB90/EB91/EB92); schedule keys B90/B91/B92 are preserved only through the reviewed Facilities room-ID crosswalk."
+  ]
+}

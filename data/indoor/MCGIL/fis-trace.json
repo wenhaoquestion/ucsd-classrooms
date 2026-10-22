@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "building": "MCGIL",
+  "input": "static/indoor/facilities/MCGIL.json",
+  "output": "static/indoor/MCGIL-combined.json",
+  "source": {
+    "id": "MCGIL-L2-FIS",
+    "localPath": "local/indoor-sources/MCGIL-L2-FIS.png",
+    "sha256": "8dc6e066bdf8991b54dc3cd031e88863adbf5e505844e06abd53a198cf17569a",
+    "url": "https://facilities.ucsd.edu/Buildings/Viewer/embed/Default.htm?bkey=349&fcode=2&zoom=1",
+    "accessed": "2026-10-21",
+    "acquiredAt": "2026-10-22T01:19:52.404Z",
+    "printedDate": "2022-08-31",
+    "title": "UCSD Facilities Information System - McGill Hall - Second Floor - Master Plan",
+    "size": [
+      7095,
+      5321
+    ]
+  },
+  "floor": "L2",
+  "removeGeo": true,
+  "removeGeoReason": "The inherited local frame is reflected relative to the north-up 2022 L2 plan. Existing floor geometry is retained and the new rooms are registered to that same frame, but campus placement and a reliable north angle are withheld until the original lower-floor orientation can be independently checked.",
+  "registration": {
+    "mirrorSourceY": true,
+    "controls": [
+      {
+        "sourcePoint": [
+          1404,
+          2846
+        ],
+        "targetFloor": "L2",
+        "targetPart": 0,
+        "targetVertex": 22
+      },
+      {
+        "sourcePoint": [
+          4825,
+          2846
+        ],
+        "targetFloor": "L2",
+        "targetPart": 0,
+        "targetVertex": 13
+      },
+      {
+        "sourcePoint": [
+          4825,
+          4853
+        ],
+        "targetFloor": "L2",
+        "targetPart": 0,
+        "targetVertex": 8
+      },
+      {
+        "sourcePoint": [
+          1404,
+          4853
+        ],
+        "targetFloor": "L2",
+        "targetPart": 0,
+        "targetVertex": 27
+      }
+    ],
+    "holdouts": [
+      {
+        "sourcePoint": [
+          3617,
+          3108
+        ],
+        "targetFloor": "L2",
+        "targetPart": 0,
+        "targetVertex": 16
+      },
+      {
+        "sourcePoint": [
+          3815,
+          3108
+        ],
+        "targetFloor": "L2",
+        "targetPart": 0,
+        "targetVertex": 15
+      },
+      {
+        "sourcePoint": [
+          2414,
+          4580
+        ],
+        "targetFloor": "L2",
+        "targetPart": 0,
+        "targetVertex": 1
+      }
+    ],
+    "maxControlResidualMeters": 0.15,
+    "maxHoldoutResidualMeters": 0.4
+  },
+  "rooms": [
+    {
+      "scheduleKey": "2342",
+      "sourceLabel": "2342",
+      "printedAreaSqft": 286,
+      "outer": [
+        [
+          1420,
+          2864
+        ],
+        [
+          1903,
+          2864
+        ],
+        [
+          1903,
+          3198
+        ],
+        [
+          1420,
+          3198
+        ]
+      ],
+      "labelAt": [
+        1661.5,
+        3031.0
+      ]
+    },
+    {
+      "scheduleKey": "2334",
+      "sourceLabel": "2334",
+      "printedAreaSqft": 286,
+      "outer": [
+        [
+          1914,
+          2864
+        ],
+        [
+          2398,
+          2864
+        ],
+        [
+          2398,
+          3198
+        ],
+        [
+          1914,
+          3198
+        ]
+      ],
+      "labelAt": [
+        2156.0,
+        3031.0
+      ]
+    },
+    {
+      "scheduleKey": "2330",
+      "sourceLabel": "2330",
+      "printedAreaSqft": 286,
+      "outer": [
+        [
+          2622,
+          2864
+        ],
+        [
+          3106,
+          2864
+        ],
+        [
+          3106,
+          3198
+        ],
+        [
+          2622,
+          3198
+        ]
+      ],
+      "labelAt": [
+        2864.0,
+        3031.0
+      ]
+    },
+    {
+      "scheduleKey": "2322",
+      "sourceLabel": "2322",
+      "printedAreaSqft": 286,
+      "outer": [
+        [
+          3116,
+          2864
+        ],
+        [
+          3600,
+          2864
+        ],
+        [
+          3600,
+          3198
+        ],
+        [
+          3116,
+          3198
+        ]
+      ],
+      "labelAt": [
+        3358.0,
+        3031.0
+      ]
+    },
+    {
+      "scheduleKey": "2315",
+      "sourceLabel": "2315",
+      "printedAreaSqft": 480,
+      "outer": [
+        [
+          4137,
+          3380
+        ],
+        [
+          4532,
+          3380
+        ],
+        [
+          4532,
+          3827
+        ],
+        [
+          4508,
+          3827
+        ],
+        [
+          4508,
+          3868
+        ],
+        [
+          4532,
+          3868
+        ],
+        [
+          4532,
+          4079
+        ],
+        [
+          4137,
+          4079
+        ]
+      ],
+      "labelAt": [
+        4427.25,
+        3788.5
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "scheduleKey": "2331",
+      "reason": "No room label 2331 appears in the inspected L2 master plan. Nearby 2330 and 2334 do not establish an equivalence."
+    }
+  ],
+  "limitations": [
+    "Five L2 rooms are traced from directly readable labels and walls in the 2022 public FIS drawing; 2331 remains unplaced because its number is not shown.",
+    "Small column and doorway details are simplified. Printed areas are an independent consistency check; geometry and placement remain approximate.",
+    "The inherited local frame is reflected relative to the north-up 2022 L2 plan. Existing floor geometry is retained and the new rooms are registered to that same frame, but campus placement and a reliable north angle are withheld until the original lower-floor orientation can be independently checked.",
+    "All existing rooms, floor outlines and levels are retained. The original L1-derived slab includes an inherited hole that is not verified for L2; the new rooms do not rely on that hole.",
+    "The displayed FIS source warns it may be out of date. A public L1 request returned a login response, so no unsupported whole-building correction was made."
+  ]
+}
