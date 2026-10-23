@@ -43,8 +43,6 @@ export type CampusMapProps = {
   selected: string | null;
   scrollTo: { building: string; init: boolean };
   explorerEnabled: boolean;
-  freeRoomsOpen: boolean;
-  onToggleFreeRooms: () => void;
 };
 
 export function CampusMap({
@@ -52,8 +50,6 @@ export function CampusMap({
   selected,
   scrollTo,
   explorerEnabled,
-  freeRoomsOpen,
-  onToggleFreeRooms,
 }: CampusMapProps) {
   const ref = useRef<HTMLDivElement>(null);
   /** The live zoom, written straight to a CSS variable to keep gestures cheap. */
@@ -347,7 +343,14 @@ export function CampusMap({
         ))}
       </div>
       <div className="map-controls" role="toolbar" aria-label="Map">
-        <div className="map-control-group">
+        {(userLocation.type === "error" || offCampus) && (
+          <p className="map-control-note" role="status">
+            {userLocation.type === "error"
+              ? userLocation.message
+              : "You seem to be off campus."}
+          </p>
+        )}
+        <div className="map-control-group map-zoom-controls">
           <button
             className="map-control"
             onClick={() => animateZoom(BUTTON_ZOOM_STEP)}
@@ -395,22 +398,6 @@ export function CampusMap({
           </svg>
           {userLocation.type === "locating" && <span className="map-control-busy" />}
         </button>
-        <button
-          className={`map-control map-control-text ${freeRoomsOpen ? "map-control-on" : ""}`}
-          onClick={onToggleFreeRooms}
-          aria-pressed={freeRoomsOpen}
-          disabled={!termBuildings}
-          title="Classrooms with no class listed right now"
-        >
-          Free rooms
-        </button>
-        {(userLocation.type === "error" || offCampus) && (
-          <p className="map-control-note" role="status">
-            {userLocation.type === "error"
-              ? userLocation.message
-              : "You seem to be off campus."}
-          </p>
-        )}
       </div>
     </>
   );

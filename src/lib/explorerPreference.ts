@@ -2,11 +2,17 @@ import { useCallback, useState } from "react";
 
 const KEY = "ucsd-classrooms:indoor-3d";
 
+/** Phones start with the room list, which is quicker to scan on a small screen. */
+function defaultEnabled(): boolean {
+  return !window.matchMedia?.("(max-width: 690px)").matches;
+}
+
 function read(): boolean {
   try {
-    return window.localStorage.getItem(KEY) !== "off";
+    const stored = window.localStorage.getItem(KEY);
+    return stored === null ? defaultEnabled() : stored === "on";
   } catch {
-    return true;
+    return defaultEnabled();
   }
 }
 

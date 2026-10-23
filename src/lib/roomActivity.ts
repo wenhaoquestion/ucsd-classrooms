@@ -1,5 +1,5 @@
 import { RoomMeeting } from "./coursesToClassrooms";
-import { isMeetingOngoing, TermMoment } from "./moment-context";
+import { doesMeetingHappen, isMeetingOngoing, TermMoment } from "./moment-context";
 
 /** Minutes before a meeting starts that the room is considered "soon" in use. */
 export const SOON_MINUTES = 10;
@@ -27,4 +27,22 @@ export function getRoomActivity(
   return moment.time < meeting.time.start
     ? { type: "soon", meeting }
     : { type: "active", meeting };
+}
+
+/** The room's next listed meeting later on the selected day, if any. */
+export function nextMeetingToday(
+  meetings: RoomMeeting[],
+  moment: TermMoment
+): RoomMeeting | null {
+  let next: RoomMeeting | null = null;
+  for (const meeting of meetings) {
+    if (
+      meeting.time.start > moment.time &&
+      doesMeetingHappen(meeting, moment, moment.date, meeting.special) &&
+      (!next || meeting.time.start < next.time.start)
+    ) {
+      next = meeting;
+    }
+  }
+  return next;
 }

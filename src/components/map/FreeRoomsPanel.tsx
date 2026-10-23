@@ -9,8 +9,8 @@ import {
   useUserLocation,
   walkingMinutes,
 } from "../../lib/geolocation";
-import { doesMeetingHappen, TermMoment, useMoment } from "../../lib/moment-context";
-import { getRoomActivity } from "../../lib/roomActivity";
+import { TermMoment, useMoment } from "../../lib/moment-context";
+import { getRoomActivity, nextMeetingToday } from "../../lib/roomActivity";
 import { CloseIcon } from "../icons/CloseIcon";
 import { Link } from "../Link";
 
@@ -27,7 +27,7 @@ type FreeRoom = {
   distance: number | null;
 };
 
-function findFreeRooms(
+export function findFreeRooms(
   termBuildings: TermBuildings,
   moment: TermMoment,
   location: [number, number] | null
@@ -44,16 +44,7 @@ function findFreeRooms(
       if (getRoomActivity(meetings, moment).type !== "inactive") {
         continue;
       }
-      let until: RoomMeeting | null = null;
-      for (const meeting of meetings) {
-        if (
-          +meeting.time.start > now &&
-          doesMeetingHappen(meeting, moment, moment.date, meeting.special) &&
-          (!until || meeting.time.start < until.time.start)
-        ) {
-          until = meeting;
-        }
-      }
+      const until = nextMeetingToday(meetings, moment);
       const freeMinutes = until ? +until.time.start - now : 24 * 60 - now;
       if (freeMinutes >= MIN_FREE_MINUTES) {
         rooms.push({ building: code, room, until, freeMinutes, distance });
@@ -99,10 +90,10 @@ export function FreeRoomsPanel({ termBuildings, open, onClose }: FreeRoomsPanelP
     >
       <header className="free-rooms-header">
         <div>
-          <h2 className="panel-label">Free rooms</h2>
+          <h2 className="free-rooms-title">Free rooms</h2>
           <p className="free-rooms-subtitle">
-            {location ? "Nearest first" : "Longest gap first"} · no class listed for{" "}
-            {MIN_FREE_MINUTES}+ min
+            No class listed for {MIN_FREE_MINUTES}+ min ·{" "}
+            {location ? "nearest first" : "longest gap first"}
           </p>
         </div>
         <button className="icon-btn free-rooms-close" onClick={onClose} aria-label="Close">
@@ -115,11 +106,14 @@ export function FreeRoomsPanel({ termBuildings, open, onClose }: FreeRoomsPanelP
           onClick={startLocating}
           disabled={userLocation.type === "locating"}
         >
+          <svg viewBox="0 0 24 24" className="icon" aria-hidden="true">
+            <path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7zm0 4.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z" />
+          </svg>
           {userLocation.type === "locating"
             ? "Finding your location…"
             : userLocation.type === "error"
             ? `${userLocation.message} Try again`
-            : "Sort by distance from me"}
+            : "Show nearest first"}
         </button>
       )}
       {!datedMoment ? (
@@ -139,8 +133,9 @@ export function FreeRoomsPanel({ termBuildings, open, onClose }: FreeRoomsPanelP
                 <span className="free-room-name">
                   {building} {room}
                 </span>
+                <span className="free-room-building">{buildings[building]?.name}</span>
                 <span className="free-room-until">
-                  {until ? `Free until ${until.time.start}` : "Free for the rest of the day"}
+                  {until ? `Free until ${until.time.start}` : "Free rest of day"}
                 </span>
                 {distance !== null && (
                   <span className="free-room-distance">

@@ -3,11 +3,10 @@ import { BuildingDatum } from "../../lib/buildings";
 import {
   directionsUrl,
   distanceMeters,
-  formatDistance,
-  startLocating,
   useUserLocation,
   walkingMinutes,
 } from "../../lib/geolocation";
+import { getRoomActivity } from "../../lib/roomActivity";
 import { RoomMeeting } from "../../lib/coursesToClassrooms";
 import { hasIndoorLayout } from "../../lib/indoor/manifest";
 import { computeCoverage, IndoorIndex, roomForKey } from "../../lib/indoor/roomMapping";
@@ -87,44 +86,79 @@ function indoorSections(
   return sections;
 }
 
-/** Walking directions, plus distance once the user shares their location. */
-function BuildingActions({ building }: { building: BuildingDatum }) {
+type BuildingActionsProps = {
+  building: BuildingDatum;
+  /** Rooms with no class listed now, or null when not viewing a date. */
+  freeCount: number | null;
+  freeOnly: boolean;
+  onFreeOnly: (freeOnly: boolean) => void;
+  explorerOpen: boolean;
+  onExplorerEnabled_s: (enabled: boolean) => void;
+};
+
+/** Directions, the free room filter, and the 3D/list switch. */
+function BuildingActions({
+  building,
+  freeCount,
+  freeOnly,
+  onFreeOnly,
+  explorerOpen,
+  onExplorerEnabled_s,
+}: BuildingActionsProps) {
   const userLocation = useUserLocation();
   const [latitude, longitude] = building.location;
-  if (latitude === 0 && longitude === 0) {
-    return null;
-  }
+  const placed = latitude !== 0 || longitude !== 0;
   const distance =
-    userLocation.type === "located"
+    placed && userLocation.type === "located"
       ? distanceMeters(userLocation.location, building.location)
       : null;
   return (
     <div className="building-actions">
-      <a
-        className="action-btn action-btn-primary"
-        href={directionsUrl(building.location)}
-        target="_blank"
-        rel="noreferrer"
-      >
-        Directions
-        <svg viewBox="0 0 24 24" className="icon action-icon" aria-hidden="true">
-          <path d="M7 7h10v10h-2V10.41l-8.29 8.3-1.42-1.42L13.59 9H7z" />
-        </svg>
-      </a>
-      {distance !== null ? (
-        <span className="building-distance">
-          <strong>{formatDistance(distance)}</strong> · about{" "}
-          {walkingMinutes(distance)} min walk
-        </span>
-      ) : (
-        <button
-          className="action-btn"
-          onClick={startLocating}
-          disabled={userLocation.type === "locating"}
-          title={userLocation.type === "error" ? userLocation.message : undefined}
+      {placed && (
+        <a
+          className="action-btn action-btn-primary"
+          href={directionsUrl(building.location)}
+          target="_blank"
+          rel="noreferrer"
+          title="Walking directions in your maps app"
         >
-          {userLocation.type === "locating" ? "Locating…" : "How far is it?"}
+          Directions
+          {distance !== null && (
+            <span className="action-btn-detail">{walkingMinutes(distance)} min</span>
+          )}
+          <svg viewBox="0 0 24 24" className="icon action-icon" aria-hidden="true">
+            <path d="M7 7h10v10h-2V10.41l-8.29 8.3-1.42-1.42L13.59 9H7z" />
+          </svg>
+        </a>
+      )}
+      {freeCount !== null && (
+        <button
+          className={`action-btn ${freeOnly ? "action-btn-on" : ""}`}
+          aria-pressed={freeOnly}
+          onClick={() => onFreeOnly(!freeOnly)}
+          title="Only show classrooms with no class listed now"
+        >
+          Free now
+          <span className="action-count">{freeCount}</span>
         </button>
+      )}
+      {hasIndoorLayout(building.code) && (
+        <div className="segmented" role="group" aria-label="Room view">
+          <button
+            className="segment"
+            aria-pressed={!explorerOpen}
+            onClick={() => onExplorerEnabled_s(false)}
+          >
+            List
+          </button>
+          <button
+            className="segment"
+            aria-pressed={explorerOpen}
+            onClick={() => onExplorerEnabled_s(true)}
+          >
+            3D
+          </button>
+        </div>
       )}
     </div>
   );
@@ -139,7 +173,7 @@ type BuildingPanelContentProps = {
   explorerOpen: boolean;
   hoveredRoom: string | null;
   onHoverRoom_s: (room: string | null) => void;
-  onEnableExplorer_s: () => void;
+  onExplorerEnabled_s: (enabled: boolean) => void;
 };
 function BuildingPanelContent({
   building,
@@ -150,10 +184,21 @@ function BuildingPanelContent({
   explorerOpen,
   hoveredRoom,
   onHoverRoom_s,
-  onEnableExplorer_s,
+  onExplorerEnabled_s,
 }: BuildingPanelContentProps) {
   const { code, images, college, name } = building;
   const lastRoom = useLast("", room);
+  const moment = useMoment();
+  const [freeOnly, setFreeOnly] = useState(false);
+  const freeCount = useMemo(
+    () =>
+      moment.type === "term"
+        ? null
+        : Object.values(rooms).filter(
+            (meetings) => getRoomActivity(meetings, moment).type === "inactive"
+          ).length,
+    [rooms, moment]
+  );
 
   const imageUrl = images[0]?.url; // TODO: Compress
 
@@ -257,19 +302,20 @@ function BuildingPanelContent({
         />
       ) : (
         <>
-          <BuildingActions building={building} />
+          <BuildingActions
+            building={building}
+            freeCount={freeCount}
+            freeOnly={freeOnly && freeCount !== null}
+            onFreeOnly={setFreeOnly}
+            explorerOpen={explorerOpen}
+            onExplorerEnabled_s={onExplorerEnabled_s}
+          />
           <div className="gradient gradient-sticky gradient-top" />
-          {hasIndoorLayout(code) && !explorerOpen && (
-            <div className="explorer-enable">
-              <button className="explorer-text-btn" onClick={onEnableExplorer_s}>
-                Show 3D indoor map
-              </button>
-            </div>
-          )}
           <RoomList
             building={code}
             rooms={rooms}
             sections={sections}
+            freeOnly={freeOnly && freeCount !== null}
             highlightedRoom={hoveredRoom}
             onHoverRoom_s={index ? onHoverRoom_s : undefined}
           />
@@ -335,8 +381,6 @@ export function BuildingPanel({
   const onHoverRoom_s = useStableCallback((room: string | null) =>
     setHovered({ building: code, room })
   );
-  const onDisableExplorer_s = useStableCallback(() => onExplorerEnabled_s(false));
-  const onEnableExplorer_s = useStableCallback(() => onExplorerEnabled_s(true));
 
   // On phones the panel is a bottom sheet: drag its handle up to expand it,
   // down to shrink or close it
@@ -440,7 +484,6 @@ export function BuildingPanel({
           intro={explorerIntro}
           hoveredRoom={hoveredRoom}
           onHoverRoom_s={onHoverRoom_s}
-          onDisable_s={onDisableExplorer_s}
           layoutKey={`${rightPanelOpen}`}
         />
       )}
@@ -455,7 +498,7 @@ export function BuildingPanel({
           explorerOpen={explorerOpen}
           hoveredRoom={hoveredRoom}
           onHoverRoom_s={onHoverRoom_s}
-          onEnableExplorer_s={onEnableExplorer_s}
+          onExplorerEnabled_s={onExplorerEnabled_s}
         />
       </div>
     </div>

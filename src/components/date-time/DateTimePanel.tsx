@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { Day } from "../../lib/Day";
 import { Time } from "../../lib/Time";
 import { inPT } from "../../lib/now";
@@ -17,6 +17,10 @@ export type DateTimePanelProps = {
   closeable: boolean;
   className: string;
   onClose: () => void;
+  /** Quarter picker, shown under the date and time. */
+  terms: ReactNode;
+  /** Data freshness and credits, at the bottom. */
+  footer: ReactNode;
 };
 export function DateTimePanel({
   date,
@@ -29,6 +33,8 @@ export function DateTimePanel({
   closeable,
   className,
   onClose,
+  terms,
+  footer,
 }: DateTimePanelProps) {
   const [scrollMode, setScrollMode] = useState<ScrollMode>("init");
 
@@ -49,7 +55,7 @@ export function DateTimePanel({
       }}
     >
       <div className="date-time-header">
-        <h2 className="panel-label">Schedule time</h2>
+        <h2 className="panel-label">Show schedules for</h2>
         {closeable && (
           <button className="filled-icon-btn close-date-btn">Close</button>
         )}
@@ -122,12 +128,17 @@ export function DateTimePanel({
           />
         </div>
       </div>
+      <div className="date-time-field date-time-terms">
+        <span className="field-label">Quarter</span>
+        {terms}
+      </div>
       <Calendar
         date={date}
         onDate_s={handleCalendarDate_s}
         scrollMode={scrollMode}
         freeScroll={() => setScrollMode("none")}
       />
+      <footer className="date-time-footer">{footer}</footer>
     </form>
   );
 }

@@ -12,7 +12,7 @@ export type State =
   | {
       type: "loaded";
       termId: string;
-      data: Omit<SearchData, "buildings">;
+      data: Omit<SearchData, "buildings" | "rooms">;
       offline: Term[];
     };
 
@@ -21,6 +21,7 @@ export type SearchBarProps = {
   terms: Term[];
   termId: string;
   buildings: string[];
+  rooms: Record<string, string[]>;
   showResults: boolean;
   onSearch: (showResults: boolean) => void;
   visible: boolean;
@@ -30,6 +31,7 @@ export function SearchBar({
   terms,
   termId,
   buildings,
+  rooms,
   showResults,
   onSearch,
   visible,
@@ -85,9 +87,9 @@ export function SearchBar({
           autoComplete="off"
           autoCapitalize="none"
           autoCorrect="off"
-          aria-label="Search courses, people, and buildings."
+          aria-label="Search courses, professors, buildings, and rooms."
           title="Press '/' to jump to the search box."
-          placeholder="Search courses, people, buildings..."
+          placeholder="Course, professor, building, or room"
           className="search-input"
           value={query}
           onChange={(e) => {
@@ -147,15 +149,18 @@ export function SearchBar({
                   ),
                   professors: [],
                   buildings: [],
+                  rooms: {},
                 }
-              : { ...state.data, buildings }
+              : { ...state.data, buildings, rooms }
           }
           index={index}
           ongoingOnly={ongoingOnly}
         />
       )}
       <label
-        className={`ongoing-only ${showResults ? "show-ongoing-only" : ""}`}
+        className={`ongoing-only ${
+          loaded && showResults && query !== "" ? "show-ongoing-only" : ""
+        }`}
       >
         <input
           type="checkbox"
@@ -164,7 +169,7 @@ export function SearchBar({
             setOngoingOnly(e.currentTarget.checked);
           }}
         />
-        Ongoing lectures only
+        Only courses with a lecture now
       </label>
     </form>
   );

@@ -54,6 +54,12 @@ export const BuildingButton = memo(function BuildingButton({
   );
 
   const { x, y } = mapPoint(building.location);
+  const inUse =
+    moment.type !== "term"
+      ? rooms.filter((meetings) =>
+          meetings.some((meeting) => isMeetingOngoing(meeting, moment))
+        ).length
+      : null;
 
   return (
     <Link
@@ -66,19 +72,17 @@ export const BuildingButton = memo(function BuildingButton({
         top: `calc(${y}px * var(--map-zoom))`,
       }}
       elemRef={ref}
+      title={`${building.name}: ${
+        inUse !== null
+          ? `${inUse} of ${rooms.length} classrooms in use`
+          : `${rooms.length} classrooms`
+      }`}
     >
       {building.code}
       <span className="room-count">
-        {moment.type !== "term" ? (
+        {inUse !== null ? (
           <>
-            <span className="in-use">
-              {
-                rooms.filter((meetings) =>
-                  meetings.some((meeting) => isMeetingOngoing(meeting, moment))
-                ).length
-              }
-            </span>
-            /{rooms.length}
+            <span className="in-use">{inUse}</span>/{rooms.length}
           </>
         ) : (
           <span className="in-use">{rooms.length}</span>

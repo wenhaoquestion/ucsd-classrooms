@@ -67,7 +67,7 @@ transparent, so the stage background shows through. */
   max-width: 1240px;
   height: min(76vh, 800px);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 380px;
+  grid-template-columns: minmax(0, 1fr) 400px;
   background-color: transparent;
   overflow: hidden;
 }
@@ -141,9 +141,6 @@ transparent, so the stage background shows through. */
 }
 .explorer-close:hover {
   background-color: var(--icon-button-hover);
-}
-.explorer-enable {
-  padding: 0 20px 10px;
 }
 
 .explorer-viewport {
@@ -553,4 +550,10 @@ transparent, so the stage background shows through. */
     animation: none;
     width: auto;
   }
+}
+
+/* Keep the side column's actions on one line */
+.explorer-mode .building-actions {
+  padding-left: 15px;
+  padding-right: 15px;
 }

@@ -6,17 +6,7 @@ import { getHolidays } from "../lib/holidays";
 import { fromViewTerm, MomentContext } from "../lib/moment-context";
 import { Course } from "../lib/section-types";
 import { Term, TermCache, TermError } from "../lib/TermCache";
-import {
-  CurrentTerm,
-  fromTermId,
-  getTerm,
-  getTermId,
-  MAX_TERM_ID,
-  MIN_TERM_ID,
-  Season,
-  termCode,
-  termName,
-} from "../lib/terms";
+import { CurrentTerm, getTerm, Season, termCode, termName } from "../lib/terms";
 import { useLast } from "../lib/useLast";
 import {
   viewTermsEqual,
@@ -30,15 +20,15 @@ import { ExplorerIntro } from "./explorer/BuildingExplorer";
 import { useExplorerPreference } from "../lib/explorerPreference";
 import { hasIndoorLayout } from "../lib/indoor/manifest";
 import { ScheduleAvailability } from "../lib/indoor/roomStatus";
-import { DateTimeButton } from "./date-time/DateTimeButton";
 import { DateTimePanel } from "./date-time/DateTimePanel";
-import { Link, navigate } from "./Link";
+import { TermButtons } from "./date-time/TermButtons";
+import { navigate } from "./Link";
 import { CampusMap } from "./map/CampusMap";
 import { FreeRoomsPanel } from "./map/FreeRoomsPanel";
+import { MapChips } from "./map/MapChips";
 import { ModalView, ResultModal } from "./search/ResultModal";
 import { SearchBar, State } from "./search/SearchBar";
 import { TermStatus } from "./TermStatus";
-import { Time } from "../lib/Time";
 import { useStableCallback } from "../lib/useStable";
 
 /**
@@ -360,6 +350,21 @@ export function App({ title }: AppProps) {
     // going back/forth will use courses from the wrong term
   }, [handleView_s, searchState]);
 
+  const searchBuildings = useMemo(
+    () => Object.keys(state?.buildings ?? {}),
+    [state?.buildings]
+  );
+  const searchRooms = useMemo(
+    () =>
+      Object.fromEntries(
+        Object.entries(state?.buildings ?? {}).map(([code, rooms]) => [
+          code,
+          Object.keys(rooms),
+        ])
+      ),
+    [state?.buildings]
+  );
+
   const availability: ScheduleAvailability = !state?.buildings
     ? "unavailable"
     : state.errors.length > 0
@@ -371,11 +376,6 @@ export function App({ title }: AppProps) {
     buildingCode !== null &&
     hasIndoorLayout(buildingCode);
 
-  const currentTermId = getTermId(
-    moment.currentTerm.year,
-    moment.currentTerm.season
-  );
-
   return (
     <OnView.Provider value={handleView_s}>
       <MomentContext.Provider value={moment}>
@@ -383,7 +383,8 @@ export function App({ title }: AppProps) {
           state={searchState}
           terms={terms}
           termId={termId}
-          buildings={state?.buildings ? Object.keys(state?.buildings) : []}
+          buildings={searchBuildings}
+          rooms={searchRooms}
           showResults={showResults}
           onSearch={(showResults) => {
             setShowResults(showResults);
@@ -416,75 +417,30 @@ export function App({ title }: AppProps) {
           visible={!noticeVisible}
         />
         <ResultModal view={modalView} open={modal !== null} />
-        <div
-          className={`corner ${
-            buildingPanelVisible ? "bottom-panel-open" : ""
-          } ${datePanelVisible ? "date-panel-open" : ""}`}
-        >
-          <DateTimeButton
-            onClick={() => setShowDatePanel(true)}
-            disabled={datePanelVisible}
-          />
-          <div className="term-buttons">
-            {[-4, -3, -2, -1, 0, 1, 2, 3, 4].map((offset) => {
-              const id = currentTermId + offset;
-              const { year, quarter } = fromTermId(id);
-              // I don't remember how to get the View, but this should only be
-              // clickable for the building and default views
-              return (
-                <Link
-                  className={`term-button ${
-                    id === currentTermId && moment.currentTerm.current
-                      ? "term-button-selected"
-                      : ""
-                  } ${
-                    MIN_TERM_ID <= id && id <= MAX_TERM_ID
-                      ? ""
-                      : "term-button-hidden"
-                  }`}
-                  view={
-                    // The off-screen terms are just for the smooth animation,
-                    // so don't make them clickable
-                    Math.abs(offset) > 2
-                      ? null
-                      : buildingCode !== null
-                      ? { type: "building", building: buildingCode, room: room }
-                      : { type: "default" }
-                  }
-                  aria-hidden={Math.abs(offset) > 2 ? "true" : undefined}
-                  term={{ year, season: quarter }}
-                  key={id}
-                  style={{
-                    transform: `translateX(${
-                      -50 +
-                      (offset + (moment.currentTerm.current ? 0 : 0.5)) * 110
-                    }%)`,
-                  }}
-                >
-                  {termCode(year, quarter)}
-                </Link>
-              );
-            })}
-          </div>
-          <TermStatus statuses={state?.status} />
-          <p className="credit">
-            Made by{" "}
-            <a href="https://github.com/wenhaoquestion" className="link">
-              @wenhaoquestion
-            </a>
-            , based on{" "}
-            <a href="https://github.com/SheepTester/ucsd-classrooms" className="link">
-              SheepTester's
-            </a>
-            .{" "}
-            <a
-              href="https://github.com/wenhaoquestion/ucsd-classrooms"
-              className="link"
-            >
-              GitHub
-            </a>
-          </p>
-        </div>
+        <MapChips
+          termBuildings={state?.buildings}
+          datePanelOpen={datePanelVisible}
+          onOpenDatePanel={() => {
+            setShowDatePanel((show) => !show);
+            // On phones, the time sheet takes the free room list's place
+            if (window.matchMedia("(max-width: 690px)").matches) {
+              setShowFreeRooms(false);
+            }
+          }}
+          onUseNow={() => {
+            navigate(handleView_s, {
+              view: { ...viewFromUrl(window.location.href), term: null },
+            });
+          }}
+          freeRoomsOpen={showFreeRooms && !!state?.buildings}
+          onToggleFreeRooms={() => {
+            setShowFreeRooms((show) => !show);
+            if (window.matchMedia("(max-width: 690px)").matches) {
+              setShowDatePanel(false);
+            }
+          }}
+          visible={!noticeVisible}
+        />
         <DateTimePanel
           date={moment.date}
           onDate={(date: Day) => {
@@ -522,6 +478,37 @@ export function App({ title }: AppProps) {
             buildingPanelVisible ? "date-time-panel-bottom-panel" : ""
           } ${noticeVisible ? "date-time-panel-notice-visible" : ""}`}
           onClose={() => setShowDatePanel(false)}
+          terms={
+            <TermButtons
+              view={
+                buildingCode !== null
+                  ? { type: "building", building: buildingCode, room: room }
+                  : { type: "default" }
+              }
+            />
+          }
+          footer={
+            <>
+              <TermStatus statuses={state?.status} />
+              <p className="credit">
+                Made by{" "}
+                <a href="https://github.com/wenhaoquestion" className="link">
+                  @wenhaoquestion
+                </a>
+                , based on{" "}
+                <a href="https://github.com/SheepTester/ucsd-classrooms" className="link">
+                  SheepTester's
+                </a>
+                .{" "}
+                <a
+                  href="https://github.com/wenhaoquestion/ucsd-classrooms"
+                  className="link"
+                >
+                  GitHub
+                </a>
+              </p>
+            </>
+          }
         />
         <div
           className={`buildings-wrapper ${
@@ -540,8 +527,6 @@ export function App({ title }: AppProps) {
             selected={buildingCode}
             scrollTo={scrollTo}
             explorerEnabled={explorerEnabled}
-            freeRoomsOpen={showFreeRooms && !!state?.buildings}
-            onToggleFreeRooms={() => setShowFreeRooms((show) => !show)}
           />
         </div>
         <FreeRoomsPanel

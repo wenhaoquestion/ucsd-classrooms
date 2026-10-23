@@ -368,74 +368,9 @@ input[type="checkbox"]:checked:hover {
   word-break: break-word;
 }
 
-.corner {
-  position: fixed;
-  z-index: 3;
-  top: 0;
-  right: 0;
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--modal);
-  box-shadow: var(--modal-shadow);
-  border-radius: 10px;
-  transition: opacity 0.2s, visibility 0.2s, box-shadow 0.2s, border-radius 0.2s;
-}
-@media (max-width: 690px) {
-  .corner {
-    top: unset;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: 10px;
-    flex-direction: column-reverse;
-  }
-}
-/* match border radius of date panel, which covers the corner panel */
-.date-panel-open {
-  box-shadow: none;
-  border-radius: 15px;
-}
-/* To prevent user from opening date panel while building panel is open */
-@media (max-width: 950px) {
-  .bottom-panel-open {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-.date-time-button {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 15px;
-  text-align: left;
-}
-.date-time-button .filled-icon-btn {
-  transition: background-color 0.2s, transform 0.25s var(--spring);
-}
-.date-time-button:not(:disabled):hover .filled-icon-btn {
-  transform: rotate(-8deg) scale(1.06);
-}
-.showing-schedule-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-}
-.showing-schedule-text {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-family: var(--normal);
-  color: var(--secondary);
-}
 .live-dot {
   position: relative;
+  flex: none;
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -449,25 +384,6 @@ input[type="checkbox"]:checked:hover {
   background-color: var(--active);
   animation: live 1.6s ease-out infinite;
 }
-.date-time {
-  font-family: var(--narrow);
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  font-variant-numeric: tabular-nums;
-}
-.quarter-week {
-  font-size: 0.8em;
-  font-family: var(--normal);
-}
-.selected-term {
-  font-family: var(--normal);
-  font-weight: bold;
-}
-.edit-icon {
-  background-image: url("./assets/material-edit-white.svg");
-}
-
 .date-time-panel {
   position: fixed;
   z-index: 5;
@@ -498,14 +414,6 @@ input[type="checkbox"]:checked:hover {
   bottom: 0;
   padding-bottom: 0;
 }
-@media (max-width: 950px) {
-  .date-time-panel-bottom-panel,
-  .date-time-panel-bottom-panel.date-time-panel-hidden {
-    transform: translateX(20px);
-    opacity: 0;
-    visibility: hidden;
-  }
-}
 @media (max-width: 690px) {
   .date-time-panel {
     top: unset;
@@ -529,7 +437,6 @@ input[type="checkbox"]:checked:hover {
 }
 .calendar-scroll-area {
   overscroll-behavior: contain;
-  padding-bottom: var(--safe-bottom);
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   height: 0;
@@ -878,8 +785,7 @@ input[type="checkbox"].switch:checked::after {
   color: white;
 }
 .today-btn:hover,
-.filled-icon-btn:hover,
-.date-time-button:hover .filled-icon-btn {
+.filled-icon-btn:hover {
   background-color: var(--button-hover);
 }
 .checkbox-label,
@@ -987,17 +893,17 @@ input[type="checkbox"].switch:checked::after {
     width: 48px;
     opacity: 0.8;
   }
-  /* Beside the 3D view, the header gives the room list more space */
-  .explorer-mode .building-name {
+  /* A shorter header leaves the room list more of the small screen */
+  .building-panel .building-name {
     height: 88px;
   }
-  .explorer-mode .building-name.schedule-view {
+  .building-panel .building-name.schedule-view {
     height: 48px;
   }
-  .explorer-mode .building-name .abbrev-heading {
+  .building-panel .building-name .abbrev-heading {
     font-size: 70px;
   }
-  .explorer-mode .schedule-view .abbrev-heading {
+  .building-panel .schedule-view .abbrev-heading {
     transform: translate(28px, -9px) scale(0.4);
   }
   .room-list .gradient-top {
@@ -1356,11 +1262,14 @@ input[type="checkbox"].switch:checked::after {
   font-family: var(--normal);
 }
 
+.date-time-terms {
+  padding: 0 15px;
+}
 .term-buttons {
   position: relative;
-  height: 45px;
+  height: 32px;
+  margin: 0 -15px;
   overflow: hidden;
-  border-top: 1px solid var(--line);
 }
 .term-buttons::before,
 .term-buttons::after {
@@ -1385,7 +1294,7 @@ input[type="checkbox"].switch:checked::after {
   font-family: var(--narrow);
   font-weight: 600;
   position: absolute;
-  top: 10px;
+  top: 3px;
   left: 50%;
   display: flex;
   align-items: center;
@@ -1413,10 +1322,19 @@ input[type="checkbox"].switch:checked::after {
 .term-button-hidden {
   display: none;
 }
-.term-statuses {
+.date-time-footer {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2px 12px;
+  padding: 8px 15px calc(10px + var(--safe-bottom));
   border-top: 1px solid var(--line);
-  font-size: 0.8em;
-  padding: 10px 15px;
+  font-size: 12px;
+}
+.term-statuses {
+  font-size: inherit;
   gap: 2px;
   display: flex;
   flex-direction: column;
@@ -1438,51 +1356,9 @@ input[type="checkbox"].switch:checked::after {
   color: var(--soon);
 }
 .credit {
-  border-top: 1px solid var(--line);
-  padding: 10px 15px;
-  font-size: 0.8em;
   font-family: var(--normal);
   color: var(--secondary);
 }
-@media (max-width: 690px) {
-  .corner {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-areas: "status credit" "terms terms" "time time";
-    margin-bottom: calc(10px + var(--safe-bottom));
-  }
-  .date-time-button {
-    grid-area: time;
-  }
-  .term-buttons {
-    grid-area: terms;
-    border-top: none;
-    border-bottom: 1px solid var(--line);
-  }
-  .term-statuses,
-  .credit {
-    border-top: none;
-    border-bottom: 1px solid var(--line);
-    padding: 6px 15px;
-    font-size: 11px;
-  }
-  .term-statuses {
-    white-space: nowrap;
-  }
-  .term-statuses {
-    grid-area: status;
-    padding-right: 0;
-  }
-  .credit {
-    grid-area: credit;
-    text-align: right;
-  }
-  .corner > .credit:nth-child(3) {
-    grid-column: 1 / -1;
-    text-align: left;
-  }
-}
-
 .search-wrapper {
   position: fixed;
   z-index: 5;
@@ -1534,9 +1410,10 @@ input[type="checkbox"].switch:checked::after {
   font-family: var(--normal);
   gap: 10px;
 }
-.show-ongoing-only,
-.search-wrapper:focus-within .ongoing-only {
+.show-ongoing-only {
   display: flex;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
 }
 .no-results,
 .results {
@@ -1961,12 +1838,18 @@ input[type="checkbox"].switch:checked::after {
 .map-controls {
   position: absolute;
   z-index: 2;
-  left: var(--gutter);
-  top: calc(var(--gutter) * 2 + 40px);
+  right: var(--gutter);
+  bottom: calc(var(--gutter) + var(--safe-bottom));
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 10px;
+}
+/* Pinching already zooms on touch screens */
+@media (pointer: coarse) {
+  .map-zoom-controls {
+    display: none;
+  }
 }
 .map-control-group {
   display: flex;
@@ -2008,11 +1891,6 @@ input[type="checkbox"].switch:checked::after {
 .map-control:disabled {
   color: var(--tertiary);
 }
-.map-control-text {
-  padding: 0 14px;
-  font-size: 14px;
-  font-weight: 600;
-}
 .map-control-on,
 .map-control-on:not(:disabled):hover {
   background-color: var(--button);
@@ -2047,12 +1925,136 @@ input[type="checkbox"].switch:checked::after {
     transform: scale(0.9);
   }
 }
+
+/* ---- Chips under the search bar ---------------------------------------- */
+
+.map-chips {
+  --chip: 36px;
+  position: fixed;
+  /* Same layer as the building panel, which covers it when expanded */
+  z-index: 3;
+  top: calc(var(--gutter) + 48px);
+  left: var(--gutter);
+  max-width: calc(100% - var(--gutter) * 2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s var(--ease);
+}
 @media (max-width: 690px) {
-  .map-controls {
-    left: auto;
-    right: var(--gutter);
-    align-items: flex-end;
+  /* One row that scrolls sideways; the padding keeps the shadows visible */
+  .map-chips {
+    flex-wrap: nowrap;
+    max-width: none;
+    right: 0;
+    left: 0;
+    margin-top: -6px;
+    padding: 6px var(--gutter) 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    pointer-events: none;
   }
+  .map-chips::-webkit-scrollbar {
+    display: none;
+  }
+  .map-chips > * {
+    flex: none;
+    pointer-events: auto;
+  }
+}
+.map-chips-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: var(--chip);
+  padding: 0 14px;
+  border-radius: calc(var(--chip) / 2);
+  background-color: var(--modal);
+  box-shadow: var(--modal-shadow);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s var(--spring);
+}
+.chip:not(:disabled):hover {
+  background-color: var(--card-header);
+}
+.chip:not(:disabled):active {
+  transform: scale(0.95);
+}
+.chip:disabled {
+  color: var(--tertiary);
+}
+/* Layered over the surface color, since the dark theme's accent is translucent */
+.chip-on,
+.chip-on:not(:disabled):hover {
+  background-color: var(--modal);
+  background-image: linear-gradient(var(--button), var(--button));
+  color: white;
+}
+.chip-dim {
+  font-weight: 400;
+  opacity: 0.75;
+}
+.chip-icon {
+  width: 18px;
+  height: 18px;
+  margin-left: -3px;
+}
+.chip-caret {
+  width: 18px;
+  height: 18px;
+  margin: 0 -6px 0 -3px;
+  opacity: 0.6;
+}
+.chip-count {
+  min-width: 22px;
+  padding: 2px 6px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: var(--field);
+  color: var(--active);
+  font-size: 12px;
+  text-align: center;
+}
+.chip-on .chip-count {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+/* The time chip and its reset button read as one control */
+.chip-group {
+  display: flex;
+  border-radius: calc(var(--chip) / 2);
+  box-shadow: var(--modal-shadow);
+}
+.chip-group .chip {
+  box-shadow: none;
+}
+.chip-group-custom .chip:first-child {
+  border-radius: calc(var(--chip) / 2) 0 0 calc(var(--chip) / 2);
+  padding-right: 12px;
+}
+.chip-reset {
+  width: var(--chip);
+  padding: 0;
+  justify-content: center;
+  border-radius: 0 calc(var(--chip) / 2) calc(var(--chip) / 2) 0;
+  border-left: 1px solid var(--line);
+  color: var(--secondary);
+}
+.chip-reset .icon {
+  width: 18px;
+  height: 18px;
+  margin-left: -2px;
+}
+.chip-group-custom .chip-on + .chip-reset {
+  border-left-color: transparent;
 }
 
 /* ---- Free rooms ---------------------------------------------------------- */
@@ -2061,9 +2063,9 @@ input[type="checkbox"].switch:checked::after {
   position: fixed;
   z-index: 4;
   left: var(--gutter);
-  top: calc(var(--gutter) * 2 + 40px);
+  top: calc(var(--gutter) + 94px);
   width: 360px;
-  max-height: min(600px, calc(100% - var(--gutter) * 3 - 40px));
+  max-height: min(620px, calc(100% - var(--gutter) * 2 - 94px));
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -2086,7 +2088,12 @@ input[type="checkbox"].switch:checked::after {
   padding: 12px 4px 10px 15px;
   border-bottom: 1px solid var(--line);
 }
+.free-rooms-title {
+  font-size: 17px;
+  font-weight: 700;
+}
 .free-rooms-subtitle {
+  margin-top: 2px;
   font-size: 13px;
   color: var(--secondary);
 }
@@ -2095,18 +2102,25 @@ input[type="checkbox"].switch:checked::after {
   border-radius: 50%;
 }
 .free-rooms-locate {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   margin: 10px 15px 0;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background-color: var(--button);
-  color: white;
+  padding: 6px 12px 6px 8px;
+  border-radius: 16px;
+  border: 1px solid var(--card-line);
+  color: var(--link);
   font-size: 14px;
   font-weight: 600;
-  text-align: center;
   transition: background-color 0.2s, transform 0.2s var(--spring);
 }
+.free-rooms-locate .icon {
+  width: 18px;
+  height: 18px;
+}
 .free-rooms-locate:not(:disabled):hover {
-  background-color: var(--button-hover);
+  background-color: var(--icon-button-hover);
 }
 .free-rooms-locate:not(:disabled):active {
   transform: scale(0.97);
@@ -2132,9 +2146,10 @@ input[type="checkbox"].switch:checked::after {
 }
 .free-room {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "name until" "building distance";
   align-items: baseline;
-  gap: 0 12px;
+  gap: 1px 12px;
   padding: 8px 12px;
   border-radius: 10px;
   border: 1px solid var(--card-line);
@@ -2148,19 +2163,30 @@ input[type="checkbox"].switch:checked::after {
   transform: scale(0.98);
 }
 .free-room-name {
+  grid-area: name;
   font-family: var(--narrow);
   font-weight: 600;
 }
+.free-room-building {
+  grid-area: building;
+  overflow: hidden;
+  font-size: 12px;
+  color: var(--secondary);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .free-room-distance {
-  grid-row: 1;
-  grid-column: 2;
+  grid-area: distance;
   font-size: 12px;
   font-variant-numeric: tabular-nums;
+  text-align: right;
   color: var(--secondary);
 }
 .free-room-until {
-  grid-column: 1 / -1;
+  grid-area: until;
   font-size: 13px;
+  font-weight: 600;
+  text-align: right;
   color: var(--active);
 }
 .free-rooms-disclaimer {
@@ -2196,7 +2222,7 @@ input[type="checkbox"].switch:checked::after {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px 14px;
+  gap: 8px 10px;
   padding: 15px 20px 0;
 }
 .action-btn {
@@ -2204,7 +2230,7 @@ input[type="checkbox"].switch:checked::after {
   align-items: center;
   gap: 4px;
   height: 36px;
-  padding: 0 14px;
+  padding: 0 12px;
   border-radius: 18px;
   border: 1px solid var(--card-line);
   font-size: 14px;
@@ -2226,20 +2252,64 @@ input[type="checkbox"].switch:checked::after {
 .action-btn-primary:hover {
   background-color: var(--button-hover);
 }
+.action-btn-on,
+.action-btn-on:not(:disabled):hover {
+  border-color: transparent;
+  background-color: var(--active);
+  color: white;
+  box-shadow: none;
+}
 .action-icon {
   width: 18px;
   height: 18px;
 }
-.building-distance {
-  font-size: 14px;
-  color: var(--secondary);
+.action-btn-detail {
+  font-weight: 400;
+  opacity: 0.85;
+}
+.action-count {
+  margin-left: 2px;
+  min-width: 20px;
+  padding: 1px 6px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: var(--field);
+  color: var(--active);
+  font-size: 12px;
+  text-align: center;
   font-variant-numeric: tabular-nums;
 }
-.building-distance strong {
+.action-btn-on .action-count {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+/* Two-way switch, e.g. the room list or the 3D view */
+.segmented {
+  display: inline-flex;
+  margin-left: auto;
+  padding: 2px;
+  border-radius: 18px;
+  border: 1px solid var(--card-line);
+}
+.segment {
+  height: 30px;
+  padding: 0 11px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--secondary);
+  transition: background-color 0.2s, color 0.2s;
+}
+.segment:hover {
   color: var(--text);
+}
+.segment[aria-pressed="true"] {
+  background-color: var(--button);
+  color: white;
 }
 @media (max-width: 690px) {
   .building-actions {
+    gap: 8px;
     padding: 12px 10px 0;
   }
 }

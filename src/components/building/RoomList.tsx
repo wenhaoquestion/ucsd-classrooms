@@ -3,8 +3,14 @@ import { RoomMeeting } from "../../lib/coursesToClassrooms";
 import { ROOM_STATUS_TEXT, RoomStatusKind } from "../../lib/indoor/roomStatus";
 import { meetingTypes } from "../../lib/meeting-types";
 import { useMoment } from "../../lib/moment-context";
-import { getRoomActivity } from "../../lib/roomActivity";
+import { getRoomActivity, nextMeetingToday } from "../../lib/roomActivity";
 import { Link } from "../Link";
+
+function FreeUntil({ meetings }: { meetings: RoomMeeting[] }) {
+  const moment = useMoment();
+  const next = nextMeetingToday(meetings, moment);
+  return <>{next ? `Free until ${next.time.start}` : "Free rest of day"}</>;
+}
 
 /** A group of rooms, e.g. one floor when indoor geometry exists. */
 export type RoomListSection = {
@@ -23,6 +29,8 @@ export type RoomListProps = {
   /** Room highlighted from elsewhere (e.g. hovering it in the 3D view). */
   highlightedRoom?: string | null;
   onHoverRoom_s?: (room: string | null) => void;
+  /** Only list rooms with classes this term but none at the selected time. */
+  freeOnly?: boolean;
 };
 export function RoomList({
   building,
@@ -30,8 +38,12 @@ export function RoomList({
   sections,
   highlightedRoom = null,
   onHoverRoom_s,
+  freeOnly = false,
 }: RoomListProps) {
   const moment = useMoment();
+  const isShown = (room: string) =>
+    !freeOnly ||
+    (!!rooms[room] && getRoomActivity(rooms[room], moment).type === "inactive");
 
   if (!sections && Object.keys(rooms).length === 0) {
     return (
@@ -111,7 +123,7 @@ export function RoomList({
                 )}
               </>
             ) : (
-              "Available"
+              <FreeUntil meetings={meetings} />
             )}
           </div>
         ) : null}
@@ -119,13 +131,27 @@ export function RoomList({
     );
   };
 
+  const noneFree = (
+    <div className="empty">
+      <p>Every classroom here has a class now or soon.</p>
+    </div>
+  );
+
   if (sections) {
+    const shown = sections
+      .map((section) => ({ ...section, rooms: section.rooms.filter(isShown) }))
+      .filter((section) => section.rooms.length > 0);
+    if (shown.length === 0) {
+      return noneFree;
+    }
     return (
       <div className="room-list">
-        {sections.map((section) => (
+        {shown.map((section) => (
           <section className="room-section" key={section.id}>
             <h3 className="room-section-title">{section.title}</h3>
-            {section.note && <p className="room-section-note">{section.note}</p>}
+            {section.note && !freeOnly && (
+              <p className="room-section-note">{section.note}</p>
+            )}
             <div className="rooms">
               {[...section.rooms]
                 .sort(compareRoomNums)
@@ -137,10 +163,14 @@ export function RoomList({
     );
   }
 
+  const shown = Object.keys(rooms).filter(isShown);
+  if (shown.length === 0) {
+    return noneFree;
+  }
   return (
     <div className="room-list">
       <div className="rooms">
-        {Object.keys(rooms)
+        {shown
           // Can't pre-sort the rooms object entries because JS sorts numerical
           // properties differently
           .sort(compareRoomNums)

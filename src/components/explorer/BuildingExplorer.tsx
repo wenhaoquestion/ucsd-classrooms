@@ -40,6 +40,14 @@ const STATUS_GLYPHS: Record<RoomStatusKind, string> = {
   "not-tracked": "",
 };
 
+/** Short legend labels; the rest use the full status text. */
+const LEGEND_TEXT: Partial<Record<RoomStatusKind, string>> = {
+  "in-use": "In use",
+  soon: "Starts soon",
+  "no-class-now": "Free",
+  "none-listed": "No classes",
+};
+
 export type ExplorerIntro = "rise" | "fade";
 
 const PROVENANCE_LABELS: Record<GeometryStatus, string> = {
@@ -74,7 +82,6 @@ export type BuildingExplorerProps = {
   intro: ExplorerIntro;
   hoveredRoom: string | null;
   onHoverRoom_s: (room: string | null) => void;
-  onDisable_s: () => void;
   /** Bumped when surrounding layout moves the stage (e.g. side panel). */
   layoutKey: string;
 };
@@ -89,7 +96,6 @@ export function BuildingExplorer({
   intro,
   hoveredRoom,
   onHoverRoom_s,
-  onDisable_s,
   layoutKey,
 }: BuildingExplorerProps) {
   const moment = useMoment();
@@ -102,6 +108,7 @@ export function BuildingExplorer({
   const [explodedFor, setExplodedFor] = useState<IndoorIndex | null>(null);
   const [introDone, setIntroDone] = useState(false);
   const [showSources, setShowSources] = useState(false);
+  const [showViewTools, setShowViewTools] = useState(false);
   const activatedAt = useRef(0);
   /** Room most recently picked in 3D, so selecting it doesn't move the camera. */
   const pickedInScene = useRef<string | null>(null);
@@ -371,13 +378,6 @@ export function BuildingExplorer({
           <span className="explorer-code">{building.code}</span>
           <span className="explorer-name">{building.name}</span>
         </div>
-        <button
-          className="explorer-text-btn"
-          onClick={onDisable_s}
-          title="Hide the 3D view and use the room list"
-        >
-          List only
-        </button>
         <Link
           view={{ type: "default" }}
           className="explorer-close"
@@ -430,44 +430,57 @@ export function BuildingExplorer({
             >
               Exploded
             </button>
-            <button
-              className="explorer-view-btn"
-              onClick={() => sceneRef.current?.rotate(-30)}
-              aria-label="Rotate left"
-              title="Rotate left"
-            >
-              ⟲
-            </button>
-            <button
-              className="explorer-view-btn"
-              onClick={() => sceneRef.current?.rotate(30)}
-              aria-label="Rotate right"
-              title="Rotate right"
-            >
-              ⟳
-            </button>
-            <button
-              className="explorer-view-btn"
-              onClick={() => sceneRef.current?.zoom(0.8)}
-              aria-label="Zoom in"
-              title="Zoom in"
-            >
-              +
-            </button>
-            <button
-              className="explorer-view-btn"
-              onClick={() => sceneRef.current?.zoom(1.25)}
-              aria-label="Zoom out"
-              title="Zoom out"
-            >
-              −
-            </button>
+            {showViewTools && (
+              <>
+                <button
+                  className="explorer-view-btn"
+                  onClick={() => sceneRef.current?.rotate(-30)}
+                  aria-label="Rotate left"
+                  title="Rotate left"
+                >
+                  ⟲
+                </button>
+                <button
+                  className="explorer-view-btn"
+                  onClick={() => sceneRef.current?.rotate(30)}
+                  aria-label="Rotate right"
+                  title="Rotate right"
+                >
+                  ⟳
+                </button>
+                <button
+                  className="explorer-view-btn"
+                  onClick={() => sceneRef.current?.zoom(0.8)}
+                  aria-label="Zoom in"
+                  title="Zoom in"
+                >
+                  +
+                </button>
+                <button
+                  className="explorer-view-btn"
+                  onClick={() => sceneRef.current?.zoom(1.25)}
+                  aria-label="Zoom out"
+                  title="Zoom out"
+                >
+                  −
+                </button>
+              </>
+            )}
             <button
               className="explorer-view-btn"
               onClick={() => sceneRef.current?.resetView()}
               title="Reset view"
             >
               Reset
+            </button>
+            <button
+              className="explorer-view-btn"
+              aria-expanded={showViewTools}
+              aria-label={showViewTools ? "Fewer view controls" : "More view controls"}
+              title={showViewTools ? "Fewer view controls" : "Rotate and zoom buttons"}
+              onClick={() => setShowViewTools((show) => !show)}
+            >
+              {showViewTools ? "›" : "⋯"}
             </button>
           </div>
         )}
@@ -512,7 +525,7 @@ export function BuildingExplorer({
             ) : shell ? (
               "Exterior from the campus map. Pick a floor or a room in the list."
             ) : (
-              "Drag to orbit, scroll or pinch to zoom. Select a highlighted room to see its schedule."
+              "Drag to rotate, pinch or scroll to zoom. Tap a room for its schedule."
             )}
           </p>
         )}
@@ -523,17 +536,19 @@ export function BuildingExplorer({
             <ul className="explorer-legend" aria-label="Room color legend">
               {(moment.type === "term"
                 ? (["listed", "none-listed", "unknown"] as const)
+                : availability === "complete"
+                ? (["in-use", "soon", "no-class-now", "none-listed"] as const)
                 : (["in-use", "soon", "no-class-now", "none-listed", "unknown"] as const)
               ).map((kind) => (
                 <li key={kind} className="explorer-legend-item" data-status={kind}>
                   <span className="explorer-swatch" aria-hidden="true">
                     {STATUS_GLYPHS[kind]}
                   </span>
-                  {kind === "no-class-now" ? "Available (no class listed now)" : ROOM_STATUS_TEXT[kind]}
+                  {LEGEND_TEXT[kind] ?? ROOM_STATUS_TEXT[kind]}
                 </li>
               ))}
               <li className="explorer-legend-note">
-                From class schedules, not live occupancy.
+                From class schedules, not live occupancy
               </li>
             </ul>
           )}

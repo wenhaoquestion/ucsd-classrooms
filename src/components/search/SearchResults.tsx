@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { buildings } from "../../lib/buildings";
+import { compareRoomNums } from "../../lib/compareRoomNums";
 import { Course } from "../../lib/section-types";
 import { Term } from "../../lib/TermCache";
 import { termName } from "../../lib/terms";
@@ -9,6 +10,8 @@ export type SearchData = {
   courses: Course[];
   professors: { first: string; last: string }[];
   buildings: string[];
+  /** Room numbers by building code. */
+  rooms: Record<string, string[]>;
 };
 
 type ResultScore = {
@@ -31,7 +34,9 @@ type ProfessorResult = {
   id: string;
 } & ResultScore;
 type BuildingResult = { code: string; in: "code" | "name" } & ResultScore;
+type RoomResult = { building: string; room: string };
 type SearchResults = {
+  rooms: RoomResult[];
   courses: CourseResult[];
   professors: ProfessorResult[];
   buildings: BuildingResult[];
@@ -79,11 +84,28 @@ function sortResults<T extends ResultScore>(results: T[]): T[] {
     .slice(0, 15);
 }
 
+const MAX_ROOMS = 6;
+
+/** Rooms for queries like "centr 115" or "CENTR-1". */
+function searchRooms(data: SearchData, query: string): RoomResult[] {
+  const [code, room, ...rest] = query.toUpperCase().split(/[\s-]+/);
+  const rooms = data.rooms[code];
+  if (!rooms || !room || rest.length > 0) {
+    return [];
+  }
+  return rooms
+    .filter((key) => key.startsWith(room))
+    .sort(compareRoomNums)
+    .slice(0, MAX_ROOMS)
+    .map((key) => ({ building: code, room: key }));
+}
+
 function search(data: SearchData, query: string): SearchResults {
   if (query === "") {
-    return { courses: [], buildings: [], professors: [] };
+    return { rooms: [], courses: [], buildings: [], professors: [] };
   }
   const results: SearchResults = {
+    rooms: searchRooms(data, query.trim()),
     courses: sortResults(
       data.courses.map((course) =>
         maxResult(
@@ -123,6 +145,7 @@ function search(data: SearchData, query: string): SearchResults {
     (results.buildings.length > 0 ? 1 : 0);
   const maxSectionLength = sections === 3 ? 5 : sections === 2 ? 7 : 12;
   return {
+    rooms: results.rooms,
     courses: results.courses.slice(0, maxSectionLength),
     professors: results.professors.slice(0, maxSectionLength),
     buildings: results.buildings.slice(0, maxSectionLength),
@@ -148,6 +171,7 @@ export function SearchResults({
     [query, data]
   );
   const length =
+    results.rooms.length +
     results.courses.length +
     results.professors.length +
     results.buildings.length;
@@ -169,6 +193,17 @@ export function SearchResults({
   }
   return (
     <div className="results">
+      {results.rooms.length > 0 && <h2 className="result-heading">Rooms</h2>}
+      {results.rooms.map(({ building, room }, i) => (
+        <SearchResult
+          name={buildings[building]?.name ?? building}
+          code={`${building} ${room}`}
+          primary="code"
+          selected={i === index}
+          view={{ type: "building", building, room }}
+          key={`room\t${building}\t${room}`}
+        />
+      ))}
       {results.courses.length > 0 && (
         <h2 className="result-heading">Courses</h2>
       )}
@@ -178,7 +213,7 @@ export function SearchResults({
           code={course.code}
           primary={course.in === "code" ? "code" : "name"}
           match={course.match}
-          selected={i === index}
+          selected={i + results.rooms.length === index}
           view={{ type: "course", course: course.code }}
           key={`course\t${course.code}\t${course.in}`}
         />
@@ -195,7 +230,7 @@ export function SearchResults({
           }
           primary="name"
           match={professor.match}
-          selected={i + results.courses.length === index}
+          selected={i + results.rooms.length + results.courses.length === index}
           view={{ type: "professor", name: professor.id }}
           key={`course\t${professor.id}\t${professor.order}`}
         />
@@ -210,7 +245,11 @@ export function SearchResults({
           primary={building.in === "code" ? "code" : "name"}
           match={building.match}
           selected={
-            i + results.courses.length + results.professors.length === index
+            i +
+              results.rooms.length +
+              results.courses.length +
+              results.professors.length ===
+            index
           }
           view={{ type: "building", building: building.code }}
           key={`course\t${building.code}\t${building.in}`}
