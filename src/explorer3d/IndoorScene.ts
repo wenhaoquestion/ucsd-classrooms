@@ -81,6 +81,9 @@ export const STATUS_GLYPHS: Record<RoomStatusKind, string> = {
   "none-listed": "–",
   unknown: "?",
   "not-tracked": "",
+  bookable: "○",
+  booked: "●",
+  closed: "–",
 };
 
 type Palette = {
@@ -120,6 +123,9 @@ const DARK: Palette = {
     "none-listed": new Color("#9eabba"),
     unknown: new Color("#a5a5a5"),
     "not-tracked": new Color("#7f8fa3"),
+    bookable: new Color("#3ecf8e"),
+    booked: new Color("#ff6b81"),
+    closed: new Color("#6f7b8a"),
   },
 };
 
@@ -144,6 +150,9 @@ const LIGHT: Palette = {
     "none-listed": new Color("#8d9aaa"),
     unknown: new Color("#8a8a8a"),
     "not-tracked": new Color("#c2ccd8"),
+    bookable: new Color("#12a150"),
+    booked: new Color("#d9364f"),
+    closed: new Color("#9aa4b1"),
   },
 };
 

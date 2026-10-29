@@ -18,6 +18,7 @@ export type IndoorManifestEntry = {
  */
 export const SOURCE_LAYOUTS: Record<string, IndoorManifestEntry> = {
   EBU3B: { file: "indoor/EBU3B.json", status: "source-traced" },
+  GEISEL: { file: "indoor/GEISEL.json", status: "source-traced" },
 };
 
 export const FACILITIES_LAYOUTS: Record<string, IndoorManifestEntry> =

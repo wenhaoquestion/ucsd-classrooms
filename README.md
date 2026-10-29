@@ -21,6 +21,7 @@ Explore UC San Diego classrooms, check scheduled availability, and browse campus
 - **Shareable links:** link directly to buildings, rooms, courses, instructors, and dates.
 - **3D building explorer:** inspect campus building exteriors, nearby buildings, floor controls, and classroom counts. Buildings with room geometry support room selection and schedule activity colors.
 - **Indoor layouts:** published Facilities data covers 77 building codes and 9,697 room records. Where plans provide only a floor listing, classrooms stay in the floor's room list instead of receiving an invented position.
+- **Geisel Library study rooms:** Geisel's 39 bookable rooms on a 3D model of all eight floors, colored by live LibCal reservations at the selected date and time (free, booked, not bookable). Select a room for its day timeline, or use **Book** to open its LibCal page on that date, where you sign in to reserve. Floors 1-2 draw rooms in labeled blocks, as the library's maps do.
 - **Room-list fallback:** schedules remain accessible when 3D is disabled or WebGL is unavailable. Switch with **List / 3D** in the building panel; phones start with the list, and the browser remembers your choice.
 
 ## Try it
@@ -64,6 +65,8 @@ npm run campus:build -- footprints.json attributes.json
 
 The site is a static frontend; no application server or API key is required. It loads classroom schedules and building photos from external public sources.
 
+Live Geisel availability needs one small extra piece: LibCal can't be read from another website, so a free Cloudflare Worker fetches it. Deploy it once and set the repository variable `LIBCAL_PROXY_URL`; see [worker/README.md](worker/README.md). Without it, Geisel's rooms still appear and link to LibCal, uncolored. `npm run dev` serves the same data locally without the Worker.
+
 The [deployment workflow](.github/workflows/gh-pages.yml) runs on pushes to `main` and can also be started manually from the repository's Actions tab. It installs locked dependencies, runs validation, builds `dist/`, and publishes that directory to GitHub Pages.
 
 In **Settings → Pages → Build and deployment**, use **GitHub Actions** as the source. Once deployment succeeds, the site is available at:
@@ -79,6 +82,9 @@ When deploying a different fork, update the site URL in `scripts/build.mjs`, the
 | `src/components/` | React application, schedules, search, and explorer UI |
 | `src/explorer3d/` | Three.js renderer, indoor scenes, and particles |
 | `src/lib/indoor/` | Layout schema, loading, geometry validation, and schedule mapping |
+| `src/lib/library/`, `src/components/library/` | Geisel study rooms, LibCal availability, and the booking panel |
+| `worker/` | Cloudflare Worker that reads Geisel availability from LibCal |
+| `data/indoor/GEISEL/` | Geisel floor-map measurements and the campus-map floor extrusion |
 | `data/indoor/EBU3B/` | Source metadata, room labels, and traced floor geometry |
 | `static/indoor/` | Runtime layouts fetched when a mapped building opens |
 | `static/indoor/facilities/` | Published Facilities layouts and their building index |
@@ -93,6 +99,7 @@ The frontend uses **React 19, TypeScript, Three.js, and esbuild**. The 3D scene 
 ## Data and coverage
 
 - **Schedules:** fetched from [SheepTester's public classroom data](https://sheeptester.github.io/uxdy/data/) by academic term. This repository does not run the schedule scraper. The interface displays data refresh information; availability reflects listed classes, not live occupancy or room reservations.
+- **Geisel study rooms:** names, capacities and LibCal IDs from the [library's booking pages](https://ucsd.libcal.com/spaces?lid=11273); availability is fetched live and refreshed every minute. Floor shapes and heights come from the campus map's Geisel model; room positions come from the [library's floor maps](https://library.ucsd.edu/visit/library-maps/), which have no north arrow or scale (see the layout's source notes).
 - **Campus exteriors:** public campus-map data supplies 585 footprint parts and matches 93 registrar building codes. Exterior-only views estimate floor counts and group classrooms by their room numbers; they do not invent room positions. TASB currently has no matching footprint.
 - **Published indoor coverage:** 77 Facilities layouts are included in the repository and production build, with 9,697 room records. Data loads only when a building opens. Facilities layouts take priority over the original EBU3B trace, matching the completed preview; the original 300-room CSE trace remains available in the source data.
 - **Geometry:** Facilities room outlines are converted from floor plans, scaled from listed room areas, and fitted to campus footprints. Some rooms have only a floor assignment. Vertical spacing and estimated heights are illustrative; these are not surveyed building models. Source references and conversion notes remain attached to each layout.

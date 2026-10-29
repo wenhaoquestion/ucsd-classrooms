@@ -19,6 +19,7 @@ import { BuildingPanel } from "./building/BuildingPanel";
 import { ExplorerIntro } from "./explorer/BuildingExplorer";
 import { useExplorerPreference } from "../lib/explorerPreference";
 import { hasIndoorLayout } from "../lib/indoor/manifest";
+import { isLibrary } from "../lib/library/geisel";
 import { ScheduleAvailability } from "../lib/indoor/roomStatus";
 import { DateTimePanel } from "./date-time/DateTimePanel";
 import { TermButtons } from "./date-time/TermButtons";
@@ -161,7 +162,9 @@ export function App({ title }: AppProps) {
     .join(" ");
 
   const datePanelVisible = showDatePanel || (noticeVisible && state !== null);
-  const buildingPanelVisible = buildingCode !== null && !noticeVisible;
+  // The library's rooms don't depend on class schedules, so it opens on breaks
+  const buildingPanelVisible =
+    buildingCode !== null && (!noticeVisible || isLibrary(buildingCode));
 
   /** Only called by the `useEffect` below, whenever `moment.date` changes */
   async function handleDate(date: Day, skipHolidayCheck: boolean) {

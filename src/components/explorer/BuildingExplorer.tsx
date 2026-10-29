@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo, useRef, useState } from "react";
+import { ReactNode, useContext, useEffect, useMemo, useRef, useState } from "react";
 import type {
   DisplayMode,
   IndoorScene,
@@ -38,6 +38,9 @@ const STATUS_GLYPHS: Record<RoomStatusKind, string> = {
   "none-listed": "–",
   unknown: "?",
   "not-tracked": "",
+  bookable: "○",
+  booked: "●",
+  closed: "–",
 };
 
 /** Short legend labels; the rest use the full status text. */
@@ -49,6 +52,26 @@ const LEGEND_TEXT: Partial<Record<RoomStatusKind, string>> = {
 };
 
 export type ExplorerIntro = "rise" | "fade";
+
+/**
+ * Replaces the schedule-derived room states, for buildings whose rooms are
+ * reserved rather than scheduled (Geisel's study rooms).
+ */
+export type ExplorerBooking = {
+  /** Geometry rooms that can be selected. */
+  selectable: ReadonlySet<string>;
+  statuses: ReadonlyMap<string, RoomStatusKind>;
+  /** Geometry room that shows a room key (a room, or the block it's in). */
+  roomIdForKey: (key: string | null) => string | null;
+  /** Room key to navigate to when a geometry room is picked. */
+  keyForRoom: (roomId: string) => string;
+  /** Selection bar content for a selected geometry room. */
+  renderSelection: (roomId: string) => ReactNode;
+  floorBadges: ReadonlyMap<string, string>;
+  legend: readonly RoomStatusKind[];
+  legendNote: string;
+  hint: string;
+};
 
 const PROVENANCE_LABELS: Record<GeometryStatus, string> = {
   "source-traced": "Traced from floor maps",
@@ -84,6 +107,7 @@ export type BuildingExplorerProps = {
   onHoverRoom_s: (room: string | null) => void;
   /** Bumped when surrounding layout moves the stage (e.g. side panel). */
   layoutKey: string;
+  booking?: ExplorerBooking;
 };
 
 export function BuildingExplorer({
@@ -97,6 +121,7 @@ export function BuildingExplorer({
   hoveredRoom,
   onHoverRoom_s,
   layoutKey,
+  booking,
 }: BuildingExplorerProps) {
   const moment = useMoment();
   const onView = useContext(OnView);
@@ -115,13 +140,14 @@ export function BuildingExplorer({
 
   const index: IndoorIndex | null = layout.type === "ready" ? layout.index : null;
   const shell = index?.building.geometryStatus === "exterior-shell";
-  // Shells open exploded: separated floors are what they show best
-  if (shell && index !== explodedFor) {
+  // Shells open exploded: separated floors are what they show best. So do
+  // booking views, whose rooms are spread over many floors
+  if ((shell || booking) && index && index !== explodedFor) {
     setExplodedFor(index);
     setDisplay((display) => ({ ...display, exploded: true }));
   }
 
-  const selectable = useMemo(() => {
+  const scheduleSelectable = useMemo(() => {
     const ids = new Set<string>();
     if (index) {
       for (const geometryRoom of index.roomsById.values()) {
@@ -135,8 +161,20 @@ export function BuildingExplorer({
     }
     return ids;
   }, [index]);
+  const selectable = booking?.selectable ?? scheduleSelectable;
 
-  const selectedRoom = index ? roomForKey(index, room) : null;
+  /** The geometry room that shows a room key. */
+  const geometryFor = (key: string | null) => {
+    if (!index) {
+      return null;
+    }
+    if (booking) {
+      const id = booking.roomIdForKey(key);
+      return id ? index.roomsById.get(id) ?? null : null;
+    }
+    return roomForKey(index, key);
+  };
+  const selectedRoom = geometryFor(room);
   /** Rooms with a known floor but no position on it. */
   const unplaced = index && room ? index.unplacedByKey.get(room) : undefined;
 
@@ -150,14 +188,20 @@ export function BuildingExplorer({
       view: {
         type: "building",
         building: building.code,
-        room: navigationKeyForRoom(index, geometryRoom),
+        room: booking ? booking.keyForRoom(roomId) : navigationKeyForRoom(index, geometryRoom),
         term: toViewTerm(moment),
       },
     });
   });
   const handleHover_s = useStableCallback((roomId: string | null) => {
     const geometryRoom = roomId ? index?.roomsById.get(roomId) : null;
-    onHoverRoom_s(index && geometryRoom ? navigationKeyForRoom(index, geometryRoom) : null);
+    onHoverRoom_s(
+      index && geometryRoom
+        ? booking
+          ? booking.keyForRoom(geometryRoom.id)
+          : navigationKeyForRoom(index, geometryRoom)
+        : null
+    );
   });
   const handleFloorTag_s = useStableCallback((floorId: string) => {
     setDisplay((display) => ({ ...display, floor: floorId }));
@@ -236,9 +280,9 @@ export function BuildingExplorer({
   }, [sceneReady, index]);
 
   // Unplaced classrooms can't be colored in 3D, so their floor's tag counts them
-  const floorBadges = useMemo(() => {
+  const scheduleBadges = useMemo(() => {
     const badges = new Map<string, string>();
-    if (!index) {
+    if (!index || booking) {
       return badges;
     }
     const counts = new Map<string, { rooms: number; busy: number }>();
@@ -263,7 +307,8 @@ export function BuildingExplorer({
       );
     }
     return badges;
-  }, [shell, index, rooms, moment, availability]);
+  }, [shell, index, rooms, moment, availability, booking]);
+  const floorBadges = booking?.floorBadges ?? scheduleBadges;
   useEffect(() => {
     if (sceneReady) {
       sceneRef.current?.setFloorBadges(floorBadges);
@@ -271,17 +316,18 @@ export function BuildingExplorer({
   }, [sceneReady, floorBadges]);
 
   // Statuses follow the selected date/time
-  const statuses = useMemo(
+  const scheduleStatuses = useMemo(
     () =>
-      index
+      index && !booking
         ? new Map(
             [...getIndoorStatuses(index, rooms, moment, availability)].map(
               ([id, status]) => [id, status.kind]
             )
           )
         : null,
-    [index, rooms, moment, availability]
+    [index, rooms, moment, availability, booking]
   );
+  const statuses = booking?.statuses ?? scheduleStatuses;
   useEffect(() => {
     if (sceneReady && statuses) {
       sceneRef.current?.setStatuses(statuses);
@@ -337,7 +383,7 @@ export function BuildingExplorer({
     }
   }, [sceneReady, selectedId]);
 
-  const hoveredId = (index && roomForKey(index, hoveredRoom)?.id) ?? null;
+  const hoveredId = geometryFor(hoveredRoom)?.id ?? null;
   useEffect(() => {
     if (sceneReady) {
       sceneRef.current?.setHovered(hoveredId);
@@ -513,6 +559,8 @@ export function BuildingExplorer({
                   unplaced.floor.label
                 }; position on the floor not mapped`}
               </>
+            ) : selectedRoom && booking ? (
+              booking.renderSelection(selectedRoom.id)
             ) : selectedRoom ? (
               <>
                 <strong>
@@ -522,6 +570,8 @@ export function BuildingExplorer({
                 {index.floorsById.get(selectedRoom.floor)?.label}
                 {statusSummary ? ` · ${ROOM_STATUS_TEXT[statusSummary]}` : ""}
               </>
+            ) : booking ? (
+              booking.hint
             ) : shell ? (
               "Exterior from the campus map. Pick a floor or a room in the list."
             ) : (
@@ -534,7 +584,9 @@ export function BuildingExplorer({
         <footer className="explorer-footer">
           {!shell && (
             <ul className="explorer-legend" aria-label="Room color legend">
-              {(moment.type === "term"
+              {(booking
+                ? booking.legend
+                : moment.type === "term"
                 ? (["listed", "none-listed", "unknown"] as const)
                 : availability === "complete"
                 ? (["in-use", "soon", "no-class-now", "none-listed"] as const)
@@ -548,7 +600,7 @@ export function BuildingExplorer({
                 </li>
               ))}
               <li className="explorer-legend-note">
-                From class schedules, not live occupancy
+                {booking ? booking.legendNote : "From class schedules, not live occupancy"}
               </li>
             </ul>
           )}

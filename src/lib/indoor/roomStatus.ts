@@ -22,7 +22,13 @@ export type RoomStatusKind =
   /** Schedule data didn't (fully) load, so nothing can be said. */
   | "unknown"
   /** Not an instructional room; schedules don't apply. */
-  | "not-tracked";
+  | "not-tracked"
+  /** Library study room: free to reserve at the selected time. */
+  | "bookable"
+  /** Library study room: reserved at the selected time. */
+  | "booked"
+  /** Library study room: not reservable at the selected time (e.g. closed). */
+  | "closed";
 
 export const ROOM_STATUS_TEXT: Record<RoomStatusKind, string> = {
   "in-use": "Class scheduled now",
@@ -32,6 +38,9 @@ export const ROOM_STATUS_TEXT: Record<RoomStatusKind, string> = {
   "none-listed": "No classes listed",
   unknown: "Schedule data unavailable",
   "not-tracked": "Not a scheduled room",
+  bookable: "Free to book",
+  booked: "Booked",
+  closed: "Not bookable",
 };
 
 export type ScheduleAvailability =

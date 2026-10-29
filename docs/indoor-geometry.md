@@ -255,6 +255,33 @@ separate, runnable workflows. Exact schedule keys and reviewed explicit
 aliases govern runtime mapping; a similar room number or a large room alone
 is insufficient evidence for a new mapping.
 
+## Geisel Library study rooms
+
+`GEISEL` isn't a registrar building: it has no classes, so its rooms are colored
+by live LibCal reservations instead of schedules (`src/lib/library/geisel.ts`,
+`worker/README.md`). The layout is `source-traced` and rebuilt with
+`node scripts/build-geisel-indoor.mjs` from two inputs in `data/indoor/GEISEL/`:
+
+- **`extrusion.json`:** the campus map's `Geisel_Extrusion` layer (accessed
+  2026-10-28): one outline and elevation per floor, in feet. Floors 3-8 use these
+  outlines directly; floor 3 is the plaza-level core plus the 20 tower columns.
+- **`trace.json`:** measurements from the library's floor-map PDFs for floors
+  1, 2, 5, 6 and 7, in PDF points, with each PDF's SHA-256.
+  `scripts/trace-geisel-maps.py` suggests the blue room tiles, floor outlines and
+  courtyards; room labels were read off the maps by hand.
+
+| What | Basis | Confidence |
+| --- | --- | --- |
+| Tower rooms (5-7) | Map tiles; the three maps share one print scale, and their outline boxes match the extrusion to within 0.5% in x and z | location `approximate`, shape `traced` |
+| Floors 1-2 | Outline traced from the map; uniform scale makes its bounding box the area of the extrusion's (box-shaped) floor 1-2 footprint | `approximate` |
+| Blocks on floors 1-2 | The maps draw 1040-1045, 2070-2072, 2096A-B and Service Hub 1-4 as single labeled blocks; they stay blocks, and the panel lists their rooms | `approximate` |
+| Context | Other labeled blue spaces (e.g. Classroom 1, The Gallery) are unselectable rooms; unlabeled blue blocks are elevator/restroom cores; flat gray map areas are `not-detailed` | `approximate` |
+| Orientation | The maps have no north arrow. Floors 1-2 put Geisel West on the left and East on the right, so every map is taken as north-up | assumption |
+
+The two video conferencing booths are "outside room 2095" according to LibCal
+but aren't on the maps; they're listed under floor 2 without a position.
+Floors 4 and 8 have no bookable rooms.
+
 ## Original CSE source trace retained for audit
 
 | Building | Floors | Rooms traced | Schedule rooms placed | Status |

@@ -1,30 +1,24 @@
 import { PointerEvent, useContext, useMemo, useRef, useState } from "react";
 import { BuildingDatum } from "../../lib/buildings";
-import {
-  directionsUrl,
-  distanceMeters,
-  useUserLocation,
-  walkingMinutes,
-} from "../../lib/geolocation";
 import { getRoomActivity } from "../../lib/roomActivity";
 import { RoomMeeting } from "../../lib/coursesToClassrooms";
 import { hasIndoorLayout } from "../../lib/indoor/manifest";
 import { computeCoverage, IndoorIndex, roomForKey } from "../../lib/indoor/roomMapping";
 import { ScheduleAvailability } from "../../lib/indoor/roomStatus";
 import { IndoorLayoutState, useIndoorLayout } from "../../lib/indoor/useIndoorLayout";
+import { isLibrary } from "../../lib/library/geisel";
 import { toViewTerm, useMoment } from "../../lib/moment-context";
-import { useLast } from "../../lib/useLast";
 import { useStableCallback } from "../../lib/useStable";
 import { OnView } from "../../lib/View";
-import { AbbrevHeading } from "../AbbrevHeading";
 import { BuildingExplorer, ExplorerIntro } from "../explorer/BuildingExplorer";
-import { BackIcon } from "../icons/BackIcon";
-import { CloseIcon } from "../icons/CloseIcon";
 import { Image } from "../Image";
-import { Link, navigate } from "../Link";
+import { navigate } from "../Link";
 import { closeBuildingBack } from "./backHandlers";
+import { BuildingActions } from "./BuildingActions";
+import { BuildingHeader } from "./BuildingHeader";
 import { RoomList, RoomListSection } from "./RoomList";
 import { RoomSchedule } from "./RoomSchedule";
+import { LibraryPanelContent, useGeiselBooking } from "../library/LibraryPanel";
 
 /** How an unplaced room's floor is known, for notes. */
 const UNPLACED_BASIS = {
@@ -86,84 +80,6 @@ function indoorSections(
   return sections;
 }
 
-type BuildingActionsProps = {
-  building: BuildingDatum;
-  /** Rooms with no class listed now, or null when not viewing a date. */
-  freeCount: number | null;
-  freeOnly: boolean;
-  onFreeOnly: (freeOnly: boolean) => void;
-  explorerOpen: boolean;
-  onExplorerEnabled_s: (enabled: boolean) => void;
-};
-
-/** Directions, the free room filter, and the 3D/list switch. */
-function BuildingActions({
-  building,
-  freeCount,
-  freeOnly,
-  onFreeOnly,
-  explorerOpen,
-  onExplorerEnabled_s,
-}: BuildingActionsProps) {
-  const userLocation = useUserLocation();
-  const [latitude, longitude] = building.location;
-  const placed = latitude !== 0 || longitude !== 0;
-  const distance =
-    placed && userLocation.type === "located"
-      ? distanceMeters(userLocation.location, building.location)
-      : null;
-  return (
-    <div className="building-actions">
-      {placed && (
-        <a
-          className="action-btn action-btn-primary"
-          href={directionsUrl(building.location)}
-          target="_blank"
-          rel="noreferrer"
-          title="Walking directions in your maps app"
-        >
-          Directions
-          {distance !== null && (
-            <span className="action-btn-detail">{walkingMinutes(distance)} min</span>
-          )}
-          <svg viewBox="0 0 24 24" className="icon action-icon" aria-hidden="true">
-            <path d="M7 7h10v10h-2V10.41l-8.29 8.3-1.42-1.42L13.59 9H7z" />
-          </svg>
-        </a>
-      )}
-      {freeCount !== null && (
-        <button
-          className={`action-btn ${freeOnly ? "action-btn-on" : ""}`}
-          aria-pressed={freeOnly}
-          onClick={() => onFreeOnly(!freeOnly)}
-          title="Only show classrooms with no class listed now"
-        >
-          Free now
-          <span className="action-count">{freeCount}</span>
-        </button>
-      )}
-      {hasIndoorLayout(building.code) && (
-        <div className="segmented" role="group" aria-label="Room view">
-          <button
-            className="segment"
-            aria-pressed={!explorerOpen}
-            onClick={() => onExplorerEnabled_s(false)}
-          >
-            List
-          </button>
-          <button
-            className="segment"
-            aria-pressed={explorerOpen}
-            onClick={() => onExplorerEnabled_s(true)}
-          >
-            3D
-          </button>
-        </div>
-      )}
-    </div>
-  );
-}
-
 type BuildingPanelContentProps = {
   building: BuildingDatum;
   room: string | null;
@@ -186,8 +102,7 @@ function BuildingPanelContent({
   onHoverRoom_s,
   onExplorerEnabled_s,
 }: BuildingPanelContentProps) {
-  const { code, images, college, name } = building;
-  const lastRoom = useLast("", room);
+  const { code, images } = building;
   const moment = useMoment();
   const [freeOnly, setFreeOnly] = useState(false);
   const freeCount = useMemo(
@@ -199,8 +114,6 @@ function BuildingPanelContent({
           ).length,
     [rooms, moment]
   );
-
-  const imageUrl = images[0]?.url; // TODO: Compress
 
   const index = layout.type === "ready" ? layout.index : null;
   const sections = useMemo(
@@ -246,52 +159,7 @@ function BuildingPanelContent({
 
   return (
     <>
-      <header
-        className={`building-name ${
-          room ? "schedule-view" : "list-view"
-        } college-${college}`}
-      >
-        {images.length > 0 && (
-          <Image
-            className="building-header-image"
-            src={imageUrl}
-            key={imageUrl}
-          />
-        )}
-        <Link
-          view={room ? { type: "building", building: code } : null}
-          className="icon-btn back"
-          aria-label="Back to room list"
-          back={([previous]) => {
-            // If the user just came from a room list then go back to it
-            if (previous && previous.type === "building" && !previous.room) {
-              return 0;
-            } else {
-              return null;
-            }
-          }}
-        >
-          <BackIcon />
-        </Link>
-        <AbbrevHeading
-          heading="h2"
-          abbrev={
-            <span>
-              {code} <span className="room-number">{lastRoom}</span>
-            </span>
-          }
-        >
-          {name}
-        </AbbrevHeading>
-        <Link
-          view={{ type: "default" }}
-          className="icon-btn close"
-          aria-label="Close"
-          back={closeBuildingBack(room)}
-        >
-          <CloseIcon />
-        </Link>
-      </header>
+      <BuildingHeader building={building} room={room} />
       {room ? (
         <RoomSchedule
           building={code}
@@ -380,6 +248,11 @@ export function BuildingPanel({
   const hoveredRoom = hovered.building === code ? hovered.room : null;
   const onHoverRoom_s = useStableCallback((room: string | null) =>
     setHovered({ building: code, room })
+  );
+  const library = isLibrary(code);
+  const booking = useGeiselBooking(
+    library && layout.type === "ready" ? layout.index : null,
+    library && visible
   );
 
   // On phones the panel is a bottom sheet: drag its handle up to expand it,
@@ -485,21 +358,36 @@ export function BuildingPanel({
           hoveredRoom={hoveredRoom}
           onHoverRoom_s={onHoverRoom_s}
           layoutKey={`${rightPanelOpen}`}
+          booking={library ? booking.explorer : undefined}
         />
       )}
       <div className="building-panel-content">
-        <BuildingPanelContent
-          // Force new elements (disable transition) when building changes
-          key={code}
-          // For some reason this needs to be after `key` or then Deno gets pissed
-          // about `react` not existing.
-          {...props}
-          layout={layout}
-          explorerOpen={explorerOpen}
-          hoveredRoom={hoveredRoom}
-          onHoverRoom_s={onHoverRoom_s}
-          onExplorerEnabled_s={onExplorerEnabled_s}
-        />
+        {library ? (
+          <LibraryPanelContent
+            key={code}
+            building={props.building}
+            room={props.room}
+            index={layout.type === "ready" ? layout.index : null}
+            booking={booking}
+            explorerOpen={explorerOpen}
+            hoveredRoom={hoveredRoom}
+            onHoverRoom_s={onHoverRoom_s}
+            onExplorerEnabled_s={onExplorerEnabled_s}
+          />
+        ) : (
+          <BuildingPanelContent
+            // Force new elements (disable transition) when building changes
+            key={code}
+            // For some reason this needs to be after `key` or then Deno gets pissed
+            // about `react` not existing.
+            {...props}
+            layout={layout}
+            explorerOpen={explorerOpen}
+            hoveredRoom={hoveredRoom}
+            onHoverRoom_s={onHoverRoom_s}
+            onExplorerEnabled_s={onExplorerEnabled_s}
+          />
+        )}
       </div>
     </div>
   );

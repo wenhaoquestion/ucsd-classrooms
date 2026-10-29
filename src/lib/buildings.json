@@ -849,6 +849,17 @@
         "name": "Vaughan Hall",
         "images": []
       }
+    },
+    "library": {
+      "GEISEL": {
+        "comment": [
+          "Not a registrar building: no classes, only bookable study rooms (src/lib/library/geisel.ts).",
+          "Location is the middle of the tower on the campus map's Geisel_Extrusion."
+        ],
+        "location": [32.881152, -117.237574],
+        "name": "Geisel Library",
+        "images": []
+      }
     }
   }
 }

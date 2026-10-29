@@ -4,6 +4,15 @@ import { RoomMeeting, TermBuildings } from "../../lib/coursesToClassrooms";
 import { startLocating, useUserLocation } from "../../lib/geolocation";
 import { hasIndoorLayout } from "../../lib/indoor/manifest";
 import {
+  GEISEL,
+  GEISEL_SPACES,
+  isLibrary,
+  spaceStatuses,
+  useGeiselAvailability,
+} from "../../lib/library/geisel";
+import { useMoment } from "../../lib/moment-context";
+import { now } from "../../lib/now";
+import {
   MAP_ZOOM,
   mapPoint,
   mapPosition,
@@ -59,6 +68,21 @@ export function CampusMap({
   const [minZoom, setMinZoom] = useState(MIN_ZOOM);
   const userLocation = useUserLocation();
   const [followPending, setFollowPending] = useState(false);
+  const moment = useMoment();
+  const libraryLive = useGeiselAvailability(moment.date, now().date, moment.type !== "term");
+  const libraryData = libraryLive.type === "ready" ? libraryLive.data : null;
+  const studyRooms = useMemo(
+    () => ({
+      total: GEISEL_SPACES.length,
+      free:
+        libraryData && moment.type !== "term"
+          ? [...spaceStatuses(libraryData, moment.time).values()].filter(
+              (status) => status.kind === "free"
+            ).length
+          : null,
+    }),
+    [libraryData, moment.type, moment.time]
+  );
 
   /**
    * Sets the zoom so that `content` (unzoomed map px) lands at `screen` (px
@@ -337,8 +361,12 @@ export function CampusMap({
             rooms={roomsByBuilding[building.code] ?? NO_ROOMS}
             selected={building.code === selected}
             scrollTarget={building.code === scrollTo.building ? scrollTo : null}
-            visible={!!termBuildings && building.code in termBuildings}
+            visible={
+              isLibrary(building.code) ||
+              (!!termBuildings && building.code in termBuildings)
+            }
             explorer={explorerEnabled && hasIndoorLayout(building.code)}
+            studyRooms={building.code === GEISEL ? studyRooms : undefined}
           />
         ))}
       </div>

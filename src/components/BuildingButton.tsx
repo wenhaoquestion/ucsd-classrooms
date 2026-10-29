@@ -13,6 +13,8 @@ type BuildingButtonProps = {
   visible: boolean;
   /** Whether selecting opens the taller 3D explorer panel. */
   explorer: boolean;
+  /** For the library: bookable rooms, and how many are free (if known). */
+  studyRooms?: { total: number; free: number | null };
 };
 
 export const BuildingButton = memo(function BuildingButton({
@@ -22,6 +24,7 @@ export const BuildingButton = memo(function BuildingButton({
   scrollTarget,
   visible,
   explorer,
+  studyRooms,
 }: BuildingButtonProps) {
   const moment = useMoment();
 
@@ -54,12 +57,14 @@ export const BuildingButton = memo(function BuildingButton({
   );
 
   const { x, y } = mapPoint(building.location);
-  const inUse =
-    moment.type !== "term"
-      ? rooms.filter((meetings) =>
-          meetings.some((meeting) => isMeetingOngoing(meeting, moment))
-        ).length
-      : null;
+  const inUse = studyRooms
+    ? studyRooms.free
+    : moment.type !== "term"
+    ? rooms.filter((meetings) =>
+        meetings.some((meeting) => isMeetingOngoing(meeting, moment))
+      ).length
+    : null;
+  const total = studyRooms?.total ?? rooms.length;
 
   return (
     <Link
@@ -73,19 +78,23 @@ export const BuildingButton = memo(function BuildingButton({
       }}
       elemRef={ref}
       title={`${building.name}: ${
-        inUse !== null
-          ? `${inUse} of ${rooms.length} classrooms in use`
-          : `${rooms.length} classrooms`
+        studyRooms
+          ? inUse !== null
+            ? `${inUse} of ${total} study rooms free to book`
+            : `${total} bookable study rooms`
+          : inUse !== null
+          ? `${inUse} of ${total} classrooms in use`
+          : `${total} classrooms`
       }`}
     >
       {building.code}
       <span className="room-count">
         {inUse !== null ? (
           <>
-            <span className="in-use">{inUse}</span>/{rooms.length}
+            <span className="in-use">{inUse}</span>/{total}
           </>
         ) : (
-          <span className="in-use">{rooms.length}</span>
+          <span className="in-use">{total}</span>
         )}
       </span>
     </Link>

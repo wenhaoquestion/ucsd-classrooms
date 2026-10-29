@@ -71,6 +71,8 @@ export type RoomType =
   | "lab"
   | "office"
   | "conference"
+  /** A bookable library study room, or a labeled block of them. */
+  | "study-room"
   | "restroom"
   | "service"
   | "other"

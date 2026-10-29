@@ -11,6 +11,9 @@
   --st-listed: #8fb6e6;
   --st-none-listed: #9eabba;
   --st-unknown: #a5a5a5;
+  --st-bookable: #3ecf8e;
+  --st-booked: #ff6b81;
+  --st-closed: #6f7b8a;
   --focus: #ffcd00;
 }
 @media (prefers-color-scheme: light) {
@@ -25,6 +28,9 @@
     --st-listed: #5f8fc8;
     --st-none-listed: #8d9aaa;
     --st-unknown: #8a8a8a;
+    --st-bookable: #12a150;
+    --st-booked: #d9364f;
+    --st-closed: #9aa4b1;
     --focus: #1866ba;
   }
 }
@@ -215,6 +221,15 @@ transparent, so the stage background shows through. */
 .explorer-room-label[data-status="unknown"] {
   border-style: dashed;
 }
+.explorer-room-label[data-status="bookable"] {
+  border-color: var(--st-bookable);
+}
+.explorer-room-label[data-status="booked"] {
+  border-color: var(--st-booked);
+}
+.explorer-room-label[data-status="closed"] {
+  border-color: var(--st-closed);
+}
 .explorer-label.hovered {
   outline: 2px solid var(--label-text);
 }
@@ -391,6 +406,15 @@ transparent, so the stage background shows through. */
 }
 [data-status="none-listed"] > .explorer-swatch {
   background-color: var(--st-none-listed);
+}
+[data-status="bookable"] > .explorer-swatch {
+  background-color: var(--st-bookable);
+}
+[data-status="booked"] > .explorer-swatch {
+  background-color: var(--st-booked);
+}
+[data-status="closed"] > .explorer-swatch {
+  background-color: var(--st-closed);
 }
 [data-status="unknown"] > .explorer-swatch {
   border: 1px dashed var(--st-unknown);

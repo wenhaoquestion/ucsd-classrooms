@@ -38,6 +38,9 @@ jobs:
           npm run validate:indoor
       - name: Build
         run: npm run build
+        env:
+          # Geisel study room availability (see worker/README.md); optional
+          LIBCAL_PROXY_URL: ${{ vars.LIBCAL_PROXY_URL || 'https://ucsd-classrooms-libcal.wenhaoquestion.workers.dev' }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

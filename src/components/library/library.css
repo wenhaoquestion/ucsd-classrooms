@@ -1,0 +1,159 @@
+/* Geisel study rooms: room cards with a Book link, and a day timeline. */
+
+.rooms.library-rooms {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 34ch), 1fr));
+}
+.room.library-room {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  /* Free rooms get a colored edge, like the 3D labels */
+  border-left: 3px solid var(--card-line);
+}
+.library-room.library-free {
+  border-left-color: var(--library-free);
+}
+.library-room.library-booked {
+  border-left-color: var(--library-booked);
+}
+.library-room-main {
+  flex: auto;
+  min-width: 0;
+  padding: 10px 0 10px 12px;
+}
+.library-room .room-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.library-capacity {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  color: var(--secondary);
+  font-weight: 500;
+  font-size: 0.85em;
+  font-variant-numeric: tabular-nums;
+}
+.library-capacity .icon {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+.library-free .current-meeting,
+.library-status.library-free {
+  color: var(--library-free);
+}
+.library-booked .current-meeting,
+.library-status.library-booked {
+  color: var(--library-booked);
+}
+.library-book {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  flex: none;
+  color: var(--link);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.library-room > .library-book {
+  align-self: stretch;
+  padding: 0 12px;
+  border-left: 1px solid var(--card-line);
+  border-radius: 0 10px 10px 0;
+  transition: background-color 0.2s;
+}
+.library-room > .library-book:hover {
+  background-color: var(--icon-button-hover);
+}
+.library-book.action-btn {
+  color: white;
+}
+.library-external {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+.library-status {
+  margin-top: 4px;
+  font-weight: 600;
+}
+.library-notice {
+  margin: 10px 20px;
+}
+.library-detail {
+  padding-bottom: 20px;
+}
+.library-detail .building-actions {
+  padding-top: 5px;
+}
+
+.library-timeline {
+  list-style: none;
+  margin: 15px 20px 0;
+  padding: 0;
+  border-radius: 10px;
+  border: 1px solid var(--card-line);
+  overflow: hidden;
+}
+.library-run {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  padding: 0 12px;
+  border-left: 3px solid var(--card-line);
+  font-family: var(--narrow);
+  font-variant-numeric: tabular-nums;
+}
+.library-run + .library-run {
+  border-top: 1px solid var(--card-line);
+}
+.library-run.library-free {
+  border-left-color: var(--library-free);
+}
+.library-run.library-booked {
+  border-left-color: var(--library-booked);
+}
+.library-run-current {
+  background-color: var(--card-header);
+  font-weight: 600;
+}
+.library-run-time {
+  flex: auto;
+}
+.library-run-status {
+  color: var(--secondary);
+}
+.library-free .library-run-status {
+  color: var(--library-free);
+}
+.library-booked .library-run-status {
+  color: var(--library-booked);
+}
+.library-run-book {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--link);
+  font-weight: 600;
+}
+.library-timeline-empty,
+.library-fineprint {
+  margin: 15px 20px 0;
+  color: var(--secondary);
+  font-size: 0.85em;
+}
+
+@media (max-width: 690px) {
+  .library-notice,
+  .library-timeline,
+  .library-timeline-empty,
+  .library-fineprint {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

@@ -15,3 +15,4 @@ __pycache__/
 !.env.example
 /static/indoor/local/
 /local/
+/worker/.wrangler/
