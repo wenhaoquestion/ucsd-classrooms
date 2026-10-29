@@ -253,6 +253,10 @@ transparent, so the stage background shows through. */
   font-weight: normal;
   opacity: 0.8;
 }
+.explorer-with-plan .explorer-area-label {
+  background-color: var(--label-bg);
+  color: var(--label-text);
+}
 .explorer-area-label {
   background-color: transparent;
   color: var(--secondary);
@@ -307,6 +311,7 @@ transparent, so the stage background shows through. */
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 4px;
+  max-width: calc(100% - 66px);
 }
 .explorer-explode-btn {
   font-family: var(--normal);
@@ -540,6 +545,7 @@ transparent, so the stage background shows through. */
     right: 8px;
     bottom: 8px;
     gap: 3px;
+    max-width: calc(100% - 16px);
   }
   /* Room for the sheet handle */
   .explorer-toolbar {

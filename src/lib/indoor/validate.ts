@@ -288,7 +288,7 @@ export function validateIndoorBuilding(
         if (floor.outlineConfidence !== "unknown") {
           error(`${path}.outlineConfidence`, "A floor without an outline must use unknown confidence.");
         }
-        for (const field of ["rooms", "areas", "features"] as const) {
+        for (const field of ["rooms", "areas", "features", "details"] as const) {
           if (floor[field] && floor[field].length > 0) {
             error(`${path}.${field}`, "A floor without an outline must not contain geometry.");
           }
@@ -324,6 +324,38 @@ export function validateIndoorBuilding(
         }
         if (!(transform.scale > 0)) {
           error(`${path}.transforms[${t}].scale`, "Scale must be positive.");
+        }
+      }
+
+      if (floor.planDrawing !== undefined) {
+        const drawing = floor.planDrawing;
+        const transform = floor.transforms?.find((t) => t.source === drawing?.source);
+        if (!isRecord(drawing) || typeof drawing.url !== "string" || !drawing.url ||
+            !sourceIds.has(drawing.source) || !transform ||
+            !Array.isArray(transform.imageSizePx) || transform.imageSizePx.length !== 2 ||
+            !transform.imageSizePx.every((n) => Number.isFinite(n) && n > 0) ||
+            !Array.isArray(transform.originPx) || transform.originPx.length !== 2 ||
+            !transform.originPx.every(Number.isFinite) || !Number.isFinite(transform.rotationDeg) ||
+            !Number.isFinite(transform.scale) || listingOnly) {
+          error(`${path}.planDrawing`, "Floor drawing needs a URL, cited source and finite image transform on a mapped floor.");
+        }
+      }
+      if (floor.details !== undefined && !Array.isArray(floor.details)) {
+        error(`${path}.details`, "Details must be an array.");
+      } else {
+        for (const [d, detail] of (floor.details ?? []).entries()) {
+          const detailPath = `${path}.details[${d}]`;
+          if (!isRecord(detail)) {
+            error(detailPath, "Detail must be an object.");
+            continue;
+          }
+          claimId(detail.id, `${detailPath}.id`);
+          if (!["shelf", "table", "computer", "carrel"].includes(detail.kind)) {
+            error(`${detailPath}.kind`, "Unknown furniture kind.");
+          }
+          checkConfidence(`${detailPath}.confidence`, detail.confidence);
+          checkRefs(`${detailPath}.sources`, detail.sources, sourcesRequired);
+          checkPolygon(`${detailPath}.footprint`, detail.footprint);
         }
       }
 

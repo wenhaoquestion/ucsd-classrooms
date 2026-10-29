@@ -1,0 +1,1659 @@
+{
+  "description": "Additional map measurements in PDF points (72 dpi; page origin top-left). Furniture footprints trace individual symbols on floors 1 and 2; they are not measured furniture dimensions. Open-zone boundaries approximate the extent indicated by source labels and are not physical walls. Upper-floor carrel and reading zones are shown as areas because their maps do not locate individual furniture pieces.",
+  "accessed": "2026-10-28",
+  "floors": {
+    "L1": {
+      "areas": [
+        {
+          "label": "Study space",
+          "boxPx": [
+            269,
+            490,
+            348,
+            585
+          ]
+        },
+        {
+          "label": "SSO computers",
+          "boxPx": [
+            304,
+            644,
+            405,
+            842
+          ]
+        },
+        {
+          "label": "Graduate study space",
+          "boxPx": [
+            141,
+            884,
+            421,
+            1041
+          ]
+        },
+        {
+          "label": "Books · M–TR",
+          "boxPx": [
+            1185,
+            653,
+            1285,
+            877
+          ]
+        },
+        {
+          "label": "Books · Q–V / journals",
+          "boxPx": [
+            929,
+            909,
+            1280,
+            1027
+          ]
+        }
+      ],
+      "details": [
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1200,
+            669,
+            1269,
+            677
+          ],
+          "region": "Books (Call Number M–TR)"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1200,
+            693,
+            1269,
+            701
+          ],
+          "region": "Books (Call Number M–TR)"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1200,
+            717,
+            1269,
+            725
+          ],
+          "region": "Books (Call Number M–TR)"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1200,
+            742,
+            1269,
+            750
+          ],
+          "region": "Books (Call Number M–TR)"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1200,
+            789,
+            1269,
+            797
+          ],
+          "region": "Books (Call Number M–TR)"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1200,
+            814,
+            1269,
+            822
+          ],
+          "region": "Books (Call Number M–TR)"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1200,
+            838,
+            1269,
+            846
+          ],
+          "region": "Books (Call Number M–TR)"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1200,
+            863,
+            1269,
+            871
+          ],
+          "region": "Books (Call Number M–TR)"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            965,
+            954,
+            974,
+            1014
+          ],
+          "region": "Books (Call Numbers Q–V), bound journals and indexes"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            990,
+            954,
+            999,
+            1014
+          ],
+          "region": "Books (Call Numbers Q–V), bound journals and indexes"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1016,
+            954,
+            1025,
+            1014
+          ],
+          "region": "Books (Call Numbers Q–V), bound journals and indexes"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1042,
+            954,
+            1051,
+            1014
+          ],
+          "region": "Books (Call Numbers Q–V), bound journals and indexes"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1067,
+            954,
+            1076,
+            1014
+          ],
+          "region": "Books (Call Numbers Q–V), bound journals and indexes"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1093,
+            954,
+            1102,
+            1014
+          ],
+          "region": "Books (Call Numbers Q–V), bound journals and indexes"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1119,
+            954,
+            1128,
+            1014
+          ],
+          "region": "Books (Call Numbers Q–V), bound journals and indexes"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1144,
+            954,
+            1153,
+            1014
+          ],
+          "region": "Books (Call Numbers Q–V), bound journals and indexes"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1170,
+            954,
+            1179,
+            1014
+          ],
+          "region": "Books (Call Numbers Q–V), bound journals and indexes"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1196,
+            954,
+            1205,
+            1014
+          ],
+          "region": "Books (Call Numbers Q–V), bound journals and indexes"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1221,
+            954,
+            1230,
+            1014
+          ],
+          "region": "Books (Call Numbers Q–V), bound journals and indexes"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            1246,
+            954,
+            1255,
+            1014
+          ],
+          "region": "Books (Call Numbers Q–V), bound journals and indexes"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            188,
+            908,
+            197,
+            942
+          ],
+          "region": "Study Space beside Graduate Student Lockers"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            188,
+            974,
+            197,
+            1008
+          ],
+          "region": "Study Space beside Graduate Student Lockers"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            216,
+            908,
+            225,
+            942
+          ],
+          "region": "Study Space beside Graduate Student Lockers"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            216,
+            974,
+            225,
+            1008
+          ],
+          "region": "Study Space beside Graduate Student Lockers"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            245,
+            908,
+            254,
+            942
+          ],
+          "region": "Study Space beside Graduate Student Lockers"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            245,
+            974,
+            254,
+            1008
+          ],
+          "region": "Study Space beside Graduate Student Lockers"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            274,
+            908,
+            283,
+            942
+          ],
+          "region": "Study Space beside Graduate Student Lockers"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            274,
+            974,
+            283,
+            1008
+          ],
+          "region": "Study Space beside Graduate Student Lockers"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            356,
+            921,
+            392,
+            930
+          ],
+          "region": "Study Space beside Quince Conference Room"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            356,
+            952,
+            392,
+            961
+          ],
+          "region": "Study Space beside Quince Conference Room"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            356,
+            982,
+            392,
+            991
+          ],
+          "region": "Study Space beside Quince Conference Room"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            356,
+            1012,
+            392,
+            1021
+          ],
+          "region": "Study Space beside Quince Conference Room"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            284,
+            500,
+            304,
+            509
+          ],
+          "region": "Study Space south of Teaching & Learning Commons"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            284,
+            532,
+            304,
+            541
+          ],
+          "region": "Study Space south of Teaching & Learning Commons"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            284,
+            563,
+            304,
+            572
+          ],
+          "region": "Study Space south of Teaching & Learning Commons"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            327,
+            500,
+            347,
+            509
+          ],
+          "region": "Study Space south of Teaching & Learning Commons"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            327,
+            532,
+            347,
+            541
+          ],
+          "region": "Study Space south of Teaching & Learning Commons"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            327,
+            563,
+            347,
+            572
+          ],
+          "region": "Study Space south of Teaching & Learning Commons"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            308,
+            649,
+            326,
+            659
+          ],
+          "region": "SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            308,
+            664,
+            326,
+            674
+          ],
+          "region": "SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            308,
+            679,
+            326,
+            689
+          ],
+          "region": "SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            308,
+            694,
+            326,
+            704
+          ],
+          "region": "SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            308,
+            766,
+            326,
+            776
+          ],
+          "region": "SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            308,
+            782,
+            326,
+            792
+          ],
+          "region": "SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            308,
+            797,
+            326,
+            807
+          ],
+          "region": "SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            308,
+            812,
+            326,
+            822
+          ],
+          "region": "SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            308,
+            828,
+            326,
+            838
+          ],
+          "region": "SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            141,
+            861,
+            157,
+            871
+          ],
+          "region": "Computer symbols west of Graduate Student Lockers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            141,
+            877,
+            157,
+            887
+          ],
+          "region": "Computer symbols west of Graduate Student Lockers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            141,
+            893,
+            157,
+            903
+          ],
+          "region": "Computer symbols west of Graduate Student Lockers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            141,
+            909,
+            157,
+            919
+          ],
+          "region": "Computer symbols west of Graduate Student Lockers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            141,
+            925,
+            157,
+            935
+          ],
+          "region": "Computer symbols west of Graduate Student Lockers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            141,
+            941,
+            157,
+            951
+          ],
+          "region": "Computer symbols west of Graduate Student Lockers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            141,
+            957,
+            157,
+            967
+          ],
+          "region": "Computer symbols west of Graduate Student Lockers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            141,
+            973,
+            157,
+            983
+          ],
+          "region": "Computer symbols west of Graduate Student Lockers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            141,
+            989,
+            157,
+            999
+          ],
+          "region": "Computer symbols west of Graduate Student Lockers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            141,
+            1005,
+            157,
+            1015
+          ],
+          "region": "Computer symbols west of Graduate Student Lockers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            141,
+            1021,
+            157,
+            1031
+          ],
+          "region": "Computer symbols west of Graduate Student Lockers"
+        }
+      ],
+      "features": [
+        {
+          "kind": "stairs",
+          "atPx": [
+            421,
+            689
+          ],
+          "label": "Stairs"
+        },
+        {
+          "kind": "stairs",
+          "atPx": [
+            566,
+            812
+          ],
+          "label": "Stairs"
+        },
+        {
+          "kind": "stairs",
+          "atPx": [
+            735,
+            561
+          ],
+          "label": "Stairs"
+        },
+        {
+          "kind": "stairs",
+          "atPx": [
+            1108,
+            678
+          ],
+          "label": "Stairs"
+        },
+        {
+          "kind": "stairs",
+          "atPx": [
+            994,
+            812
+          ],
+          "label": "Stairs"
+        },
+        {
+          "kind": "elevator",
+          "atPx": [
+            116,
+            525
+          ],
+          "label": "Elevator"
+        },
+        {
+          "kind": "elevator",
+          "atPx": [
+            740,
+            523
+          ],
+          "label": "Elevator"
+        },
+        {
+          "kind": "elevator",
+          "atPx": [
+            1315,
+            650
+          ],
+          "label": "Elevator"
+        },
+        {
+          "kind": "restroom",
+          "atPx": [
+            108,
+            484
+          ],
+          "label": "Restrooms"
+        },
+        {
+          "kind": "restroom",
+          "atPx": [
+            1316,
+            688
+          ],
+          "label": "Restrooms"
+        },
+        {
+          "kind": "restroom",
+          "atPx": [
+            498,
+            1070
+          ],
+          "label": "Restrooms"
+        },
+        {
+          "kind": "restroom",
+          "atPx": [
+            995,
+            1070
+          ],
+          "label": "Restrooms"
+        }
+      ]
+    },
+    "L2": {
+      "areas": [
+        {
+          "label": "Government documents / maps",
+          "boxPx": [
+            156,
+            177,
+            303,
+            289
+          ]
+        },
+        {
+          "label": "Microforms",
+          "boxPx": [
+            156,
+            297,
+            303,
+            342
+          ]
+        },
+        {
+          "label": "Geisel West study space",
+          "boxPx": [
+            155,
+            351,
+            308,
+            435
+          ]
+        },
+        {
+          "label": "SSO computers",
+          "boxPx": [
+            218,
+            503,
+            371,
+            582
+          ]
+        },
+        {
+          "label": "Public computers",
+          "boxPx": [
+            320,
+            607,
+            367,
+            690
+          ]
+        },
+        {
+          "label": "Current periodicals",
+          "boxPx": [
+            271,
+            719,
+            397,
+            839
+          ]
+        },
+        {
+          "label": "Service Hub",
+          "boxPx": [
+            798,
+            493,
+            1078,
+            578
+          ]
+        },
+        {
+          "label": "Audrey’s Café",
+          "boxPx": [
+            1189,
+            446,
+            1291,
+            615
+          ]
+        },
+        {
+          "label": "Geisel East study space",
+          "boxPx": [
+            1192,
+            679,
+            1278,
+            814
+          ]
+        },
+        {
+          "label": "East SSO computers",
+          "boxPx": [
+            1031,
+            907,
+            1214,
+            1002
+          ]
+        },
+        {
+          "label": "Study cubicles",
+          "boxPx": [
+            915,
+            925,
+            970,
+            980
+          ]
+        }
+      ],
+      "details": [
+        {
+          "kind": "shelf",
+          "boxPx": [
+            178,
+            182,
+            187,
+            219
+          ],
+          "region": "Government Documents, Current Journals, Maps & Atlases"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            203,
+            182,
+            212,
+            219
+          ],
+          "region": "Government Documents, Current Journals, Maps & Atlases"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            228,
+            182,
+            237,
+            219
+          ],
+          "region": "Government Documents, Current Journals, Maps & Atlases"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            253,
+            182,
+            262,
+            219
+          ],
+          "region": "Government Documents, Current Journals, Maps & Atlases"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            278,
+            182,
+            287,
+            219
+          ],
+          "region": "Government Documents, Current Journals, Maps & Atlases"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            162,
+            257,
+            204,
+            284
+          ],
+          "region": "Maps / microform cabinets"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            162,
+            308,
+            204,
+            335
+          ],
+          "region": "Maps / microform cabinets"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            211,
+            257,
+            253,
+            284
+          ],
+          "region": "Maps / microform cabinets"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            211,
+            308,
+            253,
+            335
+          ],
+          "region": "Maps / microform cabinets"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            260,
+            257,
+            302,
+            284
+          ],
+          "region": "Maps / microform cabinets"
+        },
+        {
+          "kind": "shelf",
+          "boxPx": [
+            260,
+            308,
+            302,
+            335
+          ],
+          "region": "Maps / microform cabinets"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            164,
+            362,
+            196,
+            371
+          ],
+          "region": "Geisel West study tables"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            216,
+            362,
+            248,
+            371
+          ],
+          "region": "Geisel West study tables"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            216,
+            394,
+            248,
+            403
+          ],
+          "region": "Geisel West study tables"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            216,
+            424,
+            248,
+            433
+          ],
+          "region": "Geisel West study tables"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            268,
+            362,
+            300,
+            371
+          ],
+          "region": "Geisel West study tables"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            268,
+            394,
+            300,
+            403
+          ],
+          "region": "Geisel West study tables"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            268,
+            424,
+            300,
+            433
+          ],
+          "region": "Geisel West study tables"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            256,
+            516,
+            290,
+            526
+          ],
+          "region": "Geisel West SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            294,
+            516,
+            328,
+            526
+          ],
+          "region": "Geisel West SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            256,
+            566,
+            290,
+            576
+          ],
+          "region": "Geisel West SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            294,
+            566,
+            328,
+            576
+          ],
+          "region": "Geisel West SSO Computers"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            1223,
+            687,
+            1257,
+            696
+          ],
+          "region": "Geisel East study tables"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            1223,
+            718,
+            1257,
+            727
+          ],
+          "region": "Geisel East study tables"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            1223,
+            748,
+            1257,
+            757
+          ],
+          "region": "Geisel East study tables"
+        },
+        {
+          "kind": "table",
+          "boxPx": [
+            1223,
+            778,
+            1257,
+            787
+          ],
+          "region": "Geisel East study tables"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            1067,
+            918,
+            1100,
+            928
+          ],
+          "region": "Geisel East SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            1067,
+            967,
+            1100,
+            977
+          ],
+          "region": "Geisel East SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            1118,
+            918,
+            1151,
+            928
+          ],
+          "region": "Geisel East SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            1118,
+            967,
+            1151,
+            977
+          ],
+          "region": "Geisel East SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            1170,
+            918,
+            1203,
+            928
+          ],
+          "region": "Geisel East SSO Computers"
+        },
+        {
+          "kind": "computer",
+          "boxPx": [
+            1170,
+            967,
+            1203,
+            977
+          ],
+          "region": "Geisel East SSO Computers"
+        },
+        {
+          "kind": "carrel",
+          "boxPx": [
+            916,
+            930,
+            941,
+            954
+          ],
+          "region": "Study Cubicles"
+        },
+        {
+          "kind": "carrel",
+          "boxPx": [
+            916,
+            955,
+            941,
+            979
+          ],
+          "region": "Study Cubicles"
+        },
+        {
+          "kind": "carrel",
+          "boxPx": [
+            942,
+            930,
+            967,
+            954
+          ],
+          "region": "Study Cubicles"
+        },
+        {
+          "kind": "carrel",
+          "boxPx": [
+            942,
+            955,
+            967,
+            979
+          ],
+          "region": "Study Cubicles"
+        }
+      ],
+      "features": [
+        {
+          "kind": "stairs",
+          "atPx": [
+            429,
+            676
+          ],
+          "label": "Stairs"
+        },
+        {
+          "kind": "stairs",
+          "atPx": [
+            562,
+            808
+          ],
+          "label": "Stairs"
+        },
+        {
+          "kind": "stairs",
+          "atPx": [
+            679,
+            680
+          ],
+          "label": "Stairs"
+        },
+        {
+          "kind": "stairs",
+          "atPx": [
+            891,
+            680
+          ],
+          "label": "Stairs"
+        },
+        {
+          "kind": "stairs",
+          "atPx": [
+            739,
+            556
+          ],
+          "label": "Stairs"
+        },
+        {
+          "kind": "stairs",
+          "atPx": [
+            1124,
+            677
+          ],
+          "label": "Stairs"
+        },
+        {
+          "kind": "stairs",
+          "atPx": [
+            996,
+            808
+          ],
+          "label": "Stairs"
+        },
+        {
+          "kind": "elevator",
+          "atPx": [
+            114,
+            512
+          ],
+          "label": "Elevator"
+        },
+        {
+          "kind": "elevator",
+          "atPx": [
+            746,
+            505
+          ],
+          "label": "Elevator"
+        },
+        {
+          "kind": "elevator",
+          "atPx": [
+            1325,
+            640
+          ],
+          "label": "Elevator"
+        },
+        {
+          "kind": "restroom",
+          "atPx": [
+            106,
+            469
+          ],
+          "label": "Restrooms"
+        },
+        {
+          "kind": "restroom",
+          "atPx": [
+            1324,
+            683
+          ],
+          "label": "Restrooms"
+        },
+        {
+          "kind": "restroom",
+          "atPx": [
+            711,
+            1068
+          ],
+          "label": "Restrooms"
+        },
+        {
+          "kind": "restroom",
+          "atPx": [
+            1008,
+            1067
+          ],
+          "label": "Restrooms"
+        }
+      ]
+    },
+    "L4": {
+      "areas": [
+        {
+          "label": "Books · D–HG",
+          "boxPx": [
+            220,
+            201,
+            628,
+            319
+          ]
+        },
+        {
+          "label": "Books · A–D",
+          "boxPx": [
+            95,
+            309,
+            240,
+            603
+          ]
+        },
+        {
+          "label": "Books · HG–PL",
+          "boxPx": [
+            610,
+            310,
+            760,
+            739
+          ]
+        },
+        {
+          "label": "Books · PL–ZA",
+          "boxPx": [
+            324,
+            735,
+            630,
+            860
+          ]
+        },
+        {
+          "label": "CJK graded reading collection",
+          "boxPx": [
+            508,
+            266,
+            644,
+            319
+          ]
+        },
+        {
+          "label": "Reference / current journals",
+          "boxPx": [
+            108,
+            618,
+            226,
+            733
+          ]
+        }
+      ],
+      "details": [],
+      "features": []
+    },
+    "L5": {
+      "areas": [
+        {
+          "label": "Books · BT–DF",
+          "boxPx": [
+            350,
+            292,
+            784,
+            423
+          ]
+        },
+        {
+          "label": "Books · A–BS",
+          "boxPx": [
+            189,
+            439,
+            351,
+            864
+          ]
+        },
+        {
+          "label": "Books · DQ–E",
+          "boxPx": [
+            786,
+            439,
+            949,
+            864
+          ]
+        },
+        {
+          "label": "Books · E–F",
+          "boxPx": [
+            351,
+            876,
+            782,
+            1030
+          ]
+        },
+        {
+          "label": "Study carrels",
+          "boxPx": [
+            379,
+            242,
+            748,
+            270
+          ]
+        },
+        {
+          "label": "Study carrels",
+          "boxPx": [
+            142,
+            462,
+            172,
+            830
+          ]
+        },
+        {
+          "label": "Study carrels",
+          "boxPx": [
+            971,
+            462,
+            1001,
+            830
+          ]
+        },
+        {
+          "label": "Study carrels",
+          "boxPx": [
+            379,
+            1055,
+            748,
+            1085
+          ]
+        }
+      ],
+      "details": [],
+      "features": []
+    },
+    "L6": {
+      "areas": [
+        {
+          "label": "Books · HD–JC",
+          "boxPx": [
+            510,
+            358,
+            967,
+            555
+          ]
+        },
+        {
+          "label": "Books · G–HD",
+          "boxPx": [
+            213,
+            602,
+            452,
+            1034
+          ]
+        },
+        {
+          "label": "Books · JF–LG",
+          "boxPx": [
+            1010,
+            602,
+            1243,
+            1034
+          ]
+        },
+        {
+          "label": "Oversize materials",
+          "boxPx": [
+            516,
+            1110,
+            961,
+            1255
+          ]
+        },
+        {
+          "label": "Study carrels",
+          "boxPx": [
+            164,
+            634,
+            194,
+            1003
+          ]
+        },
+        {
+          "label": "Study carrels",
+          "boxPx": [
+            1283,
+            634,
+            1313,
+            1003
+          ]
+        }
+      ],
+      "details": [],
+      "features": []
+    },
+    "L7": {
+      "areas": [
+        {
+          "label": "Books · PN–PQ",
+          "boxPx": [
+            351,
+            338,
+            789,
+            450
+          ]
+        },
+        {
+          "label": "Books · P–PN",
+          "boxPx": [
+            167,
+            460,
+            354,
+            877
+          ]
+        },
+        {
+          "label": "Books · PQ–PS",
+          "boxPx": [
+            788,
+            461,
+            968,
+            877
+          ]
+        },
+        {
+          "label": "Books · PS–PT",
+          "boxPx": [
+            352,
+            896,
+            790,
+            1050
+          ]
+        },
+        {
+          "label": "Study carrels",
+          "boxPx": [
+            119,
+            478,
+            149,
+            846
+          ]
+        },
+        {
+          "label": "Study carrels",
+          "boxPx": [
+            993,
+            478,
+            1023,
+            846
+          ]
+        },
+        {
+          "label": "Study carrels",
+          "boxPx": [
+            387,
+            1083,
+            754,
+            1113
+          ]
+        }
+      ],
+      "details": [],
+      "features": []
+    },
+    "L8": {
+      "areas": [
+        {
+          "label": "Study chairs & tables",
+          "boxPx": [
+            230,
+            181,
+            658,
+            221
+          ]
+        },
+        {
+          "label": "Study chairs & tables",
+          "boxPx": [
+            108,
+            327,
+            149,
+            711
+          ]
+        },
+        {
+          "label": "Study chairs & tables",
+          "boxPx": [
+            735,
+            327,
+            777,
+            711
+          ]
+        },
+        {
+          "label": "Study chairs & tables",
+          "boxPx": [
+            230,
+            812,
+            658,
+            858
+          ]
+        },
+        {
+          "label": "Books · Z473–Z731",
+          "boxPx": [
+            268,
+            235,
+            618,
+            309
+          ]
+        },
+        {
+          "label": "Books · Z4–Z473",
+          "boxPx": [
+            160,
+            332,
+            258,
+            705
+          ]
+        },
+        {
+          "label": "Books · Z731–Z2010",
+          "boxPx": [
+            633,
+            331,
+            729,
+            704
+          ]
+        },
+        {
+          "label": "Books · Z2012–ZA",
+          "boxPx": [
+            267,
+            732,
+            618,
+            795
+          ]
+        }
+      ],
+      "details": [],
+      "features": []
+    }
+  }
+}

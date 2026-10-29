@@ -134,6 +134,7 @@ export function BuildingExplorer({
   const [introDone, setIntroDone] = useState(false);
   const [showSources, setShowSources] = useState(false);
   const [showViewTools, setShowViewTools] = useState(false);
+  const [showFloorMap, setShowFloorMap] = useState(true);
   const activatedAt = useRef(0);
   /** Room most recently picked in 3D, so selecting it doesn't move the camera. */
   const pickedInScene = useRef<string | null>(null);
@@ -374,6 +375,10 @@ export function BuildingExplorer({
     }
   }, [sceneReady, display]);
 
+  useEffect(() => {
+    if (sceneReady) sceneRef.current?.setPlanVisible(showFloorMap);
+  }, [sceneReady, showFloorMap]);
+
   const selectedId = selectedRoom?.id ?? null;
   useEffect(() => {
     if (sceneReady) {
@@ -435,7 +440,7 @@ export function BuildingExplorer({
         </Link>
       </header>
       <div className="explorer-viewport">
-        <div className="explorer-stage" ref={stageRef}>
+        <div className={`explorer-stage${showFloorMap && display.floor && index?.floorsById.get(display.floor)?.planDrawing ? " explorer-with-plan" : ""}`} ref={stageRef}>
           <div className="explorer-labels" ref={labelsRef} />
         </div>
         {index && !message && (
@@ -466,6 +471,19 @@ export function BuildingExplorer({
         )}
         {index && !message && (
           <div className="explorer-view-controls" role="group" aria-label="View">
+            {display.floor && index.floorsById.get(display.floor)?.planDrawing && (
+              <>
+                <button className="explorer-view-btn" aria-pressed={showFloorMap}
+                  onClick={() => setShowFloorMap((shown) => !shown)}
+                  title="Show the library's original floor map beneath the 3D details">
+                  Floor map
+                </button>
+                <button className="explorer-view-btn" onClick={() => sceneRef.current?.topView()}
+                  title="Look straight down at this floor">
+                  Top view
+                </button>
+              </>
+            )}
             <button
               className="explorer-view-btn explorer-explode-btn"
               aria-pressed={display.exploded}
@@ -617,8 +635,10 @@ export function BuildingExplorer({
                 <p>{index.building.provenance}</p>
                 {index.building.geometryStatus === "source-traced" && (
                   <p>
-                    Floor heights and exact dimensions are not in the sources, so
-                    vertical spacing is illustrative.
+                    {index.building.floors.some((floor) => floor.vertical.estimated)
+                      ? "Some floor elevations and heights are estimated. "
+                      : "Floor elevations and heights follow the cited sources. "}
+                    Exploded spacing, room and furniture heights, and access symbols are illustrative.
                     {index.building.coordinateSystem.northDeg !== null &&
                       ` North is about ${index.building.coordinateSystem.northDeg}° clockwise from the top of the source maps.`}
                   </p>

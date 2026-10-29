@@ -1,4 +1,5 @@
 import {
+  BoxGeometry,
   BufferGeometry,
   CanvasTexture,
   Color,
@@ -24,6 +25,8 @@ import {
   ShapeGeometry,
   Spherical,
   Texture,
+  TextureLoader,
+  SRGBColorSpace,
   Vector2,
   Vector3,
 } from "three";
@@ -47,6 +50,7 @@ import {
   getRendererStats,
   RendererOwner,
 } from "./ExplorerRenderer";
+import { planUV } from "./planDrawing";
 /** "rise": floors stack up from the ground; "fade": a quick fade-in. */
 export type IntroMode = "rise" | "fade" | "none";
 
@@ -268,9 +272,12 @@ type FloorVisual = {
   displayY: number;
   tag: LabelEntry;
   physicalY: number;
+  drawing?: Mesh<BufferGeometry, MeshBasicMaterial>;
+  drawingLoading?: boolean;
 };
 
 export class IndoorScene implements RendererOwner {
+  #planVisible = true;
   readonly #options: IndoorSceneOptions;
   readonly #renderer: ExplorerRenderer;
   readonly #scene = new Scene();
@@ -509,7 +516,8 @@ export class IndoorScene implements RendererOwner {
     this.#track(slab.geometry, edges.geometry);
 
     const fadeMaterials: Material[] = [];
-    if (this.#options.layout.geometryStatus === "exterior-shell") {
+    const pedestal = this.#options.layout.building === "GEISEL" && floor.id === "L3";
+    if (this.#options.layout.geometryStatus === "exterior-shell" || pedestal) {
       // No rooms: show the story as a glassy volume
       const wallGeometries = floor.outline.map((part) => extrude(part, h * 0.94));
       const wallEdges = wallGeometries.map((geometry) => new EdgesGeometry(geometry, 30));
@@ -518,7 +526,7 @@ export class IndoorScene implements RendererOwner {
         transparent: true,
         depthWrite: false,
       });
-      wallMaterial.userData.base = 0.22;
+      wallMaterial.userData.base = pedestal ? 0.65 : 0.22;
       const wallEdgeMaterial = new LineBasicMaterial({
         color: palette.roomEdge,
         transparent: true,
@@ -589,6 +597,10 @@ export class IndoorScene implements RendererOwner {
           8,
           true
         );
+      } else if (area.label && floor.planDrawing) {
+        const [x, z] = ringCentroid(area.footprint.outer);
+        this.#makeLabel(area.label, "explorer-area-label", visual,
+          new Vector3(x, h * 0.08, z), 15, true);
       }
     }
     for (const [notDetailed, geometries] of areaGroups) {
@@ -624,6 +636,7 @@ export class IndoorScene implements RendererOwner {
     for (const feature of floor.features ?? []) {
       this.#buildFeature(visual, feature);
     }
+    this.#buildDetails(visual, order);
 
     // Floor tag at the footprint's nearest-left corner
     let tagX = Infinity;
@@ -727,6 +740,7 @@ export class IndoorScene implements RendererOwner {
   }
 
   #buildFeature(visual: FloorVisual, feature: IndoorFeature): void {
+    const detailed = !!visual.floor.planDrawing;
     const text =
       feature.kind === "elevator"
         ? "Elevator"
@@ -736,13 +750,121 @@ export class IndoorScene implements RendererOwner {
         ? "Stairs"
         : feature.label ?? "Entrance";
     this.#makeLabel(
-      text,
+      feature.label ?? text,
       `explorer-feature-label feature-${feature.kind}`,
       visual,
-      new Vector3(feature.at[0], 0.05, feature.at[1]),
-      5,
+      new Vector3(feature.at[0], detailed ? visual.floor.vertical.height * 0.2 : 0.05, feature.at[1]),
+      detailed ? 25 : 5,
       true
     );
+  }
+
+  /** Low relief furniture and circulation symbols; heights are illustrative. */
+  #buildDetails(visual: FloorVisual, order: number): void {
+    if (!visual.floor.details?.length && !visual.floor.planDrawing) return;
+    const h = visual.floor.vertical.height;
+    const groups = new Map<string, BufferGeometry[]>();
+    const add = (color: string, geometry: BufferGeometry) => {
+      const list = groups.get(color) ?? [];
+      list.push(geometry);
+      groups.set(color, list);
+    };
+    const box = (x: number, y: number, z: number, w: number, height: number, d: number) =>
+      new BoxGeometry(w, height, d).translate(x, y + height / 2, z);
+    for (const detail of visual.floor.details ?? []) {
+      const shelf = detail.kind === "shelf";
+      const topY = h * (shelf ? 0.28 : 0.13);
+      const [x, z] = ringCentroid(detail.footprint.outer);
+      // Keep exact traced footprints for tops; a central pedestal avoids invented chair positions.
+      add(shelf ? "#b9a17e" : "#e0c8a0", extrude(detail.footprint, h * 0.035).translate(0, topY, 0));
+      if (shelf) {
+        for (const level of [0.025, 0.11, 0.195]) {
+          add("#789aab", extrude(detail.footprint, h * 0.065).translate(0, h * level, 0));
+        }
+      } else {
+        add("#7c8794", box(x, 0.015, z, h * 0.065, topY, h * 0.065));
+        if (detail.kind === "computer") {
+          add("#456b84", box(x, topY, z, h * 0.18, h * 0.12, h * 0.035));
+        }
+      }
+    }
+    for (const feature of visual.floor.features ?? []) {
+      const [x, z] = feature.at;
+      const size = h * 0.38;
+      if (feature.kind === "stairs") {
+        for (let step = 0; step < 6; step++) {
+          add("#98aabd", box(x, 0, z + (step - 2.5) * size / 6,
+            size * 0.7, (step + 1) * h * 0.035, size / 6));
+        }
+      } else if (feature.kind === "elevator") {
+        add("#7f99ae", box(x, 0, z, size, h * 0.32, size));
+        for (const side of [-1, 1]) {
+          add("#d4e1e8", box(x + side * size * 0.19, h * 0.025,
+            z + size * 0.505, size * 0.34, h * 0.25, h * 0.015));
+        }
+      }
+    }
+    for (const [color, parts] of groups) {
+      const geometry = this.#merge(parts);
+      const material = new MeshLambertMaterial({ color, transparent: true, depthWrite: false });
+      material.userData.base = 0.92;
+      const mesh = new Mesh(geometry, material);
+      mesh.renderOrder = order + 3;
+      visual.group.add(mesh);
+      visual.fadeMaterials.push(material);
+      this.#track(geometry, material);
+    }
+  }
+
+  /** Load only the selected floor's drawing. A failed image leaves the 3D model usable. */
+  #loadDrawing(visual: FloorVisual): void {
+    const drawing = visual.floor.planDrawing;
+    const transform = visual.floor.transforms?.find((t) => t.source === drawing?.source);
+    if (!drawing || !transform?.imageSizePx || visual.drawing || visual.drawingLoading) return;
+    visual.drawingLoading = true;
+    new TextureLoader().load(drawing.url, (texture) => {
+      visual.drawingLoading = false;
+      if (this.#disposed || this.#display.floor !== visual.floor.id) {
+        texture.dispose();
+        return;
+      }
+      texture.colorSpace = SRGBColorSpace;
+      texture.anisotropy = Math.min(8, this.#renderer.renderer.capabilities.getMaxAnisotropy());
+      const geometry = this.#merge(visual.floor.outline.map((part) => flat(part, 0.025)));
+      const position = geometry.getAttribute("position");
+      const uv = geometry.getAttribute("uv");
+      for (let i = 0; i < position.count; i++) {
+        const [u, v] = planUV([position.getX(i), position.getZ(i)], transform);
+        uv.setXY(i, u, v);
+      }
+      uv.needsUpdate = true;
+      const material = new MeshBasicMaterial({ map: texture, transparent: true, depthWrite: false });
+      const mesh = new Mesh(geometry, material);
+      mesh.renderOrder = visual.index * 10 + 1;
+      visual.drawing = mesh;
+      visual.group.add(mesh);
+      this.#track(geometry, material, texture);
+      this.#appearanceDirty = true;
+      this.requestRender();
+    }, undefined, () => { visual.drawingLoading = false; });
+  }
+
+  setPlanVisible(visible: boolean): void {
+    this.#planVisible = visible;
+    const floor = this.#floors.find((f) => f.floor.id === this.#display.floor);
+    if (visible && floor) this.#loadDrawing(floor);
+    this.#appearanceDirty = true;
+    this.requestRender();
+  }
+
+  topView(): void {
+    const { target, radius } = this.#viewTarget();
+    const aspect = this.#rect.width / Math.max(1, this.#rect.height);
+    const vertical = FOV * Math.PI / 360;
+    const angle = Math.min(vertical, Math.atan(Math.tan(vertical) * aspect));
+    const distance = radius / Math.sin(angle) * 1.05;
+    this.#animateCamera(target.clone().add(new Vector3(0, distance, distance * 0.001)),
+      target, !this.#options.reducedMotion);
   }
 
   // ---- Public API -------------------------------------------------------
@@ -798,6 +920,23 @@ export class IndoorScene implements RendererOwner {
       return;
     }
     this.#display = display;
+    // Keep only one full-resolution drawing on the GPU, including after rapid floor changes.
+    for (const floor of this.#floors) {
+      const drawing = floor.drawing;
+      if (drawing && floor.floor.id !== display.floor) {
+        floor.group.remove(drawing);
+        const resources = [drawing.geometry, drawing.material, drawing.material.map!];
+        for (const resource of resources) {
+          resource.dispose();
+          const i = this.#disposables.indexOf(resource);
+          if (i >= 0) this.#disposables.splice(i, 1);
+        }
+        floor.drawing = undefined;
+      }
+    }
+    const selectedFloor = this.#floors.find((f) => f.floor.id === display.floor);
+    if (this.#planVisible && selectedFloor) this.#loadDrawing(selectedFloor);
+    this.#appearanceDirty = true;
     const instant = this.#options.reducedMotion;
     for (const floor of this.#floors) {
       const { y, presence } = this.#targetFor(floor);
@@ -1102,6 +1241,10 @@ export class IndoorScene implements RendererOwner {
       const reveal = floor.reveal;
       const shown = p > 0.001 && reveal > 0.001;
       floor.group.visible = shown;
+      if (floor.drawing) {
+        floor.drawing.visible = this.#planVisible && this.#display.floor === floor.floor.id;
+        floor.drawing.material.opacity = 0.9 * p * reveal;
+      }
       floor.slabMaterial.opacity = floor.slabMaterial.userData.base * p * reveal;
       floor.slabEdgeMaterial.opacity =
         floor.slabEdgeMaterial.userData.base * Math.max(p, p > 0 ? 0.35 : 0) * reveal;
@@ -1349,11 +1492,29 @@ export class IndoorScene implements RendererOwner {
       // a finite camera frame so switching back to a mapped floor still works.
       return { target: this.#center.clone(), radius: this.#radius };
     }
-    const ys = shown.map((floor) => this.#targetFor(floor).y);
-    const minY = Math.min(...ys);
-    const maxY = Math.max(...ys) + this.#storyHeight * 0.6;
-    const target = this.#center.clone().setY((minY + maxY) / 2);
-    const radius = Math.hypot(this.#radius, (maxY - minY) / 2);
+    // Frame the selected floor's footprint, rather than the widest part of
+    // the building. Geisel's upper tower floors are much smaller than its base.
+    let minX = Infinity;
+    let maxX = -Infinity;
+    let minZ = Infinity;
+    let maxZ = -Infinity;
+    let minY = Infinity;
+    let maxY = -Infinity;
+    for (const floor of shown) {
+      const y = this.#targetFor(floor).y;
+      minY = Math.min(minY, y);
+      maxY = Math.max(maxY, y + floor.floor.vertical.height);
+      for (const part of floor.floor.outline) {
+        for (const [x, z] of part.outer) {
+          minX = Math.min(minX, x);
+          maxX = Math.max(maxX, x);
+          minZ = Math.min(minZ, z);
+          maxZ = Math.max(maxZ, z);
+        }
+      }
+    }
+    const target = new Vector3((minX + maxX) / 2, (minY + maxY) / 2, (minZ + maxZ) / 2);
+    const radius = Math.hypot(maxX - minX, maxY - minY, maxZ - minZ) / 2;
     return { target, radius };
   }
 

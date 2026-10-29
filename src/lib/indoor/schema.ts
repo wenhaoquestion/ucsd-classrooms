@@ -224,6 +224,16 @@ export type IndoorFeature = {
   notes?: string[];
 };
 
+/** Furniture footprints traced from a plan; rendered heights are illustrative. */
+export type IndoorDetail = {
+  id: string;
+  kind: "shelf" | "table" | "computer" | "carrel";
+  footprint: Polygon;
+  confidence: Confidence;
+  sources: SourceRef[];
+  notes?: string[];
+};
+
 /** A room known to be on a floor whose position on it isn't mapped. */
 export type UnplacedRoom = {
   label: string;
@@ -263,6 +273,9 @@ export type IndoorFloor = {
   unplaced?: UnplacedRoom[];
   areas?: IndoorArea[];
   features?: IndoorFeature[];
+  details?: IndoorDetail[];
+  /** Full-page image aligned by the transform for the same source. */
+  planDrawing?: { url: string; source: string };
   sources: SourceRef[];
   notes?: string[];
 };

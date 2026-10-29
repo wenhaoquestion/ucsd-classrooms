@@ -260,7 +260,7 @@ is insufficient evidence for a new mapping.
 `GEISEL` isn't a registrar building: it has no classes, so its rooms are colored
 by live LibCal reservations instead of schedules (`src/lib/library/geisel.ts`,
 `worker/README.md`). The layout is `source-traced` and rebuilt with
-`node scripts/build-geisel-indoor.mjs` from two inputs in `data/indoor/GEISEL/`:
+`node scripts/build-geisel-indoor.mjs` from three inputs in `data/indoor/GEISEL/`:
 
 - **`extrusion.json`:** the campus map's `Geisel_Extrusion` layer (accessed
   2026-10-28): one outline and elevation per floor, in feet. Floors 3-8 use these
@@ -269,6 +269,21 @@ by live LibCal reservations instead of schedules (`src/lib/library/geisel.ts`,
   1, 2, 5, 6 and 7, in PDF points, with each PDF's SHA-256.
   `scripts/trace-geisel-maps.py` suggests the blue room tiles, floor outlines and
   courtyards; room labels were read off the maps by hand.
+- **`details-trace.json`:** 94 furniture footprints on floors 1–2, 51 named
+  collection/study/service zones and 26 additional circulation markers, measured
+  against the same PDF coordinate frames. Upper-floor maps locate collection and
+  carrel zones but do not establish individual furniture positions. Furniture
+  heights and stairs/elevator symbols are illustrative; zone borders are not walls.
+
+The seven full-page WebP floor drawings use each source's existing transform,
+clipped to the floor outline. Reproduce them with
+`python3 scripts/render-geisel-plans.py /path/to/downloaded/maps` (Poppler and
+Pillow; inputs named `floor1.pdf`, etc.). The script checks the recorded PDF
+hashes. Drawings load only when a floor is selected, and only the current floor's
+texture is retained on the GPU. **Floor map** toggles the drawing; **Top view**
+looks down at that floor. The camera frames the selected floor's own bounds.
+Geisel's plaza-level core and column footprints are extruded to show the tower
+supports; these are simplified vertical prisms, not surveyed support profiles.
 
 | What | Basis | Confidence |
 | --- | --- | --- |

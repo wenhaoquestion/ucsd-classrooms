@@ -14,6 +14,7 @@ const root = new URL("../", import.meta.url);
 const read = (path) => JSON.parse(readFileSync(new URL(path, root), "utf8"));
 const extrusion = read("data/indoor/GEISEL/extrusion.json");
 const trace = read("data/indoor/GEISEL/trace.json");
+const detailsTrace = read("data/indoor/GEISEL/details-trace.json");
 
 const FEET = 0.3048;
 // Same projection as src/lib/indoor/campus.ts
@@ -90,6 +91,7 @@ for (const [index, floor] of extrusion.floors.entries()) {
   const base = floor.absoluteheight * FEET;
   const height = (next ? next.absoluteheight - floor.absoluteheight : floor.height) * FEET;
   const measured = trace.floors[id];
+  const detailMap = detailsTrace.floors[id];
   const map = trace.maps[id];
   const fit = measured
     ? measured.outlinePx
@@ -100,6 +102,9 @@ for (const [index, floor] of extrusion.floors.entries()) {
     throw new Error(`${id}: measured without a map source`);
   }
   const mapRef = (region) => ({ source: MAP_SOURCE(id), page: 1, ...(region ? { region } : {}) });
+  const boxFootprint = ([left, top, right, bottom]) => ({
+    outer: [[left, top], [right, top], [right, bottom], [left, bottom]].map(fit.point),
+  });
 
   const outline = measured?.outlinePx
     ? [{ outer: clean(measured.outlinePx.map(fit.point)) }]
@@ -144,6 +149,15 @@ for (const [index, floor] of extrusion.floors.entries()) {
   }
 
   const areas = [
+    ...(detailMap?.areas ?? []).map((area, i) => ({
+      id: `${id}-open-zone-${i + 1}`,
+      kind: "open",
+      label: area.label,
+      footprint: boxFootprint(area.boxPx),
+      confidence: "approximate",
+      sources: [mapRef(area.label)],
+      notes: ["Open zone indicated by the map's label. Its boundary is approximate, not a physical wall."],
+    })),
     ...(measured?.courtyardsPx ?? []).map((ring, i) => ({
       id: `${id}-courtyard-${i + 1}`,
       kind: "courtyard",
@@ -170,7 +184,22 @@ for (const [index, floor] of extrusion.floors.entries()) {
     })),
   ];
 
-  const features = [];
+  const details = (detailMap?.details ?? []).map((detail, i) => ({
+    id: `${id}-${detail.kind}-${i + 1}`,
+    kind: detail.kind,
+    footprint: boxFootprint(detail.boxPx),
+    confidence: "traced",
+    sources: [mapRef(detail.region)],
+    notes: ["Footprint follows a furniture symbol on the library map; height and construction are illustrative, not surveyed."],
+  }));
+  const features = (detailMap?.features ?? []).map((feature, i) => ({
+    id: `${id}-map-${feature.kind}-${i + 1}`,
+    kind: feature.kind,
+    label: feature.label,
+    at: fit.point(feature.atPx),
+    confidence: "approximate",
+    sources: [mapRef(`${feature.kind} symbol`)],
+  }));
   if (measured?.entrancePx) {
     features.push({ id: `${id}-entrance`, kind: "entrance", label: "Main entrance", at: fit.point(measured.entrancePx),
       confidence: "approximate", sources: [mapRef("MAIN ENTRANCE")] });
@@ -199,7 +228,9 @@ for (const [index, floor] of extrusion.floors.entries()) {
     outline,
     outlineConfidence: measured?.outlinePx ? "approximate" : "direct",
     ...(fit ? { transforms: [fit.transform] } : {}),
+    ...(fit ? { planDrawing: { url: `indoor/geisel-floor-${floor.floor}.webp`, source: MAP_SOURCE(id) } } : {}),
     rooms,
+    ...(details.length ? { details } : {}),
     ...(areas.length ? { areas } : {}),
     ...(features.length ? { features } : {}),
     sources: [{ source: EXTRUSION, region: floor.floorname }, ...(map ? [mapRef()] : [])],
@@ -257,7 +288,7 @@ const layout = {
   name: "Geisel Library",
   geometryStatus: "source-traced",
   provenance:
-    "Floor shapes and heights from the campus map's Geisel model; study rooms placed from the UC San Diego Library's floor maps. Bookings come live from the library's LibCal system.",
+    "Floor shapes and heights from the campus map's Geisel model; rooms, furniture symbols and public areas from the UC San Diego Library's floor maps. Open-zone boundaries and furniture heights are approximate. Bookings come live from LibCal.",
   coordinateSystem: {
     units: "meters",
     description: "Meters east (x) and south (z) of the middle of the 6th floor, aligned with the campus map.",
@@ -269,7 +300,8 @@ const layout = {
   knownUnmapped: [],
   notes: [
     "Floors 1-2 show study rooms as labeled blocks; individual rooms in a block are listed in the booking panel, not drawn.",
-    "Floors 4 and 8 have no bookable rooms; their maps only show the central core.",
+    "Floors 4 and 8 have no bookable rooms; their maps label collections and reading areas around the central core.",
+    "Individual furniture footprints are traced only where the maps draw them (floors 1–2). Upper-floor carrel and reading areas indicate zones, not an inventory of seats or shelf positions.",
   ],
 };
 
