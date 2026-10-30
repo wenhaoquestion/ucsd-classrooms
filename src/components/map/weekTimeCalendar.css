@@ -1,0 +1,63 @@
+.week-calendar, .week-calendar *, .week-calendar *::before, .week-calendar *::after { box-sizing: border-box; }
+.week-calendar {
+  --calendar-slot-height: 18px;
+  --calendar-axis-width: 49px;
+  border: 1px solid var(--card-line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--modal);
+}
+.week-calendar-help { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px; padding: 12px; font-size: 12px; line-height: 1.5; color: var(--secondary); }
+.week-calendar-zone { color: var(--secondary); font-size: 10px; white-space: nowrap; }
+.week-calendar-mobile-help, .week-calendar-mobile-days, .week-calendar-mobile-title { display: none; }
+.week-calendar-scroll { max-height: min(360px, 45dvh); min-height: 260px; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
+.week-calendar-head, .week-calendar-body { display: grid; grid-template-columns: var(--calendar-axis-width) repeat(7, minmax(0, 1fr)); }
+.week-calendar-head { position: sticky; top: 0; z-index: 5; background: var(--modal); border-bottom: 1px solid var(--card-line); }
+.week-calendar-head > * { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 3px; min-height: 52px; font-size: 11px; }
+.week-calendar-head strong { display: grid; place-items: center; width: 25px; height: 25px; border-radius: 50%; font-size: 14px; }
+.week-calendar .calendar-today strong { background: var(--button); color: white; }
+.week-calendar .calendar-past-day { opacity: .45; }
+.week-calendar-body { position: relative; height: calc(var(--calendar-slot-height) * 96); margin-bottom: 8px; }
+.week-calendar-hours { position: relative; background: var(--modal); }
+.week-calendar-hours > span { position: absolute; right: 7px; transform: translateY(-50%); font-size: 10px; color: var(--secondary); white-space: nowrap; }
+.week-calendar-hours > span:first-child { transform: none; }
+.week-calendar-day { position: relative; min-width: 0; border-left: 1px solid var(--card-line); touch-action: pan-y; }
+.week-calendar-cell { display: block; width: 100%; height: var(--calendar-slot-height); padding: 0; border-bottom: 1px solid color-mix(in srgb, var(--card-line) 45%, transparent); text-align: left; user-select: none; touch-action: pan-y; }
+.week-calendar-cell.calendar-hour { border-top: 1px solid var(--card-line); }
+.week-calendar-cell > span { display: none; padding-left: 4px; color: var(--secondary); font-size: 9px; pointer-events: none; }
+.week-calendar-cell:not(:disabled):hover { background: var(--field); }
+.week-calendar-cell:focus-visible { position: relative; z-index: 4; outline: 2px solid var(--focus, var(--link)); outline-offset: -2px; }
+.week-calendar-cell:focus-visible > span, .week-calendar-cell:not(:disabled):hover > span { display: inline; }
+.week-calendar-cell.calendar-past { background: repeating-linear-gradient(135deg, transparent, transparent 5px, var(--field) 5px, var(--field) 6px); cursor: default; }
+.week-calendar-event { --event-color: #2774c6; position: absolute; z-index: 2; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-height: 15px; padding: 3px 4px; border: 1px solid var(--event-color); border-left-width: 3px; border-radius: 4px; overflow: hidden; background: color-mix(in srgb, var(--event-color) 17%, var(--modal)); color: var(--text); text-align: left; cursor: pointer; font-size: 11px; line-height: 1.2; }
+.week-calendar-event[data-color="1"] { --event-color: #6e5ad5; }
+.week-calendar-event[data-color="2"] { --event-color: #168479; }
+.week-calendar-event[data-color="3"] { --event-color: #bb7523; }
+.week-calendar-event > span { font-size: 9px; overflow-wrap: anywhere; }
+.week-calendar-event.calendar-event-active { z-index: 3; box-shadow: 0 0 0 2px var(--event-color); }
+.week-calendar-preview { position: absolute; z-index: 4; left: 2px; right: 2px; min-height: 15px; border: 2px dashed var(--link); border-radius: 4px; background: color-mix(in srgb, var(--link) 14%, transparent); pointer-events: none; }
+.week-calendar-preview > span { display: block; width: max-content; max-width: 100%; padding: 2px 3px; background: var(--modal); border-radius: 3px; font-size: 10px; line-height: 1.3; overflow-wrap: anywhere; }
+.week-calendar-now { position: absolute; z-index: 4; left: 0; right: 0; border-top: 2px solid #e35d62; pointer-events: none; }
+.week-calendar-now::before { content: ""; position: absolute; left: -4px; top: -4px; width: 6px; height: 6px; border-radius: 50%; background: #e35d62; }
+.week-calendar-status { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 38px; padding: 8px 12px; border-top: 1px solid var(--card-line); color: var(--secondary); font-size: 12px; line-height: 1.5; }
+.week-calendar-status button { flex: none; padding: 5px 8px; color: var(--link); border-radius: 5px; }
+.week-calendar-status button:hover { background: var(--field); }
+@media (max-width: 690px) {
+  .week-calendar { --calendar-slot-height: 26px; --calendar-axis-width: 49px; }
+  .week-calendar-desktop-help, .week-calendar-head { display: none; }
+  .week-calendar-mobile-help { display: inline; }
+  .week-calendar-mobile-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 2px; padding: 0 6px 8px; }
+  .week-calendar-mobile-days button { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; min-width: 0; min-height: 55px; border: 1px solid transparent; border-radius: 8px; font-size: 10px; color: var(--secondary); }
+  .week-calendar-mobile-days button[aria-pressed="true"] { background: var(--field); border-color: var(--link); color: var(--text); }
+  .week-calendar-mobile-days button:disabled { opacity: .4; }
+  .week-calendar-mobile-days strong { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; font-size: 13px; }
+  .week-calendar-mobile-title { display: block; padding: 8px 12px; border-top: 1px solid var(--card-line); border-bottom: 1px solid var(--card-line); font-size: 12px; font-weight: 600; }
+  .week-calendar-scroll { max-height: min(300px, 36dvh); min-height: 225px; }
+  .week-calendar-body { grid-template-columns: var(--calendar-axis-width) minmax(0, 1fr); }
+  .week-calendar-day { display: none; }
+  .week-calendar-day.calendar-day-visible { display: block; }
+  .week-calendar-cell > span { display: inline; font-size: 10px; opacity: .7; padding-left: 8px; }
+  .week-calendar-event { padding: 3px 8px; font-size: 12px; }
+  .week-calendar-event > span { font-size: 11px; }
+  .week-calendar-preview > span { font-size: 11px; }
+}

@@ -9,6 +9,7 @@ import { Moment, now } from "../../lib/now";
 import { Time } from "../../lib/Time";
 import { CloseIcon } from "../icons/CloseIcon";
 import { Link } from "../Link";
+import { WeekTimeCalendar } from "./WeekTimeCalendar";
 import "./weekAvailability.css";
 
 type Draft = { id: number; date: string; start: string; end: string };
@@ -94,8 +95,10 @@ function RangeResults({ campus, library, expired }: {
 
 export function WeekAvailabilityPanel({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [clock, setClock] = useState(now);
-  const [drafts, setDrafts] = useState<Draft[]>(() => [initialDraft(1, now())]);
-  const nextId = useRef(2);
+  const [drafts, setDrafts] = useState<Draft[]>([]);
+  const [activeId, setActiveId] = useState<number | null>(null);
+  const [calendarVersion, setCalendarVersion] = useState(0);
+  const nextId = useRef(1);
   const requestVersion = useRef(0);
   const [submitted, setSubmitted] = useState<AvailabilityRange[] | null>(null);
   const [results, setResults] = useState<Results | null>(null);
@@ -104,6 +107,11 @@ export function WeekAvailabilityPanel({ open, onClose }: { open: boolean; onClos
   const week = clock.date.monday;
   const days = Array.from({ length: 7 }, (_, offset) => week.add(offset));
   const hasOldDates = drafts.some((draft) => !days.some((day) => day.toString() === draft.date));
+  const activeDraft = drafts.find((draft) => draft.id === activeId);
+  const calendarRanges = drafts.flatMap((draft, index) => {
+    const range = parseDraft(draft);
+    return range && range.start < range.end ? [{ id: draft.id, range, slot: index + 1 }] : [];
+  });
 
   useEffect(() => {
     if (!open) return;
@@ -159,10 +167,28 @@ export function WeekAvailabilityPanel({ open, onClose }: { open: boolean; onClos
     setDrafts((rows) => rows.map((row) => row.id === id ? { ...row, ...patch } : row));
   };
   const reset = () => {
-    const current = now();
-    setClock(current);
-    setDrafts([initialDraft(nextId.current++, current)]);
+    setClock(now());
+    setDrafts([]);
+    setActiveId(null);
+    setCalendarVersion((version) => version + 1);
     invalidate();
+  };
+  const addRange = (range: AvailabilityRange) => {
+    const issue = validateWeekRange(range, now());
+    if (issue) { setError(issue); return; }
+    const duplicate = drafts.find((draft) => draft.date === range.date.toString() &&
+      draft.start === range.start.toString(true) && draft.end === range.end.toString(true));
+    if (duplicate) { setActiveId(duplicate.id); return; }
+    if (drafts.length >= MAX_RANGES) { setError("You can select up to 10 time slots. Remove a slot to add another."); return; }
+    const id = nextId.current++;
+    invalidate();
+    setDrafts((rows) => [...rows, { id, date: range.date.toString(), start: range.start.toString(true), end: range.end.toString(true) }]);
+    setActiveId(id);
+  };
+  const remove = (id: number) => {
+    invalidate();
+    setDrafts((rows) => rows.filter((row) => row.id !== id));
+    if (activeId === id) setActiveId(drafts.find((row) => row.id !== id)?.id ?? null);
   };
 
   return (
@@ -175,10 +201,13 @@ export function WeekAvailabilityPanel({ open, onClose }: { open: boolean; onClos
         <button className="icon-btn free-rooms-close" onClick={() => { requestVersion.current++; onClose(); }} aria-label="Close weekly planner"><CloseIcon /></button>
       </header>
       <div className="week-scroll">
-        <p className="week-intro">Choose your time slots. Find classrooms and Geisel study rooms free for the entire slot.</p>
-        {hasOldDates && <p className="week-error" role="status">A new week has started. Reset or choose dates in this week.</p>}
+        <p className="week-intro">Pick your time on the calendar. Find classrooms and Geisel rooms free for each entire slot.</p>
+        {hasOldDates && <p className="week-error" role="status">A new week has started. Clear all or choose dates in this week.</p>}
+        <WeekTimeCalendar key={`${week.id}/${calendarVersion}`} days={days} clock={clock} ranges={calendarRanges} activeId={activeId}
+          onSelect={addRange} onActivate={setActiveId} disabled={drafts.length >= MAX_RANGES} open={open} />
         <form className="week-form" onSubmit={(event) => {
           event.preventDefault();
+          if (!drafts.length) { setError("Select a time slot on the calendar first."); return; }
           const current = now();
           const ranges: AvailabilityRange[] = [];
           for (const [i, draft] of drafts.entries()) {
@@ -190,39 +219,55 @@ export function WeekAvailabilityPanel({ open, onClose }: { open: boolean; onClos
           requestVersion.current++;
           setError(null); setResults(null); setSubmitted(ranges);
         }}>
-          {drafts.map((draft, i) => <fieldset className="week-slot" key={draft.id}>
-            <legend>Slot {i + 1}</legend>
+          <div className="week-selection-heading">
+            <h3>Selected times <span>{drafts.length}/{MAX_RANGES}</span></h3>
+            {drafts.length > 0 && <button type="button" className="week-secondary" onClick={reset}>Clear all</button>}
+          </div>
+          {drafts.length === 0 ? <p className="week-empty">No times selected yet. Select a block on the calendar to get started.</p> :
+            <ul className="week-selected-slots">{drafts.map((draft, i) => {
+              const range = parseDraft(draft);
+              return <li key={draft.id} data-color={i % 4} className={draft.id === activeId ? "week-selected-active" : ""}>
+                <button type="button" className="week-selected-pick" onClick={() => setActiveId(draft.id)} aria-pressed={draft.id === activeId}>
+                  <span className="week-slot-number">{i + 1}</span>
+                  <span>{range ? rangeTitle(range) : `${draft.date} · ${draft.start}–${draft.end}`}</span>
+                </button>
+                <button type="button" className="week-selected-remove" aria-label={`Remove slot ${i + 1}`} onClick={() => remove(draft.id)}><CloseIcon /></button>
+              </li>;
+            })}</ul>}
+          {activeDraft && <fieldset className="week-slot" key={activeDraft.id}>
+            <legend>Adjust slot {drafts.indexOf(activeDraft) + 1}</legend>
             <div className="week-slot-date">
-              <label><span>Day</span><select aria-label={`Slot ${i + 1} day`} value={draft.date}
-                onChange={(event) => edit(draft.id, { date: event.target.value })}>
-                {!days.some((day) => day.toString() === draft.date) && <option value={draft.date} disabled>{draft.date} · outside this week</option>}
+              <label><span>Day</span><select aria-label="Selected slot day" value={activeDraft.date}
+                onChange={(event) => edit(activeDraft.id, { date: event.target.value })}>
+                {!days.some((day) => day.toString() === activeDraft.date) && <option value={activeDraft.date} disabled>{activeDraft.date} · outside this week</option>}
                 {days.map((day) => (
                   <option key={day.id} value={day.toString()} disabled={day < clock.date}>
                     {day.toString([], { weekday: "short", month: "short", day: "numeric" })}
                   </option>
                 ))}
               </select></label>
-              {drafts.length > 1 && <button type="button" className="week-remove" aria-label={`Remove slot ${i + 1}`}
-                onClick={() => { invalidate(); setDrafts((rows) => rows.filter((row) => row.id !== draft.id)); }}>Remove</button>}
             </div>
             <div className="week-times">{(["start", "end"] as const).map((field) => (
               <label key={field}><span>{field === "start" ? "Start" : "End"}</span>
-                <select aria-label={`Slot ${i + 1} ${field}`} value={draft[field]}
-                  onChange={(event) => edit(draft.id, { [field]: event.target.value })}>
+                <select aria-label={`Selected slot ${field}`} value={activeDraft[field]}
+                  onChange={(event) => edit(activeDraft.id, { [field]: event.target.value })}>
                   {(field === "start" ? TIMES.slice(0, -1) : TIMES.slice(1)).map((time) => <option key={+time} value={time.toString(true)}>
                     {+time === 1440 ? "Midnight (end of day)" : time.toString()}
                   </option>)}
                 </select>
               </label>
             ))}</div>
-          </fieldset>)}
+          </fieldset>}
           <div className="week-edit-actions">
             <button type="button" className="week-secondary" disabled={drafts.length >= MAX_RANGES}
-              onClick={() => { invalidate(); setDrafts((rows) => [...rows, initialDraft(nextId.current++, now())]); }}>+ Add time slot</button>
-            <button type="button" className="week-secondary" onClick={reset}>Reset</button>
+              onClick={() => {
+                const draft = initialDraft(nextId.current++, now());
+                invalidate(); setDrafts((rows) => [...rows, draft]); setActiveId(draft.id);
+              }}>Enter a time manually</button>
+            <span className="week-selection-note">15-minute steps · up to 10 slots</span>
           </div>
           {error && <p className="week-error" role="alert">{error}</p>}
-          <button className="week-submit" type="submit">{results ? "Refresh availability" : "Find free spaces"}</button>
+          <button className="week-submit" type="submit" disabled={drafts.length === 0}>{results ? "Refresh availability" : `Find free spaces${drafts.length ? ` for ${drafts.length} slot${drafts.length === 1 ? "" : "s"}` : ""}`}</button>
         </form>
         <div className="week-progress" role="status" aria-live="polite">
           {loading ? "Checking classroom schedules and Geisel reservations…" : results ?

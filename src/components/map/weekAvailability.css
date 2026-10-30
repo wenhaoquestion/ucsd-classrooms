@@ -3,7 +3,7 @@
   z-index: 8;
   left: var(--gutter);
   top: calc(var(--gutter) + 94px);
-  width: min(440px, calc(100% - var(--gutter) * 2));
+  width: min(800px, calc(100% - var(--gutter) * 2));
   max-height: calc(100dvh - var(--gutter) * 2 - 94px);
   display: flex;
   flex-direction: column;
@@ -15,15 +15,15 @@
 .week-planner-hidden { display: none; }
 .week-scroll { overflow-y: auto; overscroll-behavior: contain; padding: 0 16px 16px; }
 .week-intro { margin: 14px 0; font-size: 14px; color: var(--secondary); line-height: 1.5; }
-.week-form { display: grid; gap: 12px; }
-.week-slot { min-width: 0; padding: 12px; border: 1px solid var(--card-line); border-radius: 10px; }
+.week-form { display: grid; gap: 12px; margin-top: 16px; }
+.week-slot { display: grid; grid-template-columns: 1fr 1.4fr; align-items: end; gap: 12px; min-width: 0; padding: 12px; border: 1px solid var(--card-line); border-radius: 10px; }
 .week-slot legend { padding: 0 5px; color: var(--secondary); font-size: 12px; }
 .week-slot label { display: flex; flex: 1; flex-direction: column; gap: 5px; min-width: 0; }
 .week-slot label > span { color: var(--secondary); font-size: 12px; }
 .week-slot select { width: 100%; min-width: 0; height: 40px; padding: 0 8px; border: 1px solid var(--card-line); border-radius: 7px; background: var(--field); color: var(--text); font: inherit; font-size: 14px; }
 .week-slot option { color: var(--text); background: var(--modal); }
 .week-slot-date, .week-times, .week-edit-actions { display: flex; gap: 10px; align-items: end; }
-.week-times { margin-top: 10px; }
+.week-times { margin-top: 0; }
 .week-edit-actions { justify-content: space-between; align-items: center; }
 .week-secondary, .week-remove { min-height: 36px; padding: 6px 8px; color: var(--link); font-size: 13px; border-radius: 6px; }
 .week-secondary:hover, .week-remove:hover { background: var(--field); }
@@ -31,6 +31,23 @@
 .week-remove { color: var(--secondary); }
 .week-submit { width: 100%; min-height: 44px; padding: 10px; border-radius: 9px; background: var(--button); color: white; font-size: 15px; font-weight: 600; }
 .week-submit:hover { background: var(--button-hover); }
+.week-submit:disabled { opacity: 0.5; cursor: default; }
+.week-selection-heading { display: flex; align-items: center; justify-content: space-between; min-height: 36px; }
+.week-selection-heading h3 { font-size: 14px; font-weight: 600; }
+.week-selection-heading h3 span { color: var(--secondary); font-size: 12px; font-weight: 400; margin-left: 6px; }
+.week-empty { padding: 18px 12px; border: 1px dashed var(--card-line); border-radius: 9px; font-size: 13px; color: var(--secondary); line-height: 1.6; text-align: center; }
+.week-selected-slots { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 0; padding: 0; }
+.week-selected-slots li { --slot-color: #2774c6; display: flex; min-width: 0; border: 1px solid var(--card-line); border-left: 3px solid var(--slot-color); border-radius: 8px; }
+.week-selected-slots li[data-color="1"] { --slot-color: #6e5ad5; }
+.week-selected-slots li[data-color="2"] { --slot-color: #168479; }
+.week-selected-slots li[data-color="3"] { --slot-color: #bb7523; }
+.week-selected-slots li.week-selected-active { border-color: var(--slot-color); background: var(--field); }
+.week-selected-pick { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; padding: 10px 8px; text-align: left; font-size: 12px; line-height: 1.5; color: var(--text); }
+.week-slot-number { display: grid; place-items: center; flex: none; width: 22px; height: 22px; border-radius: 6px; background: var(--slot-color); color: white; font-size: 11px; font-weight: 700; }
+.week-selected-remove { display: grid; place-items: center; width: 36px; flex: none; color: var(--secondary); border-radius: 6px; }
+.week-selected-remove:hover { background: var(--field); color: var(--text); }
+.week-selected-remove svg { width: 16px; height: 16px; }
+.week-selection-note { font-size: 11px; color: var(--secondary); text-align: right; }
 .week-error { color: var(--library-booked); font-size: 13px; }
 .week-progress { min-height: 18px; margin: 12px 0; color: var(--secondary); font-size: 12px; }
 .week-results { display: grid; gap: 14px; }
@@ -52,4 +69,8 @@
 @media (max-width: 690px) {
   .week-planner { left: 0; right: 0; top: auto; bottom: 0; width: 100%; max-height: calc(100dvh - 115px); border-radius: 16px 16px 0 0; }
   .week-scroll { padding-bottom: max(18px, env(safe-area-inset-bottom)); }
+  .week-selected-slots { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) {
+  .week-slot { grid-template-columns: 1fr; }
 }

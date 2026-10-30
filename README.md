@@ -26,7 +26,9 @@ Explore UC San Diego classrooms, check scheduled availability, and browse campus
 
 ## Try it
 
-Use **Plan this week** above the map to add multiple date/time ranges and find
+Use **Plan this week** above the map to select time blocks directly on a weekly
+calendar: drag on desktop, or tap a start and last 15-minute block on mobile.
+Selected blocks can be adjusted or removed. Add multiple date/time ranges and find
 spaces available for each entire range. Results separate classrooms with no
 scheduled classes from Geisel rooms with live booking availability. Times use
 San Diego's time zone and the current Monday–Sunday week; missing data is shown
