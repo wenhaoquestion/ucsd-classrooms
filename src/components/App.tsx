@@ -27,6 +27,7 @@ import { navigate } from "./Link";
 import { CampusMap } from "./map/CampusMap";
 import { FreeRoomsPanel } from "./map/FreeRoomsPanel";
 import { MapChips } from "./map/MapChips";
+import { WeekAvailabilityPanel } from "./map/WeekAvailabilityPanel";
 import { ModalView, ResultModal } from "./search/ResultModal";
 import { SearchBar, State } from "./search/SearchBar";
 import { TermStatus } from "./TermStatus";
@@ -142,6 +143,7 @@ export function App({ title }: AppProps) {
   const navigationSource = useRef<ExplorerIntro>("rise");
 
   const [showFreeRooms, setShowFreeRooms] = useState(false);
+  const [showWeekPlanner, setShowWeekPlanner] = useState(false);
 
   const [showResults, setShowResults] = useState(false);
   const [searchState, setSearchState] = useState<State>({ type: "unloaded" });
@@ -161,7 +163,7 @@ export function App({ title }: AppProps) {
     .map((term) => termCode(term.year, term.quarter))
     .join(" ");
 
-  const datePanelVisible = showDatePanel || (noticeVisible && state !== null);
+  const datePanelVisible = !showWeekPlanner && (showDatePanel || (noticeVisible && state !== null));
   // The library's rooms don't depend on class schedules, so it opens on breaks
   const buildingPanelVisible =
     buildingCode !== null && (!noticeVisible || isLibrary(buildingCode));
@@ -268,6 +270,7 @@ export function App({ title }: AppProps) {
       return;
     }
     if (view.type === "building") {
+      setShowWeekPlanner(false);
       setScrollTo({ building: view.building, init: false });
       // On phones, the building sheet takes the free room list's place
       if (window.matchMedia("(max-width: 690px)").matches) {
@@ -424,6 +427,7 @@ export function App({ title }: AppProps) {
           termBuildings={state?.buildings}
           datePanelOpen={datePanelVisible}
           onOpenDatePanel={() => {
+            setShowWeekPlanner(false);
             setShowDatePanel((show) => !show);
             // On phones, the time sheet takes the free room list's place
             if (window.matchMedia("(max-width: 690px)").matches) {
@@ -437,12 +441,19 @@ export function App({ title }: AppProps) {
           }}
           freeRoomsOpen={showFreeRooms && !!state?.buildings}
           onToggleFreeRooms={() => {
+            setShowWeekPlanner(false);
             setShowFreeRooms((show) => !show);
             if (window.matchMedia("(max-width: 690px)").matches) {
               setShowDatePanel(false);
             }
           }}
-          visible={!noticeVisible}
+          weekPlannerOpen={showWeekPlanner}
+          onToggleWeekPlanner={() => {
+            setShowWeekPlanner((show) => !show);
+            setShowFreeRooms(false);
+            setShowDatePanel(false);
+          }}
+          visible={true}
         />
         <DateTimePanel
           date={moment.date}
@@ -537,6 +548,7 @@ export function App({ title }: AppProps) {
           open={showFreeRooms && !!state?.buildings}
           onClose={() => setShowFreeRooms(false)}
         />
+        <WeekAvailabilityPanel open={showWeekPlanner} onClose={() => setShowWeekPlanner(false)} />
         <BuildingPanel
           building={
             buildings[lastBuilding] ?? {

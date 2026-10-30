@@ -26,6 +26,12 @@ Explore UC San Diego classrooms, check scheduled availability, and browse campus
 
 ## Try it
 
+Use **Plan this week** above the map to add multiple date/time ranges and find
+spaces available for each entire range. Results separate classrooms with no
+scheduled classes from Geisel rooms with live booking availability. Times use
+San Diego's time zone and the current Monday–Sunday week; missing data is shown
+as unavailable, never as free. Open a result to view the room at that date and time.
+
 1. Open the [live website](https://wenhaoquestion.github.io/ucsd-classrooms/).
 2. Select a date and time, then choose a building on the map or use search.
 3. Select a room to inspect its schedule.

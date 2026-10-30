@@ -239,16 +239,44 @@ function fetchAvailability(base: URL, date: Day): Promise<DayAvailability> {
   }
   const url = new URL("geisel", base);
   url.searchParams.set("date", date.toString());
-  const promise = fetch(url).then(async (response) => {
-    if (!response.ok) {
-      const body = (await response.json().catch(() => null)) as { error?: string } | null;
-      throw new Error(body?.error ?? `HTTP ${response.status}`);
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15_000);
+  const promise = (async () => {
+    try {
+      const response = await fetch(url, { signal: controller.signal });
+      if (!response.ok) {
+        const body = (await response.json().catch(() => null)) as { error?: string } | null;
+        throw new Error(body?.error ?? `HTTP ${response.status}`);
+      }
+      const data = parseAvailability((await response.json()) as GeiselDay);
+      if (data.date.id !== date.id) {
+        throw new Error("The library returned availability for a different date. Please try again.");
+      }
+      return data;
+    } catch (error) {
+      if (controller.signal.aborted) {
+        throw new Error("Library availability request timed out. Please try again.");
+      }
+      throw error;
+    } finally {
+      clearTimeout(timeout);
     }
-    return parseAvailability((await response.json()) as GeiselDay);
-  });
+  })();
   cache.set(date.id, { at: Date.now(), promise });
-  promise.catch(() => cache.delete(date.id));
+  promise.catch(() => {
+    if (cache.get(date.id)?.promise === promise) cache.delete(date.id);
+  });
   return promise;
+}
+
+/** Load one day using the same cache as the room list and 3D view. */
+export async function loadGeiselAvailability(date: Day): Promise<DayAvailability> {
+  if (!date.valid) throw new RangeError("Choose a valid date.");
+  const base = proxyBase();
+  if (!base) {
+    throw new Error("Live library availability isn't configured for this site. Check the library's booking page directly.");
+  }
+  return fetchAvailability(base, date);
 }
 
 export type AvailabilityState =

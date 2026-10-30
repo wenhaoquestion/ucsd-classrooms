@@ -19,6 +19,8 @@ export type MapChipsProps = {
   onUseNow: () => void;
   freeRoomsOpen: boolean;
   onToggleFreeRooms: () => void;
+  weekPlannerOpen: boolean;
+  onToggleWeekPlanner: () => void;
   visible: boolean;
 };
 
@@ -30,6 +32,8 @@ export function MapChips({
   onUseNow,
   freeRoomsOpen,
   onToggleFreeRooms,
+  weekPlannerOpen,
+  onToggleWeekPlanner,
   visible,
 }: MapChipsProps) {
   const moment = useMoment();
@@ -99,6 +103,11 @@ export function MapChips({
         </svg>
         Free rooms
         {freeCount !== null && <span className="chip-count">{freeCount}</span>}
+      </button>
+      <button id="week-planner-toggle" className={`chip ${weekPlannerOpen ? "chip-on" : ""}`}
+        onClick={onToggleWeekPlanner} aria-expanded={weekPlannerOpen} aria-controls="week-availability-panel"
+        title="Find classrooms and Geisel rooms for multiple time slots this week">
+        Plan this week
       </button>
     </div>
   );
