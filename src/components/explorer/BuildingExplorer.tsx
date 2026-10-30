@@ -85,7 +85,7 @@ const LATE_INTRO_MS = 1200;
 
 type EngineState =
   | { type: "loading" }
-  | { type: "ready" }
+  | { type: "ready"; scene: IndoorScene }
   | { type: "webgl-error"; message: string }
   | { type: "code-error" }
   | { type: "context-lost" };
@@ -130,7 +130,7 @@ export function BuildingExplorer({
   const sceneRef = useRef<IndoorScene | null>(null);
   const [engine, setEngine] = useState<EngineState>({ type: "loading" });
   const [display, setDisplay] = useState<DisplayMode>({ floor: null, exploded: false });
-  const [explodedFor, setExplodedFor] = useState<IndoorIndex | null>(null);
+  const [displayFor, setDisplayFor] = useState<IndoorIndex | null>(null);
   const [introDone, setIntroDone] = useState(false);
   const [showSources, setShowSources] = useState(false);
   const [showViewTools, setShowViewTools] = useState(false);
@@ -141,11 +141,11 @@ export function BuildingExplorer({
 
   const index: IndoorIndex | null = layout.type === "ready" ? layout.index : null;
   const shell = index?.building.geometryStatus === "exterior-shell";
-  // Shells open exploded: separated floors are what they show best. So do
-  // booking views, whose rooms are spread over many floors
-  if ((shell || booking) && index && index !== explodedFor) {
-    setExplodedFor(index);
-    setDisplay((display) => ({ ...display, exploded: true }));
+  // Only exterior shells open exploded. Detailed buildings, including Geisel,
+  // start stacked; subsequent choices persist for this loaded layout.
+  if (index && index !== displayFor) {
+    setDisplayFor(index);
+    setDisplay({ floor: null, exploded: shell });
   }
 
   const scheduleSelectable = useMemo(() => {
@@ -234,15 +234,18 @@ export function BuildingExplorer({
             onHover: handleHover_s,
             onFloorTag: handleFloorTag_s,
             onIntroEnd: () => setIntroDone(true),
-            onContextChange: (lost) =>
-              setEngine(lost ? { type: "context-lost" } : { type: "ready" }),
+            onContextChange: (lost) => {
+              if (!cancelled && scene) {
+                setEngine(lost ? { type: "context-lost" } : { type: "ready", scene });
+              }
+            },
           });
         } catch (error) {
           setEngine({ type: "webgl-error", message: String(error) });
           return;
         }
         sceneRef.current = scene;
-        setEngine({ type: "ready" });
+        setEngine({ type: "ready", scene });
       },
       () => {
         if (!cancelled) {
@@ -257,18 +260,20 @@ export function BuildingExplorer({
     };
   }, [index, selectable, handleSelect_s, handleHover_s, handleFloorTag_s]);
 
-  const sceneReady = engine.type === "ready";
+  // A cached dynamic import can batch loading -> ready into one React commit.
+  // Depend on the scene itself so every replacement is activated and configured.
+  const readyScene = engine.type === "ready" ? engine.scene : null;
 
   // Neighboring buildings, for buildings placed on the campus map
   useEffect(() => {
-    if (!sceneReady || !index?.building.geo) {
+    if (!readyScene || !index?.building.geo) {
       return;
     }
     let current = true;
     loadCampus().then(
       (campus) => {
         if (current) {
-          sceneRef.current?.setContext(campus);
+          readyScene.setContext(campus);
         }
       },
       () => {
@@ -278,7 +283,7 @@ export function BuildingExplorer({
     return () => {
       current = false;
     };
-  }, [sceneReady, index]);
+  }, [readyScene, index]);
 
   // Unplaced classrooms can't be colored in 3D, so their floor's tag counts them
   const scheduleBadges = useMemo(() => {
@@ -311,10 +316,10 @@ export function BuildingExplorer({
   }, [shell, index, rooms, moment, availability, booking]);
   const floorBadges = booking?.floorBadges ?? scheduleBadges;
   useEffect(() => {
-    if (sceneReady) {
-      sceneRef.current?.setFloorBadges(floorBadges);
+    if (readyScene) {
+      readyScene.setFloorBadges(floorBadges);
     }
-  }, [sceneReady, floorBadges]);
+  }, [readyScene, floorBadges]);
 
   // Statuses follow the selected date/time
   const scheduleStatuses = useMemo(
@@ -330,10 +335,10 @@ export function BuildingExplorer({
   );
   const statuses = booking?.statuses ?? scheduleStatuses;
   useEffect(() => {
-    if (sceneReady && statuses) {
-      sceneRef.current?.setStatuses(statuses);
+    if (readyScene && statuses) {
+      readyScene.setStatuses(statuses);
     }
-  }, [sceneReady, statuses]);
+  }, [readyScene, statuses]);
 
   // Show/hide with the panel; (re)play the intro whenever it opens
   useEffect(() => {
@@ -342,8 +347,8 @@ export function BuildingExplorer({
     }
   }, [active]);
   useEffect(() => {
-    const scene = sceneRef.current;
-    if (!sceneReady || !scene) {
+    const scene = readyScene;
+    if (!scene) {
       return;
     }
     if (active) {
@@ -355,49 +360,49 @@ export function BuildingExplorer({
     }
     // `intro` is read only when (re)activating, so it isn't a dependency
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sceneReady, active]);
+  }, [readyScene, active]);
 
   // A selected room's floor becomes the visible floor
   const selectedFloor = selectedRoom?.floor ?? unplaced?.floor.id ?? null;
   useEffect(() => {
     if (selectedFloor) {
       setDisplay((display) =>
-        display.exploded || display.floor === selectedFloor
+        (display.exploded && display.floor === null) || display.floor === selectedFloor
           ? display
           : { ...display, floor: selectedFloor }
       );
     }
-  }, [selectedFloor]);
+  }, [selectedFloor, index]);
 
   useEffect(() => {
-    if (sceneReady) {
-      sceneRef.current?.setDisplay(display);
+    if (readyScene) {
+      readyScene.setDisplay(display);
     }
-  }, [sceneReady, display]);
+  }, [readyScene, display]);
 
   useEffect(() => {
-    if (sceneReady) sceneRef.current?.setPlanVisible(showFloorMap);
-  }, [sceneReady, showFloorMap]);
+    if (readyScene) readyScene.setPlanVisible(showFloorMap);
+  }, [readyScene, showFloorMap]);
 
   const selectedId = selectedRoom?.id ?? null;
   useEffect(() => {
-    if (sceneReady) {
+    if (readyScene) {
       const picked = pickedInScene.current === selectedId;
       pickedInScene.current = null;
-      sceneRef.current?.setSelected(selectedId, !picked);
+      readyScene.setSelected(selectedId, !picked);
     }
-  }, [sceneReady, selectedId]);
+  }, [readyScene, selectedId]);
 
   const hoveredId = geometryFor(hoveredRoom)?.id ?? null;
   useEffect(() => {
-    if (sceneReady) {
-      sceneRef.current?.setHovered(hoveredId);
+    if (readyScene) {
+      readyScene.setHovered(hoveredId);
     }
-  }, [sceneReady, hoveredId]);
+  }, [readyScene, hoveredId]);
 
   useEffect(() => {
-    sceneRef.current?.nudge();
-  }, [layoutKey]);
+    readyScene?.nudge();
+  }, [layoutKey, readyScene]);
 
   const floors = index ? [...index.building.floors].reverse() : [];
   const reduceMotion = prefersReducedMotion();

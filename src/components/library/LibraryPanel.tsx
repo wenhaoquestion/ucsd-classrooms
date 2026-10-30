@@ -33,6 +33,10 @@ const FLOOR_LABELS: Record<string, string> = {
   L7: "Floor 7",
 };
 
+// Geometry membership does not change when reservation data refreshes. Keep
+// this identity stable so status updates never rebuild the WebGL scene.
+const GEISEL_SELECTABLE: ReadonlySet<string> = new Set(SPACES_BY_ROOM.keys());
+
 export type GeiselBooking = {
   state: AvailabilityState | { type: "no-date" };
   /** Status of every space at the selected time, when live data is loaded. */
@@ -100,7 +104,7 @@ export function useGeiselBooking(index: IndoorIndex | null, enabled: boolean): G
     ]);
     const label = (roomId: string) => index?.roomsById.get(roomId)?.label ?? roomId;
     return {
-      selectable: new Set(SPACES_BY_ROOM.keys()),
+      selectable: GEISEL_SELECTABLE,
       statuses: roomStatuses,
       roomIdForKey: (key) =>
         key === null
