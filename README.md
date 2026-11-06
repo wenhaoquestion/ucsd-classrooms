@@ -16,7 +16,7 @@ Explore UC San Diego classrooms, check scheduled availability, and browse campus
 - **Wayfinding:** show your location on the map, see walking distance and time to a building, and open walking directions in your maps app.
 - **Free rooms:** the chip under the search bar lists classrooms with no class listed for the next 20+ minutes, nearest first once you share your location. Inside a building, **Free now** filters its room list, and each free room shows when its next class starts.
 - **Classroom schedules:** see listed classes and find gaps at a selected date and time.
-- **Search:** look up courses, instructors, buildings, or a room directly (e.g. `CENTR 115`).
+- **Search:** look up courses, instructors, buildings, Geisel study rooms, or a room directly (e.g. `CENTR 115`). It forgives spacing and punctuation (`cse100`, `wlh2005`), abbreviated or reordered words (`intro prog`, `smith john`), building initials, and small typos, and remembers recent picks.
 - **Quarter calendar:** browse academic terms, week numbers, and dates, and pick a time on a scroll wheel from the time chip under the search bar. Times use Pacific Time regardless of your browser's time zone.
 - **Shareable links:** link directly to buildings, rooms, courses, instructors, and dates.
 - **3D building explorer:** inspect campus building exteriors, nearby buildings, floor controls, and classroom counts. Buildings with room geometry support room selection and schedule activity colors.
@@ -27,8 +27,9 @@ Explore UC San Diego classrooms, check scheduled availability, and browse campus
 ## Try it
 
 Use **Plan this week** above the map to select time blocks directly on a weekly
-calendar: drag on desktop, or tap a start and last 15-minute block on mobile.
-Selected blocks can be adjusted or removed. Add multiple date/time ranges and find
+calendar: click or tap a time to add an hour, or drag a range on desktop. Drag a
+block or its edges to adjust it, swipe between days on mobile, or fine-tune with
+the 15-minute steppers; blocks can be removed. Add multiple date/time ranges and find
 spaces available for each entire range. Results separate classrooms with no
 scheduled classes from Geisel rooms with live booking availability. Times use
 San Diego's time zone and the current Monday–Sunday week; missing data is shown

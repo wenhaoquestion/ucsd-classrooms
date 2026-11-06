@@ -11,6 +11,10 @@ const dateFormat = new Intl.DateTimeFormat([], {
   month: "short",
   day: "numeric",
 });
+const shortDateFormat = new Intl.DateTimeFormat([], {
+  month: "short",
+  day: "numeric",
+});
 
 export type MapChipsProps = {
   termBuildings?: TermBuildings;
@@ -65,12 +69,17 @@ export function MapChips({
             <>
               <span className="live-dot" aria-hidden="true" />
               <span>
-                Now<span className="chip-dim"> · {timeFormat.format(local)}</span>
+                <span className="chip-long">Now</span>
+                <span className="chip-dim">
+                  <span className="chip-long"> · </span>
+                  {timeFormat.format(local)}
+                </span>
               </span>
             </>
           ) : type === "date-time" ? (
             <span>
-              {dateFormat.format(local)}
+              <span className="chip-long">{dateFormat.format(local)}</span>
+              <span className="chip-short">{shortDateFormat.format(local)}</span>
               <span className="chip-dim"> · {timeFormat.format(local)}</span>
             </span>
           ) : (
@@ -101,13 +110,22 @@ export function MapChips({
         <svg viewBox="0 0 24 24" className="icon chip-icon" aria-hidden="true">
           <path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm4.3 4.3 1.4 1.4-6.7 6.7-3.7-3.7 1.4-1.4 2.3 2.3z" />
         </svg>
-        Free rooms
+        <span>
+          Free<span className="chip-long"> rooms</span>
+        </span>
         {freeCount !== null && <span className="chip-count">{freeCount}</span>}
       </button>
       <button id="week-planner-toggle" className={`chip ${weekPlannerOpen ? "chip-on" : ""}`}
         onClick={onToggleWeekPlanner} aria-expanded={weekPlannerOpen} aria-controls="week-availability-panel"
-        title="Find classrooms and Geisel rooms for multiple time slots this week">
-        Plan this week
+        title="Find classrooms and Geisel rooms for multiple time slots this week"
+        aria-label="Plan this week">
+        <svg viewBox="0 0 24 24" className="icon chip-icon" aria-hidden="true">
+          <path d="M7 2h2v2h6V2h2v2h2a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2zM5 9v10h14V9zm2 2h4v4H7z" />
+        </svg>
+        <span>
+          <span className="chip-long">Plan this week</span>
+          <span className="chip-short">This week</span>
+        </span>
       </button>
     </div>
   );

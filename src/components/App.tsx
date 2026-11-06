@@ -19,7 +19,7 @@ import { BuildingPanel } from "./building/BuildingPanel";
 import { ExplorerIntro } from "./explorer/BuildingExplorer";
 import { useExplorerPreference } from "../lib/explorerPreference";
 import { hasIndoorLayout } from "../lib/indoor/manifest";
-import { isLibrary } from "../lib/library/geisel";
+import { GEISEL, GEISEL_SPACES, isLibrary } from "../lib/library/geisel";
 import { ScheduleAvailability } from "../lib/indoor/roomStatus";
 import { DateTimePanel } from "./date-time/DateTimePanel";
 import { TermButtons } from "./date-time/TermButtons";
@@ -79,6 +79,12 @@ function getTerms({ year, season, current }: CurrentTerm): Term[] {
   ];
   return terms.flat();
 }
+
+const GEISEL_ROOM_TITLES = Object.fromEntries(
+  GEISEL_SPACES.filter((space) => space.title !== `Room ${space.key}`).map(
+    (space) => [`${GEISEL} ${space.key}`, space.title]
+  )
+);
 
 export type AppProps = {
   title: string;
@@ -356,18 +362,18 @@ export function App({ title }: AppProps) {
     // going back/forth will use courses from the wrong term
   }, [handleView_s, searchState]);
 
-  const searchBuildings = useMemo(
-    () => Object.keys(state?.buildings ?? {}),
-    [state?.buildings]
-  );
+  // Every building on the map is searchable, even without classes this term
+  const searchBuildings = useMemo(() => Object.keys(buildings), []);
   const searchRooms = useMemo(
-    () =>
-      Object.fromEntries(
+    () => ({
+      ...Object.fromEntries(
         Object.entries(state?.buildings ?? {}).map(([code, rooms]) => [
           code,
           Object.keys(rooms),
         ])
       ),
+      [GEISEL]: GEISEL_SPACES.map((space) => space.key),
+    }),
     [state?.buildings]
   );
 
@@ -391,6 +397,7 @@ export function App({ title }: AppProps) {
           termId={termId}
           buildings={searchBuildings}
           rooms={searchRooms}
+          roomTitles={GEISEL_ROOM_TITLES}
           showResults={showResults}
           onSearch={(showResults) => {
             setShowResults(showResults);

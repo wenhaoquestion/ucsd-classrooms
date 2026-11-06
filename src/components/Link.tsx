@@ -72,6 +72,10 @@ export type LinkProps = {
   title?: string;
   "aria-label"?: string;
   "aria-current"?: "page" | "true";
+  "aria-selected"?: boolean;
+  role?: string;
+  /** Called before navigating, e.g. to remember a search result. */
+  onNavigate?: () => void;
   onMouseEnter?: MouseEventHandler<HTMLAnchorElement>;
   onMouseLeave?: MouseEventHandler<HTMLAnchorElement>;
   onFocus?: FocusEventHandler<HTMLAnchorElement>;
@@ -85,6 +89,7 @@ export function Link({
   style,
   children,
   elemRef,
+  onNavigate,
   ...rest
 }: LinkProps) {
   const moment = useMoment();
@@ -102,6 +107,7 @@ export function Link({
       onClick={(e) => {
         e.preventDefault();
         if (viewWithTerm) {
+          onNavigate?.();
           navigate(onView, { view: viewWithTerm, back });
         }
       }}

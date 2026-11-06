@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { AvailabilityRange, validateWeekRange } from "../../lib/availabilityRanges";
 import { buildings } from "../../lib/buildings";
 import { CampusRangeAvailability, findCampusWeekAvailability } from "../../lib/campusWeekAvailability";
@@ -98,7 +98,11 @@ export function WeekAvailabilityPanel({ open, onClose }: { open: boolean; onClos
   const [drafts, setDrafts] = useState<Draft[]>([]);
   const [activeId, setActiveId] = useState<number | null>(null);
   const [calendarVersion, setCalendarVersion] = useState(0);
+  const formId = useId();
   const nextId = useRef(1);
+  const progressRef = useRef<HTMLDivElement>(null);
+  /** Set by a search, so its first results scroll into view; refreshes stay put. */
+  const revealResults = useRef(false);
   const requestVersion = useRef(0);
   const [submitted, setSubmitted] = useState<AvailabilityRange[] | null>(null);
   const [results, setResults] = useState<Results | null>(null);
@@ -154,6 +158,12 @@ export function WeekAvailabilityPanel({ open, onClose }: { open: boolean; onClos
     return () => { current = false; clearInterval(timer); };
   }, [open, submitted]);
 
+  useEffect(() => {
+    if (!results || !revealResults.current) return;
+    revealResults.current = false;
+    progressRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [results]);
+
   const invalidate = () => {
     // Cancel synchronously in input events, before React commits effect cleanup.
     requestVersion.current++;
@@ -185,6 +195,24 @@ export function WeekAvailabilityPanel({ open, onClose }: { open: boolean; onClos
     setDrafts((rows) => [...rows, { id, date: range.date.toString(), start: range.start.toString(true), end: range.end.toString(true) }]);
     setActiveId(id);
   };
+  const changeRange = (id: number, range: AvailabilityRange) => {
+    setError(null);
+    edit(id, { date: range.date.toString(), start: range.start.toString(true), end: range.end.toString(true) });
+    setActiveId(id);
+  };
+  /** Moves the active slot's start or end by 15 minutes. */
+  const nudge = (draft: Draft, field: "start" | "end", delta: number) => {
+    const range = parseDraft(draft);
+    if (!range) return;
+    const current = now();
+    const first = range.date.id === current.date.id ? Math.ceil(+current.time / 15) * 15 : 0;
+    let start = +range.start;
+    let end = +range.end;
+    if (field === "start") start = Math.max(first, Math.min(end - 15, start + delta));
+    else end = Math.max(start + 15, Math.min(1440, end + delta));
+    if (start === +range.start && end === +range.end) return;
+    changeRange(draft.id, { date: range.date, start: Time.from(start), end: Time.from(end) });
+  };
   const remove = (id: number) => {
     invalidate();
     setDrafts((rows) => rows.filter((row) => row.id !== id));
@@ -204,8 +232,9 @@ export function WeekAvailabilityPanel({ open, onClose }: { open: boolean; onClos
         <p className="week-intro">Pick your time on the calendar. Find classrooms and Geisel rooms free for each entire slot.</p>
         {hasOldDates && <p className="week-error" role="status">A new week has started. Clear all or choose dates in this week.</p>}
         <WeekTimeCalendar key={`${week.id}/${calendarVersion}`} days={days} clock={clock} ranges={calendarRanges} activeId={activeId}
-          onSelect={addRange} onActivate={setActiveId} disabled={drafts.length >= MAX_RANGES} open={open} />
-        <form className="week-form" onSubmit={(event) => {
+          onSelect={addRange} onChange={changeRange} onRemove={remove} onActivate={setActiveId}
+          disabled={drafts.length >= MAX_RANGES} open={open} />
+        <form className="week-form" id={formId} onSubmit={(event) => {
           event.preventDefault();
           if (!drafts.length) { setError("Select a time slot on the calendar first."); return; }
           const current = now();
@@ -218,6 +247,7 @@ export function WeekAvailabilityPanel({ open, onClose }: { open: boolean; onClos
           }
           requestVersion.current++;
           setError(null); setResults(null); setSubmitted(ranges);
+          revealResults.current = true;
         }}>
           <div className="week-selection-heading">
             <h3>Selected times <span>{drafts.length}/{MAX_RANGES}</span></h3>
@@ -248,14 +278,21 @@ export function WeekAvailabilityPanel({ open, onClose }: { open: boolean; onClos
               </select></label>
             </div>
             <div className="week-times">{(["start", "end"] as const).map((field) => (
-              <label key={field}><span>{field === "start" ? "Start" : "End"}</span>
-                <select aria-label={`Selected slot ${field}`} value={activeDraft[field]}
-                  onChange={(event) => edit(activeDraft.id, { [field]: event.target.value })}>
-                  {(field === "start" ? TIMES.slice(0, -1) : TIMES.slice(1)).map((time) => <option key={+time} value={time.toString(true)}>
-                    {+time === 1440 ? "Midnight (end of day)" : time.toString()}
-                  </option>)}
-                </select>
-              </label>
+              <div className="week-time-field" key={field}>
+                <label htmlFor={`week-slot-${field}`}>{field === "start" ? "Start" : "End"}</label>
+                <div className="week-stepper">
+                  <button type="button" aria-label={`${field === "start" ? "Start" : "End"} 15 minutes earlier`}
+                    onClick={() => nudge(activeDraft, field, -15)}>−</button>
+                  <select id={`week-slot-${field}`} aria-label={`Selected slot ${field}`} value={activeDraft[field]}
+                    onChange={(event) => edit(activeDraft.id, { [field]: event.target.value })}>
+                    {(field === "start" ? TIMES.slice(0, -1) : TIMES.slice(1)).map((time) => <option key={+time} value={time.toString(true)}>
+                      {+time === 1440 ? "Midnight" : time.toString()}
+                    </option>)}
+                  </select>
+                  <button type="button" aria-label={`${field === "start" ? "Start" : "End"} 15 minutes later`}
+                    onClick={() => nudge(activeDraft, field, 15)}>+</button>
+                </div>
+              </div>
             ))}</div>
           </fieldset>}
           <div className="week-edit-actions">
@@ -266,10 +303,8 @@ export function WeekAvailabilityPanel({ open, onClose }: { open: boolean; onClos
               }}>Enter a time manually</button>
             <span className="week-selection-note">15-minute steps · up to 10 slots</span>
           </div>
-          {error && <p className="week-error" role="alert">{error}</p>}
-          <button className="week-submit" type="submit" disabled={drafts.length === 0}>{results ? "Refresh availability" : `Find free spaces${drafts.length ? ` for ${drafts.length} slot${drafts.length === 1 ? "" : "s"}` : ""}`}</button>
         </form>
-        <div className="week-progress" role="status" aria-live="polite">
+        <div className="week-progress" role="status" aria-live="polite" ref={progressRef}>
           {loading ? "Checking classroom schedules and Geisel reservations…" : results ?
             `${results.campus.length} time slot${results.campus.length === 1 ? "" : "s"} checked at ${results.checkedAt.toLocaleTimeString([], { hour: "numeric", minute: "2-digit", timeZone: "America/Los_Angeles" })} PT · refreshes every minute` : ""}
         </div>
@@ -280,6 +315,11 @@ export function WeekAvailabilityPanel({ open, onClose }: { open: boolean; onClos
         <p className="week-note week-disclaimer">Classrooms: no scheduled classes; access and other events are not tracked.
           Geisel: live reservation availability. Choose the same time slot in LibCal to book; booking rules still apply.</p>
       </div>
+      {/* Always in reach, however far the calendar and list are scrolled */}
+      <footer className="week-footer">
+        {error && <p className="week-error" role="alert">{error}</p>}
+        <button className="week-submit" type="submit" form={formId} disabled={drafts.length === 0 || loading}>{loading ? "Checking…" : results ? "Refresh availability" : `Find free spaces${drafts.length ? ` for ${drafts.length} slot${drafts.length === 1 ? "" : "s"}` : ""}`}</button>
+      </footer>
     </aside>
   );
 }

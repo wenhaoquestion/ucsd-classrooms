@@ -1,9 +1,20 @@
 import { useMemo } from "react";
 import { buildings } from "../../lib/buildings";
 import { compareRoomNums } from "../../lib/compareRoomNums";
+import {
+  bestMatch,
+  matchScore,
+  prepare,
+  Prepared,
+  Range,
+  rank,
+  roomMatches,
+  splitRoomQuery,
+} from "../../lib/search";
 import { Course } from "../../lib/section-types";
 import { Term } from "../../lib/TermCache";
 import { termName } from "../../lib/terms";
+import { View } from "../../lib/View";
 import { SearchResult } from "./SearchResult";
 
 export type SearchData = {
@@ -12,144 +23,182 @@ export type SearchData = {
   buildings: string[];
   /** Room numbers by building code. */
   rooms: Record<string, string[]>;
+  /** Display names for rooms that aren't plain numbers, e.g. Geisel's spaces. */
+  roomTitles?: Record<string, string>;
 };
 
-type ResultScore = {
+/** A row in the results list. */
+export type ResultItem = {
+  key: string;
+  section: "Rooms" | "Courses" | "Professors" | "Buildings";
+  primary: string;
+  secondary?: string;
+  /** Which text is the code, for the narrow font. */
+  primaryIsCode: boolean;
+  ranges?: Range[];
+  view: View;
   score: number;
-  match?: {
-    start: number;
-    end: number;
-  };
-};
-type CourseResult = {
-  code: string;
-  title: string;
-  in: "code" | "title";
-} & ResultScore;
-type ProfessorResult = {
-  first: string;
-  last: string;
-  order: "forward" | "reverse";
-  /** The name displayed as `Last, First`. */
-  id: string;
-} & ResultScore;
-type BuildingResult = { code: string; in: "code" | "name" } & ResultScore;
-type RoomResult = { building: string; room: string };
-type SearchResults = {
-  rooms: RoomResult[];
-  courses: CourseResult[];
-  professors: ProfessorResult[];
-  buildings: BuildingResult[];
+  label: string;
 };
 
-function score(string: string, query: string): ResultScore {
-  if (string === "") {
-    return { score: 0 };
-  }
-  string = string.toLocaleLowerCase();
-  if (string === query) {
-    return { score: 3, match: { start: 0, end: string.length } };
-  }
-  if (string.startsWith(query)) {
-    return {
-      score: 2 + (/\W/.test(string[query.length]) ? 0.5 : 0),
-      match: { start: 0, end: query.length },
-    };
-  }
-  const index = string.indexOf(query);
-  if (index !== -1) {
-    return {
-      score:
-        1 +
-        (/\W/.test(string[index - 1]) &&
-        (index + query.length === string.length ||
-          /\W/.test(string[index + query.length]))
-          ? 0.5
-          : 0),
-      match: { start: index, end: index + query.length },
-    };
-  }
-  return { score: 0 };
-}
-
-/** The first parameter wins ties. */
-function maxResult<T extends ResultScore>(a: T, b: T): T {
-  return a.score >= b.score ? a : b;
-}
-
-function sortResults<T extends ResultScore>(results: T[]): T[] {
-  return results
-    .filter((result) => result.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 15);
-}
+type SearchIndex = {
+  courses: { course: Course; code: Prepared; title: Prepared }[];
+  professors: { first: string; last: string; name: Prepared }[];
+  buildings: { code: string; codePrep: Prepared; name: Prepared }[];
+};
 
 const MAX_ROOMS = 6;
 
-/** Rooms for queries like "centr 115" or "CENTR-1". */
-function searchRooms(data: SearchData, query: string): RoomResult[] {
-  const [code, room, ...rest] = query.toUpperCase().split(/[\s-]+/);
-  const rooms = data.rooms[code];
-  if (!rooms || !room || rest.length > 0) {
-    return [];
-  }
-  return rooms
-    .filter((key) => key.startsWith(room))
-    .sort(compareRoomNums)
-    .slice(0, MAX_ROOMS)
-    .map((key) => ({ building: code, room: key }));
+function buildIndex(data: SearchData): SearchIndex {
+  return {
+    courses: data.courses.map((course) => ({
+      course,
+      code: prepare(course.code),
+      title: prepare(course.title),
+    })),
+    professors: data.professors.map(({ first, last }) => ({
+      first,
+      last,
+      name: prepare(`${first} ${last}`),
+    })),
+    buildings: data.buildings.map((code) => ({
+      code,
+      codePrep: prepare(code),
+      name: prepare(buildings[code]?.name ?? code),
+    })),
+  };
 }
 
-function search(data: SearchData, query: string): SearchResults {
-  if (query === "") {
-    return { rooms: [], courses: [], buildings: [], professors: [] };
+/** Rooms for queries like "centr 115", "CENTR-1", "wlh2005", or "geisel 2070". */
+function searchRooms(index: SearchIndex, data: SearchData, query: string): ResultItem[] {
+  const split = splitRoomQuery(query);
+  if (!split) return [];
+  const buildingQuery = prepare(split.building);
+  const results: ResultItem[] = [];
+  for (const building of index.buildings) {
+    const rooms = data.rooms[building.code];
+    if (!rooms) continue;
+    const match = bestMatch(buildingQuery, [
+      ["code", building.codePrep],
+      ["name", building.name],
+    ]);
+    // Only confident building matches; typos would flood the list with rooms
+    if (!match || match.score < 50) continue;
+    for (const room of rooms) {
+      if (!roomMatches(room, split.room)) continue;
+      const exact = room.toUpperCase() === split.room;
+      const title = data.roomTitles?.[`${building.code} ${room}`];
+      results.push({
+        key: `room\t${building.code}\t${room}`,
+        section: "Rooms",
+        primary: `${building.code} ${room}`,
+        secondary: title
+          ? `${title} · ${buildings[building.code]?.name ?? building.code}`
+          : buildings[building.code]?.name ?? building.code,
+        primaryIsCode: true,
+        view: { type: "building", building: building.code, room },
+        score: match.score * 0.9 + (exact ? 6 : 0),
+        label: `${building.code} ${room}`,
+      });
+    }
   }
-  const results: SearchResults = {
-    rooms: searchRooms(data, query.trim()),
-    courses: sortResults(
-      data.courses.map((course) =>
-        maxResult(
-          { ...course, in: "title", ...score(course.title, query) },
-          { ...course, in: "code", ...score(course.code, query) }
-        )
-      )
-    ),
-    professors: sortResults(
-      data.professors.map(({ first, last }) => {
-        const id = `${last}, ${first}`;
-        return maxResult(
-          {
-            first,
-            last,
-            id,
-            order: "forward",
-            ...score(`${first} ${last}`, query),
-          },
-          { first, last, id, order: "reverse", ...score(id, query) }
-        );
-      })
-    ),
-    buildings: sortResults(
-      data.buildings.map((code) =>
-        maxResult(
-          { code, in: "name", ...score(buildings[code]?.name ?? "", query) },
-          { code, in: "code", ...score(code, query) }
-        )
-      )
-    ),
-  };
+  const roomOf = (item: ResultItem) => (item.view.type === "building" && item.view.room) || "";
+  return results
+    .sort((a, b) => b.score - a.score || compareRoomNums(roomOf(a), roomOf(b)))
+    .slice(0, MAX_ROOMS);
+}
 
-  const sections =
-    (results.courses.length > 0 ? 1 : 0) +
-    (results.professors.length > 0 ? 1 : 0) +
-    (results.buildings.length > 0 ? 1 : 0);
-  const maxSectionLength = sections === 3 ? 5 : sections === 2 ? 7 : 12;
-  return {
-    rooms: results.rooms,
-    courses: results.courses.slice(0, maxSectionLength),
-    professors: results.professors.slice(0, maxSectionLength),
-    buildings: results.buildings.slice(0, maxSectionLength),
-  };
+export function search(index: SearchIndex, data: SearchData, rawQuery: string): ResultItem[] {
+  const query = prepare(rawQuery);
+  if (query.tokens.length === 0) return [];
+
+  const courses = rank(
+    index.courses.flatMap(({ course, code, title }): ResultItem[] => {
+      const match = bestMatch(query, [
+        ["code", code],
+        ["title", title],
+      ]);
+      if (!match) return [];
+      const byCode = match.field === "code";
+      return [
+        {
+          key: `course\t${course.code}`,
+          section: "Courses",
+          primary: byCode ? course.code : course.title,
+          secondary: byCode ? course.title : course.code,
+          primaryIsCode: byCode,
+          ranges: match.ranges,
+          view: { type: "course", course: course.code },
+          score: match.score,
+          label: course.code,
+        },
+      ];
+    }),
+    15
+  );
+  const professors = rank(
+    index.professors.flatMap(({ first, last, name }): ResultItem[] => {
+      const match = matchScore(query, name);
+      if (match.score === 0) return [];
+      return [
+        {
+          key: `professor\t${last}, ${first}`,
+          section: "Professors",
+          primary: name.text,
+          primaryIsCode: false,
+          ranges: match.ranges,
+          view: { type: "professor", name: `${last}, ${first}` },
+          score: match.score,
+          label: name.text,
+        },
+      ];
+    }),
+    15
+  );
+  const buildingResults = rank(
+    index.buildings.flatMap(({ code, codePrep, name }): ResultItem[] => {
+      const match = bestMatch(query, [
+        ["code", codePrep],
+        ["name", name],
+      ]);
+      if (!match) return [];
+      const byCode = match.field === "code";
+      return [
+        {
+          key: `building\t${code}`,
+          section: "Buildings",
+          primary: byCode ? code : name.text,
+          secondary: byCode ? name.text : code,
+          primaryIsCode: byCode,
+          ranges: match.ranges,
+          view: { type: "building", building: code },
+          // Exact building codes are what people mean by short queries
+          score: match.score + (byCode && match.score === 100 ? 5 : 0),
+          label: code,
+        },
+      ];
+    }),
+    15
+  );
+  const rooms = searchRooms(index, data, rawQuery);
+
+  // Typo matches only fill in when nothing better was found
+  const sections = [rooms, courses, buildingResults, professors];
+  const best = Math.max(0, ...sections.flatMap((items) => items.map((item) => item.score)));
+  const floor = best >= 30 ? 30 : 0;
+  const trimmed = sections
+    .map((items) => items.filter((item) => item.score >= floor))
+    .filter((items) => items.length > 0);
+  const maxSectionLength = trimmed.length >= 3 ? 5 : trimmed.length === 2 ? 7 : 12;
+  // Sections with the strongest match come first
+  return trimmed
+    .map((items, order) => ({ items: items.slice(0, maxSectionLength), order }))
+    .sort((a, b) => b.items[0].score - a.items[0].score || a.order - b.order)
+    .flatMap(({ items }) => items);
+}
+
+export function useSearchIndex(data: SearchData): SearchIndex {
+  return useMemo(() => buildIndex(data), [data]);
 }
 
 export type SearchResultsProps = {
@@ -158,6 +207,8 @@ export type SearchResultsProps = {
   data: SearchData;
   index: number | null;
   ongoingOnly: boolean;
+  loadingCourses: boolean;
+  onPick?: (item: ResultItem) => void;
 };
 export function SearchResults({
   terms,
@@ -165,96 +216,75 @@ export function SearchResults({
   data,
   index,
   ongoingOnly,
+  loadingCourses,
+  onPick,
 }: SearchResultsProps) {
+  const searchIndex = useSearchIndex(data);
   const results = useMemo(
-    () => search(data, query.toLowerCase()),
-    [query, data]
+    () => search(searchIndex, data, query),
+    [searchIndex, data, query]
   );
-  const length =
-    results.rooms.length +
-    results.courses.length +
-    results.professors.length +
-    results.buildings.length;
-  index = index === null ? -1 : ((index % length) + length) % length;
+  const length = results.length;
+  index = index === null || length === 0 ? -1 : ((index % length) + length) % length;
   if (length === 0) {
-    if (query === "") {
+    if (query.trim() === "") {
       return null;
-    } else {
-      return (
-        <p className="no-results">
-          {ongoingOnly
-            ? "No courses with ongoing lectures match your search query."
-            : `No results from ${terms
-                .map(({ year, quarter }) => termName(year, quarter))
-                .join(" nor ")}.`}
-        </p>
-      );
     }
+    return (
+      <p className="no-results" role="status">
+        {loadingCourses
+          ? "Loading courses and professors…"
+          : ongoingOnly
+          ? "No courses with ongoing lectures match your search."
+          : `Nothing matches “${query.trim()}” in ${terms
+              .map(({ year, quarter }) => termName(year, quarter))
+              .join(" or ")}. Try a course code (CSE 100), a building (WLH), or a room (CENTR 115).`}
+      </p>
+    );
   }
   return (
-    <div className="results">
-      {results.rooms.length > 0 && <h2 className="result-heading">Rooms</h2>}
-      {results.rooms.map(({ building, room }, i) => (
-        <SearchResult
-          name={buildings[building]?.name ?? building}
-          code={`${building} ${room}`}
-          primary="code"
+    <div className="results" role="listbox" aria-label="Search results">
+      {results.map((item, i) => (
+        <SearchResultRow
+          item={item}
+          heading={i === 0 || results[i - 1].section !== item.section}
           selected={i === index}
-          view={{ type: "building", building, room }}
-          key={`room\t${building}\t${room}`}
+          key={item.key}
+          onPick={onPick}
         />
       ))}
-      {results.courses.length > 0 && (
-        <h2 className="result-heading">Courses</h2>
+      {loadingCourses && (
+        <p className="results-loading" role="status">
+          Loading courses and professors…
+        </p>
       )}
-      {results.courses.map((course, i) => (
-        <SearchResult
-          name={course.title}
-          code={course.code}
-          primary={course.in === "code" ? "code" : "name"}
-          match={course.match}
-          selected={i + results.rooms.length === index}
-          view={{ type: "course", course: course.code }}
-          key={`course\t${course.code}\t${course.in}`}
-        />
-      ))}
-      {results.professors.length > 0 && (
-        <h2 className="result-heading">Professors</h2>
-      )}
-      {results.professors.map((professor, i) => (
-        <SearchResult
-          name={
-            professor.order === "forward"
-              ? `${professor.first} ${professor.last}`
-              : professor.id
-          }
-          primary="name"
-          match={professor.match}
-          selected={i + results.rooms.length + results.courses.length === index}
-          view={{ type: "professor", name: professor.id }}
-          key={`course\t${professor.id}\t${professor.order}`}
-        />
-      ))}
-      {results.buildings.length > 0 && (
-        <h2 className="result-heading">Buildings</h2>
-      )}
-      {results.buildings.map((building, i) => (
-        <SearchResult
-          name={buildings[building.code]?.name ?? building.code}
-          code={building.code}
-          primary={building.in === "code" ? "code" : "name"}
-          match={building.match}
-          selected={
-            i +
-              results.rooms.length +
-              results.courses.length +
-              results.professors.length ===
-            index
-          }
-          view={{ type: "building", building: building.code }}
-          key={`course\t${building.code}\t${building.in}`}
-        />
-      ))}
     </div>
+  );
+}
+
+export function SearchResultRow({
+  item,
+  heading,
+  selected,
+  onPick,
+}: {
+  item: ResultItem;
+  heading: boolean;
+  selected: boolean;
+  onPick?: (item: ResultItem) => void;
+}) {
+  return (
+    <>
+      {heading && <h2 className="result-heading">{item.section}</h2>}
+      <SearchResult
+        name={item.primaryIsCode ? item.secondary : item.primary}
+        code={item.primaryIsCode ? item.primary : item.secondary}
+        primary={item.primaryIsCode ? "code" : "name"}
+        ranges={item.ranges}
+        selected={selected}
+        view={item.view}
+        onNavigate={() => onPick?.(item)}
+      />
+    </>
   );
 }

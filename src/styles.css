@@ -1472,6 +1472,40 @@ input[type="checkbox"].switch:checked::after {
   color: white;
   border-radius: 2px;
 }
+mark.result-match {
+  padding: 0 1px;
+  margin: 0 -1px;
+}
+.search-input::-webkit-search-cancel-button,
+.search-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  display: none;
+}
+.result-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.result-heading-text {
+  font: inherit;
+  color: inherit;
+}
+.result-heading-action {
+  padding: 2px 6px;
+  margin: -2px -6px -2px 0;
+  border-radius: 4px;
+  color: var(--link);
+  text-transform: none;
+  font-size: 12px;
+}
+.result-heading-action:hover {
+  background-color: var(--field);
+}
+.results-loading {
+  padding: 8px 10px 4px;
+  color: var(--secondary);
+  font-size: 13px;
+}
 @media (max-width: 690px) {
   .search-wrapper {
     right: 0;
@@ -1950,16 +1984,15 @@ input[type="checkbox"].switch:checked::after {
   transition: opacity 0.3s, visibility 0.3s, transform 0.3s var(--ease);
 }
 @media (max-width: 690px) {
-  /* One row that scrolls sideways; the padding keeps the shadows visible */
+  /* Chips fill the row and wrap rather than hide off-screen; the padding
+  keeps the shadows visible */
   .map-chips {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     max-width: none;
     right: 0;
     left: 0;
     margin-top: -6px;
     padding: 6px var(--gutter) 10px;
-    overflow-x: auto;
-    scrollbar-width: none;
     pointer-events: none;
   }
   .map-chips::-webkit-scrollbar {
@@ -1968,6 +2001,54 @@ input[type="checkbox"].switch:checked::after {
   .map-chips > * {
     flex: none;
     pointer-events: auto;
+  }
+  /* Compact chips so all three fit on a phone without scrolling */
+  .map-chips {
+    --chip: 38px;
+    gap: 6px;
+  }
+  .chip {
+    gap: 5px;
+    padding: 0 12px;
+    font-size: 13.5px;
+  }
+  .chip-long {
+    display: none;
+  }
+  .chip-count {
+    min-width: 20px;
+    padding: 2px 5px;
+  }
+  /* The row spans the screen like a toolbar */
+  .map-chips > * {
+    flex: 1 0 auto;
+  }
+  .map-chips .chip {
+    justify-content: center;
+  }
+  .chip-group .chip:first-child {
+    flex: 1 0 auto;
+  }
+}
+@media (max-width: 389px) {
+  .map-chips .chip-icon {
+    display: none;
+  }
+  .chip {
+    padding: 0 11px;
+  }
+}
+@media (max-width: 345px) {
+  .map-chips .chip-caret {
+    display: none;
+  }
+  .chip {
+    padding: 0 9px;
+  }
+}
+@media (min-width: 691px) {
+  .chip-short {
+    display: none;
   }
 }
 .map-chips-hidden {

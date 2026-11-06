@@ -1,25 +1,43 @@
 import { useEffect, useRef } from "react";
+import { Range } from "../../lib/search";
 import { View } from "../../lib/View";
 import { Link } from "../Link";
+
+function Highlighted({ text, ranges }: { text: string; ranges?: Range[] }) {
+  if (!ranges || ranges.length === 0) return <>{text}</>;
+  const parts = [];
+  let cursor = 0;
+  for (const [i, { start, end }] of ranges.entries()) {
+    if (start > cursor) parts.push(text.slice(cursor, start));
+    parts.push(
+      <mark className="result-match" key={i}>
+        {text.slice(start, end)}
+      </mark>
+    );
+    cursor = end;
+  }
+  parts.push(text.slice(cursor));
+  return <>{parts}</>;
+}
 
 export type SearchResultProps = {
   name?: string;
   code?: string;
   primary: "name" | "code";
-  match?: {
-    start: number;
-    end: number;
-  };
+  /** Matched parts of the primary text. */
+  ranges?: Range[];
   selected: boolean;
   view: View;
+  onNavigate?: () => void;
 };
 export function SearchResult({
   name,
   code,
   primary: primaryField,
-  match,
+  ranges,
   selected,
   view,
+  onNavigate,
 }: SearchResultProps) {
   const ref = useRef<HTMLAnchorElement>(null);
   useEffect(() => {
@@ -37,6 +55,9 @@ export function SearchResult({
       view={view}
       className={`result ${selected ? "result-selected" : ""}`}
       elemRef={ref}
+      role="option"
+      aria-selected={selected}
+      onNavigate={onNavigate}
     >
       {primary !== undefined && (
         <p
@@ -44,17 +65,7 @@ export function SearchResult({
             nameFirst ? "result-name" : "result-code"
           }`}
         >
-          {match ? (
-            <>
-              {primary.slice(0, match.start)}
-              <span className="result-match">
-                {primary.slice(match.start, match.end)}
-              </span>
-              {primary.slice(match.end)}
-            </>
-          ) : (
-            primary
-          )}
+          <Highlighted text={primary} ranges={ranges} />
         </p>
       )}
       {secondary !== undefined && (
