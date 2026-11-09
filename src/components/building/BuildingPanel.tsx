@@ -238,7 +238,7 @@ export function BuildingPanel({
 }: BuildingPanelProps) {
   const code = props.building.code;
   const roomKeys = useMemo(() => Object.keys(props.rooms), [props.rooms]);
-  const layout = useIndoorLayout(code, props.building.name, true, roomKeys);
+  const layout = useIndoorLayout(code, props.building.name, visible, roomKeys);
   const explorerOpen = explorerEnabled && hasIndoorLayout(code);
   // Shared between the room list and the 3D view; keyed by room key
   const [hovered, setHovered] = useState<{ building: string; room: string | null }>({

@@ -131,6 +131,21 @@ export function validateIndoorBuilding(
       if (!source.url && !source.localFile) {
         error(path, "Source needs a url or localFile.");
       }
+      if (source.access !== undefined && !["public", "authenticated"].includes(source.access)) {
+        error(`${path}.access`, "Source access must be public or authenticated.");
+      }
+      if (source.tririga !== undefined) {
+        const identity = source.tririga;
+        if (!isRecord(identity) ||
+            ![identity.buildingRecordId, identity.floorRecordId, identity.drawingId].every(
+              (id) => typeof id === "string" && /^\d+$/.test(id)
+            ) || typeof identity.svgSha256 !== "string" || !/^[a-f0-9]{64}$/.test(identity.svgSha256)) {
+          error(`${path}.tririga`, "TRIRIGA source needs exact numeric record/drawing IDs and an SVG SHA-256.");
+        }
+        if (source.access !== "authenticated") {
+          error(`${path}.access`, "TRIRIGA exports must be marked authenticated.");
+        }
+      }
       if (typeof source.accessed !== "string" || !DATE_RE.test(source.accessed)) {
         error(`${path}.accessed`, "Access date must be YYYY-MM-DD.");
       }

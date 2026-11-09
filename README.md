@@ -53,6 +53,12 @@ npm run dev
 
 Open **http://localhost:8000/**. Building photos are hosted on Imgur, so use `localhost` if images do not load on `127.0.0.1`.
 
+Authenticated TRIRIGA exports can additionally populate a **local-only indoor
+preview**. See [the conversion workflow and limitations](docs/indoor-geometry.md#authenticated-tririga-local-preview).
+`npm run dev` uses the generated private index when present; `npm run build`
+always excludes it and keeps the published layouts. No authenticated source
+SVGs or derived private layouts are included in the production output.
+
 ```sh
 # Create the production site in dist/
 npm run build

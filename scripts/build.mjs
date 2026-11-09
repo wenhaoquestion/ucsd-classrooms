@@ -19,6 +19,7 @@ import { createServer, request as httpRequest } from "node:http";
 import { join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { handleLibcalRequest } from "../worker/libcal.js";
+import { isPublicStaticFile, readLocalIndoorManifest } from "./indoor-preview.mjs";
 
 // Paths below are relative to the repository root, wherever this is run from.
 // esbuild's service process keeps the cwd it was spawned with, so it also needs
@@ -41,6 +42,8 @@ const options = {
   outdir: serve ? "static" : "dist",
   metafile: !serve,
   define: {
+    // No authenticated index or paths are read into a production bundle.
+    LOCAL_INDOOR_MANIFEST: JSON.stringify(serve ? readLocalIndoorManifest(root) : {}),
     LIBCAL_PROXY_URL: JSON.stringify(
       process.env.LIBCAL_PROXY_URL ?? (serve ? "libcal/" : "")
     ),
@@ -85,13 +88,12 @@ if (serve) {
       res.end();
     });
     req.pipe(proxy);
-  }).listen(8000, () => console.log("Serving on http://localhost:8000/"));
+  }).listen(8000, "127.0.0.1", () => console.log("Serving on http://localhost:8000/"));
 } else {
   rmSync("dist", { recursive: true, force: true });
   cpSync("static", "dist", {
     recursive: true,
-    filter: (source) =>
-      !/(^|[\\/])(index\.(js|css)(\.map)?|chunks|map-[A-Z0-9]+\.webp|material-.*-[A-Z0-9]+\.svg)$/.test(source),
+    filter: (source) => isPublicStaticFile(source, root),
   });
   const result = await esbuild.build({ ...options, minify: true });
   console.log(

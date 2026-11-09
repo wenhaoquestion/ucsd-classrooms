@@ -1,5 +1,210 @@
-# 室内图纸获取与覆盖审计 · 2026-10-21（洛杉矶时间）
+# 室内图纸获取与覆盖审计
 
+<!-- TRIRIGA-LOCAL-START -->
+## 2026-11-09：已登录 TRIRIGA 本地预览
+
+本次核对全部 101 个网站建筑代码，生成 **85 个本地布局**，有效室内覆盖为 **89 个代码**。其中新增 9 个室内建筑，校正/扩展 76 个已有布局；公开生产布局保持原样。
+
+本地覆盖文件包含 **369 个显示层、22,630 个房间多边形**，引用 317 条不同 TRIRIGA 楼层记录。另有走廊/外部非房间区域。显示层数包含保留的旧审核层和有来源的房间列表层，不能当作完整新测绘楼层数。新显示层 ID 共 58 个（含拆分和重命名）；93 个原无房间轮廓的显示层现有房间几何。
+
+旧库存 **551 个键全部保留**，原 **420 个已定位键全部保留**，现定位 **512/551**。FA26 独立分母仍为 461 个物理教室键，由 **361/461 提升到 435/461**，新增 74 个位置；仍有 26 个位置缺口。FA26 使用保存的 2026-10-15 上游课程快照，不代表重新抓取实时课程。
+
+最终本地几何校验：**0 错误、10 警告**，均为非课表空间在源 gross 轮廓外，不涉及课表教室。全量校验还保留公开基线的 56 条警告。153 项常规测试、46 项 Python 转换测试、类型检查、lint、构建均通过；TASB/TATA/WFH 的桌面与手机浏览器共 41 项检查通过，未见控制台、页面或网络错误。结果与证据哈希保存在本地 `data/indoor/tririga/verification.json`，不随仓库发布。
+
+原图仍在 `D:\UCSD classroom\artifacts\tririga-floorplans`，每条来源保留本地路径、URL、记录 ID 与 SHA-256。布局目录 `static/indoor/tririga-local/` 和生成的映射、配准及审计目录 `data/indoor/tririga/` 均已忽略提交，公开构建明确排除私有布局；发布许可与允许公开的衍生布局尚需另行核对。
+
+流程与几何限制见 [转换文档](indoor-geometry.md#authenticated-tririga-local-preview)，完整机器可读结果保存在本地 `data/indoor/tririga/coverage-report.json` 与 `data/indoor/tririga/conversion-report.json`。复现还需本地审核配置 `mapping-review-config.json` 和 `registration-review-config.json`；认证来源的记录 ID、房号对应及配准锚点仅保存在这些忽略提交的配置中。
+
+### 新增室内建筑
+
+| 代码 | 建筑 | 显示层 | 房间多边形 |
+| --- | --- | ---: | ---: |
+| CSC | Career Services Center | 1 | 42 |
+| GREAT | Great Hall | 1 | 23 |
+| HYDRO | Hydraulics Laboratory | 1 | 19 |
+| KECK | W. M. Keck Building | 1 | 16 |
+| RECGM | Recreation Gym | 1 | 23 |
+| RITTR | Ritter Hall | 1 | 61 |
+| SCRB | Stein Clinical Research Building | 4 | 366 |
+| TAMRK | Tamarack | 1 | 17 |
+| TASB | Triton Administrative Services Building | 6 | 512 |
+
+### 已有建筑校正与扩展
+
+“显示层”包括保留的来源楼层列表；只有实际具备几何的楼层显示 3D。原来空壳现有房间的代码：BONN, BSB, CMRR, ECKRT, HDSI, LASB, MCTF, PACIF, PODEM, PRICE, VAUGN, WFH。
+
+| 代码 | 显示层：原→现 | 房间多边形：原→现 | 本次引用源楼层记录数 |
+| --- | ---: | ---: | ---: |
+| APM | 8→9 | 730→739 | 9 |
+| ASANT | 1→1 | 4→4 | 1 |
+| BIO | 6→6 | 197→326 | 5 |
+| BONN | 5→2 | 0→32 | 1 |
+| BRF2 | 3→9 | 107→861 | 9 |
+| BSB | 6→7 | 0→953 | 7 |
+| CALIT | 1→6 | 1→1027 | 6 |
+| CENTR | 4→4 | 206→290 | 4 |
+| CMME | 4→4 | 146→449 | 3 |
+| CMRR | 4→4 | 0→137 | 4 |
+| CNCB | 3→3 | 140→158 | 1 |
+| COA | 10→10 | 14→429 | 10 |
+| CPMC | 3→3 | 204→236 | 3 |
+| CSB | 3→3 | 9→210 | 3 |
+| CTL | 13→14 | 336→484 | 14 |
+| DANCE | 1→1 | 14→17 | 1 |
+| DIB | 4→4 | 167→177 | 4 |
+| EBU1 | 8→8 | 566→615 | 7 |
+| EBU2 | 6→6 | 226→313 | 4 |
+| EBU3B | 5→5 | 344→491 | 5 |
+| ECKRT | 3→3 | 0→144 | 3 |
+| ERCA | 3→3 | 53→57 | 1 |
+| FAH | 4→5 | 3→652 | 5 |
+| GH | 4→4 | 3→323 | 4 |
+| HDSI | 4→4 | 0→231 | 4 |
+| HSS | 8→8 | 152→412 | 8 |
+| HUBBS | 4→4 | 173→175 | 1 |
+| IGPP | 4→4 | 132→102 | 3 |
+| JEANN | 1→2 | 1→24 | 2 |
+| LASB | 1→1 | 0→31 | 1 |
+| LEDDN | 1→1 | 2→1 | 1 |
+| LFFB | 5→7 | 226→534 | 7 |
+| MALK | 6→6 | 3→336 | 6 |
+| MAYER | 5→5 | 182→260 | 3 |
+| MCC | 2→2 | 45→15 | 1 |
+| MCGIL | 6→6 | 128→274 | 3 |
+| MCTF | 4→4 | 0→108 | 4 |
+| MET | 3→4 | 86→339 | 4 |
+| MNDLR | 5→5 | 146→197 | 2 |
+| MOS | 7→7 | 3→276 | 7 |
+| MTF | 4→5 | 258→451 | 5 |
+| MWEIS | 3→3 | 58→65 | 1 |
+| MYR-A | 5→5 | 177→255 | 3 |
+| NIERN | 4→4 | 193→205 | 4 |
+| NSB | 7→7 | 519→497 | 7 |
+| OAR | 3→3 | 49→50 | 1 |
+| OTRSN | 4→4 | 165→281 | 4 |
+| PACIF | 7→7 | 0→659 | 7 |
+| PCYNH | 4→4 | 109→188 | 2 |
+| PETER | 1→1 | 27→29 | 1 |
+| PFBH | 5→5 | 265→378 | 5 |
+| PODEM | 2→16 | 0→441 | 16 |
+| PRICE | 3→3 | 0→435 | 3 |
+| PSB | 5→5 | 385→434 | 5 |
+| RBC | 4→4 | 167→111 | 3 |
+| RVCOM | 2→2 | 60→61 | 2 |
+| RWAC | 9→10 | 765→991 | 9 |
+| SCRM | 4→4 | 288→408 | 3 |
+| SDSC | 1→5 | 1→333 | 5 |
+| SERF | 5→5 | 65→68 | 1 |
+| SME | 5→5 | 13→430 | 5 |
+| SOLIS | 1→1 | 6→29 | 1 |
+| SPIES | 4→4 | 77→80 | 1 |
+| SSB | 5→5 | 225→387 | 4 |
+| STCTR | 2→2 | 19→20 | 2 |
+| SUMNR | 3→3 | 11→12 | 1 |
+| TATA | 7→7 | 281→532 | 7 |
+| UNEXG | 1→1 | 3→3 | 1 |
+| UNEXN | 1→1 | 2→2 | 1 |
+| UREY | 8→9 | 59→521 | 9 |
+| VAF | 3→3 | 77→81 | 1 |
+| VAUGN | 4→2 | 0→55 | 1 |
+| WFH | 5→5 | 0→243 | 5 |
+| WLH | 3→3 | 106→127 | 2 |
+| WSAC | 1→1 | 29→31 | 1 |
+| YORK | 4→4 | 145→219 | 4 |
+
+### 仍未定位的 FA26 教室
+
+| 代码 | 精确房间键 |
+| --- | --- |
+| APM | B402A |
+| BONN | 2130 |
+| CNCB | SEM |
+| DANCE | 1, 2, 3 |
+| GH | 102 |
+| MANDE | 212 |
+| MCC | 201, 221, 222, 250 |
+| MWEIS | SCENE |
+| PCYNH | 240, 245 |
+| RBC | 1328, GARDN |
+| RVCOM | C |
+| SERF | 329, 383 |
+| SSRB | 310 |
+| TASB | W1131, W1141 |
+| VAF | 366 |
+| VAUGN | 300 |
+| YORK | 4124 |
+
+### 保留与未导入楼层
+
+保留原因包括身份未核实、无法建立可靠共同坐标、源图几何不符合验证约束，以及替换会丢失已有位置。保留的源楼层列表不会被降格为猜测楼层。下列是 TRIRIGA 尚未作为新几何导入的来源层；部分已有旧审核几何可继续使用。
+
+| 代码 | 未导入来源层 | 处理 |
+| --- | --- | --- |
+| BIO | Basement, Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| BONN | Basement, Second Floor, Third Floor, Fourth Floor, Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| BRF2 | Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| CALIT | Basement, Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| CCC | Basement, First Floor, Second Floor, Third Floor, Fourth Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| CMME | Basement | 保留已有审核范围；未配准来源不强行叠加 |
+| CNCB | Second Floor, Third Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| CSB | Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| CSC | Second Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| CTL | Fourteenth Floor, Fifteenth Floor, Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| EBU1 | Second Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| EBU2 | First Floor, Fourth Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| ERCA | Second Floor, Third Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| GEISEL | First Floor, Second Floor, Third Floor, Fourth Floor, Fifth Floor, Sixth Floor, Seventh Floor, Eighth Floor, Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| GREAT | Second Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| HSS | Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| HUBBS | First Floor, Second Floor, Third Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| HYDRO | Basement, Mezzanine | 保留已有审核范围；未配准来源不强行叠加 |
+| IGPP | Basement, First Floor, Second Floor, Third Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| KECK | Basement | 保留已有审核范围；未配准来源不强行叠加 |
+| LFFB | Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| MANDE | Basement 2, Basement 1, First Floor, Second Floor, Mezzanine | 保留原完整布局 |
+| MAYER | First Floor, Second Floor, Third Floor, Fourth Floor, Fifth Floor, First Floor, Second Floor, Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| MCC | Second Floor, Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| MCGIL | Basement, Second Floor, Fourth Floor, Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| MCTF | Roof 1, Roof 2 | 保留已有审核范围；未配准来源不强行叠加 |
+| MNDLR | Basement, First Floor, Fourth Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| MOS | First Floor Mezzanine, Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| MTF | Basement 2, Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| MWEIS | Trap Room Floor, First Floor, Third Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| MYR-A | First Floor, Second Floor, Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| NSB | Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| OAR | First Floor, Third Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| PACIF | Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| PCYNH | First Floor, Second Floor, Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| PSB | Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| RBC | First Floor, Third Floor, Fourth Floor, Second Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| RECGM | Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| RITTR | Second Floor, Third Floor, Fourth Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| RWAC | First Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| SCRB | Fourth Floor, Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| SCRM | Basement 2, Interstitial Floor, First Floor, Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| SDSC | Basement 2 | 保留已有审核范围；未配准来源不强行叠加 |
+| SERF | Basement, First Floor, Second Floor, Third Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| SME | Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| SOLIS | Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| SPIES | First Floor, Second Floor, Third Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| SSB | Fifth Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| SSRB | First Floor, Second Floor, Third Floor | 保留原完整布局 |
+| SUMNR | Basement, Second Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| TAMRK | Second Floor, Third Floor, Fourth Floor, Fifth Floor, Sixth Floor, Seventh Floor, Eighth Floor, Ninth Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| TATA | Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| VAF | Second Floor, First Floor, Second Floor | 保留已有审核范围；未配准来源不强行叠加 |
+| VAUGN | Second Floor, Third Floor, Fourth Floor, Roof | 保留已有审核范围；未配准来源不强行叠加 |
+| WLH | Basement | 保留已有审核范围；未配准来源不强行叠加 |
+
+身份仍未核实或属于历史/户外位置的代码：ECON, P416, POTKR, REV, SEQUO, SEVE3, SEVE4, SEVW2, TM102, U201, U301, WARR。Geisel 保持现有 LibCal 专用模型，CCC 保留原布局。MANDE/SSRB 保留已审核整体版本，避免损失现有房间位置。
+
+多来源建筑的相对配准不等于现场测绘；北向未知，层高为示意。WFH 专用配准由完整电梯边界及跨层改号竖井复核，记录于 `registration-overrides.json`，可用 `scripts/review-wfh-registration.py` 复现。Marine Ecosystem Sensing Observation and Modeling Roof 2852 源 SVG 无效，未用于模型；该楼不是 MOS。
+
+<!-- TRIRIGA-LOCAL-END -->
+
+---
+
+以下为此前公开来源工作的历史记录。
 网站把课表中的楼宇代码、教室编号对应到楼层和房间轮廓。本轮既补图，也修正错楼、房号关联和坐标问题。当前已注册 **30 个补充布局**，在已保存的 **551 个课表教室键中定位 420 个，仍有 131 个位置缺口**。这不是全校所有学期的教室全集，也不表示图纸都反映最新装修。
 
 原有 540 个键从 **295 个有位置增至 412 个**，净增 117 个；另外从当前 FA26 课表快照确认了此前没有室内文件的 **MYR-A 七个键和 BRF2 四个键**：MYR-A 七键及 BRF2 4103 已定位，BRF2 1104 和 5A03 已确证楼层但仍无位置，1102 仍未映射，因此当前为 **420/551**。必须把这次扩充分母与原有键的补齐分开报告。MCC 原来的两个错楼匹配已经撤销，随后才用正确楼宇的官方矢量补入四间。

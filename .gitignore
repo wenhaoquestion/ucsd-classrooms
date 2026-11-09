@@ -14,5 +14,7 @@ __pycache__/
 .env.*
 !.env.example
 /static/indoor/local/
+/static/indoor/tririga-local/
+/data/indoor/tririga/
 /local/
 /worker/.wrangler/

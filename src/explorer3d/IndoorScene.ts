@@ -51,6 +51,7 @@ import {
   RendererOwner,
 } from "./ExplorerRenderer";
 import { planUV } from "./planDrawing";
+import { perspectiveFitDistance } from "./cameraFit";
 /** "rise": floors stack up from the ground; "fade": a quick fade-in. */
 export type IntroMode = "rise" | "fade" | "none";
 
@@ -1485,7 +1486,11 @@ export class IndoorScene implements RendererOwner {
   }
 
   /** Center and size of what should be in view for the current display mode. */
-  #viewTarget(): { target: Vector3; radius: number } {
+  #viewTarget(): {
+    target: Vector3;
+    radius: number;
+    bounds?: { min: [number, number, number]; max: [number, number, number] };
+  } {
     const shown = this.#floors.filter((floor) => this.#targetFor(floor).presence === 1);
     if (shown.length === 0) {
       // Selecting a floor known only from listings leaves an empty scene. Keep
@@ -1515,16 +1520,14 @@ export class IndoorScene implements RendererOwner {
     }
     const target = new Vector3((minX + maxX) / 2, (minY + maxY) / 2, (minZ + maxZ) / 2);
     const radius = Math.hypot(maxX - minX, maxY - minY, maxZ - minZ) / 2;
-    return { target, radius };
+    return { target, radius, bounds: { min: [minX, minY, minZ], max: [maxX, maxY, maxZ] } };
   }
 
   #frameCamera(animate: boolean, resetOrientation: boolean): void {
-    const { target, radius } = this.#viewTarget();
+    const { target, radius, bounds } = this.#viewTarget();
     const aspect = this.#rect.width > 0 ? this.#rect.width / this.#rect.height : 1.4;
     const vertical = (FOV * Math.PI) / 360;
     const horizontal = Math.atan(Math.tan(vertical) * aspect);
-    // A bounding sphere overstates wide, low buildings seen from above at an angle
-    const distance = (radius / Math.sin(Math.min(vertical, horizontal))) * 0.74;
     let direction: Vector3;
     if (resetOrientation) {
       // Three-quarter view from the plan's lower right
@@ -1538,6 +1541,10 @@ export class IndoorScene implements RendererOwner {
     } else {
       direction = this.#camera.position.clone().sub(this.#controls.target).normalize();
     }
+    const distance = bounds
+      ? perspectiveFitDistance(bounds.min, bounds.max, target.toArray(), direction.toArray(),
+        (FOV * Math.PI) / 180, aspect)
+      : radius / Math.sin(Math.min(vertical, horizontal));
     const position = target.clone().addScaledVector(direction, distance);
     this.#animateCamera(position, target, animate);
   }

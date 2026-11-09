@@ -98,6 +98,16 @@ export function segmentsIntersect(
   p2: Point2,
   q2: Point2
 ): boolean {
+  // Disjoint segment bounds cannot intersect. This also avoids false positives
+  // when near-collinear CAD edges straddle the orientation epsilon far apart.
+  if (
+    Math.max(p1[0], q1[0]) < Math.min(p2[0], q2[0]) ||
+    Math.max(p2[0], q2[0]) < Math.min(p1[0], q1[0]) ||
+    Math.max(p1[1], q1[1]) < Math.min(p2[1], q2[1]) ||
+    Math.max(p2[1], q2[1]) < Math.min(p1[1], q1[1])
+  ) {
+    return false;
+  }
   const o1 = orientation(p1, q1, p2);
   const o2 = orientation(p1, q1, q2);
   const o3 = orientation(p2, q2, p1);

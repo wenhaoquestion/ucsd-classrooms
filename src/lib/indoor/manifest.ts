@@ -8,6 +8,12 @@ export type IndoorManifestEntry = {
   status: GeometryStatus;
 };
 
+// Replaced by the dev build with its local index. Production and standalone
+// validation/test bundles default to no authenticated layouts.
+declare const LOCAL_INDOOR_MANIFEST: Record<string, IndoorManifestEntry>;
+export const LOCAL_PREVIEW_LAYOUTS: Record<string, IndoorManifestEntry> =
+  typeof LOCAL_INDOOR_MANIFEST === "undefined" ? {} : LOCAL_INDOOR_MANIFEST;
+
 /**
  * Buildings with indoor layouts. Kept in the main bundle (it's tiny) so the UI
  * knows which buildings have an explorer before fetching anything. Schematic
@@ -68,6 +74,7 @@ export const INDOOR_MANIFEST: Record<string, IndoorManifestEntry> = {
   ...SOURCE_LAYOUTS,
   ...FACILITIES_LAYOUTS,
   ...SUPPLEMENTAL_LAYOUTS,
+  ...LOCAL_PREVIEW_LAYOUTS,
 };
 
 /** Campus-map building numbers for each registrar code (`npm run campus:build`). */

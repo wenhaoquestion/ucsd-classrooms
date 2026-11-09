@@ -6,6 +6,105 @@ loads, back/forward and reduced motion). You can then inspect floors, find
 classrooms, and select a room to see its schedule. This document covers where that geometry comes from,
 how it's stored, and how to add another building.
 
+## Authenticated TRIRIGA local preview
+
+The November 9, 2026 Work Location export is a separate local source collection:
+`D:\UCSD classroom\artifacts\tririga-floorplans\index.json`. It indexes 803
+building records, 2,347 floor records and 2,177 validated SVG files. The source
+Marine Ecosystem Sensing Observation and Modeling roof drawing 2852 is invalid
+and was not exported. This marine research building is not Mosaic (`MOS`).
+
+Rebuilding requires the authenticated exports and two locally reviewed
+configuration files in ignored `data/indoor/tririga/`:
+`mapping-review-config.json` and `registration-review-config.json`. These hold
+the source identities, room-label crosswalks and registration anchor selections;
+they are intentionally absent from GitHub. Without them the review scripts stop
+with a missing-configuration error. Each accepts `--review-config PATH`.
+
+With those local inputs, the reproducible workflow is:
+
+```sh
+python scripts/audit-tririga-mapping.py
+python scripts/audit-tririga-svg.py
+python scripts/review-wfh-registration.py
+python scripts/review-tasb-registration.py
+python scripts/build-tririga-indoor.py --source-root "../artifacts/tririga-floorplans"
+python -m unittest discover -s tests -p "test_tririga*.py"
+npm run validate:indoor -- --local
+npm run dev
+```
+
+The builder needs NumPy and SciPy; the SVG parser itself uses only Python's
+standard library. Run the mapping/build scripts from the repository root. A
+subset debug build accepts repeatable `--building CODE` arguments and keeps
+unselected local index entries; run the full command for a complete coverage
+report. Restart the dev server after generating a new index.
+
+`data/indoor/tririga/building-mapping.json` records explicit building identity,
+campus CAAN evidence, Facilities bkeys corroborated by TRIRIGA `(CU)` labels,
+selected building/floor/room record IDs, and reviewed schedule-label crosswalks.
+It audits all 101 catalog codes: 87 source matches, two deliberate retained
+layouts (including Geisel's LibCal model), and 12 unresolved/historical/outdoor
+codes. Identity matching does not certify a usable drawing or a completed 3D
+conversion. Final generated coverage, retained levels and rejected geometry
+are separately recorded in `data/indoor/tririga/conversion-report.json`.
+
+`scripts/tririga_svg.py` extracts only record-bound `triSpaceLayer` and
+`triGrossAreaLayer` geometry, composes all ancestor/element affine transforms,
+joins labels by `tri-record-id`, and removes the duplicated display/interactive
+layers. It retains curved boundaries (0.25 source-unit chord tolerance), holes,
+disconnected components and source IDs. CAD zero-area bridges are split into
+rings; numerical spikes below source precision are removed. It never uses a
+convex hull or invented rectangle to replace an invalid space. Rejected
+geometry and label conflicts remain in the audit.
+
+The drawing viewport is not a shared coordinate frame. A source building gets
+one reference frame; other floors require repeated walls or spatially separated
+identified stair/elevator cores to establish a rigid transform. Symmetric or
+unsupported matches are rejected. Independent source buildings require a
+common reference supported by at least four unique non-collinear room labels,
+room-area agreement and a withheld-label residual check. These fits inherit
+the old Facilities frame's approximation; they do not establish surveyed
+campus coordinates. In a few sources the CAD units differ by a discrete factor
+such as two: the builder requires both an independent room/area fit and a rigid
+core/wall fit after that unit correction. It never independently fits each
+floor into an arbitrary bounding rectangle. One final normalization is applied
+to the whole assembled building, with unknown north and no campus georeference.
+
+`floor_level` is source sort metadata, not physical elevation. Names and record
+IDs establish basements, named floors, partial floors, mezzanines and roofs.
+BRF2's standalone mezzanine is ordered between basement and first floor;
+BRF2/LFFB partial floors and Mosaic's first-floor mezzanine remain distinct
+display levels. Heights and intermediate spacing are explicitly illustrative.
+Reviewed WFH and TASB registrations preserve source hashes and explicit elevator,
+shaft, stair and wall correspondences in `registration-overrides.json`; the two
+review scripts recompute those measurements without replacing other buildings'
+entries. Exact separated elevator anchors take precedence over changing floor
+outlines when choosing between otherwise supported rigid registrations.
+Same-named buildings, annexes, unsupported roof placement and rejected shapes
+are reported rather than forced into a shared frame. TASB's W1131/W1141 remain
+in the schedule list until their source identities can be verified.
+
+Exact schedule keys and reviewed aliases are preserved. Where a new source
+does not include a previously positioned classroom, the reviewed prior room
+or level is retained in an established common frame. If that cannot be done
+reliably, the entire prior runtime layout remains active for that code.
+Geisel retains its separate study-room and booking integration.
+
+Layouts live in ignored `static/indoor/tririga-local/`; generated mapping,
+registration and audit reports live in ignored `data/indoor/tririga/`. Both
+directories stay local. Generated outputs are recreated from the authenticated
+source exports and retained review configurations with the commands above. The local manifest is
+injected only into the dev build, and detailed building JSON still loads on
+demand. Each source retains its authenticated access flag, original local SVG
+path, source URL, building/floor/drawing IDs and SHA-256. The production builder
+does not read the private index and explicitly excludes both `indoor/local/`
+and `indoor/tririga-local/`. Source publication rights and permitted derived
+layouts must be reviewed separately before any public release.
+
+The older public-source coverage below describes the unchanged production
+baseline; it is not the authenticated preview's coverage denominator.
+
 **2026-10-21 acquisition update (Los Angeles; records use UTC):** see
 [the Chinese acquisition and coverage report](indoor-acquisition.zh-CN.md) for
 room-level changes, acquisition limits and all rebuild commands. The manifest

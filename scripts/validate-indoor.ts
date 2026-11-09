@@ -2,6 +2,7 @@
 // manifest in src/lib/indoor/manifest.ts lists exactly those files.
 //
 //   npm run validate:indoor
+//   npm run validate:indoor -- --local   Also check authenticated local previews.
 
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { FACILITIES_LAYOUTS, SOURCE_LAYOUTS, SUPPLEMENTAL_LAYOUTS } from "../src/lib/indoor/manifest";
@@ -9,6 +10,7 @@ import { indexIndoorBuilding } from "../src/lib/indoor/roomMapping";
 import { IndoorBuilding } from "../src/lib/indoor/schema";
 import { validateIndoorBuilding } from "../src/lib/indoor/validate";
 import buildingData from "../src/lib/buildings.json";
+import { readLocalIndoorManifest } from "./indoor-preview.mjs";
 
 const knownBuildings = new Set(
   Object.values(buildingData.colleges).flatMap((college) => Object.keys(college))
@@ -20,8 +22,21 @@ const fail = (message: string) => {
   failed = true;
 };
 
+const includeLocal = process.argv.includes("--local");
+let localLayouts: ReturnType<typeof readLocalIndoorManifest> = {};
+if (includeLocal) {
+  try {
+    localLayouts = readLocalIndoorManifest(process.cwd(), { required: true });
+  } catch (error) {
+    fail(String(error));
+  }
+}
+
 const files = new Set(
-  ["static/indoor", "static/indoor/facilities", "static/indoor/schematic"]
+  [
+    "static/indoor", "static/indoor/facilities", "static/indoor/schematic",
+    ...(includeLocal ? ["static/indoor/tririga-local"] : []),
+  ]
     .filter((dir) => existsSync(dir))
     .flatMap((dir) =>
       readdirSync(dir)
@@ -34,6 +49,7 @@ for (const [code, entry] of [
   ...Object.entries(SOURCE_LAYOUTS),
   ...Object.entries(FACILITIES_LAYOUTS),
   ...Object.entries(SUPPLEMENTAL_LAYOUTS),
+  ...Object.entries(localLayouts),
 ]) {
   if (!knownBuildings.has(code)) {
     fail(`${code}: not a building code in buildings.json`);
@@ -56,6 +72,10 @@ for (const [code, entry] of [
     continue;
   }
   const layout = data as IndoorBuilding;
+  if (!entry.file.startsWith("indoor/tririga-local/") &&
+      layout.sources.some((source) => source.access === "authenticated")) {
+    fail(`${code}: authenticated source is outside the local-only preview directory`);
+  }
   if (layout.geometryStatus !== entry.status) {
     fail(`${code}: manifest says ${entry.status}, file says ${layout.geometryStatus}`);
   }

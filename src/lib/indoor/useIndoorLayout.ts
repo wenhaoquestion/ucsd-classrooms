@@ -21,6 +21,8 @@ type Loaded =
  * Loads the 3D layout for `building` on demand: a detailed layout if there is
  * one, otherwise an exterior shell from the campus map. Shells assign floors
  * from `roomKeys`. Results that arrive after the building changes are ignored.
+ * Disabling pauses new requests but retains a loaded layout for panel exit
+ * animations and subsequent reopening.
  */
 export function useIndoorLayout(
   building: string,
@@ -28,14 +30,16 @@ export function useIndoorLayout(
   enabled: boolean,
   roomKeys: readonly string[]
 ): IndoorLayoutState {
-  const available = enabled && hasIndoorLayout(building);
+  const available = hasIndoorLayout(building);
   const [state, setState] = useState<{ building: string; loaded: Loaded }>({
     building,
     loaded: { type: "loading" },
   });
+  const alreadyLoaded = state.building === building &&
+    (state.loaded.type === "detailed" || state.loaded.type === "shell");
 
   useEffect(() => {
-    if (!available) {
+    if (!enabled || !available || alreadyLoaded) {
       return;
     }
     let current = true;
@@ -67,7 +71,7 @@ export function useIndoorLayout(
     return () => {
       current = false;
     };
-  }, [building, available]);
+  }, [building, available, enabled, alreadyLoaded]);
 
   // Same room set, same shell (and scene)
   const roomSet = [...roomKeys].sort().join("\n");
@@ -87,7 +91,7 @@ export function useIndoorLayout(
     return layout ? indexIndoorBuilding(layout) : null;
   }, [campus, building, name, roomSet]);
 
-  if (!available) {
+  if (!available || (!enabled && !alreadyLoaded)) {
     return { type: "none" };
   }
   // Never return another building's stale result

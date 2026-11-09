@@ -7,6 +7,7 @@ import { CAMPUS_ORIGIN, CampusData, lonLatToCampus } from "../src/lib/indoor/cam
 import {
   pixelToLocal,
   pointInPolygon,
+  segmentsIntersect,
   selfIntersections,
 } from "../src/lib/indoor/geometry";
 import { INDOOR_MANIFEST, SOURCE_LAYOUTS } from "../src/lib/indoor/manifest";
@@ -112,6 +113,14 @@ const errors = (data: unknown) =>
   validateIndoorBuilding(data).issues.filter((issue) => issue.level === "error");
 
 describe("validateIndoorBuilding", () => {
+  it("keeps separated near-collinear CAD segments disjoint while detecting crossings", () => {
+    assert.equal(segmentsIntersect(
+      [31.26229961232056, -33.30948852447369], [31.262303771729876, -32.055896032561606],
+      [31.262493391838888, 25.09316672824704], [31.262497551247748, 26.346759072677685]
+    ), false);
+    assert.equal(segmentsIntersect([0, 0], [2, 2], [0, 2], [2, 0]), true);
+    assert.equal(segmentsIntersect([0, 0], [2, 0], [2, 0], [4, 0]), true);
+  });
   it("accepts a well-formed layout", () => {
     const result = validateIndoorBuilding(building([room("A")]), "TEST");
     assert.equal(result.ok, true, JSON.stringify(result.issues));

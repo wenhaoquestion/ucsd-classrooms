@@ -93,10 +93,19 @@ export type IndoorSource = {
   /** Stable ID referenced by `SourceRef.source`, e.g. `"CSE-S1"`. */
   id: string;
   title: string;
-  /** Public URL of the document or image. */
+  /** Source URL; authenticated viewers may require sign-in. */
   url?: string;
-  /** Repository-relative path, if a copy is kept locally. */
+  /** Local copy path. Absolute paths are allowed only in local preview data. */
   localFile?: string;
+  /** Authenticated sources and derived layouts must stay in local preview. */
+  access?: "public" | "authenticated";
+  /** Exact authenticated export identity, retained for reproducible conversions. */
+  tririga?: {
+    buildingRecordId: string;
+    floorRecordId: string;
+    drawingId: string;
+    svgSha256: string;
+  };
   publisher?: string;
   /** Exact building code (as used by the schedule data). */
   building: string;
