@@ -10,6 +10,8 @@ Explore UC San Diego classrooms, check scheduled availability, and browse campus
 
 *York Hall (YORK): explore floors and view classroom schedules for a selected date and time.*
 
+**[Browse SVG floor plans](https://wenhaoquestion.github.io/ucsd-classrooms/indoor/plans/)** — 85 building layouts, with individual floor drawings.
+
 ## Features
 
 - **Campus map:** locate buildings by name or code and view building photos. Zoom with a pinch, a trackpad pinch, or (on desktop) the buttons; markers simplify as you zoom out.
@@ -53,11 +55,9 @@ npm run dev
 
 Open **http://localhost:8000/**. Building photos are hosted on Imgur, so use `localhost` if images do not load on `127.0.0.1`.
 
-Authenticated TRIRIGA exports can additionally populate a **local-only indoor
-preview**. See [the conversion workflow and limitations](docs/indoor-geometry.md#authenticated-tririga-local-preview).
-`npm run dev` uses the generated private index when present; `npm run build`
-always excludes it and keeps the published layouts. No authenticated source
-SVGs or derived private layouts are included in the production output.
+The website loads the latest 85 display layouts from `static/indoor/layouts/`
+on demand. Individual SVG floor drawings are available in `static/indoor/plans/`.
+Local acquisition data is excluded from production builds.
 
 ```sh
 # Create the production site in dist/

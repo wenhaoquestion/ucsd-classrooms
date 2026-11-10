@@ -10,7 +10,7 @@ import {
   segmentsIntersect,
   selfIntersections,
 } from "../src/lib/indoor/geometry";
-import { INDOOR_MANIFEST, SOURCE_LAYOUTS } from "../src/lib/indoor/manifest";
+import { SUPPLEMENTAL_LAYOUTS, SOURCE_LAYOUTS } from "../src/lib/indoor/manifest";
 import {
   computeCoverage,
   indexIndoorBuilding,
@@ -139,6 +139,15 @@ describe("validateIndoorBuilding", () => {
     assert.deepEqual(coverage.mapped.map(({ key }) => key), ["101"]);
     assert.deepEqual(coverage.unplaced.map(({ key }) => key), ["201"]);
     assert.deepEqual(coverage.scheduleOnly, []);
+  });
+
+  it("keeps display-only floor listings accessible without acquisition metadata", () => {
+    const data = buildingWithListedFloor();
+    data.geometryStatus = "facilities-plan";
+    data.displayOnly = true;
+    data.floors[1].sources = [];
+    assert.equal(validateIndoorBuilding(data).ok, true);
+    assert.equal(indexIndoorBuilding(data).unplacedByKey.get("201")?.floor.id, "L2");
   });
 
   it("requires evidence and actual listings for a floor without an outline", () => {
@@ -457,7 +466,7 @@ describe("EBU3B source-traced layout", () => {
 describe("BRF2 geometry and documentary floor listings", () => {
   it("loads the real fourth-floor plan alongside sourced first- and fifth-floor listings", () => {
     const data = JSON.parse(
-      readFileSync(`static/${INDOOR_MANIFEST.BRF2.file}`, "utf8")
+      readFileSync(`static/${SUPPLEMENTAL_LAYOUTS.BRF2.file}`, "utf8")
     ) as IndoorBuilding;
     const result = validateIndoorBuilding(data, "BRF2");
     assert.equal(result.ok, true, JSON.stringify(result.issues));

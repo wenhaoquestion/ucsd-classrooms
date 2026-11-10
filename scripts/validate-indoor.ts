@@ -34,7 +34,7 @@ if (includeLocal) {
 
 const files = new Set(
   [
-    "static/indoor", "static/indoor/facilities", "static/indoor/schematic",
+    "static/indoor", "static/indoor/facilities", "static/indoor/schematic", "static/indoor/layouts",
     ...(includeLocal ? ["static/indoor/tririga-local"] : []),
   ]
     .filter((dir) => existsSync(dir))
@@ -50,6 +50,7 @@ for (const [code, entry] of [
   ...Object.entries(FACILITIES_LAYOUTS),
   ...Object.entries(SUPPLEMENTAL_LAYOUTS),
   ...Object.entries(localLayouts),
+  ...Object.entries(readLocalIndoorManifest(process.cwd(), { directory: "layouts" })),
 ]) {
   if (!knownBuildings.has(code)) {
     fail(`${code}: not a building code in buildings.json`);

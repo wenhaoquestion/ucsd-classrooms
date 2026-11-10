@@ -294,7 +294,7 @@ export function validateIndoorBuilding(
         );
       }
       const listingOnly = Array.isArray(floor.outline) && floor.outline.length === 0;
-      checkRefs(`${path}.sources`, floor.sources, sourcesRequired || listingOnly);
+      checkRefs(`${path}.sources`, floor.sources, sourcesRequired || (listingOnly && !building.displayOnly));
       checkConfidence(`${path}.outlineConfidence`, floor.outlineConfidence);
       let tolerance: number | null = null;
       if (!Array.isArray(floor.outline)) {

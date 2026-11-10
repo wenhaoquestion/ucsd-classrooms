@@ -1,5 +1,6 @@
 import campusCodes from "./campusCodes.json";
 import facilitiesIndex from "../../../static/indoor/facilities/index.json";
+import displayIndex from "../../../static/indoor/layouts/index.json";
 import { GeometryStatus } from "./schema";
 
 export type IndoorManifestEntry = {
@@ -8,11 +9,16 @@ export type IndoorManifestEntry = {
   status: GeometryStatus;
 };
 
-// Replaced by the dev build with its local index. Production and standalone
-// validation/test bundles default to no authenticated layouts.
+// Optional test/preview overrides. Published layouts are always available below.
 declare const LOCAL_INDOOR_MANIFEST: Record<string, IndoorManifestEntry>;
 export const LOCAL_PREVIEW_LAYOUTS: Record<string, IndoorManifestEntry> =
   typeof LOCAL_INDOOR_MANIFEST === "undefined" ? {} : LOCAL_INDOOR_MANIFEST;
+
+export const DISPLAY_LAYOUTS: Record<string, IndoorManifestEntry> = Object.fromEntries(
+  displayIndex.buildings.map((code) => [code, {
+    file: `indoor/layouts/${code}.json`, status: "facilities-plan",
+  }])
+);
 
 /**
  * Buildings with indoor layouts. Kept in the main bundle (it's tiny) so the UI
@@ -74,6 +80,7 @@ export const INDOOR_MANIFEST: Record<string, IndoorManifestEntry> = {
   ...SOURCE_LAYOUTS,
   ...FACILITIES_LAYOUTS,
   ...SUPPLEMENTAL_LAYOUTS,
+  ...DISPLAY_LAYOUTS,
   ...LOCAL_PREVIEW_LAYOUTS,
 };
 

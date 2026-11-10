@@ -59,13 +59,13 @@ function layout(code: string): IndoorBuilding {
 }
 
 describe("authenticated local preview isolation", () => {
-  it("excludes both private directories and generated bundles from production copies", () => {
+  it("excludes unpublished drafts but includes the approved TRIRIGA collection", () => {
     const root = process.cwd();
     for (const path of [
-      "indoor/tririga-local", "indoor/tririga-local/TASB.json", "indoor/local/private.svg",
+      "indoor/local/private.svg", "indoor/tririga-local", "indoor/tririga-local/TASB.json",
       "index.js", "index.css.map", "chunks",
     ]) assert.equal(isPublicStaticFile(join(root, "static", path), root), false, path);
-    for (const path of ["indoor", "indoor/facilities/YORK.json", "indoor/GEISEL.json", "index.html"]) {
+    for (const path of ["indoor/layouts", "indoor/layouts/TASB.json", "indoor", "indoor/facilities/YORK.json", "indoor/GEISEL.json", "index.html"]) {
       assert.equal(isPublicStaticFile(join(root, "static", path), root), true, path);
     }
   });
@@ -94,7 +94,10 @@ describe("authenticated local preview isolation", () => {
 
   it("keeps the public manifest unchanged when no preview entries are compiled", async () => {
     const runtime = await previewModule({});
-    assert.equal(runtime.INDOOR_MANIFEST.YORK.file, "indoor/YORK-combined.json");
+    assert.equal(runtime.INDOOR_MANIFEST.YORK.file, "indoor/layouts/YORK.json");
+    assert.equal(runtime.INDOOR_MANIFEST.BSB.file, "indoor/layouts/BSB.json");
+    assert.equal(runtime.INDOOR_MANIFEST.CSC.file, "indoor/layouts/CSC.json");
+    assert.equal(Object.values(runtime.INDOOR_MANIFEST).filter((entry) => entry.file.startsWith("indoor/layouts/")).length, 85);
     assert.equal(runtime.INDOOR_MANIFEST.GEISEL.file, "indoor/GEISEL.json");
     assert.equal(runtime.hasIndoorLayout("LOCALTEST"), false);
     assert.equal(await runtime.loadIndoorLayout("LOCALTEST"), null);

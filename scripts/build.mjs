@@ -19,7 +19,7 @@ import { createServer, request as httpRequest } from "node:http";
 import { join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { handleLibcalRequest } from "../worker/libcal.js";
-import { isPublicStaticFile, readLocalIndoorManifest } from "./indoor-preview.mjs";
+import { isPublicStaticFile } from "./indoor-preview.mjs";
 
 // Paths below are relative to the repository root, wherever this is run from.
 // esbuild's service process keeps the cwd it was spawned with, so it also needs
@@ -42,8 +42,8 @@ const options = {
   outdir: serve ? "static" : "dist",
   metafile: !serve,
   define: {
-    // No authenticated index or paths are read into a production bundle.
-    LOCAL_INDOOR_MANIFEST: JSON.stringify(serve ? readLocalIndoorManifest(root) : {}),
+    // Only geometry-only display layouts are included in the website.
+    LOCAL_INDOOR_MANIFEST: "{}",
     LIBCAL_PROXY_URL: JSON.stringify(
       process.env.LIBCAL_PROXY_URL ?? (serve ? "libcal/" : "")
     ),

@@ -1,9 +1,12 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { describe, it } from "node:test";
-import { INDOOR_MANIFEST, SUPPLEMENTAL_LAYOUTS } from "../src/lib/indoor/manifest";
+import { SOURCE_LAYOUTS, FACILITIES_LAYOUTS, SUPPLEMENTAL_LAYOUTS } from "../src/lib/indoor/manifest";
 import { computeCoverage, indexIndoorBuilding } from "../src/lib/indoor/roomMapping";
 import { IndoorBuilding } from "../src/lib/indoor/schema";
+
+// These fixtures verify the retained historical supplement files.
+const BASELINE_MANIFEST = { ...SOURCE_LAYOUTS, ...FACILITIES_LAYOUTS, ...SUPPLEMENTAL_LAYOUTS };
 
 const read = (path: string): IndoorBuilding => JSON.parse(readFileSync(path, "utf8"));
 
@@ -28,7 +31,7 @@ describe("reviewed indoor supplements", () => {
   });
 
   it("maps BRF2 4103 to the public fourth-floor polygon without fabricating other floors", () => {
-    const layout = read(`static/${INDOOR_MANIFEST.BRF2.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.BRF2.file}`);
     const index = indexIndoorBuilding(layout);
     assert.equal(index.roomsByScheduleKey.get("4103")?.id, "L4-FIS-73656");
     assert.deepEqual(layout.floors.map(f => f.id), ["L1", "L4", "L5"]);
@@ -47,7 +50,7 @@ describe("reviewed indoor supplements", () => {
   });
 
   it("maps CALIT 1511 only to the reviewed auditorium in its independent coordinate frame", () => {
-    const layout = read(`static/${INDOOR_MANIFEST.CALIT.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.CALIT.file}`);
     const index = indexIndoorBuilding(layout);
     const room = index.roomsByScheduleKey.get("1511")!;
     assert.equal(room.floor, "L1");
@@ -61,7 +64,7 @@ describe("reviewed indoor supplements", () => {
   });
 
   it("locates SDSC E129 on East E1 without confusing it with basement EB129", () => {
-    const layout = read(`static/${INDOOR_MANIFEST.SDSC.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.SDSC.file}`);
     const index = indexIndoorBuilding(layout);
     const room = index.roomsByScheduleKey.get("E129")!;
     assert.equal(room.floor, "EAST-L1");
@@ -80,7 +83,7 @@ describe("reviewed indoor supplements", () => {
 
   it("maps Malk prefix aliases to the reviewed basement and preserves its upper floors", () => {
     const base = read("static/indoor/facilities/MALK.json");
-    const layout = read(`static/${INDOOR_MANIFEST.MALK.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.MALK.file}`);
     const index = indexIndoorBuilding(layout);
     for (const key of ["B90", "B91", "B92"]) {
       assert.equal(index.roomsByScheduleKey.get(key)?.floor, "B");
@@ -93,7 +96,7 @@ describe("reviewed indoor supplements", () => {
   });
 
   it("keeps Coalition split classrooms as single scheduled rooms and leaves level two unresolved", () => {
-    const layout = read(`static/${INDOOR_MANIFEST.COA.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.COA.file}`);
     const index = indexIndoorBuilding(layout);
     assert.equal(index.roomsByScheduleKey.size, 14);
     assert.equal(index.unplacedByKey.size, 6);
@@ -105,7 +108,7 @@ describe("reviewed indoor supplements", () => {
 
   it("keeps Mandeville's two basement levels distinct and retains all original rooms", () => {
     const base = read("static/indoor/facilities/MANDE.json");
-    const layout = read(`static/${INDOOR_MANIFEST.MANDE.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.MANDE.file}`);
     const index = indexIndoorBuilding(layout);
     assert.equal(index.roomsByScheduleKey.get("B104")?.floor, "B1");
     assert.equal(index.roomsByScheduleKey.get("B202")?.floor, "B2");
@@ -115,7 +118,7 @@ describe("reviewed indoor supplements", () => {
   });
 
   it("adds York 3010 without guessing the 4124A/B schedule crosswalk", () => {
-    const layout = read(`static/${INDOOR_MANIFEST.YORK.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.YORK.file}`);
     const index = indexIndoorBuilding(layout);
     assert.equal(layout.geo, undefined);
     assert.equal(layout.coordinateSystem.northDeg, null);
@@ -126,7 +129,7 @@ describe("reviewed indoor supplements", () => {
 
   it("repairs HSS lower-floor scale and separates the two 2333 rooms without changing upper floors", () => {
     const base = read("static/indoor/facilities/HSS.json");
-    const layout = read(`static/${INDOOR_MANIFEST.HSS.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.HSS.file}`);
     const index = indexIndoorBuilding(layout);
     assert.equal(layout.coordinateSystem.northDeg, null);
     const a = index.roomsByScheduleKey.get("2333A")!;
@@ -149,7 +152,7 @@ describe("reviewed indoor supplements", () => {
 
   it("uses the actual Asante meeting venue instead of the apartment service room", () => {
     const base = read("static/indoor/facilities/ASANT.json");
-    const layout = read(`static/${INDOOR_MANIFEST.ASANT.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.ASANT.file}`);
     const index = indexIndoorBuilding(layout);
     assert.equal(layout.coordinateSystem.units, "relative");
     assert.equal(layout.geo, undefined);
@@ -170,7 +173,7 @@ describe("reviewed indoor supplements", () => {
 
   it("adds the six Mayer rooms while retaining original rooms and campus registration", () => {
     const base = read("static/indoor/facilities/MAYER.json");
-    const layout = read(`static/${INDOOR_MANIFEST.MAYER.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.MAYER.file}`);
     const index = indexIndoorBuilding(layout);
     assert.deepEqual(layout.geo, base.geo);
     for (const [floor, page, keys] of [
@@ -191,7 +194,7 @@ describe("reviewed indoor supplements", () => {
   });
 
   it("shows the Galbraith auditorium once and records that it spans two levels", () => {
-    const layout = read(`static/${INDOOR_MANIFEST.GH.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.GH.file}`);
     const index = indexIndoorBuilding(layout);
     assert.equal(layout.geo, undefined);
     assert.equal(index.roomsByScheduleKey.size, 3);
@@ -207,7 +210,7 @@ describe("reviewed indoor supplements", () => {
   });
 
   it("keeps MCC classrooms out of the unrelated Cancer Center geometry", () => {
-    const layout = read(`static/${INDOOR_MANIFEST.MCC.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.MCC.file}`);
     const index = indexIndoorBuilding(layout);
     assert.equal(layout.geometryStatus, "facilities-plan");
     assert.equal(layout.name, "Media Center and Communication Building");
@@ -223,10 +226,10 @@ describe("reviewed indoor supplements", () => {
   });
 
   it("uses named auditorium crosswalks and keeps the Price Theater on its documented floor", () => {
-    const led = indexIndoorBuilding(read(`static/${INDOOR_MANIFEST.LEDDN.file}`));
-    const jeannieLayout = read(`static/${INDOOR_MANIFEST.JEANN.file}`);
+    const led = indexIndoorBuilding(read(`static/${BASELINE_MANIFEST.LEDDN.file}`));
+    const jeannieLayout = read(`static/${BASELINE_MANIFEST.JEANN.file}`);
     const jeannie = indexIndoorBuilding(jeannieLayout);
-    const price = indexIndoorBuilding(read(`static/${INDOOR_MANIFEST.PRICE.file}`));
+    const price = indexIndoorBuilding(read(`static/${BASELINE_MANIFEST.PRICE.file}`));
     assert.equal(led.roomsByScheduleKey.get("AUD")?.id, "L2-FIS-2024-2250");
     assert.equal(led.roomsById.size, 2);
     assert.equal(jeannie.roomsByScheduleKey.get("AUD")?.id, "L2-GA0205-SEATING-2021");
@@ -240,7 +243,7 @@ describe("reviewed indoor supplements", () => {
       ["UNEXG", [["123", "2207"], ["124", "2208"], ["125", "2209"]]],
       ["UNEXN", [["126", "25781"], ["127", "25782"]]],
     ] as const) {
-      const layout = read(`static/${INDOOR_MANIFEST[code].file}`);
+      const layout = read(`static/${BASELINE_MANIFEST[code].file}`);
       const index = indexIndoorBuilding(layout);
       assert.equal(layout.geo, undefined);
       assert.equal(layout.coordinateSystem.northDeg, null);
@@ -253,7 +256,7 @@ describe("reviewed indoor supplements", () => {
 
   it("adds SSRB labels from the third-floor source without guessing the partitioned room 310", () => {
     const base = read("static/indoor/facilities/SSRB.json");
-    const layout = read(`static/${INDOOR_MANIFEST.SSRB.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.SSRB.file}`);
     const index = indexIndoorBuilding(layout);
     for (const key of ["339", "340", "343A"]) {
       const room = index.roomsByScheduleKey.get(key)!;
@@ -270,7 +273,7 @@ describe("reviewed indoor supplements", () => {
 
   it("loads recovered CSE classrooms while preserving Facilities upper floors", () => {
     const base = read("static/indoor/facilities/EBU3B.json");
-    const layout = read(`static/${INDOOR_MANIFEST.EBU3B.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.EBU3B.file}`);
     const index = indexIndoorBuilding(layout);
     const recovered = ["B240", "B250", "B260", "B270", "1202"];
     const unresolved = ["1113", "1117", "1124"];
@@ -291,13 +294,13 @@ describe("reviewed indoor supplements", () => {
   });
 
   it("maps VAF 218 to its existing polygon without also leaving a floor-only entry", () => {
-    const index = indexIndoorBuilding(read(`static/${INDOOR_MANIFEST.VAF.file}`));
+    const index = indexIndoorBuilding(read(`static/${BASELINE_MANIFEST.VAF.file}`));
     assert.equal(index.roomsByScheduleKey.get("218")?.id, "L1-521-2261");
     assert.equal(index.unplacedByKey.has("218"), false);
   });
 
   it("maps all nine CSB classrooms to reviewed PDF pages without inventing a campus fit", () => {
-    const layout = read(`static/${INDOOR_MANIFEST.CSB.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.CSB.file}`);
     const index = indexIndoorBuilding(layout);
     assert.equal(layout.coordinateSystem.units, "relative");
     assert.equal(layout.geo, undefined);
@@ -324,7 +327,7 @@ describe("reviewed indoor supplements", () => {
   });
 
   it("maps thirteen SME classrooms to the correct source floors while retaining relative units", () => {
-    const layout = read(`static/${INDOOR_MANIFEST.SME.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.SME.file}`);
     const index = indexIndoorBuilding(layout);
     assert.equal(layout.coordinateSystem.units, "relative");
     assert.equal(layout.geo, undefined);
@@ -353,7 +356,7 @@ describe("reviewed indoor supplements", () => {
   ] as const) {
     it(`recovers ${building} ${key} while preserving existing rooms and other floors`, () => {
       const base = read(`static/indoor/facilities/${building}.json`);
-      const layout = read(`static/${INDOOR_MANIFEST[building].file}`);
+      const layout = read(`static/${BASELINE_MANIFEST[building].file}`);
       const index = indexIndoorBuilding(layout);
       const room = index.roomsByScheduleKey.get(key)!;
       assert.equal(room.floor, targetFloor);
@@ -371,7 +374,7 @@ describe("reviewed indoor supplements", () => {
 
   it("maps only labeled FAH classrooms and retains all four floors", () => {
     const base = read("static/indoor/facilities/FAH.json");
-    const layout = read(`static/${INDOOR_MANIFEST.FAH.file}`);
+    const layout = read(`static/${BASELINE_MANIFEST.FAH.file}`);
     const index = indexIndoorBuilding(layout);
     assert.deepEqual(layout.floors.map((f) => f.id), base.floors.map((f) => f.id));
     assert.equal(layout.coordinateSystem.units, "relative");
@@ -388,7 +391,7 @@ describe("reviewed indoor supplements", () => {
   });
 
   it("resolves reviewed Catalyst basement prefixes and keeps unsupported candidates unmapped", () => {
-    const index = indexIndoorBuilding(read(`static/${INDOOR_MANIFEST.CTL.file}`));
+    const index = indexIndoorBuilding(read(`static/${BASELINE_MANIFEST.CTL.file}`));
     for (const key of ["B108", "B112"]) {
       const room = index.roomsByScheduleKey.get(key)!;
       assert.equal(room.floor, "B");
@@ -404,7 +407,7 @@ describe("reviewed indoor supplements", () => {
       ["VAUGN", "100", "L1"],
       ["WFH", "3N129", "L3"], ["WFH", "3W113", "L3"],
     ]) {
-      const index = indexIndoorBuilding(read(`static/${INDOOR_MANIFEST[code].file}`));
+      const index = indexIndoorBuilding(read(`static/${BASELINE_MANIFEST[code].file}`));
       assert.equal(index.roomsByScheduleKey.has(key), false);
       assert.equal(index.unplacedByKey.get(key)?.floor.id, floor);
       assert.equal(index.unplacedByKey.get(key)?.room.basis, "floor-listing");

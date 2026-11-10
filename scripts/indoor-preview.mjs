@@ -2,8 +2,8 @@ import { existsSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
 
 /** Read only the small local index; detailed layouts are still fetched on demand. */
-export function readLocalIndoorManifest(root, { required = false } = {}) {
-  const path = join(root, "static/indoor/tririga-local/index.json");
+export function readLocalIndoorManifest(root, { required = false, directory = "tririga-local" } = {}) {
+  const path = join(root, "static", "indoor", directory, "index.json");
   if (!existsSync(path)) {
     if (required) throw new Error(`Missing local indoor index: ${path}`);
     return {};
@@ -23,7 +23,7 @@ export function readLocalIndoorManifest(root, { required = false } = {}) {
     if (Object.hasOwn(entries, code)) {
       throw new Error(`Duplicate local indoor building code: ${code}`);
     }
-    const file = `indoor/tririga-local/${code}.json`;
+    const file = `indoor/${directory}/${code}.json`;
     if (!existsSync(join(root, "static", file))) {
       throw new Error(`Local indoor index points to missing file: ${file}`);
     }
@@ -32,7 +32,7 @@ export function readLocalIndoorManifest(root, { required = false } = {}) {
   return entries;
 }
 
-/** Authenticated drafts are local-only even when a production build runs later. */
+/** Only display assets are public; acquisition data stays excluded. */
 export function isPublicStaticFile(source, root) {
   const path = relative(join(root, "static"), source).replaceAll("\\", "/");
   return !/^indoor\/(?:local|tririga-local)(?:\/|$)/.test(path) &&

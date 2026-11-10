@@ -315,6 +315,8 @@ export type GeoPlacement = {
 };
 
 export type IndoorBuilding = {
+  /** Geometry-only distribution without acquisition metadata. */
+  displayOnly?: true;
   schemaVersion: typeof INDOOR_SCHEMA_VERSION;
   /** Exact building code from `buildings.json`. */
   building: string;
