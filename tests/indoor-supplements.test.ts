@@ -10,6 +10,27 @@ const BASELINE_MANIFEST = { ...SOURCE_LAYOUTS, ...FACILITIES_LAYOUTS, ...SUPPLEM
 
 const read = (path: string): IndoorBuilding => JSON.parse(readFileSync(path, "utf8"));
 
+describe("published Mayer Hall layout", () => {
+  it("shows the main hall on all five floors instead of the Addition", () => {
+    const data = read("static/indoor/layouts/MAYER.json");
+    assert.equal(data.floors.length, 5);
+    for (const [floor, label] of [[0, "1102"], [1, "2110"], [2, "3102"], [3, "4101"], [4, "5102"]] as const) {
+      assert.ok(data.floors[floor].rooms.some((room) => room.label === label));
+    }
+    assert.ok(!data.floors[3].rooms.some((room) => room.label === "4512"));
+    const addition = read("static/indoor/layouts/MYR-A.json");
+    assert.ok(addition.floors[3].rooms.some((room) => room.label === "4512"));
+  });
+
+  it("keeps all six main-hall classroom keys on their correct floors", () => {
+    const index = indexIndoorBuilding(read("static/indoor/layouts/MAYER.json"));
+    for (const [key, floor] of [["2110", "floor-2"], ["2130", "floor-2"], ["2306", "floor-2"], ["2326", "floor-2"], ["4322", "floor-4"], ["5301", "floor-5"]]) {
+      assert.equal(index.roomsByScheduleKey.get(key)?.floor, floor, key);
+    }
+    assert.equal(index.roomsByScheduleKey.size, 6);
+  });
+});
+
 describe("reviewed indoor supplements", () => {
   it("preserves every recorded schedule key exactly once in each supplemental layout", () => {
     const keys = (layout: IndoorBuilding) => [
