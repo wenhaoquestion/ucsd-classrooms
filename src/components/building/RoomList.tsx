@@ -49,8 +49,7 @@ export function RoomList({
     return (
       <div className="empty">
         <p>
-          This building isn't used for any classes this week, as far as WebReg
-          is concerned.
+          No classes are listed for this building this week.
         </p>
       </div>
     );

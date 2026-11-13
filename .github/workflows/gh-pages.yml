@@ -5,6 +5,7 @@ on:
     branches:
       - main
   workflow_dispatch:
+  workflow_call:
 
 permissions:
   contents: read
@@ -21,6 +22,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+      - name: Checkout classroom schedules
+        uses: actions/checkout@v5
+        with:
+          ref: schedule-data
+          path: .test-build/schedule-data
+          sparse-checkout: |
+            /classrooms-*.txt
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+      - name: Stage public schedule files
+        run: |
+          mkdir -p static/schedules
+          cp .test-build/schedule-data/classrooms-*.txt static/schedules/
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -59,5 +73,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
-      - name: Verify published application and Mayer Hall layout
+      - name: Verify published application, layout and schedules
+        env:
+          VERIFY_SCHEDULES: "1"
         run: node scripts/verify-deployment.mjs "${{ steps.deployment.outputs.page_url }}"

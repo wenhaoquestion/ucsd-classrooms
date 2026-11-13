@@ -113,7 +113,7 @@ The frontend uses **React 19, TypeScript, Three.js, and esbuild**. The 3D scene 
 
 ## Data and coverage
 
-- **Schedules:** fetched from [SheepTester's public classroom data](https://sheeptester.github.io/uxdy/data/) by academic term. This repository does not run the schedule scraper. The interface displays data refresh information; availability reflects listed classes, not live occupancy or room reservations.
+- **Schedules:** served by this site's GitHub Pages deployment from the `schedule-data` branch. The [refresh workflow](docs/schedules.md) can import public snapshots or scrape historical terms from UCSD's legacy Schedule of Classes. Availability reflects listed classes.
 - **Geisel study rooms:** names, capacities and LibCal IDs from the [library's booking pages](https://ucsd.libcal.com/spaces?lid=11273); availability is fetched live and refreshed every minute. Floor shapes and heights come from the campus map's Geisel model; room positions come from the [library's floor maps](https://library.ucsd.edu/visit/library-maps/), which have no north arrow or scale (see the layout's source notes).
 - **Campus exteriors:** public campus-map data supplies 585 footprint parts and matches 93 registrar building codes. Exterior-only views estimate floor counts and group classrooms by their room numbers; they do not invent room positions. TASB currently has no matching footprint.
 - **Published indoor coverage:** 77 Facilities layouts are included in the repository and production build, with 9,697 room records. Data loads only when a building opens. Facilities layouts take priority over the original EBU3B trace, matching the completed preview; the original 300-room CSE trace remains available in the source data.

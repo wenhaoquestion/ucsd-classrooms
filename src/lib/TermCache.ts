@@ -35,9 +35,8 @@ export class TermCache {
     term: string,
     summer: boolean
   ): Promise<TermCourses | "unavailable"> {
-    const response = await fetch(
-      `https://sheeptester.github.io/uxdy/data/classrooms-${term}.txt`
-    );
+    const file = `classrooms-${term}.txt`;
+    const response = await fetch(`./schedules/${file}`);
     if (response.ok) {
       try {
         return coursesFromFile(await response.text(), summer);

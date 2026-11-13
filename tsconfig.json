@@ -8,5 +8,6 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "bundler",
     "resolveJsonModule": true
-  }
+  },
+  "exclude": ["node_modules", "tools/schedules"]
 }

@@ -1,0 +1,112 @@
+name: Refresh UCSD schedules
+run-name: Refresh UCSD schedules (${{ inputs.term }} from ${{ inputs.source }})
+
+on:
+  workflow_dispatch:
+    inputs:
+      term:
+        description: "Term code, such as FA26 or SP26"
+        required: true
+        type: string
+      source:
+        description: "Use the public archive for TSS terms, or scrape the legacy UCSD site for older terms"
+        default: archive
+        type: choice
+        options:
+          - archive
+          - legacy
+
+permissions:
+  contents: read
+
+concurrency:
+  group: refresh-schedule-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    env:
+      TERM_CODE: ${{ inputs.term }}
+      SOURCE: ${{ inputs.source }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Check the term code
+        run: |
+          if [[ ! "$TERM_CODE" =~ ^(FA|WI|SP|S[123]|SU)[0-9]{2}$ ]]; then
+            echo "::error::Enter a term code such as FA26, WI27, or S126."
+            exit 1
+          fi
+      - name: Set up Deno for the legacy scraper
+        if: inputs.source == 'legacy'
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v1.46.3
+      - name: Scrape the public UCSD Schedule of Classes
+        if: inputs.source == 'legacy'
+        working-directory: tools/schedules
+        run: deno run --check --allow-net=act.ucsd.edu --allow-write=output refresh.ts "$TERM_CODE"
+      - name: Download both versions of the archived schedule
+        if: inputs.source == 'archive'
+        working-directory: tools/schedules
+        run: |
+          mkdir -p output
+          for suffix in '' -full; do
+            file="classrooms-${TERM_CODE}${suffix}.txt"
+            curl --fail --silent --show-error --location --retry 2 --max-time 60 \
+              "https://sheeptester.github.io/uxdy/data/$file" --output "output/$file"
+          done
+      - name: Install dependencies
+        run: npm ci
+      - name: Validate both files with the website parser
+        run: |
+          npx --no-install esbuild scripts/validate-schedules.ts --bundle --platform=node --format=esm --outfile=.test-build/validate-schedules.mjs
+          node .test-build/validate-schedules.mjs tools/schedules/output "$TERM_CODE"
+      - name: Checkout the data branch
+        uses: actions/checkout@v5
+        with:
+          ref: schedule-data
+          path: .test-build/schedule-data
+      - name: Publish both files together
+        working-directory: .test-build/schedule-data
+        run: |
+          file="classrooms-${TERM_CODE}.txt"
+          if [[ -f "$file" ]]; then
+            read -r current < "$file"
+            read -r incoming < "../../tools/schedules/output/$file"
+            if (( ${incoming:2:13} < ${current:2:13} )); then
+              echo "::error::The incoming $TERM_CODE snapshot predates the published one."
+              exit 1
+            fi
+          fi
+          for suffix in '' -full; do
+            file="classrooms-${TERM_CODE}${suffix}.txt"
+            cp "../../tools/schedules/output/$file" "$file"
+            git add -- "$file"
+          done
+          if git diff --cached --quiet; then
+            echo "The $TERM_CODE files are already current."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Refresh $TERM_CODE schedules ($SOURCE)"
+          git push origin HEAD:refs/heads/schedule-data
+
+  deploy:
+    needs: refresh
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/gh-pages.yml

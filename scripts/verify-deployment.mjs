@@ -22,12 +22,16 @@ do {
   try {
     const deployment = JSON.parse((await read("deployment.json")).toString("utf8"));
     if (deployment.revision !== revision) throw new Error("The live site still serves a different revision.");
-    for (const file of ["index.js", "indoor/layouts/MAYER.json"]) {
+    const files = ["index.js", "indoor/layouts/MAYER.json"];
+    if (process.env.VERIFY_SCHEDULES === "1") {
+      files.push("schedules/classrooms-FA26.txt", "schedules/classrooms-FA26-full.txt");
+    }
+    for (const file of files) {
       const content = await read(file);
       const actual = createHash("sha256").update(content).digest("hex");
       if (actual !== deployment.assets?.[file]) throw new Error(`${file}: published bytes do not match this release.`);
     }
-    console.log(`Verified published revision ${revision}: application and Mayer Hall layout match.`);
+    console.log(`Verified published revision ${revision}: ${files.join(", ")}.`);
     process.exit(0);
   } catch (error) {
     failure = error;

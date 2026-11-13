@@ -18,3 +18,5 @@ __pycache__/
 /data/indoor/tririga/
 /local/
 /worker/.wrangler/
+/tools/schedules/output/
+/static/schedules/

@@ -40,7 +40,7 @@ export function RoomSchedule({
         <div className="empty">
           <p>
             {emptyMessage ??
-              "This room isn't used for any classes this week, as far as WebReg is concerned."}
+              "No classes are listed for this room this week."}
           </p>
         </div>
       </>
@@ -53,7 +53,7 @@ export function RoomSchedule({
       meetings.filter((meeting) =>
         doesMeetingHappen(
           meeting,
-          moment, // WebReg weeks start on Monday
+          moment, // Schedule weeks start on Monday
           moment.date.monday.add(day - 1),
           meeting.special
         )

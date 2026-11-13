@@ -8,10 +8,10 @@ export function InfoPanel({ className = "" }: InfoPanelProps) {
       <p className="instructions">
         Select a building to view its rooms.{" "}
         <a
-          href="https://github.com/SheepTester/uxdy/tree/main/webreg-scraping/classrooms"
+          href="https://github.com/wenhaoquestion/ucsd-classrooms/blob/main/docs/schedules.md"
           className="link"
         >
-          Github
+          Schedule data
         </a>
       </p>
     </div>

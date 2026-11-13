@@ -14,7 +14,7 @@
 // is opened.
 
 import * as esbuild from "esbuild";
-import { cpSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { createServer, request as httpRequest } from "node:http";
 import { join, relative } from "node:path";
@@ -97,10 +97,15 @@ if (serve) {
     filter: (source) => isPublicStaticFile(source, root),
   });
   const result = await esbuild.build({ ...options, minify: true });
-  // Verify both the deployed application and the repaired layout after release.
+  const verificationFiles = [
+    "index.js",
+    "indoor/layouts/MAYER.json",
+    ...["schedules/classrooms-FA26.txt", "schedules/classrooms-FA26-full.txt"]
+      .filter((file) => existsSync(join("dist", file))),
+  ];
   writeFileSync("dist/deployment.json", JSON.stringify({
     revision: process.env.GITHUB_SHA ?? null,
-    assets: Object.fromEntries(["index.js", "indoor/layouts/MAYER.json"].map((file) => [
+    assets: Object.fromEntries(verificationFiles.map((file) => [
       file, createHash("sha256").update(readFileSync(join("dist", file))).digest("hex"),
     ])),
   }) + "\n");
