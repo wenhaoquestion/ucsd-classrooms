@@ -228,7 +228,7 @@ input[type="checkbox"]:checked:hover {
   max-width: calc(100% - 2 * var(--gutter));
 }
 .campus-3d-buildings select {
-  max-width: min(240px, 62vw);
+  max-width: min(240px, 56vw);
   min-height: 36px;
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -241,7 +241,9 @@ input[type="checkbox"]:checked:hover {
 .campus-3d-overview {
   top: calc(var(--gutter) + 138px);
 }
-.campus-map-switch {
+.chip-group.campus-map-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   overflow: hidden;
 }
 .campus-map-switch .chip {
@@ -252,10 +254,18 @@ input[type="checkbox"]:checked:hover {
     padding-inline: 8px;
   }
   .campus-3d-buildings {
-    top: calc(var(--gutter) + 109px);
+    top: calc(var(--gutter) + 136px);
   }
   .campus-3d-overview {
-    top: calc(var(--gutter) + 153px);
+    top: calc(var(--gutter) + 180px);
+  }
+}
+@media (max-width: 350px) {
+  .campus-3d-buildings {
+    top: calc(var(--gutter) + 180px);
+  }
+  .campus-3d-overview {
+    top: calc(var(--gutter) + 224px);
   }
 }
 .notice {
