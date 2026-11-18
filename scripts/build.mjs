@@ -21,6 +21,7 @@ import { join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { handleLibcalRequest } from "../worker/libcal.js";
 import { isPublicStaticFile } from "./indoor-preview.mjs";
+import { localCampusDirectory, serveLocalCampus } from "./local-campus.mjs";
 
 // Paths below are relative to the repository root, wherever this is run from.
 // esbuild's service process keeps the cwd it was spawned with, so it also needs
@@ -29,6 +30,7 @@ const root = fileURLToPath(new URL("..", import.meta.url));
 process.chdir(root);
 
 const serve = process.argv.includes("--serve");
+const offlineCampus = serve ? localCampusDirectory(root) : null;
 const SITE = "https://wenhaoquestion.github.io/ucsd-classrooms/";
 
 /** @type {esbuild.BuildOptions} */
@@ -45,6 +47,7 @@ const options = {
   define: {
     // Only geometry-only display layouts are included in the website.
     LOCAL_INDOOR_MANIFEST: "{}",
+    LOCAL_CAMPUS_SURVEY: JSON.stringify(Boolean(offlineCampus)),
     LIBCAL_PROXY_URL: JSON.stringify(
       process.env.LIBCAL_PROXY_URL ?? (serve ? "libcal/" : "")
     ),
@@ -62,6 +65,7 @@ if (serve) {
   // A thin front server so /libcal/ can be answered without the Worker
   createServer(async (req, res) => {
     const url = new URL(req.url ?? "/", "http://localhost");
+    if (await serveLocalCampus(offlineCampus, url.pathname, req, res)) return;
     if (url.pathname.startsWith("/libcal/")) {
       const response = await handleLibcalRequest(
         new Request(url, { method: req.method }),

@@ -176,6 +176,88 @@ input[type="checkbox"]:checked:hover {
   position: relative;
   overflow: hidden;
 }
+.campus-2d {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+}
+.campus-2d[inert] {
+  visibility: hidden;
+}
+.campus-3d,
+.campus-3d-surface {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.campus-3d {
+  --chip: 36px;
+  background: var(--card-header);
+}
+.campus-3d-message {
+  position: absolute;
+  inset: 40% var(--gutter) auto;
+  width: fit-content;
+  max-width: calc(100% - 2 * var(--gutter));
+  margin: auto;
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  text-align: center;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--modal);
+  box-shadow: var(--modal-shadow);
+}
+.campus-3d-message p {
+  margin: 0;
+}
+.campus-3d-buildings,
+.campus-3d-overview {
+  position: absolute;
+  right: var(--gutter);
+  top: calc(var(--gutter) + 94px);
+}
+.campus-3d-buildings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+  max-width: calc(100% - 2 * var(--gutter));
+}
+.campus-3d-buildings select {
+  max-width: min(240px, 62vw);
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0 10px;
+  background: var(--modal);
+  color: inherit;
+  font: inherit;
+  box-shadow: var(--modal-shadow);
+}
+.campus-3d-overview {
+  top: calc(var(--gutter) + 138px);
+}
+.campus-map-switch {
+  overflow: hidden;
+}
+.campus-map-switch .chip {
+  border-radius: 0;
+}
+@media (max-width: 690px) {
+  .campus-map-switch .chip {
+    padding-inline: 8px;
+  }
+  .campus-3d-buildings {
+    top: calc(var(--gutter) + 109px);
+  }
+  .campus-3d-overview {
+    top: calc(var(--gutter) + 153px);
+  }
+}
 .notice {
   position: absolute;
   inset: 0;

@@ -66,6 +66,14 @@ npm run indoor:build -- EBU3B
 npm run campus:build -- footprints.json attributes.json
 ```
 
+### 校园地图视图
+
+在地图工具栏选择 **2D map** 或 **3D campus**。在 3D 视图选择建筑可以查看实景外观，点击 **Classrooms** 可以打开教室和课表。用 `?map=3d` 分享 3D 视图。GitHub Pages 上的实景模型由 UC San Diego 的公开图层按需加载。
+
+本地离线使用时，将已经准备好的 `UCSD-Offline-3D` 文件夹放在仓库旁边，或设置 `UCSD_OFFLINE_MAP_DIR` 指向该文件夹，再运行 `npm run dev`。请一起保存 `index.html`、`survey.json`、`survey/` 和 `imagery/`。本地服务器按需读取离线包，生产构建使用校方在线图层。
+
+[UC San Diego 校方公开实景](https://admin-enterprise-gis.ucsd.edu/portal/home/webscene/viewer.html?webscene=af8fa76860bb42deb91fe57cc600ead5)
+
 ## 部署到 GitHub Pages
 
 本项目是静态前端，无需应用服务器或 API 密钥。课程安排和楼宇照片从外部公共数据源加载。

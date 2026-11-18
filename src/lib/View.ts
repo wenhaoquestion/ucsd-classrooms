@@ -91,6 +91,9 @@ export function viewFromUrl(url: string): ViewWithTerm {
 
 export function viewToUrl(view: ViewWithTerm): URL {
   const url = new URL(window.location.pathname, window.location.href);
+  if (campusMapMode(window.location.href) === "3d") {
+    url.searchParams.set("map", "3d");
+  }
   if (view.searching) {
     url.hash = "search";
   }
@@ -115,6 +118,11 @@ export function viewToUrl(view: ViewWithTerm): URL {
     url.searchParams.append("professor", view.name);
   }
   return url;
+}
+
+export type CampusMapMode = "2d" | "3d";
+export function campusMapMode(url: string): CampusMapMode {
+  return new URL(url).searchParams.get("map") === "3d" ? "3d" : "2d";
 }
 
 export type ViewHandler = (view: ViewWithTerm) => void;
