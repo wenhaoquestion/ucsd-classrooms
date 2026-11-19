@@ -2,7 +2,6 @@ import { useMemo } from "react";
 import { TermBuildings } from "../../lib/coursesToClassrooms";
 import { useMoment } from "../../lib/moment-context";
 import { termName } from "../../lib/terms";
-import { CampusMapMode } from "../../lib/View";
 import { CloseIcon } from "../icons/CloseIcon";
 import { findFreeRooms } from "./FreeRoomsPanel";
 
@@ -27,8 +26,6 @@ export type MapChipsProps = {
   weekPlannerOpen: boolean;
   onToggleWeekPlanner: () => void;
   visible: boolean;
-  mapMode: CampusMapMode;
-  onMapModeChange: (mode: CampusMapMode) => void;
 };
 
 /** Quick actions under the search bar: the schedule time and free rooms. */
@@ -42,8 +39,6 @@ export function MapChips({
   weekPlannerOpen,
   onToggleWeekPlanner,
   visible,
-  mapMode,
-  onMapModeChange,
 }: MapChipsProps) {
   const moment = useMoment();
   const { date, time, type, currentTerm } = moment;
@@ -61,7 +56,7 @@ export function MapChips({
     <div
       className={`map-chips ${visible ? "" : "map-chips-hidden"}`}
       role="toolbar"
-      aria-label="Classroom and map controls"
+      aria-label="Schedule"
     >
       <div className={`chip-group ${type === "now" ? "" : "chip-group-custom"}`}>
         <button
@@ -132,12 +127,6 @@ export function MapChips({
           <span className="chip-short">This week</span>
         </span>
       </button>
-      <div className="chip-group campus-map-switch" role="group" aria-label="Campus map view">
-        <button type="button" className={`chip ${mapMode === "2d" ? "chip-on" : ""}`} aria-pressed={mapMode === "2d"}
-          onClick={() => onMapModeChange("2d")}>2D map</button>
-        <button type="button" className={`chip ${mapMode === "3d" ? "chip-on" : ""}`} aria-pressed={mapMode === "3d"}
-          onClick={() => onMapModeChange("3d")}>3D campus</button>
-      </div>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { Day } from "../src/lib/Day";
 import { Time } from "../src/lib/Time";
-import { campusMapMode, viewFromUrl, viewToUrl, ViewWithTerm } from "../src/lib/View";
+import { viewFromUrl, viewToUrl, ViewWithTerm } from "../src/lib/View";
 
 // viewToUrl builds on the current page URL
 (globalThis as unknown as { window: unknown }).window = {
@@ -38,18 +38,5 @@ describe("building/room URLs used by the 3D explorer", () => {
   it("adds no viewer parameters (camera and floor stay out of history)", () => {
     const url = viewToUrl({ type: "building", building: "EBU3B", room: null, term: null });
     assert.deepEqual([...url.searchParams.keys()], ["building"]);
-  });
-
-  it("preserves the campus map mode through building and room navigation", () => {
-    const original = window.location.href;
-    try {
-      window.location.href = original + "?map=3d";
-      const url = viewToUrl({ type: "building", building: "WLH", room: "2005", term: null });
-      assert.equal(campusMapMode(url.href), "3d");
-      assert.equal(url.searchParams.get("building"), "WLH");
-      assert.equal(url.searchParams.get("room"), "2005");
-    } finally {
-      window.location.href = original;
-    }
   });
 });

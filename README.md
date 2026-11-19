@@ -76,14 +76,6 @@ npm run indoor:build -- EBU3B
 npm run campus:build -- footprints.json attributes.json
 ```
 
-### Campus map views
-
-Use **2D map** or **3D campus** in the map toolbar. In 3D, jump to a building to see its exterior and choose **Classrooms** to open its rooms. Share the 3D view with `?map=3d`. GitHub Pages streams UC San Diego's public photogrammetry on demand.
-
-For offline 3D in the development server, place the prepared `UCSD-Offline-3D` folder next to this repository or set `UCSD_OFFLINE_MAP_DIR` to its location before running `npm run dev`. Keep its `index.html`, `survey.json`, `survey/` and `imagery/` together. The local server reads the package on demand, and the production build uses the public scene.
-
-[UC San Diego's public campus scene](https://admin-enterprise-gis.ucsd.edu/portal/home/webscene/viewer.html?webscene=af8fa76860bb42deb91fe57cc600ead5)
-
 ## Deploy to GitHub Pages
 
 The site is a static frontend; no application server or API key is required. It loads classroom schedules and building photos from external public sources.

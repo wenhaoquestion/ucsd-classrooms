@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { buildings } from "../lib/buildings";
 import { coursesToClassrooms, TermBuildings } from "../lib/coursesToClassrooms";
 import { Day } from "../lib/Day";
@@ -9,8 +9,6 @@ import { Term, TermCache, TermError } from "../lib/TermCache";
 import { CurrentTerm, getTerm, Season, termCode, termName } from "../lib/terms";
 import { useLast } from "../lib/useLast";
 import {
-  campusMapMode,
-  CampusMapMode,
   viewTermsEqual,
   OnView,
   viewFromUrl,
@@ -34,8 +32,6 @@ import { ModalView, ResultModal } from "./search/ResultModal";
 import { SearchBar, State } from "./search/SearchBar";
 import { TermStatus } from "./TermStatus";
 import { useStableCallback } from "../lib/useStable";
-
-const Campus3D = lazy(() => import("./map/Campus3D"));
 
 /**
  * Represents the state of the app:
@@ -95,14 +91,6 @@ export type AppProps = {
 };
 export function App({ title }: AppProps) {
   const [realTime, setRealTime] = useState(true);
-  const [mapMode, setMapMode] = useState(() => campusMapMode(window.location.href));
-  function changeMapMode(mode: CampusMapMode) {
-    const url = new URL(window.location.href);
-    if (mode === "3d") url.searchParams.set("map", "3d");
-    else url.searchParams.delete("map");
-    window.history.replaceState(window.history.state, "", url);
-    setMapMode(mode);
-  }
   const [moment, setMoment] = useState(() => fromViewTerm(null));
   useEffect(() => {
     if (realTime) {
@@ -181,8 +169,7 @@ export function App({ title }: AppProps) {
     .map((term) => termCode(term.year, term.quarter))
     .join(" ");
 
-  const datePanelVisible = !showWeekPlanner &&
-    (showDatePanel || (mapMode === "2d" && noticeVisible && state !== null));
+  const datePanelVisible = !showWeekPlanner && (showDatePanel || (noticeVisible && state !== null));
   // The library's rooms don't depend on class schedules, so it opens on breaks
   const buildingPanelVisible =
     buildingCode !== null && (!noticeVisible || isLibrary(buildingCode));
@@ -363,7 +350,6 @@ export function App({ title }: AppProps) {
     handleView_s(viewFromUrl(window.location.href));
     navigationSource.current = "rise";
     const handlePopstate = () => {
-      setMapMode(campusMapMode(window.location.href));
       navigationSource.current = "fade";
       handleView_s(viewFromUrl(window.location.href));
       navigationSource.current = "rise";
@@ -441,7 +427,7 @@ export function App({ title }: AppProps) {
               loadTerms(terms, termId);
             }
           }}
-          visible={!noticeVisible || mapMode === "3d"}
+          visible={!noticeVisible}
         />
         <ResultModal view={modalView} open={modal !== null} />
         <MapChips
@@ -474,8 +460,6 @@ export function App({ title }: AppProps) {
             setShowFreeRooms(false);
             setShowDatePanel(false);
           }}
-          mapMode={mapMode}
-          onMapModeChange={changeMapMode}
           visible={true}
         />
         <DateTimePanel
@@ -510,7 +494,7 @@ export function App({ title }: AppProps) {
             });
           }}
           visible={datePanelVisible}
-          closeable={mapMode === "3d" || !noticeVisible || state === null}
+          closeable={!noticeVisible || state === null}
           className={`${
             buildingPanelVisible ? "date-time-panel-bottom-panel" : ""
           } ${noticeVisible ? "date-time-panel-notice-visible" : ""}`}
@@ -553,37 +537,18 @@ export function App({ title }: AppProps) {
           }`}
         >
           <p
-            className={`notice ${noticeVisible && mapMode === "2d" ? "notice-visible" : ""} ${
+            className={`notice ${noticeVisible ? "notice-visible" : ""} ${
               datePanelVisible ? "notice-date-open" : ""
             }`}
           >
             <span className="notice-text">{notice}</span>
           </p>
-          <div className="campus-2d" inert={mapMode !== "2d"}>
-            <CampusMap
-              termBuildings={state?.buildings}
-              selected={buildingCode}
-              scrollTo={scrollTo}
-              explorerEnabled={explorerEnabled}
-            />
-          </div>
-          {mapMode === "3d" && (
-            <Suspense fallback={<div className="campus-3d" role="status">Loading 3D campus…</div>}>
-              <Campus3D
-                selected={buildingCode}
-                onSelect={(building) => {
-                  navigate(handleView_s, {
-                    view: { type: "building", building, term: viewFromUrl(window.location.href).term },
-                  });
-                }}
-                onDismissBuilding={() => {
-                  navigate(handleView_s, {
-                    view: { type: "default", term: viewFromUrl(window.location.href).term },
-                  });
-                }}
-              />
-            </Suspense>
-          )}
+          <CampusMap
+            termBuildings={state?.buildings}
+            selected={buildingCode}
+            scrollTo={scrollTo}
+            explorerEnabled={explorerEnabled}
+          />
         </div>
         <FreeRoomsPanel
           termBuildings={state?.buildings}
